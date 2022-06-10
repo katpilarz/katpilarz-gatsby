@@ -13,7 +13,7 @@ const isProd = process.env.NODE_ENV === 'production'
 module.exports = {
   siteMetadata: {
     title: `katgolek portfolio site`,
-    //siteUrl: `https://www.katgolek.eu`
+    siteUrl: `https://silver-centaur-b76c67.netlify.app`
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',
