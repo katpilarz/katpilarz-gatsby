@@ -7,12 +7,13 @@ const {isFuture,parseISO} = require('date-fns')
  */
 
 
-/*
+
+
 async function createProjectPages (graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
-      allSanitySampleProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
+      allSanityProject(filter: {slug: {current: {ne: null}}, publishedAt: {ne: null}}) {
         edges {
           node {
             id
@@ -28,7 +29,7 @@ async function createProjectPages (graphql, actions) {
 
   if (result.errors) throw result.errors
 
-  const projectEdges = (result.data.allSanitySampleProject || {}).edges || []
+  const projectEdges = (result.data.allSanityProject || {}).edges || []
 
   projectEdges
     .filter(edge => !isFuture(parseISO(edge.node.publishedAt)))
@@ -45,7 +46,44 @@ async function createProjectPages (graphql, actions) {
     })
 }
 
+
+async function createServicePages (graphql, actions) {
+  const {createPage} = actions
+  const result = await graphql(`
+    {
+      allSanityService(filter: {slug: {current: {ne: null}}}) {
+        edges {
+          node {
+            id
+            slug {
+              current
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) throw result.errors
+
+  const serviceEdges = (result.data.allSanityService || {}).edges || []
+
+  serviceEdges
+    .forEach(edge => {
+      const id = edge.node.id
+      const slug = edge.node.slug.current
+      const path = `/services/${slug}/`
+
+      createPage({
+        path,
+        component: require.resolve('./src/templates/service.js'),
+        context: {id}
+      })
+    })
+}
+
+
 exports.createPages = async ({graphql, actions}) => {
   await createProjectPages(graphql, actions)
+  await createServicePages(graphql, actions)
 }
-*/

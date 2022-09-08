@@ -1,29 +1,86 @@
 import React from "react";
 import { graphql } from "gatsby";
+import SEO from "../components/seo";
 /*import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
-import Project from "../components/project";
-import SEO from "../components/seo";*/
-import Layout from "../components/layout";
+import Project from "../components/project";*/
 
 
+export const query = graphql`
+query ProjectTemplateQuery($id: String!){
+  singleProject: sanityProject(id: { eq: $id }) {
+      id
+      header
+      isDevelopment
+      isFeatured
+      isInteractive
+      overview
+      publishedAt(formatString: "YYYY")
+      scope
+      description
+      slug {
+        current
+      }
+      title
+      url
+      mockups {
+        alt
+        asset {
+          url
+          gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
+      bannerImage {
+        asset {
+          url
+          gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+        alt
+      }
+      socialMediaImage {
+        alt
+        asset {
+          url
+        }
+      }
+      services {
+        slug {
+          current
+        }
+        title
+      }
+      details {
+        children {
+          text
+          marks
+        }
+        style
+      }
+    }
+  }
+`
 
 
 const ProjectTemplate = props => {
   const { data, errors } = props;
-  const project = data && data.sampleProject;
-  return (
-    <Layout>
-      {/*{errors && <SEO title="GraphQL Error" />}
-      {project && <SEO title={project.title || "Untitled"} />}
+  const project = data && data.singleProject;
 
-      {errors && (
-        <Container>
-          <GraphQLErrorList errors={errors} />
-        </Container>
-      )}
-      {project && <Project {...project} />}*/}
-    </Layout>
+  console.log({ project })
+
+
+  if (errors) {
+    return (
+      <h1>Something went wrong</h1>
+    );
+  }
+
+  return (
+
+      <>
+      <SEO title={project.title} description={project.overview}  />
+      <h1>Hello from Project Page <br></br> {project.title} </h1>
+      </>
+      
   );
 };
 

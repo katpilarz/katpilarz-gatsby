@@ -21,7 +21,7 @@ query HomePageQuery{
           id
           bannerImage {
             asset {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: FULL_WIDTH)
               url
             }
           }

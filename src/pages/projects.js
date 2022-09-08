@@ -14,7 +14,7 @@ query Projects{
           id
           bannerImage {
             asset {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH,formats: WEBP)
               url
             }
           }
@@ -27,7 +27,7 @@ query Projects{
           mockups {
             asset {
               url
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
             }
             alt
           }

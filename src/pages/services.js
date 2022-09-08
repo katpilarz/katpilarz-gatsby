@@ -15,7 +15,7 @@ export const query = graphql`
           image {
             asset {
               url
-              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
             }
             alt
           }
