@@ -91,6 +91,8 @@ const IndexPage = props => {
     <main>
       
     <h1>{site.name}</h1>
+    <h4>Tailoring customized web information 
+architecture for small business and start ups</h4>
       {/*<title>{site.author}</title>
       <span>{site.author}</span>
       <h1>{site.title}</h1>

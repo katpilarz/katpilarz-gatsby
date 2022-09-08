@@ -3,9 +3,9 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { getGatsbyImageData } from "gatsby-source-sanity";
 import clientConfig from "../../client-config";
 
-//import * as styles from "./figure.module.css";
+import * as styles from "./image.module.scss";
 
-export function Figure({ node }) {
+export function Image({ node }) {
   if (!node.asset) {
     return null;
   }

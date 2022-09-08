@@ -7,7 +7,7 @@ const NotFoundPage = () => {
   return (
     <main>
       <title>OOpps</title>
-      <h1>Somethin went wrong</h1>
+      <h2>Somethin went wrong</h2>
       <Link to="/">Go home</Link>.
     </main>
   )
