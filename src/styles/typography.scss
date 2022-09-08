@@ -1,5 +1,28 @@
 @use 'layout';
-h1 {
-  background-color: layout.$primary-color;
-  color: white;
+
+
+h1, h2, h3, h4, h5, h6{
+    font: 100% layout.$font-headers;
+    padding-top: 2%;
 }
+
+h1{
+    font-size: calc(1rem + 28vw);
+    line-height:1.1;
+    text-align: center;
+}
+  
+
+h2{
+    font-size: calc(2rem + 14vw);
+    line-height:1.1;
+}
+
+h3{
+    font-size: calc(2rem + 10vw);
+    line-height:1.1;
+}
+  
+  
+  
+  

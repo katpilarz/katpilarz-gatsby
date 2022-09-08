@@ -30,6 +30,15 @@ module.exports = {
       overlayDrafts: !isProd /*&& token*/
     }
   },
+  {
+    resolve: "gatsby-plugin-web-font-loader",
+    options: {
+      google: {
+        families: ["Outfit"],
+      },
+    },
+  },
+  "gatsby-plugin-dark-mode",
   "gatsby-plugin-sass",
   "gatsby-plugin-image",
   "gatsby-plugin-react-helmet",
@@ -42,5 +51,7 @@ module.exports = {
       "path": "./src/assets/images/"
     },
     __key: "images"
-  }]
+  },
+  
+]
 };

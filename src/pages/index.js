@@ -11,6 +11,8 @@ query HomePageQuery{
       title
       description
       keywords
+      author
+      name
     }
     projects: allSanityProject(
       sort: {order: DESC, fields: publishedAt}
@@ -88,7 +90,7 @@ const IndexPage = props => {
     <SEO title={site.title} description={site.description} keywords={site.keywords} />
     <main>
       
-    <h1>Hello from Katgolek</h1>
+    <h1>{site.name}</h1>
       {/*<title>{site.author}</title>
       <span>{site.author}</span>
       <h1>{site.title}</h1>

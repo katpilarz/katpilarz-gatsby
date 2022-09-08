@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 /*import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import Footer from "./Footer"*/
@@ -15,7 +16,21 @@ const Layout = ({ children }) => {
 
   return (
     <>
-    <h3>Welcome</h3>
+    <ThemeToggler>
+        {({ theme, toggleTheme }) => (
+          <div className="themeToggler">
+            <label>
+              <input hidden
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                checked={theme === 'dark'}
+              />{' '}
+              Dark / Light Mode
+              
+            </label>
+          </div>
+        )}
+    </ThemeToggler>
     {children}
 
       {/*<Navbar toggleSidebar={toggleSidebar} />

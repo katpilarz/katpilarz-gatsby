@@ -1,5 +1,25 @@
-$font-stack: Helvetica, sans-serif;
+$font-body: Outfit, sans-serif;
+$font-headers: Scholastyca Typeface, serif;
 $primary-color: #333;
+$color: #1E8BA3;
+$color-lighter:#229FBA;
+$grey-dark:#3D484F;
+$black:#1D2124;
+$white:#F8F8F8;
+$white-dark:#F2EDED;
+
+
+
+
+@font-face {
+  font-family: 'Scholastyca Typeface';
+  src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot');
+  src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot?#iefix') format('embedded-opentype'),
+       //url('/src/assets/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
+       //url('/src/assets/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
+       //url('/src/assets/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
+       url('/src/assets/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
+}
 
 *, *:after, *:before{
   margin: 0;
@@ -8,7 +28,36 @@ $primary-color: #333;
 }
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
-  padding: 2%;
+  font: 100% $font-body;
+  color: $grey-dark;
+  padding: 1% 2%;
+  background-image: url('/src/assets/images/background.png');
+  background: fixed cover center no-repeat;
+  font-size: calc( .6rem + .8vw);
+  font-weight: 300;
+
+
+  h1, h2, h4, h5, h6{
+    color: $color;
+  }
+}
+
+body.dark {
+  -webkit-font-smoothing: antialiased;
+  background-color: $black;
+  color:$white-dark;
+
+  h1, h2, h4, h5, h6{
+    color: $color-lighter;
+  }
+}
+
+.container{
+  width:100%;
+  padding: 2% 1%;
+}
+
+.themeToggler{
+  position: relative;
+  z-index: 999;
 }
