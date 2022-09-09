@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
+import Btn from "../components/btn";
 //import "../styles/home.scss"
 
 
@@ -49,31 +50,13 @@ query HomePageQuery{
 `
 
 
-/*export const query = graphql`
-  query HomePageQuery {
-    site:allSanitySiteSettings {
-      edges {
-        node {
-          author
-          contact
-          description
-          keywords
-          subtitle
-          title
-        }
-      }
-    }
-  }
-    
-`;*/
-
-
-
 // markup
 const IndexPage = props => {
   const { data, errors } = props;
   const site = (data || {}).site;
   const featuredProjects = (data || {}).projects.edges;
+
+ 
 
   console.log({ featuredProjects })
   console.log({ site })
@@ -87,17 +70,14 @@ const IndexPage = props => {
 
   return (
     <>
-    <SEO title={site.title} description={site.description} keywords={site.keywords} />
+    <Seo title={site.title} description={site.description} keywords={site.keywords} />
     <main>
       
     <h1>{site.name}</h1>
     <h4>Tailoring customized web information 
 architecture for small business and start ups</h4>
-      {/*<title>{site.author}</title>
-      <span>{site.author}</span>
-      <h1>{site.title}</h1>
-      <h2>{site.description}</h2>
-  <h2>{site.subtitle}</h2>*/}
+    <Btn/>
+
     <section>
       {featuredProjects.map((project, index) => {
             return (

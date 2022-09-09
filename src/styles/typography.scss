@@ -7,30 +7,33 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: calc(1rem + 27vw);
-    line-height:1.1;
+    font-size: calc(1rem + 26vw);
     text-align: center;
-    padding-top: .8%;
+    padding: 5% 0 0 0;
+    line-height: .8;
 }
   
 
 h2{
-    font-size: calc(1rem + 14vw);
-    line-height:1.1;
+    font-size: calc(1rem + 15vw);
     padding-top: 2%;
 }
 
 
 h3{
     font-size: calc(1rem + 10vw);
-    line-height:1.1;
 }
 
 .menu-link,
 h4{
-    font-size: calc(1rem + 5.6vw);
+    font-size: calc(1rem + 5vw);
     line-height:1.1;
     text-align: center;
+}
+
+h4{
+    padding: 2% 0 1.6% 0;
+    width:94%;
 }
   
 
@@ -44,8 +47,6 @@ a,
 .menu-link{
     color: inherit;
     text-decoration:none;
-    padding-bottom: 1%;
-
 }
   
   

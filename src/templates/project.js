@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 /*import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Project from "../components/project";*/
@@ -77,7 +77,7 @@ const ProjectTemplate = props => {
   return (
 
       <>
-      <SEO title={project.title} description={project.overview}  />
+      <Seo title={project.title} description={project.overview}  />
       <h1>Hello from Project Page <br></br> {project.title} </h1>
       </>
       

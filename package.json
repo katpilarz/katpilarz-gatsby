@@ -14,7 +14,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "classnames": "^2.3.1",
     "gatsby": "^4.16.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-image": "^2.16.1",

@@ -3,23 +3,23 @@
 
 .menu{
     display: none;
-    position: relative;
+    position: relative!important;
     z-index: 9;
     transition: all .6s ease-out;
     
 }
-/*
+
 
 .menuOpen{
     background-color: inherit;
-    position: fixed;
-    top:0;
-    left:0;
-    height: 100vh;
-    width:100vw;
-    z-index: 9;
-    transition: all .6s ease-out;
-}*/
+      position: fixed;
+      top:0;
+      left:0;
+      height: 100vh;
+      width:100vw;
+      z-index: 9;
+      transition: all .6s ease-out;
+  }
 
 
 .menuLinks{
@@ -29,15 +29,65 @@
     place-items: center;
     width:100%;
     height: 100%;
+    transition: all .8s ease;
+    animation: menu 1s backwards;
+    
+
+    .menuSingleLink{
+        place-self: center;
+        width:100%;
+        display: flex;
+        flex-direction: column;
+        transition: all .8s ease-out;
+        padding-bottom: .8%;
+
+        a{
+            font-style: normal;
+            animation: text 1s backwards;
+        }
+
+        .linkImage{
+            height: 0vh;
+            visibility: hidden;
+            opacity: 0;
+            
+        }
+        
+        &:hover{
+
+            a{
+                font-style: italic;
+                color: inherit;
+            }
+
+            .linkImage{
+                height: 47vh;
+                visibility: visible;
+                opacity: 1;
+
+            }
+        }
+
+        &:active{
+
+            .linkImage{
+                display: flex;
+            }
+        }
+    }
+
+    
 }
 
-.linkImageLeft{
+.linkImage{
     position: absolute;
-    top:10%;
-    left:3%;
     z-index: 100;
-    height: auto;
-    width:20vw;
+    width:17vw;
+    display: flex;
+    transition: height .8s ease;
+    transform-origin: center;
+    overflow: hidden;
+    
 
     img{
         height: 100%;
@@ -46,16 +96,74 @@
     }
 }
 
+
+
+
+.linkImageLeft{
+    top:10%;
+    left:3%;
+}
+
 .linkImageRight{
-    position: absolute;
     bottom:5%;
     right:3%;
+}
+
+
+.menuImageDefault{
+    z-index: 99;
+    height: 47vh;
+}
+
+.socialMediaLinks{
+    position: absolute;
+    bottom: 5%;
+    left:3%;
+    display: flex;
+    width:100%;
     z-index: 100;
-    height: auto;
-    width:20vw;
-    img{
-        height: 100%;
-        width:100%;
-        object-fit: cover;
+
+    .socialMediaLink{
+        width:auto;
+        display: flex;
+        justify-content: space-between;
+
+        
+        a{
+            display: flex;
+            padding-right: 3rem;
+        }
+    }
+}
+
+
+
+
+@keyframes menu{
+    0%{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20%)
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0)
+    }
+}
+
+
+@keyframes text{
+    0%{
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(5%)
+    }
+    100%{
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0)
     }
 }

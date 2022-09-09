@@ -14,12 +14,6 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || "false").toLowerCase() 
 module.exports = {
   siteMetadata: {
     siteUrl:`https://silver-centaur-b76c67.netlify.app`,
-    /*title: `Katarzyna Gołek Portfolio`,
-    description: `Tailoring customized web information architecture for startups and small business`,
-    titleTemplate: `%s | Kate Golek Portfolio`,
-    url: `https://silver-centaur-b76c67.netlify.app`,
-    twitterUsername: `@john_smilga`,
-    image: `/socialMediaMockup.png`,*/
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',

@@ -15,7 +15,7 @@ const Header = ({ toggleSidebar }) => {
                   onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                   checked={theme === 'dark'}
                 />{' '}
-                TOGGLE MODE
+                DARK/LIGHT MODE
               </label>
             </button>
           )}
@@ -24,7 +24,7 @@ const Header = ({ toggleSidebar }) => {
           <h5>Katarzyna Golek</h5>
       </div>
       <div className={styles.buttonsWrapper}>
-        <button type="button" onClick={toggleSidebar}>
+        <button type="button">
             katgolek@pm.me
         </button>
         <button type="button" onClick={toggleSidebar}>

@@ -33,7 +33,7 @@ body {
   padding: 1% 3%;
   background-image: url('/src/assets/images/background.png');
   background: fixed cover center no-repeat;
-  font-size: calc( .6rem + .7vw);
+  font-size: calc( .6rem + .6vw);
   font-weight: 300;
   transition: all 0.2s ease-out;
 
@@ -42,7 +42,13 @@ body {
     color: $color;
   }
 
-  .menu-open{
+  .menu-link{
+    &:hover{
+      color:inherit;
+    }
+  }
+
+  .menu-background{
     background-color: $white;
   }
 }
@@ -59,7 +65,13 @@ body.dark {
     color: $color-lighter;
   }
 
-  .menu-open{
+  .menu-link{
+    &:hover{
+      color:inherit;
+    }
+  }
+
+  .menu-background{
     background-color: $black;
   }
 }
@@ -67,11 +79,6 @@ body.dark {
 .container{
   width:100%;
   padding: 2% 1%;
-}
-
-.themeToggler{
-  position: relative;
-  z-index: 999;
 }
 
 button{
@@ -86,14 +93,3 @@ button{
   place-self: center;
 }
 
-.menu-open{
-  background-color: inherit;
-    position: fixed;
-    top:0;
-    left:0;
-    height: 100vh;
-    width:100vw;
-    z-index: 9;
-    transition: all .6s ease-out;
-    padding-right: 2.6%;
-}

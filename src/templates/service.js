@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import SEO from "../components/seo";
+import Seo from "../components/seo";
 
 
 
@@ -52,7 +52,7 @@ const ServiceTemplate = props => {
   }
   return (
       <>
-      <SEO title={service.title} description={service.description}  />
+      <Seo title={service.title} description={service.description}  />
       <h1>Hello from Service Page <br></br> {service.title} </h1>
       <p>{service.description}</p>
       </>
