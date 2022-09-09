@@ -2,7 +2,6 @@ import React from "react";
 import links from "../data/links"
 import socialMediaLinks from "../data/socialLinks"
 import { Link } from "gatsby"
-//import Link from 'gatsby-plugin-transition-link'
 import * as styles from "./menu.module.scss";
 
 

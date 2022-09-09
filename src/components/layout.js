@@ -23,6 +23,11 @@ const Layout = ({ children }) => {
     <Header toggleSidebar={toggleSidebar}/>
     <Menu isOpen={isOpen} toggleSidebar={toggleSidebar} />
     {children}
+    <p>
+      &copy;Copyright {new Date().getFullYear()}. All rights reserved
+      <br></br>
+      Designed & Developed with love &hearts;
+    </p>
     </>
   )
 }

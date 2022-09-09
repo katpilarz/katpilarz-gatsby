@@ -40,10 +40,11 @@
         flex-direction: column;
         transition: all .8s ease-out;
         padding-bottom: .8%;
+        animation: text 1s backwards;
 
         a{
             font-style: normal;
-            animation: text 1s backwards;
+            
         }
 
         .linkImage{
@@ -58,6 +59,7 @@
             a{
                 font-style: italic;
                 color: inherit;
+                transform: translateX(4%);
             }
 
             .linkImage{

@@ -1,6 +1,7 @@
 import React from "react";
 import { ThemeToggler } from 'gatsby-plugin-dark-mode'
 import * as styles from "./header.module.scss";
+import { Link } from "gatsby"
 
 
 const Header = ({ toggleSidebar }) => {
@@ -21,7 +22,9 @@ const Header = ({ toggleSidebar }) => {
           )}
       </ThemeToggler>
       <div className={styles.branding}>
+        <Link to='/'>
           <h5>Katarzyna Golek</h5>
+        </Link>
       </div>
       <div className={styles.buttonsWrapper}>
         <button type="button">
