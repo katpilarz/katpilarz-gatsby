@@ -6,6 +6,7 @@
 
 // You can delete this file if you're not using it
 
+
 const React = require("react")
 const Layout = require("./src/components/layout").default
 

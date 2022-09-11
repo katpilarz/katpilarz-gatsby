@@ -70,7 +70,7 @@ const ProjectTemplate = props => {
 
   if (errors) {
     return (
-      <h1>Something went wrong</h1>
+      <h2>Something went wrong</h2>
     );
   }
 
@@ -78,7 +78,7 @@ const ProjectTemplate = props => {
 
       <>
       <Seo title={project.title} description={project.overview}  />
-      <h1>Hello from Project Page <br></br> {project.title} </h1>
+      <h2>{project.title} </h2>
       </>
       
   );

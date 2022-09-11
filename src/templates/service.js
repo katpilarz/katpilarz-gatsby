@@ -47,13 +47,13 @@ const ServiceTemplate = props => {
 
   if (errors) {
     return (
-      <h1>Something went wrong</h1>
+      <h2>Something went wrong</h2>
     );
   }
   return (
       <>
       <Seo title={service.title} description={service.description}  />
-      <h1>Hello from Service Page <br></br> {service.title} </h1>
+      <h2>{service.title} </h2>
       <p>{service.description}</p>
       </>
       

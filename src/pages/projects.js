@@ -1,5 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby";
+import { Link } from "gatsby"
 
 
 
@@ -84,12 +85,13 @@ const Projects = props => {
       
       {projects.map((project, index) => {
         return (
-          
-          <article key={index}>
-            <h2>{project.node.title}</h2>
-            {project.node.overview}
-              {project.node.publishedAt}
-          </article>
+          <Link to={`/projects/${project.node.slug.current}`}>
+            <article key={index}>
+              <h2>{project.node.title}</h2>
+              {project.node.overview}
+                {project.node.publishedAt}
+            </article>
+          </Link>
         )
       })}
     </main>

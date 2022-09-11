@@ -24,7 +24,7 @@ function SEO({ description, lang, meta, keywords, title }) {
                 content: metaDescription
               },
               {
-                name: "image",
+                name: "og-image",
                 content: metaImage
               },
               {
@@ -54,7 +54,11 @@ function SEO({ description, lang, meta, keywords, title }) {
               {
                 name: "twitter:description",
                 content: metaDescription
-              }
+              },
+              {
+                name: "twitter-image",
+                content: metaImage
+              },
             ]
               .concat(
                 keywords && keywords.length > 0
