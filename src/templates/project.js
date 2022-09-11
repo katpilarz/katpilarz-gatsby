@@ -2,7 +2,9 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import ProjectBanner from "../components/projectBanner";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import ProjectDetails from "../components/projectDetails";
+import ProjectGallery from "../components/projectGallery";
+
 
 /*import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
@@ -67,7 +69,6 @@ const ProjectTemplate = props => {
   const { data, errors } = props;
   const project = data && data.singleProject;
 
-  console.log({ project })
 
 
   if (errors) {
@@ -81,17 +82,9 @@ const ProjectTemplate = props => {
       <>
       <Seo title={project.title} description={project.overview}  />
       <ProjectBanner project={project}/>
-      <div className='project-gallery'>
-        {project.mockups.map((image, index) => {
-            return (
-              <GatsbyImage key={image.index}
-                image={getImage(image.asset.gatsbyImageData)}
-                className="project-img"
-                alt={image.asset.alt}
-            />
-            )
-        })}
-      </div>
+      <ProjectDetails project={project}/>
+      <ProjectGallery mockups={project.mockups}/>
+      
       </>
       
   );

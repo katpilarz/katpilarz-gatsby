@@ -85,13 +85,13 @@ const Projects = props => {
       
       {projects.map((project, index) => {
         return (
-          <Link to={`/projects/${project.node.slug.current}`}>
-            <article key={index}>
-              <h2>{project.node.title}</h2>
-              {project.node.overview}
-                {project.node.publishedAt}
-            </article>
-          </Link>
+          <article key={index}>
+            <Link to={`/projects/${project.node.slug.current}`}>
+                <h2>{project.node.title}</h2>
+                {project.node.overview}
+                  {project.node.publishedAt}
+            </Link>
+          </article>
         )
       })}
     </main>

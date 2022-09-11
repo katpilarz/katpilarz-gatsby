@@ -20,26 +20,31 @@ h2{
 }
 
 
-h3{
-    font-size: calc(.6rem + 10vw);
-}
 
 .menu-link,
-h4{
+h3{
     font-size: calc(.6rem + 4.2vw);
     line-height:1.1;
+}
+
+
+.banner-header{
+    padding: 2% 0 1.6% 0;
+    width:82%;
+    margin: auto;
     text-align: center;
+    color:inherit;
 }
 
 h4{
-    padding: 2% 0 1.6% 0;
-    width:86%;
-    margin: auto;
+    font-size: calc(.6rem + 3.2vw);
+    line-height:1.1;
 }
+
   
 
 h5{
-    font-size: calc(1rem + 1.6vw);
+    font-size: calc(.6rem + 1.6vw);
     line-height:1.1;
 }
 
@@ -50,6 +55,10 @@ a,
     text-decoration:none;
 }
   
+p{
+    line-height: 1.67;
+}
+
   
   
   

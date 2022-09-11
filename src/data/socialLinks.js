@@ -1,16 +1,16 @@
 const data = [
     {
-      id: 1,
+      id: 15073703870,
       text: "INSTAGRAM",
       url: "/",
     },
     {
-        id: 2,
+        id: 250860780,
         text: "TIK TOK",
         url: "/",
     },
     {
-        id: 3,
+        id: 307307303,
         text: "99 DESIGNS",
         url: "/",
     },

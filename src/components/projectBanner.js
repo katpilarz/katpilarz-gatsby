@@ -5,17 +5,16 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 const ProjectBanner = ({ project }) => {
-    console.log({ project })
 
   return (
-    <div className={styles.projectBanner}>
+    <section className={styles.projectBanner}>
         <div className={styles.projectBannerHeader}>
-            <h2>{project.title}</h2>
+            <h2 className={styles.header}>{project.title}</h2>
             <div className={styles.projectBannerDetails}>
                 <p>{project.publishedAt}</p>
                 {project.services.map((service, index) => {
                     return(
-                    <div key={service.index}>
+                    <div key={index}>
                         <p>{service.title}</p> 
                     </div> 
                     )
@@ -31,7 +30,7 @@ const ProjectBanner = ({ project }) => {
             />
         </div>
 
-    </div>
+    </section>
   )
 }
 

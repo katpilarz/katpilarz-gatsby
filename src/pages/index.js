@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
-import Btn from "../components/btn";
+import Banner from "../components/banner";
 import { Link } from "gatsby"
 import ProjectBanner from "../components/projectBanner";
 
@@ -58,10 +58,6 @@ const IndexPage = props => {
 
  
 
-  console.log({ featuredProjects })
-  console.log({ site })
-
-
   if (errors) {
     return (
       <h1>Something went wrong</h1>
@@ -73,11 +69,7 @@ const IndexPage = props => {
     <Seo title={site.title} description={site.description} keywords={site.keywords}  />
     <main>
       
-    <h1>{site.name}</h1>
-    <h4>Tailoring customized web information 
-architecture for small business and start ups</h4>
-    <Btn/>
-
+    <Banner name={site.name}/>
     <section>
       {featuredProjects.map((project, index) => {
             return (

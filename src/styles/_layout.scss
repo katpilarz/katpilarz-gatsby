@@ -40,8 +40,9 @@ body {
   font-weight: 300;
   transition: all 0.2s ease-out;
 
+
   .menu-link,
-  h1, h2, h3{
+  h1, h2,h3, h4{
     color: $color;
   }
 
@@ -64,7 +65,7 @@ body.dark {
   color:$white-dark;
 
   .menu-link,
-  h1, h2, h3{
+  h1, h2, h3, h4{
     color: $color-lighter;
   }
 
@@ -94,6 +95,7 @@ button{
   cursor: pointer;
   display: flex;
   place-self: center;
+  transition: all .6s ease;
 }
 
 
@@ -160,9 +162,4 @@ button{
       opacity: 1;
     }
   }
-}
-
-.project-gallery{
-  display: grid;
-  grid-gap:10vh;
 }

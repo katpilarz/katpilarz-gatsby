@@ -13,9 +13,9 @@ const Menu = ({ isOpen,toggleSidebar }) => {
   return (
     <div className={isOpen ? `${styles.menuOpen} menu-background` : styles.menu}>
         <div className={isOpen ? styles.menuLinks : null}>
-            {links.map(link => {
+            {links.map((link, index)  => {
                 return (
-                <div className={`${styles.menuSingleLink} menu-link`} key={link.id}>
+                <div className={`${styles.menuSingleLink} menu-link`} key={index}>
                     <Link to={link.url} onClick={toggleSidebar}>
                     {link.text}
                     </Link>
@@ -43,9 +43,9 @@ const Menu = ({ isOpen,toggleSidebar }) => {
                 alt="Some great work"/>
             </div>
             <div className={styles.socialMediaLinks}>
-                {socialMediaLinks.map(link => {
+                {socialMediaLinks.map( (link, index) => {
                     return (
-                    <div className={styles.socialMediaLink} key={link.id}>
+                    <div className={styles.socialMediaLink} key={index}>
                         <a href={link.url} aria-label={link.text} rel="noopener noreferrer" target="_blank">
                         {link.text}
                         </a>

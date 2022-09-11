@@ -7,7 +7,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 export const query = graphql`
   query Services{
-    services: allSanityService {
+    services: allSanityService(sort: {fields: _id, order: DESC}) {
       edges {
         node {
           title
@@ -51,7 +51,7 @@ const Services = props => {
             
             return (
               <article key={index} className='serviceCard'>
-                  <div key={index} className='serviceCardImage'>
+                  <div className='serviceCardImage'>
                       <GatsbyImage
                         image={getImage(service.node.image.asset.gatsbyImageData)}
                         className="project-img"
@@ -59,7 +59,7 @@ const Services = props => {
                       />
                   </div>
                   <Link to={`/services/${service.node.slug.current}`}>
-                    <div key={index} className='serviceCardHeader'>
+                    <div className='serviceCardHeader'>
                         <h2> {service.node.title}</h2>
                     </div>
                   </Link>

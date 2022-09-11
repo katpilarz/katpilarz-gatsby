@@ -4,7 +4,7 @@ import * as styles from "./header.module.scss";
 import { Link } from "gatsby"
 
 
-const Header = ({ toggleSidebar }) => {
+const Header = ({ isOpen, toggleSidebar }) => {
   return (
     <header className={styles.header}>
       <ThemeToggler>
@@ -30,9 +30,16 @@ const Header = ({ toggleSidebar }) => {
         <button type="button">
             katgolek@pm.me
         </button>
-        <button type="button" onClick={toggleSidebar}>
-            MENU
-        </button>
+        {!isOpen &&
+          <button type="button" onClick={toggleSidebar}>
+              Menu
+          </button>
+        }
+        {isOpen &&
+          <button type="button" onClick={toggleSidebar}>
+              Close
+          </button>
+        }
       </div>
       
     </header>

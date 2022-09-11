@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
   return (
     <>
     
-    <Header toggleSidebar={toggleSidebar}/>
+    <Header toggleSidebar={toggleSidebar} isOpen={isOpen}/>
     <Menu isOpen={isOpen} toggleSidebar={toggleSidebar} />
     {children}
     <p>
