@@ -3,8 +3,8 @@ import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Btn from "../components/btn";
 import { Link } from "gatsby"
+import ProjectBanner from "../components/projectBanner";
 
-//import "../styles/home.scss"
 
 
 
@@ -25,6 +25,7 @@ query HomePageQuery{
         node {
           id
           bannerImage {
+            alt
             asset {
               gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: FULL_WIDTH)
               url
@@ -40,9 +41,6 @@ query HomePageQuery{
           }
           services {
             title
-            slug {
-              current
-            }
           }
         }
       }
@@ -72,7 +70,7 @@ const IndexPage = props => {
 
   return (
     <>
-    <Seo title={site.title} description={site.description} keywords={site.keywords} />
+    <Seo title={site.title} description={site.description} keywords={site.keywords}  />
     <main>
       
     <h1>{site.name}</h1>
@@ -83,13 +81,11 @@ architecture for small business and start ups</h4>
     <section>
       {featuredProjects.map((project, index) => {
             return (
-              <Link to={`/projects/${project.node.slug.current}`}>
-                <article key={index}>
-                  <h2>{project.node.title}</h2>
-                  {project.node.overview}
-                    {project.node.publishedAt}
-                </article>
-              </Link>
+              <article key={index}>
+                <Link  to={`/projects/${project.node.slug.current}`}>
+                  <ProjectBanner project={project.node}/>
+                </Link>
+              </article>
             )
         })}
       </section>

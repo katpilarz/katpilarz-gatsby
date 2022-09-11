@@ -1,6 +1,9 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
+import ProjectBanner from "../components/projectBanner";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 /*import Container from "../components/container";
 import GraphQLErrorList from "../components/graphql-error-list";
 import Project from "../components/project";*/
@@ -12,7 +15,6 @@ query ProjectTemplateQuery($id: String!){
       id
       header
       isDevelopment
-      isFeatured
       isInteractive
       overview
       publishedAt(formatString: "YYYY")
@@ -78,7 +80,18 @@ const ProjectTemplate = props => {
 
       <>
       <Seo title={project.title} description={project.overview}  />
-      <h2>{project.title} </h2>
+      <ProjectBanner project={project}/>
+      <div className='project-gallery'>
+        {project.mockups.map((image, index) => {
+            return (
+              <GatsbyImage key={image.index}
+                image={getImage(image.asset.gatsbyImageData)}
+                className="project-img"
+                alt={image.asset.alt}
+            />
+            )
+        })}
+      </div>
       </>
       
   );

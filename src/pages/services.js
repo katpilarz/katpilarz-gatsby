@@ -1,6 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import { Link } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 
 
 export const query = graphql`
@@ -44,14 +46,25 @@ const Services = props => {
 
   return (
     <>
-    <main>
+    <main className="servicesList">
     {services.map((service, index) => {
+            
             return (
-              <Link to={`/services/${service.node.slug.current}`}>
-                <article key={index}>
-                    <h2> {service.node.title}</h2>
-                </article>
-              </Link>
+              <article key={index} className='serviceCard'>
+                  <div key={index} className='serviceCardImage'>
+                      <GatsbyImage
+                        image={getImage(service.node.image.asset.gatsbyImageData)}
+                        className="project-img"
+                        alt={service.node.image.alt}
+                      />
+                  </div>
+                  <Link to={`/services/${service.node.slug.current}`}>
+                    <div key={index} className='serviceCardHeader'>
+                        <h2> {service.node.title}</h2>
+                    </div>
+                  </Link>
+              </article>
+              
             
         
             )

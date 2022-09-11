@@ -7,6 +7,7 @@ $grey-dark:#3D484F;
 $black:#1D2124;
 $white:#F8F8F8;
 $white-dark:#F2EDED;
+$border: solid .07rem rgba($color, .2);
 
 
 
@@ -40,7 +41,7 @@ body {
   transition: all 0.2s ease-out;
 
   .menu-link,
-  h1, h2{
+  h1, h2, h3{
     color: $color;
   }
 
@@ -63,7 +64,7 @@ body.dark {
   color:$white-dark;
 
   .menu-link,
-  h1, h2{
+  h1, h2, h3{
     color: $color-lighter;
   }
 
@@ -95,3 +96,73 @@ button{
   place-self: center;
 }
 
+
+// BELOW SHOULD BE MOVED TO MODULES
+
+
+.servicesList{
+  margin-top: 13%;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(14, 1fr);
+  grid-template-rows: auto;
+  height: auto;
+  //to be deleted
+  margin-bottom: 60vh;
+}
+
+
+.serviceCard{
+  grid-column: 7/-1;
+  grid-row: auto;
+
+  width:100%;
+  height: auto;
+  display: flex;
+  border-bottom: $border;
+  place-items: flex-start;
+
+  .serviceCardImage{
+    visibility: hidden;
+    opacity: 0;
+  }
+
+
+  &:hover{
+    .serviceCardImage{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+
+//create deafult image
+.serviceCardImage{
+  width:27vw;
+  height: 50vh;
+  position: fixed;
+  top:13%;
+  left:3%;
+  z-index: 1;
+}
+
+.serviceCardHeader{
+  display: flex;
+  width:100%;
+  place-self: flex-start;
+  padding-bottom: 7%;
+
+  &:hover{
+    .serviceCardImage{
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+
+.project-gallery{
+  display: grid;
+  grid-gap:10vh;
+}

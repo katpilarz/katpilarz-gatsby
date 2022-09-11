@@ -1,0 +1,34 @@
+.projectBanner{
+    width:100%;
+    height: auto;
+    margin: 7vh auto 10vh auto;
+}
+
+
+.projectBannerHeader{
+    width:100%;
+    display: flex;
+    place-items: flex-end;
+    margin-bottom: 2%;
+  }
+  
+  
+  .projectBannerDetails{
+    width:100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    place-items: flex-start;
+    margin:0 0 1% 5%;
+    justify-items: space-between;
+  
+    p{
+      margin-bottom: 1rem;
+    }
+    
+  }
+  
+  .projectImageContainer{
+    width:100%;
+  }
+  

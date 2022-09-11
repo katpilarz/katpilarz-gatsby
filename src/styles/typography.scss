@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: calc(1rem + 27vw);
+    font-size: 28vw;
     text-align: center;
     padding: 5% 0 0 0;
     line-height: .8;
@@ -15,18 +15,18 @@ h1{
   
 
 h2{
-    font-size: calc(1rem + 14vw);
+    font-size: calc(.6rem + 9.7vw);
     padding-top: 4%;
 }
 
 
 h3{
-    font-size: calc(1rem + 10vw);
+    font-size: calc(.6rem + 10vw);
 }
 
 .menu-link,
 h4{
-    font-size: calc(1rem + 4.2vw);
+    font-size: calc(.6rem + 4.2vw);
     line-height:1.1;
     text-align: center;
 }
