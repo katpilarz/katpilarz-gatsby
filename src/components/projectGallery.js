@@ -14,7 +14,7 @@ const ProjectGallery = ({ mockups }) => {
                  <GatsbyImage 
                 image={getImage(image.asset.gatsbyImageData)}
                 alt={image.alt}
-              />
+            />
             </div>
              
             )

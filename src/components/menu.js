@@ -3,47 +3,48 @@ import links from "../data/links"
 import socialMediaLinks from "../data/socialLinks"
 import { Link } from "gatsby"
 import * as styles from "./menu.module.scss";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const Menu = ({ isOpen,toggleSidebar }) => {
+const Menu = ({ isOpen,toggleSidebar, menuData }) => {
 
   
 
   return (
     <div className={isOpen ? `${styles.menuOpen} menu-background` : styles.menu}>
         <div className={isOpen ? styles.menuLinks : null}>
-            {links.map((link, index)  => {
+            {menuData.menuLinks.map((link, index)  => {
                 return (
                 <div className={`${styles.menuSingleLink} menu-link`} key={index}>
                     <Link to={link.url} onClick={toggleSidebar}>
                     {link.text}
                     </Link>
                     <div className={`${styles.linkImage} ${styles.linkImageLeft} `}>
-                        <img 
-                        src={link.image}
-                        alt={link.text}/>
+                        <GatsbyImage 
+                        image={getImage(link.image.asset.gatsbyImageData)}
+                        alt={link.image.alt}/>
                     </div>
                     <div className={`${styles.linkImage} ${styles.linkImageRight} `}>
-                        <img 
-                        src={link.image}
-                        alt={link.text}/>
+                        <GatsbyImage 
+                        image={getImage(link.image.asset.gatsbyImageData)}
+                        alt={link.image.alt}/>
                     </div>
                 </div>
                 )
             })}
-            <div className={`${styles.linkImage} ${styles.menuImageDefault} ${styles.linkImageLeft} `}>
-                    <img 
-                    src="https://images.unsplash.com/photo-1543487945-139a97f387d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
-                    alt="Some great work"/>
+            <div className={`${styles.menuImageDefault} ${styles.linkImageLeft} `}>
+                <GatsbyImage 
+                image={getImage(menuData.defaultImage.asset.gatsbyImageData)}
+                alt={menuData.defaultImage.alt}/>
             </div>
-            <div className={`${styles.linkImage} ${styles.menuImageDefault} ${styles.linkImageRight} `}>
-                <img 
-                src="https://images.unsplash.com/photo-1543487945-139a97f387d5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80"
-                alt="Some great work"/>
+            <div className={`${styles.menuImageDefault} ${styles.linkImageRight} `}>
+                <GatsbyImage 
+                image={getImage(menuData.defaultImage.asset.gatsbyImageData)}
+                alt={menuData.defaultImage.alt}/>
             </div>
             <div className={styles.socialMediaLinks}>
-                {socialMediaLinks.map( (link, index) => {
+                {menuData.socialLinks.map( (link, index) => {
                     return (
                     <div className={styles.socialMediaLink} key={index}>
                         <a href={link.url} aria-label={link.text} rel="noopener noreferrer" target="_blank">

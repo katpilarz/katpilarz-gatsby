@@ -1,3 +1,36 @@
 .banner{
     height: auto;
 }
+
+.bannerContent{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8vw;
+}
+
+.galleryBannerSmall{
+    display: block;
+    visibility: hidden;
+
+    .gallerySmallImage{
+        position: absolute;
+        z-index: -1;
+        height: auto;
+    
+    }
+    
+}
+
+
+
+.galleryBannerMain{
+
+    height: auto;
+    width:100%;
+    display: flex;
+
+    .galleryMainImage{
+        height: auto;
+        width:100%;
+    }
+}

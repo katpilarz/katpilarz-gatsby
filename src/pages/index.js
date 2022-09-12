@@ -2,8 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Banner from "../components/banner";
-import { Link } from "gatsby"
-import ProjectBanner from "../components/projectBanner";
+import ProjectsFeatured from "../components/projectsFeatured";
 
 
 
@@ -16,6 +15,34 @@ query HomePageQuery{
       keywords
       author
       name
+    }
+    home:sanityHome {
+      banner {
+        header
+        mockups {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
+      section {
+        focusAreas {
+          text
+          image {
+            alt
+            asset {
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+        }
+        mockups {
+          alt
+          asset {
+            gatsbyImageData(layout: FULL_WIDTH, formats: WEBP, placeholder: BLURRED)
+          }
+        }
+      }
     }
     projects: allSanityProject(
       sort: {order: DESC, fields: publishedAt}
@@ -55,8 +82,11 @@ const IndexPage = props => {
   const { data, errors } = props;
   const site = (data || {}).site;
   const featuredProjects = (data || {}).projects.edges;
+  const home = (data || {}).home;
+  const sectionFocus = (data || {}).home.section;
 
- 
+  console.log({sectionFocus})
+
 
   if (errors) {
     return (
@@ -69,18 +99,8 @@ const IndexPage = props => {
     <Seo title={site.title} description={site.description} keywords={site.keywords}  />
     <main>
       
-    <Banner name={site.name}/>
-    <section>
-      {featuredProjects.map((project, index) => {
-            return (
-              <article key={index}>
-                <Link  to={`/projects/${project.node.slug.current}`}>
-                  <ProjectBanner project={project.node}/>
-                </Link>
-              </article>
-            )
-        })}
-      </section>
+    <Banner name={site.name} banner={home.banner}/>
+    <ProjectsFeatured featuredProjects={featuredProjects}/>
     </main>
     </>
   )

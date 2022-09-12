@@ -22,6 +22,13 @@
   }
 
 
+.linkImage{
+    position: absolute;
+    z-index: 101;
+    transition: all .6s ease-out;
+    transform-origin: center;
+}
+
 .menuLinks{
     display: flex;
     flex-direction: column;
@@ -49,9 +56,9 @@
         }
 
         .linkImage{
-            height: 0vh;
             visibility: hidden;
             opacity: 0;
+            width:0vw;
             
         }
         
@@ -64,10 +71,9 @@
             }
 
             .linkImage{
-                height: 47vh;
                 visibility: visible;
                 opacity: 1;
-
+                width:17vw;
             }
         }
 
@@ -82,41 +88,29 @@
     
 }
 
-.linkImage{
-    position: absolute;
-    z-index: 100;
+.menuImageDefault{
+    z-index: 99;
     width:17vw;
-    display: flex;
-    transition: height .8s ease;
-    transform-origin: center;
-    overflow: hidden;
-    
-
-    img{
-        height: 100%;
-        width:100%;
-        object-fit: cover;
-    }
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
 }
 
 
 
 
 .linkImageLeft{
-    top:10%;
-    left:3%;
+    top:10%!important;
+    left:3%!important;
 }
 
 .linkImageRight{
-    bottom:5%;
-    right:3%;
+    bottom:5%!important;
+    right:3%!important;
 }
 
 
-.menuImageDefault{
-    z-index: 99;
-    height: 47vh;
-}
+
 
 .socialMediaLinks{
     position: absolute;
@@ -125,6 +119,7 @@
     display: flex;
     width:100%;
     z-index: 100;
+    text-transform: uppercase;
 
     .socialMediaLink{
         width:auto;

@@ -6,7 +6,7 @@ import * as styles from "./projectDetails.module.scss";
 const ProjectDetails = ({ project }) => {
 
   return (
-    <section className={styles.projectDetails}>
+    <section className={`container ${styles.projectDetails}`}>
 
         <div className={styles.projectDetailsLeft}>
             <div className={styles.projectDetailsHeader}>

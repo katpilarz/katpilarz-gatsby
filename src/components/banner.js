@@ -1,20 +1,44 @@
 import React from "react";
 import * as styles from "./banner.module.scss";
 import Btn from "../components/btn";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
-const Banner = ({ name }) => {
+const Banner = ({ name, banner }) => {
 
   return (
-    <div className={styles.banner}>
+    <section className={styles.banner}>
+      <div className={styles.bannerContent}>
         <h1>{name}</h1>
-        <h3 className="banner-header">Tailoring customized web information 
-    architecture for small business and start ups</h3>
-    <Btn/>
-
-      
-    </div>
-      
+        <h3 className="banner-header">{banner.header}</h3>
+        <Btn/>
+      </div>  
+      <div className={styles.galleryBannerSmall}>
+        {banner.mockups.map((image, index) => {
+            return (
+            <div key={index} className={`image0${index + 1} ${styles.gallerySmallImage}`}>
+                <GatsbyImage 
+                  image={getImage(image.asset.gatsbyImageData)}
+                  alt={image.alt}
+                />
+            </div>
+          )
+        })}
+      </div> <div className={styles.galleryBannerMain}>
+        {banner.mockups.map((image, index) => {
+            return (
+            <div key={index} className={styles.galleryMainImage}>
+                <GatsbyImage 
+                  image={getImage(image.asset.gatsbyImageData)}
+                  alt={image.alt}
+                />
+            </div>
+          )
+        })}
+      </div>
+     
+    </section>
+    
   )
 }
 

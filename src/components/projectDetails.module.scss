@@ -31,21 +31,25 @@
         margin-bottom: 14vh;
     }
 
-    .projectOverviewCard{
-        border-top:layout.$border; 
-        padding: 2vw 0;
-        display: flex;
-
-        p{
+    .projectDetailsOverview{
+        .projectOverviewCard{
+            border-top:layout.$border; 
+            padding: 2vw 0;
+            display: flex;
+    
+            p{
+                &:last-child{
+                    padding-left: 5vw;
+                }
+            }
+    
+            
+    
             &:last-child{
-                padding-left: 5vw;
+                border-bottom:layout.$border; 
             }
         }
-
-        
-
-        &:last-child{
-            border-bottom:layout.$border; 
-        }
     }
+
+    
 }
