@@ -1,5 +1,5 @@
-$font-body: Outfit;
-$font-headers: Scholastyca Typeface;
+$font-body: Outfit, sans-serif;
+$font-headers: Scholastyca Typeface, serif;
 $primary-color: #333;
 $color: #1E8BA3;
 $color-lighter:#229FBA;
@@ -14,12 +14,12 @@ $border: solid .07rem rgba($color, .2);
 
 @font-face {
   font-family: 'Scholastyca Typeface';
-  src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot');
-  src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot?#iefix') format('embedded-opentype'),
-       url('/src/assets/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
-       url('/src/assets/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
-       url('/src/assets/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
-       url('/src/assets/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
+  src: url('/static/fonts/ScholastycaTypeface-Regular.eot');
+  src: url('/static/fonts/ScholastycaTypeface-Regular.eot?#iefix') format('embedded-opentype'),
+       url('/static/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
+       url('/static/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
+       url('/static/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
+       url('/static/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
 }
 
 *, *:after, *:before{
@@ -38,7 +38,7 @@ body {
   background: fixed cover center no-repeat;
   font-size: calc( .6rem + .6vw);
   font-weight: 300;
-  transition: all 0.2s linear;
+  transition: all 0.2s lin;
 
 
   .menu-link,

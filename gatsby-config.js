@@ -13,7 +13,7 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || "false").toLowerCase() 
 
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://silver-centaur-b76c67.netlify.app`,
+    siteUrl:`https://kategolek.netlify.app`,
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',
