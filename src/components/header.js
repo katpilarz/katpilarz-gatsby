@@ -18,7 +18,7 @@ export default function Header({ isOpen, toggleSidebar }) {
           defaultImage {
             alt
             asset {
-              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: NONE)
               url
             }
           }
@@ -28,7 +28,7 @@ export default function Header({ isOpen, toggleSidebar }) {
             image {
               alt
               asset {
-                gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+                gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: NONE)
               }
             }
           }

@@ -16,9 +16,9 @@ $border: solid .07rem rgba($color, .2);
   font-family: 'Scholastyca Typeface';
   src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot');
   src: url('/src/assets/fonts/ScholastycaTypeface-Regular.eot?#iefix') format('embedded-opentype'),
-       //url('/src/assets/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
-       //url('/src/assets/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
-       //url('/src/assets/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
+       url('/src/assets/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
+       url('/src/assets/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
+       url('/src/assets/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
        url('/src/assets/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
 }
 
