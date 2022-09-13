@@ -42,9 +42,12 @@ module.exports = {
     resolve: 'gatsby-source-filesystem',
     options: {
       "name": "images",
-      "path": "./src/assets/images/"
+      "path": "./src/assets/images/", 
+      "name": "fonts",
+      "path": `${__dirname}/static/fonts`, 
+      
     },
-    __key: "images"
+    __key: "images",
   },
   
 ]

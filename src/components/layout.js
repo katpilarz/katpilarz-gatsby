@@ -1,7 +1,10 @@
 import React, { useState } from "react"
 import Header from "./header"
 import BackgroundImage from "./backgroundImage"
-import { useStaticQuery, graphql } from "gatsby"
+import Helmet from "react-helmet";
+
+
+//import { useStaticQuery, graphql } from "gatsby"
 
 import "../styles/_layout.scss"
 import "../styles/typography.scss"
@@ -55,6 +58,24 @@ const Layout = ({ children }) => {
 
   return (
     <main>
+    <Helmet>
+      <link
+      href="/fonts/ScholastycaTypeface-Regular.woff2"
+      type="font/woff2"
+      />
+      <link
+      href="/fonts/ScholastycaTypeface-Regular.woff"
+      type="font/woff"
+      />
+       <link
+      href="/fonts/ScholastycaTypeface-Regular.ttf"
+      type="font/truetype"
+      />
+       <link
+      href="/fonts/ScholastycaTypeface-Regular.svg"
+      type="font/svg"
+      />
+    </Helmet>
     
     <Header toggleSidebar={toggleSidebar} isOpen={isOpen}/>
     <BackgroundImage/>
