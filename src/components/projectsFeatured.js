@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "./projectsFeatured.module.scss";
+//import * as styles from "./projectsFeatured.module.scss";
 import { Link } from "gatsby"
 import ProjectBanner from "../components/projectBanner";
 

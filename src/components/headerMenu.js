@@ -1,13 +1,11 @@
 import React from "react";
-import links from "../data/links"
-import socialMediaLinks from "../data/socialLinks"
 import { Link } from "gatsby"
-import * as styles from "./menu.module.scss";
+import * as styles from "./headerMenu.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const Menu = ({ isOpen,toggleSidebar, menuData }) => {
+const HeaderMenu = ({ isOpen,toggleSidebar, menuData }) => {
 
   
 
@@ -59,4 +57,4 @@ const Menu = ({ isOpen,toggleSidebar, menuData }) => {
   )
 }
 
-export default Menu
+export default HeaderMenu

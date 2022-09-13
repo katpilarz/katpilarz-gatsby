@@ -38,7 +38,7 @@ body {
   background: fixed cover center no-repeat;
   font-size: calc( .6rem + .6vw);
   font-weight: 300;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s linear;
 
 
   .menu-link,

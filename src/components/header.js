@@ -1,6 +1,6 @@
 import React from "react"
-import MenuNavbar from "./menuNavbar"
-import Menu from "./menu"
+import HeaderNavbar from "./headerNavbar"
+import HeaderMenu from "./headerMenu"
 import { useStaticQuery, graphql } from "gatsby"
 
 
@@ -38,16 +38,23 @@ export default function Header({ isOpen, toggleSidebar }) {
           }
         }
       }
+      sanitySeo(_id: {eq: "2b913895-10d9-472b-8d7a-30dd2c56e4ed"}) {
+        author
+        contact
+      }
     }
   `)
     
     const menuData = data.sanityGlobal.menu
 
-    console.log({menuData})
+    const name = data.sanitySeo.author
+    const contact = data.sanitySeo.contact
+
+
     return (
         <>
-        <MenuNavbar toggleSidebar={toggleSidebar} isOpen={isOpen}/>
-        <Menu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} />
+        <HeaderNavbar contact={contact} name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
+        <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} />
         </>
     )
   }

@@ -9,8 +9,6 @@ import "../styles/typography.scss"
 const Layout = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
 
-  const btnClass = 'btnMenu'
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen)
   }
