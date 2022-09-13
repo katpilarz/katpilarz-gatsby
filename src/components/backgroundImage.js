@@ -12,7 +12,12 @@ export default function BackgroundImage() {
     sanityGlobal {
       image {
         asset {
-          gatsbyImageData(layout: FULL_WIDTH, formats: PNG)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            formats: PNG
+            backgroundColor: "F8F8F8"
+            placeholder: NONE
+          )
         }
         alt
       }
