@@ -1,0 +1,84 @@
+.sectionFocus{
+    height: auto;
+    margin: 12vw auto;
+}
+
+.focusAreasWrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    place-items: center;
+    place-self: center;
+    place-content: center;
+    width:40vw;
+
+
+    .focusArea{
+        display: flex;
+        place-items: flex-end;
+        place-content: flex-end;
+        margin-top: 1.3vw;
+        position: relative!important;
+        z-index: 1;
+        width:auto;
+
+        h4{
+            width:100%;
+            line-height: 1.3;
+            
+        }
+
+        .focusAreaImage{
+            width:8vw;
+            height: 8vw;
+            place-self: flex-end;
+            position: absolute;
+            z-index: 2;
+        }
+
+        &:nth-child(1){
+            text-align: center;
+
+
+            h4{
+                margin-right: 3.8vw;
+            }
+
+            .focusAreaImage{
+                bottom: -2.6vw;
+                right:-3.8vw;
+            }
+
+        }
+
+        &:nth-child(2){
+            text-align: right;
+
+            h4{
+                margin-left: 8.7vw;
+            }
+
+            .focusAreaImage{
+                bottom: -2.6vw;
+                left: -2.6vw;
+            }
+
+        }
+
+
+        &:nth-child(3){
+            text-align: center;
+
+            h4{
+                margin-right: 6vw;
+            }
+
+            .focusAreaImage{
+                bottom: -3.4vw;
+                right: 6.4vw;
+            }
+
+        }
+        
+    }
+}

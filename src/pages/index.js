@@ -2,7 +2,11 @@ import * as React from "react"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Banner from "../components/banner";
+import GallerySwiper from "../components/gallerySwiper";
 import ProjectsFeatured from "../components/projectsFeatured";
+import SectionFocus from "../components/sectionFocus";
+import SectionContact from "../components/sectionContact";
+import GalleryArchives from "../components/galleryArchives";
 
 
 
@@ -43,7 +47,28 @@ query HomePageQuery{
           }
         }
       }
+      archiveGallery {
+        alt
+        asset {
+          gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
     }
+    galleryMockups:allSanityProject(filter: {isGalleryMockup: {eq: true}}) {
+        edges {
+          node {
+            socialMediaImage {
+              alt
+              asset {
+                gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+              }
+            }
+            slug {
+              current
+            }
+          }
+        }
+      }
     projects: allSanityProject(
       sort: {order: DESC, fields: publishedAt}
       filter: {isFeatured: {eq: true}}
@@ -72,7 +97,6 @@ query HomePageQuery{
         }
       }
     }
-
   }
 `
 
@@ -84,8 +108,10 @@ const IndexPage = props => {
   const featuredProjects = (data || {}).projects.edges;
   const home = (data || {}).home;
   const sectionFocus = (data || {}).home.section;
+  const galleryImages = (data || {}).galleryMockups.edges;
+  const archiveImages = (data || {}).home.archiveGallery;
 
-  console.log({sectionFocus})
+  console.log({galleryImages})
 
 
   if (errors) {
@@ -100,7 +126,11 @@ const IndexPage = props => {
     <main>
       
     <Banner name={site.name} banner={home.banner}/>
+    <GallerySwiper images={galleryImages}/>
+    <SectionFocus section={sectionFocus}/>
     <ProjectsFeatured featuredProjects={featuredProjects}/>
+    <SectionContact/>
+    <GalleryArchives images={archiveImages}/>
     </main>
     </>
   )

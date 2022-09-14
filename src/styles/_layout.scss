@@ -7,7 +7,7 @@ $color-lighter:#229FBA;
 $grey-dark:#3D484F;
 $black:#1D2124;
 $white:#F8F8F8;
-$white-dark:#F2EDED;
+$white-dark:#D1D0D0;
 $border: solid .07rem rgba($color, .2);
 
 
@@ -35,15 +35,25 @@ body {
   font: 100% $font-body;
   color: $grey-dark;
   padding: 1% 3%;
-  font-size: calc( .6rem + .6vw);
+  font-size: calc( .6rem + .7vw);
   font-weight: 300;
   transition: all 0.2s lin;
+  
+
+  span{
+    svg{
+      path{
+        fill: $grey-dark;
+      }
+    }
+  }
 
 
   .menu-link,
-  h1, h2,h3, h4{
+  h1, h2, h4{
     color: $color;
   }
+
 
   .menu-link{
     &:hover{
@@ -63,8 +73,17 @@ body.dark {
   background-color: $black;
   color:$white-dark;
 
+
+  span{
+    svg{
+      path{
+        fill: $white;
+      }
+    }
+  }
+
   .menu-link,
-  h1, h2, h3, h4{
+  h1, h2, h4{
     color: $color-lighter;
   }
 

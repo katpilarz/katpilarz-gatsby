@@ -1,0 +1,29 @@
+
+.gallery{
+    height: auto;
+    width:100%;
+    display: flex;
+
+    .swiper{
+        height: auto; 
+        width: 100%;
+        margin: auto;
+
+        .slideGallery{
+            width:77vw;
+            height: auto;
+        }
+    }
+
+}
+
+
+.slideInactive{
+    opacity: .2;
+    mix-blend-mode: luminosity;
+}
+
+.slideActive{
+    opacity: 1;
+    mix-blend-mode: normal;
+}

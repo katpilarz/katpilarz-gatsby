@@ -1,0 +1,68 @@
+@use 'src/styles/layout';
+
+.footer{
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    //border-top: layout.$border;
+    padding-top: 6vw;
+
+    p{
+        text-align: center;
+    }
+}
+
+.footerLinksWrapper{
+    display: flex;
+    margin-bottom: 3vw;
+    width: 100%;
+    place-content: center;
+    place-items: center;
+    place-self: center;
+
+    .footerLink{
+        display: flex;
+        width: auto;
+
+        a{
+            width: auto;
+            display: flex;
+            transition: all .4s linear;
+
+            &:hover{
+                color:layout.$color;
+                transform: translateY(-20%);
+            }
+        }
+
+        span{
+            width: 1.4vw;
+            height: auto;
+            display: flex;
+            margin: auto 1.4vw;
+
+
+            svg{
+                width:100%;
+                height: auto;
+
+                path{
+                    width:100%;
+                    height: auto;
+                }
+
+            }
+         
+        }
+
+        &:last-child{
+            span{
+                display: none;
+            }
+        }
+
+    }
+}
+

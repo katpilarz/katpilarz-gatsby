@@ -16,15 +16,13 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
                   onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                   checked={theme === 'dark'}
                 />{' '}
-                DARK/LIGHT MODE
+                Dark/Light Mode
               </label>
             </button>
           )}
       </ThemeToggler>
-      <div className={styles.branding}>
-        <Link to='/'>
-          <h5>{name}</h5>
-        </Link>
+      <div className={`${styles.branding} link`}>
+        <Link to='/'> {name} </Link>
       </div>
       <div className={styles.buttonsWrapper}>
         <button type="button">

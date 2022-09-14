@@ -1,0 +1,20 @@
+.archiveGallery{
+    display: flex;
+    width:100%;
+    height: auto;
+    margin-top: 7vw;
+
+    .galleryImage{
+        width:100%;
+        height: auto;
+        margin-right: 3vw;
+
+        &:last-child{
+            margin-right: 0;
+        }
+    }
+
+}
+
+
+

@@ -1,5 +1,5 @@
 @use 'layout';
-
+.link,
 .menu-link,
 h1, h2, h3, h4, h5, h6{
     font: 100% layout.$font-headers;
@@ -16,33 +16,36 @@ h1{
 
 h2{
     font-size: calc(.6rem + 9.7vw);
-    padding-top: 4%;
+}
+
+.header-features{
+    font-size: calc(.6rem + 7vw);
+    line-height: 1;
 }
 
 
 
 .menu-link,
 h3{
-    font-size: calc(.6rem + 4.2vw);
+    font-size: calc(.6rem + 4.4vw);
     line-height:1.1;
 }
 
 
 .banner-header{
-    padding: 2% 0 1.6% 0;
-    width:82%;
-    margin: auto;
     text-align: center;
     color:inherit;
 }
 
+
+
 h4{
-    font-size: calc(.6rem + 3.2vw);
+    font-size: calc(.6rem + 3.8vw);
     line-height:1.1;
 }
 
   
-
+.link,
 h5{
     font-size: calc(.6rem + 1.6vw);
     line-height:1.1;

@@ -1,3 +1,5 @@
+// THIS COMPONENT IS NOT RENDERED - KEPT ONLY FOR REFERENCE
+
 import React from "react"
 import HeaderNavbar from "./headerNavbar"
 import HeaderMenu from "./headerMenu"

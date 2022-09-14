@@ -6,9 +6,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 8vw;
+    text-align: center;
 }
 
-.galleryBannerSmall{
+.galleryBanner{
     display: block;
     visibility: hidden;
 
@@ -22,15 +23,10 @@
 }
 
 
+.bannerHeader{
+    color:inherit;
+    padding: 2% 0 1.6% 0;
+    width:82%;
+    margin: auto;
 
-.galleryBannerMain{
-
-    height: auto;
-    width:100%;
-    display: flex;
-
-    .galleryMainImage{
-        height: auto;
-        width:100%;
-    }
 }

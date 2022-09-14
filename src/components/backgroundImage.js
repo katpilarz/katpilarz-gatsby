@@ -1,36 +1,13 @@
-import React, { useState } from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./backgroundImage.module.scss";
 
 
 
 
-export default function BackgroundImage() {
-  const data = useStaticQuery(graphql`
-  {
-    sanityGlobal {
-      image {
-        asset {
-          gatsbyImageData(
-            layout: FULL_WIDTH
-            formats: PNG
-            backgroundColor: "F8F8F8"
-            placeholder: NONE
-          )
-        }
-        alt
-      }
-    }
-  }
-`)
+const BackgroundImage = ({ backgroundImageData }) => {
 
-
-const backgroundImageData = data.sanityGlobal.image
-
-console.log({data})
   
-
   return (
         <figure className={styles.backgroundImageContainer}>
             <GatsbyImage 
@@ -40,3 +17,5 @@ console.log({data})
         </figure>
   )
 }
+
+export default BackgroundImage;
