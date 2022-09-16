@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import { Link } from "gatsby"
+import PageShared from "../components/pageShared";
 
 
 
@@ -12,47 +12,16 @@ query Projects{
     ) {
       edges {
         node {
-          id
           bannerImage {
             asset {
               gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH,formats: WEBP)
               url
             }
           }
-          header
-          isDevelopment
-          isFeatured
-          isInteractive
-          overview
           publishedAt(formatString: "YYYY/MM")
-          mockups {
-            asset {
-              url
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
-            }
-            alt
-          }
           title
           slug {
             current
-          }
-          services {
-            title
-            slug {
-              current
-            }
-          }
-          scope
-          socialMediaImage {
-            asset {
-              url
-            }
-            alt
-          }
-          details {
-            children {
-              text
-            }
           }
         }
       }
@@ -80,22 +49,11 @@ const Projects = props => {
 
 
   return (
-    <>
-    <main>
+
+  <>
+    <PageShared pageName="projects" pageTitle='Selected Projects' itemList={projects} pageImage='https://images.pexels.com/photos/8473776/pexels-photo-8473776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+  </>
       
-      {projects.map((project, index) => {
-        return (
-          <article key={index}>
-            <Link to={`/projects/${project.node.slug.current}`}>
-                <h2>{project.node.title}</h2>
-                {project.node.overview}
-                  {project.node.publishedAt}
-            </Link>
-          </article>
-        )
-      })}
-    </main>
-    </>
   )
 }
 

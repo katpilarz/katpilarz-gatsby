@@ -40,22 +40,20 @@
             text-align: center;
 
 
-            h4{
-                margin-right: 3.8vw;
-            }
-
             .focusAreaImage{
                 bottom: -2.6vw;
-                right:-3.8vw;
+                right:-5.8vw;
             }
 
         }
 
         &:nth-child(2){
             text-align: right;
+            place-self: flex-end;
 
             h4{
-                margin-left: 8.7vw;
+                margin-left: auto;
+                transform:translateX(9vw);
             }
 
             .focusAreaImage{

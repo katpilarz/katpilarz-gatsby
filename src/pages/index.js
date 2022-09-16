@@ -54,7 +54,10 @@ query HomePageQuery{
         }
       }
     }
-    galleryMockups:allSanityProject(filter: {isGalleryMockup: {eq: true}}) {
+    galleryMockups:allSanityProject(
+      filter: {isGalleryMockup: {eq: true}}
+      sort: {order: DESC, fields: publishedAt}
+      ){
         edges {
           node {
             socialMediaImage {

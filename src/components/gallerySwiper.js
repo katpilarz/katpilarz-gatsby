@@ -35,11 +35,11 @@ const GallerySwiper = ({images}) => {
                 delay: 2000,
                 disableOnInteraction: false
             }}*/
-            pagination={{
+            /*pagination={{
                 type: "progressbar",
                 progressbarOpposite: true, 
                 draggable: true
-            }}
+            }}*/
             mousewheel={true}
             keyboard={{
                 enabled: true,
@@ -49,7 +49,7 @@ const GallerySwiper = ({images}) => {
                 sticky: true,
             }}
             speed={5000}
-            effect={"slide"}
+            //effect={"slide"}
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)} 
 

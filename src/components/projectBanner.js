@@ -12,13 +12,16 @@ const ProjectBanner = ({ project }) => {
             <h2 className={styles.header}>{project.title}</h2>
             <div className={styles.projectBannerDetails}>
                 <p>{project.publishedAt}</p>
-                {project.services.map((service, index) => {
-                    return(
-                    <div key={index}>
-                        <p>{service.title}</p> 
-                    </div> 
-                    )
-                })}
+                <div className={styles.servicesList}>
+                    {project.services.map((service, index) => {
+                        return(
+                        <div className={styles.serviceSingle} key={index}>
+                            <p>{service.title}</p> 
+                        </div> 
+                        )
+                    })}
+                </div> 
+                
                 <p>{project.overview}</p>   
             </div>
             </div>

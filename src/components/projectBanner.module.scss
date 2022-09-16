@@ -1,7 +1,7 @@
 .projectBanner{
     width:100%;
     height: auto;
-    margin: 7vh auto 14vh auto;
+    margin: 0 auto 8vw auto;
 }
 
 
@@ -38,4 +38,14 @@
   .projectImageContainer{
     width:100%;
   }
+
+  .servicesList{
+    display: flex;
+    width: 100%;
+
+    .serviceSingle{
+      margin-right: 1vw;
+    }
+  }
   
+

@@ -1,7 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import { Link } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import PageShared from "../components/pageShared";
 
 
 
@@ -35,8 +34,6 @@ const Services = props => {
 
   const services = (data || {}).services.edges;
 
-  console.log({ services })
-
 
   if (errors) {
     return (
@@ -46,30 +43,7 @@ const Services = props => {
 
   return (
     <>
-    <main className="servicesList">
-    {services.map((service, index) => {
-            
-            return (
-              <article key={index} className='serviceCard'>
-                  <div className='serviceCardImage'>
-                      <GatsbyImage
-                        image={getImage(service.node.image.asset.gatsbyImageData)}
-                        className="project-img"
-                        alt={service.node.image.alt}
-                      />
-                  </div>
-                  <Link to={`/services/${service.node.slug.current}`}>
-                    <div className='serviceCardHeader'>
-                        <h2> {service.node.title}</h2>
-                    </div>
-                  </Link>
-              </article>
-              
-            
-        
-            )
-          })}
-    </main>
+      <PageShared pageName='services' pageTitle='Impactful Solutions' itemList={services} pageImage='https://images.pexels.com/photos/8473776/pexels-photo-8473776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
     </>
   )
 }

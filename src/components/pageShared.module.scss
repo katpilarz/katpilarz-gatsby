@@ -1,0 +1,89 @@
+@use 'src/styles/layout';
+
+
+.pageShared{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.itemCardImage{
+    position: fixed;
+    top:24vw; 
+    left:3%;
+    width:30vw;
+}
+
+.itemsList{
+    margin-top: 6vw;
+    position: relative!important;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: auto;
+    height: auto;
+    margin-bottom: 7vw;
+  }
+  
+  
+  .itemCard{
+    grid-column: 8/-1;
+    grid-row: auto;
+    width:100%;
+    height: auto;
+    display: flex;
+    border-bottom: layout.$border;
+    padding: 2vw 0;
+
+    .itemCardHeader{
+        display: flex;
+        justify-content: space-between;
+        width:100%;
+        place-items: flex-end;
+    }
+
+    a{
+        width: 100%;
+    }
+    
+  
+  
+    h3{
+      line-height: 1;
+      transition: all .4s linear;
+    }
+  
+    .itemCardImage{
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+  
+    &:hover{
+
+      .itemCardImage{
+        visibility: visible;
+        opacity: 1;
+      }
+  
+      h3{
+        color: layout.$color;
+        transform: translateX(2vw);
+      }
+    }
+  }
+
+
+  
+
+  .pageImage{
+    width:100%;
+    margin-top:14vw;
+  
+    img{
+      width:100%;
+    }
+  }
+  
+  
+  

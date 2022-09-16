@@ -28,7 +28,7 @@ const sectionContact = () => {
                         return (
                         <span
                             key={key}
-                            style={i%2 === 0 ? { color: '#1E8BA3'} : {}}
+                            style={i%2 === 0 ? { color: '#2283AC'} : {}}
                         >{char}</span>
                         );
                     })}
@@ -41,7 +41,7 @@ const sectionContact = () => {
             <h3 className="header-section">project in mind...?</h3>
         </div>
         <div className={styles.paragraph}>
-            <p>Helping brands create outstanding experience</p>
+            <p>Helping brands create outstanding online experience</p>
         </div>
       </div> 
       
