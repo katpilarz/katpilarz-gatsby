@@ -24,6 +24,25 @@ export const query = graphql`
         }
       }
     }
+    servicePage:allSanityPage(filter: {name: {eq: "services"}}) {
+      edges {
+        node {
+          id
+          image {
+            alt
+            asset {
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+          name
+          overview
+          slug {
+            current
+          }
+          title
+        }
+      }
+    }
   }
 `
 
@@ -33,7 +52,9 @@ const Services = props => {
   const { data, errors } = props;
 
   const services = (data || {}).services.edges;
+  const servicePage = (data || {}).servicePage.edges[0];
 
+ 
 
   if (errors) {
     return (
@@ -43,7 +64,7 @@ const Services = props => {
 
   return (
     <>
-      <PageShared pageName='services' pageTitle='Impactful Solutions' itemList={services} pageImage='https://images.pexels.com/photos/8473776/pexels-photo-8473776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
+      <PageShared pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image}/>
     </>
   )
 }

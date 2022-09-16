@@ -6,10 +6,6 @@ import ProjectDetails from "../components/projectDetails";
 import ProjectGallery from "../components/projectGallery";
 
 
-/*import Container from "../components/container";
-import GraphQLErrorList from "../components/graphql-error-list";
-import Project from "../components/project";*/
-
 
 export const query = graphql`
 query ProjectTemplateQuery($id: String!){
@@ -21,7 +17,6 @@ query ProjectTemplateQuery($id: String!){
       overview
       publishedAt(formatString: "YYYY")
       scope
-      description
       slug {
         current
       }
@@ -53,13 +48,8 @@ query ProjectTemplateQuery($id: String!){
         }
         title
       }
-      details {
-        children {
-          text
-          marks
-        }
-        style
-      }
+      _rawDetails
+      tools
     }
   }
 `

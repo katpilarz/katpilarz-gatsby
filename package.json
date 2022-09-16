@@ -28,6 +28,7 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
+    "react-portable-text": "^0.5.1",
     "react-typing-effect": "^2.0.5",
     "sass": "^1.52.3",
     "swiper": "^8.4.0"

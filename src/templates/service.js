@@ -19,20 +19,7 @@ query ServiceTemplateQuery($id: String!){
           gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
-      description
-      details {
-        children {
-          _key
-          _type
-          marks
-          text
-        }
-        list
-        style
-        _type
-        _rawChildren
-        _key
-      }
+      _rawDetails
     }
   }
 `
@@ -52,9 +39,8 @@ const ServiceTemplate = props => {
   }
   return (
       <>
-      <Seo title={service.title} description={service.description}  />
+      <Seo title={service.title} description={service.title}  />
       <h2>{service.title} </h2>
-      <p>{service.description}</p>
       </>
       
   );

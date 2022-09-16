@@ -12,7 +12,7 @@ query Projects{
     ) {
       edges {
         node {
-          bannerImage {
+          socialMediaImage {
             asset {
               gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH,formats: WEBP)
               url
@@ -23,6 +23,25 @@ query Projects{
           slug {
             current
           }
+        }
+      }
+    }
+    projectsPage:allSanityPage(filter: {name: {eq: "projects"}}) {
+      edges {
+        node {
+          id
+          image {
+            alt
+            asset {
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+          }
+          name
+          overview
+          slug {
+            current
+          }
+          title
         }
       }
     }
@@ -37,7 +56,7 @@ const Projects = props => {
 
   const projects = (data || {}).projects.edges;
 
-  console.log({ projects })
+  const projectsPage = (data || {}).projectsPage.edges[0];
 
 
 
@@ -49,11 +68,9 @@ const Projects = props => {
 
 
   return (
-
-  <>
-    <PageShared pageName="projects" pageTitle='Selected Projects' itemList={projects} pageImage='https://images.pexels.com/photos/8473776/pexels-photo-8473776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'/>
-  </>
-      
+    <>
+      <PageShared pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image}/>
+    </>
   )
 }
 

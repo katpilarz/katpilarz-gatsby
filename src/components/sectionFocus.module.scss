@@ -1,6 +1,6 @@
 .sectionFocus{
     height: auto;
-    margin: 12vw auto;
+    margin: 10vw auto 6vw auto;
 }
 
 .focusAreasWrapper{
@@ -10,7 +10,7 @@
     place-items: center;
     place-self: center;
     place-content: center;
-    width:40vw;
+    width:44vw;
 
 
     .focusArea{
@@ -41,8 +41,8 @@
 
 
             .focusAreaImage{
-                bottom: -2.6vw;
-                right:-5.8vw;
+                bottom: -3.4vw;
+                right:-4.8vw;
             }
 
         }
@@ -68,12 +68,12 @@
             text-align: center;
 
             h4{
-                margin-right: 6vw;
+                margin-right:4vw;
             }
 
             .focusAreaImage{
                 bottom: -3.4vw;
-                right: 6.4vw;
+                right: 7vw;
             }
 
         }

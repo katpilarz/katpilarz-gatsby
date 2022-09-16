@@ -24,10 +24,10 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName }) => {
                             alt={item.node.image.alt}
                         />
                         }
-                        { item.node.bannerImage && 
+                        { item.node.socialMediaImage && 
                         <GatsbyImage className={styles.itemCardImage}
-                            image={getImage(item.node.bannerImage.asset.gatsbyImageData)}
-                            alt={item.node.bannerImage.alt}
+                            image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
+                            alt={item.node.socialMediaImage.alt}
                         />
                         }
                     <Link to={`/${pageName}/${item.node.slug.current}`}>
@@ -42,11 +42,13 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName }) => {
             })}
         </div>
         }
-        {/*<div className={styles.pageFooterImage}>
+        { pageImage &&
+            <div className={styles.pageFooterImage}>
             <GatsbyImage 
                 image={getImage(pageImage.asset.gatsbyImageData)}
                 alt={pageImage.alt}/>
-        </div>*/}
+            </div>
+        }
 
     </main>
   )

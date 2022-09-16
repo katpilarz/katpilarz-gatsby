@@ -64,6 +64,7 @@
             place-items: center;
             place-content: center;
             transition: all .4s linear;
+            color:inherit;
 
             span{
                 visibility: hidden;
@@ -101,7 +102,7 @@
 
             a{
                 //font-style: italic;
-                color: inherit;
+                color: layout.$color;
                 transform: translateX(2%);
 
                 span{
@@ -117,13 +118,6 @@
                 visibility: visible;
                 opacity: 1;
                 width:17vw;
-            }
-        }
-
-        &:active{
-
-            .linkImage{
-                display: flex;
             }
         }
     }

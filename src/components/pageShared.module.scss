@@ -9,17 +9,15 @@
 
 .itemCardImage{
     position: fixed;
-    top:24vw; 
+    top:22vw; 
     left:3%;
     width:30vw;
 }
 
 .itemsList{
-    margin-top: 6vw;
-    position: relative!important;
-    z-index: 1;
+    margin-top: 7vw;
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    grid-template-columns: repeat(18, 1fr);
     grid-template-rows: auto;
     height: auto;
     margin-bottom: 7vw;
@@ -27,7 +25,7 @@
   
   
   .itemCard{
-    grid-column: 8/-1;
+    grid-column: 9/-1;
     grid-row: auto;
     width:100%;
     height: auto;
@@ -76,9 +74,9 @@
 
   
 
-  .pageImage{
+  .pageFooterImage{
     width:100%;
-    margin-top:14vw;
+    margin-top:6vw;
   
     img{
       width:100%;

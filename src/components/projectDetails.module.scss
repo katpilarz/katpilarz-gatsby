@@ -36,20 +36,36 @@
             border-top:layout.$border; 
             padding: 2vw 0;
             display: flex;
-    
+
+
             p{
-                &:last-child{
-                    padding-left: 5vw;
+                &:first-child{
+                    padding-right: 5vw;
                 }
+        
             }
-    
+ 
             
     
             &:last-child{
                 border-bottom:layout.$border; 
+            }
+
+            .toolsList{
+                display: flex;
+                flex-wrap: wrap;
+                width:100%;
+            
+                .toolSingle{
+                    display: flex;
+                    width: auto;
+                    margin-right: 1vw;
+
+                }
             }
         }
     }
 
     
 }
+

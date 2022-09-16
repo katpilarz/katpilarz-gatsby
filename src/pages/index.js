@@ -30,7 +30,7 @@ query HomePageQuery{
           }
         }
       }
-      section {
+      sectionFocus {
         focusAreas {
           text
           image {
@@ -110,7 +110,7 @@ const IndexPage = props => {
   const site = (data || {}).site;
   const featuredProjects = (data || {}).projects.edges;
   const home = (data || {}).home;
-  const sectionFocus = (data || {}).home.section;
+  const sectionFocus = (data || {}).home.sectionFocus;
   const galleryImages = (data || {}).galleryMockups.edges;
   const archiveImages = (data || {}).home.archiveGallery;
 
