@@ -1,29 +1,27 @@
 
-.gallery{
+.gallerySwiper{
     height: auto;
-    width:100%;
+    width:auto;
     display: flex;
 
-    .swiper{
-        height: auto; 
-        width: 100%;
-        margin: auto;
+}
 
-        .slideGallery{
-            width:77vw;
-            height: auto;
+.swiper{
+    height: auto; 
+    width: 100%;
+    margin: auto;
+
+    
+}
+
+.slideGallery{
+    width:100%;
+    height: auto;
+
+    a{
+        width:100%;
+        .swiperImage{
+            width:70vw;
         }
     }
-
-}
-
-
-.slideInactive{
-    opacity: .2;
-    mix-blend-mode: luminosity;
-}
-
-.slideActive{
-    opacity: 1;
-    mix-blend-mode: normal;
 }

@@ -29,7 +29,7 @@ const ProjectBanner = ({ project }) => {
             <GatsbyImage
                 image={getImage(project.bannerImage.asset.gatsbyImageData)}
                 className="project-img"
-                alt={project.bannerImage.alt}
+                alt={`${project.bannerImage.alt}`}
             />
         </div>
 

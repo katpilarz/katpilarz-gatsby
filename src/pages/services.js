@@ -40,6 +40,7 @@ export const query = graphql`
             current
           }
           title
+          _rawDescription
         }
       }
     }
@@ -64,7 +65,7 @@ const Services = props => {
 
   return (
     <>
-      <PageShared pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image}/>
+      <PageShared pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>
     </>
   )
 }

@@ -42,6 +42,7 @@ query Projects{
             current
           }
           title
+          _rawDescription
         }
       }
     }
@@ -69,7 +70,7 @@ const Projects = props => {
 
   return (
     <>
-      <PageShared pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image}/>
+      <PageShared pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image} pageDescription={projectsPage.node._rawDescription}/>
     </>
   )
 }

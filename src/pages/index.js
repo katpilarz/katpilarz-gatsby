@@ -5,7 +5,9 @@ import Banner from "../components/banner";
 import GallerySwiper from "../components/gallerySwiper";
 import ProjectsFeatured from "../components/projectsFeatured";
 import SectionFocus from "../components/sectionFocus";
+import SectionAbout from "../components/sectionAbout";
 import SectionServices from "../components/sectionServices";
+import SectionTestimonial from "../components/sectionTestimonial";
 import SectionContact from "../components/sectionContact";
 import Gallery from "../components/gallery";
 
@@ -32,6 +34,7 @@ query HomePageQuery{
         }
       }
       sectionFocus {
+        subheader
         focusAreas {
           text
           image {
@@ -92,6 +95,7 @@ query HomePageQuery{
           services {
             title
           }
+          _rawTestimonial
         }
       }
     }
@@ -129,6 +133,8 @@ const IndexPage = props => {
   const services = (data || {}).services.edges;
 
 
+  console.log({galleryImages})
+
   if (errors) {
     return (
       <h1>Something went wrong</h1>
@@ -144,9 +150,11 @@ const IndexPage = props => {
     <GallerySwiper images={galleryImages}/>
     <SectionFocus section={sectionFocus}/>
     <ProjectsFeatured featuredProjects={featuredProjects}/>
+    <SectionAbout/>
     <SectionServices services={services}/>
-    <SectionContact/>
+    <SectionTestimonial/>
     <Gallery images={archiveImages} galleryClassName='otherGallery'/>
+    <SectionContact/>
     </main>
     </>
   )

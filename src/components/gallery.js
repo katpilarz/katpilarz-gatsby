@@ -13,7 +13,7 @@ const Gallery = ({ images, galleryClassName }) => {
             <div className={styles.galleryImage} key={index}>
                  <GatsbyImage 
                 image={getImage(image.asset.gatsbyImageData)}
-                alt={image.alt}/>
+                alt={`${image.alt}`}/>
             </div>
             )
         })}

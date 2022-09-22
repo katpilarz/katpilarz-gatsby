@@ -51,7 +51,7 @@ const SectionServices = ({ services }) => {
                         </div>
                         <GatsbyImage className={styles.serviceImage}
                             image={getImage(service.node.image.asset.gatsbyImageData)}
-                            alt={service.node.image.alt}
+                            alt={`${service.node.image.alt}`}
                         />
                         
                     </Link>

@@ -14,7 +14,7 @@ const ProjectsFeatured = ({ featuredProjects }) => {
                 return (
                 <article key={index}>
                     <Link  to={`/projects/${project.node.slug.current}`}>
-                    <ProjectBanner project={project.node}/>
+                        <ProjectBanner project={project.node}/>
                     </Link>
                 </article>
                 )

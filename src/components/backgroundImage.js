@@ -12,7 +12,7 @@ const BackgroundImage = ({ backgroundImageData }) => {
         <figure className={styles.backgroundImageContainer}>
             <GatsbyImage 
                 image={getImage(backgroundImageData.asset.gatsbyImageData)}
-                alt={backgroundImageData.alt}
+                alt={`${backgroundImageData.alt}`}
             />
         </figure>
   )

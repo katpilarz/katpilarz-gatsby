@@ -16,10 +16,10 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/zoom';
 
 
-const GallerySwiper = ({images}) => {
+const GallerySwiper = ({ images }) => {
   return (
 
-      <div className={styles.gallery}>
+      <div className={styles.gallerySwiper}>
           <Swiper className={styles.swiper}
               style={{
                 "--swiper-navigation-color": "#1E8BA3",
@@ -29,45 +29,41 @@ const GallerySwiper = ({images}) => {
             slidesPerView="auto"
             centeredSlides={true}
             direction={"horizontal"}
-            spaceBetween={140}
+            spaceBetween={100}
             grabCursor={true}
-            /*autoplay= {{
-                delay: 2000,
+            autoplay= {{
+                delay: 3000,
                 disableOnInteraction: false
-            }}*/
-            pagination={{
+            }}
+            /*pagination={{
                 type: "progressbar",
                 progressbarOpposite: true, 
                 draggable: true
-            }}
+            }}*/
             mousewheel={true}
             keyboard={{
                 enabled: true,
             }}
-            freeMode= {{
-                enabled: true,
-                sticky: true,
-            }}
-            speed={20000}
-            effect= 'slide'
-            
+            speed={700}
+            effect={"fade"}
             fadeEffect= {{
               crossFade: true, 
               parallax: true,
             }}
-            
             onSlideChange={() => console.log('slide change')}
             onSwiper={(swiper) => console.log(swiper)} 
 
           > 
             {images.map((item, index) => {
+              console.log({ item })
                 return (
+                  
                   <SwiperSlide key={index} className={styles.slideGallery}>
                      <Link to={`projects/${item.node.slug.current}`}>
-                        <GatsbyImage 
+                        <GatsbyImage className={styles.swiperImage}
                             image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
-                            alt={item.node.socialMediaImage.alt}
-                            />
+                            alt={`${item.node.socialMediaImage.alt}`}
+                        />
                      </Link>
                   </SwiperSlide>
                 

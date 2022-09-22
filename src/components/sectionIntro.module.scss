@@ -1,0 +1,19 @@
+.sectionIntro{
+    width:100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    margin-bottom: 4vw;
+
+    .line{
+        height: 10vw;
+        width: .07rem;
+        background-color: black;
+        display: block;
+        margin: 2vw auto;
+    }
+
+    
+}

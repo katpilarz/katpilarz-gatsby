@@ -51,9 +51,7 @@ query ProjectTemplateQuery($id: String!){
       _rawDetails
       tools
       isTestimonial
-      testimonial {
-        _rawChildren
-      }
+      _rawTestimonial
       nextProject {
         bannerImage {
           asset {

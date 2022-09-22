@@ -19,7 +19,7 @@ const Banner = ({ name, banner }) => {
             <div key={index} className={`image0${index + 1} ${styles.gallerySmallImage}`}>
                 <GatsbyImage 
                   image={getImage(image.asset.gatsbyImageData)}
-                  alt={image.alt}
+                  alt={`${image.alt}`}
                 />
             </div>
           )

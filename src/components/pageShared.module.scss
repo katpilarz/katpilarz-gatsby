@@ -7,30 +7,35 @@
     width:100%; 
     position: relative!important;
     z-index: 1;
+
+    .pageSharedHeader{
+      display: flex;
+    }
     
 }
 
 .itemCardImage{
   position: fixed;
-  top:22vw; 
+  top:23vw; 
   left:3%;
   width:30vw;
 }
 
 .itemsList{
     margin-top: 7vw;
-    display: grid;
-    grid-template-columns: repeat(18, 1fr);
-    grid-template-rows: auto;
     height: auto;
     margin-bottom: 7vw;
     width:100%;
+    padding-left: 45vw;
+
+    .description{
+      width: 70%;
+      margin-bottom: 1vw;
+    }
   }
   
   
   .itemCard{
-    grid-column: 9/-1;
-    grid-row: auto;
     width:100%;
     height: auto;
     display: flex;
