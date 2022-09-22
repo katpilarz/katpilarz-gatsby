@@ -2,6 +2,7 @@ import React from "react";
 import * as styles from "./pageShared.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
+import ArrowIcon from "../components/arrow";
 
 
 
@@ -33,7 +34,7 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName }) => {
                     <Link to={`/${pageName}/${item.node.slug.current}`}>
                         <div className={styles.itemCardHeader}>
                             <h3> {item.node.title}</h3>
-                            <p> Details</p>
+                            <ArrowIcon arrowIconClass="pageIcon"/>
                         </div>
                     </Link>
                 </article>

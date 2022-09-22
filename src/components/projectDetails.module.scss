@@ -3,6 +3,7 @@
 .projectDetails{
     display: grid;
     grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(14, 1fr);
     height: auto;
     margin:16vh auto 20vh auto;
     grid-gap:2rem;
@@ -11,6 +12,7 @@
 
 .projectDetailsLeft{
     grid-column: 1/7;
+    grid-row: 1/-1;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -23,9 +25,11 @@
 }
 
 .projectDetailsRight{
-    grid-column: 9/-1;
+    grid-column: 7/-1;
+    grid-row: 2/-1;
     height: 100%;
-    margin-top: 5vh;
+    place-self: flex-end;
+    max-width: 100rem;
 
     .projectDescription{
         margin-bottom: 14vh;

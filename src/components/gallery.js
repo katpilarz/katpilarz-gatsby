@@ -1,15 +1,14 @@
 import React from "react";
-import * as styles from "./galleryArchives.module.scss";
+import * as styles from "./gallery.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const GalleryArchives = ({ images }) => {
+const Gallery = ({ images, galleryClassName }) => {
  
   return (
-    <section className={styles.archiveGallery}>
+    <section className={styles[galleryClassName]}>
         {images.map((image, index) => {
-            console.log({image})
             return (
             <div className={styles.galleryImage} key={index}>
                  <GatsbyImage 
@@ -18,9 +17,8 @@ const GalleryArchives = ({ images }) => {
             </div>
             )
         })}
-
     </section>
   )
 }
 
-export default GalleryArchives 
+export default Gallery

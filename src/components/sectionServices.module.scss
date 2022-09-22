@@ -1,0 +1,98 @@
+@use 'src/styles/layout';
+
+.sectionServices{
+    display: flex;
+    flex-direction: column;
+    margin-top: 14vw;
+    width:auto;
+    height: auto;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;    
+
+    p{
+        margin-bottom: 7vw;
+    }
+
+}
+
+.serviceMarqueeCard{
+    display: flex;
+    width: 180%;
+    overflow: hidden;
+    padding: 4vw 0;
+    border-top:layout.$border;
+    border-bottom:layout.$border;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+
+
+    .serviceImage{
+        position: absolute;
+        top:50%;
+        left:27%; 
+        transform: translate(-50%, -50%);
+        width:16vw;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .6s ease;
+    }
+    
+
+    &:hover{
+
+        .serviceImage{
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+
+    .serviceWrapper{
+        display: flex;
+        place-items: center;
+        place-self: center;
+        width:auto;
+
+        .serviceSingle{
+            display: flex;
+            width:auto;
+            place-self: center;
+            place-items: center;
+            place-content: center;
+
+            h4{ 
+                display: flex;
+                width: auto!important;
+                place-content: center;
+            }
+            
+            span{
+                width: 2vw;
+                height: auto;
+                display: flex;
+                margin: auto 4vw;
+    
+    
+                svg{
+                    width:100%;
+                    height: auto;
+    
+                    path{
+                        width:100%;
+                        height: auto;
+                    }
+    
+                }
+            
+            }
+        }
+
+       
+       
+    }
+
+
+
+}

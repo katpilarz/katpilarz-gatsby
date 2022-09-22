@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import ProjectBanner from "../components/projectBanner";
 import ProjectDetails from "../components/projectDetails";
-import ProjectGallery from "../components/projectGallery";
+import Gallery from "../components/gallery";
 
 
 
@@ -50,6 +50,22 @@ query ProjectTemplateQuery($id: String!){
       }
       _rawDetails
       tools
+      isTestimonial
+      testimonial {
+        _rawChildren
+      }
+      nextProject {
+        bannerImage {
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+          }
+          alt
+        }
+        title
+        slug {
+          current
+        }
+      }
     }
   }
 `
@@ -73,7 +89,7 @@ const ProjectTemplate = props => {
       <Seo title={project.title} description={project.overview}  />
       <ProjectBanner project={project}/>
       <ProjectDetails project={project}/>
-      <ProjectGallery mockups={project.mockups}/>
+      <Gallery images={project.mockups} galleryClassName='projectGallery'/>
       
       </>
       

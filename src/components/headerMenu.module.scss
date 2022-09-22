@@ -66,25 +66,11 @@
             transition: all .4s linear;
             color:inherit;
 
-            span{
+            .menuIconWrapper{
                 visibility: hidden;
-                width: 6.4vw;
-                height: auto;
                 opacity: 0;
-                padding: 0 2%;
                 transition: all .4s linear;
-
-                svg{
-                    width:100%;
-                    height: auto;
-
-                    path{
-                        width:100%;
-                        height: auto;
-                    }
-
-                }
-             
+                width:auto;
             }
 
         }
@@ -105,7 +91,7 @@
                 color: layout.$color;
                 transform: translateX(2%);
 
-                span{
+                .menuIconWrapper{
                     visibility: visible;
                     opacity: 1;
                     rotate: 65deg;

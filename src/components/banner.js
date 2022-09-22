@@ -11,7 +11,7 @@ const Banner = ({ name, banner }) => {
       <div className={styles.bannerContent}>
         <h1>{name}</h1>
         <h3 className={styles.bannerHeader}>{banner.header}</h3>
-        <Btn/>
+        <Btn btnClassName='bannerBtn'/>
       </div>  
       <div className={styles.galleryBanner}>
         {banner.mockups.map((image, index) => {

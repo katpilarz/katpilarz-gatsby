@@ -40,6 +40,8 @@ body {
   font-size: calc( .4rem + .8vw);
   font-weight: 300;
   transition: all 0.2s lin;
+  position: relative;
+  z-index: 1;
   
 
   span{

@@ -25,6 +25,7 @@
     .footerLink{
         display: flex;
         width: auto;
+        margin-right: 2vw;
 
         a{
             width: auto;
@@ -35,26 +36,6 @@
                 color:layout.$color;
                 transform: translateY(-20%);
             }
-        }
-
-        span{
-            width: 1.4vw;
-            height: auto;
-            display: flex;
-            margin: auto 1.4vw;
-
-
-            svg{
-                width:100%;
-                height: auto;
-
-                path{
-                    width:100%;
-                    height: auto;
-                }
-
-            }
-         
         }
 
         &:last-child{

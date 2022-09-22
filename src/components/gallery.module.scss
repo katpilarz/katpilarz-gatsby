@@ -1,8 +1,14 @@
-.archiveGallery{
+
+.projectGallery{
+    display: grid;
+    grid-gap:14vh;
+}
+  
+
+.otherGallery{
     display: flex;
     width:100%;
     height: auto;
-    margin-top: 7vw;
 
     .galleryImage{
         width:100%;
@@ -15,6 +21,3 @@
     }
 
 }
-
-
-

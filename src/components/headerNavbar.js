@@ -4,6 +4,7 @@ import * as styles from "./headerNavbar.module.scss";
 import { Link } from "gatsby"
 
 
+
 const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
   return (
     <header className={styles.header}>
@@ -39,7 +40,6 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
           </button>
         }
       </div>
-      
     </header>
   )
 }

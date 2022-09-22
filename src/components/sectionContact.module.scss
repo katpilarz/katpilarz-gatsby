@@ -5,11 +5,21 @@
     place-items: center;
     place-content: center;
     width:100%;
-    height: 100vh;
-    padding-top: 2vw;
+    height: auto;
+    margin: 20vh 0 0 0;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 
+}
+
+.linksWrapper{
+    grid-column: 1/-1;
+    grid-row: 10/11;
+    width:100%;
+    place-self: center;
+    place-items: center;
+    place-content: center;
+    display: flex;
 }
 
 .contactSectionContent{
@@ -61,37 +71,3 @@
     
 }
 
-
-
-.contactCTA{
-    grid-column: 1/-1;
-    grid-row: 10/12;
-    display: flex;
-    width: 100%;
-    padding: 4vw 0;
-    border-top:layout.$border;
-    border-bottom:layout.$border;
-    place-content: space-between;
-    
-    span{
-        width: 2vw;
-        height: auto;
-        display: flex;
-        margin: auto 1.4vw;
-
-
-        svg{
-            width:100%;
-            height: auto;
-
-            path{
-                width:100%;
-                height: auto;
-            }
-
-        }
-     
-    }
-
-
-}

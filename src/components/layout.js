@@ -5,6 +5,7 @@ import BackgroundImage from "./backgroundImage"
 import Footer from "./footer"
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby"
+import Btn from "../components/btn";
 
 
 
@@ -80,6 +81,7 @@ const menuData = data.sanityGlobal.menu
       </Helmet>
       <HeaderNavbar contact={contact} name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
       <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <Btn btnClassName='headerBtn'/>
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}
       <Footer socialLinks={menuData.socialLinks} footerLinks={menuData.menuLinks}/>

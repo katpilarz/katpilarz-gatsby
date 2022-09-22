@@ -4,14 +4,17 @@
 .pageShared{
     display: flex;
     flex-direction: column;
+    width:100%; 
+    position: relative!important;
+    z-index: 1;
     
 }
 
 .itemCardImage{
-    position: fixed;
-    top:22vw; 
-    left:3%;
-    width:30vw;
+  position: fixed;
+  top:22vw; 
+  left:3%;
+  width:30vw;
 }
 
 .itemsList{
@@ -21,6 +24,7 @@
     grid-template-rows: auto;
     height: auto;
     margin-bottom: 7vw;
+    width:100%;
   }
   
   
@@ -37,7 +41,10 @@
         display: flex;
         justify-content: space-between;
         width:100%;
-        place-items: flex-end;
+
+        h3{
+          width: auto;
+        }
     }
 
     a{

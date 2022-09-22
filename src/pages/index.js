@@ -5,8 +5,9 @@ import Banner from "../components/banner";
 import GallerySwiper from "../components/gallerySwiper";
 import ProjectsFeatured from "../components/projectsFeatured";
 import SectionFocus from "../components/sectionFocus";
+import SectionServices from "../components/sectionServices";
 import SectionContact from "../components/sectionContact";
-import GalleryArchives from "../components/galleryArchives";
+import Gallery from "../components/gallery";
 
 
 
@@ -38,12 +39,6 @@ query HomePageQuery{
             asset {
               gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
             }
-          }
-        }
-        mockups {
-          alt
-          asset {
-            gatsbyImageData(layout: FULL_WIDTH, formats: WEBP, placeholder: BLURRED)
           }
         }
       }
@@ -100,6 +95,24 @@ query HomePageQuery{
         }
       }
     }
+    services: allSanityService(sort: {fields: _id, order: DESC}) {
+      edges {
+        node {
+          title
+          slug {
+            current
+          }
+          id
+          image {
+            asset {
+              url
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+            alt
+          }
+        }
+      }
+    }
   }
 `
 
@@ -113,8 +126,7 @@ const IndexPage = props => {
   const sectionFocus = (data || {}).home.sectionFocus;
   const galleryImages = (data || {}).galleryMockups.edges;
   const archiveImages = (data || {}).home.archiveGallery;
-
-  console.log({galleryImages})
+  const services = (data || {}).services.edges;
 
 
   if (errors) {
@@ -132,8 +144,9 @@ const IndexPage = props => {
     <GallerySwiper images={galleryImages}/>
     <SectionFocus section={sectionFocus}/>
     <ProjectsFeatured featuredProjects={featuredProjects}/>
+    <SectionServices services={services}/>
     <SectionContact/>
-    <GalleryArchives images={archiveImages}/>
+    <Gallery images={archiveImages} galleryClassName='otherGallery'/>
     </main>
     </>
   )

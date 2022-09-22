@@ -1,0 +1,66 @@
+a{
+    display: flex;
+    justify-content: space-between;
+    place-content: center;
+    
+    .arrow{
+        display: flex;
+        height: auto;
+        color: inherit;
+        place-self: flex-end;
+        transition: all .6s ease;
+
+        svg{
+            width:100%;
+            height: auto;
+
+            path{
+                width:100%;
+                height: auto;
+            }
+
+        }
+
+
+    }
+
+    &:hover{
+        .arrow{
+            display: flex;
+            height: auto;
+            color: inherit;
+            place-self: flex-end;
+            visibility: visible;
+            opacity: 1;
+            rotate: -45deg;
+            transition: all .6s ease;
+    
+            svg{
+                width:100%;
+                height: auto;
+    
+                path{
+                    width:100%;
+                    height: auto;
+                }
+    
+            }
+    
+    
+        }
+    }
+    
+}
+
+
+.pageIcon{
+    width:2.2vw;
+}
+
+.linkIcon{
+    width:1vw;
+    place-self: center;
+    place-content: center;
+    margin:auto 4vw auto 1vw;
+}
+
