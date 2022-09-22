@@ -11,77 +11,79 @@
     .pageSharedHeader{
       display: flex;
     }
+
+    .itemsList{
+      height: auto;
+      margin: 7vw 0 7vw auto;
+      width:55vw;
+      max-width: 120rem;
+      min-width: 50rem;
+      place-self: flex-end;
+      position: static;
+  
+      .description{
+        width: 70%;
+        margin-bottom: 1vw;
+      }
+    }
     
 }
 
-.itemCardImage{
-  position: fixed;
-  top:23vw; 
-  left:3%;
-  width:30vw;
-}
 
-.itemsList{
-    margin-top: 7vw;
-    height: auto;
-    margin-bottom: 7vw;
-    width:100%;
-    padding-left: 45vw;
+  
+  
+.itemCard{
+  width:100%;
+  height: auto;
+  display: flex;
+  border-bottom: layout.$border;
+  padding: 2vw 0;
 
-    .description{
-      width: 70%;
-      margin-bottom: 1vw;
-    }
+
+  .itemCardImage{
+    position: fixed!important;
+    top:23vw; 
+    left:3%;
+    width:30vw;
+    visibility: hidden;
+    opacity: 0;
   }
-  
-  
-  .itemCard{
-    width:100%;
-    height: auto;
-    display: flex;
-    border-bottom: layout.$border;
-    padding: 2vw 0;
+
+
+  .itemCardHeader{
+      display: flex;
+      justify-content: space-between;
+      width:100%;
+
+      h3{
+        width: auto;
+        line-height: 1;
+        transition: all .4s linear;
+      }
+  }
+
+
+  &:hover{
+
+    .itemCardImage{
+      visibility: visible;
+      opacity: 1;
+    }
 
     .itemCardHeader{
-        display: flex;
-        justify-content: space-between;
-        width:100%;
+      display: flex;
+      justify-content: space-between;
+      width:100%;
 
-        h3{
-          width: auto;
-        }
-    }
-
-    a{
-        width: 100%;
-    }
-    
-  
-  
-    h3{
-      line-height: 1;
-      transition: all .4s linear;
-    }
-  
-    .itemCardImage{
-      visibility: hidden;
-      opacity: 0;
-    }
-  
-  
-    &:hover{
-
-      .itemCardImage{
-        visibility: visible;
-        opacity: 1;
-      }
-  
       h3{
         color: layout.$color;
         transform: translateX(2vw);
       }
     }
+
+   
   }
+}
 
 
   

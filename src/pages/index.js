@@ -145,16 +145,15 @@ const IndexPage = props => {
     <>
     <Seo title={site.title} description={site.description} keywords={site.keywords}  />
     <main>
-      
-    <Banner name={site.name} banner={home.banner}/>
-    <GallerySwiper images={galleryImages}/>
-    <SectionFocus section={sectionFocus}/>
-    <ProjectsFeatured featuredProjects={featuredProjects}/>
-    <SectionAbout/>
-    <SectionServices services={services}/>
-    <SectionTestimonial/>
-    <Gallery images={archiveImages} galleryClassName='otherGallery'/>
-    <SectionContact/>
+      <Banner name={site.name} banner={home.banner}/>
+      <GallerySwiper images={galleryImages}/>
+      <SectionFocus section={sectionFocus}/>
+      <ProjectsFeatured featuredProjects={featuredProjects}/>
+      <SectionAbout/>
+      <SectionServices services={services}/>
+      <SectionTestimonial/>
+      <Gallery images={archiveImages} galleryClassName='otherGallery'/>
+      <SectionContact/>
     </main>
     </>
   )

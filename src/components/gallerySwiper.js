@@ -44,7 +44,7 @@ const GallerySwiper = ({ images }) => {
             keyboard={{
                 enabled: true,
             }}
-            speed={700}
+            speed={1000}
             effect={"fade"}
             fadeEffect= {{
               crossFade: true, 

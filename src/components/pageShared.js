@@ -37,11 +37,9 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
                             alt={`${item.node.socialMediaImage.alt}`}
                         />
                         }
-                    <Link to={`/${pageName}/${item.node.slug.current}`}>
-                        <div className={styles.itemCardHeader}>
-                            <h3> {item.node.title}</h3>
-                            <ArrowIcon arrowIconClass="pageIcon"/>
-                        </div>
+                    <Link to={`/${pageName}/${item.node.slug.current}`} className={styles.itemCardHeader}>
+                        <h3> {item.node.title}</h3>
+                        <ArrowIcon arrowIconClass="pageIcon"/>
                     </Link>
                 </article>
             
