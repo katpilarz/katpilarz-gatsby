@@ -45,6 +45,39 @@ query HomePageQuery{
           }
         }
       }
+      sectionAbout {
+        _rawDescription
+        header
+        subheader
+        imageOne {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+        imageTwo {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
+      sectionContact {
+        projectFeatures
+        subheader
+        headerOne
+        headerTwo
+        contactLinks {
+          text
+          url
+        }
+        image {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
       archiveGallery {
         alt
         asset {
@@ -128,6 +161,8 @@ const IndexPage = props => {
   const featuredProjects = (data || {}).projects.edges;
   const home = (data || {}).home;
   const sectionFocus = (data || {}).home.sectionFocus;
+  const sectionAbout = (data || {}).home.sectionAbout;
+  const sectionContact = (data || {}).home.sectionContact;
   const galleryImages = (data || {}).galleryMockups.edges;
   const archiveImages = (data || {}).home.archiveGallery;
   const services = (data || {}).services.edges;
@@ -149,11 +184,11 @@ const IndexPage = props => {
       <GallerySwiper images={galleryImages}/>
       <SectionFocus section={sectionFocus}/>
       <ProjectsFeatured featuredProjects={featuredProjects}/>
-      <SectionAbout/>
+      <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
       <SectionTestimonial/>
       <Gallery images={archiveImages} galleryClassName='otherGallery'/>
-      <SectionContact/>
+      <SectionContact section={sectionContact}/>
     </main>
     </>
   )

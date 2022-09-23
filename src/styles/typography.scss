@@ -7,7 +7,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: 28vw;
+    font-size: 27vw;
     text-align: center;
     padding: 5vw 0 0 0;
     line-height: .8;
@@ -23,6 +23,7 @@ h2{
     font-size: calc(.6rem + 7vw);
     line-height: 1;
     padding-top: 0;
+    text-transform: uppercase;
 }
 
 

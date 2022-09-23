@@ -1,0 +1,31 @@
+.scrippedTextWrapper{
+    width:20vw;
+
+    svg{
+        width:100%;
+        height: auto;
+
+        path{
+            width:100%;
+            height: auto;
+        }
+
+    }
+}
+
+
+.scrippedTextContact{
+    grid-column: 6/9;
+    grid-row: 6/10;
+    display: flex;
+    place-self: center;
+    place-content: center;
+    place-items: center;
+}
+
+
+.scrippedTextAbout{
+    grid-column: 7/12;
+    grid-row: auto;
+    margin-top: 1vw;
+}

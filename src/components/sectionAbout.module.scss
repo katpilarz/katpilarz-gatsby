@@ -1,0 +1,46 @@
+.sectionAbout{
+    width:100%;
+    display: grid;
+    grid-template-columns: repeat(14, 1fr);
+    grid-template-rows: repeat(14, 1fr);
+    place-items: center;
+    margin-top: 6vw;
+    height: 130vh;
+
+
+
+    .sectionHeader{
+        grid-column: 1/-1;
+        grid-row: auto;
+        width:60%;
+        text-align: center;
+        margin: auto;
+
+        p{
+            margin-bottom: 2vw;
+        }
+    }
+
+    .aboutImageOne{
+        grid-column: 1/6;
+        grid-row: auto;
+        width:100%;
+        display: flex;
+        place-self: flex-start;
+    }
+
+
+    .aboutImageTwo{
+        grid-column: 10/-1;
+        grid-row: 13/-1;
+        width:100%;
+        display: flex;
+        place-self: flex-start;
+    }
+
+    .aboutDescription{
+        grid-column: 8/13;
+        grid-row: 6/9;
+    }
+}
+
