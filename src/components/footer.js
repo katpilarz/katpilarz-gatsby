@@ -21,11 +21,6 @@ const Footer = ({ socialLinks, footerLinks }) => {
                     </div>
                     )
                 })}
-                <div className={styles.footerLink}>
-                        <a href='https://katgolek.eu' aria-label='' rel="noopener noreferrer" target="_blank">
-                            Email Me
-                        </a>
-                </div>
             </div>
             <div className={styles.footerLinksWrapper}>
                 {footerLinks.map( (link, index) => {

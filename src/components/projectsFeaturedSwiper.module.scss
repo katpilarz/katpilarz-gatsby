@@ -1,0 +1,35 @@
+
+.sectionFeatured{
+    height: auto;
+    position: relative;
+    z-index: 1;
+
+    span{
+        position: absolute;
+        right:3%;
+        top:12%;
+        z-index: 2;
+    }
+}
+
+
+.projectSwiper{
+    //width:80vw!important;
+    //margin-right: 100vw;
+    height: 130vh;
+    width:100%;
+
+}
+
+
+
+.projectSwiperSlide{
+    //width:80vw!important;
+    //margin-right: 100vw;
+    height: auto;
+    width:74vw
+
+    a{
+        width: 100%;
+    }
+}

@@ -51,9 +51,13 @@ const sectionContact = ({section }) => {
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
             <div className={styles.linksWrapper}>
+                    <a className={styles.contactLink} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
+                        {section.brief.text}
+                        <ArrowIcon arrowIconClass="linkIcon"/>
+                    </a>
                     {section.contactLinks.map( (link, index) => {
                         return (
-                        <Link to={link.url} key={index} className="text-uppercase">
+                        <Link className={styles.contactLink} to={link.url} key={index}>
                             {link.text}
                             <ArrowIcon arrowIconClass="linkIcon"/>
                         </Link>

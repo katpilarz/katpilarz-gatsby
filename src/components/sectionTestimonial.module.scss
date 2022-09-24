@@ -1,0 +1,80 @@
+.testimonialWrapper{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+   
+
+    .testimonialText{
+        width:70%;
+        display: flex;
+        place-items: center;
+        text-align: center;
+        margin: auto;
+       
+    }
+
+    .quoteIcon{
+        position: absolute;
+        width:14vw;
+        height: auto;
+        z-index: -1;
+
+        path{
+            width:100%;
+            height: auto;
+        }
+    }
+
+    .quoteIconLeft{
+        top:0%;
+        left:15%;
+    }
+
+    .quoteIconRight{
+        bottom:2%;
+        right:20%;
+    }
+
+
+    
+
+
+
+    .clientsDetails{
+        display: flex;
+        flex-direction: column;
+        place-self: center;
+        place-items: center;
+        place-content: center;
+
+        .testimonialServicesList{
+            display: flex;
+
+            .serviceSingle{
+
+                display: flex;
+                padding-left: 2rem;
+                font-style: italic;
+                
+            }
+        }
+    }
+}
+
+.testimonialImage{
+    width:5vw;
+    height: 5vw;
+    border-radius: 50rem;
+    margin-bottom: 1vw;
+}
+
+.quoteIconLeft{
+    top:0%;
+    left:10%;
+}
+
+.quoteIconRight{
+    bottom:0%;
+    right:10%;
+}

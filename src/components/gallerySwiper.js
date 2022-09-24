@@ -22,8 +22,8 @@ const GallerySwiper = ({ images }) => {
       <div className={styles.gallerySwiper}>
           <Swiper className={styles.swiper}
               style={{
-                "--swiper-navigation-color": "#1E8BA3",
-                "--swiper-pagination-color": "#1E8BA3",
+                "--swiper-pagination-color": "#fff",
+                "--swiper-pagination-color": "#fff",
             }}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
             slidesPerView="auto"
@@ -35,11 +35,6 @@ const GallerySwiper = ({ images }) => {
                 delay: 3000,
                 disableOnInteraction: false
             }}
-            /*pagination={{
-                type: "progressbar",
-                progressbarOpposite: true, 
-                draggable: true
-            }}*/
             mousewheel={true}
             keyboard={{
                 enabled: true,

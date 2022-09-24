@@ -6,6 +6,7 @@
     place-items: center;
     margin-top: 6vw;
     height: 130vh;
+    //max-height: 100rem;
 
 
 
@@ -41,6 +42,9 @@
     .aboutDescription{
         grid-column: 8/13;
         grid-row: 6/9;
+        
+        
+        p{line-height: 1.7;}
     }
 }
 

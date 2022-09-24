@@ -10,7 +10,7 @@ const Gallery = ({ images, galleryClassName }) => {
     <section className={styles[galleryClassName]}>
         {images.map((image, index) => {
             return (
-            <div className={styles.galleryImage} key={index}>
+            <div className={styles.galleryImages} key={index}>
                  <GatsbyImage 
                 image={getImage(image.asset.gatsbyImageData)}
                 alt={`${image.alt}`}/>

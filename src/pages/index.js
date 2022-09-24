@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import Banner from "../components/banner";
 import GallerySwiper from "../components/gallerySwiper";
-import ProjectsFeatured from "../components/projectsFeatured";
+import ProjectsFeaturedSwiper from "../components/projectsFeaturedSwiper";
 import SectionFocus from "../components/sectionFocus";
 import SectionAbout from "../components/sectionAbout";
 import SectionServices from "../components/sectionServices";
@@ -71,6 +71,13 @@ query HomePageQuery{
           text
           url
         }
+        brief {
+          asset {
+            _type
+            url
+          }
+          text
+        }
         image {
           alt
           asset {
@@ -132,6 +139,27 @@ query HomePageQuery{
         }
       }
     }
+    testimonialProject: allSanityProject(filter: {isFeaturedTestimonial: {eq: true}}) {
+      edges {
+        node {
+          id
+          _rawTestimonial
+          title
+          socialMediaImage {
+            alt
+            asset {
+              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+            }
+          }
+          services {
+            title
+          }
+          slug {
+            current
+          }
+        }
+      }
+    }
     services: allSanityService(sort: {fields: _id, order: DESC}) {
       edges {
         node {
@@ -166,9 +194,8 @@ const IndexPage = props => {
   const galleryImages = (data || {}).galleryMockups.edges;
   const archiveImages = (data || {}).home.archiveGallery;
   const services = (data || {}).services.edges;
+  const testimonialProject =  (data || {}).testimonialProject.edges[0];
 
-
-  console.log({galleryImages})
 
   if (errors) {
     return (
@@ -183,10 +210,10 @@ const IndexPage = props => {
       <Banner name={site.name} banner={home.banner}/>
       <GallerySwiper images={galleryImages}/>
       <SectionFocus section={sectionFocus}/>
-      <ProjectsFeatured featuredProjects={featuredProjects}/>
+      <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>
       <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
-      <SectionTestimonial/>
+      <SectionTestimonial testimonial={testimonialProject.node}/>
       <Gallery images={archiveImages} galleryClassName='otherGallery'/>
       <SectionContact section={sectionContact}/>
     </main>
