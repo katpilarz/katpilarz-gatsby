@@ -1,4 +1,10 @@
 @use 'layout';
+
+
+figcaption{
+    font-size: calc( .4rem + .4vw);
+    text-transform: uppercase;
+}
 .testimonial,
 .link,
 .menu-link,

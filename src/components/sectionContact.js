@@ -55,6 +55,13 @@ const sectionContact = ({section }) => {
                         {section.brief.text}
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </a>
+                    <Link className={styles.contactLink} to='#'onClick={(e) => {
+                        window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
+                        e.preventDefault();
+                        }}>
+                        Send me an email
+                        <ArrowIcon arrowIconClass="linkIcon"/>
+                    </Link>
                     {section.contactLinks.map( (link, index) => {
                         return (
                         <Link className={styles.contactLink} to={link.url} key={index}>

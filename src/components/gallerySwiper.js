@@ -23,7 +23,6 @@ const GallerySwiper = ({ images }) => {
           <Swiper className={styles.swiper}
               style={{
                 "--swiper-pagination-color": "#fff",
-                "--swiper-pagination-color": "#fff",
             }}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
             slidesPerView="auto"
@@ -45,12 +44,11 @@ const GallerySwiper = ({ images }) => {
               crossFade: true, 
               parallax: true,
             }}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)} 
+            //onSlideChange={() => console.log('slide change')}
+            //onSwiper={(swiper) => console.log(swiper)} 
 
           > 
             {images.map((item, index) => {
-              console.log({ item })
                 return (
                   
                   <SwiperSlide key={index} className={styles.slideGallery}>

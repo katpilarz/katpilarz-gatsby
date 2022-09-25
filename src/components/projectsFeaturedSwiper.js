@@ -1,6 +1,5 @@
 import React from "react";
 import * as styles from "./projectsFeaturedSwiper.module.scss";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
 import { Link } from "gatsby"

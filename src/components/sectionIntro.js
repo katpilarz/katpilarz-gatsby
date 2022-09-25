@@ -11,7 +11,7 @@ const SectionIntro = ({ subheader }) => {
   return (
     <div className={styles.sectionIntro}>
         <Icon iconClass="sectionIcon"/>
-        <div className={styles.line}></div>
+        <div className={`${styles.line} line-intro`}></div>
         <p className="text-uppercase">{subheader}</p>
     </div>
   )

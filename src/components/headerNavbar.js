@@ -26,9 +26,12 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
         <Link to='/'> {name} </Link>
       </div>
       <div className={styles.buttonsWrapper}>
-        <button type="button">
+        <Link to='#' onClick={(e) => {
+            window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
+            e.preventDefault();
+            }}>
             {contact}
-        </button>
+        </Link>
         {!isOpen &&
           <button type="button" onClick={toggleSidebar}>
               Menu

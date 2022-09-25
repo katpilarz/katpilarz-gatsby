@@ -1,3 +1,5 @@
+@use 'src/styles/layout';
+
 .sectionIntro{
     width:100%;
     height: auto;
@@ -10,7 +12,7 @@
     .line{
         height: 10vw;
         width: .07rem;
-        background-color: black;
+        background-color: layout.$grey-dark;
         display: block;
         margin: 2vw auto;
     }

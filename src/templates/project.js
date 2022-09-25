@@ -4,6 +4,7 @@ import Seo from "../components/seo";
 import ProjectBanner from "../components/projectBanner";
 import ProjectDetails from "../components/projectDetails";
 import Gallery from "../components/gallery";
+import ProjectPrototype from "../components/projectPrototype";
 
 
 
@@ -22,6 +23,21 @@ query ProjectTemplateQuery($id: String!){
       }
       title
       url
+      projectPrototypes {
+        fallback {
+          asset {
+              url
+              extension
+            }
+          }
+          alt
+          webm {
+            asset {
+              url
+              extension
+            }
+        }
+      }
       mockups {
         alt
         asset {
@@ -87,6 +103,9 @@ const ProjectTemplate = props => {
       <Seo title={project.title} description={project.overview}  />
       <ProjectBanner project={project}/>
       <ProjectDetails project={project}/>
+      {project.isInteractive &&
+        <ProjectPrototype prototypes={project.projectPrototypes}/>
+      }
       <Gallery images={project.mockups} galleryClassName='projectGallery'/>
       
       </>
