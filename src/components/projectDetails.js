@@ -7,7 +7,7 @@ import PortableText from "react-portable-text"
 const ProjectDetails = ({ project }) => {
 
   return (
-    <section className={`container ${styles.projectDetails}`}>
+    <section className={styles.projectDetails}>
 
         <div className={styles.projectDetailsLeft}>
             <div className={styles.projectDetailsHeader}>

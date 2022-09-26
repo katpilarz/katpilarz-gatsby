@@ -11,7 +11,7 @@ const Footer = ({ socialLinks, footerLinks }) => {
   return (
         <footer className={styles.footer}>
             
-            <div className={styles.footerLinksWrapper}>
+            {/*<div className={styles.footerLinksWrapper}>
                 {socialLinks.map( (link, index) => {
                     return (
                     <div className={styles.footerLink} key={index}>
@@ -32,7 +32,7 @@ const Footer = ({ socialLinks, footerLinks }) => {
                     </div>
                     )
                 })}
-            </div>
+            </div>*/}
             <div className={styles.footerLinksWrapper}>
                 <p>&copy;Copyright {new Date().getFullYear()}. All rights reserved. Designed & developed with love &hearts;</p>
             </div>

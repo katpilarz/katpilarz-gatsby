@@ -1,10 +1,12 @@
-import React from "react";
+import * as React from "react"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import ProjectBanner from "../components/projectBanner";
 import ProjectDetails from "../components/projectDetails";
 import Gallery from "../components/gallery";
 import ProjectPrototype from "../components/projectPrototype";
+import ProjectTestimonial from "../components/projectTestimonial";
+import ProjectNext from "../components/projectNext";
 
 
 
@@ -91,6 +93,8 @@ const ProjectTemplate = props => {
 
 
 
+
+
   if (errors) {
     return (
       <h2>Something went wrong</h2>
@@ -107,7 +111,14 @@ const ProjectTemplate = props => {
         <ProjectPrototype prototypes={project.projectPrototypes}/>
       }
       <Gallery images={project.mockups} galleryClassName='projectGallery'/>
-      
+      {project.isTestimonial &&
+        <ProjectTestimonial testimonial={project._rawTestimonial}/>
+      }
+      {project.nextProject.map((nextProject, index) => {
+          return(
+            <ProjectNext nextProject={nextProject} key={index}/>
+          )
+      })}
       </>
       
   );

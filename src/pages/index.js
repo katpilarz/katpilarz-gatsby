@@ -184,6 +184,7 @@ query HomePageQuery{
 
 // markup
 const IndexPage = props => {
+
   const { data, errors } = props;
   const site = (data || {}).site;
   const featuredProjects = (data || {}).projects.edges;
@@ -213,7 +214,7 @@ const IndexPage = props => {
       <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>
       <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
-      <SectionTestimonial testimonial={testimonialProject.node}/>
+      <SectionTestimonial testimonial={testimonialProject.node} pageName='home'/>
       <Gallery images={archiveImages} galleryClassName='otherGallery'/>
       <SectionContact section={sectionContact}/>
     </main>
