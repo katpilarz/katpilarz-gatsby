@@ -28,16 +28,16 @@ query ProjectTemplateQuery($id: String!){
       projectPrototypes {
         fallback {
           asset {
-              url
-              extension
-            }
+            url
+            extension
           }
-          alt
-          webm {
-            asset {
-              url
-              extension
-            }
+        }
+        alt
+        webm {
+          asset {
+            url
+            extension
+          }
         }
       }
       mockups {
@@ -112,7 +112,7 @@ const ProjectTemplate = props => {
       }
       <Gallery images={project.mockups} galleryClassName='projectGallery'/>
       {project.isTestimonial &&
-        <ProjectTestimonial testimonial={project._rawTestimonial}/>
+        <ProjectTestimonial testimonial={project._rawTestimonial} name={project.title}/>
       }
       {project.nextProject.map((nextProject, index) => {
           return(

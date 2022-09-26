@@ -9,7 +9,7 @@ import SectionAbout from "../components/sectionAbout";
 import SectionServices from "../components/sectionServices";
 import SectionTestimonial from "../components/sectionTestimonial";
 import SectionContact from "../components/sectionContact";
-import Gallery from "../components/gallery";
+//import Gallery from "../components/gallery";
 
 
 
@@ -85,12 +85,7 @@ query HomePageQuery{
           }
         }
       }
-      archiveGallery {
-        alt
-        asset {
-          gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
-        }
-      }
+
     }
     galleryMockups:allSanityProject(
       filter: {isGalleryMockup: {eq: true}}
@@ -193,7 +188,6 @@ const IndexPage = props => {
   const sectionAbout = (data || {}).home.sectionAbout;
   const sectionContact = (data || {}).home.sectionContact;
   const galleryImages = (data || {}).galleryMockups.edges;
-  const archiveImages = (data || {}).home.archiveGallery;
   const services = (data || {}).services.edges;
   const testimonialProject =  (data || {}).testimonialProject.edges[0];
 
@@ -215,7 +209,7 @@ const IndexPage = props => {
       <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node} pageName='home'/>
-      <Gallery images={archiveImages} galleryClassName='otherGallery'/>
+      {/*<Gallery images={archiveImages} galleryClassName='otherGallery'/>*/}
       <SectionContact section={sectionContact}/>
     </main>
     </>

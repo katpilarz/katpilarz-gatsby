@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./footer.module.scss";
-import { Link } from "gatsby"
+//import { Link } from "gatsby"
 
 
 
@@ -34,7 +34,7 @@ const Footer = ({ socialLinks, footerLinks }) => {
                 })}
             </div>*/}
             <div className={styles.footerLinksWrapper}>
-                <p>&copy;Copyright {new Date().getFullYear()}. All rights reserved. Designed & developed with love &hearts;</p>
+                <p className="text-uppercase">&copy;Copyright {new Date().getFullYear()}. All rights reserved. Designed & developed with love &hearts;</p>
             </div>
             
         </footer>

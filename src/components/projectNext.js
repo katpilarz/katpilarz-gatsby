@@ -1,7 +1,6 @@
 import React from "react";
 import * as styles from "./projectNext.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { Link } from "gatsby"
 import { navigate } from 'gatsby';
 
 
@@ -13,7 +12,6 @@ const ProjectNext = ({ nextProject }) => {
     <button className={styles.nextProjectSection} onClick={(e) => {
         e.preventDefault();
         navigate(`/projects/${nextProject.slug.current}`);
-        // OR
       }}>
         <div className={styles.nextProjectHeader}>
                 <p className="text-uppercase">Continue to Next</p>

@@ -43,9 +43,25 @@
         .quoteIcon{
             position: absolute;
             z-index: -1;
+           
+        }
+
+        .quoteIconProject{
             top:30%;
             left:50%;
             transform: translate(-50%, -50%);
+           
+        }
+
+        .quoteIconLeft{
+            top:-3%;
+            left:4%;
+           
+        }
+
+        .quoteIconRight{
+            bottom:-35%;
+            right:13%;
            
         }
 
