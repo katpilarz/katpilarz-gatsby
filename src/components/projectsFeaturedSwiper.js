@@ -20,7 +20,7 @@ const ProjectsFeaturedSwiper = ({ featuredProjects }) => {
   return (
 
       <div className={styles.sectionFeatured}>
-          <span>FEATURED WORK</span>
+          <span className="text-uppercase">Latest Projects</span>
           <Swiper className={styles.projectSwiper} watchSlidesProgress={true}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
             slidesPerView={1}

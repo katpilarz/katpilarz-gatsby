@@ -49,10 +49,22 @@ const SectionServices = ({ services }) => {
                                 </svg>
                             </span>
                         </div>
-                        <GatsbyImage className={styles.serviceImage}
-                            image={getImage(service.node.image.asset.gatsbyImageData)}
-                            alt={`${service.node.image.alt}`}
-                        />
+                        { service.node.video && 
+                            <figure  className={styles.serviceMedia}>
+                                <video className={styles.video}
+                                    title=''
+                                    loop muted autoPlay playsInline>
+                                    <source src={service.node.video.webm.asset.url} type={`video/${service.node.video.webm.asset.extension}`} />
+                                    <source src={service.node.video.fallback.asset.url} type={`video/${service.node.video.fallback.asset.extension}`} />
+                                </video>
+                            </figure>
+                        }
+                        { service.node.image &&
+                            <GatsbyImage className={styles.serviceMedia}
+                                image={getImage(service.node.image.asset.gatsbyImageData)}
+                                alt={`${service.node.image.alt}`}
+                            />
+                        }
                         
                     </Link>
                 </article>

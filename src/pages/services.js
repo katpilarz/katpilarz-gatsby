@@ -21,6 +21,22 @@ export const query = graphql`
             }
             alt
           }
+          video {
+            fallback {
+              asset {
+                url
+                extension
+                altText
+              }
+            }
+            webm {
+              asset {
+                altText
+                url
+                extension
+              }
+            }
+          }
         }
       }
     }
@@ -54,6 +70,8 @@ const Services = props => {
 
   const services = (data || {}).services.edges;
   const servicePage = (data || {}).servicePage.edges[0];
+
+  console.log({ services })
 
  
 

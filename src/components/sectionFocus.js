@@ -17,11 +17,24 @@ const SectionFocus = ({ section }) => {
                     return (
                     <div className={styles.focusArea} key={index}>
                         <h4>{area.text}</h4>
-                        <div className={styles.focusAreaImage} key={index}>
-                            <GatsbyImage 
-                                image={getImage(area.image.asset.gatsbyImageData)}
-                                alt={`${area.image.alt}`}
-                            />
+                        <div className={styles.focusAreaMedia} key={index}>
+                            {area.image &&
+                                <GatsbyImage 
+                                    image={getImage(area.image.asset.gatsbyImageData)}
+                                    alt={`${area.image.alt}`}
+                                />
+                            }
+
+                            {area.video &&
+                                 <figure  className={styles.focusAreaMedia} key={index}>
+                                    <video className={styles.video}
+                                        title=''
+                                        loop muted autoPlay playsInline>
+                                        <source src={area.video.webm.asset.url} type={`video/${area.video.webm.asset.extension}`} />
+                                        <source src={area.video.fallback.asset.url} type={`video/${area.video.fallback.asset.extension}`} />
+                                    </video>
+                                </figure>
+                            }
                         </div>
                     </div>
                     )

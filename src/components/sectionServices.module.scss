@@ -16,6 +16,23 @@
 
 }
 
+
+.video{
+    width:100%;
+    height: auto;
+    display: flex;
+    outline: unset!important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+    margin: auto;
+
+}
+
 .serviceMarqueeCard{
     display: flex;
     width: 180%;
@@ -28,7 +45,7 @@
     z-index: 1;
 
 
-    .serviceImage{
+    .serviceMedia{
         position: absolute;
         top:50%;
         left:27%; 
@@ -42,7 +59,7 @@
 
     &:hover{
 
-        .serviceImage{
+        .serviceMedia{
             opacity: 1;
             visibility: visible;
         }

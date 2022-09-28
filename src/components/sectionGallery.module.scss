@@ -1,0 +1,83 @@
+
+.video{
+    width:100%;
+    height: auto;
+    display: flex;
+    outline: unset!important;
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-appearance: none;
+    border: none;
+    outline: none !important;
+    box-shadow: none;
+    margin: auto;
+
+}
+
+img{
+    width:100%;
+    height: auto;
+}
+
+
+.sectionGallery{
+    display: flex;
+    width:100%;
+    height: auto;
+    flex-wrap: wrap;
+    place-content: space-between;
+    margin: 14vw auto 0 auto;
+
+    .sectionGalleryWrapper{
+    display: flex;
+    margin-bottom: 14vw;
+    width:100%;
+    justify-content: space-between;
+    height: auto;
+
+        .projectMockup{
+            display: flex;
+            flex-basis: 52vw;
+            width:100%;
+            height: auto;
+
+            img{
+                width:100%;
+                height: auto;
+            }
+        }
+
+
+        .projectPrototype{
+            flex-basis: 34vw;
+            width: 100%;
+            height: auto;
+            place-self: flex-end;
+            margin: auto 0 0 0;
+          
+        }
+
+
+
+        .projectMockupFull{
+            flex-basis: 67%;
+            width: 100%;
+            place-self:  center;
+            place-content: center;
+            place-items: center;
+            margin: auto;
+            height: auto;
+
+            
+        }
+
+    }
+
+
+}
+   
+
+
+
+

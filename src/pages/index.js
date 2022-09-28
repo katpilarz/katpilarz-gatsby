@@ -9,7 +9,7 @@ import SectionAbout from "../components/sectionAbout";
 import SectionServices from "../components/sectionServices";
 import SectionTestimonial from "../components/sectionTestimonial";
 import SectionContact from "../components/sectionContact";
-//import Gallery from "../components/gallery";
+import SectionGallery from "../components/sectionGallery";
 
 
 
@@ -43,6 +43,22 @@ query HomePageQuery{
               gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
             }
           }
+          video {
+            fallback {
+              asset {
+                url
+                extension
+                altText
+              }
+            }
+            webm {
+              asset {
+                altText
+                url
+                extension
+              }
+            }
+          }
         }
       }
       sectionAbout {
@@ -59,6 +75,58 @@ query HomePageQuery{
           alt
           asset {
             gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
+      sectionGallery {
+        projectMockupOne {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+          }
+        }
+        projectMockupThree {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+          }
+        }
+        projectMockupTwo {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+          }
+        }
+        projectPrototypeOne {
+          fallback {
+            asset {
+              url
+              extension
+              altText
+            }
+          }
+          webm {
+            asset {
+              altText
+              url
+              extension
+            }
+          }
+        }
+        projectPrototypeTwo {
+          fallback {
+            asset {
+              url
+              extension
+              altText
+            }
+          }
+          webm {
+            asset {
+              altText
+              extension
+              url
+            }
           }
         }
       }
@@ -170,6 +238,22 @@ query HomePageQuery{
             }
             alt
           }
+          video {
+            fallback {
+              asset {
+                url
+                extension
+                altText
+              }
+            }
+            webm {
+              asset {
+                altText
+                url
+                extension
+              }
+            }
+          }
         }
       }
     }
@@ -186,6 +270,7 @@ const IndexPage = props => {
   const home = (data || {}).home;
   const sectionFocus = (data || {}).home.sectionFocus;
   const sectionAbout = (data || {}).home.sectionAbout;
+  const sectionGallery = (data || {}).home.sectionGallery;
   const sectionContact = (data || {}).home.sectionContact;
   const galleryImages = (data || {}).galleryMockups.edges;
   const services = (data || {}).services.edges;
@@ -209,7 +294,7 @@ const IndexPage = props => {
       <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node} pageName='home'/>
-      {/*<Gallery images={archiveImages} galleryClassName='otherGallery'/>*/}
+      <SectionGallery section={sectionGallery}/>
       <SectionContact section={sectionContact}/>
     </main>
     </>

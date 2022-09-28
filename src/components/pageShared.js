@@ -25,14 +25,24 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
             {itemList.map((item, index) => {
                 return (
                 <article key={index} className={styles.itemCard}>
+                        { item.node.video && 
+                        <figure  className={styles.itemCardMedia} key={index}>
+                            <video className={styles.video}
+                                title=''
+                                loop muted autoPlay playsInline>
+                                <source src={item.node.video.webm.asset.url} type={`video/${item.node.video.webm.asset.extension}`} />
+                                <source src={item.node.video.fallback.asset.url} type={`video/${item.node.video.fallback.asset.extension}`} />
+                            </video>
+                        </figure>
+                        }
                         { item.node.image && 
-                        <GatsbyImage className={styles.itemCardImage}
+                        <GatsbyImage className={styles.itemCardMedia}
                             image={getImage(item.node.image.asset.gatsbyImageData)}
                             alt={`${item.node.image.alt}`}
                         />
                         }
                         { item.node.socialMediaImage && 
-                        <GatsbyImage className={styles.itemCardImage}
+                        <GatsbyImage className={styles.itemCardMedia}
                             image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
                             alt={`${item.node.socialMediaImage.alt}`}
                         />
