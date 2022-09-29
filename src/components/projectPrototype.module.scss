@@ -5,39 +5,11 @@
     place-items: center;
     place-content: center;
     place-self: center;
-
-    
+   
 }
 
 
 
-.prototypeWrapper{
-    width:70vw;
-    height: auto;
-    object-fit: cover;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10vw;
 
-    .video{
-        width:100%;
-        height: auto;
-        display: flex;
-        outline: unset!important;
-        -webkit-mask-image: -webkit-radial-gradient(white, black);
-        -webkit-backface-visibility: hidden;
-        -moz-backface-visibility: hidden;
-        -webkit-appearance: none;
-        border: none;
-        outline: none !important;
-        box-shadow: none;
-        margin-bottom: 1.6vw;
-    
-    }
-
-
-
-    
-}
 
 

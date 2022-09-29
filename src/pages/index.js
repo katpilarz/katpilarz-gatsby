@@ -44,6 +44,7 @@ query HomePageQuery{
             }
           }
           video {
+            alt
             fallback {
               asset {
                 url
@@ -98,6 +99,7 @@ query HomePageQuery{
           }
         }
         projectPrototypeOne {
+          alt
           fallback {
             asset {
               url
@@ -114,6 +116,7 @@ query HomePageQuery{
           }
         }
         projectPrototypeTwo {
+          alt
           fallback {
             asset {
               url

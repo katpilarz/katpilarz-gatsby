@@ -1,6 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionGallery.module.scss";
+import Video from "../components/video";
+
 
 
 
@@ -13,15 +15,7 @@ const SectionGallery = ({ section }) => {
                 <GatsbyImage className={styles.projectMockup}
                     image={getImage(section.projectMockupOne.asset.gatsbyImageData)}
                     alt={`${section.projectMockupOne.alt}`}/>
-                <figure className={styles.projectPrototype}>
-                        <video className={styles.video}
-                            title=''
-                            loop muted autoPlay playsInline>
-                            {/*<source src={prototype.webm.asset.url} type={`video/${prototype.webm.asset.extension}`} />*/}
-                            <source src={section.projectPrototypeTwo.fallback.asset.url} type={`video/${section.projectPrototypeTwo.fallback.asset.extension}`} />
-                        </video>
-                        <figcaption>{section.projectPrototypeTwo.alt}</figcaption>
-                </figure> 
+                <Video video={section.projectPrototypeTwo} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>    
             </div>
             <div className={styles.sectionGalleryWrapper}>
                 <GatsbyImage className={styles.projectMockupFull}
@@ -29,11 +23,6 @@ const SectionGallery = ({ section }) => {
                     alt={`${section.projectMockupThree.alt}`}/>
 
             </div>
-
-            
-
-        
-            
         </section>
   )
 }

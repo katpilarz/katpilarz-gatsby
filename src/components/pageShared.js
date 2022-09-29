@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import ArrowIcon from "../components/arrow";
 import PortableText from "react-portable-text"
+import Video from "../components/video";
 
 
 
@@ -26,14 +27,7 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
                 return (
                 <article key={index} className={styles.itemCard}>
                         { item.node.video && 
-                        <figure  className={styles.itemCardMedia} key={index}>
-                            <video className={styles.video}
-                                title=''
-                                loop muted autoPlay playsInline>
-                                <source src={item.node.video.webm.asset.url} type={`video/${item.node.video.webm.asset.extension}`} />
-                                <source src={item.node.video.fallback.asset.url} type={`video/${item.node.video.fallback.asset.extension}`} />
-                            </video>
-                        </figure>
+                            <Video key={index} video={item.node.video} videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
                         }
                         { item.node.image && 
                         <GatsbyImage className={styles.itemCardMedia}

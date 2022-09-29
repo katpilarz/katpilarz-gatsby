@@ -1,19 +1,4 @@
 
-.video{
-    width:100%;
-    height: auto;
-    display: flex;
-    outline: unset!important;
-    -webkit-mask-image: -webkit-radial-gradient(white, black);
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    -webkit-appearance: none;
-    border: none;
-    outline: none !important;
-    box-shadow: none;
-    margin: auto;
-
-}
 
 img{
     width:100%;
@@ -46,16 +31,6 @@ img{
                 width:100%;
                 height: auto;
             }
-        }
-
-
-        .projectPrototype{
-            flex-basis: 34vw;
-            width: 100%;
-            height: auto;
-            place-self: flex-end;
-            margin: auto 0 0 0;
-          
         }
 
 

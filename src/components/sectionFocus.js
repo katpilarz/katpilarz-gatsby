@@ -2,6 +2,7 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionFocus.module.scss";
 import SectionIntro from "../components/sectionIntro";
+import Video from "../components/video";
 
 
 
@@ -26,14 +27,7 @@ const SectionFocus = ({ section }) => {
                             }
 
                             {area.video &&
-                                 <figure  className={styles.focusAreaMedia} key={index}>
-                                    <video className={styles.video}
-                                        title=''
-                                        loop muted autoPlay playsInline>
-                                        <source src={area.video.webm.asset.url} type={`video/${area.video.webm.asset.extension}`} />
-                                        <source src={area.video.fallback.asset.url} type={`video/${area.video.fallback.asset.extension}`} />
-                                    </video>
-                                </figure>
+                                <Video video={area.video} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
                             }
                         </div>
                     </div>

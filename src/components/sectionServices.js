@@ -2,6 +2,7 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionServices.module.scss";
 import { Link } from "gatsby"
+import Video from "../components/video";
 
 
 
@@ -50,14 +51,7 @@ const SectionServices = ({ services }) => {
                             </span>
                         </div>
                         { service.node.video && 
-                            <figure  className={styles.serviceMedia}>
-                                <video className={styles.video}
-                                    title=''
-                                    loop muted autoPlay playsInline>
-                                    <source src={service.node.video.webm.asset.url} type={`video/${service.node.video.webm.asset.extension}`} />
-                                    <source src={service.node.video.fallback.asset.url} type={`video/${service.node.video.fallback.asset.extension}`} />
-                                </video>
-                            </figure>
+                            <Video key={index} video={service.node.video} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }
                         { service.node.image &&
                             <GatsbyImage className={styles.serviceMedia}
