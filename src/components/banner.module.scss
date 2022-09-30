@@ -1,5 +1,18 @@
 .banner{
     height: auto;
+
+}
+
+
+h1{
+    height: 100vh;
+    display: flex;
+    place-self: center;
+    place-items: center;
+    place-content: center;
+    position: relative;
+    z-index: 1;
+
 }
 
 .bannerContent{
@@ -11,14 +24,45 @@
 
 .galleryBanner{
     display: block;
-    visibility: hidden;
+    visibility: visible;
 
     .gallerySmallImage{
         position: absolute;
         z-index: -1;
         height: auto;
+
+
+
+        &:nth-child(1){
+            bottom:0;
+            left:0;
+            width:19vw;
+        }
+        
+        &:nth-child(2){
+            top:0;
+            right:0;
+            width:19vw;
+        }
+        
+        &:nth-child(3){
+            top:60%;
+            right:27%;
+            width:14vw;
+        }
+        
+        &:nth-child(4){
+            bottom:60%;
+            left:27%;
+            width:14vw;
+        }
+        
     
     }
+
+
+ 
+
     
 }
 
@@ -29,4 +73,11 @@
     width:82%;
     margin: auto;
 
+}
+
+
+.bannerBtn{
+    display: flex;
+    width:10vw;
+    place-self: center;
 }

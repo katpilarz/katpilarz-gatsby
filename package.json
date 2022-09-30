@@ -14,7 +14,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^4.16.0",
+    "gatsby": "^4.24.0",
     "gatsby-plugin-dark-mode": "^1.1.2",
     "gatsby-plugin-image": "^2.16.1",
     "gatsby-plugin-react-helmet": "^5.16.0",
@@ -25,6 +25,7 @@
     "gatsby-source-filesystem": "^4.16.0",
     "gatsby-source-sanity": "^7.4.2",
     "gatsby-transformer-sharp": "^4.16.0",
+    "gsap": "^3.11.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

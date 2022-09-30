@@ -6,6 +6,8 @@ import { Link } from "gatsby"
 
 
 const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
+
+
   return (
     <header className={styles.header}>
       <ThemeToggler>

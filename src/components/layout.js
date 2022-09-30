@@ -8,7 +8,6 @@ import { useStaticQuery, graphql } from "gatsby"
 import Btn from "../components/btn";
 
 
-
 import "../styles/_layout.scss"
 import "../styles/typography.scss"
 
@@ -60,6 +59,9 @@ export default function Layout({ children }) {
   }
 `)
 
+
+
+
 const [isOpen, setIsOpen] = useState(false)
 
 const toggleSidebar = () => {
@@ -70,6 +72,8 @@ const backgroundImageData = data.sanityGlobal.image
 const name = data.sanitySeo.author
 const contact = data.sanitySeo.contact
 const menuData = data.sanityGlobal.menu
+
+
 
   return (
     <>
