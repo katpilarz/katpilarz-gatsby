@@ -32,6 +32,7 @@ module.exports = {
       },
     },
   },
+  `gatsby-plugin-transition-link`,
   "gatsby-plugin-dark-mode",
   "gatsby-plugin-sass",
   "gatsby-plugin-image",

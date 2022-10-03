@@ -5,7 +5,9 @@ import BackgroundImage from "./backgroundImage"
 import Footer from "./footer"
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby"
-import Btn from "../components/btn";
+
+//import { useEffect, useRef } from 'react';
+//import gsap from 'gsap/dist/gsap';
 
 
 import "../styles/_layout.scss"
@@ -13,7 +15,7 @@ import "../styles/typography.scss"
 
 
 
-export default function Layout({ children }) {
+export default function Layout({ transitionStatus,children }) {
   const data = useStaticQuery(graphql`
   {
     sanityGlobal {
@@ -73,7 +75,39 @@ const name = data.sanitySeo.author
 const contact = data.sanitySeo.contact
 const menuData = data.sanityGlobal.menu
 
+/*const pageRef=useRef()
 
+  useEffect(() => {
+    
+    gsap.to(pageRef.current, {
+      autoAlpha: 1,
+      duration: 1,
+      ease: "circe.inOut"
+    });
+  }, []); //THIS IS RUN THE FIRST TIME THE SITE IS OPENED
+  useEffect(() => {
+    if (transitionStatus === 'entering') {
+      gsap.to(pageRef.current, {
+        duration:2, 
+        ease: "power4.out",
+        css: {
+          autoAlpha: 1, 
+          opacity:1,
+          yPercent:'100',
+        }})
+    }
+    if (transitionStatus === 'exiting') {
+      gsap.to(pageRef.current, { 
+        duration:2, 
+        ease: "power4.out",
+        css: {
+          autoAlpha: 0, 
+          opacity:0,
+          yPercent:'-100',
+        }})
+        //if we are exiting  the page, let's make the div with class .hometex transparent in one second
+    }
+  }, [transitionStatus]);*/
 
   return (
     <>
@@ -85,7 +119,7 @@ const menuData = data.sanityGlobal.menu
       </Helmet>
       <HeaderNavbar contact={contact} name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
       <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} />
-      <Btn btnClassName='headerBtn'/>
+      
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}
       <Footer socialLinks={menuData.socialLinks} footerLinks={menuData.menuLinks}/>

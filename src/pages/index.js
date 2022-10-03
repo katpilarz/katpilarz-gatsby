@@ -10,6 +10,8 @@ import SectionServices from "../components/sectionServices";
 import SectionTestimonial from "../components/sectionTestimonial";
 import SectionContact from "../components/sectionContact";
 import SectionGallery from "../components/sectionGallery";
+import PagePreloader from "../components/pagePreloader";
+
 
 
 
@@ -287,9 +289,10 @@ const IndexPage = props => {
   }
 
   return (
-    <>
-    <Seo title={site.title} description={site.description} keywords={site.keywords}  />
     <main>
+      <Seo title={site.title} description={site.description} keywords={site.keywords}  />
+      <PagePreloader/>
+      
       <Banner name={site.name} banner={home.banner}/>
       <GallerySwiper images={galleryImages}/>
       <SectionFocus section={sectionFocus}/>
@@ -300,7 +303,6 @@ const IndexPage = props => {
       <SectionGallery section={sectionGallery}/>
       <SectionContact section={sectionContact}/>
     </main>
-    </>
   )
 }
 

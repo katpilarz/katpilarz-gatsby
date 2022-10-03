@@ -33,13 +33,47 @@ $border: solid .07rem rgba($color, .2);
 
 
 
+
+main{
+  min-height: 100vh;
+  height: auto;
+  width:100%;
+  overflow-y: hidden;
+  overflow-x: visible;
+
+
+
+}
+
+
+article{
+
+
+  .fixed-media{
+    position: fixed!important;
+    top:23%;
+    z-index: 99;
+  }
+
+}
+
+
+
 body {
   font: 100% $font-body;
   color: $grey-dark;
-  padding: 1vw 3vw 0 3vw;
+  //padding: 1vw 3vw 0 3vw;
   font-size: calc( .4rem + .7vw);
   font-weight: 300;
   transition: all 0.2s linear;
+  position: relative!important;
+  z-index: 1;
+  width:100vw;
+  overflow-x: hidden;
+
+  .overlay{
+    background-color: $white-dark;
+  }
 
 
 
@@ -80,6 +114,12 @@ body.dark {
   background-color: $black;
   color:$white-dark;
 
+
+
+  .overlay{
+    background-color: $grey-dark;
+  }
+
   .line-intro{
     background-color: $white-dark;
   }
@@ -113,7 +153,8 @@ body.dark {
 
 .container{
   width:100%;
-  padding: 2% 1%;
+  padding: 0 3vw 0 3vw;
+  //margin: auto;
 }
 
 button{
@@ -133,30 +174,6 @@ button{
 // BELOW SHOULD BE MOVED TO MODULES
 // HOW TO DO THIS
 
-
-.image01{
-  bottom:0;
-  left:0;
-  width:19vw;
-}
-
-.image02{
-  top:0;
-  right:0;
-  width:19vw;
-}
-
-.image03{
-  top:60%;
-  right:27%;
-  width:14vw;
-}
-
-.image04{
-  bottom:60%;
-  left:27%;
-  width:14vw;
-}
 
 
 .section{

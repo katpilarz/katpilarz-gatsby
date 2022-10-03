@@ -5,6 +5,8 @@ import SectionIntro from "../components/sectionIntro";
 import PortableText from "react-portable-text"
 import { Link } from "gatsby"
 
+import SplitText from "@cyriacbr/react-split-text"
+
 
 
 
@@ -18,11 +20,13 @@ const SectionTestimonial = ({ testimonial }) => {
                     <svg className={`${styles.quoteIcon} ${styles.quoteIconLeft}`} width="179" height="175" viewBox="0 0 179 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.07" d="M167.067 175C144.194 141.193 133.256 99.4318 139.222 99.4318C161.1 99.4318 179 77.5568 179 49.7159C179 21.875 161.1 0 139.222 0C116.35 0 99.4445 20.8807 99.4445 52.6989C99.4445 87.5 114.361 136.222 167.067 175ZM0 52.6989C0 87.5 14.9167 136.222 67.6222 175C44.75 141.193 33.8111 99.4318 39.7778 99.4318C61.6556 99.4318 79.5556 77.5568 79.5556 49.7159C79.5556 21.875 61.6556 0 39.7778 0C16.9056 0 0 20.8807 0 52.6989Z" fill="#3E7DA6"/>
                     </svg>
-                    <PortableText className={`${styles.testimonialTextPortable} testimonial`}
-                        content={testimonial._rawTestimonial}
-                        projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                        dataset={process.env.GATSBY_SANITY_DATASET}
-                    />
+                         <PortableText className={`${styles.testimonialTextPortable} testimonial`}
+                            content={testimonial._rawTestimonial}
+                            projectId={process.env.GATSBY_SANITY_PROJECT_ID}
+                            dataset={process.env.GATSBY_SANITY_DATASET}
+                        />
+
+                    
                     <svg className={`${styles.quoteIcon} ${styles.quoteIconRight}`} width="179" height="175" viewBox="0 0 179 175" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path opacity="0.07" d="M11.9333 175C34.8056 141.193 45.7444 99.4318 39.7778 99.4318C17.9 99.4318 0 77.5568 0 49.7159C0 21.875 17.9 0 39.7778 0C62.65 0 79.5555 20.8807 79.5555 52.6989C79.5555 87.5 64.6389 136.222 11.9333 175ZM179 52.6989C179 87.5 164.083 136.222 111.378 175C134.25 141.193 145.189 99.4318 139.222 99.4318C117.344 99.4318 99.4444 77.5568 99.4444 49.7159C99.4444 21.875 117.344 0 139.222 0C162.094 0 179 20.8807 179 52.6989Z" fill="#3E7DA6"/>
                     </svg>

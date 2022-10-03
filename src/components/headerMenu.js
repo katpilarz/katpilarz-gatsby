@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "gatsby"
 import * as styles from "./headerMenu.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Icon from "../components/icon";
+import { Link } from "gatsby"
+//import TransitionLink from 'gatsby-plugin-transition-link';
 
 
 
@@ -16,6 +17,17 @@ const HeaderMenu = ({ isOpen,toggleSidebar, menuData }) => {
             {menuData.menuLinks.map((link, index)  => {
                 return (
                 <div className={`${styles.menuSingleLink} menu-link`} key={index}>
+                    {/*<TransitionLink to={link.url} onClick={toggleSidebar}
+                         entry={{
+                            delay:2,
+                            length: 1,
+                            
+                        }}>
+                        <Icon iconClass="menuLinkIcon" />
+                        
+                        {link.text}
+                        <Icon iconClass="menuLinkIcon"/>
+                    </TransitionLink>*/}
                     <Link to={link.url} onClick={toggleSidebar}>
                         <Icon iconClass="menuLinkIcon" />
                         

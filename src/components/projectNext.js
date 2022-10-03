@@ -7,7 +7,6 @@ import { navigate } from 'gatsby';
 
 const ProjectNext = ({ nextProject }) => {
 
-   console.log({ nextProject }) 
   return (
     <button className={styles.nextProjectSection} onClick={(e) => {
         e.preventDefault();

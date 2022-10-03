@@ -1,10 +1,100 @@
 import React from "react";
 import * as styles from "./btn.module.scss";
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+gsap.registerPlugin(ScrollTrigger);
 
 
 const Btn = ({btnClassName}) => {
+
+
+  const btnRef = useRef(null);
+
+  /*useEffect(() => {
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: btnRef.current,
+        start: "top 80%",
+        end: "top -50%",
+        scrub:3, 
+        repeatRefresh: true,
+        toggleActions: "restart pause resume none",
+      }
+    });
+    tl.from(btnRef.current, {
+          duration: 2,
+          ease: "circe.inOut",
+          css: {
+            opacity:0,
+            autoAlpha:0,
+
+      }})
+      tl.to(btnRef.current, {
+          duration: 14,
+          ease: "circe.inOut",
+          css: {
+            rotation: '360deg',
+      }},'-=1.4')
+
+
+  
+    const onMove = () => {
+      
+    };
+    window.addEventListener("pointermove", onMove);
+      
+    // cleanup function will be called when component is removed
+    return () => {
+      tl.scrollTrigger.kill();
+      window.removeEventListener("pointermove", onMove);
+    };
+  }, []);*/
+
+  useEffect(() => {
+   
+    // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
+    // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
+    let ctx = gsap.context(() => {
+      // create as many GSAP animations and/or ScrollTriggers here as you want...
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: btnRef.current,
+          start: "top 80%",
+          end: "top -50%",
+          scrub:3, 
+          repeatRefresh: true,
+          toggleActions: "restart pause resume none",
+        }
+      });
+      tl.from(btnRef.current, {
+            duration: 2,
+            ease: "circe.inOut",
+            css: {
+              opacity:0,
+              autoAlpha:0,
+  
+        }})
+        tl.to(btnRef.current, {
+            duration: 14,
+            ease: "circe.inOut",
+            css: {
+              rotation: '360deg',
+        }},'-=1.4')
+  
+    }, btnRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+    
+    return () => ctx.revert(); // cleanup! 
+  }, []);
+
+
+
+
+
+
   return (
-    <div className={`${styles.btnWrapper} ${styles[btnClassName]}`}>
+    <div ref={btnRef} className={`${styles.btnWrapper} ${styles[btnClassName]}`}>
       <svg width="172" height="170" viewBox="0 0 172 170" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask id="path-1-outside-1_486_3080" maskUnits="userSpaceOnUse" x="133.569" y="120.253" width="16.6432" height="15.1188" fill="black">
       <rect fill="white" x="133.569" y="120.253" width="16.6432" height="15.1188"/>

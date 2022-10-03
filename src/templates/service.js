@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
+import PagePreloader from "../components/pagePreloader"
 
 
 
@@ -30,7 +31,6 @@ const ServiceTemplate = props => {
   const { data, errors } = props;
   const service = data && data.singleService;
 
-  console.log({ service })
 
   if (errors) {
     return (
@@ -38,10 +38,12 @@ const ServiceTemplate = props => {
     );
   }
   return (
-      <>
+      <main className="container">
+
       <Seo title={service.title} description={service.title}  />
+      <PagePreloader/>
       <h2>{service.title} </h2>
-      </>
+      </main>
       
   );
 };

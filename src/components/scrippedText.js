@@ -1,10 +1,91 @@
 import React from "react";
 import * as styles from "./scrippedText.module.scss";
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+gsap.registerPlugin(ScrollTrigger);
 
 
 const ScrippedText = ({ scrippedTextClass, sectionName }) => {
+
+ 
+    
+    
+      const scrippedTextRef = useRef(null);
+    
+
+      // ONE METHOD
+      /*useEffect(() => { 
+    
+    
+    
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: scrippedTextRef.current,
+            start: "top 70%",
+            end: "top 30%",
+            scrub:1, 
+            repeatRefresh: true,
+            toggleActions: "restart pause resume none",
+          }
+        });
+          tl.from(scrippedTextRef.current, {
+              duration: 1,
+              ease: "circe.out",
+              css: {
+                autoAlpha: 0,
+                visibility:'hidden',
+                xPercent:'30',
+          }})
+
+
+        const onMove = () => {
+          
+        };
+        window.addEventListener("pointermove", onMove);
+          
+        // cleanup function will be called when component is removed
+        return () => {
+          tl.scrollTrigger.kill();
+          window.removeEventListener("pointermove", onMove);
+        };
+      }, []);*/
+
+      useEffect(() => {
+   
+        // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
+        // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
+        let ctx = gsap.context(() => {
+          // create as many GSAP animations and/or ScrollTriggers here as you want...
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: scrippedTextRef.current,
+              start: "top 70%",
+              end: "top 30%",
+              scrub:1, 
+              repeatRefresh: true,
+              toggleActions: "restart pause resume none",
+            }
+          });
+            tl.from(scrippedTextRef.current, {
+                duration: 1,
+                ease: "circe.out",
+                css: {
+                  autoAlpha: 0,
+                  visibility:'hidden',
+                  xPercent:'30',
+            }})
+  
+      
+        }, scrippedTextRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+        
+        return () => ctx.revert(); // cleanup! 
+      }, []);
+    
+
+
   return (
-    <div className={`${styles.scrippedTextWrapper} ${styles[scrippedTextClass]}`}>
+    <div ref={scrippedTextRef} className={`${styles.scrippedTextWrapper} ${styles[scrippedTextClass]}`}>
 
         {sectionName === 'about' &&
             <svg width="361" height="132" viewBox="0 0 361 132" fill="none" xmlns="http://www.w3.org/2000/svg">

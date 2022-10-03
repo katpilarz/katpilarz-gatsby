@@ -1,10 +1,12 @@
 import * as React from "react"
+import PagePreloader from "../components/pagePreloader"
 
 
 // markup
 const Contact = () => {
   return (
-    <main>
+    <main className="container">
+      <PagePreloader/>
       <title>Contact</title>
       <h2>Get in touch</h2>
     </main>

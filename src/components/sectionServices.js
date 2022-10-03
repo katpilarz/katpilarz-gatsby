@@ -11,7 +11,7 @@ const SectionServices = ({ services }) => {
 
   
   return (
-        <section className={styles.sectionServices}>
+        <section className={`${styles.sectionServices} container`}>
             <p>PROJECT MULTIDISCIPLINARY APPROACH</p>
 
             {services.map((service, index) => {

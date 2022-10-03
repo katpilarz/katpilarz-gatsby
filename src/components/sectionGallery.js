@@ -8,7 +8,6 @@ import Video from "../components/video";
 
 
 const SectionGallery = ({ section }) => {
-   console.log({section})
   return (
         <section className={styles.sectionGallery}>
             <div className={styles.sectionGalleryWrapper}>

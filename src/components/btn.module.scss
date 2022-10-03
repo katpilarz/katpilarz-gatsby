@@ -16,15 +16,17 @@
     display: flex;
     place-content: center;
     place-self: center;
+    place-self: center;
+    margin-top: 7vw;
 }
 
 // This does now work
 .headerBtn{
+    display: inline-block;
     position: fixed!important;
     right:2.7%;
     top:3.7vw;
     z-index: 99;
-    visibility: hidden;
 }
 
 

@@ -19,7 +19,7 @@ import 'swiper/css/zoom';
 const ProjectsFeaturedSwiper = ({ featuredProjects }) => {
   return (
 
-      <div className={styles.sectionFeatured}>
+      <div className={`${styles.sectionFeatured} container`}>
           <span className="text-uppercase">Latest Projects</span>
           <Swiper className={styles.projectSwiper} watchSlidesProgress={true}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}

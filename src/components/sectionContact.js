@@ -5,15 +5,112 @@ import { Link } from "gatsby"
 import ArrowIcon from "../components/arrow";
 import ScrippedText from "../components/scrippedText";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import { useEffect, useRef } from 'react';
+gsap.registerPlugin(ScrollTrigger);
 
-const sectionContact = ({section }) => {
+const SectionContact = ({section }) => {
+
+    const headerOneRef = useRef(null);
+    const headerTwoRef = useRef(null);
+    const subheaderRef = useRef(null);
+    const contactRef = useRef(null);
+    const linksRefOne = useRef(null);
+    const linksRefTwo = useRef(null);
+    const linksRefThree = useRef(null);
+
+
+    useEffect(() => {
+   
+        // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
+        // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
+        let ctx = gsap.context(() => {
+          // create as many GSAP animations and/or ScrollTriggers here as you want...
+          const tl = gsap.timeline({
+            scrollTrigger: {
+              trigger: contactRef.current,
+              start: "top 65%",
+              end: "top 20%",
+              scrub:1, 
+              repeatRefresh: true,
+              toggleActions: "restart pause resume none",
+            }
+          });
+            tl.from(headerOneRef.current, {
+                duration: 1,
+                ease: "circe.out",
+                css: {
+                  autoAlpha: 0,
+                  visibility:'hidden',
+                  yPercent:'-50',
+            }})
+            tl.from(headerTwoRef.current, {
+                duration: 1,
+                ease: "circe.out",
+                css: {
+                  autoAlpha: 0,
+                  visibility:'hidden',
+                  yPercent:'50',
+            }},'-=1')
+
+            tl.from(subheaderRef.current, {
+                duration: 1,
+                ease: "circe.out",
+                css: {
+                  autoAlpha: 0,
+                  visibility:'hidden',
+                  xPercent:'40',
+            }},'-=1')
+
+
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: headerTwoRef.current,
+                    start: "top 70%",
+                    end: "top 20%",
+                    scrub: 1,
+                    toggleActions: "restart pause resume none",
+                }
+                });
+                tl2.from(linksRefOne.current, {
+                    duration:1,
+                    stagger:1.6,
+                    ease: "circe.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                }},'-=1')
+                tl2.from(linksRefTwo.current, {
+                    duration:1,
+                    stagger:1.6,
+                    ease: "circe.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                }},'-=.3')
+                tl2.from(linksRefThree.current, {
+                    duration:1,
+                    stagger:1.6,
+                    ease: "circe.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                }},'-=.3')
+  
+      
+        }, contactRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+        
+        return () => ctx.revert(); // cleanup! 
+      }, []);
+    
 
   return (
     
-    <section className={styles.contact}>
+    <section ref={contactRef} className={`${styles.contact} container`}>
         <div className={styles.contactSection}>
             <div className={styles.contactSectionContent}>
-                <div className={styles.headerOne}>
+                <div ref={headerOneRef} className={styles.headerOne}>
                     <h3 className="header-section">{section.headerOne}</h3>
                 </div>
                 
@@ -41,21 +138,21 @@ const sectionContact = ({section }) => {
                         }}        
                     />
                 </div>
-                <div className={styles.headerThree}>
+                <div ref={headerTwoRef} className={styles.headerThree}>
                     <h3 className="header-section">{section.headerTwo}</h3>
                 </div>
-                <div className={styles.paragraph}>
+                <div ref={subheaderRef} className={styles.paragraph}>
                     <p>{section.subheader}</p>
                 </div>
                 
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
             <div className={styles.linksWrapper}>
-                    <a className={styles.contactLink} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
+                    <a ref={linksRefOne} className={styles.contactLink} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
                         {section.brief.text}
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </a>
-                    <Link className={styles.contactLink} to='#'onClick={(e) => {
+                    <Link className={styles.contactLink} ref={linksRefTwo} to='#'onClick={(e) => {
                         window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
                         e.preventDefault();
                         }}>
@@ -64,7 +161,7 @@ const sectionContact = ({section }) => {
                     </Link>
                     {section.contactLinks.map( (link, index) => {
                         return (
-                        <Link className={styles.contactLink} to={link.url} key={index}>
+                        <Link className={styles.contactLink} to={link.url} key={index} ref={linksRefThree}>
                             {link.text}
                             <ArrowIcon arrowIconClass="linkIcon"/>
                         </Link>
@@ -72,14 +169,12 @@ const sectionContact = ({section }) => {
                     })}
             </div>
         </div>
-        <div className={styles.contactSectionImage}>
-            <GatsbyImage
+            <GatsbyImage className={styles.contactSectionImage}
                 image={getImage(section.image.asset.gatsbyImageData)}
                 alt={`${section.image.alt}`}/>
-        </div>
       
     </section>
   )
 }
 
-export default sectionContact
+export default SectionContact

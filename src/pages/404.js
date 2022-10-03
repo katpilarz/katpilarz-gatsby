@@ -1,11 +1,13 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import PagePreloader from "../components/pagePreloader"
 
 
 // markup
 const NotFoundPage = () => {
   return (
-    <main>
+    <main className="container">
+      <PagePreloader/>
       <title>OOpps</title>
       <h2>Somethin went wrong</h2>
       <Link to="/">Go home</Link>.

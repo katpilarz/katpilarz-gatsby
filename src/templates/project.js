@@ -7,6 +7,7 @@ import Gallery from "../components/gallery";
 import ProjectPrototype from "../components/projectPrototype";
 import ProjectTestimonial from "../components/projectTestimonial";
 import ProjectNext from "../components/projectNext";
+import PagePreloader from "../components/pagePreloader"
 
 
 
@@ -103,7 +104,8 @@ const ProjectTemplate = props => {
 
   return (
 
-      <>
+      <main className="container">
+      <PagePreloader/>
       <Seo title={project.title} description={project.overview}  />
       <ProjectBanner project={project}/>
       <ProjectDetails project={project}/>
@@ -119,7 +121,7 @@ const ProjectTemplate = props => {
             <ProjectNext nextProject={nextProject} key={index}/>
           )
       })}
-      </>
+      </main>
       
   );
 };

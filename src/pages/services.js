@@ -1,6 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import PageShared from "../components/pageShared";
+import PagePreloader from "../components/pagePreloader"
+import Seo from "../components/seo";
 
 
 
@@ -71,9 +73,13 @@ const Services = props => {
   const services = (data || {}).services.edges;
   const servicePage = (data || {}).servicePage.edges[0];
 
-  console.log({ services })
 
- 
+  const keywords = services.map((service, index) => {
+    return service.node.title;
+  });
+
+
+
 
   if (errors) {
     return (
@@ -82,9 +88,11 @@ const Services = props => {
   }
 
   return (
-    <>
+    <main>
+      <Seo title={servicePage.node.title} description={servicePage.node.description} keywords={keywords}  />
+      <PagePreloader/>
       <PageShared pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>
-    </>
+    </main>
   )
 }
 
