@@ -28,9 +28,7 @@ const PageShared = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
             duration: 2, 
             ease:'sine.out',
             css: {
-                autoAlpha: 0, 
-                opacity:0,
-                yPercent:'20',
+                yPercent:'40',
             }}
         )
   

@@ -7,7 +7,8 @@
     flex-direction: column;
     place-items: center;
     place-content: center;
-    margin-bottom: 4vw;
+    min-height: 20vw;
+    transform-origin: top;
 
     .line{
         height: 10vw;

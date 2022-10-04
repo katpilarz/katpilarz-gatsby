@@ -27,20 +27,20 @@ const Banner = ({ name, banner }) => {
       const tl = gsap.timeline()
 
     tl.from(headerRef.current, {
-      delay:.3,
+      delay:.4,
       duration:2, 
-      ease: "circe.inOut",
+      ease: "power2.out",
       css: {
-        yPercent:'70',
+        yPercent:'140',
         rotation:.0001
       }
     });
     tl.from(galleryRef.current, {
       duration:2, 
-      ease: "circe.inOut",
+      ease: "power2.out",
       css: {
         autoAlpha: 0, 
-        yPercent:'70',
+        yPercent:'100',
         rotation:.0001
       }
     },'-=1.6')
@@ -59,13 +59,13 @@ const Banner = ({ name, banner }) => {
     });
       tl2.to(headerRef.current, {
         duration: 2, 
-        ease: "circe.inOut",
+        ease: "power2.out",
         css: {
           height: 'auto',
       }});
       tl2.to(galleryRef.current, {
         duration: 2, 
-        ease: "circe.inOut",
+        ease: "power2.out",
         css: {
           autoAlpha: 0,
           opacity:0,
@@ -73,7 +73,7 @@ const Banner = ({ name, banner }) => {
       }});
       tl2.from(missionRef.current, {
         duration: 2, 
-        ease: "circe.inOut",
+        ease: "power2.out",
         css: {
           autoAlpha: 0,
           opacity:0,
@@ -81,7 +81,7 @@ const Banner = ({ name, banner }) => {
       }},'-=2');
       tl2.from(bannerRef.current, {
         duration: 2, 
-        ease: "circe.inOut",
+        ease: "power2.out",
         css: {
           height: '100vh',
           

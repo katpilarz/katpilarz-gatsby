@@ -69,7 +69,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
           });
             tl.from(scrippedTextRef.current, {
                 duration: 1,
-                ease: "circe.out",
+                ease: "power4.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',

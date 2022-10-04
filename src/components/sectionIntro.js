@@ -27,7 +27,7 @@ const SectionIntro = ({ subheader }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionIntroRef.current,
-          start: "top 87%",
+          start: "top 90%",
           end: "top 20%",
           scrub:1, 
           repeatRefresh: true,
@@ -36,15 +36,16 @@ const SectionIntro = ({ subheader }) => {
       });
         tl.from(iconRef.current, {
             duration: 1,
-            ease: "sine.out",
+            ease: "power4.out",
             css: {
               autoAlpha: 0,
               opacity:0, 
               rotation:'-360deg'
         }})
+
         tl.from(lineRef.current, {
           duration: 2,
-          ease: "sine.out",
+          ease: "power4.out",
           css: {
             transformOrigin:'top',
             autoAlpha: 0,
@@ -53,14 +54,14 @@ const SectionIntro = ({ subheader }) => {
           }},'-=.5')
           tl.from(paragraphRef.current, {
             duration: 1,
-            ease: "sine.out",
+            ease: "power4.out",
             css: {
               autoAlpha: 0,
               opacity:0, 
         }},'-=1')
           tl.to(iconRef.current, {
             duration: 1,
-            ease: "sine.out",
+            ease: "power4.out",
             css: {
               rotation:'360deg'
         }},'-=2')

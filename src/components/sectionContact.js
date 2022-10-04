@@ -30,8 +30,8 @@ const SectionContact = ({section }) => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: contactRef.current,
-              start: "top 65%",
-              end: "top 20%",
+              start: "top 60%",
+              end: "top 30%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -39,7 +39,7 @@ const SectionContact = ({section }) => {
           });
             tl.from(headerOneRef.current, {
                 duration: 1,
-                ease: "circe.out",
+                ease: "power4.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -47,7 +47,7 @@ const SectionContact = ({section }) => {
             }})
             tl.from(headerTwoRef.current, {
                 duration: 1,
-                ease: "circe.out",
+                ease: "power4.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -56,7 +56,7 @@ const SectionContact = ({section }) => {
 
             tl.from(subheaderRef.current, {
                 duration: 1,
-                ease: "circe.out",
+                ease: "power4.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -67,8 +67,8 @@ const SectionContact = ({section }) => {
             const tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: headerTwoRef.current,
-                    start: "top 70%",
-                    end: "top 20%",
+                    start: "top 60%",
+                    end: "top 30%",
                     scrub: 1,
                     toggleActions: "restart pause resume none",
                 }

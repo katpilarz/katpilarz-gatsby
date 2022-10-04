@@ -16,13 +16,14 @@
     place-self: center;
     place-content: center;
     width:44vw;
+    margin-top: 6vw;
 
 
     .focusArea{
         display: flex;
         place-items: flex-end;
         place-content: flex-end;
-        margin-top: 1vw;
+        margin-top: 1.4vw;
         position: relative!important;
         z-index: 1;
         width:auto;
