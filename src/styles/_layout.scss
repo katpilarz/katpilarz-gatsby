@@ -39,7 +39,7 @@ main{
   height: auto;
   width:100%;
   overflow-y: hidden;
-  overflow-x: visible;
+  overflow-x: hidden;
 
 
 
@@ -74,7 +74,12 @@ body {
   .overlay{
     background-color: $white-dark;
   }
+ 
+   
 
+h1 span{
+  color: $grey-dark;
+}
 
 
   span{
@@ -115,6 +120,9 @@ body.dark {
   color:$white-dark;
 
 
+  h1 span{
+    color:$white-dark;
+  }
 
   .overlay{
     background-color: $grey-dark;

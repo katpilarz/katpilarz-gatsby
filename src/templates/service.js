@@ -2,6 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
 import PagePreloader from "../components/pagePreloader"
+import { useEffect } from 'react';
+
 
 
 
@@ -31,6 +33,7 @@ const ServiceTemplate = props => {
   const { data, errors } = props;
   const service = data && data.singleService;
 
+  useEffect(() => window.scrollTo(0, 0), []) 
 
   if (errors) {
     return (

@@ -1,12 +1,19 @@
 .sectionAbout{
     width:100%;
-    display: grid;
+    /*display: grid;
     grid-template-columns: repeat(14, 1fr);
     grid-template-rows: repeat(14, 1fr);
     place-items: center;
-    margin-top: 10vw;
-    height: 130vh;
+    margin: 10vw auto 22vw auto;
+    height: 130vh;*/
     //max-height: 100rem;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    width:100%;
+    height: auto;
+    margin: 10vw auto 12vw auto;
 
 
 
@@ -22,29 +29,62 @@
         }
     }
 
-    .aboutImageOne{
-        grid-column: 1/6;
-        grid-row: auto;
+    .sectionContentWrapper{
+
         width:100%;
+        height: auto;
         display: flex;
-        place-self: flex-start;
-    }
+        justify-content: space-between;
 
 
-    .aboutImageTwo{
-        grid-column: 10/-1;
-        grid-row: 13/-1;
-        width:100%;
-        display: flex;
-        place-self: flex-start;
-    }
+        .sectionContentLeft{
+            flex-basis: 40%;
+            width:100%;
+            height: auto;
 
-    .aboutDescription{
-        grid-column: 8/13;
-        grid-row: 6/9;
+            .aboutImageOne{
+                //grid-column: 1/6;
+                //grid-row: auto;
+                width:100%;
+                display: flex;
+                place-self: flex-start;
+            }
         
-        
-        p{line-height: 1.7;}
+        }
+
+        .sectionContentRight{
+            flex-basis: 45%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+
+
+            .aboutDescription{
+                //grid-column: 8/13;
+                //grid-row: 6/9;
+                order:1;
+                margin: 14vw 8vw 10vw 0;
+                
+                
+                p{line-height: 1.7;}
+            }
+
+            .aboutImageTwo{
+                //grid-column: 10/-1;
+                //grid-row: 13/-1;
+                width:77%;
+                display: flex;
+                place-self: flex-end;
+                order:2;
+                transform: translateY(7vw);
+            }
+        }
     }
+
+
+
+
 }
 

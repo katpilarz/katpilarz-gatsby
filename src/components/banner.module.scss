@@ -29,6 +29,12 @@
         place-content: center;
         text-align: center;
         margin-bottom: 4vw;
+        display: flex;
+        flex-direction: column;
+
+        span{
+            margin-top: 2vw;
+        }
     }
 
     h3{

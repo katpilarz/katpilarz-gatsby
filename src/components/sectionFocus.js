@@ -13,6 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SectionFocus = ({ section }) => {
 
+    const sectionRef = useRef([]);
 
     const revealRefs = useRef([]);
     revealRefs.current = [];
@@ -35,12 +36,10 @@ const SectionFocus = ({ section }) => {
                     gsap.fromTo(el, {
                         autoAlpha: 0,
                         xPercent:5,
-                        yPercent:5,
                     }, {
                         duration: 1,
                         autoAlpha: 1,
                         xPercent:0,
-                        yPercent:0,
                         ease: "power4.out",
                         delay:.77,
                         scrollTrigger: {
@@ -59,7 +58,7 @@ const SectionFocus = ({ section }) => {
     
   
       
-        }, addToRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
+        }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
       }, []);
@@ -68,7 +67,7 @@ const SectionFocus = ({ section }) => {
   return (
         <section className={styles.sectionFocus}>
             <SectionIntro subheader={section.subheader}/>
-            <div className={styles.focusAreasWrapper}>
+            <div ref={sectionRef} className={styles.focusAreasWrapper}>
                 {section.focusAreas.map( (area, index) => {
                     return (
                     <div className={styles.focusArea} key={index} ref={addToRefs}>

@@ -28,7 +28,12 @@
 
 
 .scrippedTextAbout{
-    grid-column: 7/12;
-    grid-row: auto;
+    /*grid-column: 7/12;
+    grid-row: auto;*/
     margin-top: 1vw;
+    display: flex;
+    place-self: center;
+    place-content: center;
+    place-items: center;
+    margin-left: 30vw;
 }

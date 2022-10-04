@@ -11,6 +11,7 @@ import SectionTestimonial from "../components/sectionTestimonial";
 import SectionContact from "../components/sectionContact";
 import SectionGallery from "../components/sectionGallery";
 import PagePreloader from "../components/pagePreloader";
+import { useEffect } from 'react';
 
 
 
@@ -281,6 +282,9 @@ const IndexPage = props => {
   const services = (data || {}).services.edges;
   const testimonialProject =  (data || {}).testimonialProject.edges[0];
 
+  useEffect(() => window.scrollTo(0, 0), []) 
+
+  const siteTitle = site.author + ': ' + site.title
 
   if (errors) {
     return (
@@ -290,10 +294,10 @@ const IndexPage = props => {
 
   return (
     <main>
-      <Seo title={site.title} description={site.description} keywords={site.keywords}  />
+      <Seo title={siteTitle} description={site.description} keywords={site.keywords}  />
       <PagePreloader/>
       
-      <Banner name={site.name} banner={home.banner}/>
+      <Banner name={site.name} title={site.title} banner={home.banner}/>
       <GallerySwiper images={galleryImages}/>
       <SectionFocus section={sectionFocus}/>
       <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>

@@ -4,6 +4,7 @@
 .contact{
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 
     .contactSection{
         display: grid;

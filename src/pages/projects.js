@@ -3,6 +3,8 @@ import { graphql } from "gatsby";
 import PageShared from "../components/pageShared";
 import PagePreloader from "../components/pagePreloader"
 import Seo from "../components/seo";
+import { useEffect } from 'react';
+
 
 
 
@@ -68,6 +70,7 @@ const Projects = props => {
   });
 
 
+  useEffect(() => window.scrollTo(0, 0), []) 
   
 
   if (errors) {

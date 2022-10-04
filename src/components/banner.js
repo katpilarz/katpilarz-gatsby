@@ -9,12 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const Banner = ({ name, banner }) => {
+const Banner = ({ name, banner, title }) => {
   const bannerRef = useRef(null);
   const headerRef = useRef(null);
   const galleryRef = useRef(null);
   const btnRef = useRef(null);
   const missionRef = useRef(null);
+  const jobRef = useRef(null);
   //const description = useRef();
 
 
@@ -27,7 +28,7 @@ const Banner = ({ name, banner }) => {
       const tl = gsap.timeline()
 
     tl.from(headerRef.current, {
-      delay:.4,
+      delay:.32,
       duration:2, 
       ease: "power2.out",
       css: {
@@ -35,6 +36,14 @@ const Banner = ({ name, banner }) => {
         rotation:.0001
       }
     });
+    tl.from(jobRef.current, {
+      duration:1, 
+      ease: "power2.out",
+      css: {
+        autoAlpha: 0, 
+        yPercent:'100',
+      }
+    },'-=1.2');
     tl.from(galleryRef.current, {
       duration:2, 
       ease: "power2.out",
@@ -43,7 +52,8 @@ const Banner = ({ name, banner }) => {
         yPercent:'100',
         rotation:.0001
       }
-    },'-=1.6')
+    },'-=1.6');
+
       
  
     
@@ -55,6 +65,8 @@ const Banner = ({ name, banner }) => {
         scrub: 1,
         pin: true,
         toggleActions: "restart pause resume none",
+        //toggleActions: 'play none none reverse',
+        refreshPriority: 1,
       }
     });
       tl2.to(headerRef.current, {
@@ -71,6 +83,15 @@ const Banner = ({ name, banner }) => {
           opacity:0,
           
       }});
+      tl2.to(jobRef.current, {
+        duration: 1, 
+        ease: "power2.out",
+        css: {
+          autoAlpha: 0,
+          opacity:0,
+          marginTop:0,
+        
+      }},'-=2');
       tl2.from(missionRef.current, {
         duration: 2, 
         ease: "power2.out",
@@ -94,105 +115,16 @@ const Banner = ({ name, banner }) => {
   }, []);
 
 
-  /*
-  useEffect(() => {
-
-    const tl = gsap.timeline()
-
-    tl.from(headerRef.current, {
-      delay:.3,
-      duration:2, 
-      ease: "circe.inOut",
-      css: {
-        yPercent:'70',
-        rotation:.0001
-      }
-    });
-    tl.from(galleryRef.current, {
-      duration:2, 
-      ease: "circe.inOut",
-      css: {
-        autoAlpha: 0, 
-        yPercent:'70',
-        rotation:.0001
-      }
-    },'-=1.6')
-      
- 
-    
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: bannerRef.current,
-        start: "top 7%",
-        end: "bottom bottom",
-        scrub: 1,
-        pin: true,
-        toggleActions: "restart pause resume none",
-      }
-    });
-      tl2.to(headerRef.current, {
-        duration: 2, 
-        ease: "circe.inOut",
-        css: {
-          height: 'auto',
-      }});
-      tl2.to(galleryRef.current, {
-        duration: 2, 
-        ease: "circe.inOut",
-        css: {
-          autoAlpha: 0,
-          opacity:0,
-          
-      }});
-      tl2.from(missionRef.current, {
-        duration: 2, 
-        ease: "circe.inOut",
-        css: {
-          autoAlpha: 0,
-          opacity:0,
-          
-      }},'-=2');
-      tl2.from(bannerRef.current, {
-        duration: 2, 
-        ease: "circe.inOut",
-        css: {
-          height: '100vh',
-          
-      }},'-=1.6');
-      /*tl2.to(btnRef.current, {
-        position: 'fixed',
-        width:'10vw',
-        duration: 3,
-        repeat:-1, 
-        ease: "circe.inOut",
-        css: {
-          rotation: '360deg',
-      }},'-=2')
 
 
-  
-    const onMove = () => {
-      
-    };
-    window.addEventListener("pointermove", onMove);
-      
-    // cleanup function will be called when component is removed
-    return () => {
-      tl.kill();
-      tl2.scrollTrigger.kill();
-      window.removeEventListener("pointermove", onMove);
-    };
-  }, []);*/
-
-
-  
- console.log({ banner })
 
   
   return (
     <section ref={bannerRef} className={styles.banner}>
       <div className={styles.bannerContent}>
-        <h1 ref={headerRef} >{name}</h1>
+        <h1 ref={headerRef} >{name}
+          <span ref={jobRef}> {title}</span>
+        </h1>
         <h3 ref={missionRef}>{banner.header}</h3>
         <div ref={btnRef}>
           <Btn btnClassName='bannerBtn'/>

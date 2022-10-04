@@ -3,15 +3,14 @@
 .sectionServices{
     display: flex;
     flex-direction: column;
-    margin: 14vw auto 12vw auto;
-    width:100%;
+    margin: 12vw auto 12vw auto;
+    width:auto;
     height: auto;
-    overflow-x: hidden;
     position: relative;
-    z-index: 1;    
+    z-index: 1;  
 
     p{
-        margin-bottom: 7vw;
+        margin: 3vw 3vw 5vw 3vw;
     }
 
 }
@@ -20,7 +19,7 @@
 
 .serviceMarqueeCard{
     display: flex;
-    width: 180%;
+    width: 200%;
     overflow-x: hidden;
     padding: 4vw 0;
     border-top:layout.$border;
@@ -33,7 +32,7 @@
     .serviceMedia{
         position: absolute;
         top:50%;
-        left:27%; 
+        left:40%; 
         transform: translate(-50%, -50%);
         width:16vw;
         opacity: 0;

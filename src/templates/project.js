@@ -8,6 +8,8 @@ import ProjectPrototype from "../components/projectPrototype";
 import ProjectTestimonial from "../components/projectTestimonial";
 import ProjectNext from "../components/projectNext";
 import PagePreloader from "../components/pagePreloader"
+import { useEffect } from 'react';
+
 
 
 
@@ -92,7 +94,7 @@ const ProjectTemplate = props => {
   const { data, errors } = props;
   const project = data && data.singleProject;
 
-
+  useEffect(() => window.scrollTo(0, 0), []) 
 
 
 
