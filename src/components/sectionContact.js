@@ -4,10 +4,11 @@ import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
 import ArrowIcon from "../components/arrow";
 import ScrippedText from "../components/scrippedText";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import AnimatedImage from "../components/animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const SectionContact = ({section }) => {
@@ -169,10 +170,8 @@ const SectionContact = ({section }) => {
                     })}
             </div>
         </div>
-            <GatsbyImage className={styles.contactSectionImage}
-                image={getImage(section.image.asset.gatsbyImageData)}
-                alt={`${section.image.alt}`}/>
-      
+        <AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>   
+     
     </section>
   )
 }

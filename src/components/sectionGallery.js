@@ -2,18 +2,18 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionGallery.module.scss";
 import Video from "../components/video";
-
+import AnimatedImage from "../components/animatedImage";
 
 
 
 
 const SectionGallery = ({ section }) => {
   return (
-        <section className={styles.sectionGallery}>
+        <section className={`${styles.sectionGallery} container`}>
             <div className={styles.sectionGalleryWrapper}>
-                <GatsbyImage className={styles.projectMockup}
-                    image={getImage(section.projectMockupOne.asset.gatsbyImageData)}
-                    alt={`${section.projectMockupOne.alt}`}/>
+                <div className={styles.projectMockup}>
+                    <AnimatedImage imagePath={section.projectMockupOne.asset.gatsbyImageData} imageAlt={section.projectMockupOne.alt}/>   
+               </div>
                 <Video video={section.projectPrototypeTwo} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>    
             </div>
             <div className={styles.sectionGalleryWrapper}>

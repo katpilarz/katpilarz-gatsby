@@ -1,0 +1,23 @@
+.imageContainer{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+
+    .imageWrapper{
+        width:100%;
+        height: auto;
+        display: flex;
+
+
+        .image{
+            width:100%;
+            height: auto;
+            display: flex;
+            place-items: center;
+            place-content: center;
+        }
+    }
+
+
+}
+

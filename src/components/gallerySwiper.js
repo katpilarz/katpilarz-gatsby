@@ -44,9 +44,6 @@ const GallerySwiper = ({ images }) => {
               crossFade: true, 
               parallax: true,
             }}
-            //onSlideChange={() => console.log('slide change')}
-            //onSwiper={(swiper) => console.log(swiper)} 
-
           > 
             {images.map((item, index) => {
                 return (

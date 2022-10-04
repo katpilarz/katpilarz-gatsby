@@ -19,7 +19,7 @@
 
 .serviceMarqueeCard{
     display: flex;
-    width: 200%;
+    width: 220%;
     overflow-x: hidden;
     padding: 4vw 0;
     border-top:layout.$border;
@@ -68,26 +68,7 @@
                 width: auto!important;
                 place-content: center;
             }
-            
-            span{
-                width: 2vw;
-                height: auto;
-                display: flex;
-                margin: auto 4vw;
-    
-    
-                svg{
-                    width:100%;
-                    height: auto;
-    
-                    path{
-                        width:100%;
-                        height: auto;
-                    }
-    
-                }
-            
-            }
+         
         }
 
        

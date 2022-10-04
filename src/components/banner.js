@@ -62,7 +62,7 @@ const Banner = ({ name, banner, title }) => {
         trigger: bannerRef.current,
         start: "top 7%",
         end: "bottom bottom",
-        scrub: 1,
+        scrub: 4,
         pin: true,
         toggleActions: "restart pause resume none",
         //toggleActions: 'play none none reverse',
@@ -84,7 +84,7 @@ const Banner = ({ name, banner, title }) => {
           
       }});
       tl2.to(jobRef.current, {
-        duration: 1, 
+        duration: 2, 
         ease: "power2.out",
         css: {
           autoAlpha: 0,
@@ -104,7 +104,7 @@ const Banner = ({ name, banner, title }) => {
         duration: 2, 
         ease: "power2.out",
         css: {
-          height: '100vh',
+          height: '90vh',
           
       }},'-=1.6');
 

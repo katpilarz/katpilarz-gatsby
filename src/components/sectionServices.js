@@ -37,6 +37,25 @@ const SectionServices = ({ services }) => {
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
 
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                    trigger: sectionRef.current,
+                    start: "top 90%",
+                    end: "top 50%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                    }
+                });
+                    tl.from(paragraphRef.current, {
+                        duration: 1,
+                        ease: "power4.out",
+                        css: {
+                        autoAlpha: 0,
+                        xPercent:'5',
+                    }})
+
                 revealRefs.current.forEach((el, index) => {
 
                     gsap.fromTo(el, {
@@ -44,17 +63,17 @@ const SectionServices = ({ services }) => {
                     }, {
                         duration: 4,
                         xPercent:-10,
-                        ease: "sine.out",
+                        ease: "power4.out",
                         delay:.1,
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 80%',
-                            end:'top 20%',
+                            start: 'top 90%',
+                            end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
-                            scrub:2,
+                            scrub:3,
                         }
                     });
              
