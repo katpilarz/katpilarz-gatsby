@@ -9,6 +9,8 @@ import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const SectionContact = ({section }) => {
@@ -44,7 +46,7 @@ const SectionContact = ({section }) => {
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
-                  yPercent:'-50',
+                  yPercent:'-20',
             }})
             tl.from(headerTwoRef.current, {
                 duration: 1,
@@ -143,9 +145,9 @@ const SectionContact = ({section }) => {
                     <h3 className="header-section">{section.headerTwo}</h3>
                 </div>
                 <div ref={subheaderRef} className={styles.paragraph}>
-                    <p>{section.subheader}</p>
+                <p>{section.subheader}</p>
                 </div>
-                
+            
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
             <div className={styles.linksWrapper}>

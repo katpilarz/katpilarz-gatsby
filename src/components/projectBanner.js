@@ -4,25 +4,30 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const ProjectBanner = ({ project }) => {
+const ProjectBanner = ({ project, isSwiper, isBanner }) => {
 
   return (
     <section className={styles.projectBanner}>
         <div className={styles.projectBannerHeader}>
-            <h2 className={styles.header}>{project.title}</h2>
+        <h2 className={isSwiper === 'true' ? `project-header` : styles.header}>{project.title}</h2>
+            
             <div className={styles.projectBannerDetails}>
                 <p>{project.publishedAt}</p>
-                <div className={styles.servicesList}>
-                    {project.services.map((service, index) => {
-                        return(
-                        <div className={styles.serviceSingle} key={index}>
-                            <p>{service.title}</p> 
-                        </div> 
-                        )
-                    })}
-                </div> 
-                
-                <p>{project.overview}</p>   
+               
+                {isBanner === 'true' &&
+                     <div className={styles.servicesList}>
+                     {project.services.map((service, index) => {
+                         return(
+                         <div className={styles.serviceSingle} key={index}>
+                             <p>{service.title}</p> 
+                         </div> 
+                         )
+                     })}
+                 </div> 
+                }
+
+            <p>{project.overview}</p> 
+                  
             </div>
             </div>
             <div className={styles.projectImageContainer}>

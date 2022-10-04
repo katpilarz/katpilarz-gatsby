@@ -109,7 +109,7 @@ const ProjectTemplate = props => {
       <main className="container">
       <PagePreloader/>
       <Seo title={project.title} description={project.overview}  />
-      <ProjectBanner project={project}/>
+      <ProjectBanner project={project} isBanner='true'/>
       <ProjectDetails project={project}/>
       {project.isInteractive &&
         <ProjectPrototype prototypes={project.projectPrototypes}/>

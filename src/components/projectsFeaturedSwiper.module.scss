@@ -3,11 +3,15 @@
     height: auto;
     position: relative;
     z-index: 1;
+    width:100%;
+    display: flex;
+    place-items: flex-start;
+    place-content: flex-start;
 
     span{
         position: absolute;
         right:3%;
-        top:12%;
+        top:10%;
         z-index: 2;
     }
 }
@@ -16,18 +20,19 @@
 .projectSwiper{
     //width:80vw!important;
     //margin-right: 100vw;
-    height: 130vh;
-    width:100%;
+    height: 100vh;
+    width:65%;
+    place-self: flex-start;
+    margin: 0 auto 0 0 ;
+    
 
 }
 
 
 
 .projectSwiperSlide{
-    //width:80vw!important;
-    //margin-right: 100vw;
     height: auto;
-    width:74vw
+    width:100%;
 
     a{
         width: 100%;

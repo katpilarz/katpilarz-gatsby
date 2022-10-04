@@ -13,7 +13,7 @@ import { Link } from "gatsby"
 const SectionTestimonial = ({ testimonial }) => {
   
   return (
-        <section>
+        <section className={styles.sectionTestimonial}>
             <SectionIntro subheader='Hesitant? See how my clients evaluated some of my work'/>
             <div className={styles.testimonialWrapper}>
                 

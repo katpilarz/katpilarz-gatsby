@@ -9,6 +9,8 @@ $black:#1D2124;
 $white:#F8F8F8;
 $white-dark:#CCD7DE;
 $border: solid .07rem rgba($color, .2);
+$bg-light: #E3F1F8;
+$bg-dark:#24292D;
 //$color: #1E8BA3;
 //$color-lighter:#229FBA;
 
@@ -72,7 +74,7 @@ body {
   overflow-x: hidden;
 
   .overlay{
-    background-color: $white-dark;
+    background-color: $bg-light;
   }
  
    
@@ -89,6 +91,7 @@ h1 span{
       }
     }
   }
+
 
   .project-header,
   h1, h2, h4{
@@ -125,7 +128,7 @@ body.dark {
   }
 
   .overlay{
-    background-color: $grey-dark;
+    background-color: $bg-dark;
   }
 
   .line-intro{

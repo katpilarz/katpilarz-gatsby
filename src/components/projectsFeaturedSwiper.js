@@ -44,7 +44,7 @@ const ProjectsFeaturedSwiper = ({ featuredProjects }) => {
                 return (
                   <SwiperSlide key={index} className={styles.projectSwiperSlide}>
                      <Link to={`projects/${project.node.slug.current}`}>
-                      <ProjectBanner project={project.node}/>
+                      <ProjectBanner project={project.node} isSwiper='true'/>
                      </Link>
                   </SwiperSlide>
                 
