@@ -303,7 +303,9 @@ const IndexPage = props => {
       <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>
       <SectionAbout section={sectionAbout}/>
       <SectionServices services={services}/>
-      <SectionTestimonial testimonial={testimonialProject.node} pageName='home'/>
+      <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
+       image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
+       slug={testimonialProject.node.slug.current} />
       <SectionGallery section={sectionGallery}/>
       <SectionContact section={sectionContact}/>
     </main>

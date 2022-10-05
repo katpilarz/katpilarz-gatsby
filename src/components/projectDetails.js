@@ -22,6 +22,7 @@ const ProjectDetails = ({ project }) => {
 
 
   useEffect(() => {
+
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -63,6 +64,8 @@ const ProjectDetails = ({ project }) => {
               opacity:0,
               xPercent:'-30',
         }})
+
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         if(project.isDevelopment){
             tl.from(detailFourRef.current, {
                 duration: 1,
@@ -74,7 +77,7 @@ const ProjectDetails = ({ project }) => {
             }})
         }
 
-        
+
         // SECOND TIMELINE
 
         const tl2 = gsap.timeline({
@@ -118,7 +121,7 @@ const ProjectDetails = ({ project }) => {
     }, projectDetailsRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
-  }, []);
+  }, [project.isDevelopment]); // sorting out missing dependancy
 
 
 
@@ -148,7 +151,7 @@ const ProjectDetails = ({ project }) => {
                         })}
                     </div> 
                 </div>
-                { project.isDevelopment &&
+                {project.isDevelopment &&
                     <div ref={detailFourRef}  className={styles.projectOverviewCard}>
                         <p>WEBSITE</p>
                         <a href={project.url} aria-label={`${project.title} development link view`} rel="noopener noreferrer" target="_blank">

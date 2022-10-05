@@ -3,7 +3,7 @@ import ProjectBanner from "../components/projectBanner";
 import ProjectDetails from "../components/projectDetails";
 import Gallery from "../components/gallery";
 import ProjectPrototype from "../components/projectPrototype";
-import ProjectTestimonial from "../components/projectTestimonial";
+import SectionTestimonial from "../components/sectionTestimonial";
 import ProjectNext from "../components/projectNext";
 
 
@@ -17,7 +17,7 @@ const ProjectSingle = ({ project }) => {
       <div className="container">
         <ProjectBanner project={project} isSwiper='false'/>
         {project.isTestimonial &&
-          <ProjectTestimonial testimonial={project._rawTestimonial} name={project.title}/>
+          <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
         }
 
         <ProjectDetails project={project}/>
