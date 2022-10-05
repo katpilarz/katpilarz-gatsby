@@ -3,7 +3,7 @@ import * as styles from "./projectsFeaturedSwiper.module.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
 import { Link } from "gatsby"
-import ProjectBanner from "./projectBanner";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
@@ -26,7 +26,7 @@ const ProjectsFeaturedSwiper = ({ featuredProjects }) => {
             slidesPerView={1}
             centeredSlides={true}
             direction={"vertical"}
-            spaceBetween={500}
+            spaceBetween={100}
             grabCursor={true}
             mousewheel={true}
             keyboard={{
@@ -43,8 +43,15 @@ const ProjectsFeaturedSwiper = ({ featuredProjects }) => {
             {featuredProjects.map((project, index) => {
                 return (
                   <SwiperSlide key={index} className={styles.projectSwiperSlide}>
-                     <Link to={`projects/${project.node.slug.current}`}>
-                      <ProjectBanner project={project.node} isSwiper='true'/>
+                     <Link to={`projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
+                        <div  className={styles.projectSwiperSlideHeader}>
+                            <p  className="text-uppercase">{project.node.overview}</p>
+                            <h2 className="project-header">{project.node.title}</h2>
+                        </div>
+                        <GatsbyImage className={styles.projectSwiperSlideImage}
+                          image={getImage(project.node.bannerImage.asset.gatsbyImageData)}
+                          alt={`${project.node.bannerImage.alt}`}
+                        />
                      </Link>
                   </SwiperSlide>
                 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import PageShared from "../components/pageShared";
+import PageSingle from "../components/pageSingle";
 import PagePreloader from "../components/pagePreloader"
 import Seo from "../components/seo";
 import { useEffect } from 'react';
@@ -93,7 +93,7 @@ const Services = props => {
     <main>
       <Seo title={servicePage.node.title} description={servicePage.node.description} keywords={keywords}  />
       <PagePreloader/>
-      <PageShared pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>
+      <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>
     </main>
   )
 }

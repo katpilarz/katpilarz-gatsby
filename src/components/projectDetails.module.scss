@@ -1,76 +1,88 @@
 @use 'src/styles/layout';
 
 .projectDetails{
-    display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(14, 1fr);
+    display: flex;
+    place-items: space-between;
+    place-content: space-between;
+    width:100%;
     height: auto;
-    margin:16vh auto 20vh auto;
-    grid-gap:2rem;
+    margin:12vw auto 14vw auto;
 
 }
 
 .projectDetailsLeft{
-    grid-column: 1/7;
-    grid-row: 1/-1;
-    height: 100%;
+    flex-basis: 42%;
+    width:100%;
+    height: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    place-items: flex-start;
+    place-content: space-between;
 
-    .projectDetailsHeader{
-        place-self: flex-start;
-        height: auto;
-    }
+    
 }
 
 .projectDetailsRight{
-    grid-column: 7/-1;
-    grid-row: 2/-1;
+    flex-basis: 45%;
     height: 100%;
     place-self: flex-end;
     max-width: 100rem;
 
     .projectDescription{
-        margin-bottom: 14vh;
+        margin: 12vh auto auto auto;
+        width:100%;
     }
 
-    .projectDetailsOverview{
-        .projectOverviewCard{
-            border-top:layout.$border; 
-            padding: 2vw 0;
-            display: flex;
+    .projectDetailsHeader{
+        display: flex;
+        flex-direction: column;
+    }
 
-
-            p{
-                &:first-child{
-                    padding-right: 5vw;
-                }
-        
-            }
- 
-            
     
-            &:last-child{
-                border-bottom:layout.$border; 
-            }
-
-            .toolsList{
-                display: flex;
-                flex-wrap: wrap;
-                width:100%;
-            
-                .toolSingle{
-                    display: flex;
-                    width: auto;
-                    margin-right: 1vw;
-
-                }
-            }
-        }
-    }
 
     
 }
 
+
+
+.projectDetailsOverview{
+    width:100%;
+    margin:4vw 0 0 0;
+
+
+    .projectOverviewCard{
+        width:100%;
+        border-top:layout.$border; 
+        padding: 2vw 3vw 2vw 0;
+        display: flex;
+        place-items: center;
+
+
+        .overviewName{
+            padding-right: 5vw;
+        }
+
+        p{
+            padding-right: 4vw;
+        }
+        
+
+        
+
+        &:last-child{
+            border-bottom:layout.$border; 
+        }
+
+        .toolsList{
+            display: flex;
+            flex-wrap: wrap;
+            width:100%;
+        
+            .toolSingle{
+                display: flex;
+                width: auto;
+                margin-right: 1vw;
+
+            }
+        }
+    }
+}

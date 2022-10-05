@@ -31,7 +31,8 @@ const SectionIntro = ({ subheader }) => {
           end: "top 20%",
           scrub:1, 
           repeatRefresh: true,
-          toggleActions: "restart pause resume none",
+          toggleActions: 'play none none reverse'
+          //toggleActions: "restart pause resume none",
         }
       });
         tl.from(iconRef.current, {

@@ -1,25 +1,73 @@
 import React from "react";
 import * as styles from "./projectNext.module.scss";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+//import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { navigate } from 'gatsby';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap/dist/gsap';
+import AnimatedImage from "../components/animatedImage";
+
 
 
 
 const ProjectNext = ({ nextProject }) => {
+
+  const nextProjectHeaderRef = useRef(null);
+  const headerRef = useRef(null);
+  const subheaderRef = useRef(null);
+
+
+  useEffect(() => {
+   
+    // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
+    // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
+    let ctx = gsap.context(() => {
+      // create as many GSAP animations and/or ScrollTriggers here as you want...
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: nextProjectHeaderRef.current,
+          start: "top 60%",
+          end: "top 30%",
+          scrub:1, 
+          repeatRefresh: true,
+          toggleActions: "restart pause resume none",
+        }
+      });
+        tl.from(headerRef.current, {
+            duration: 1,
+            ease: "power4.out",
+            css: {
+              autoAlpha: 0,
+              opacity:0,
+              yPercent:'30',
+        }})
+        tl.from(subheaderRef.current, {
+          duration: 1,
+          ease: "power4.out",
+          css: {
+            autoAlpha: 0,
+            opacity:0,
+            yPercent:'-30',
+      }},'-=1')
+  
+    }, nextProjectHeaderRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+    
+    return () => ctx.revert(); // cleanup! 
+  }, []);
+
+
 
   return (
     <button className={styles.nextProjectSection} onClick={(e) => {
         e.preventDefault();
         navigate(`/projects/${nextProject.slug.current}`);
       }}>
-        <div className={styles.nextProjectHeader}>
-                <p className="text-uppercase">Continue to Next</p>
-                <h3>{nextProject.title}</h3>
+        <div ref={nextProjectHeaderRef} className={styles.nextProjectHeader}>
+                <p ref={subheaderRef} className="text-uppercase">Continue to Next Project</p>
+                <h2 ref={headerRef} className="project-header">{nextProject.title}</h2>
         </div>
-        <GatsbyImage className={styles.nextProjectImage}
-            image={getImage(nextProject.bannerImage.asset.gatsbyImageData)}
-            alt={`${nextProject.bannerImage.alt}`}
-        />
+        <div className={styles.nextProjectImage}>
+              <AnimatedImage imagePath={nextProject.bannerImage.asset.gatsbyImageData} imageAlt={nextProject.bannerImage.alt}/>   
+        </div>
     </button>
 
   )

@@ -1,0 +1,135 @@
+@use 'src/styles/layout';
+
+
+.pageSingle{
+    display: flex;
+    flex-direction: column;
+    width:100%; 
+    height: auto;
+    padding-top: 9vw;
+
+
+
+    .pageSingleHeader{
+      display: flex;
+    }
+
+    .itemsList{
+      height: auto;
+      margin: 7vw 0 7vw auto;
+      width:49vw;
+      min-width: 50rem;
+      place-self: flex-end;
+      position: static!important;
+  
+      .description{
+        width: 60%;
+        margin-bottom: 2vw;
+      }
+
+      .itemListWrapper{
+        width:100%;
+      
+  
+
+
+          
+          
+        .itemCard{
+          width:100%;
+          height: auto;
+          display: flex;
+          border-bottom: layout.$border;
+          padding: 2vw 0;
+          position: relative;
+          z-index: 1;
+
+          // this class is also copied to video scss module
+          .itemCardMedia{
+            position: fixed!important;
+            top:-7vw!important; 
+            left:-40vw!important;
+            width:30vw;
+            z-index: 99999;
+            visibility: hidden;
+            opacity: 0;
+            transition: all .8s ease-out;
+          
+            img{
+              width:100%;
+              height: auto;
+            }
+          }
+
+
+
+          .itemCardHeader{
+              display: flex;
+              justify-content: space-between;
+              width:100%;
+
+              h3{
+                width: auto;
+                line-height: 1;
+                transition: all .8s ease-out;
+              }
+          }
+
+
+          &:hover{
+
+            .itemCardMedia{
+              visibility: visible;
+              opacity: 1;
+            }
+
+            .itemCardHeader{
+              display: flex;
+              justify-content: space-between;
+              width:100%;
+
+              h3{
+                color: layout.$color;
+                transform: translateX(2vw);
+              }
+            }
+
+          
+          }
+        }
+
+
+
+      }
+    }
+    
+}
+
+.video{
+  width:100%;
+  height: auto;
+  display: flex;
+  outline: unset!important;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-appearance: none;
+  border: none;
+  outline: none !important;
+  box-shadow: none;
+  margin: auto;
+
+}
+
+
+
+  
+
+  .pageFooterImage{
+    width:100%;
+    margin-top:6vw;
+  
+ }
+  
+  
+  

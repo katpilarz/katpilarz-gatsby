@@ -1,14 +1,11 @@
 import * as React from "react"
 import { graphql } from "gatsby";
 import Seo from "../components/seo";
-import ProjectBanner from "../components/projectBanner";
-import ProjectDetails from "../components/projectDetails";
-import Gallery from "../components/gallery";
-import ProjectPrototype from "../components/projectPrototype";
-import ProjectTestimonial from "../components/projectTestimonial";
-import ProjectNext from "../components/projectNext";
+import ProjectSingle from "../components/projectSingle";
 import PagePreloader from "../components/pagePreloader"
-import { useEffect } from 'react';
+import { useEffect} from 'react';
+
+
 
 
 
@@ -106,23 +103,10 @@ const ProjectTemplate = props => {
 
   return (
 
-      <main className="container">
-      <PagePreloader/>
-      <Seo title={project.title} description={project.overview}  />
-      <ProjectBanner project={project} isBanner='true'/>
-      <ProjectDetails project={project}/>
-      {project.isInteractive &&
-        <ProjectPrototype prototypes={project.projectPrototypes}/>
-      }
-      <Gallery images={project.mockups} galleryClassName='projectGallery'/>
-      {project.isTestimonial &&
-        <ProjectTestimonial testimonial={project._rawTestimonial} name={project.title}/>
-      }
-      {project.nextProject.map((nextProject, index) => {
-          return(
-            <ProjectNext nextProject={nextProject} key={index}/>
-          )
-      })}
+      <main>
+        <PagePreloader/>
+        <Seo title={project.title} description={project.overview}  />
+        <ProjectSingle project={project}/>
       </main>
       
   );

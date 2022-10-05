@@ -1,8 +1,8 @@
 .nextProjectSection{
     display: grid;
-    width:70%;
+    width:80%;
     height: auto;
-    margin:14vw 0 14vw auto;
+    margin:14vw 0 12vw auto;
 }
 
 
@@ -14,16 +14,18 @@
     text-align: left;
     z-index: 2;
 
-    h3{
+
+
+    h2{
         line-height: 1;
-        margin-bottom: 1vw;
+        margin-bottom: 4vw;
     }
 }
 
 
 .nextProjectImage{
     display: flex;
-    width:57%;
+    width:70%;
     margin: auto;
     z-index: 1;
 

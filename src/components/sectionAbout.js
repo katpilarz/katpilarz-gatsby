@@ -1,5 +1,4 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionAbout.module.scss";
 import ScrippedText from "../components/scrippedText";
 import AnimatedImage from "../components/animatedImage";
@@ -22,10 +21,6 @@ const SectionAbout = ({ section }) => {
     const headerRef = useRef(null);
     const subheaderRef = useRef(null);
 
-    const imageOneRef = useRef(null);
-    //const imageTwoRef = useRef(null);
-
-  
 
     useEffect(() => {
    
@@ -37,30 +32,30 @@ const SectionAbout = ({ section }) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 60%",
-                    end: "top 20%",
-                    scrub:1, 
+                    start: "top 67%",
+                    end: "top 30%",
+                    scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
                 });
                 tl.from(subheaderRef.current, {
-                    duration: 1,
-                    ease: "power4.out",
+                    duration: 2,
+                    ease: "power2.out",
                     css: {
                     autoAlpha: 0,
-                    yPercent:'-50',
+                    yPercent:'-30',
                 }})
                 tl.from(headerRef.current, {
                     duration: 2,
-                    ease: "power4.out",
+                    ease: "power2.out",
                     css: {
                     autoAlpha: 0,
                     yPercent:'30',
-                }},'-=1')
+                }},'-=2')
                     tl.from(paragraphRef.current, {
                         duration: 4,
-                        ease: "power4.out",
+                        ease: "power2.out",
                         css: {
                         autoAlpha: 0,
                         yPercent:'30',

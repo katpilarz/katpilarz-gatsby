@@ -61,7 +61,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
             scrollTrigger: {
               trigger: scrippedTextRef.current,
               start: "top 70%",
-              end: "top 30%",
+              end: "top 40%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -69,7 +69,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
           });
             tl.from(scrippedTextRef.current, {
                 duration: 1,
-                ease: "power4.out",
+                ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
