@@ -1,7 +1,7 @@
 import React from "react"
 import * as styles from "./sectionAbout.module.scss";
-import ScrippedText from "../components/scrippedText";
-import AnimatedImage from "../components/animatedImage";
+import ScrippedText from "./scrippedText";
+import AnimatedImage from "../../components/global/animatedImage";
 import PortableText from "react-portable-text"
 
 import gsap from 'gsap/dist/gsap';

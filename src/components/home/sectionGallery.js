@@ -1,8 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionGallery.module.scss";
-import Video from "../components/video";
-import AnimatedImage from "../components/animatedImage";
+import Video from "../../components/global/video";
+import AnimatedImage from "../../components/global/animatedImage";
 
 
 

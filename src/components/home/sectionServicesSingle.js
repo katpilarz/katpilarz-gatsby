@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./sectionServices.module.scss";
-import Icon from "../components/icon";
+import Icon from "../global/icon";
 
 
 

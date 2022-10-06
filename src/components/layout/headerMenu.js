@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./headerMenu.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import Icon from "../components/icon";
+import Icon from "../../components/global/icon";
 import { Link } from "gatsby"
 //import TransitionLink from 'gatsby-plugin-transition-link';
 

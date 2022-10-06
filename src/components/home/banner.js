@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./banner.module.scss";
-import Btn from "../components/btn";
+import Btn from "../global/btn";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';

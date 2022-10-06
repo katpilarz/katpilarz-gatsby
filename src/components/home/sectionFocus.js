@@ -1,8 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionFocus.module.scss";
-import SectionIntro from "../components/sectionIntro";
-import Video from "../components/video";
+import SectionIntro from "../../components/global/sectionIntro";
+import Video from "../../components/global/video";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';

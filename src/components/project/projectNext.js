@@ -4,7 +4,7 @@ import * as styles from "./projectNext.module.scss";
 import { navigate } from 'gatsby';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../components/animatedImage";
+import AnimatedImage from "../../components/global/animatedImage";
 
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./projectPrototype.module.scss";
-import Video from "../components/video";
+import Video from "../../components/global/video";
 
 
 

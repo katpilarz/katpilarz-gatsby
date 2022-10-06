@@ -1,10 +1,10 @@
 import * as React from "react"
-import ProjectBanner from "../components/projectBanner";
-import ProjectDetails from "../components/projectDetails";
-import Gallery from "../components/gallery";
-import ProjectPrototype from "../components/projectPrototype";
-import SectionTestimonial from "../components/sectionTestimonial";
-import ProjectNext from "../components/projectNext";
+import ProjectBanner from "./projectBanner";
+import ProjectDetails from "./projectDetails";
+import Gallery from "./gallery";
+import ProjectPrototype from "./projectPrototype";
+import SectionTestimonial from "../../components/global/sectionTestimonial";
+import ProjectNext from "./projectNext";
 
 
 

@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import PagePreloader from "../components/pagePreloader"
+import PagePreloader from "../components/global/pagePreloader"
 
 
 // markup

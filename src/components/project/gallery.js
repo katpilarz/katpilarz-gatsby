@@ -1,7 +1,6 @@
 import React from "react";
 import * as styles from "./gallery.module.scss";
-//import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import AnimatedImage from "../components/animatedImage";
+import AnimatedImage from "../../components/global/animatedImage";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 

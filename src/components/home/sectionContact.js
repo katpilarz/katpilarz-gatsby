@@ -2,9 +2,9 @@ import React from "react";
 import * as styles from "./sectionContact.module.scss";
 import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
-import ArrowIcon from "../components/arrow";
-import ScrippedText from "../components/scrippedText";
-import AnimatedImage from "../components/animatedImage";
+import ArrowIcon from "../../components/global/arrow";
+import ScrippedText from "./scrippedText";
+import AnimatedImage from "../../components/global/animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';

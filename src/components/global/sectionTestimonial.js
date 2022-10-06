@@ -1,7 +1,7 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionTestimonial.module.scss";
-import SectionIntro from "../components/sectionIntro";
+import SectionIntro from "./sectionIntro";
 import PortableText from "react-portable-text"
 import { Link } from "gatsby"
 import { useEffect, useRef } from 'react';

@@ -1,16 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import Seo from "../components/seo";
-import Banner from "../components/banner";
-import GallerySwiper from "../components/gallerySwiper";
-import ProjectsFeaturedSwiper from "../components/projectsFeaturedSwiper";
-import SectionFocus from "../components/sectionFocus";
-import SectionAbout from "../components/sectionAbout";
-import SectionServices from "../components/sectionServices";
-import SectionTestimonial from "../components/sectionTestimonial";
-import SectionContact from "../components/sectionContact";
-import SectionGallery from "../components/sectionGallery";
-import PagePreloader from "../components/pagePreloader";
+import Seo from "../components/global/seo";
+import HomeSingle from "../components/home/homeSingle";
+import PagePreloader from "../components/global/pagePreloader";
 import { useEffect } from 'react';
 
 
@@ -274,13 +266,9 @@ const IndexPage = props => {
   const site = (data || {}).site;
   const featuredProjects = (data || {}).projects.edges;
   const home = (data || {}).home;
-  const sectionFocus = (data || {}).home.sectionFocus;
-  const sectionAbout = (data || {}).home.sectionAbout;
-  const sectionGallery = (data || {}).home.sectionGallery;
-  const sectionContact = (data || {}).home.sectionContact;
-  const galleryImages = (data || {}).galleryMockups.edges;
   const services = (data || {}).services.edges;
   const testimonialProject =  (data || {}).testimonialProject.edges[0];
+  const galleryMockups =  (data || {}).galleryMockups.edges;
 
   useEffect(() => window.scrollTo(0, 0), []) 
 
@@ -296,18 +284,8 @@ const IndexPage = props => {
     <main>
       <Seo title={siteTitle} description={site.description} keywords={site.keywords}  />
       <PagePreloader/>
-      
-      <Banner name={site.name} title={site.title} banner={home.banner}/>
-      <GallerySwiper images={galleryImages}/>
-      <SectionFocus section={sectionFocus}/>
-      <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>
-      <SectionAbout section={sectionAbout}/>
-      <SectionServices services={services}/>
-      <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
-       image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
-       slug={testimonialProject.node.slug.current} />
-      <SectionGallery section={sectionGallery}/>
-      <SectionContact section={sectionContact}/>
+      <HomeSingle galleryMockups={galleryMockups} home={home} site={site} services={services} testimonialProject={testimonialProject}
+      featuredProjects={featuredProjects}/>
     </main>
   )
 }

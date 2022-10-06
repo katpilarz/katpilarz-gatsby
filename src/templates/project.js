@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import Seo from "../components/seo";
-import ProjectSingle from "../components/projectSingle";
-import PagePreloader from "../components/pagePreloader"
+import Seo from "../components/global/seo";
+import ProjectSingle from "../components/project/projectSingle";
+import PagePreloader from "../components/global/pagePreloader"
 import { useEffect} from 'react';
 
 

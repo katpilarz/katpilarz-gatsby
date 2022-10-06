@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import HeaderNavbar from "./headerNavbar"
-import HeaderMenu from "./headerMenu"
-import BackgroundImage from "./backgroundImage"
-import Footer from "./footer"
+import HeaderNavbar from "./layout/headerNavbar"
+import HeaderMenu from "./layout/headerMenu"
+import BackgroundImage from "./layout/backgroundImage"
+import Footer from "./layout/footer"
 import Helmet from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby"
 

@@ -2,8 +2,8 @@ import React from "react";
 import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import ArrowIcon from "./arrow";
-import Video from "./video";
+import ArrowIcon from "./global/arrow";
+import Video from "./global/video";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 

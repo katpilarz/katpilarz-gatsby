@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import PageSingleItemList from "../components/pageSingleItemList";
+import PageSingleItemList from "./pageSingleItemList";
 import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';

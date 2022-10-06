@@ -3,7 +3,7 @@ import * as styles from "./projectBanner.module.scss";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../components/animatedImage";
+import AnimatedImage from "../../components/global/animatedImage";
 
 
 

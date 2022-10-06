@@ -2,8 +2,8 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionServices.module.scss";
 import { Link } from "gatsby"
-import Video from "../components/video";
-import SectionServicesSingle from "../components/sectionServicesSingle";
+import Video from "../global/video";
+import SectionServicesSingle from "./sectionServicesSingle";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
