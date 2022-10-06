@@ -1,5 +1,5 @@
 .btnWrapper{
-    width:10vw;
+    width:100%;
     height: auto;
     display: flex;
     place-content: center;
@@ -18,6 +18,17 @@
     place-self: center;
     place-self: center;
     margin-top: 7vw;
+    width:10vw;
+}
+
+.introBtn{
+    display: flex;
+    place-content: center;
+    place-self: center;
+    place-self: center;
+    margin-top: 4vw;
+    width:10vw;
+
 }
 
 // This does now work

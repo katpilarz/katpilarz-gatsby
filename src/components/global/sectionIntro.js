@@ -28,7 +28,7 @@ const SectionIntro = ({ subheader }) => {
         scrollTrigger: {
           trigger: sectionIntroRef.current,
           start: "top 90%",
-          end: "top 20%",
+          end: "top 30%",
           scrub:1, 
           repeatRefresh: true,
           toggleActions: 'play none none reverse'

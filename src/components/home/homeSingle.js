@@ -1,7 +1,6 @@
 import * as React from "react"
-import Banner from "./banner";
-import GallerySwiper from "./gallerySwiper";
-import ProjectsFeaturedSwiper from "./projectsFeaturedSwiper";
+import HomeBanner from "./homeBanner";
+import SectionFeaturedProjects from "./sectionFeaturedProjects";
 import SectionFocus from "./sectionFocus";
 import SectionAbout from "./sectionAbout";
 import SectionServices from "./sectionServices";
@@ -20,10 +19,9 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
 
   return (
     <div>
-      <Banner name={site.name} title={site.title} banner={home.banner}/>
-      <GallerySwiper images={galleryMockups}/>
-      <SectionFocus section={home.sectionFocus}/>
-      <ProjectsFeaturedSwiper featuredProjects={featuredProjects}/>
+      <HomeBanner name={site.name} title={site.title} images={galleryMockups}/>
+      <SectionFocus section={home.sectionFocus} header={home.banner.header}/>
+      <SectionFeaturedProjects featuredProjects={featuredProjects}/>
       <SectionAbout section={home.sectionAbout}/>
       <SectionServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}

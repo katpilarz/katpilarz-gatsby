@@ -5,6 +5,8 @@ figcaption{
     font-size: calc( .4rem + .4vw);
     text-transform: uppercase;
 }
+
+.intro span,
 .testimonial,
 .link,
 .menu-link,
@@ -59,7 +61,7 @@ h4{
     line-height:1.1;
 }
 
-h1 span,
+.intro span,
 .testimonial{
     font-size: calc(.6rem + 3vw);
     line-height: .7;

@@ -11,9 +11,11 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionFocus = ({ section }) => {
+const SectionFocus = ({ section, header }) => {
 
-    const sectionRef = useRef([]);
+    const sectionRef = useRef(null);
+
+    const headerRef = useRef(null)
 
     const revealRefs = useRef([]);
     revealRefs.current = [];
@@ -30,6 +32,31 @@ const SectionFocus = ({ section }) => {
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
+
+
+                const tl = gsap.timeline({
+                    scrollTrigger: {
+                    trigger: headerRef.current,
+                    start: "top 70%",
+                    end: "top 37%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                    }
+                });
+                    tl.from(headerRef.current, {
+                        duration: 1,
+                        ease: "power2.out",
+                        css: {
+                        autoAlpha: 0,
+                        yPercent:'30',
+                    }})
+        
+
+
+
+
+
 
                 revealRefs.current.forEach((el, index) => {
 
@@ -66,6 +93,7 @@ const SectionFocus = ({ section }) => {
   
   return (
         <section className={styles.sectionFocus}>
+            <h3 ref={headerRef}>{header}</h3>
             <SectionIntro subheader={section.subheader}/>
             <div ref={sectionRef} className={styles.focusAreasWrapper}>
                 {section.focusAreas.map( (area, index) => {

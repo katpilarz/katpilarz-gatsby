@@ -1,9 +1,19 @@
 .sectionFocus{
     height: auto;
-    margin: 10vw auto 14vw auto;
+    margin: 0vw auto 14vw auto;
     display: flex;
     flex-direction: column;
     place-items: center;
+
+    h3{
+        color:inherit;
+        width:80%;
+        margin: auto;
+        text-align: center;
+        margin-bottom: 6vw;
+        
+    
+    }
 
 }
 

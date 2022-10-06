@@ -6,12 +6,12 @@ import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
 
 
-const Btn = ({btnClassName}) => {
-
+const Btn = () => {
+/*
 
   const btnRef = useRef(null);
 
-  /*useEffect(() => {
+  useEffect(() => {
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -50,7 +50,7 @@ const Btn = ({btnClassName}) => {
       tl.scrollTrigger.kill();
       window.removeEventListener("pointermove", onMove);
     };
-  }, []);*/
+  }, []);
 
   useEffect(() => {
    
@@ -62,31 +62,25 @@ const Btn = ({btnClassName}) => {
         scrollTrigger: {
           trigger: btnRef.current,
           start: "top 80%",
-          end: "top -50%",
-          scrub:3, 
+          end: "top -100%",
+          scrub:1, 
           repeatRefresh: true,
-          toggleActions: "restart pause resume none",
+          //toggleActions: "restart pause resume none",
+          toggleActions: 'play none none reverse'
+
         }
       });
-      tl.from(btnRef.current, {
-            duration: 2,
-            ease: "circe.inOut",
-            css: {
-              opacity:0,
-              autoAlpha:0,
-  
-        }})
         tl.to(btnRef.current, {
             duration: 14,
             ease: "circe.inOut",
             css: {
               rotation: '360deg',
-        }},'-=1.4')
+        }})
   
     }, btnRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
-  }, []);
+  }, []);*/
 
 
 
@@ -94,7 +88,7 @@ const Btn = ({btnClassName}) => {
 
 
   return (
-    <div ref={btnRef} className={`${styles.btnWrapper} ${styles[btnClassName]}`}>
+    <div  className={`${styles.btnWrapper}`}>
       <svg width="172" height="170" viewBox="0 0 172 170" fill="none" xmlns="http://www.w3.org/2000/svg">
       <mask id="path-1-outside-1_486_3080" maskUnits="userSpaceOnUse" x="133.569" y="120.253" width="16.6432" height="15.1188" fill="black">
       <rect fill="white" x="133.569" y="120.253" width="16.6432" height="15.1188"/>

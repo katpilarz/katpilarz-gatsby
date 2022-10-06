@@ -43,7 +43,7 @@ const SectionServices = ({ services }) => {
                     trigger: sectionRef.current,
                     start: "top 90%",
                     end: "top 50%",
-                    scrub:1, 
+                    scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
