@@ -1,7 +1,7 @@
 import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
-import HomeSingleProjects from "./homeSingleProjects";
+import HomeSingleFeatured from "./homeSingleFeatured";
 
 import HomeSingleAbout from "./homeSingleAbout";
 import HomeSingleServices from "./homeSingleServices";
@@ -22,7 +22,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
     <div>
       <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups}/>
       <HomeSingleFocus section={home.sectionFocus} header={home.banner.header}/>
-      <HomeSingleProjects featuredProjects={featuredProjects}/>
+      <HomeSingleFeatured featuredProjects={featuredProjects}/>
       <HomeSingleAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}

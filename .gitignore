@@ -4,3 +4,5 @@ public
 
 .env.development
 .env.production
+
+src/components/deprecated

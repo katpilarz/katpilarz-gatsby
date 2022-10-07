@@ -132,8 +132,8 @@ const HomeSingleBanner = ({ name, title, images }) => {
         duration:1, 
         ease: "power2.out",
         css: {
-          autoAlpha:0, 
-          opacity:0,
+          autoAlpha:0.0, 
+          opacity:0.0,
         }
       });
 

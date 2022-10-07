@@ -185,6 +185,12 @@ query HomePageQuery{
               url
             }
           }
+          socialMediaImage {
+            alt
+            asset {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+            }
+          }
           header
           isFeatured
           overview

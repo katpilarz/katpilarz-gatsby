@@ -39,6 +39,8 @@
     height: 100%;
     transition: all .4s linear;
     animation: menu 1s backwards;
+    position: relative!important;
+    z-index: 9;
     
 
     .menuSingleLink{

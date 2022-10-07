@@ -81,17 +81,8 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
         {images.map((image, index) => {
             return (
             <div className={styles.galleryImages} key={index} ref={addToRefs}>
- <AnimatedImage imagePath={image.asset.gatsbyImageData} imageAlt={image.alt}/> 
-            
-
-                 {/*
-            <GatsbyImage 
-                image={getImage(image.asset.gatsbyImageData)}
-            alt={`${image.alt}`}/>
+                <AnimatedImage imagePath={image.asset.gatsbyImageData} imageAlt={image.alt}/> 
            
-            */}
-
-              
             </div>
             )
         })}

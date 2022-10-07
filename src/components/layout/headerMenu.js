@@ -13,6 +13,7 @@ const HeaderMenu = ({ isOpen,toggleSidebar, menuData }) => {
 
   return (
     <div className={isOpen ? `${styles.menuOpen} menu-background` : styles.menu}>
+        <div className={isOpen ? styles.overlay : null}></div>
         <div className={isOpen ? styles.menuLinks : null}>
             {menuData.menuLinks.map((link, index)  => {
                 return (
