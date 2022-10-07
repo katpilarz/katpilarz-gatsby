@@ -1,8 +1,8 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as styles from "./sectionFocus.module.scss";
-import SectionIntro from "../../components/global/sectionIntro";
-import Video from "../../components/global/video";
+import * as styles from "./homeSingleFocus.module.scss";
+import SectionIntro from "../global/sectionIntro";
+import Video from "../global/video";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionFocus = ({ section, header }) => {
+const HomeSingleFocus = ({ section, header }) => {
 
     const sectionRef = useRef(null);
 
@@ -37,7 +37,7 @@ const SectionFocus = ({ section, header }) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: headerRef.current,
-                    start: "top 70%",
+                    start: "top 77%",
                     end: "top 37%",
                     scrub:1, 
                     repeatRefresh: true,
@@ -62,13 +62,14 @@ const SectionFocus = ({ section, header }) => {
 
                     gsap.fromTo(el, {
                         autoAlpha: 0,
-                        xPercent:5,
+                        xPercent:15,
                     }, {
                         duration: 1,
                         autoAlpha: 1,
                         xPercent:0,
                         ease: "power4.out",
-                        delay:.77,
+                        stagger:2,
+                        delay:.97,
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
@@ -77,7 +78,7 @@ const SectionFocus = ({ section, header }) => {
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
-                            scrub:1,
+                            scrub:2,
                         }
                     });
              
@@ -121,4 +122,4 @@ const SectionFocus = ({ section, header }) => {
   )
 }
 
-export default SectionFocus;
+export default HomeSingleFocus;

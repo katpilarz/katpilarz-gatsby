@@ -1,13 +1,13 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as styles from "./sectionGallery.module.scss";
-import Video from "../../components/global/video";
-import AnimatedImage from "../../components/global/animatedImage";
+import * as styles from "./homeSingleGallery.module.scss";
+import Video from "../global/video";
+import AnimatedImage from "../global/animatedImage";
 
 
 
 
-const SectionGallery = ({ section }) => {
+const HomeSingleGallery = ({ section }) => {
   return (
         <section className={`${styles.sectionGallery} container`}>
             <div className={styles.sectionGalleryWrapper}>
@@ -26,4 +26,4 @@ const SectionGallery = ({ section }) => {
   )
 }
 
-export default SectionGallery;
+export default HomeSingleGallery;

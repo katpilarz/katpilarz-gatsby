@@ -2,9 +2,9 @@ import React from "react";
 import * as styles from "./sectionContact.module.scss";
 import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
-import ArrowIcon from "../../components/global/arrow";
+import ArrowIcon from "./arrow";
 import ScrippedText from "./scrippedText";
-import AnimatedImage from "../../components/global/animatedImage";
+import AnimatedImage from "./animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -13,7 +13,7 @@ import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SectionContact = ({section }) => {
+const SectionContact = ({section, pageName }) => {
 
     const headerOneRef = useRef(null);
     const headerTwoRef = useRef(null);
@@ -110,7 +110,7 @@ const SectionContact = ({section }) => {
 
   return (
     
-    <section ref={contactRef} className={`${styles.contact} container`}>
+    <section ref={contactRef} className={pageName === 'home' ? `${styles.contact} container` : styles.contact}>
         <div className={styles.contactSection}>
             <div className={styles.contactSectionContent}>
                 <div ref={headerOneRef} className={styles.headerOne}>

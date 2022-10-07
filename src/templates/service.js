@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/global/seo";
 import PagePreloader from "../components/global/pagePreloader"
+import ServiceSingle from "../components/service/serviceSingle";
 import { useEffect } from 'react';
 
 
@@ -23,6 +24,48 @@ query ServiceTemplateQuery($id: String!){
         }
       }
       _rawDetails
+      video {
+        fallback {
+          asset {
+            url
+            extension
+            altText
+          }
+        }
+        webm {
+          asset {
+            altText
+            url
+            extension
+          }
+        }
+      }
+    }
+    contact:sanityHome {
+      sectionContact {
+        projectFeatures
+        subheader
+        headerOne
+        headerTwo
+        contactLinks {
+          text
+          url
+        }
+        brief {
+          asset {
+            _type
+            url
+          }
+          text
+        }
+        image {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
+
     }
   }
 `
@@ -32,6 +75,8 @@ query ServiceTemplateQuery($id: String!){
 const ServiceTemplate = props => {
   const { data, errors } = props;
   const service = data && data.singleService;
+  const contact = data && data.contact.sectionContact;
+
 
   useEffect(() => window.scrollTo(0, 0), []) 
 
@@ -41,11 +86,10 @@ const ServiceTemplate = props => {
     );
   }
   return (
-      <main className="container">
-
-      <Seo title={service.title} description={service.title}  />
-      <PagePreloader/>
-      <h2>{service.title} </h2>
+      <main>
+        <Seo title={service.title} description={service.title}  />
+        <PagePreloader/>
+        <ServiceSingle service={service} contact={contact}/>
       </main>
       
   );

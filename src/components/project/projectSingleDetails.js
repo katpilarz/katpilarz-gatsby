@@ -1,12 +1,12 @@
 import React from "react";
-import * as styles from "./projectDetails.module.scss";
+import * as styles from "./projectSingleDetails.module.scss";
 import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
 
 
-const ProjectDetails = ({ project }) => {
+const ProjectSingleDetails = ({ project }) => {
 
 
 
@@ -187,4 +187,4 @@ const ProjectDetails = ({ project }) => {
   )
 }
 
-export default ProjectDetails
+export default ProjectSingleDetails

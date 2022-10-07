@@ -1,6 +1,6 @@
 import React from "react";
-import * as styles from "./gallery.module.scss";
-import AnimatedImage from "../../components/global/animatedImage";
+import * as styles from "./projectSingleGallery.module.scss";
+import AnimatedImage from "../global/animatedImage";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
@@ -9,7 +9,7 @@ import gsap from 'gsap/dist/gsap';
 
 
 
-const Gallery = ({ images, galleryClassName }) => {
+const ProjectSingleGallery = ({ images, galleryClassName }) => {
 
 
   const itemListRef = useRef(null);
@@ -99,4 +99,4 @@ const Gallery = ({ images, galleryClassName }) => {
   )
 }
 
-export default Gallery
+export default ProjectSingleGallery

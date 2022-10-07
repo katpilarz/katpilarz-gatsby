@@ -1,10 +1,10 @@
 import React from "react";
-import * as styles from "./projectPrototype.module.scss";
-import Video from "../../components/global/video";
+import * as styles from "./projectSinglePrototype.module.scss";
+import Video from "../global/video";
 
 
 
-const ProjectPrototype = ({ prototypes }) => {
+const ProjectSinglePrototype = ({ prototypes }) => {
   return (
     <section className={styles.projectPrototypes}>
         {prototypes.map((prototype, index) => {
@@ -16,4 +16,4 @@ const ProjectPrototype = ({ prototypes }) => {
   )
 }
 
-export default ProjectPrototype
+export default ProjectSinglePrototype

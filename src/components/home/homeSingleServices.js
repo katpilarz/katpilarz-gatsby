@@ -1,9 +1,9 @@
 import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import * as styles from "./sectionServices.module.scss";
+import * as styles from "./homeSingleServices.module.scss";
 import { Link } from "gatsby"
 import Video from "../global/video";
-import SectionServicesSingle from "./sectionServicesSingle";
+import HomeSingleServicesSingle from "./homeSingleServicesSingle";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionServices = ({ services }) => {
+const HomeSingleServices = ({ services }) => {
 
 
     const sectionRef = useRef([]);
@@ -94,11 +94,11 @@ const SectionServices = ({ services }) => {
                 return (
                 <article key={index} className={styles.serviceMarqueeCard} ref={addToRefs}>
                     <Link  to={`/services/${service.node.slug.current}`} className={styles.serviceWrapper}>
-                        <SectionServicesSingle title={service.node.title}/>
-                        <SectionServicesSingle title={service.node.title}/>
-                        <SectionServicesSingle title={service.node.title}/>
-                        <SectionServicesSingle title={service.node.title}/>
-                        <SectionServicesSingle title={service.node.title}/>
+                        <HomeSingleServicesSingle title={service.node.title}/>
+                        <HomeSingleServicesSingle title={service.node.title}/>
+                        <HomeSingleServicesSingle title={service.node.title}/>
+                        <HomeSingleServicesSingle title={service.node.title}/>
+                        <HomeSingleServicesSingle title={service.node.title}/>
                         { service.node.video && 
                             <Video key={index} video={service.node.video} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }
@@ -117,4 +117,4 @@ const SectionServices = ({ services }) => {
   )
 }
 
-export default SectionServices;
+export default HomeSingleServices;

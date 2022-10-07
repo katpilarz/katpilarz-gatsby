@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "./sectionFeaturedProjects.module.scss";
+import * as styles from "./homeSingleProjects.module.scss";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
 import { Link } from "gatsby"
@@ -16,7 +16,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/zoom';
 
 
-const SectionFeaturedProjects = ({ featuredProjects }) => {
+const HomeSingleProjects = ({ featuredProjects }) => {
   return (
 
       <div className={`${styles.sectionFeatured} container`}>
@@ -62,4 +62,4 @@ const SectionFeaturedProjects = ({ featuredProjects }) => {
   )
 }
 
-export default SectionFeaturedProjects
+export default HomeSingleProjects

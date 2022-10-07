@@ -1,7 +1,7 @@
 import React from "react"
-import * as styles from "./sectionAbout.module.scss";
-import ScrippedText from "./scrippedText";
-import AnimatedImage from "../../components/global/animatedImage";
+import * as styles from "./homeSingleAbout.module.scss";
+import ScrippedText from "../global/scrippedText";
+import AnimatedImage from "../global/animatedImage";
 import PortableText from "react-portable-text"
 
 import gsap from 'gsap/dist/gsap';
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionAbout = ({ section }) => {
+const HomeSingleAbout = ({ section }) => {
 
 
     const sectionRef = useRef(null);
@@ -99,4 +99,4 @@ const SectionAbout = ({ section }) => {
   )
 }
 
-export default SectionAbout;
+export default HomeSingleAbout;

@@ -75,7 +75,7 @@ const backgroundImageData = data.sanityGlobal.image
 const name = data.sanitySeo.author
 const contact = data.sanitySeo.contact
 const menuData = data.sanityGlobal.menu
-const site = (data || {}).site;
+
 
 /*const pageRef=useRef()
 

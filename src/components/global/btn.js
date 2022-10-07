@@ -1,9 +1,9 @@
 import React from "react";
 import * as styles from "./btn.module.scss";
-import gsap from 'gsap/dist/gsap';
+/*import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);*/
 
 
 const Btn = () => {

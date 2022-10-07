@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "./homeBanner.module.scss";
+import * as styles from "./homeSingleBanner.module.scss";
 import { useEffect, useRef } from 'react';
 import Btn from "../global/btn";
 
@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeBanner = ({ name, title, images }) => {
+const HomeSingleBanner = ({ name, title, images }) => {
   const introRef = useRef(null);
   const introContentRef = useRef(null);
   const headerRef = useRef(null);
@@ -124,7 +124,7 @@ const HomeBanner = ({ name, title, images }) => {
         css: {
           xPercent: '77', 
           yPercent:'50',
-          scale:3.7,
+          scale:3.8,
         }
       });
 
@@ -220,4 +220,4 @@ const HomeBanner = ({ name, title, images }) => {
   )
 }
 
-export default HomeBanner
+export default HomeSingleBanner

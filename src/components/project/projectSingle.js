@@ -1,10 +1,20 @@
 import * as React from "react"
-import ProjectBanner from "./projectBanner";
-import ProjectDetails from "./projectDetails";
-import Gallery from "./gallery";
-import ProjectPrototype from "./projectPrototype";
+import Banner from "../../components/global/banner";
+import ProjectSingleDetails from "./projectSingleDetails";
+import ProjectSingleGallery from "./projectSingleGallery";
+import ProjectSinglePrototype from "./projectSinglePrototype";
 import SectionTestimonial from "../../components/global/sectionTestimonial";
-import ProjectNext from "./projectNext";
+import ProjectSingleNext from "./projectSingleNext";
+
+/*
+const details = project.map(() => {
+  return {
+    publishedAt: project.publishedAt,
+    services: project.services,
+    overview: project.overview
+  }
+});*/
+
 
 
 
@@ -15,21 +25,21 @@ const ProjectSingle = ({ project }) => {
   return (
 
       <div className="container">
-        <ProjectBanner project={project} isSwiper='false'/>
+        <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
         }
 
-        <ProjectDetails project={project}/>
+        <ProjectSingleDetails project={project}/>
 
         {project.isInteractive &&
-          <ProjectPrototype prototypes={project.projectPrototypes}/>
+          <ProjectSinglePrototype prototypes={project.projectPrototypes}/>
         }
-        <Gallery images={project.mockups} galleryClassName='projectGallery'/>
+        <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
 
         {project.nextProject.map((nextProject, index) => {
             return(
-              <ProjectNext nextProject={nextProject} key={index}/>
+              <ProjectSingleNext nextProject={nextProject} key={index}/>
             )
         })}
       </div>

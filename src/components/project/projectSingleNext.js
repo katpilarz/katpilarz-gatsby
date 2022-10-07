@@ -1,15 +1,15 @@
 import React from "react";
-import * as styles from "./projectNext.module.scss";
+import * as styles from "./projectSingleNext.module.scss";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { navigate } from 'gatsby';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../../components/global/animatedImage";
+import AnimatedImage from "../global/animatedImage";
 
 
 
 
-const ProjectNext = ({ nextProject }) => {
+const ProjectSingleNext = ({ nextProject }) => {
 
   const nextProjectHeaderRef = useRef(null);
   const headerRef = useRef(null);
@@ -73,4 +73,4 @@ const ProjectNext = ({ nextProject }) => {
   )
 }
 
-export default ProjectNext
+export default ProjectSingleNext

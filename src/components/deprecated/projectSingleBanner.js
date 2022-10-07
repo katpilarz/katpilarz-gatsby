@@ -1,14 +1,14 @@
 import React from "react";
-import * as styles from "./projectBanner.module.scss";
+import * as styles from "./projectSingleBanner.module.scss";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../../components/global/animatedImage";
+import AnimatedImage from "../global/animatedImage";
 
 
 
 
-const ProjectBanner = ({ project }) => {
+const ProjectSingleBanner = ({ project }) => {
 
 
     const pageSingleRef = useRef(null);
@@ -69,4 +69,4 @@ const ProjectBanner = ({ project }) => {
   )
 }
 
-export default ProjectBanner
+export default ProjectSingleBanner
