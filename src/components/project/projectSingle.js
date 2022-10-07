@@ -6,17 +6,6 @@ import ProjectSinglePrototype from "./projectSinglePrototype";
 import SectionTestimonial from "../../components/global/sectionTestimonial";
 import ProjectSingleNext from "./projectSingleNext";
 
-/*
-const details = project.map(() => {
-  return {
-    publishedAt: project.publishedAt,
-    services: project.services,
-    overview: project.overview
-  }
-});*/
-
-
-
 
 
 const ProjectSingle = ({ project }) => {
