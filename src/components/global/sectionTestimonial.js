@@ -7,7 +7,6 @@ import { Link } from "gatsby"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
-//import SplitText from "@cyriacbr/react-split-text"
 
 
 

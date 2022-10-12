@@ -120,7 +120,7 @@ const menuData = data.sanityGlobal.menu
         <link href="/fonts/ScholastycaTypeface-Regular.svg" type="font/svg"/>
       </Helmet>
       <HeaderNavbar contact={contact} name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
-      <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} />
+      <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} backgroundImageData={backgroundImageData}/>
       
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}

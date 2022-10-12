@@ -37,7 +37,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
             xPercent:'-2',
             yPercent:'5',
             rotationZ:0,
-            rotationX:-5,
+            rotationX:-20,
             rotationY:5,
             autoAlpha:0, 
             opacity:0,

@@ -15,6 +15,9 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
   const sectionRef = useRef(null);
 
+  const containerRef = useRef(null);
+
+
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
@@ -42,6 +45,30 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
 
 
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: 'top 90%',
+          end:'top 50%',
+          scrub: 1,
+          pin: false,
+          pinSpacing: false,
+          //toggleActions: "restart pause resume none",
+          toggleActions: 'play none none reverse',
+          refreshPriority: 1,
+        }
+      })
+
+      tl.from(containerRef.current, {
+        delay:.3,
+          duration:6, 
+          ease: "power2.out",
+          css: {
+            xPercent:'75',
+          }
+        });
+
+
 
       revealRefs.current.forEach((el, index) => {
 
@@ -60,8 +87,8 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
             scrollTrigger: {
                 id: `section-${index+1}`,
                 trigger: el,
-                start: 'top 62%',
-                end:'top 35%',
+                start: 'top 65%',
+                end:'top 30%',
                 //toggleActions: "restart pause resume none",
                 toggleActions: 'play none none reverse',
                 refreshPriority: 1,
@@ -86,21 +113,23 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
       <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
           <span className="text-uppercase">Latest Projects</span>
-          <div className={styles.sectionFeaturedWrapper}>
+          <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
             {featuredProjects.map((project, index) => {
                   return (
                     <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
                       <Link to={`projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
-                          <div  className={styles.projectSwiperSlideHeader}>
-                              {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
-                              <h4>{project.node.title}</h4>
+                          
+
+                          <div className={styles.projectSwiperSlideImage}>
+                              <AnimatedImage imagePath={project.node.bannerImage.asset.gatsbyImageData} imageAlt={project.node.bannerImage.alt}/> 
                           </div>
                           <GatsbyImage className={styles.projectSwiperSlideImageSecondary}
                             image={getImage(project.node.socialMediaImage.asset.gatsbyImageData)}
                             alt={`${project.node.socialMediaImage.alt}`}
                           />
-                          <div className={styles.projectSwiperSlideImage}>
-                              <AnimatedImage imagePath={project.node.bannerImage.asset.gatsbyImageData} imageAlt={project.node.bannerImage.alt}/> 
+                          <div  className={styles.projectSwiperSlideHeader}>
+                              {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
+                              <h4>{project.node.title}</h4>
                           </div>
                       </Link>
                     </div>

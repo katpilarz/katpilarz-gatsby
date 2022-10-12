@@ -1,8 +1,8 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./homeSingleFocus.module.scss";
 import SectionIntro from "../global/sectionIntro";
 import Video from "../global/video";
+import AnimatedImage from "../global/animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -103,10 +103,7 @@ const HomeSingleFocus = ({ section, header }) => {
                         <h4>{area.text}</h4>
                         <div className={styles.focusAreaMedia} key={index}>
                             {area.image &&
-                                <GatsbyImage 
-                                    image={getImage(area.image.asset.gatsbyImageData)}
-                                    alt={`${area.image.alt}`}
-                                />
+                                <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/>   
                             }
 
                             {area.video &&

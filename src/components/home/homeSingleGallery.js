@@ -16,12 +16,12 @@ const HomeSingleGallery = ({ section }) => {
                </div>
                 <Video video={section.projectPrototypeTwo} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>    
             </div>
-            <div className={styles.sectionGalleryWrapper}>
+            {/*<div className={styles.sectionGalleryWrapper}>
                 <GatsbyImage className={styles.projectMockupFull}
                     image={getImage(section.projectMockupThree.asset.gatsbyImageData)}
                     alt={`${section.projectMockupThree.alt}`}/>
 
-            </div>
+  </div>*/}
         </section>
   )
 }

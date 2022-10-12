@@ -8,7 +8,7 @@ const Contact = () => {
     <main className="container">
       <PagePreloader/>
       <title>Contact</title>
-      <h2>Get in touch</h2>
+      <h2>Let's collaborate and make something valuable</h2>
     </main>
   )
 }

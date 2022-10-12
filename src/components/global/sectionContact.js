@@ -70,8 +70,8 @@ const SectionContact = ({section, pageName }) => {
             const tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: headerTwoRef.current,
-                    start: "top 60%",
-                    end: "top 30%",
+                    start: "top 70%",
+                    end: "top 35%",
                     scrub: 1,
                     toggleActions: "restart pause resume none",
                 }
@@ -162,14 +162,18 @@ const SectionContact = ({section, pageName }) => {
                         Send me an email
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </Link>
-                    {section.contactLinks.map( (link, index) => {
+                    <Link className={styles.contactLink} to='/contact' ref={linksRefThree}>
+                            Get free Quote
+                        <ArrowIcon arrowIconClass="linkIcon"/>
+                    </Link>
+                    {/*{section.contactLinks.map( (link, index) => {
                         return (
                         <Link className={styles.contactLink} to={link.url} key={index} ref={linksRefThree}>
                             {link.text}
                             <ArrowIcon arrowIconClass="linkIcon"/>
                         </Link>
                         )
-                    })}
+                    })}*/}
             </div>
         </div>
         <AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>   
