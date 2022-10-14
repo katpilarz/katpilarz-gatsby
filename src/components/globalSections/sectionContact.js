@@ -2,9 +2,9 @@ import React from "react";
 import * as styles from "./sectionContact.module.scss";
 import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
-import ArrowIcon from "./arrow";
-import ScrippedText from "./scrippedText";
-import AnimatedImage from "./animatedImage";
+import ArrowIcon from "../globalComponents/arrow";
+import ScrippedText from "../globalComponents/scrippedText";
+import AnimatedImage from "../globalComponents/animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -21,7 +21,7 @@ const SectionContact = ({section, pageName }) => {
     const contactRef = useRef(null);
     const linksRefOne = useRef(null);
     const linksRefTwo = useRef(null);
-    const linksRefThree = useRef(null);
+    //const linksRefThree = useRef(null); once contact page will be created
 
 
     useEffect(() => {
@@ -92,14 +92,15 @@ const SectionContact = ({section, pageName }) => {
                       opacity: 0,
                       xPercent:'40',
                 }},'-=.3')
-                tl2.from(linksRefThree.current, {
+                // THIS WILL BE ADDED WHEN CONTACT PAGE WILL BE ADDED
+                /*tl2.from(linksRefThree.current, {
                     duration:1,
                     stagger:1.6,
                     ease: "circe.out",
                     css: {
                       opacity: 0,
                       xPercent:'40',
-                }},'-=.3')
+                }},'-=.3')*/
   
       
         }, contactRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -110,7 +111,8 @@ const SectionContact = ({section, pageName }) => {
 
   return (
     
-    <section ref={contactRef} className={pageName === 'home' ? `${styles.contact} container` : styles.contact}>
+    //{/*<section ref={contactRef} className={pageName === 'home' ? `${styles.contact} container` : styles.contact}>*/}
+    <section ref={contactRef} className={`${styles.contact} container`}>
         <div className={styles.contactSection}>
             <div className={styles.contactSectionContent}>
                 <div ref={headerOneRef} className={styles.headerOne}>
@@ -162,18 +164,6 @@ const SectionContact = ({section, pageName }) => {
                         Send me an email
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </Link>
-                    <Link className={styles.contactLink} to='/contact' ref={linksRefThree}>
-                            Get free Quote
-                        <ArrowIcon arrowIconClass="linkIcon"/>
-                    </Link>
-                    {/*{section.contactLinks.map( (link, index) => {
-                        return (
-                        <Link className={styles.contactLink} to={link.url} key={index} ref={linksRefThree}>
-                            {link.text}
-                            <ArrowIcon arrowIconClass="linkIcon"/>
-                        </Link>
-                        )
-                    })}*/}
             </div>
         </div>
         <AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>   

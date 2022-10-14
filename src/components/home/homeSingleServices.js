@@ -2,7 +2,7 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./homeSingleServices.module.scss";
 import { Link } from "gatsby"
-import Video from "../global/video";
+import Video from "../globalComponents/video";
 import HomeSingleServicesSingle from "./homeSingleServicesSingle";
 
 import gsap from 'gsap/dist/gsap';
@@ -100,7 +100,7 @@ const HomeSingleServices = ({ services }) => {
                         <HomeSingleServicesSingle title={service.node.title}/>
                         <HomeSingleServicesSingle title={service.node.title}/>
                         { service.node.video && 
-                            <Video key={index} video={service.node.video} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
+                            <Video key={index} videoWebm={service.node.video.webm} videoFallback={service.node.video.fallback} videoAlt={service.node.video.alt}  videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }
                         { service.node.image &&
                             <GatsbyImage className={styles.serviceMedia}

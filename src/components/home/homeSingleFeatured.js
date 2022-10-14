@@ -1,7 +1,8 @@
 import React from "react";
 import * as styles from "./homeSingleFeatured.module.scss";
 import { Link } from "gatsby"
-import AnimatedImage from "../global/animatedImage";
+import GalleryHeader from "../globalComponents/galleryHeader";
+import AnimatedImage from "../globalComponents/animatedImage";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
@@ -27,7 +28,6 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
       if (!revealRefs.current.includes(el)) {
           revealRefs.current.push(el);
       }
-
       
   };
 
@@ -60,11 +60,10 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
       })
 
       tl.from(containerRef.current, {
-        delay:.3,
           duration:6, 
           ease: "power2.out",
           css: {
-            xPercent:'75',
+            xPercent:'50',
           }
         });
 
@@ -112,24 +111,22 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
   return (
 
       <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
-          <span className="text-uppercase">Latest Projects</span>
+          <GalleryHeader header='Latest Projects'/>
           <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
             {featuredProjects.map((project, index) => {
                   return (
                     <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
                       <Link to={`projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
-                          
-
                           <div className={styles.projectSwiperSlideImage}>
                               <AnimatedImage imagePath={project.node.bannerImage.asset.gatsbyImageData} imageAlt={project.node.bannerImage.alt}/> 
+                              <GatsbyImage className={styles.projectSwiperSlideImageHover}
+                                image={getImage(project.node.socialMediaImage.asset.gatsbyImageData)}
+                                alt={`${project.node.socialMediaImage.alt}`}
+                              />
                           </div>
-                          <GatsbyImage className={styles.projectSwiperSlideImageSecondary}
-                            image={getImage(project.node.socialMediaImage.asset.gatsbyImageData)}
-                            alt={`${project.node.socialMediaImage.alt}`}
-                          />
                           <div  className={styles.projectSwiperSlideHeader}>
                               {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
-                              <h4>{project.node.title}</h4>
+                              <span className="text-uppercase">{project.node.title}</span>
                           </div>
                       </Link>
                     </div>

@@ -1,28 +1,22 @@
 import * as React from "react"
 import * as styles from "./serviceSingleDetails.module.scss";
-import SectionIntro from "../../components/global/sectionIntro";
-import PortableText from "react-portable-text"
+import SectionIntro from "../globalSections/sectionIntro";
+import SectionDetails from "../globalSections/sectionDetails";
 
 
 
-const ServiceSingleDetails = ({ details }) => {
+const ServiceSingleDetails = ({ section }) => {
 
 
    
   return (
 
     <section className={styles.sectionDetails}>
-        <h3>Personalised, increased user engagement</h3>
-        <SectionIntro subheader={ `Helping brands create unforgettable experience`}/>
         
-        <div className={styles.detailsText}>
-            <PortableText className={`${styles.detailsTextPortable}`}
-                content={details}
-                projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                dataset={process.env.GATSBY_SANITY_DATASET}
-            />
-        </div>
-        
+        <SectionIntro subheader={ section.subheader}/>
+        <h3>{section.header}</h3>
+        <SectionDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo} video={section.video}/>
+
     
     </section>
       

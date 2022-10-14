@@ -1,8 +1,7 @@
 import React from "react"
 import * as styles from "./homeSingleAbout.module.scss";
-import ScrippedText from "../global/scrippedText";
-import AnimatedImage from "../global/animatedImage";
-import PortableText from "react-portable-text"
+import ScrippedText from "../globalComponents/scrippedText";
+import SectionDetails from "../globalSections/sectionDetails";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -17,7 +16,6 @@ const HomeSingleAbout = ({ section }) => {
 
 
     const sectionRef = useRef(null);
-    const paragraphRef = useRef(null);
     const headerRef = useRef(null);
     const subheaderRef = useRef(null);
 
@@ -53,14 +51,6 @@ const HomeSingleAbout = ({ section }) => {
                     autoAlpha: 0,
                     yPercent:'30',
                 }},'-=2')
-                    tl.from(paragraphRef.current, {
-                        duration: 4,
-                        ease: "power2.out",
-                        css: {
-                        autoAlpha: 0,
-                        yPercent:'30',
-                    }},'+=4')
-
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
@@ -68,32 +58,13 @@ const HomeSingleAbout = ({ section }) => {
       }, []);
    
   return (
-        <section ref={sectionRef} className={`${styles.sectionAbout} container`}>
+        <section ref={sectionRef} className={`${styles.sectionAbout}`}>
             <div className={styles.sectionHeader}>
                 <p ref={subheaderRef} className="text-uppercase">{section.subheader}</p>
                 <h3 ref={headerRef}>{section.header}</h3>
                 <ScrippedText scrippedTextClass="scrippedTextAbout" sectionName="about"/>
             </div>
-            <div className={styles.sectionContentWrapper}>   
-                <div className={styles.sectionContentLeft}> 
-                <div className={styles.aboutImageOne}>
-                    <AnimatedImage imagePath={section.imageOne.asset.gatsbyImageData} imageAlt={section.imageOne.alt}/>   
-               </div>
-                </div> 
-                <div className={styles.sectionContentRight}>
-                <div className={styles.aboutImageTwo}>
-                    <AnimatedImage imagePath={section.imageTwo.asset.gatsbyImageData} imageAlt={section.imageTwo.alt}/>   
-               </div>
-                <div  className={styles.aboutDescription} ref={paragraphRef}>    
-                    <PortableText
-                        content={section._rawDescription}
-                        projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                        dataset={process.env.GATSBY_SANITY_DATASET}
-                    />
-                </div>
-                </div>
-                
-            </div>
+            <SectionDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo}/>
             
         </section>
   )

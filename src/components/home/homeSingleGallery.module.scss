@@ -21,15 +21,31 @@ img{
     justify-content: space-between;
     height: auto;
 
+
+ 
+
         .projectMockup{
             display: flex;
-            flex-basis: 45%;
+            flex-basis: 27%;
             width:100%;
             height: auto;
 
             img{
                 width:100%;
                 height: auto;
+            }
+
+
+            &:nth-child(1){
+                place-self: flex-start;
+                place-content: flex-start;
+                place-items: flex-start;
+            }
+        
+            &:nth-child(3){
+                place-self: flex-end;
+                place-content: flex-end;
+                place-items: flex-end;
             }
         }
 

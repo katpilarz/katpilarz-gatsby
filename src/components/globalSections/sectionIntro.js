@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./sectionIntro.module.scss";
-import Icon from "./icon";
+import Icon from "../globalComponents/icon";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';

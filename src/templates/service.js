@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Seo from "../components/global/seo";
-import PagePreloader from "../components/global/pagePreloader"
+import Seo from "../components/globalComponents/seo";
+import PagePreloader from "../components/globalSections/pagePreloader"
 import ServiceSingle from "../components/service/serviceSingle";
 import { useEffect } from 'react';
 
@@ -23,7 +23,6 @@ query ServiceTemplateQuery($id: String!){
           gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
-      _rawDetails
       video {
         fallback {
           asset {
@@ -40,6 +39,60 @@ query ServiceTemplateQuery($id: String!){
           }
         }
       }
+      sectionDetails {
+        _rawDescription
+        imageOne {
+          alt
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+        imageTwo {
+          alt
+          asset {
+            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
+          }
+        }
+        video {
+          fallback {
+            asset {
+              url
+              altText
+              extension
+            }
+          }
+          alt
+          webm {
+            asset {
+              altText
+              extension
+              url
+            }
+          }
+        }
+        header
+        subheader
+      }
+      relatedProjects {
+        bannerImage {
+          alt
+          asset {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+          }
+        },
+        socialMediaImage {
+          alt
+          asset {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+          }
+        }
+        slug {
+          current
+        }
+      }
+      technologies {
+        text
+      }
     }
     contact:sanityHome {
       sectionContact {
@@ -47,10 +100,6 @@ query ServiceTemplateQuery($id: String!){
         subheader
         headerOne
         headerTwo
-        contactLinks {
-          text
-          url
-        }
         brief {
           asset {
             _type

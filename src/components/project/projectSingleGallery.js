@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./projectSingleGallery.module.scss";
-import AnimatedImage from "../global/animatedImage";
+import AnimatedImage from "../globalComponents/animatedImage";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
@@ -77,7 +77,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
 
  
   return (
-    <section ref={itemListRef} className={styles[galleryClassName]}>
+    <section ref={itemListRef} className={`${styles[galleryClassName]} container`}>
         {images.map((image, index) => {
             return (
             <div className={styles.galleryImages} key={index} ref={addToRefs}>

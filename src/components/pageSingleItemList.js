@@ -2,8 +2,8 @@ import React from "react";
 import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
-import ArrowIcon from "./global/arrow";
-import Video from "./global/video";
+import ArrowIcon from "./globalComponents/arrow";
+import Video from "./globalComponents/video";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 
@@ -75,7 +75,7 @@ const PageSingleItemList = ({ itemList, pageName }) => {
             return (
             <article key={index} className={styles.itemCard} ref={addToRefs}>
                 { item.node.video && 
-                    <Video key={index} video={item.node.video} videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
+                    <Video key={index} videoWebm={item.node.video.webm} videoFallback={item.node.video.fallback} videoAlt={item.node.video.alt}  videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
                 }
                 { item.node.image && 
                 <div className={styles.itemCardMedia}>

@@ -1,8 +1,8 @@
 import React from "react"
 import * as styles from "./homeSingleFocus.module.scss";
-import SectionIntro from "../global/sectionIntro";
-import Video from "../global/video";
-import AnimatedImage from "../global/animatedImage";
+import SectionIntro from "../globalSections/sectionIntro";
+import Video from "../globalComponents/video";
+import AnimatedImage from "../globalComponents/animatedImage";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -11,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeSingleFocus = ({ section, header }) => {
+const HomeSingleFocus = ({ section}) => {
 
     const sectionRef = useRef(null);
 
@@ -94,7 +94,7 @@ const HomeSingleFocus = ({ section, header }) => {
   
   return (
         <section className={styles.sectionFocus}>
-            <h3 ref={headerRef}>{header}</h3>
+            <h3 ref={headerRef}>{section.header}</h3>
             <SectionIntro subheader={section.subheader}/>
             <div ref={sectionRef} className={styles.focusAreasWrapper}>
                 {section.focusAreas.map( (area, index) => {
@@ -107,7 +107,7 @@ const HomeSingleFocus = ({ section, header }) => {
                             }
 
                             {area.video &&
-                                <Video video={area.video} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
+                                <Video videoWebm={area.video.webm} videoFallback={area.video.fallback} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
                             }
                         </div>
                     </div>

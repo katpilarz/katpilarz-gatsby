@@ -5,8 +5,8 @@ import HomeSingleFeatured from "./homeSingleFeatured";
 
 import HomeSingleAbout from "./homeSingleAbout";
 import HomeSingleServices from "./homeSingleServices";
-import SectionTestimonial from "../../components/global/sectionTestimonial";
-import SectionContact from "../../components/global/sectionContact";
+import SectionTestimonial from "../globalSections/sectionTestimonial";
+import SectionContact from "../globalSections/sectionContact";
 import HomeSingleGallery from "./homeSingleGallery";
 
 
@@ -21,14 +21,14 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
   return (
     <div>
       <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups}/>
-      <HomeSingleFocus section={home.sectionFocus} header={home.banner.header}/>
-      <HomeSingleFeatured featuredProjects={featuredProjects}/>
+      <HomeSingleFocus section={home.sectionFocus}/>
+      <HomeSingleFeatured featuredProjects={featuredProjects} />
       <HomeSingleAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
        slug={testimonialProject.node.slug.current} />
-      <HomeSingleGallery section={home.sectionGallery}/>
+      <HomeSingleGallery gallery={home.gallery}/>
       <SectionContact section={home.sectionContact} pageName='home'/>
     </div>
   )

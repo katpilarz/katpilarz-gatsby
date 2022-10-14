@@ -1,0 +1,20 @@
+@use 'src/styles/layout';
+
+
+
+.technologies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:100%;
+    margin-top: 10vw;
+}
+.itemWrapper{
+    padding: 6vw 4vw;
+    width:28%;
+    border-top: layout.$border;
+    border-bottom: layout.$border;
+    display: flex;
+    place-content: center;
+    text-align: center;
+}

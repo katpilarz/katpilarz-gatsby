@@ -34,7 +34,7 @@
         margin-top: 1.4vw;
         position: relative!important;
         z-index: 1;
-        width:auto;
+        width:100%;
 
         h4{
             width:100%;
@@ -67,12 +67,11 @@
 
             h4{
                 margin-left: auto;
-                transform:translateX(9vw);
             }
 
             .focusAreaMedia{
                 bottom: 0.1vw;
-                left: -2.6vw;
+                left: 2.6vw;
             }
 
         }

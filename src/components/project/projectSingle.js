@@ -1,9 +1,9 @@
 import * as React from "react"
-import Banner from "../../components/global/banner";
+import Banner from "../globalSections/banner";
 import ProjectSingleDetails from "./projectSingleDetails";
 import ProjectSingleGallery from "./projectSingleGallery";
 import ProjectSinglePrototype from "./projectSinglePrototype";
-import SectionTestimonial from "../../components/global/sectionTestimonial";
+import SectionTestimonial from "../globalSections/sectionTestimonial";
 import ProjectSingleNext from "./projectSingleNext";
 
 
@@ -13,7 +13,7 @@ const ProjectSingle = ({ project }) => {
 
   return (
 
-      <div className="container">
+      <>
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
@@ -31,7 +31,7 @@ const ProjectSingle = ({ project }) => {
               <ProjectSingleNext nextProject={nextProject} key={index}/>
             )
         })}
-      </div>
+      </>
       
   );
 };

@@ -126,7 +126,7 @@ const ProjectSingleDetails = ({ project }) => {
 
 
   return (
-    <section ref={projectDetailsRef} className={styles.projectDetails}>
+    <section ref={projectDetailsRef} className={`${styles.projectDetails} container`}>
 
         <div className={styles.projectDetailsLeft}>
            

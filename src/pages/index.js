@@ -1,8 +1,8 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import Seo from "../components/global/seo";
+import Seo from "../components/globalComponents/seo";
 import HomeSingle from "../components/home/homeSingle";
-import PagePreloader from "../components/global/pagePreloader";
+import PagePreloader from "../components/globalSections/pagePreloader";
 import { useEffect } from 'react';
 
 
@@ -19,16 +19,8 @@ query HomePageQuery{
       name
     }
     home:sanityHome {
-      banner {
-        header
-        mockups {
-          alt
-          asset {
-            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
-          }
-        }
-      }
       sectionFocus {
+        header
         subheader
         focusAreas {
           text
@@ -74,58 +66,30 @@ query HomePageQuery{
           }
         }
       }
-      sectionGallery {
-        projectMockupOne {
+      gallery {
+        ... on SanityFigure {
+          _type
           alt
           asset {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
           }
         }
-        projectMockupThree {
-          alt
-          asset {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
-          }
-        }
-        projectMockupTwo {
-          alt
-          asset {
-            gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
-          }
-        }
-        projectPrototypeOne {
-          alt
+        ... on SanityPrototype {
+          _key
+          _type
           fallback {
             asset {
               url
               extension
-              altText
             }
           }
           webm {
             asset {
-              altText
               url
               extension
             }
           }
-        }
-        projectPrototypeTwo {
           alt
-          fallback {
-            asset {
-              url
-              extension
-              altText
-            }
-          }
-          webm {
-            asset {
-              altText
-              extension
-              url
-            }
-          }
         }
       }
       sectionContact {
@@ -133,10 +97,6 @@ query HomePageQuery{
         subheader
         headerOne
         headerTwo
-        contactLinks {
-          text
-          url
-        }
         brief {
           asset {
             _type
@@ -285,6 +245,7 @@ const IndexPage = props => {
       <h1>Something went wrong</h1>
     );
   }
+
 
   return (
     <main>

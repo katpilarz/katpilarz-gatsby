@@ -3,8 +3,8 @@ import * as styles from "./banner.module.scss";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../../components/global/animatedImage";
-import Video from "../global/video";
+import AnimatedImage from "../globalComponents/animatedImage";
+import Video from "../globalComponents/video";
 
 
 
@@ -44,7 +44,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
     
 
   return (
-    <section ref={pageSingleRef} className={styles.projectBanner}>
+    <section ref={pageSingleRef} className={`${styles.projectBanner} container`}>
         <div className={styles.projectBannerHeader}>
             <h2 className={styles.header}>{title}</h2>
             { services &&
@@ -71,7 +71,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
 
         { video &&
             <div className={styles.projectImageContainer}>
-                <Video video={video} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/> 
+                <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/> 
             </div>
         }
 

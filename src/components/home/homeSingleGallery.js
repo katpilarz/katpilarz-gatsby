@@ -1,28 +1,38 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./homeSingleGallery.module.scss";
-import Video from "../global/video";
-import AnimatedImage from "../global/animatedImage";
+import Video from "../globalComponents/video";
+import AnimatedImage from "../globalComponents/animatedImage";
 
 
 
 
-const HomeSingleGallery = ({ section }) => {
+const HomeSingleGallery = ({ gallery }) => {
+
+ const galleryItems = gallery
+ console.log({galleryItems})
+
+   
   return (
-        <section className={`${styles.sectionGallery} container`}>
+    <section className={`${styles.sectionGallery} container`}>
+        
             <div className={styles.sectionGalleryWrapper}>
-                <div className={styles.projectMockup}>
-                    <AnimatedImage imagePath={section.projectMockupOne.asset.gatsbyImageData} imageAlt={section.projectMockupOne.alt}/>   
-               </div>
-                <Video video={section.projectPrototypeTwo} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>    
+            {galleryItems.map((item, index) => {
+                console.log({item})
+                return (
+                    <div key={index} className={styles.projectMockup}>
+                        {item.webm &&
+                            <Video videoWebm={item.webm} videoFallback={item.fallback} videoAlt={item.alt}  isDecriptionDisplayed='false'/> 
+                        }
+                        {item.asset &&
+                            <AnimatedImage imagePath={item.asset.gatsbyImageData} imageAlt={item.alt}/>   
+                        }
+                    </div>
+                
+                )
+            })}
             </div>
-            {/*<div className={styles.sectionGalleryWrapper}>
-                <GatsbyImage className={styles.projectMockupFull}
-                    image={getImage(section.projectMockupThree.asset.gatsbyImageData)}
-                    alt={`${section.projectMockupThree.alt}`}/>
+    </section>
 
-  </div>*/}
-        </section>
   )
 }
 

@@ -1,5 +1,5 @@
 import * as React from "react"
-import PagePreloader from "../components/global/pagePreloader"
+import PagePreloader from "../components/globalSections/pagePreloader"
 
 
 // markup

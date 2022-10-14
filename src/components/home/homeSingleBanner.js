@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./homeSingleBanner.module.scss";
 import { useEffect, useRef } from 'react';
-import Btn from "../global/btn";
+import Btn from "../globalComponents/btn";
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
