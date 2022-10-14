@@ -17,6 +17,7 @@ const SectionContact = ({section, pageName }) => {
 
     const headerOneRef = useRef(null);
     const headerTwoRef = useRef(null);
+    const typingRef = useRef(null);
     const subheaderRef = useRef(null);
     const contactRef = useRef(null);
     const linksRefOne = useRef(null);
@@ -48,6 +49,14 @@ const SectionContact = ({section, pageName }) => {
                   visibility:'hidden',
                   yPercent:'-20',
             }})
+            tl.from(typingRef.current, {
+                duration: 1,
+                ease: "power4.out",
+                css: {
+                  autoAlpha: 0,
+                  visibility:'hidden',
+                  xPercent:'40',
+            }},'-=1')
             tl.from(headerTwoRef.current, {
                 duration: 1,
                 ease: "power4.out",
@@ -119,7 +128,7 @@ const SectionContact = ({section, pageName }) => {
                     <h3 className="header-section">{section.headerOne}</h3>
                 </div>
                 
-                <div className={styles.headerTwo}>
+                <div className={styles.headerTwo} ref={typingRef}>
                     <ReactTypingEffect
                         text={section.projectFeatures}
                         speed={150}

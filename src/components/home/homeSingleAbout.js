@@ -2,6 +2,7 @@ import React from "react"
 import * as styles from "./homeSingleAbout.module.scss";
 import ScrippedText from "../globalComponents/scrippedText";
 import SectionDetails from "../globalSections/sectionDetails";
+import SectionIntro from "../globalSections/sectionIntro";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -17,7 +18,6 @@ const HomeSingleAbout = ({ section }) => {
 
     const sectionRef = useRef(null);
     const headerRef = useRef(null);
-    const subheaderRef = useRef(null);
 
 
     useEffect(() => {
@@ -30,27 +30,20 @@ const HomeSingleAbout = ({ section }) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 67%",
+                    start: "top 60%",
                     end: "top 30%",
                     scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
                 });
-                tl.from(subheaderRef.current, {
-                    duration: 2,
-                    ease: "power2.out",
-                    css: {
-                    autoAlpha: 0,
-                    yPercent:'-30',
-                }})
                 tl.from(headerRef.current, {
                     duration: 2,
                     ease: "power2.out",
                     css: {
                     autoAlpha: 0,
-                    yPercent:'30',
-                }},'-=2')
+                    yPercent:'-50',
+                }})
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
@@ -59,8 +52,8 @@ const HomeSingleAbout = ({ section }) => {
    
   return (
         <section ref={sectionRef} className={`${styles.sectionAbout}`}>
+            <SectionIntro subheader={ section.subheader}/>
             <div className={styles.sectionHeader}>
-                <p ref={subheaderRef} className="text-uppercase">{section.subheader}</p>
                 <h3 ref={headerRef}>{section.header}</h3>
                 <ScrippedText scrippedTextClass="scrippedTextAbout" sectionName="about"/>
             </div>

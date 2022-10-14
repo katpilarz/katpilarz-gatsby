@@ -44,7 +44,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
     
 
   return (
-    <section ref={pageSingleRef} className={`${styles.projectBanner} container`}>
+    <header ref={pageSingleRef} className={`${styles.projectBanner} container`}>
         <div className={styles.projectBannerHeader}>
             <h2 className={styles.header}>{title}</h2>
             { services &&
@@ -76,7 +76,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
         }
 
 
-    </section>
+    </header>
   )
 }
 

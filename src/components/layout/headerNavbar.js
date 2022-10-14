@@ -9,7 +9,7 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
 
 
   return (
-    <header className={styles.header}>
+    <nav className={styles.header}>
       <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <button className={styles.themeToggler}>
@@ -45,7 +45,7 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
           </button>
         }
       </div>
-    </header>
+    </nav>
   )
 }
 

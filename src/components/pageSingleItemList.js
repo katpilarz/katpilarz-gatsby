@@ -6,6 +6,9 @@ import ArrowIcon from "./globalComponents/arrow";
 import Video from "./globalComponents/video";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 

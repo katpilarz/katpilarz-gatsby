@@ -5,6 +5,9 @@ import PageSingleItemList from "./pageSingleItemList";
 import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 
@@ -40,9 +43,9 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
  
   return (
     <div ref={pageSingleRef} className={`${styles.pageSingle} container`}>
-        <div className={styles.pageSingleHeader}>
+        <header className={styles.pageSingleHeader}>
             <h2>{pageTitle} </h2>
-        </div>
+        </header>
 
         <div className={styles.itemsList}>
             <PortableText className={`${styles.description} text-uppercase`}

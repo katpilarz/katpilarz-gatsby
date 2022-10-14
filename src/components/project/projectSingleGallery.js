@@ -3,6 +3,9 @@ import * as styles from "./projectSingleGallery.module.scss";
 import AnimatedImage from "../globalComponents/animatedImage";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
 
 
 

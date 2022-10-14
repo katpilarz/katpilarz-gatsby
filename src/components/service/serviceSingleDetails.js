@@ -7,14 +7,13 @@ import SectionDetails from "../globalSections/sectionDetails";
 
 const ServiceSingleDetails = ({ section }) => {
 
-
    
   return (
 
     <section className={styles.sectionDetails}>
         
         <SectionIntro subheader={ section.subheader}/>
-        <h3>{section.header}</h3>
+          <h3>{section.header}</h3>
         <SectionDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo} video={section.video}/>
 
     

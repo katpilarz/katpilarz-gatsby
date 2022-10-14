@@ -189,7 +189,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
 
   
   return (
-      <div ref={introRef} className={`${styles.intro} intro`}>
+      <header ref={introRef} className={`${styles.intro} intro`}>
         <div ref={introContentRef} className={styles.introContent}>
           <h1 ref={headerRef} >{name}</h1>
           <span ref={jobRef}> {title}</span>
@@ -215,7 +215,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
          </div>
 
 
-      </div>
+      </header>
        
   )
 }

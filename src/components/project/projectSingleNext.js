@@ -1,10 +1,13 @@
 import React from "react";
 import * as styles from "./projectSingleNext.module.scss";
-//import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import AnimatedImage from "../globalComponents/animatedImage";
 import { navigate } from 'gatsby';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-import AnimatedImage from "../globalComponents/animatedImage";
+import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
+
+
 
 
 
