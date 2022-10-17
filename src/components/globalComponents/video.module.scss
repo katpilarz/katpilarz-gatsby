@@ -3,6 +3,9 @@
     width: auto;
     height: auto;
     display: flex;
+    place-items: center;
+    place-content: center;
+    place-self: center;
     flex-direction: column;
     transition: all .8s ease-out;
 

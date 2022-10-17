@@ -10,7 +10,6 @@ import ServiceSingleGallery from "./serviceSingleGallery";
 
 const ServiceSingle = ({ service, contact }) => {
 
- console.log ({service})
    
   return (
 

@@ -39,8 +39,8 @@ const ServiceSingleGallery = ({ projects }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: swiperContainer.current,
-          start: "top 80%",
-          end: "top 40%",
+          start: "top 88%",
+          end: "top 50%",
           scrub:1, 
           repeatRefresh: true,
           toggleActions: "restart pause none none",

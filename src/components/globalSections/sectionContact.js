@@ -55,7 +55,6 @@ const SectionContact = ({section, pageName }) => {
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
-                  xPercent:'40',
             }},'-=1')
             tl.from(headerTwoRef.current, {
                 duration: 1,

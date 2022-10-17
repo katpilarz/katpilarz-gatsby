@@ -36,9 +36,9 @@ const HeaderMenu = ({ isOpen,toggleSidebar, menuData, backgroundImageData}) => {
           gsap.set([...lists, social],{autoAlpha: 0})
           tl.current = 
             gsap.timeline()
-            .to(nav,{top: 0, height:'100vh', duration: 2,ease: "power4.out",})
-            .staggerFromTo(lists,.3,{xPercent: '-=10px',ease: "sine.inOut",},{xPercent: 0,autoAlpha: 1, ease: "sine.inOut",},0.27).reverse()
-            .staggerFromTo(social,.3, {yPercent: '-=10px',ease: "sine.inOut",},{yPercent: 0,autoAlpha: 1, ease: "sine.inOut",},0.27, '-=.6').reverse()
+            .to(nav,{top: 0, height:'100vh', duration: 1.4,ease: "power4.out",})
+            .staggerFromTo(lists,.27,{xPercent: '-=10px',ease: "sine.inOut",},{xPercent: 0,autoAlpha: 1, ease: "sine.inOut",},0.27).reverse()
+            .staggerFromTo(social,.27, {yPercent: '-=10px',ease: "sine.inOut",},{yPercent: 0,autoAlpha: 1, ease: "sine.inOut",},0.27, '-=.6').reverse()
           
      
         }, navRef); // <- scopes all selector text inside the context to this component (optional, default is document)

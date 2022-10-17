@@ -2,7 +2,7 @@ import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
 import HomeSingleFeatured from "./homeSingleFeatured";
-
+import HomeSingleFeaturedVideo from "./homeSingleFeaturedVideo";
 import HomeSingleAbout from "./homeSingleAbout";
 import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
@@ -15,6 +15,9 @@ import HomeSingleGallery from "./homeSingleGallery";
 
 // markup
 const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups  }) => {
+  
+  const video = home.gallery[0]
+  
 
  
 
@@ -25,10 +28,12 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleFeatured featuredProjects={featuredProjects} />
       <HomeSingleAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
+      <HomeSingleFeaturedVideo video={home.gallery[0]}/>
+      <HomeSingleGallery gallery={home.gallery}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
        slug={testimonialProject.node.slug.current} />
-      <HomeSingleGallery gallery={home.gallery}/>
+
       <SectionContact section={home.sectionContact} pageName='home'/>
     </div>
   )

@@ -45,7 +45,7 @@ const ServiceSingleTechnologies = ({ technologies }) => {
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
-                        start: 'top 80%',
+                        start: 'top 70%',
                         end:'top 34%',
                         toggleActions: "restart pause resume none",
                         //toggleActions: 'play none none reverse',
@@ -72,6 +72,7 @@ const ServiceSingleTechnologies = ({ technologies }) => {
                 {technologies.map((item, index) => {
                     return(
                     <div className={styles.itemWrapper} key={index} ref={addToRefs}>
+                        <h5>{`${index+1}`}</h5>
                         <h5>{item.text}</h5>
                     </div> 
                     )
