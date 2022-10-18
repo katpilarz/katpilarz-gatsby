@@ -6,7 +6,7 @@ import { Link } from "gatsby"
 
 
 
-const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
+const HeaderNavbar = ({ isOpen, toggleSidebar, name }) => {
 
 
   return (
@@ -33,7 +33,7 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
             window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
             e.preventDefault();
             }}>
-            {contact}
+            Contact
         </Link>
         {!isOpen &&
           <button type="button" onClick={toggleSidebar}>

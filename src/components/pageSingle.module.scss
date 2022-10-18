@@ -11,19 +11,22 @@
 
     .pageSingleHeader{
       display: flex;
+      //flex-direction: column;
+      //place-content: center;
+      //text-align: center;
     }
 
     .itemsList{
       height: auto;
-      margin: 7vw 12vw 7vw auto;
-      width:47vw;
+      margin: 4vw auto 7vw auto;
+      width:62vw;
       min-width: 50rem;
       place-self: flex-end;
       position: static!important;
   
       .description{
-        width: 60%;
-        margin-bottom: 2vw;
+        width: 55%;
+        margin-bottom: 4vw;
       }
 
       .itemListWrapper{
@@ -46,8 +49,8 @@
           // this class is also copied to video scss module
           .itemCardMedia{
             position: fixed!important;
-            top:-3vw!important; 
-            left:-34.7vw!important;
+            top:-2.8vw!important; 
+            left:32vw!important;
             width:25vw;
             z-index: 99999;
             visibility: hidden;
@@ -66,6 +69,7 @@
               display: flex;
               justify-content: space-between;
               width:100%;
+              z-index: 9999999;
 
               h3{
                 width: auto;

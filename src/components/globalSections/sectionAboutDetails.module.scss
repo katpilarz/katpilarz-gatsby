@@ -8,7 +8,7 @@
 
 
     .sectionContentLeft{
-        flex-basis: 40%;
+        flex-basis: 38%;
         width:100%;
         height: auto;
 
@@ -26,7 +26,7 @@
     }
 
     .sectionContentRight{
-        flex-basis: 49%;
+        flex-basis: 50%;
         width:100%;
         display: flex;
         flex-direction: column;
@@ -40,14 +40,14 @@
             //grid-row: 6/9;
             order:1;
             margin: 14vw 0 10vw 0;
-            width:82%;
+            width:80%;
             min-width: 35rem;
             
             
             p{line-height: 1.7;}
         }
 
-        .aboutImageTwo{
+        .aboutMedia{
             //grid-column: 10/-1;
             //grid-row: 13/-1;
             width:77%;

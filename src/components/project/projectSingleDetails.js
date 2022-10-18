@@ -49,7 +49,7 @@ const ProjectSingleDetails = ({ project }) => {
             css: {
             autoAlpha: 0,
             opacity:0,
-            xPercent:'-30',
+            xPercent:'30',
         }})
         tl.from(detailTwoRef.current, {
             duration: 1,
@@ -57,7 +57,7 @@ const ProjectSingleDetails = ({ project }) => {
             css: {
               autoAlpha: 0,
               opacity:0,
-              xPercent:'-30',
+              xPercent:'30',
         }})
         tl.from(detailThreeRef.current, {
             duration: 1,
@@ -65,7 +65,7 @@ const ProjectSingleDetails = ({ project }) => {
             css: {
               autoAlpha: 0,
               opacity:0,
-              xPercent:'-30',
+              xPercent:'30',
         }})
 
             // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -76,7 +76,7 @@ const ProjectSingleDetails = ({ project }) => {
                 css: {
                   autoAlpha: 0,
                   opacity:0,
-                  xPercent:'-30',
+                  xPercent:'30',
             }})
         }
 

@@ -7,6 +7,7 @@
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
+    margin: 0 auto 12vw auto;
 }
 
 .sectionHeader{
@@ -27,7 +28,7 @@
     place-self: flex-end;
     
     height: auto;
-    margin: 8vw 12vw 12vw auto;
+    margin: 8vw 12vw 4vw auto;
 
 
     .faqItem{

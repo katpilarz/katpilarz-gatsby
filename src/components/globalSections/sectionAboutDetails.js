@@ -49,6 +49,8 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
         
         return () => ctx.revert(); // cleanup! 
       }, []);
+
+      console.log({video})
    
   return (
             
@@ -60,12 +62,12 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
         </div> 
         <div className={styles.sectionContentRight}>
             {imageTwo &&
-                <div className={styles.aboutImageTwo}>
+                <div className={styles.aboutMedia}>
                     <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
                 </div>
             }
             {video &&
-                <div className={styles.aboutImageTwo}>
+                <div className={styles.aboutMedia}>
                     <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
                 </div>
             }

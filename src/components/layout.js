@@ -73,7 +73,7 @@ const toggleSidebar = () => {
 
 const backgroundImageData = data.sanityGlobal.image
 const name = data.sanitySeo.author
-const contact = data.sanitySeo.contact
+//const contact = data.sanitySeo.contact
 const menuData = data.sanityGlobal.menu
 
 
@@ -119,7 +119,7 @@ const menuData = data.sanityGlobal.menu
         <link href="/fonts/ScholastycaTypeface-Regular.ttf" type="font/truetype"/>
         <link href="/fonts/ScholastycaTypeface-Regular.svg" type="font/svg"/>
       </Helmet>
-      <HeaderNavbar contact={contact} name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
+      <HeaderNavbar name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
       <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} backgroundImageData={backgroundImageData}/>
       
       <BackgroundImage backgroundImageData={backgroundImageData}/>

@@ -1,6 +1,8 @@
 import React from "react"
 import * as styles from "./serviceSingleFAQs.module.scss";
 import ServiceSingleFAQsItem from "./serviceSingleFAQsItem";
+import { Link } from "gatsby"
+import ArrowIcon from "../globalComponents/arrow";
 
 
 
@@ -24,6 +26,11 @@ const ServiceSingleFAQs = ({ faqs }) => {
             })}
 
         </div>
+        <Link to='faqs'>
+            See All Questions
+            <ArrowIcon arrowIconClass="linkIcon"/>
+        </Link>
+
         
     </div>
       

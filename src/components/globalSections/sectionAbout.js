@@ -57,7 +57,7 @@ const SectionAbout = ({ section }) => {
                 <h3 ref={headerRef}>{section.header}</h3>
                 <ScrippedText scrippedTextClass="scrippedTextAbout" sectionName="about"/>
             </div>
-            <SectionAboutDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo}/>
+            <SectionAboutDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo} video={section.video}/>
             
         </section>
   )

@@ -77,15 +77,15 @@ article{
 
     .itemCardMedia{
         position: fixed!important;
-        top:-3vw!important; 
-        left:-34.7vw!important;
+        top:-2.8vw!important; 
+        left:32vw!important;
         width:25vw;
         z-index: 99999;
         visibility: hidden;
         opacity: 0;
         transition: all .8s ease-out;
+      
     }
-
 
 
     .serviceMedia{
@@ -100,6 +100,16 @@ article{
     }
 
   
+
+
+.projectPrototype{
+    flex-basis: 100%;
+    width: 100%;
+    height: auto;
+    place-self: flex-end;
+    margin: auto 0 0 0;
+  
+}
   
     &:hover{
   

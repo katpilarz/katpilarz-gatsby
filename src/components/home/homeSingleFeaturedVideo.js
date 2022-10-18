@@ -51,6 +51,11 @@ const HomeSingleFeaturedVideo = ({ video }) => {
                     css: {
                         clipPath: 'circle(70.7% at 50% 50%)',
                         width:'100%',
+                        position: 'absolute',
+                        top:'50%',
+                        left:'50%',
+                        zIndex:1,
+                        transform:'translate(-50%, -50%)',
                     }
                 })   
 

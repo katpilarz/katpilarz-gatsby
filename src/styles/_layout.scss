@@ -50,7 +50,7 @@ main{
 .page-btn{
   display: flex;
   position: fixed!important;
-  right:2.5vw;
+  right:3.6vw;
   top:3.7vw;
   z-index: 9999;
   width:9vw;
@@ -64,7 +64,7 @@ main{
 body {
   font: 100% $font-body;
   color: $grey-dark;
-  font-size: calc( .6rem + .7vw);
+  font-size: calc( .2rem + .87vw);
   font-weight: 300;
   transition: all 0.2s linear;
   position: relative!important;
@@ -164,7 +164,7 @@ body.dark {
 
 .container{
   width:100%;
-  padding: 0 3.2vw 0 3vw;
+  padding: 0 4.4vw 0 4vw;
   //margin: auto;
 }
 
@@ -192,4 +192,8 @@ button{
   position: relative;
   z-index: 1;
   min-height: 100vh;
+  margin: auto;
+  display: flex;
+  place-items: center;
+  place-content: center;
 }

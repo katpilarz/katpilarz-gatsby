@@ -25,7 +25,7 @@ const AnimatedBtn = ({ }) => {
                     start: 'top top',
                     end:'+=100000',
                     pin: false, 
-                    scrub:true, 
+                    scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                      }
