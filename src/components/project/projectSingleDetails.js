@@ -130,7 +130,25 @@ const ProjectSingleDetails = ({ project }) => {
 
   return (
     <section ref={projectDetailsRef} className={`${styles.projectDetails} container`}>
+        <div className={styles.projectDetailsRight}>
+            <div className={styles.projectDetailsHeader}>
+                <p ref={subheaderRef}>PROJECT DETAILS</p>
+                <h4 ref={headerRef}>{project.header}</h4>
+           </div>
 
+           <div ref={descriptionRef} className={styles.projectDescription}>
+                <PortableText 
+                    content={project._rawDetails}
+                    projectId={process.env.GATSBY_SANITY_PROJECT_ID}
+                    dataset={process.env.GATSBY_SANITY_DATASET}
+                />
+           </div>
+           
+
+
+
+            
+        </div>
         <div className={styles.projectDetailsLeft}>
            
            <div className={styles.projectDetailsOverview}>
@@ -166,25 +184,7 @@ const ProjectSingleDetails = ({ project }) => {
             
             
         </div>
-        <div className={styles.projectDetailsRight}>
-            <div className={styles.projectDetailsHeader}>
-                <p ref={subheaderRef}>PROJECT DETAILS</p>
-                <h4 ref={headerRef}>{project.header}</h4>
-           </div>
-
-           <div ref={descriptionRef} className={styles.projectDescription}>
-                <PortableText 
-                    content={project._rawDetails}
-                    projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                    dataset={process.env.GATSBY_SANITY_DATASET}
-                />
-           </div>
-           
-
-
-
-            
-        </div>
+        
 
     </section>
   )

@@ -91,7 +91,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
         duration: 14,
         ease: "circe.inOut",
         css: {
-          rotation: '360deg',
+          rotation: 360*2,
     }})
       tl2.to(jobRef.current, {
         duration:1, 
@@ -108,7 +108,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
           autoAlpha: 0, 
           yPercent:'-100',
         }
-      });
+      },'-=1');
 
       tl2.to(introContentRef.current, {
         duration:1, 
@@ -116,10 +116,10 @@ const HomeSingleBanner = ({ name, title, images }) => {
         css: {
           autoAlpha: 0, 
         }
-      },'-=2');
+      },'-=6');
 
       tl2.to(sectionRef.current, {
-        duration:2, 
+        duration:4, 
         ease: "power2.out",
         css: {
           xPercent: '86', 

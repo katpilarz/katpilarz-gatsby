@@ -21,7 +21,7 @@ const HomeSingleBtn = ({ }) => {
                 const btnTl = gsap.timeline({
                     scrollTrigger: {
                     trigger: btnRef.current,
-                    start: 'bottom -3000',
+                    start: 'bottom -2000',
                     end:'+=100000',
                     pin: false, 
                     scrub:true, 
@@ -30,7 +30,7 @@ const HomeSingleBtn = ({ }) => {
                      }
                 });
                     btnTl.from(btnRef.current, {
-                        duration: 2,
+                        duration: 1,
                         ease: "power2.out",
                         css: {
                         autoAlpha: 0,
@@ -41,7 +41,7 @@ const HomeSingleBtn = ({ }) => {
                         ease: "power2.out",
                         css: {
                             rotation:360*5,
-                    }})
+                    }},'-=1')
 
         }, btnRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         return () => ctx.revert(); // cleanup! 

@@ -14,6 +14,8 @@
         height: auto;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
+        margin-bottom:6vw;
+
     
         
     
@@ -21,7 +23,6 @@
     
     .contactSectionImage{
         width:100%;
-        margin-top:6vw;
         display: flex;
         overflow-x: hidden;
         
