@@ -9,15 +9,14 @@
     padding-top: 9vw;
 
 
-
     .pageSingleHeader{
       display: flex;
     }
 
     .itemsList{
       height: auto;
-      margin: 7vw 0 7vw auto;
-      width:49vw;
+      margin: 7vw 10vw 7vw auto;
+      width:47vw;
       min-width: 50rem;
       place-self: flex-end;
       position: static!important;
@@ -47,9 +46,9 @@
           // this class is also copied to video scss module
           .itemCardMedia{
             position: fixed!important;
-            top:-7vw!important; 
-            left:-40vw!important;
-            width:30vw;
+            top:-3vw!important; 
+            left:-32vw!important;
+            width:25vw;
             z-index: 99999;
             visibility: hidden;
             opacity: 0;

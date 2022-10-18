@@ -1,6 +1,8 @@
 .nextProjectSection{
-    display: grid;
-    width:80%;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    width:90%;
     height: auto;
     margin:14vw 0 12vw auto;
 }
@@ -25,7 +27,7 @@
 
 .nextProjectImage{
     display: flex;
-    width:70%;
+    width:60%;
     margin: auto;
     z-index: 1;
 

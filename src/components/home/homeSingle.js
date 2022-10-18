@@ -1,6 +1,7 @@
 import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
+import HomeSingleBtn from "./homeSingleBtn";
 import HomeSingleFeatured from "./homeSingleFeatured";
 import HomeSingleFeaturedVideo from "./homeSingleFeaturedVideo";
 import SectionAbout from "../globalSections/sectionAbout";
@@ -18,10 +19,11 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
   
 
   return (
-    <div>
+    <>
       <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups}/>
       <HomeSingleFocus section={home.sectionFocus}/>
       <HomeSingleFeatured featuredProjects={featuredProjects} />
+      <HomeSingleBtn/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
       <HomeSingleFeaturedVideo video={home.gallery[0]}/>
@@ -31,7 +33,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
        slug={testimonialProject.node.slug.current} />
 
       <SectionContact section={home.sectionContact} pageName='home'/>
-    </div>
+    </>
   )
 }
 

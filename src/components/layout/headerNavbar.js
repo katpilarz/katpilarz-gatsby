@@ -5,11 +5,12 @@ import { Link } from "gatsby"
 
 
 
+
 const HeaderNavbar = ({ isOpen, toggleSidebar, name, contact }) => {
 
 
   return (
-    <nav className={styles.header}>
+    <nav className={styles.navbar}>
       <ThemeToggler>
           {({ theme, toggleTheme }) => (
             <button className={styles.themeToggler}>

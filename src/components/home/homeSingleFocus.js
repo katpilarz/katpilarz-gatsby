@@ -37,7 +37,7 @@ const HomeSingleFocus = ({ section}) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: headerRef.current,
-                    start: "top 77%",
+                    start: "top 100%",
                     end: "top 37%",
                     scrub:1, 
                     repeatRefresh: true,
@@ -51,10 +51,6 @@ const HomeSingleFocus = ({ section}) => {
                         autoAlpha: 0,
                         yPercent:'30',
                     }})
-        
-
-
-
 
 
 
@@ -91,7 +87,8 @@ const HomeSingleFocus = ({ section}) => {
         return () => ctx.revert(); // cleanup! 
       }, []);
 
-  
+
+
   return (
         <section className={styles.sectionFocus}>
             <h3 ref={headerRef}>{section.header}</h3>
@@ -114,7 +111,6 @@ const HomeSingleFocus = ({ section}) => {
                     )
                 })}
             </div>
-            
         </section>
   )
 }

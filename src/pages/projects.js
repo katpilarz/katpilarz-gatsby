@@ -4,6 +4,7 @@ import PageSingle from "../components/pageSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
 import { useEffect } from 'react';
+import AnimatedBtn from "../components/globalComponents/animatedBtn";
 
 
 
@@ -83,8 +84,9 @@ const Projects = props => {
    
     <main>
       <Seo title={projectsPage.node.title} description={projectsPage.node.description} keywords={keywords}  />
+      <AnimatedBtn/>
       <PagePreloader/>
-      <PageSingle pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image} pageDescription={projectsPage.node._rawDescription}/>
+       <PageSingle pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image} pageDescription={projectsPage.node._rawDescription}/>
     </main>
   )
 }

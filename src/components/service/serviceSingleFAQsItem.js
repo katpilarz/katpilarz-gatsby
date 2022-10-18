@@ -84,10 +84,7 @@ const ServiceSingleFAQsItem = ({ item }) => {
                 
           }
 
-          //Second Timeline to animate on scroll
-
- 
-          
+           
     }, toggle); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 

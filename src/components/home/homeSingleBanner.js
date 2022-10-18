@@ -87,7 +87,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
           yPercent:'-10',
         }
       });
-      tl.to(btnRef.current, {
+      tl2.to(btnRef.current, {
         duration: 14,
         ease: "circe.inOut",
         css: {

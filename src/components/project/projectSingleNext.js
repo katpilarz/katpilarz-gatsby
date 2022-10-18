@@ -60,7 +60,7 @@ const ProjectSingleNext = ({ nextProject }) => {
 
 
   return (
-    <button className={styles.nextProjectSection} onClick={(e) => {
+    <button className={`${styles.nextProjectSection} container`} onClick={(e) => {
         e.preventDefault();
         navigate(`/projects/${nextProject.slug.current}`);
       }}>
