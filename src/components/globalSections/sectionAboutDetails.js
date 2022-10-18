@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./sectionDetails.module.scss";
+import * as styles from "./sectionAboutDetails.module.scss";
 import AnimatedImage from "../globalComponents/animatedImage";
 import PortableText from "react-portable-text"
 import Video from "../globalComponents/video";
@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeSingleAbout = ({ text, imageOne, imageTwo, video }) => {
+const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
 
 
     const sectionRef = useRef(null);
@@ -84,4 +84,4 @@ const HomeSingleAbout = ({ text, imageOne, imageTwo, video }) => {
   )
 }
 
-export default HomeSingleAbout;
+export default SectionAboutDetails;

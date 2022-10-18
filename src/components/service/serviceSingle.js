@@ -1,23 +1,27 @@
-import * as React from "react"
+import React from "react"
 import Banner from "../globalSections/banner";
 import SectionContact from "../globalSections/sectionContact";
-import ServiceSingleDetails from "./serviceSingleDetails";
-import ServiceSingleTechnologies from "./serviceSingleTechnologies";
 import ServiceSingleGallery from "./serviceSingleGallery";
+import SectionAbout from "../globalSections/sectionAbout";
+import ServiceSingleFAQs from "./serviceSingleFAQs";
 
 
 
 
-const ServiceSingle = ({ service, contact }) => {
+
+
+const ServiceSingle = ({ service, contact, faqs }) => {
 
    
   return (
 
       <>
         <Banner title={service.title} image={service.image} video={service.video}/>
-        <ServiceSingleDetails section={service.sectionDetails}/>
-        <ServiceSingleTechnologies technologies={service.technologies}/>
+        <SectionAbout section={service.sectionDetails}/>
         <ServiceSingleGallery projects={service.relatedProjects}/>
+        <ServiceSingleFAQs  faqs={faqs}/>
+        
+        
         <SectionContact section={contact}/>
       </>
       

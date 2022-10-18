@@ -3,7 +3,7 @@ import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
 import HomeSingleFeatured from "./homeSingleFeatured";
 import HomeSingleFeaturedVideo from "./homeSingleFeaturedVideo";
-import HomeSingleAbout from "./homeSingleAbout";
+import SectionAbout from "../globalSections/sectionAbout";
 import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionContact from "../globalSections/sectionContact";
@@ -16,17 +16,13 @@ import HomeSingleGallery from "./homeSingleGallery";
 // markup
 const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups  }) => {
   
-  const video = home.gallery[0]
-  
-
- 
 
   return (
     <div>
       <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups}/>
       <HomeSingleFocus section={home.sectionFocus}/>
       <HomeSingleFeatured featuredProjects={featuredProjects} />
-      <HomeSingleAbout section={home.sectionAbout}/>
+      <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
       <HomeSingleFeaturedVideo video={home.gallery[0]}/>
       <HomeSingleGallery gallery={home.gallery}/>

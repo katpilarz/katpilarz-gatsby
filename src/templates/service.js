@@ -10,6 +10,15 @@ import { useEffect } from 'react';
 
 export const query = graphql`
 query ServiceTemplateQuery($id: String!){
+  faqs: allSanityFaq(sort: {fields: importance, order: ASC})  {
+    edges {
+      node {
+        _rawAnswer
+        question
+        id
+      }
+    }
+  }
     singleService: sanityService (id: { eq: $id }) {
       id
       title
@@ -125,6 +134,7 @@ const ServiceTemplate = props => {
   const { data, errors } = props;
   const service = data && data.singleService;
   const contact = data && data.contact.sectionContact;
+  const faqs  = data && data.faqs.edges
 
 
   useEffect(() => window.scrollTo(0, 0), []) 
@@ -138,7 +148,7 @@ const ServiceTemplate = props => {
       <main>
         <Seo title={service.title} description={service.title}  />
         <PagePreloader/>
-        <ServiceSingle service={service} contact={contact}/>
+        <ServiceSingle service={service} contact={contact} faqs={faqs}/>
       </main>
       
   );

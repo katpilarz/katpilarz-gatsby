@@ -1,8 +1,8 @@
 import React from "react"
-import * as styles from "./homeSingleAbout.module.scss";
+import * as styles from "./sectionAbout.module.scss";
 import ScrippedText from "../globalComponents/scrippedText";
-import SectionDetails from "../globalSections/sectionDetails";
-import SectionIntro from "../globalSections/sectionIntro";
+import SectionAboutDetails from "./sectionAboutDetails";
+import SectionIntro from "./sectionIntro";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeSingleAbout = ({ section }) => {
+const SectionAbout = ({ section }) => {
 
 
     const sectionRef = useRef(null);
@@ -57,10 +57,10 @@ const HomeSingleAbout = ({ section }) => {
                 <h3 ref={headerRef}>{section.header}</h3>
                 <ScrippedText scrippedTextClass="scrippedTextAbout" sectionName="about"/>
             </div>
-            <SectionDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo}/>
+            <SectionAboutDetails text={section._rawDescription} imageOne={section.imageOne} imageTwo={section.imageTwo}/>
             
         </section>
   )
 }
 
-export default HomeSingleAbout;
+export default SectionAbout;

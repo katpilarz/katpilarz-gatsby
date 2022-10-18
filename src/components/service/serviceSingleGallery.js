@@ -41,7 +41,7 @@ const ServiceSingleGallery = ({ projects }) => {
           trigger: swiperContainer.current,
           start: "top 88%",
           end: "top 50%",
-          scrub:1, 
+          scrub:2, 
           repeatRefresh: true,
           toggleActions: "restart pause none none",
         }

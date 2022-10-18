@@ -84,9 +84,6 @@ const SectionIntro = ({ subheader }) => {
       </div>
       <div ref={lineRef} className={`${styles.line} line-intro`}></div>
       <p ref={paragraphRef} className="text-uppercase">{subheader}</p>
-        
-        
-        
     </div>
   )
 }
