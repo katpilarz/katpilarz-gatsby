@@ -26,7 +26,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleBtn/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
-      <HomeSingleFeaturedVideo video={home.gallery[0]}/>
+      <HomeSingleFeaturedVideo video={home.featuredVideo}/>
       <HomeSingleGallery gallery={home.gallery}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}

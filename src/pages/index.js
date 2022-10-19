@@ -68,6 +68,23 @@ query HomePageQuery{
           }
         }
       }
+      featuredVideo{
+        alt
+        fallback {
+          asset {
+            url
+            extension
+            altText
+          }
+        }
+        webm {
+          asset {
+            altText
+            url
+            extension
+          }
+        }
+      }
       gallery {
         ... on SanityFigure {
           _type

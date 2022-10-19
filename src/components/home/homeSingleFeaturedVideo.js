@@ -50,7 +50,7 @@ const HomeSingleFeaturedVideo = ({ video }) => {
                     ease: "power4.out",
                     css: {
                         clipPath: 'circle(70.7% at 50% 50%)',
-                        width:'100%',
+                        width:'84%',
                         position: 'absolute',
                         top:'50%',
                         left:'50%',
@@ -72,7 +72,7 @@ const HomeSingleFeaturedVideo = ({ video }) => {
   return (
     <section ref={sectionRef} className='container section'>
         <div ref={videoRef}>
-            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}  isDecriptionDisplayed='false'/> 
+            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed='false'/> 
         </div>
     </section>
 

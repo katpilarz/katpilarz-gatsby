@@ -1,19 +1,14 @@
 import * as React from "react"
 import PagePreloader from "../components/globalSections/pagePreloader"
-import { navigate } from 'gatsby';
 
 
 
-
-if (errors) {
-  return (
-    navigate(`/404`)
-  );
-}
 
 
 // markup
 const Contact = () => {
+
+
   return (
     <main className="container">
       <PagePreloader/>

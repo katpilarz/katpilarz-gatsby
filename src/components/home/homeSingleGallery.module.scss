@@ -26,7 +26,7 @@ img{
 
         .projectMockup{
             display: flex;
-            flex-basis: 27%;
+            flex-basis: 29%;
             width:100%;
             height: auto;
 
@@ -40,27 +40,15 @@ img{
                 place-self: flex-start;
                 place-content: flex-start;
                 place-items: flex-start;
+                width:100%;
             }
         
             &:nth-child(3){
                 place-self: flex-end;
                 place-content: flex-end;
                 place-items: flex-end;
+                width:100%;
             }
-        }
-
-
-
-        .projectMockupFull{
-            flex-basis: 57%;
-            width: 100%;
-            place-self:  center;
-            place-content: center;
-            place-items: center;
-            margin: auto;
-            height: auto;
-
-            
         }
 
     }

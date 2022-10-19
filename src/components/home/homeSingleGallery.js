@@ -82,7 +82,7 @@ const HomeSingleGallery = ({ gallery }) => {
                 return (
                     <div key={index} className={styles.projectMockup} ref={addToRefs}>
                         {item.webm &&
-                            <Video videoWebm={item.webm} videoFallback={item.fallback} videoAlt={item.alt}  isDecriptionDisplayed='false'/> 
+                            <Video videoWebm={item.webm} videoFallback={item.fallback} videoAlt={item.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/> 
                         }
                         {item.asset &&
                             <AnimatedImage imagePath={item.asset.gatsbyImageData} imageAlt={item.alt}/>   
