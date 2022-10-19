@@ -4,6 +4,8 @@ import Seo from "../components/globalComponents/seo";
 import ProjectSingle from "../components/project/projectSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import { useEffect} from 'react';
+import { navigate } from 'gatsby';
+
 
 
 
@@ -94,12 +96,12 @@ const ProjectTemplate = props => {
   useEffect(() => window.scrollTo(0, 0), []) 
 
 
-
   if (errors) {
     return (
-      <h2>Something went wrong</h2>
+      navigate(`/404`)
     );
   }
+
 
   return (
 

@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <main className="container">
       <PagePreloader/>
       <title>OOpps</title>
-      <h2>Somethin went wrong</h2>
+      <h2>Something went wrong</h2>
       <Link to="/">Go home</Link>.
     </main>
   )

@@ -5,6 +5,8 @@ import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
 import { useEffect } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
+import { navigate } from 'gatsby';
+
 
 
 
@@ -76,9 +78,10 @@ const Projects = props => {
 
   if (errors) {
     return (
-      <h1>Something went wrong</h1>
+      navigate(`/404`)
     );
   }
+
 
   return (
    

@@ -4,6 +4,8 @@ import Seo from "../components/globalComponents/seo";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import ServiceSingle from "../components/service/serviceSingle";
 import { useEffect } from 'react';
+import { navigate } from 'gatsby';
+
 
 
 
@@ -145,9 +147,10 @@ const ServiceTemplate = props => {
 
   if (errors) {
     return (
-      <h2>Something went wrong</h2>
+      navigate(`/404`)
     );
   }
+
   return (
       <main>
         <Seo title={service.title} description={service.title}  />

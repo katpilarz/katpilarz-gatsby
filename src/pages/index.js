@@ -4,6 +4,8 @@ import Seo from "../components/globalComponents/seo";
 import HomeSingle from "../components/home/homeSingle";
 import PagePreloader from "../components/globalSections/pagePreloader";
 import { useEffect } from 'react';
+import { navigate } from 'gatsby';
+
 
 
 
@@ -242,7 +244,7 @@ const IndexPage = props => {
 
   if (errors) {
     return (
-      <h1>Something went wrong</h1>
+      navigate(`/404`)
     );
   }
 
