@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import * as styles from "./serviceSingleFAQs.module.scss";
+import * as styles from "./FAQList.module.scss";
 import ArrowIcon from "../globalComponents/arrow";
 import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const ServiceSingleFAQsItem = ({ item }) => {
+const FAQListItem = ({ item }) => {
 
     const [isOpen, setIsOpen] = useState(false)
 
@@ -162,4 +162,4 @@ const ServiceSingleFAQsItem = ({ item }) => {
   );
 };
 
-export default ServiceSingleFAQsItem;
+export default FAQListItem;

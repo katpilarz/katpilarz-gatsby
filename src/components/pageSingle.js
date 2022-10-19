@@ -3,7 +3,7 @@ import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageSingleItemList from "./pageSingleItemList";
 import PortableText from "react-portable-text"
-
+import FAQList from "./globalSections/FAQList";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription }) => {
+const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription, faqs }) => {
 
   const pageSingleRef = useRef(null);
 
@@ -56,6 +56,10 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription 
             />
             { itemList &&
                 <PageSingleItemList pageName={pageName} itemList={itemList}/>
+            }
+            {
+                faqs &&
+                <FAQList faqs={faqs} faqCustomClass='faqPage'/>
             }
         </div>
       

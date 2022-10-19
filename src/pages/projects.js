@@ -83,7 +83,7 @@ const Projects = props => {
   return (
    
     <main>
-      <Seo title={projectsPage.node.title} description={projectsPage.node.description} keywords={keywords}  />
+      <Seo title={projectsPage.node.title} description={projectsPage.node.overview} keywords={keywords}  />
       <AnimatedBtn/>
       <PagePreloader/>
        <PageSingle pageName={projectsPage.node.name} pageTitle={projectsPage.node.title} itemList={projects} pageImage={projectsPage.node.image} pageDescription={projectsPage.node._rawDescription}/>

@@ -88,11 +88,17 @@ const HomeSingleBanner = ({ name, title, images }) => {
         }
       });
       tl2.to(btnRef.current, {
-        duration: 14,
+        duration: 8,
         ease: "circe.inOut",
         css: {
           rotation: 360*2,
-    }})
+    }},'-=4')
+    tl2.to(btnRef.current, {
+      duration: 2,
+      ease: "circe.inOut",
+      css: {
+        autoAlpha: 0,
+  }},'-=4')
       tl2.to(jobRef.current, {
         duration:1, 
         ease: "power2.out",
@@ -100,7 +106,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
           autoAlpha: 0, 
           yPercent:'10',
         }
-      },'-=1');
+      },'-=4');
       tl2.to(headerRef.current, {
         duration:1, 
         ease: "power2.out",
@@ -108,7 +114,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
           autoAlpha: 0, 
           yPercent:'-100',
         }
-      },'-=1');
+      },'-=4');
 
       tl2.to(introContentRef.current, {
         duration:1, 

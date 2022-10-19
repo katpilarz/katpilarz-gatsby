@@ -93,7 +93,7 @@ const Services = props => {
 
   return (
     <main>
-      <Seo title={servicePage.node.title} description={servicePage.node.description} keywords={keywords}  />
+      <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords}  />
       <AnimatedBtn/>
       <PagePreloader/>
       <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>

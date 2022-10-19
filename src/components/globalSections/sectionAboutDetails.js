@@ -50,8 +50,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
         return () => ctx.revert(); // cleanup! 
       }, []);
 
-      console.log({video})
-   
+  
   return (
             
     <div ref={sectionRef} className={`${styles.sectionContentWrapper} container`}>   

@@ -1,0 +1,81 @@
+import * as React from "react"
+import { graphql } from "gatsby";
+import PageSingle from "../components/pageSingle";
+import PagePreloader from "../components/globalSections/pagePreloader"
+import Seo from "../components/globalComponents/seo";
+import { useEffect } from 'react';
+import AnimatedBtn from "../components/globalComponents/animatedBtn";
+
+
+
+export const query = graphql`
+  query {
+    faqsPage:allSanityPage(filter: {name: {eq: "faqs"}}) {
+      edges {
+        node {
+          id
+          _rawDescription
+          overview
+          title
+          slug {
+            current
+          }
+          image {
+            asset {
+              url
+              gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+            }
+            alt
+          }
+        }
+      }
+    }
+    faqs:allSanityFaq(sort: {fields: importance, order: ASC}) {
+      edges {
+        node {
+          isFeaturedInService
+          question
+          _rawAnswer
+          importance
+        }
+      }
+    }
+  }
+`
+
+
+
+
+
+// markup
+const FrequentQuestions = props => {
+  const { data, errors } = props;
+
+  const faqs = (data || {}).faqs.edges;
+  const faqsPage = (data || {}).faqsPage.edges[0];
+
+
+  const keywords = faqs.map((faq, index) => {
+    return faq.node.question;
+  });
+
+  useEffect(() => window.scrollTo(0, 0), []) 
+
+
+  if (errors) {
+    return (
+      <h1>Something went wrong</h1>
+    );
+  }
+
+  return (
+    <main>
+      <Seo title={faqsPage.node.title} description={faqsPage.node.overview} keywords={keywords}  />
+      <AnimatedBtn/>
+      <PagePreloader/>
+      <PageSingle faqs={faqs} pageName={faqsPage.node.name} pageTitle={faqsPage.node.title} pageImage={faqsPage.node.image} pageDescription={faqsPage.node._rawDescription}/>
+    </main>
+  )
+}
+
+export default FrequentQuestions

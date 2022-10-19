@@ -10,12 +10,16 @@ import { useEffect } from 'react';
 
 export const query = graphql`
 query ServiceTemplateQuery($id: String!){
-  faqs: allSanityFaq(sort: {fields: importance, order: ASC})  {
+  faqs: allSanityFaq(
+    filter: {isFeaturedInService: {eq: true}}
+    sort: {fields: importance, order: ASC}
+  ) {
     edges {
       node {
-        _rawAnswer
+        isFeaturedInService
         question
-        id
+        _rawAnswer
+        importance
       }
     }
   }
