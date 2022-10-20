@@ -1,0 +1,54 @@
+@use 'src/styles/layout';
+
+.sectionServices{
+    display: flex;
+    flex-direction: column;
+    margin: 12vw auto 0 auto;
+    width:auto;
+    height: auto;
+ 
+
+
+
+.serviceMarqueeCard{
+    display: flex;
+    place-items: center;
+    place-content: center;
+    width: 140%;
+    overflow-x: hidden;
+    padding: 4vw 0;
+    border-top:layout.$border;
+    border-bottom:layout.$border;
+
+ .serviceSingleWrapper{
+    display: flex;
+        width:100%;
+        place-self: center;
+        place-items: center;
+        place-content: center;
+
+    .serviceSingle{
+        display: flex;
+        width:auto;
+        place-self: center;
+        place-items: center;
+        place-content: center;
+
+        h4{ 
+            display: flex;
+            width: auto!important;
+            place-content: center;
+        }
+     
+    }
+ }
+
+
+
+
+}
+
+
+
+}
+
