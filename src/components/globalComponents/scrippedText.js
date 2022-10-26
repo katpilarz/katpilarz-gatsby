@@ -61,7 +61,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
             scrollTrigger: {
               trigger: scrippedTextRef.current,
               start: "top 80%",
-              end: "top 50%",
+              end: "top 55%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",

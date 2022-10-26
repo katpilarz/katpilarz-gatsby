@@ -64,7 +64,6 @@ export const query = graphql`
             current
           }
           title
-          _rawDescription
         }
       }
     }
@@ -99,7 +98,7 @@ const Services = props => {
       <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords}  />
       <AnimatedBtn/>
       <PagePreloader/>
-      <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node._rawDescription}/>
+      <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node.overview}/>
     </main>
   )
 }

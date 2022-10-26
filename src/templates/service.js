@@ -14,14 +14,12 @@ export const query = graphql`
 query ServiceTemplateQuery($id: String!){
   faqs: allSanityFaq(
     filter: {isFeaturedInService: {eq: true}}
-    sort: {fields: importance, order: ASC}
   ) {
     edges {
       node {
         isFeaturedInService
         question
         _rawAnswer
-        importance
       }
     }
   }
@@ -104,9 +102,6 @@ query ServiceTemplateQuery($id: String!){
         slug {
           current
         }
-      }
-      technologies {
-        text
       }
     }
     contact:sanityHome {

@@ -16,7 +16,6 @@ export const query = graphql`
       edges {
         node {
           id
-          _rawDescription
           overview
           title
           slug {
@@ -32,13 +31,12 @@ export const query = graphql`
         }
       }
     }
-    faqs:allSanityFaq(sort: {fields: importance, order: ASC}) {
+    faqs:allSanityFaq{
       edges {
         node {
           isFeaturedInService
           question
           _rawAnswer
-          importance
         }
       }
     }
@@ -75,7 +73,7 @@ const FrequentQuestions = props => {
       <Seo title={faqsPage.node.title} description={faqsPage.node.overview} keywords={keywords}  />
       <AnimatedBtn/>
       <PagePreloader/>
-      <PageSingle faqs={faqs} pageName={faqsPage.node.name} pageTitle={faqsPage.node.title} pageImage={faqsPage.node.image} pageDescription={faqsPage.node._rawDescription}/>
+      <PageSingle faqs={faqs} pageName={faqsPage.node.name} pageTitle={faqsPage.node.title} pageImage={faqsPage.node.image} pageDescription={faqsPage.node.overview}/>
     </main>
   )
 }

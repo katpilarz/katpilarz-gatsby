@@ -2,7 +2,6 @@ import React from "react";
 import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageSingleItemList from "./pageSingleItemList";
-import PortableText from "react-portable-text"
 import FAQList from "./globalSections/FAQList";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
@@ -49,11 +48,7 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription,
             <h2>{pageTitle} </h2>
         </header>
         <div className={styles.itemsList}>
-            <PortableText className={`${styles.description} text-uppercase`}
-                content={pageDescription}
-                projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                dataset={process.env.GATSBY_SANITY_DATASET}
-            />
+            <p className="text-uppercase">{pageDescription}</p>
             { itemList &&
                 <PageSingleItemList pageName={pageName} itemList={itemList}/>
             }
