@@ -43,19 +43,24 @@ const HomeSingleFeaturedVideo = ({ video }) => {
                         left:'50%',
                         zIndex:1,
                         transform:'translate(-50%, -50%)',
-                        width:'60%',
+                        width:'40%',
+                        transformOrigin:'center',
                     }
                 },{
                     duration:4,
                     ease: "power4.out",
                     css: {
                         clipPath: 'circle(70.7% at 50% 50%)',
-                        width:'84%',
+                        width:'72%',
                         position: 'absolute',
-                        top:'50%',
-                        left:'50%',
+                        top:'0%',
+                        left:'14%',
                         zIndex:1,
-                        transform:'translate(-50%, -50%)',
+                        transform:'translate(0%, 14%)',
+                        transformOrigin:'center',
+                        marginBottom:'20vw'
+
+
                     }
                 })   
 

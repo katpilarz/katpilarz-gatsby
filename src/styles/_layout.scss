@@ -188,7 +188,6 @@ button{
 
 
 .section{
-  margin: 10vw auto;
   position: relative;
   z-index: 1;
   min-height: 100vh;
@@ -196,4 +195,5 @@ button{
   display: flex;
   place-items: center;
   place-content: center;
+  text-align: center;
 }

@@ -54,7 +54,7 @@ const HomeSingleGallery = ({ gallery }) => {
                         id: `section-${index+1}`,
                         trigger: el,
                         start: 'top 80%',
-                        end:'top 34%',
+                        end:'top 40%',
                         toggleActions: "restart pause resume none",
                         //toggleActions: 'play none none reverse',
                         refreshPriority: 1,
