@@ -35,6 +35,7 @@ const Footer = ({ socialLinks, footerLinks }) => {
             </div>*/}
             <div className={styles.footerLinksWrapper}>
                 <p className="text-uppercase">&copy;Copyright {new Date().getFullYear()}. All rights reserved. Designed & developed with love &hearts;</p>
+                <p className="text-uppercase"> For the best user experience please use Brave, Chrome, Firefox or MS Edge. </p>
             </div>
             
         </footer>
