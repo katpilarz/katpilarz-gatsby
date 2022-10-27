@@ -1,0 +1,79 @@
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint == desktop {
+      @media only screen and (max-width: 100em) {
+        @content;
+      } //~1600px// updated to 1399 87.4375em//
+    }
+  
+    @if $breakpoint == desktopS {
+      @media only screen and (max-width: 85.375em) {
+        @content;
+      } //~1366px// updated to 1399 87.4375em//
+    }
+  
+    @if $breakpoint == desktopXS {
+      @media only screen and (max-width: 75em) {
+        @content;
+      } //~1200px
+    }
+  
+    
+    
+      @if $breakpoint == tablet {
+        @media only screen and (max-width: 65em) {
+          @content;
+        } //~1040px
+      }
+  
+      @if $breakpoint == tabletS {
+        @media only screen and (max-width: 56.25em) {
+          @content;
+        } //~900px
+      }
+  
+      @if $breakpoint == tabletXS {
+        @media only screen and (max-width: 44.375em) {
+          @content;
+        } //~710px
+      }
+  
+  
+  
+      @if $breakpoint == landscape {
+        @media only screen and (max-width: 67.5em) and (max-height: 37.5em) {
+          @content;
+        } //600px
+      }
+   
+  
+  
+      @if $breakpoint == mobile {
+        @media only screen and (max-width: 35.5em) {
+          @content;
+        } //~568px
+      }
+  
+      
+      @if $breakpoint == mobileS {
+        @media only screen and (max-width: 30.1em) {
+          @content;
+        } //~481px
+      }
+  
+      @if $breakpoint == mobileXS {
+        @media only screen and (max-width: 24.82em) {
+          @content;
+        } //~397px
+      }
+  
+      @if $breakpoint == mobileXXS {
+        @media only screen and (max-width: 20.6em) {
+          @content;
+        } //~330px
+      }
+  
+    }
+    
+    

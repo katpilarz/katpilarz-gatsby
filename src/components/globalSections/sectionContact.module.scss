@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 
 .contact{
@@ -64,7 +64,7 @@
     overflow: visible;
 
     .headerOne{
-        grid-column: 4/8;
+        grid-column: 4/9;
         grid-row: 1/2;
         width: auto;
         display: flex;
@@ -80,22 +80,29 @@
     }
 
     .headerThree{
-        grid-column: 3/10;
+        grid-column: 2/11;
         grid-row: 3/4;
         width: auto;
+        display: flex;
+        place-content: center;
+        place-items: center;
+        margin-bottom: 1vw;
 
     }
 
     .paragraph{
-        grid-column: 8/14;
+        grid-column: 9/15;
         grid-row: 1/2;
         width:70%;
-        min-width: 20rem;
+        min-width: 27rem;
         text-transform: uppercase;
         display: flex;
         place-content: center;
         place-items: center;
         place-self: center;
+        margin-left: 2vw;
+
+   
     }
 
 

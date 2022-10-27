@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 
 .pageSingle{
@@ -20,13 +20,20 @@
       height: auto;
       margin: 4vw auto 7vw auto;
       width:62vw;
-      min-width: 50rem;
       place-self: flex-end;
       position: static!important;
   
-      .description{
+      p{
         width: 55%;
+        min-width: 27rem;
         margin-bottom: 4vw;
+
+
+      @include respond (desktop){
+        width: 65%;
+      }
+
+  
       }
 
       .itemListWrapper{
@@ -41,7 +48,7 @@
           width:100%;
           height: auto;
           display: flex;
-          border-bottom: layout.$border;
+          border-bottom:$border;
           padding: 2vw 0;
           position: relative;
           z-index: 1;
@@ -92,7 +99,7 @@
               width:100%;
 
               h3{
-                color: layout.$color;
+                color: $color;
                 transform: translateX(2vw);
               }
             }

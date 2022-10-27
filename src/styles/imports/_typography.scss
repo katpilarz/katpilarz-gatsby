@@ -1,4 +1,12 @@
-@use 'layout';
+@font-face {
+    font-family: 'Scholastyca Typeface';
+    src: url('/fonts/ScholastycaTypeface-Regular.eot');
+    src: url('/fonts/ScholastycaTypeface-Regular.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/ScholastycaTypeface-Regular.woff2') format('woff2'),
+         url('/fonts/ScholastycaTypeface-Regular.woff') format('woff'),
+         url('/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
+         url('/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
+  }
 
 
 figcaption{
@@ -13,7 +21,7 @@ figcaption{
 .link,
 .menu-link,
 h1, h2, h3, h4, h5, h6{
-    font: 100% layout.$font-headers;
+    font: 100% $font-headers;
 }
 
 h1{
@@ -97,7 +105,6 @@ p{
     text-transform:uppercase;
 }
 
-  
   
   
   

@@ -1,0 +1,69 @@
+
+
+
+
+
+*, *:after, *:before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  
+  
+  main{
+    min-height: 100vh;
+    height: auto;
+    width:100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+  
+  
+  
+  }
+  
+  
+  .page-btn{
+    display: flex;
+    position: fixed!important;
+    right:3.6vw;
+    top:3.7vw;
+    z-index: 9999;
+    width:9vw;
+  }
+  
+  
+  .container{
+    width:100%;
+    padding: 0 4.4vw 0 4vw;
+  }
+  
+  button{
+    font-size: inherit;
+    font-family: inherit;
+    color:inherit;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    place-self: center;
+    transition: all .6s ease;
+  }
+  
+  
+  // BELOW SHOULD BE MOVED TO MODULES
+  // HOW TO DO THIS
+  
+  
+  
+  .section{
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    margin: auto;
+    display: flex;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+  }

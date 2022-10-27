@@ -10,8 +10,7 @@ import { useStaticQuery, graphql } from "gatsby"
 //import gsap from 'gsap/dist/gsap';
 
 
-import "../styles/_layout.scss"
-import "../styles/typography.scss"
+import "../styles/layout.scss"
 
 
 

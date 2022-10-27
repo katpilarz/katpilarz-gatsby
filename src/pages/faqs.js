@@ -55,7 +55,7 @@ const FrequentQuestions = props => {
   const faqsPage = (data || {}).faqsPage.edges[0];
 
 
-  const keywords = faqs.map((faq, index) => {
+  const keywords = faqs.map((faq) => {
     return faq.node.question;
   });
 
