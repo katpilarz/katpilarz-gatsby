@@ -147,8 +147,8 @@ const FAQListItem = ({ item }) => {
             </div>
         </button>
         { isOpen && 
-            <div className={styles.answer} ref={toggle}>
-                <div ref={answer}>
+            <div className={styles.answerWrapper} ref={toggle}>
+                <div ref={answer} className={styles.answer}>
                     <PortableText
                         content={item._rawAnswer}
                         projectId={process.env.GATSBY_SANITY_PROJECT_ID}
