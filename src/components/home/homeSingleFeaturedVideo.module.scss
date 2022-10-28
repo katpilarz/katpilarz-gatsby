@@ -1,14 +1,26 @@
+
+@import 'src/styles/layout';
+
 .featuredVideoSection{
     position: relative;
     z-index: 1;
-    min-height: 100vh;
+    width:100%;
+    height: 100vh;
     margin: auto;
     display: flex;
     place-items: center;
     place-content: center;
     text-align: center;
 
-    .featuredVideo{
-        width:70%;
+
+    @include respond (desktop){
+        max-height: 55rem;
+     }
+ 
+
+    @include respond (desktopXS){
+       max-height: 40rem;
     }
+
+
 }

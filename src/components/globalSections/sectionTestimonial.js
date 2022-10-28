@@ -49,7 +49,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
               css: {
               autoAlpha: 0,
               opacity:0,
-              yPercent:'-30',
+              yPercent:'-20',
           }})
     
       }, testimonialRef); // <- scopes all selector text inside the context to this component (optional, default is document)

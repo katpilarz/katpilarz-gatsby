@@ -13,6 +13,17 @@
       } //~1280px
     }
   
+
+    @if $breakpoint == desktopTablet {
+        @media only screen and (max-width: 80em) and (max-height: 125em) {
+          @content;
+        } //1280px || 2000px
+
+        @media only screen and (min-width: 44em) and (min-height: 62em) {
+            @content;
+            //700px || 1000px
+        }
+    }
  
     
     

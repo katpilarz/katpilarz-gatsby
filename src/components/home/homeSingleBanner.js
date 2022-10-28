@@ -38,157 +38,197 @@ const HomeSingleBanner = ({ name, title, images }) => {
 
 
 
- 
-
   useEffect(() => {
-
-    if(window.innerWidth > 1200){
 
       let ctx = gsap.context(() => {
         // create as many GSAP animations and/or ScrollTriggers here as you want...
-  
-        //this is component intro timeline
-        const tl = gsap.timeline()
-  
-        tl.from(introContentRef.current, {
-          delay:.3,
-            duration:2, 
-            ease: "power2.out",
-            css: {
-              autoAlpha: 0, 
-              yPercent:'140',
-            }
-          });
-  
-  
-  
+
   
   
          //this is component scroll triggered timeline  
-  
-        const tl2 = gsap.timeline({
-          scrollTrigger: {
-            trigger: introRef.current,
-            start: "bottom bottom",
-            end: "bottom -100%",
-            scrub: 1,
-            pin: true,
-            pinSpacing: true,
-            //toggleActions: "restart pause resume none",
-            toggleActions: 'play none none reverse',
-            refreshPriority: 1,
-          }
-        });
-        tl2.to(sectionRef.current, {
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            position:'fixed',
-            top: '-5%', 
-            left:'0%',
-          }
-        },'-=4');
-        /*tl2.to(headerRef.current, {
-          delay:1,
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            yPercent:'-10',
-          }
-        });*/
-        tl2.to(btnRef.current, {
-          duration: 8,
-          ease: "circe.inOut",
-          css: {
-            rotation: 360*2,
-        }},'-=4')
-        tl2.to(btnRef.current, {
-            duration: 2,
-            ease: "circe.inOut",
-            css: {
-              autoAlpha: 0,
-        }},'-=1')
-        tl2.to(jobRef.current, {
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            autoAlpha: 0, 
-            yPercent:'10',
-          }
-        },'-=2');
-        tl2.to(headerRef.current, {
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            autoAlpha: 0, 
-            yPercent:'-100',
-          }
-        },'-=2');
 
-        /*tl2.to(introContentRef.current, {
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            autoAlpha: 0, 
-          }
-        },'-=2');*/
+         const tl = gsap.timeline()
+      
+         tl.from(introContentRef.current, {
+           delay:.3,
+             duration:2, 
+             ease: "power2.out",
+             css: {
+               autoAlpha: 0, 
+               yPercent:'140',
+             }
+           });
 
-        tl2.to(sectionRef.current, {
-          duration:4, 
-          ease: "power2.out",
-          css: {
-            xPercent: '86', 
-            yPercent:'66',
-            scale:4.4,
-          }
-        },'+=4');
 
-        tl2.to(sectionRef.current, {
-          duration:1, 
-          ease: "power2.out",
-          css: {
-            autoAlpha:0.0, 
-            opacity:0.0,
-          }
-        });
+          const bannerAnimation = gsap.matchMedia()
+          bannerAnimation.add()
 
-  
-  
-  
-        revealRefs.current.forEach((el, index) => {
-  
-          gsap.fromTo(el, {
-              yPercent:20,
-              xPercent:20,
-              opacity:0,
-              autoAlpha:0,
-              scale:.6,
-          }, {
-              duration: 2,
-              xPercent:0,
-              yPercent:0,
-              opacity:1,
-              autoAlpha:1,
-              scale:1.1,
-              ease: "power4.out",
-              //stagger:4,
-              delay:6,
+
+          
+          bannerAnimation.add("(min-width: 1280px)", () => {
+
+            const tl2 = gsap.timeline({
               scrollTrigger: {
-                  id: `section-${index+1}`,
-                  trigger: el,
-                  start: 'top 100%',
-                  end:'top 30%',
-                  //toggleActions: "restart pause resume none",
-                  toggleActions: 'play none none reverse',
-                  refreshPriority: 1,
-                  pin: false,
-                  pinSpacing: false,
-                  scrub:3,
+                trigger: introRef.current,
+                start: "bottom bottom",
+                end: "bottom -100%",
+                scrub: 1,
+                pin: true,
+                pinSpacing: true,
+                toggleActions: 'play none none reverse',
+                refreshPriority: 1,
               }
-          });
-   
-      });
-  
+            });
+              tl2.to(btnRef.current, {
+                duration: 8,
+                ease: "circe.inOut",
+                css: {
+                  rotation: 360*2,
+              }},'-=4')
+              tl2.to(btnRef.current, {
+                  duration: 2,
+                  ease: "circe.inOut",
+                  css: {
+                    autoAlpha: 0,
+              }},'-=3')
+              tl2.to(jobRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha: 0, 
+                  yPercent:'20',
+                }
+              },'-=4');
+              tl2.to(headerRef.current, {
+                duration:3, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha: 0, 
+                  yPercent:'-100',
+                }
+              },'-=4');
+              tl2.to(sectionRef.current, {
+                duration:4, 
+                ease: "power2.out",
+                css: {
+                  xPercent: '90', 
+                  yPercent:'36',
+                  scale:4.8,
+                }
+              },'+=4');
+      
+              tl2.to(sectionRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0.0, 
+                  opacity:0.0,
+                }
+              });
+
+
+              revealRefs.current.forEach((el, index) => {
+        
+                gsap.fromTo(el, {
+                    yPercent:20,
+                    xPercent:20,
+                    opacity:0,
+                    autoAlpha:0,
+                    scale:.6,
+                }, {
+                    duration: 2,
+                    xPercent:0,
+                    yPercent:0,
+                    opacity:1,
+                    autoAlpha:1,
+                    scale:1.1,
+                    ease: "power4.out",
+                    //stagger:4,
+                    delay:6,
+                    scrollTrigger: {
+                        id: `section-${index+1}`,
+                        trigger: el,
+                        start: 'top top',
+                        //end:'top 30%',
+                        //toggleActions: "restart pause resume none",
+                        toggleActions: 'play none none reverse',
+                        refreshPriority: 1,
+                        pin: false,
+                        pinSpacing: false,
+                        scrub:3,
+                    }
+                });
+        
+            });
+    
+      
+          })
+
+          bannerAnimation.add("(max-width: 1279px)", () => {
+
+            const tl2 = gsap.timeline({
+              scrollTrigger: {
+                trigger: introRef.current,
+                start: "bottom bottom",
+                end: "bottom -100%",
+                scrub: 1,
+                pin: true,
+                pinSpacing: true,
+                toggleActions: 'play none none reverse',
+                refreshPriority: 1,
+              }
+            });
+              tl2.to(btnRef.current, {
+                duration: 8,
+                ease: "circe.inOut",
+                css: {
+                  rotation: 360*2,
+              }},'-=4')
+              tl2.to(btnRef.current, {
+                  duration: 2,
+                  ease: "circe.inOut",
+                  css: {
+                    autoAlpha: 0,
+              }},'-=3')
+
+
+              revealRefs.current.forEach((el, index) => {
+        
+                gsap.fromTo(el, {
+                    yPercent:-20,
+                    xPercent:10,
+                    scale:.8,
+                }, {
+                    duration: 2,
+                    xPercent:0,
+                    yPercent:20,
+                    opacity:1,
+                    autoAlpha:1,
+                    scale:1.6,
+                    ease: "power4.out",
+                    //stagger:4,
+                    delay:6,
+                    scrollTrigger: {
+                        id: `section-${index+1}`,
+                        trigger: el,
+                        start: 'center center',
+                        //end:'top 30%',
+                        //toggleActions: "restart pause resume none",
+                        toggleActions: 'play none none reverse',
+                        refreshPriority: 1,
+                        pin: false,
+                        pinSpacing: false,
+                        scrub:3,
+                    }
+                });
+        
+            });
+    
+      
+          })
+          
+          
+
   
   
         
@@ -197,15 +237,10 @@ const HomeSingleBanner = ({ name, title, images }) => {
       
       return () => ctx.revert(); // cleanup! 
 
-    }
-   
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     
   }, []);
-
-
-
 
 
   

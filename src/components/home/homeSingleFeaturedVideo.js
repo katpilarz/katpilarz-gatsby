@@ -34,32 +34,28 @@ const HomeSingleFeaturedVideo = ({ video }) => {
             }
           });
                 tl.fromTo(videoRef.current, {
-                    duration:8,
+                    duration:10,
                     ease: "power4.out",
                     css: {
-                        clipPath: 'circle(15.0% at 50% 50%)',
+                        clipPath: 'circle(20.0% at 50% 50%)',
                         position: 'absolute',
-                        top:'50%',
-                        left:'50%',
+                        top:'20%',
+                        margin: 'auto',
                         zIndex:1,
-                        transform:'translate(-50%, -50%)',
-                        width:'40%',
+                        width:'40vw',
                         transformOrigin:'center',
                     }
                 },{
                     duration:4,
                     ease: "power4.out",
                     css: {
-                        clipPath: 'circle(70.7% at 50% 50%)',
-                        width:'70%',
+                        clipPath: 'circle(100% at 50% 50%)',
+                        width:'72vw',
                         position: 'absolute',
-                        top:'0%',
-                        left:'14%',
+                        top:'3.4vw',
+                        margin: 'auto',
                         zIndex:1,
-                        transform:'translate(0%, 14%)',
                         transformOrigin:'center',
-                        //marginBottom:'20vw'
-
 
                     }
                 })   
