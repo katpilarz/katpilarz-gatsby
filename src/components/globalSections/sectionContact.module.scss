@@ -64,7 +64,7 @@
     overflow: visible;
 
     .headerOne{
-        grid-column: 4/9;
+        grid-column: 3/9;
         grid-row: 1/2;
         width: auto;
         display: flex;
@@ -100,7 +100,6 @@
         place-content: center;
         place-items: center;
         place-self: center;
-        margin-left: 3vw;
 
    
     }

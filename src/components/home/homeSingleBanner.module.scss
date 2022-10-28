@@ -12,9 +12,11 @@
         display: flex;
         flex-direction: column;
         place-items: center;
-        place-content: center;
+        //place-content: center;
+        place-self: flex-start;
         width:100%;
         height: 100vh;
+        padding-top: 4vw;
 
         h1{
             margin-bottom: 2vw;
@@ -23,17 +25,17 @@
         .introBtn{
             display: flex;
             place-content: center;
-            place-self: center;
-            place-self: center;
+            //place-self: center;
+            //place-self: center;
             margin-top: 4vw;
             width:10vw;
         }
     }
 
     .bannerGallery{
-        position: fixed;
+        /*position: fixed;
         top:-5%;
-        left:0;
+        left:0;*/
         width:100%;
         height: 100vh;
         display: grid;

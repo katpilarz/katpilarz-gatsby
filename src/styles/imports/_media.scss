@@ -4,21 +4,16 @@
     @if $breakpoint == desktop {
       @media only screen and (max-width: 100em) {
         @content;
-      } //~1600px// updated to 1399 87.4375em//
-    }
-  
-    @if $breakpoint == desktopS {
-      @media only screen and (max-width: 85.375em) {
-        @content;
-      } //~1366px// updated to 1399 87.4375em//
+      } //~1600px
     }
   
     @if $breakpoint == desktopXS {
-      @media only screen and (max-width: 75em) {
+      @media only screen and (max-width: 80em) {
         @content;
-      } //~1200px
+      } //~1280px
     }
   
+ 
     
     
       @if $breakpoint == tablet {

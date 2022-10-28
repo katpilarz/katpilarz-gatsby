@@ -1,5 +1,5 @@
 import React from "react"
-//import * as styles from "./homeSingleGallery.module.scss";
+import * as styles from "./homeSingleFeaturedVideo.module.scss";
 import Video from "../globalComponents/video";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
@@ -51,14 +51,14 @@ const HomeSingleFeaturedVideo = ({ video }) => {
                     ease: "power4.out",
                     css: {
                         clipPath: 'circle(70.7% at 50% 50%)',
-                        width:'72%',
+                        width:'70%',
                         position: 'absolute',
                         top:'0%',
                         left:'14%',
                         zIndex:1,
                         transform:'translate(0%, 14%)',
                         transformOrigin:'center',
-                        marginBottom:'20vw'
+                        //marginBottom:'20vw'
 
 
                     }
@@ -75,8 +75,8 @@ const HomeSingleFeaturedVideo = ({ video }) => {
 
    
   return (
-    <section ref={sectionRef} className='container section'>
-        <div ref={videoRef}>
+    <section ref={sectionRef} className={styles.featuredVideoSection}>
+        <div ref={videoRef} className={styles.featuredVideo}>
             <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed='false'/> 
         </div>
     </section>
