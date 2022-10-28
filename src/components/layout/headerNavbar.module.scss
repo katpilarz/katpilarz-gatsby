@@ -1,3 +1,5 @@
+@import 'src/styles/layout';
+
 .navbar{
     width:100%;
     margin: auto;
@@ -8,6 +10,11 @@
     left:0%;
     padding: 1vw 4vw;
     z-index: 9999;
+
+    @include respond (desktopXS){
+        top:1vw;
+    }
+
 }
 
 .branding{

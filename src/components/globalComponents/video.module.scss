@@ -1,4 +1,4 @@
-
+@import 'src/styles/layout';
 .videoContainer{
     width: auto;
     height: auto;
@@ -66,8 +66,11 @@
     place-self: flex-end;
     position: absolute;
     z-index: 2;
-    bottom: -.3vw;
-    right:-9%;
+
+
+    @include respond (desktopXS){
+        width:15vw;
+    }
 }
 
 

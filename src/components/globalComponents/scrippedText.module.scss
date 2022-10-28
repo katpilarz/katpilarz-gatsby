@@ -1,8 +1,17 @@
+@import 'src/styles/layout';
+
+
 .scrippedTextWrapper{
     width:20vw;
     opacity: 1;
     visibility: visible;
     transform: translate(0,0);
+
+    @include respond (desktopXS){
+        width:36vw;
+        position: relative;
+        z-index: 2;
+    }
 
     svg{
         width:100%;

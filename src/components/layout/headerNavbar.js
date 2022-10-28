@@ -20,7 +20,7 @@ const HeaderNavbar = ({ isOpen, toggleSidebar, name }) => {
                   onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
                   checked={theme === 'dark'}
                 />{' '}
-                Dark/Light Mode
+                Toggle Mode
               </label>
             </button>
           )}

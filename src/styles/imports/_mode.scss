@@ -4,14 +4,8 @@
 
 
 body {
-    font: 100% $font-body;
     color: $grey-dark;
-    font-size: calc( .47rem + .8vw);
-    font-weight: 300;
     transition: all 0.2s linear;
-    position: relative!important;
-    z-index: 1;
-    width:100vw;
     overflow-x: hidden;
   
   

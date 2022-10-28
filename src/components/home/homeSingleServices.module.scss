@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 .sectionServices{
     display: flex;
@@ -8,6 +8,11 @@
     height: auto;
     position: relative;
     z-index: 1;  
+
+    @include respond (desktopXS){
+        margin: 6vw auto 0 auto;
+    }
+
 
     p{
         margin: 3vw 3vw 5vw 3vw;
@@ -22,11 +27,15 @@
     width: 220%;
     overflow-x: hidden;
     padding: 4vw 0;
-    border-top:layout.$border;
-    border-bottom:layout.$border;
+    border-top:$border;
+    border-bottom:$border;
     overflow-x: hidden;
     position: relative;
     z-index: 1;
+
+    @include respond (desktopXS){
+        width:260%;
+    }
 
 
     .serviceMedia{

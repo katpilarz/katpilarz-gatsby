@@ -1,9 +1,18 @@
+
+@import 'src/styles/layout';
+
+
 .sectionContentWrapper{
 
     width:100%;
     height: auto;
     display: flex;
     justify-content: space-between;
+
+    @include respond (desktopXS){
+        flex-direction: column;
+        transform: translateY(-5vw);
+     }
     
 
 
@@ -12,9 +21,19 @@
         width:100%;
         height: auto;
 
+        @include respond (desktopXS){
+            place-self: flex-start;
+            min-width: auto;
+            width:47%;
+            margin: 0 0 7vw 0;
+            order:1;
+            position: relative;
+            z-index: -1;
+            
+
+        }
+
         .aboutImageOne{
-            //grid-column: 1/6;
-            //grid-row: auto;
             width:100%;
             display: flex;
             place-self: flex-start;
@@ -33,15 +52,31 @@
         justify-content: space-between;
         overflow-y: visible;
 
+        @include respond (desktopXS){
+            flex-basis: 100%;
+            width:100%;
+            place-items: flex-end;
+            place-content: flex-end;
+            order:2;
+        }        
+
 
 
         .aboutDescription{
             //grid-column: 8/13;
             //grid-row: 6/9;
             order:1;
-            margin: 14vw 0 10vw 0;
+            margin: 16vw 0 10vw 0;
             width:79%;
             min-width: 35rem;
+
+            @include respond (desktopXS){
+                place-self: center;
+                min-width: auto;
+                width:74%;
+                margin: 6vw auto 12vw auto;
+                order:1;
+            }
             
         
             p{line-height: 1.7;}
@@ -56,6 +91,14 @@
             place-self: flex-end;
             order:2;
             transform: translateY(7vw);
+            
+
+            @include respond (desktopXS){
+                place-self: flex-end;
+                margin: 0 0 0 auto;
+                width:55%;
+                transform: translateY(0);
+            }
 
             .aboutImage{
                 width:100%;

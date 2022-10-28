@@ -1,3 +1,6 @@
+@import './media';
+
+
 @font-face {
     font-family: 'Scholastyca Typeface';
     src: url('/fonts/ScholastycaTypeface-Regular.eot');
@@ -7,6 +10,19 @@
          url('/fonts/ScholastycaTypeface-Regular.ttf')  format('truetype'),
          url('/fonts/ScholastycaTypeface-Regular.svg#Scholastyca Typeface') format('svg');
   }
+
+
+
+body {
+font: 100% $font-body;
+font-size: calc( .47rem + .8vw);
+font-weight: 300;
+
+    @include respond (desktopXS){
+        font-size: calc( .7rem + .97vw);
+    }
+}  
+
 
 
 figcaption{
@@ -34,6 +50,10 @@ h1{
 
 h2{
     font-size: calc(.6rem + 9vw);
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 11vw);
+    }
 }
 
 .header-features{
@@ -53,6 +73,11 @@ h2{
 h3{
     font-size: calc(.6rem + 4.8vw);
     line-height:1.1;
+
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 5.4vw);
+    }
 }
 
 
@@ -65,17 +90,24 @@ h3{
 
 h4{
     font-size: calc(.6rem + 3.8vw);
+    line-height:1.1;
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 4.2vw);
+    }
 }
 
-h4{
-    line-height:1.1;
-}
+
 
 .detailsTextPortable h4,
 .intro span,
 .testimonial{
     font-size: calc(.6rem + 3vw);
     line-height: .7;
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 3.4vw);
+    }
 }
 
 
@@ -88,6 +120,10 @@ h4{
 h5{
     font-size: calc(.6rem + 1.6vw);
     line-height:1.1;
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 2.2vw);
+    }
 }
 
 

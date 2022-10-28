@@ -1,12 +1,7 @@
+@import 'src/styles/layout';
+
 .sectionAbout{
     width:100%;
-    /*display: grid;
-    grid-template-columns: repeat(14, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    place-items: center;
-    margin: 10vw auto 22vw auto;
-    height: 130vh;*/
-    //max-height: 100rem;
     display: flex;
     flex-direction: column;
     place-items: center;
@@ -15,15 +10,21 @@
     height: auto;
     margin: 12vw auto 12vw auto;
 
+    @include respond (desktopXS){
+        margin: 12vw auto 0vw auto;
+     }
+
 
 
     .sectionHeader{
-        //grid-column: 1/-1;
-        //grid-row: auto;
         width:60%;
         text-align: center;
         margin: auto;
         height: auto;
+
+        @include respond (desktopXS){
+            width:80%;
+         }
 
         p{
             margin-bottom: 2vw;

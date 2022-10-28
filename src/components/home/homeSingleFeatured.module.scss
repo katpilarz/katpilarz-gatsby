@@ -1,3 +1,4 @@
+@import 'src/styles/layout';
 
 .sectionFeatured{
     height: auto;
@@ -6,7 +7,6 @@
     place-items: flex-start;
     place-content: flex-start;
     place-self: flex-start;
-    display: flex;
     flex-direction: column;
     margin-top: 6vw;
     position: relative;
@@ -19,6 +19,20 @@
         margin-top: 8vw;
         place-items: space-between;
         gap:2vw;
+
+        @include respond (desktopXS){
+            width:100%;
+            flex-wrap: wrap;
+            place-content: center;
+        }
+
+
+
+
+
+
+
+
     }
 
 
@@ -31,12 +45,37 @@
     width:75vw;
     height: 100%;
 
+    @include respond (desktopXS){
+        width:48%;
+    }
+
+
+    &:nth-child(3){
+        place-self: center;
+        margin: auto;
+
+    }
+
+
+
+
+ 
+
+
+
+
+
     .projectSwiperSlideContainer{
         display: flex;
         flex-direction: column;
         width:100%;
         height: auto;
 
+        &:nth-child(2){
+            @include respond (desktopXS){
+                place-self: flex-start;
+            }
+        }
 
 
             .projectSwiperSlideHeader{

@@ -1,3 +1,6 @@
+@import 'src/styles/layout';
+
+
 .btnWrapper{
     width:100%;
     height: auto;
@@ -19,6 +22,7 @@
     place-self: center;
     margin-top: 7vw;
     width:10vw;
+    min-width: 12rem;
 }
 
 .introBtn{
@@ -28,6 +32,8 @@
     place-self: center;
     margin-top: 4vw;
     width:10vw;
+    min-width: 12rem;
+
 
 }
 
