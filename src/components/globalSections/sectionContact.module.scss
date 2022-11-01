@@ -15,10 +15,7 @@
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
         margin-bottom:6vw;
-
-    
-        
-    
+   
     }
     
     .contactSectionImage{
@@ -63,6 +60,10 @@
     grid-gap: 1.2vw;
     overflow: visible;
 
+    @include respond (desktopXS){
+        width:100%;
+    }
+
     .headerOne{
         grid-column: 3/9;
         grid-row: 1/2;
@@ -70,6 +71,10 @@
         display: flex;
         place-content: center;
         place-items: center;
+
+        @include respond (desktopXS){
+            grid-column:2/9;
+        }
 
     }
 
@@ -86,7 +91,11 @@
         display: flex;
         place-content: center;
         place-items: center;
-        margin-bottom: 1vw;
+        margin-bottom: 1.6vw;
+        @include respond (desktopXS){
+            grid-column: 1/10;
+            margin-bottom: 3vw;
+        }
 
     }
 
@@ -94,12 +103,18 @@
         grid-column: 9/15;
         grid-row: 1/2;
         width:70%;
-        min-width: 27rem;
+        min-width: 26rem;
         text-transform: uppercase;
         display: flex;
         place-content: center;
         place-items: center;
         place-self: center;
+
+        @include respond (desktopXS){
+            grid-column: 8/14;
+            min-width: auto;
+            width:90%;
+        }
 
    
     }

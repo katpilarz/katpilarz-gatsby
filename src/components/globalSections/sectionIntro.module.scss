@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 .sectionIntro{
     width:100%;
@@ -14,9 +14,13 @@
     .line{
         height: 10vw;
         width: .07rem;
-        background-color: layout.$grey-dark;
+        background-color: $grey-dark;
         display: block;
         margin: 2vw auto;
+
+        @include respond (desktopXS){
+            height:17vw;
+        }
     }
 
     

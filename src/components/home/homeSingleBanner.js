@@ -190,6 +190,14 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   css: {
                     autoAlpha: 0,
               }},'-=3')
+              tl2.to(sectionRef.current, {
+                duration:4, 
+                ease: "power2.out",
+                css: {
+                  scale:1.37,
+                  yPercent:'-30'
+                   }
+              },'+=4');
 
 
               revealRefs.current.forEach((el, index) => {
@@ -198,13 +206,14 @@ const HomeSingleBanner = ({ name, title, images }) => {
                     yPercent:-20,
                     xPercent:10,
                     scale:.8,
+                    autoAlpha:0,
                 }, {
                     duration: 2,
                     xPercent:0,
                     yPercent:20,
                     opacity:1,
                     autoAlpha:1,
-                    scale:1.77,
+                    scale:1.4,
                     ease: "power4.out",
                     //stagger:4,
                     delay:6,

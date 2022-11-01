@@ -61,11 +61,17 @@
     width:65%;
     margin: 8vw auto 6vw auto;
 
+
+
 }
 
 .faqPage{
     width:90%;
     place-self: flex-start;
     margin: 6vw 12vw 6vw auto;
+
+    @include respond (desktopXS){
+        width:100%;
+    }
 
 }

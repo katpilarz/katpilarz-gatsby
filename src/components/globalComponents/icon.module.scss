@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 
 .icon{
@@ -50,6 +50,11 @@ a{
     display: flex;
     position: relative;
     z-index: 2;
+
+
+    @include respond (desktopXS){
+        min-width:2rem;
+    }
 }
 
 .sectionServiceIcon{
@@ -57,6 +62,10 @@ a{
     height: auto;
     display: flex;
     margin: auto 4vw;
+
+    @include respond (desktopXS){
+        min-width:2rem;
+    }
 }
 
 

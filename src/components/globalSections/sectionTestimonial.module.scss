@@ -1,14 +1,24 @@
+@import 'src/styles/layout';
+
 .sectionTestimonial{
     margin:0 auto 14vw auto;
+
+    @include respond (desktopXS){
+        margin:10vw auto 20vw auto;
+    }
 }
 
 .sectionTestimonialProject{
     margin:10vw auto 0 auto;
+
+
+    
 }
 
  .quoteIcon{
     width:14vw;
     height: auto;
+    display: flex;
 
     path{
         width:100%;
@@ -26,14 +36,19 @@
    
 
     .testimonialText{
-        width:70vw;
+        width:72vw;
         display: flex;
         place-items: center;
         text-align: center;
         margin: auto;
-        position: relative!important;
+        position: relative;
         z-index: 1;
         margin-bottom: 1vw;
+
+        @include respond (desktop){
+            width:78vw;
+            margin-bottom: 5vw;
+        }
         
 
         .testimonialTextPortable{
@@ -42,30 +57,46 @@
             flex-direction: column;
             place-items: center;
             text-align: center;
+            
+        p{
+            line-height: 1.4;
+        }
         }
 
-        .quoteIcon{
-            position: absolute;
-            z-index: -1;
-           
-        }
+
 
         .quoteIconProject{
-            top:30%;
+            position: absolute;
+            z-index: -1;
+            top:22%;
             left:50%;
             transform: translate(-50%, -50%);
+            margin-top: 2vw;
            
         }
 
         .quoteIconLeft{
-            top:-3%;
-            left:4%;
+            place-self: flex-start;
+            transform: translateX(4vw);
            
         }
 
         .quoteIconRight{
+            place-self: flex-end;
+            transform: translate(-8vw, 5vw);
+/*
             bottom:-35%;
             right:13%;
+
+            @include respond (desktop){
+                bottom:-25%;
+                right:0%;
+            }
+
+            @include respond (desktopXS){
+                bottom:-15%;
+                right:10%;
+            }*/
            
         }
 
@@ -104,6 +135,12 @@
     height: 5vw;
     border-radius: 50rem;
     margin-bottom: 1vw;
+
+    @include respond (desktopXS){
+        width:12vw;
+        height: 12vw;
+        margin-bottom: 1rem;
+    }
 }
 /*
 

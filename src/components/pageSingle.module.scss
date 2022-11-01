@@ -22,6 +22,12 @@
       width:62vw;
       place-self: flex-end;
       position: static!important;
+
+
+      @include respond (desktopXS){
+        width: 84%;
+        margin: 7vw auto 10vw auto;
+      }
   
       p{
         width: 55%;
@@ -31,6 +37,10 @@
 
       @include respond (desktop){
         width: 65%;
+      }
+
+      @include respond (desktopXS){
+        width: 80%;
       }
 
   

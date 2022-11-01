@@ -103,16 +103,19 @@ h4{
 .intro span,
 .testimonial{
     font-size: calc(.6rem + 3vw);
-    line-height: .7;
 
     @include respond (desktopXS){
         font-size: calc( 1rem + 3.4vw);
-    }
+   }
 }
 
 
 .question{
     font-size: calc(.6rem + 2.6vw);
+
+    @include respond (desktopXS){
+        font-size: calc( 1rem + 2.8vw);
+    }
 }
 
   

@@ -6,13 +6,20 @@
     display: flex;
     flex-direction: column;
     place-items: center;
+    place-content: center;
     position: relative;
     z-index: 1;
 
+    @include respond (desktopXS){
+        margin: 0vw auto 20vw auto;
+    }
+
     width:100%;
+
+
     h3{
         color:inherit;
-        width:78%;
+        width:76%;
         margin: auto;
         text-align: center;
         margin-bottom: 6vw;
@@ -25,38 +32,29 @@
 
 .focusAreasWrapper{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: auto;
     place-items: center;
     place-self: center;
     place-content: center;
-    width:46vw;
-
-    @include respond (desktop){
-        width:48vw;
-    }
-
-    @include respond (desktopXS){
-        width:57%;
-     }
+    width:100%;
 
 
+    
     .focusArea{
         display: flex;
-        place-items: flex-end;
-        place-content: flex-end;
-        margin-top: 1.4vw;
-        position: relative!important;
-        z-index: 1;
-        width:100%;
+        place-items: center;
+        place-content: center;
+        margin-top: 1.2vw;
+        width:auto;
 
         @include respond (desktopXS){
             margin-top: 1.7vw;
          }
 
         h4{
-            width:100%;
-            line-height: 1.4;
+            width:auto;
+            line-height: 1.2;
 
             @include respond (desktopXS){
                 line-height: 1.5;
@@ -64,76 +62,30 @@
             
         }
 
+
+
         .focusAreaMedia{
             width:10vw;
             height: auto;
-            place-self: flex-end;
-            position: absolute;
-            z-index: 2;
-
-            @include respond (desktopXS){
-                width:15vw;
-             }
+            margin: auto 3vw;
         }
 
-        &:nth-child(1){
-            text-align: center;
-
-
-            .focusAreaMedia{
-                bottom: 5.2vw;
-                right:-4vw;
-
-                @include respond (desktopXS){
-                    right:-9vw;
-                    bottom: 7.8vw;
-                 }
-            }
-
-        }
-
-        &:nth-child(2){
-            //text-align: right;
-            //place-self: flex-end;
-            //margin-left: auto;
-            width:110%;
+        &:nth-child(odd){
 
             h4{
-                margin: 0 0 0 auto;
-                text-align: right;
+               order:2;
+               
             }
-
+    
+    
+    
             .focusAreaMedia{
-                bottom: -.5vw;
-                left: 3vw;
-
-                @include respond (desktopXS){
-                    left:-1.7vw;
-                    bottom: -1vw;
-                 }
+                order:1;
             }
 
         }
 
-
-        &:nth-child(3){
-            text-align: center;
-            width:98%;
-
-            h4{
-                margin-right:7vw;
-            }
-
-            .focusAreaMedia{
-                bottom: -1.4vw;
-                right: 7.9vw;
-
-                @include respond (desktopXS){
-                    right: 6vw;
-                 }
-            }
-
-        }
+        
         
     }
 }

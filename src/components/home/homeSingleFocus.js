@@ -98,15 +98,16 @@ const HomeSingleFocus = ({ section}) => {
                     return (
                     <div className={styles.focusArea} key={index} ref={addToRefs}>
                         <h4>{area.text}</h4>
-                        <div className={styles.focusAreaMedia} key={index}>
-                            {area.image &&
+                        {area.image &&
+                            <div className={styles.focusAreaMedia} key={index}>
                                 <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/>   
-                            }
-
-                            {area.video &&
+                            </div>
+                        }
+                        {area.video &&
+                            <div className={styles.focusAreaMedia} key={index}>
                                 <Video videoWebm={area.video.webm} videoFallback={area.video.fallback} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
-                            }
-                        </div>
+                            </div>
+                        }
                     </div>
                     )
                 })}

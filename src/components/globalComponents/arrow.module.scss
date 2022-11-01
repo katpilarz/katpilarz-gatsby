@@ -56,12 +56,14 @@ a{
 
 .pageIcon{
     width:2.2vw;
+    min-width:1.77rem;
 }
 
 .linkIcon{
-    width:1vw;
+    width:1.1vw;
     place-self: center;
     place-content: center;
-    margin:auto 0 auto 1vw;
+    margin:auto 0 auto calc(.4rem + .8vw);
+    min-width:1.4rem;
 }
 

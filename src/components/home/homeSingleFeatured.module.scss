@@ -12,6 +12,8 @@
     position: relative;
     z-index: 1;
 
+   
+
 
     .sectionFeaturedWrapper{
         display: flex;
@@ -46,7 +48,8 @@
     height: 100%;
 
     @include respond (desktopXS){
-        width:48%;
+        //width:48%;
+        margin-bottom: 2vw;
     }
 
 

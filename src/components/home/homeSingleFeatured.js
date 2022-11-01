@@ -72,7 +72,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
       revealRefs.current.forEach((el, index) => {
 
         gsap.fromTo(el, {
-            xPercent:100,
+            xPercent:50,
             scale:2,
 
         }, {
