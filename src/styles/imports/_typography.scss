@@ -12,11 +12,10 @@
   }
 
 
-
 body {
 font: 100% $font-body;
 font-size: calc( .47rem + .8vw);
-font-weight: 300;
+font-weight: 400;
 
     @include respond (desktopXS){
         font-size: calc( .7rem + .87vw);

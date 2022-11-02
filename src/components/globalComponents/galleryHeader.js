@@ -74,7 +74,7 @@ const GalleryHeader = ({ header }) => {
 
     <div ref={sectionRef} className={styles.header}>
         <h3 ref={headerRef}>{header}</h3>
-        <Link to='projects' ref={linkRef}>
+        <Link to='/projects' ref={linkRef}>
             See All Projects
             <ArrowIcon arrowIconClass="linkIcon"/>
         </Link>

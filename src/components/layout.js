@@ -113,10 +113,13 @@ const menuData = data.sanityGlobal.menu
   return (
     <>
       <Helmet>
-        <link href="/fonts/ScholastycaTypeface-Regular.woff2" type="font/woff2"/>
-        <link href="/fonts/ScholastycaTypeface-Regular.woff" type="font/woff" />
-        <link href="/fonts/ScholastycaTypeface-Regular.ttf" type="font/truetype"/>
-        <link href="/fonts/ScholastycaTypeface-Regular.svg" type="font/svg"/>
+        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.woff2" type="font/woff2"/>
+        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.woff" type="font/woff" />
+        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.ttf" type="font/truetype"/>
+        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.svg" type="font/svg"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400&display=swap" rel="stylesheet"/>
       </Helmet>
       <HeaderNavbar name={name} toggleSidebar={toggleSidebar} isOpen={isOpen}/>
       <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} backgroundImageData={backgroundImageData}/>
