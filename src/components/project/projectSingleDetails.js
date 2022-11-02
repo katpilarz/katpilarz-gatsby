@@ -130,7 +130,7 @@ const ProjectSingleDetails = ({ project }) => {
 
   return (
     <section ref={projectDetailsRef} className={`${styles.projectDetails} container`}>
-        <div className={styles.projectDetailsRight}>
+        <div className={styles.projectDetailsLeft}>
             <div className={styles.projectDetailsHeader}>
                 <p ref={subheaderRef}>PROJECT DETAILS</p>
                 <h4 ref={headerRef}>{project.header}</h4>
@@ -149,7 +149,7 @@ const ProjectSingleDetails = ({ project }) => {
 
             
         </div>
-        <div className={styles.projectDetailsLeft}>
+        <div className={styles.projectDetailsRight}>
            
            <div className={styles.projectDetailsOverview}>
                 <div ref={detailOneRef}  className={styles.projectOverviewCard}>

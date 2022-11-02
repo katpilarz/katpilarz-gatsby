@@ -49,7 +49,7 @@ const HomeSingleBtn = ({ }) => {
 
   
   return (
-        <div ref={btnRef} className='page-btn'>
+        <div ref={btnRef} className='page-btn animated-btn'>
             <Btn/>
         </div>
   )

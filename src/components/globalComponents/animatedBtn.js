@@ -25,7 +25,7 @@ const AnimatedBtn = ({ }) => {
                     start: 'top top',
                     end:'+=100000',
                     pin: false, 
-                    scrub:2, 
+                    scrub:true, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                      }
@@ -55,7 +55,7 @@ const AnimatedBtn = ({ }) => {
 
   
   return (
-        <div ref={btnRef} className='page-btn'>
+        <div ref={btnRef} className='page-btn animated-btn'>
             <Btn/>
         </div>
   )

@@ -6,11 +6,16 @@
     place-content: space-between;
     width:100%;
     height: auto;
-    margin:12vw auto 14vw auto;
+    margin:10vw auto 14vw auto;
+
+    @include respond (desktopXS){
+        flex-direction: column;
+    }
+
 
 }
 
-.projectDetailsLeft{
+.projectDetailsRight{
     flex-basis: 42%;
     width:100%;
     height: auto;
@@ -22,10 +27,16 @@
         flex-basis: 39%;
     }
 
+    @include respond (desktopXS){
+        flex-basis: 100%;
+        width:100%;
+        order:1;
+    }
+
     
 }
 
-.projectDetailsRight{
+.projectDetailsLeft{
     flex-basis: 47%;
     height: 100%;
     place-self: flex-end;
@@ -34,14 +45,31 @@
         flex-basis: 52%;
     }
 
-    .projectDescription{
-        margin: 12vh auto auto auto;
+    @include respond (desktopXS){
+        flex-basis: 100%;
         width:100%;
+        place-self: flex-start;
+        order:2;
+        margin-top:12vw;
+    }
+
+    .projectDescription{
+        margin: 12vw 0 auto auto;
+        width:100%;
+
+        @include respond (desktopXS){
+            margin: 12vw 0 12vw auto;
+            width:84%;
+        }
     }
 
     .projectDetailsHeader{
         display: flex;
         flex-direction: column;
+
+        @include respond (desktopXS){
+            width:70%;
+        }
     }
 
     
@@ -55,6 +83,9 @@
     width:100%;
     margin:4vw 0 0 0;
 
+    
+
+
 
     .projectOverviewCard{
         width:100%;
@@ -62,6 +93,7 @@
         padding: 2vw 3vw 2vw 0;
         display: flex;
         place-items: center;
+
 
 
         .overviewName{

@@ -36,19 +36,26 @@
   
   
   .page-btn{
-    display: flex;
     position: fixed!important;
     right:3.4vw;
     top:3.7vw;
     z-index: 9999;
-    width:9.7vw;
-    min-width: 8rem;
+
+    @include respond (desktopXS){
+        top:5vw;
+    }
+  }
+
+  .animated-btn{
+    display: flex;
+    width:10vw;
+    min-width: 6rem;
   }
   
   
   .container{
     width:100%;
-    padding: 0 4.4vw 0 4vw;
+    padding: 0 4vw 0 4vw;
   }
   
   button{
@@ -64,9 +71,6 @@
     transition: all .6s ease;
   }
   
-  
-  // BELOW SHOULD BE MOVED TO MODULES
-  // HOW TO DO THIS
   
   
   

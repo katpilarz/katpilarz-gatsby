@@ -195,7 +195,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 ease: "power2.out",
                 css: {
                   scale:1.37,
-                  yPercent:'-30'
+                  yPercent:'-20'
                    }
               },'+=4');
 
@@ -258,7 +258,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
         <div ref={introContentRef} className={styles.introContent}>
           <h1 ref={headerRef} >{name}</h1>
           <span ref={jobRef}> {title}</span>
-          <div ref={btnRef} className={styles.introBtn}>
+          <div ref={btnRef} className={`${styles.introBtn} animated-btn`}>
             <Btn btnClassName='introBtn'/>
           </div>
         </div>

@@ -19,7 +19,7 @@
 
     h3{
         color:inherit;
-        width:76%;
+        width:84%;
         margin: auto;
         text-align: center;
         margin-bottom: 6vw;
@@ -48,17 +48,11 @@
         margin-top: 1.2vw;
         width:auto;
 
-        @include respond (desktopXS){
-            margin-top: 1.7vw;
-         }
 
         h4{
             width:auto;
             line-height: 1.2;
 
-            @include respond (desktopXS){
-                line-height: 1.5;
-             }
             
         }
 

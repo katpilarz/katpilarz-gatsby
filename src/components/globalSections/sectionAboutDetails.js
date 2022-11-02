@@ -29,9 +29,9 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: sectionRef.current,
-                    start: "top 67%",
-                    end: "top 30%",
-                    scrub:2, 
+                    start: "top 60%",
+                    end: "top 25%",
+                    scrub:1, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
@@ -41,7 +41,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     ease: "power2.out",
                     css: {
                     autoAlpha: 0,
-                    yPercent:'30',
+                    yPercent:'50',
                 }})
 
       

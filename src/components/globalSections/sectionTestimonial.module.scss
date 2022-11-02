@@ -36,9 +36,8 @@
    
 
     .testimonialText{
-        width:72vw;
         display: flex;
-        place-items: center;
+        place-content: center;
         text-align: center;
         margin: auto;
         position: relative;
@@ -46,7 +45,6 @@
         margin-bottom: 1vw;
 
         @include respond (desktop){
-            width:78vw;
             margin-bottom: 5vw;
         }
         
@@ -58,9 +56,9 @@
             place-items: center;
             text-align: center;
             
-        p{
-            line-height: 1.4;
-        }
+            p{
+                line-height: 1.4;
+            }
         }
 
 
@@ -75,33 +73,59 @@
            
         }
 
+      
+    }
+
+    .testimonialTextHome{
+        width:94vw;
+
+        @include respond (desktop){
+            //width:78vw;
+            width:100%;
+            margin-bottom: 5vw;
+        }
+        
         .quoteIconLeft{
             place-self: flex-start;
-            transform: translateX(4vw);
+            transform: translateX(7vw);
            
         }
 
         .quoteIconRight{
-            place-self: flex-end;
-            transform: translate(-8vw, 5vw);
-/*
-            bottom:-35%;
-            right:13%;
+         place-self: flex-end;
+            transform: translate(-11.7vw, 5.7vw);
 
             @include respond (desktop){
-                bottom:-25%;
-                right:0%;
+                transform: translate(-9vw, 5.7vw);
             }
-
-            @include respond (desktopXS){
-                bottom:-15%;
-                right:10%;
-            }*/
            
         }
 
        
     }
+
+    .testimonialTextProject{
+        width:72vw;
+
+
+        @include respond (desktop){
+            width:80vw;
+        }
+
+
+        .quoteIconProject{
+            position: absolute;
+            z-index: -1;
+            top:22%;
+            left:50%;
+            transform: translate(-50%, -50%);
+            margin-top: 2vw;
+           
+        }
+
+      
+    }
+
 
    
 
@@ -142,23 +166,5 @@
         margin-bottom: 1rem;
     }
 }
-/*
-
-.quoteIconLeft{
-    top:0%;
-    left:3%;
-}
-
-.quoteIconRight{
-    bottom:-35%;
-    right:13%;
-}
-
-
-.quoteIconRightProject{
-    bottom:0%;
-    right:13%;
-}
-*/
 
 

@@ -1,3 +1,5 @@
+@import 'src/styles/layout';
+
 .projectBanner{
     width:100%;
     height: auto;
@@ -9,16 +11,15 @@
     width:100%;
     display: flex;
     place-items: flex-end;
-    margin-bottom: 1vw;
+    margin-bottom: 4vw;
     flex-basis: auto;
 
-    .header{
-        width: auto;
+
+    @include respond (desktopXS){
+      flex-direction: column;
+      place-items: flex-start;
     }
 
-    .swiperHeader{
-
-    }
 
     
   }
@@ -26,16 +27,22 @@
   
   .projectBannerDetails{
     width:auto;
-    height: 70%;
+    height: auto;
     display: flex;
     flex-direction: column;
     place-self: center;
     place-items: flex-start;
-    margin:2vw 0 0% 7vw;
+    margin:2vw 0 0 7vw;
     justify-items: space-between;
+
+    @include respond (desktopXS){
+      width:100%;
+      margin:2vw 0 0 0;
+    }
   
     p{
       margin-bottom: 1rem;
+
     }
     
   }

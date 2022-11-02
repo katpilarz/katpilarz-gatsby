@@ -11,6 +11,10 @@
     place-items: center;
     place-content: center;
 
+    @include respond (desktopXS){
+        height: auto;
+    }
+
 
     .introContent{
         display: flex;
@@ -23,6 +27,7 @@
 
         @include respond (desktopXS){
             height: auto;
+            margin-top: 4vw;
         }
    
 
@@ -31,13 +36,8 @@
         }
 
         .introBtn{
-            display: flex;
             place-content: center;
-            //place-self: center;
-            //place-self: center;
             margin-top: 2vw;
-            width:9.7vw;
-            min-width: 8rem;
         }
     }
 
