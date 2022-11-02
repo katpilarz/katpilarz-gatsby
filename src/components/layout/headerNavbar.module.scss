@@ -12,7 +12,7 @@
     z-index: 9999;
 
     @include respond (desktopXS){
-        top:1vw;
+        top:2.6vw;
     }
 
 }
@@ -23,6 +23,10 @@
     top:60%;
     left:50%;
     z-index: 101;
+
+    @include respond (desktopXS){
+        top:45%;
+    }
 }
 .buttonsWrapper{
     display: flex;

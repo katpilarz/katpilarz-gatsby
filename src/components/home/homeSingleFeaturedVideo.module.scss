@@ -12,9 +12,13 @@
     place-content: center;
     text-align: center;
 
+    @include respond (desktopL){
+        max-height: 60rem;
+     }
+
 
     @include respond (desktop){
-        max-height: 55rem;
+        max-height: 50rem;
      }
  
 

@@ -52,10 +52,18 @@
         margin-top: 1.2vw;
         width:auto;
 
+        @include respond (desktop){
+            margin-top: 1vw;
+        }
+
 
         h4{
             width:auto;
             line-height: 1.2;
+
+            @include respond (desktop){
+                line-height: 1;
+            }
 
             
         }
@@ -66,6 +74,10 @@
             width:10vw;
             height: auto;
             margin: auto 3vw;
+
+            @include respond (desktop){
+                width:13vw;
+            }
         }
 
         &:nth-child(odd){

@@ -4,6 +4,11 @@
     width:100%;
     height: auto;
     margin: 9vw auto 4vw auto;
+
+
+    @include respond (desktopXS){
+      margin: 16vw auto 4vw auto;
+    }
 }
 
 
@@ -42,6 +47,10 @@
   
     p{
       margin-bottom: 1rem;
+
+      @include respond (desktopXS){
+        margin-bottom: .4rem;
+      }
 
     }
     

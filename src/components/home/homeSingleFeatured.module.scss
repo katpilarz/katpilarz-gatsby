@@ -25,7 +25,7 @@
         @include respond (desktopXS){
             width:100%;
             flex-wrap: wrap;
-            place-content: center;
+            place-content: flex-start;
         }
 
 
@@ -46,18 +46,24 @@
 .projectSwiperSlide{
     width:75vw;
     height: 100%;
+    place-self: flex-start;
 
     @include respond (desktopXS){
         //width:48%;
-        margin-bottom: 2vw;
+        margin:0 0 8vw 0;
     }
 
 
-    &:nth-child(3){
-        place-self: center;
-        margin: auto;
+    &:nth-child(2){
 
+        @include respond (desktopXS){
+            place-self: flex-end;
+            margin:0 0 8vw auto;
+       }
+        
     }
+
+
 
 
 
@@ -74,11 +80,6 @@
         width:100%;
         height: auto;
 
-        &:nth-child(2){
-            @include respond (desktopXS){
-                place-self: flex-start;
-            }
-        }
 
 
             .projectSwiperSlideHeader{

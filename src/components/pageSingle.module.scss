@@ -8,6 +8,10 @@
     height: auto;
     padding-top: 9vw;
 
+    @include respond (desktopXS){
+      padding-top: 16vw;
+    }
+
 
     .pageSingleHeader{
       display: flex;

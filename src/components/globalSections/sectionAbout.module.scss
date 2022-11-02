@@ -8,7 +8,11 @@
     place-content: center;
     width:100%;
     height: auto;
-    margin: 12vw auto 12vw auto;
+    margin: 12vw auto 8vw auto;
+
+    @include respond (desktop){
+        margin: 12vw auto 10vw auto;
+     }
 
     @include respond (desktopXS){
         margin: 16vw auto 0vw auto;

@@ -16,6 +16,8 @@
 
     @include respond (desktopXS){
         width:36vw;
+        position: relative;
+        z-index: 2;
     }
 
     svg{
@@ -48,5 +50,5 @@
     place-self: center;
     place-content: center;
     place-items: center;
-    margin-left: 28vw;
+    margin-left: 27vw;
 }

@@ -54,13 +54,10 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
   return (
             
     <div ref={sectionRef} className={`${styles.sectionContentWrapper} container`}>   
-        <div className={styles.sectionContentLeft}> 
-            <div className={styles.aboutImageOne}>
+        <div className={styles.aboutImageOne}>
                 <AnimatedImage imagePath={imageOne.asset.gatsbyImageData} imageAlt={imageOne.alt}/>   
-            </div>
         </div> 
-        <div className={styles.sectionContentRight}>
-            {imageTwo &&
+        {imageTwo &&
                 <div className={styles.aboutMedia}>
                     <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
                 </div>
@@ -78,7 +75,6 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     dataset={process.env.GATSBY_SANITY_DATASET}
                 />
             </div>
-        </div>
         
     </div>
             

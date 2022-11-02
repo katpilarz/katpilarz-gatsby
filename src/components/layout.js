@@ -126,7 +126,7 @@ const menuData = data.sanityGlobal.menu
       
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}
-      <Footer socialLinks={menuData.socialLinks} footerLinks={menuData.menuLinks}/>
+      <Footer/>
     </>
   )
 }

@@ -5,7 +5,7 @@ import * as styles from "./footer.module.scss";
 
 
 
-const Footer = ({ socialLinks, footerLinks }) => {
+const Footer = ({ }) => {
 
   
   return (
@@ -34,10 +34,8 @@ const Footer = ({ socialLinks, footerLinks }) => {
                 })}
             </div>*/}
             <div className={styles.footerLinksWrapper}>
-                
-                <p> For the best user experience please use Brave, Chrome, Firefox, Opera or MS Edge. </p>
-                <p>Designed & developed with love &hearts;</p>
                 <p className="text-uppercase">&copy;Copyright {new Date().getFullYear()}. All rights reserved.</p>
+                <p className="text-uppercase">Designed & developed with love &hearts;</p>
             </div>
             
         </footer>
