@@ -6,11 +6,16 @@
     opacity: 1;
     visibility: visible;
     transform: translate(0,0);
+    margin-top: 1vw;
+
+
+    @include respond (desktop){
+        width:28vw;
+    }
+
 
     @include respond (desktopXS){
         width:36vw;
-        position: relative;
-        z-index: 2;
     }
 
     svg{
@@ -39,7 +44,6 @@
 .scrippedTextAbout{
     /*grid-column: 7/12;
     grid-row: auto;*/
-    margin-top: 1vw;
     display: flex;
     place-self: center;
     place-content: center;
