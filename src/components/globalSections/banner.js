@@ -46,7 +46,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
   return (
     <header ref={pageSingleRef} className={`${styles.projectBanner} container`}>
         <div className={styles.projectBannerHeader}>
-            <h2 className={styles.header}>{title}</h2>
+            <h2>{title}</h2>
             { services &&
                 <div className={styles.projectBannerDetails}>
                     <p>{publishedAt}</p>
