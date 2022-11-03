@@ -30,7 +30,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 60%",
-                    end: "top 25%",
+                    end: "top 27%",
                     scrub:1, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
@@ -41,9 +41,8 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     ease: "power2.out",
                     css: {
                     autoAlpha: 0,
-                    yPercent:'50',
+                    yPercent:'100',
                 }})
-
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
@@ -57,7 +56,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
         <div className={styles.aboutImageOne}>
                 <AnimatedImage imagePath={imageOne.asset.gatsbyImageData} imageAlt={imageOne.alt}/>   
         </div> 
-        {imageTwo &&
+            {imageTwo &&
                 <div className={styles.aboutMedia}>
                     <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
                 </div>

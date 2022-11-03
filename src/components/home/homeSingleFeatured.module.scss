@@ -49,8 +49,8 @@
     place-self: flex-start;
 
     @include respond (desktopXS){
-        //width:48%;
-        margin:0 0 8vw 0;
+        width:60vw;
+        margin:0 0 2vw 0;
     }
 
 
@@ -58,7 +58,7 @@
 
         @include respond (desktopXS){
             place-self: flex-end;
-            margin:0 0 8vw auto;
+            margin:0 0 2vw auto;
        }
         
     }
@@ -93,6 +93,12 @@
                 visibility: hidden;
                 transition: all .6s ease;
                 transform: translateY(2rem);
+
+                @include respond (desktopXS){
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+               }
 
 
 

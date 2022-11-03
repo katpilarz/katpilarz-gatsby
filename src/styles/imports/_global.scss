@@ -38,11 +38,11 @@
   .page-btn{
     position: fixed!important;
     right:3.4vw;
-    top:3.7vw;
+    top:4.7vw;
     z-index: 9999;
 
     @include respond (desktopXS){
-        top:5vw;
+        top:7vw;
     }
   }
 
@@ -56,6 +56,10 @@
   .container{
     width:100%;
     padding: 0 4vw 0 4vw;
+
+    @include respond (desktopXS){
+        padding: 0 6vw 0 6vw;
+    }
   }
   
   button{

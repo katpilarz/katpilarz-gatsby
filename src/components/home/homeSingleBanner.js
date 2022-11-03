@@ -24,13 +24,17 @@ const HomeSingleBanner = ({ name, title, images }) => {
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
+  
 
+  const updateRefs = useRef([]);
 
 
   const addToRefs = el => {
       if (!revealRefs.current.includes(el)) {
           revealRefs.current.push(el);
       }
+
+
 
       
   };
@@ -190,12 +194,22 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   css: {
                     autoAlpha: 0,
               }},'-=3')
+              tl2.to(jobRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha: 0, 
+                  yPercent:'20',
+                }
+              },'-=4');
               tl2.to(sectionRef.current, {
                 duration:4, 
                 ease: "power2.out",
                 css: {
-                  scale:1.37,
-                  yPercent:'-20'
+                  scale:5,
+                  yPercent:'40',
+                  xPercent:'84',
+                  autoAlpha:0,
                    }
               },'+=4');
 
@@ -220,7 +234,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
-                        start: 'top 40%',
+                        start: 'top top',
                         //end:'top 30%',
                         //toggleActions: "restart pause resume none",
                         toggleActions: 'play none none reverse',
@@ -232,7 +246,9 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 });
         
             });
-    
+
+
+                
       
           })
           

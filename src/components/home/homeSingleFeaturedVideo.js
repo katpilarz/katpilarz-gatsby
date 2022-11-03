@@ -77,7 +77,7 @@ const HomeSingleFeaturedVideo = ({ video }) => {
             const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: sectionRef.current,
-                start: "top 20%",
+                start: "center center",
                 scrub: true, 
                 pin: true, 
                 pinSpacing: true,
