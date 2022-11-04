@@ -110,7 +110,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 duration:4, 
                 ease: "power2.out",
                 css: {
-                  xPercent: '90', 
+                  xPercent: '100', 
                   yPercent:'36',
                   scale:5.2,
                 }
