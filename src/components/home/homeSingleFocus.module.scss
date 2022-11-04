@@ -27,6 +27,11 @@
         @include respond (desktop){
             width:92%;
         }
+
+        @include respond (desktopXS){
+            margin-bottom: 12vw;
+        }
+
     }
 
     
@@ -49,22 +54,13 @@
         display: flex;
         place-items: center;
         place-content: center;
-        margin-top: 1.2vw;
+        margin-top: 1vw;
         width:auto;
-
-        @include respond (desktop){
-            margin-top: 1vw;
-        }
 
 
         h4{
             width:auto;
-            line-height: 1.2;
-
-            @include respond (desktop){
-                line-height: 1;
-            }
-
+            line-height: 1;
             
         }
 

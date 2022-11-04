@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 
 .menu{
@@ -33,13 +33,26 @@
 
 
 .linkImageLeft{
-    top:10%!important;
-    left:3%!important;
+    top:7vw!important;
+    left:4vw!important;
+
+    @include respond (desktopXS){
+        left:6vw!important;
+    }
+
+
+
+
 }
 
 .linkImageRight{
-    bottom:5%!important;
-    right:3%!important;
+    bottom:5vw!important;
+    right:4vw!important;
+
+    @include respond (desktopXS){
+        right:6vw!important;    
+    }
+
 }
 
 .menuImageDefault{
@@ -116,7 +129,7 @@
 
             a{
                 //font-style: italic;
-                color: layout.$color;
+                color: $color;
                 transform: translateX(2%);
 
                 .menuIconWrapper{
@@ -144,12 +157,17 @@
 
 .socialMediaLinks{
     position: absolute;
-    bottom: 5%;
-    left:3%;
+    bottom: 5vw;
+    left:4vw;
     display: flex;
     width:100%;
     z-index: 100;
     text-transform: uppercase;
+
+
+    @include respond (desktopXS){
+        left:6vw;
+    }
 
     .socialMediaLink{
         width:auto;

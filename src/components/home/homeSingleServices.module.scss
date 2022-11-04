@@ -10,7 +10,7 @@
     z-index: 1;  
 
     @include respond (desktopXS){
-        margin: 6vw auto 0 auto;
+        margin: 0 auto 0 auto;
     }
 
 
@@ -18,7 +18,11 @@
         margin: 3vw 3vw 5vw 3vw;
 
         @include respond (desktopXS){
-            place-self: center;
+            margin: 8vw 4vw 8vw 4vw;
+         }
+
+         @include respond (tablet){
+            margin: 0 4vw 8vw 4vw;
          }
     }
 

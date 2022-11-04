@@ -1,8 +1,23 @@
+@import 'src/styles/layout';
 
     .header{
         width:100%;
         display: flex;
         place-items:center;
         place-content: space-between;
+
+        h3{
+            width:40%;
+            place-content: flex-start;
+            place-items: center;
+            place-self: flex-start;
+            text-align: left;
+        
+        
+            @include respond (desktop){
+               width:50%;
+            }
+        
+        }
         
     }

@@ -1,4 +1,6 @@
 @import 'src/styles/layout';
+
+
 .videoContainer{
     width: auto;
     height: auto;
@@ -84,6 +86,13 @@ article{
         visibility: hidden;
         opacity: 0;
         transition: all .8s ease-out;
+
+
+        @include respond (desktopXS){
+            left:40vw!important;
+            top:-1vw!important; 
+          }
+        
       
     }
 

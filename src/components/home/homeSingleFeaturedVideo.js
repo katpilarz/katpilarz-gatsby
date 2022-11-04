@@ -58,9 +58,9 @@ const HomeSingleFeaturedVideo = ({ video }) => {
                       ease: "power4.out",
                       css: {
                           clipPath: 'circle(100% at 50% 50%)',
-                          width:'70vw',
+                          width:'67vw',
                           position: 'absolute',
-                          top:'4vw',
+                          top:'6vw',
                           margin: 'auto',
                           zIndex:1,
                           transformOrigin:'center',

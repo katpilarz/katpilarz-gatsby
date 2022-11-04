@@ -118,7 +118,6 @@
 
     width:100%;
     height: 114vh;
-    
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(12, 1fr);
@@ -136,10 +135,16 @@
      }
 
      @include respond (desktopXS){
-        max-height: auto;
+        max-height:auto;
         height: auto;
+        min-height: 70rem;
 
     }
+
+    @include respond (tablet){
+        min-height: 67rem;
+
+     }
 
 
     .aboutImageOne{
@@ -152,7 +157,7 @@
 
         @include respond (desktopXS){
             grid-row: auto;
-            grid-column:3/-1;
+            grid-column:1/-1;
             transform: translateY(-3vw);
             width:50%;
             margin: 0 auto 0 0 0;
@@ -179,8 +184,8 @@
 
          @include respond (desktopXS){
             width:100%;
-            grid-column: 1/14;
-            grid-row: -1/-1;
+            grid-column: 3/15;
+            grid-row: 12/-1;
             margin: 12vw auto 0 auto;
          }
     
@@ -207,9 +212,9 @@
 
 
         @include respond (desktopXS){
-            grid-column: 8/15;
+            grid-column: 8/16;
             grid-row:9/12;
-            width:100%;
+            width:97%;
             margin-top: 4vw;
          }
     }

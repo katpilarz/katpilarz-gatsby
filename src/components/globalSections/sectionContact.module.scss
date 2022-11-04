@@ -41,10 +41,16 @@
     place-content: center;
     display: flex;
 
+    
+
     .contactLink{
         margin: auto 2vw;
         display: flex;
         text-transform: uppercase;
+
+        @include respond (tablet){
+            margin: auto 5vw;
+        }
     }
 }
 
@@ -76,6 +82,10 @@
             grid-column:2/9;
         }
 
+        @include respond (tablet){
+            grid-column:1/9;
+        }
+
     }
 
     .headerTwo{
@@ -92,9 +102,18 @@
         place-content: center;
         place-items: center;
         margin-bottom: 1.6vw;
+
+
         @include respond (desktopXS){
             grid-column: 1/10;
             margin-bottom: 3vw;
+        }
+
+        @include respond (tablet){
+            grid-column: 2/11;
+            margin-bottom: 4vw;
+            place-content: flex-start;
+            place-items: flex-start;
         }
 
     }
@@ -119,6 +138,11 @@
             grid-column: 8/14;
             min-width: auto;
             width:90%;
+        }
+
+        @include respond (tablet){
+            width:100%;
+            grid-column: 8/15;
         }
 
    

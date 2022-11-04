@@ -1,3 +1,6 @@
+@import 'src/styles/layout';
+
+
 .nextProjectSection{
     display: flex;
     flex-direction: column;
@@ -5,6 +8,9 @@
     width:90%;
     height: auto;
     margin:14vw 0 12vw auto;
+
+
+    
 }
 
 
@@ -30,6 +36,10 @@
     width:60%;
     margin: auto;
     z-index: 1;
+
+    @include respond (desktopXS){
+        width:77%;
+    }
 
     img{
         width:100%;

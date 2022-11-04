@@ -30,7 +30,7 @@
     @include respond (desktopXS){
         flex-basis: 100%;
         width:100%;
-        order:1;
+        order:2;
     }
 
     
@@ -49,8 +49,8 @@
         flex-basis: 100%;
         width:100%;
         place-self: flex-start;
-        order:2;
-        margin-top:12vw;
+        order:1;
+        margin-top:4vw;
     }
 
     .projectDescription{
@@ -59,7 +59,7 @@
 
         @include respond (desktopXS){
             margin: 12vw 0 12vw auto;
-            width:84%;
+            width:76%;
         }
     }
 
@@ -98,10 +98,18 @@
 
         .overviewName{
             padding-right: 5vw;
+
+            @include respond (desktopXS){
+                padding-right: 8vw;
+            }
         }
 
         p{
             padding-right: 4vw;
+
+            @include respond (desktopXS){
+                padding-right: 6vw;
+            }
         }
         
 

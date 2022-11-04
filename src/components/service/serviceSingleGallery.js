@@ -64,7 +64,7 @@ const ServiceSingleGallery = ({ projects }) => {
 
       <div className={styles.gallerySwiper}>
           <div className='container'>
-            <GalleryHeader header='Related Projects'/>
+            <GalleryHeader header='Related Projects' linkText="See All Projects" linkUrl="/projects"/>
           </div>
           <Swiper ref={swiperContainer}  className={styles.swiper}
               style={{

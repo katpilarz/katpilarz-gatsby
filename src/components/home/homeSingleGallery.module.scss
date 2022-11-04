@@ -15,36 +15,23 @@
     }
 
     .sectionGalleryWrapper{
-    display: flex;
-    width:100%;
-    justify-content: space-between;
-
+    /*display: flex;
+    justify-content: space-between;*/
     display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows:repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows:repeat(12, 1fr);
+    width:100%;
 
-
-    @include respond (desktopXS){
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        grid-template-rows:repeat(12, 1fr);
-    }
-
-
+    
 
  
 
         .projectMockup{
-            display: flex;
+            /*display: flex;
             flex-basis: 30%;
-            width:100%;
+            width:100%;*/
             height: auto;
-
-            @include respond (desktopXS){
-                flex-basis: 100%;
-                width:100%
-            }
-        
+     
 
             img{
                 width:100%;
@@ -56,36 +43,26 @@
                 place-self: flex-start;
                 place-content: flex-start;
                 place-items: flex-start;
-                width:100%;
-
                 grid-column: 1/-1;
-                    grid-row: 1/-1;
-                    width:35%;
-                    z-index: 2;
+                grid-row: 1/-1;
+                width:35%;
+                z-index: 2;
 
                 @include respond (desktopXS){
-                    grid-column: 1/-1;
-                    grid-row: 1/-1;
                     width:45%;
-                    z-index: 2;
                 }
             }
 
 
             &:nth-child(2){
-
                 grid-column: 1/-1;
-                    grid-row: 2/12;
-                    width:40%;
-                    margin:2vw auto;
-                    z-index: 1;
+                grid-row: 2/12;
+                width:40%;
+                margin:2vw auto;
+                z-index: 1;
                 @include respond (desktopXS){
-                    grid-column: 1/-1;
-                    grid-row: 2/12;
-                    width:55%;
-                    margin:2vw auto;
-                    z-index: 1;
-                    
+                    width:47%;
+                  
                 }
             }
         
@@ -93,17 +70,13 @@
                 place-self: flex-end;
                 place-content: flex-end;
                 place-items: flex-end;
-                width:100%;
                 grid-column: 1/-1;
-                    grid-row: 1/-1;
-                    width:35%;
-                    z-index: 2;
+                grid-row: 1/-1;
+                width:35%;
+                z-index: 2;
 
                 @include respond (desktopXS){
-                    grid-column: 1/-1;
-                    grid-row: 1/-1;
                     width:45%;
-                    z-index: 2;
                 }
             }
         }

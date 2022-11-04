@@ -23,8 +23,16 @@
  
 
     @include respond (desktopXS){
-       //max-height: 45rem;
+       max-height: 45rem;
     }
+
+    @include respond (tablet){
+        max-height: 40rem;
+     }
+
+
+
+
 
     .featuredVideo{
         width: auto;

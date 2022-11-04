@@ -111,7 +111,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
   return (
 
       <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
-          <GalleryHeader header='Latest Projects'/>
+          <GalleryHeader header='Latest Projects' linkText="See All Projects" linkUrl="/projects"/>
           <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
             {featuredProjects.map((project, index) => {
                   return (

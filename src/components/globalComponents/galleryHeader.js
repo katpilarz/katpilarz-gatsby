@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const GalleryHeader = ({ header }) => {
+const GalleryHeader = ({ header, linkText, linkUrl }) => {
 
 
   const sectionRef = useRef(null);
@@ -74,8 +74,8 @@ const GalleryHeader = ({ header }) => {
 
     <div ref={sectionRef} className={styles.header}>
         <h3 ref={headerRef}>{header}</h3>
-        <Link to='/projects' ref={linkRef}>
-            See All Projects
+        <Link to={linkUrl} ref={linkRef}>
+           {linkText}
             <ArrowIcon arrowIconClass="linkIcon"/>
         </Link>
     </div> 

@@ -48,14 +48,21 @@
         }
 
         @include respond (desktop){
-            max-height:44rem;
+            height:44rem;
+            max-height: auto;
+
         }
 
 
         @include respond (desktopXS){
             height:46rem;
-            max-height: none;
+            max-height: auto;
             top:10vw;
+        }
+
+        @include respond (tablet){
+            height:40rem;
+
         }
 
  

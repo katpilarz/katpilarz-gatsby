@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 .sectionServices{
     display: flex;
@@ -6,6 +6,11 @@
     margin: 14vw auto 0 auto;
     width:auto;
     height: auto;
+
+
+    @include respond (desktopXS){
+        margin: 0 auto 0 auto;
+    }
  
 
 
@@ -14,11 +19,15 @@
     display: flex;
     place-items: center;
     place-content: center;
-    width: 150%;
+    width: 145%;
     overflow-x: hidden;
     padding: 4vw 0;
-    border-top:layout.$border;
-    border-bottom:layout.$border;
+    border-top:$border;
+    border-bottom:$border;
+
+    @include respond (desktopXS){
+        width: 160%;
+    }
 
  .serviceSingleWrapper{
     display: flex;

@@ -105,7 +105,7 @@ const FAQListItem = ({ item }) => {
 
             gsap.fromTo(el, {
                 autoAlpha: 0,
-                xPercent:'-15',
+                xPercent:'-10',
             }, {
                 duration: 1,
                 autoAlpha: 1,

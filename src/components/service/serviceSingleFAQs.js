@@ -1,8 +1,8 @@
 import React from "react"
 import * as styles from "./serviceSingleFAQs.module.scss";
-import { Link } from "gatsby"
-import ArrowIcon from "../globalComponents/arrow";
 import FAQList from "../globalSections/FAQList";
+import GalleryHeader from "../globalComponents/galleryHeader";
+
 
 
 
@@ -15,14 +15,8 @@ const ServiceSingleFAQs = ({ faqs }) => {
   return (
 
     <div className={`${styles.sectionFAQ} container`}>
-        <div className={styles.sectionHeader}>
-            <h3>The Most Frequent Questions</h3>
-        </div>
+        <GalleryHeader header='The most frequent questions' linkText="See All Questions" linkUrl="/faqs"/>
         <FAQList faqs={faqs} faqCustomClass='faqSection'/>
-        <Link to='/faqs'>
-            See All Questions
-            <ArrowIcon arrowIconClass="linkIcon"/>
-        </Link>
     </div>
       
   );

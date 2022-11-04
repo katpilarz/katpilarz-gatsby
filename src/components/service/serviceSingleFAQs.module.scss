@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 .sectionFAQ{
     height: auto;
@@ -7,13 +7,10 @@
     flex-direction: column;
     justify-content: space-between;
     place-items: center;
-    margin: 0 auto 12vw auto;
+    margin: 0 auto 8vw auto;
+
+    @include respond (desktopXS){
+        margin: 4vw auto 10vw auto;
+     }
 }
 
-.sectionHeader{
-    width:40%;
-    place-content: flex-start;
-    place-items: center;
-    place-self: flex-start;
-    text-align: left;
-}
