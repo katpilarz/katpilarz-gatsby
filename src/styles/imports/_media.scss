@@ -19,6 +19,12 @@
         @content;
       } //~1600px
     }
+
+    @if $breakpoint == desktopM {
+        @media only screen and (max-width: 91em) {
+          @content;
+        } //~1490px
+      }
   
     @if $breakpoint == desktopXS {
       @media only screen and (max-width: 79.9375em) {

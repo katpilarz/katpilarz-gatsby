@@ -112,7 +112,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 css: {
                   xPercent: '90', 
                   yPercent:'36',
-                  scale:4.8,
+                  scale:5.2,
                 }
               },'+=4');
       
