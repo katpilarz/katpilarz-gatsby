@@ -26,13 +26,13 @@
     }
 
     @include respond (desktop){
-        max-height: 64rem;
-        min-height: 61rem;
+        max-height: auto;
+        min-height: auto;
+        height: 64rem;
      }
 
      @include respond (desktopM){
-        max-height: 58rem;
-        min-height: 54rem;
+        height: 56rem;
      }
 
 
@@ -77,7 +77,7 @@
         display: flex;
         place-self: flex-start;
         margin: 10vw 0 auto 3vw;
-        width:94%;
+        width:95%;
         height: auto;
         z-index: 2;
 
