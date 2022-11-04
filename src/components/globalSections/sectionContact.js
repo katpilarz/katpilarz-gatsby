@@ -142,9 +142,9 @@ const SectionContact = ({section, pageName }) => {
                 <div className={styles.headerTwo} ref={typingRef}>
                     <ReactTypingEffect
                         text={section.projectFeatures}
-                        speed={150}
-                        eraseDelay={1200}
-                        eraseSpeed={150}
+                        speed={120}
+                        eraseDelay={700}
+                        eraseSpeed={120}
                         cursorRenderer={cursor => <h2 className="header-features">{cursor}</h2>}
                         displayTextRenderer={(text, i) => {
                         return (

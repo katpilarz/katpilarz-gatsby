@@ -52,8 +52,12 @@
 
   .animated-btn{
     display: flex;
-    width:10vw;
+    width:9.7vw;
     min-width: 6rem;
+
+    @include respond (tabletHorizontal){
+      width:14vw;
+  }
   }
   
   

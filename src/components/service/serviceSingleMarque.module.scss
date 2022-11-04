@@ -29,6 +29,12 @@
         width: 160%;
     }
 
+    @include respond (tabletHorizontal){
+        width: 170%;
+    }
+
+    
+
  .serviceSingleWrapper{
     display: flex;
         width:100%;

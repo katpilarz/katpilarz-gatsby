@@ -18,17 +18,18 @@
 
 
     @include respond (desktop){
-        max-height: 50rem;
+        max-height: 48rem;
      }
  
 
     @include respond (desktopXS){
-       max-height: 45rem;
+       max-height: 36rem;
     }
 
-    @include respond (tablet){
-        max-height: 40rem;
-     }
+     @include respond (tabletHorizontal){
+        max-height: 38rem;
+    }
+
 
 
 

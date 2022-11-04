@@ -23,11 +23,23 @@
         bottom:2vw;
         z-index: 2;
 
+        @include respond (tabletHorizontal){
+            bottom:12vw;
+        }
+
+
+       
+
+
   
 
         .introBtn{
             place-content: center;
             margin-top: 1vw;
+
+            @include respond (tabletHorizontal){
+                margin-top: 2vw;
+            }
         }
     }
 
@@ -43,26 +55,30 @@
         z-index: -1;
 
         @include respond (desktopL){
-            height: 80vh;
             max-height:48rem;
         }
 
         @include respond (desktop){
-            height:36rem;
-            max-height: auto;
+            max-height:36rem;
 
         }
 
 
         @include respond (desktopXS){
-            height:46rem;
-            max-height: auto;
-            top:10vw;
+            top:12vw;
+            height: 77vh;
+            max-height:32rem;
+
         }
 
-        @include respond (tablet){
-            height:40rem;
 
+        @include respond (tablet){
+            //height:40rem;
+
+        }
+
+        @include respond (tabletHorizontal){
+            top:17vw
         }
 
  

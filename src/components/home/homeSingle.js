@@ -3,7 +3,7 @@ import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
 import HomeSingleBtn from "./homeSingleBtn";
 import HomeSingleFeatured from "./homeSingleFeatured";
-import HomeSingleFeaturedVideo from "./homeSingleFeaturedVideo";
+import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import SectionAbout from "../globalSections/sectionAbout";
 import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
@@ -25,7 +25,8 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />
       <HomeSingleBtn/>
-      <HomeSingleFeaturedVideo video={home.featuredVideo}/>
+      
+      <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
 

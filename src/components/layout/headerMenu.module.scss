@@ -61,6 +61,11 @@
     visibility: visible;
     opacity: 1;
     position: absolute;
+
+
+    @include respond (tabletHorizontal){
+        width:26vw;
+    }
 }
 
 
@@ -145,6 +150,10 @@
                 visibility: visible;
                 opacity: 1;
                 width:17vw;
+
+                @include respond (tabletHorizontal){
+                    width:26vw;
+                }
             }
         }
     }

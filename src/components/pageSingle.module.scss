@@ -67,7 +67,7 @@
           position: relative;
           z-index: 1;
 
-          @include respond (desktopXS){
+          @include respond (desktop){
             padding: 3vw 0;
           }
 
@@ -83,9 +83,13 @@
             transition: all .8s ease-out;
 
 
+            @include respond (desktop){
+              top:-1vw!important; 
+            }
+
+
             @include respond (desktopXS){
               left:40vw!important;
-              top:-1vw!important; 
             }
           
             img{

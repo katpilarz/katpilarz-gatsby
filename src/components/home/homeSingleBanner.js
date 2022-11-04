@@ -64,7 +64,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
 
 
           
-          bannerAnimation.add("(min-width: 1280px)", () => {
+          bannerAnimation.add("(min-width: 1025px)", () => {
 
             const tl2 = gsap.timeline({
               scrollTrigger: {
@@ -111,7 +111,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 ease: "power2.out",
                 css: {
                   xPercent: '100', 
-                  yPercent:'36',
+                  yPercent:'40',
                   scale:5.2,
                 }
               },'+=4');
@@ -163,7 +163,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
       
           })
 
-          bannerAnimation.add("(max-width: 1279px)", () => {
+          bannerAnimation.add("(max-width: 1024px)", () => {
 
             const tl2 = gsap.timeline({
               scrollTrigger: {
@@ -189,24 +189,31 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   css: {
                     autoAlpha: 0,
               }},'-=3')
-              tl2.to(jobRef.current, {
+              /*tl2.to(jobRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
                   autoAlpha: 0, 
                   yPercent:'20',
                 }
-              },'-=4');
+              },'-=4');*/
               tl2.to(sectionRef.current, {
-                duration:4, 
+                duration:6, 
                 ease: "power2.out",
                 css: {
-                  scale:5,
-                  yPercent:'40',
-                  xPercent:'84',
-                  autoAlpha:0,
+                  scale:10,
+                  yPercent:'130',
+                  xPercent:'130',
                    }
               },'+=4');
+              tl2.to(sectionRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0,
+                  opacity:0,
+                   }
+              },'-=3');
 
 
               revealRefs.current.forEach((el, index) => {

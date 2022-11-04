@@ -14,6 +14,25 @@ import { navigate } from 'gatsby';
 
 export const query = graphql`
 query ProjectTemplateQuery($id: String!){
+  video:sanityHome {
+    featuredVideo{
+      alt
+      fallback {
+        asset {
+          url
+          extension
+          altText
+        }
+      }
+      webm {
+        asset {
+          altText
+          url
+          extension
+        }
+      }
+    }
+  }
   singleProject: sanityProject(id: { eq: $id }) {
       id
       header
@@ -93,8 +112,10 @@ const ProjectTemplate = props => {
   const { data, errors } = props;
   const project = data && data.singleProject;
 
-  useEffect(() => window.scrollTo(0, 0), []) 
+  // BELOW WILL BE DELETED ONCE SCHEMA FOR VIDEO IS UPDATED
+  const projectVideo = data && data.video.featuredVideo;
 
+  useEffect(() => window.scrollTo(0, 0), []) 
 
   if (errors) {
     return (
@@ -108,7 +129,7 @@ const ProjectTemplate = props => {
       <main>
         <PagePreloader/>
         <Seo title={project.title} description={project.overview}  />
-        <ProjectSingle project={project}/>
+        <ProjectSingle project={project} video={projectVideo}/>
       </main>
       
   );

@@ -72,6 +72,10 @@
     width:65%;
     margin: 8vw auto 6vw auto;
 
+    @include respond (tabletHorizontal){
+        width:75%;
+    }
+
 }
 
 

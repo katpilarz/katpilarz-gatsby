@@ -15,8 +15,16 @@
      }
 
     @include respond (desktopXS){
-        margin: 20vw auto 20vw auto;
+        margin: 20vw auto 24vw auto;
      }
+
+     @include respond (tabletHorizontal){
+        margin: 20vw auto 28vw auto;
+    }
+
+     
+
+     
 
 
 

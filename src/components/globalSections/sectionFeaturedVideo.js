@@ -1,5 +1,5 @@
 import React from "react"
-import * as styles from "./homeSingleFeaturedVideo.module.scss";
+import * as styles from "./sectionFeaturedVideo.module.scss";
 import Video from "../globalComponents/video";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeSingleFeaturedVideo = ({ video }) => {
+const SectionFeaturedVideo = ({ video }) => {
 
 
  const sectionRef = useRef(null)
@@ -28,7 +28,7 @@ const HomeSingleFeaturedVideo = ({ video }) => {
 
 
           
-          animation.add("(min-width: 1280px)", () => {
+          animation.add("(min-width:  1025px)", () => {
 
             const tl = gsap.timeline({
               scrollTrigger: {
@@ -72,7 +72,7 @@ const HomeSingleFeaturedVideo = ({ video }) => {
           })
 
 
-          animation.add("(max-width: 1279px)", () => {
+          animation.add("(max-width: 1024px)", () => {
 
             const tl = gsap.timeline({
               scrollTrigger: {
@@ -137,4 +137,4 @@ const HomeSingleFeaturedVideo = ({ video }) => {
   )
 }
 
-export default HomeSingleFeaturedVideo;
+export default SectionFeaturedVideo;

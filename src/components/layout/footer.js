@@ -34,8 +34,8 @@ const Footer = ({ }) => {
                 })}
             </div>*/}
             <div className={styles.footerLinksWrapper}>
-                <p className="text-uppercase">&copy;Copyright {new Date().getFullYear()}. All rights reserved.</p>
-                <p className="text-uppercase">Designed & developed with love &hearts;</p>
+                <p>&copy;Copyright {new Date().getFullYear()}. All rights reserved.</p>
+                <p>Designed & developed with love &hearts;</p>
             </div>
             
         </footer>

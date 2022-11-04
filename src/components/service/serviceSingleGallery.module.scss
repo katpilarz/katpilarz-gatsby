@@ -25,6 +25,15 @@
 .slideGallery{
     width:75%;
     height: auto;
+    margin: auto 7vw;
+
+
+    @include respond (tabletHorizontal){
+        margin: auto 0;
+    }
+
+
+    
 
     button{
         width:100%;

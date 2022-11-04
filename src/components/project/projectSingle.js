@@ -2,14 +2,15 @@ import * as React from "react"
 import Banner from "../globalSections/banner";
 import ProjectSingleDetails from "./projectSingleDetails";
 import ProjectSingleGallery from "./projectSingleGallery";
-import ProjectSinglePrototype from "./projectSinglePrototype";
+//import ProjectSinglePrototype from "./projectSinglePrototype";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
+import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
 import AnimatedBtn from "../globalComponents/animatedBtn";
 
 
 
-const ProjectSingle = ({ project }) => {
+const ProjectSingle = ({ project, video }) => {
 
 
   return (
@@ -20,12 +21,13 @@ const ProjectSingle = ({ project }) => {
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
         }
+        {project.isInteractive &&
+          <SectionFeaturedVideo video={video}/>
+        }
 
         <ProjectSingleDetails project={project}/>
 
-        {project.isInteractive &&
-          <ProjectSinglePrototype prototypes={project.projectPrototypes}/>
-        }
+        
         <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
 
         {project.nextProject.map((nextProject, index) => {

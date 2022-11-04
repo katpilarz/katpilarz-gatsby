@@ -1,8 +1,12 @@
-
+@import 'src/styles/layout';
 .projectGallery{
     display: grid;
     grid-gap:14vw;
     margin-top: 4vw;
+
+    @include respond (tabletHorizontal){
+        grid-gap:17vw;
+    }
     
 }
   
