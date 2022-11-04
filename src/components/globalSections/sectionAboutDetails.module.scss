@@ -5,7 +5,7 @@
 .sectionContentWrapper{
 
     width:100%;
-    height: 120vh;
+    height: 116vh;
     max-height: auto;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
@@ -20,7 +20,7 @@
 
 
     @include respond (desktopL){
-        height: 78rem;
+        height: 76rem;
         max-height: auto;
     }
 
@@ -65,13 +65,13 @@
         grid-row: 1/6;
         display: flex;
         place-self: flex-start;
-        margin: 12vw 0 auto 3vw;
+        margin: 10vw 0 auto 3vw;
         width:94%;
         height: auto;
         z-index: 2;
 
         @include respond (desktop){
-            margin: 10vw 0 auto 3vw;
+            margin: 8vw 0 auto 3vw;
          }
 
          @include respond (desktopXS){
