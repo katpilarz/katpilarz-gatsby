@@ -56,24 +56,24 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
         <div className={styles.aboutImageOne}>
                 <AnimatedImage imagePath={imageOne.asset.gatsbyImageData} imageAlt={imageOne.alt}/>   
         </div> 
-            {imageTwo &&
-                <div className={styles.aboutMedia}>
-                    <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
-                </div>
-            }
-            {video &&
-                <div className={styles.aboutMedia}>
-                    <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
-                </div>
-            }
-
-            <div  className={styles.aboutDescription} ref={paragraphRef}>    
-                <PortableText
-                    content={text}
-                    projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                    dataset={process.env.GATSBY_SANITY_DATASET}
-                />
+        {imageTwo &&
+            <div className={styles.aboutMedia}>
+                <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
             </div>
+        }
+        {video &&
+            <div className={styles.aboutMedia}>
+                <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
+            </div>
+        }
+
+        <div  className={styles.aboutDescription} ref={paragraphRef}>    
+            <PortableText
+                content={text}
+                projectId={process.env.GATSBY_SANITY_PROJECT_ID}
+                dataset={process.env.GATSBY_SANITY_DATASET}
+            />
+        </div>
         
     </div>
             

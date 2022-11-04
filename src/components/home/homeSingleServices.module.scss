@@ -3,7 +3,7 @@
 .sectionServices{
     display: flex;
     flex-direction: column;
-    margin: 0 auto 0 auto;
+    margin:auto;
     width:auto;
     height: auto;
     position: relative;
@@ -15,14 +15,14 @@
 
 
     p{
-        margin: 3vw 3vw 5vw 3vw;
+        margin: 3vw 4vw 5vw 3vw;
 
         @include respond (desktopXS){
-            margin: 8vw 4vw 8vw 4vw;
+            margin: 8vw 6vw 8vw 4vw;
          }
 
          @include respond (tablet){
-            margin: 0 4vw 8vw 4vw;
+            margin: 0 6vw 8vw 4vw;
          }
     }
 

@@ -26,17 +26,12 @@ const HomeSingleBanner = ({ name, title, images }) => {
   revealRefs.current = [];
   
 
-  const updateRefs = useRef([]);
-
-
   const addToRefs = el => {
       if (!revealRefs.current.includes(el)) {
           revealRefs.current.push(el);
       }
 
-
-
-      
+  
   };
 
 

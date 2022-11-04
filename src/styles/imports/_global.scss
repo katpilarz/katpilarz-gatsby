@@ -24,7 +24,7 @@
 
   
   main{
-    min-height: 100vh;
+    min-height: auto;
     height: auto;
     width:100%;
     overflow-y: hidden;
@@ -40,6 +40,10 @@
     right:3.4vw;
     top:4.7vw;
     z-index: 9999;
+
+    @include respond (desktop){
+        top:6vw;
+    }
 
     @include respond (desktopXS){
         top:7vw;

@@ -1,148 +1,40 @@
 
 @import 'src/styles/layout';
 
-/*
-.sectionContentWrapper{
-
-    width:100%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
-
-    @include respond (desktopXS){
-        //flex-direction: column;
-        transform: translateY(-5vw);
-     }
-    
-
-
-    .sectionContentLeft{
-        flex-basis: 38%;
-        width:100%;
-        height: auto;
-
-        @include respond (desktopXS){
-            place-self: flex-start;
-            min-width: auto;
-            width:50%;
-            margin: 0 0 7vw 0;
-            order:1s;
-            position: relative;
-            z-index: -1;
-
-            
-
-        }
-
-        .aboutImageOne{
-            width:100%;
-            display: flex;
-            place-self: flex-start;
-
-
-           
-        }
-    
-    }
-
-    .sectionContentRight{
-        flex-basis: 52%;
-        width:100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        overflow-y: visible;
-
-        @include respond (desktopXS){
-            flex-basis: 100%;
-            width:100%;
-            place-items: flex-end;
-            place-content: flex-end;
-            order:2;
-        }        
-
-
-
-        .aboutDescription{
-            //grid-column: 8/13;
-            //grid-row: 6/9;
-            order:1;
-            margin: 16vw 0 10vw 0;
-            width:79%;
-            min-width: 35rem;
-
-            @include respond (desktopXS){
-                place-self: center;
-                min-width: auto;
-                width:74%;
-                margin: 12vw auto 12vw auto;
-                order:2;
-                min-width: none;
-            }
-            
-        
-            p{line-height: 1.7;}
-        }
-
-        .aboutMedia{
-            //grid-column: 10/-1;
-            //grid-row: 13/-1;
-            width:77%;
-            height: auto;
-            display: flex;
-            place-self: flex-end;
-            order:2;
-            
-            
-
-            @include respond (desktopXS){
-                place-self: flex-end;
-                margin: 0 0 0 auto;
-                width:55%;
-                order:2;
-                transform: translateY(0vw);
-            }
-
-            .aboutImage{
-                width:100%;
-                height: auto;
-            }
-        }
-    }
-}
-
-*/
-
 
 .sectionContentWrapper{
 
     width:100%;
-    height: 114vh;
+    height: 120vh;
+    max-height: auto;
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(12, 1fr);
     grid-gap:0;
 
 
+    @include respond (desktopXL){
+        height: 120vh;
+        max-height: 98rem;
+    }
+
+
     @include respond (desktopL){
-        min-height: none;
-        max-height: 74rem;
+        height: 78rem;
+        max-height: auto;
     }
 
     @include respond (desktop){
-        min-height: auto;
-        max-height: 60rem;
+        height: 68rem;
      }
 
      @include respond (desktopXS){
-        max-height:auto;
-        height: auto;
-        min-height: 70rem;
+        height: 70rem;
 
     }
 
     @include respond (tablet){
-        min-height: 67rem;
+        height: 67rem;
 
      }
 
@@ -170,16 +62,16 @@
 
     .aboutDescription{
         grid-column: 8/15;
-        grid-row: 1/8;
+        grid-row: 1/6;
         display: flex;
         place-self: flex-start;
-        margin: 12vw 0 0 3vw;
+        margin: 12vw 0 auto 3vw;
         width:94%;
         height: auto;
-        z-index: 1;
+        z-index: 2;
 
         @include respond (desktop){
-            margin: 10vw 0 0 3vw;
+            margin: 10vw 0 auto 3vw;
          }
 
          @include respond (desktopXS){
@@ -195,20 +87,13 @@
 
     .aboutMedia{
         grid-column: 11/-1;
-        grid-row: 11/-1;
+        grid-row: 1/-1!important;
         width:100%;
         height: auto;
-        display: flex;
-        place-self: flex-end;
-        margin-top: 6vw;
+        margin: auto auto 0 auto;
         z-index: 2;
         
         
-
-        @include respond (desktop){
-            margin-top: 10vw;
-     
-         }
 
 
         @include respond (desktopXS){
@@ -218,4 +103,9 @@
             margin-top: 4vw;
          }
     }
+}
+
+img{
+    width:100%;
+    height: auto;
 }

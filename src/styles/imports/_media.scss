@@ -1,6 +1,13 @@
 
 @mixin respond($breakpoint) {
 
+
+    @if $breakpoint == desktopXL {
+        @media only screen and (max-width: 166em) {
+          @content;
+        } //~2560px
+      }
+
     @if $breakpoint == desktopL {
         @media only screen and (max-width: 120em) {
           @content;
