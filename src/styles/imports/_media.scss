@@ -38,11 +38,11 @@
         @content;
       } //1024px || 1366px
 
-      @media only screen and (min-width: 48em) and (min-height: 64em) {
+      /*@media only screen and (min-width: 48em) and (min-height: 64em) {
           @content;
           //768px || 1024px
           //600 || 962px
-      }
+      }*/
   }
 
   @if $breakpoint == tabletXSHorizontal {

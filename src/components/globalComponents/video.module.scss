@@ -70,6 +70,10 @@
     @include respond (desktop){
         width:13vw;
     }
+
+    @include respond (tabletHorizontal){
+        width:16vw;
+    }
 }
 
 
