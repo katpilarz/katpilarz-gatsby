@@ -74,7 +74,7 @@ const ServiceSingleGallery = ({ projects }) => {
             slidesPerView={2}
             centeredSlides={true}
             direction={"horizontal"}
-            spaceBetween={50}
+            spaceBetween={0}
             grabCursor={true}
             mousewheel={true}
             keyboard={{

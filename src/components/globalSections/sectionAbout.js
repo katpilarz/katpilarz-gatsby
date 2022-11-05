@@ -42,7 +42,7 @@ const SectionAbout = ({ section }) => {
                     ease: "power2.out",
                     css: {
                     autoAlpha: 0,
-                    yPercent:'-50',
+                    yPercent:'50',
                 }})
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)

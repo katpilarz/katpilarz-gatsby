@@ -5,6 +5,8 @@
         display: flex;
         place-items:center;
         place-content: space-between;
+        flex-direction: column;
+
 
         h3{
             width:40%;
@@ -17,7 +19,20 @@
             @include respond (desktop){
                width:50%;
             }
+
+            @include respond (tabletMediumHorizontal){
+                width:70%;
+            }
         
+        }
+
+        a{
+            place-self: flex-end;
+
+            @include respond (desktopXS){
+                margin-top: 1vw;
+            }
+            
         }
         
     }

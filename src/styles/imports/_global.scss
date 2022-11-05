@@ -48,6 +48,10 @@
     @include respond (desktopXS){
         top:7vw;
     }
+
+    @include respond (tabletMediumHorizontal){
+      top:11vw;
+  }
   }
 
   .animated-btn{

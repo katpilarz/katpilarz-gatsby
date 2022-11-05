@@ -40,6 +40,14 @@
         left:6vw!important;
     }
 
+    @include respond (tabletHorizontal){
+        top:10vw!important;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        top:14vw!important;
+    }
+
 
 
 
@@ -51,6 +59,14 @@
 
     @include respond (desktopXS){
         right:6vw!important;    
+    }
+
+    @include respond (tabletHorizontal){
+        bottom:8vw!important;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        bottom:10vw!important;
     }
 
 }

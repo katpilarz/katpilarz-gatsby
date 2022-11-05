@@ -17,6 +17,11 @@
         margin-bottom:6vw;
    
     }
+
+
+    @include respond (tabletMediumHorizontal){
+        margin-bottom:10vw;
+    }
     
     .contactSectionImage{
         width:100%;
@@ -48,7 +53,7 @@
         display: flex;
         text-transform: uppercase;
 
-        @include respond (tablet){
+        @include respond (tabletHorizontal){
             margin: auto 5vw;
         }
     }
@@ -82,8 +87,13 @@
             grid-column:2/9;
         }
 
-        @include respond (tablet){
+        @include respond (tabletHorizontal){
             grid-column:1/9;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            grid-column:1/5;
+            overflow-x: visible;
         }
 
     }
@@ -109,11 +119,16 @@
             margin-bottom: 3vw;
         }
 
-        @include respond (tablet){
+        @include respond (tabletHorizontal){
             grid-column: 2/11;
             margin-bottom: 4vw;
             place-content: flex-start;
             place-items: flex-start;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            //margin-bottom: 4vw;
+            grid-column:1/11;
         }
 
     }
@@ -140,9 +155,14 @@
             width:90%;
         }
 
-        @include respond (tablet){
+        @include respond (tabletHorizontal){
             width:100%;
             grid-column: 8/15;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            margin-bottom: 2vw;
+            grid-column:7/15;
         }
 
    

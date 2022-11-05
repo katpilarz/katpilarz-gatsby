@@ -50,11 +50,7 @@ a{
     display: flex;
     position: relative;
     z-index: 2;
-
-
-    @include respond (desktopXS){
-        min-width:2rem;
-    }
+    min-width: 1.7rem;
 }
 
 .sectionServiceIcon{
@@ -62,10 +58,8 @@ a{
     height: auto;
     display: flex;
     margin: auto 4vw;
+    min-width: 1.4rem;
 
-    @include respond (desktopXS){
-        min-width:2rem;
-    }
 }
 
 

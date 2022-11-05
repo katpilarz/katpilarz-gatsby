@@ -4,7 +4,7 @@ import * as styles from "./homeSingleServices.module.scss";
 import { Link } from "gatsby"
 import Video from "../globalComponents/video";
 import HomeSingleServicesSingle from "./homeSingleServicesSingle";
-
+import GalleryHeader from "../globalComponents/galleryHeader";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -19,7 +19,7 @@ const HomeSingleServices = ({ services }) => {
 
     const sectionRef = useRef([]);
 
-    const paragraphRef = useRef([]);
+    //const paragraphRef = useRef([]);
 
     const revealRefs = useRef([]);
     revealRefs.current = [];
@@ -38,7 +38,9 @@ const HomeSingleServices = ({ services }) => {
         let ctx = gsap.context(() => {
 
 
-                const tl = gsap.timeline({
+             // BELOW IS NOT USED ENY MORE
+
+                /*const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: sectionRef.current,
                     start: "top 90%",
@@ -54,21 +56,23 @@ const HomeSingleServices = ({ services }) => {
                         css: {
                         autoAlpha: 0,
                         xPercent:'5',
-                    }})
+                    }})*/
 
                 revealRefs.current.forEach((el, index) => {
 
                     gsap.fromTo(el, {
+                        autoAlpha:0,
                         xPercent:-1,
                     }, {
                         duration: 4,
                         xPercent:-10,
+                        autoAlpha:1,
                         ease: "power4.out",
                         delay:.1,
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 90%',
+                            start: 'top 97%',
                             end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
@@ -88,7 +92,11 @@ const HomeSingleServices = ({ services }) => {
   
   return (
         <section ref={sectionRef} className={`${styles.sectionServices}`}>
-            <p ref={paragraphRef} className="text-uppercase">Project Multidisciplinary Approach</p>
+            {/*<p ref={paragraphRef} className="text-uppercase">Project Multidisciplinary Approach</p>*/}
+
+            <div className={`${styles.sectionServicesHeader} container`}>
+                <GalleryHeader header='Multidisciplinary approach' linkText="See All Services" linkUrl="/services"/>
+            </div>
 
             {services.map((service, index) => {
                 return (

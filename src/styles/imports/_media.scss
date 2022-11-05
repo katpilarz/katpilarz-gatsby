@@ -36,38 +36,28 @@
     @if $breakpoint == tabletHorizontal {
       @media only screen and (max-width: 64em) and (max-height: 85.375em) {
         @content;
-      } //1024px || 1366px
+      } //1024px || 1024px || 1366px
 
-      /*@media only screen and (min-width: 48em) and (min-height: 64em) {
+      /*
+      @media only screen and (max-width: 64em) and (max-height: 85.375em) {
+        @content;
+      } //1024px || 1366px
+      
+      @media only screen and (min-width: 48em) and (min-height: 64em) {
           @content;
           //768px || 1024px
           //600 || 962px
       }*/
   }
 
-  @if $breakpoint == tabletXSHorizontal {
-    @media only screen and (max-width: 64em) and (max-height: 85.375em) {
+
+  @if $breakpoint == tabletMediumHorizontal {
+    @media only screen and (max-width: 46em) and (max-height: 64em) {
       @content;
-    } //767px || 1023px
-
-    @media only screen and (min-width: 48em) and (min-height: 64em) {
-        @content;
-        //500 || 900px
-    }
+    } //768px || 1024px
 }
-  
 
-    @if $breakpoint == desktopTablet {
-        @media only screen and (max-width: 80em) and (max-height: 125em) {
-          @content;
-        } //1280px || 2000px
 
-        @media only screen and (min-width: 44em) and (min-height: 62em) {
-            @content;
-            //700px || 1000px
-        }
-    }
- 
     
     
       @if $breakpoint == tablet {

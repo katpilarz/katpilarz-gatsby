@@ -34,16 +34,18 @@ const ServiceSingleMarque = ({}) => {
 
 
                     gsap.fromTo(marqueRefOne.current, {
-                        xPercent:0,
+                        xPercent:'-1',
+                        autoAlpha:0,
                     }, {
                         duration: 4,
+                        autoAlpha:1,
                         xPercent:'-20',
                         ease: "power4.out",
                         scrollTrigger: {
                             id: marqueRefOne.current,
                             trigger: marqueRefOne.current,
-                            start: 'top 90%',
-                            end:'top top',
+                            start: 'top 97%',
+                            end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
@@ -51,17 +53,19 @@ const ServiceSingleMarque = ({}) => {
                         }
                     });
                     gsap.fromTo(marqueRefTwo.current, {
-                        xPercent:0,
+                        xPercent:'-1',
+                        autoAlpha:0,
                     }, {
                         duration: 4,
+                        autoAlpha:1,
                         xPercent:'-20',
                         ease: "power4.out",
                         delay:1,
                         scrollTrigger: {
                             id: marqueRefTwo.current,
                             trigger: marqueRefTwo.current,
-                            start: 'top 90%',
-                            end:'top top',
+                            start: 'top 97%',
+                            end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
@@ -70,17 +74,19 @@ const ServiceSingleMarque = ({}) => {
                     });
 
                     gsap.fromTo(marqueRefThree.current, {
-                        xPercent:-1,
+                        xPercent:'-1',
+                        autoAlpha:0,
                     }, {
-                        duration: 4,
+                        duration: 4,                        
+                        autoAlpha:1,
                         xPercent:-10,
                         ease: "power4.out",
                         delay:.5,
                         scrollTrigger: {
                             id: marqueRefThree.current,
                             trigger: marqueRefThree.current,
-                            start: 'top 90%',
-                            end:'top top',
+                            start: 'top 97%',
+                            end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
@@ -88,17 +94,19 @@ const ServiceSingleMarque = ({}) => {
                         }
                     });
                     gsap.fromTo(marqueRefFour.current, {
-                        xPercent:-1,
+                        xPercent:'-1',
+                        autoAlpha:0,
                     }, {
                         duration: 4,
+                        autoAlpha:1,
                         xPercent:-10,
                         ease: "power4.out",
                         delay:.5,
                         scrollTrigger: {
                             id: marqueRefFour.current,
                             trigger: marqueRefFour.current,
-                            start: 'top 90%',
-                            end:'top top',
+                            start: 'top 97%',
+                            end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,

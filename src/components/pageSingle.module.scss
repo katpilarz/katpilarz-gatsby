@@ -12,6 +12,14 @@
       padding-top: 16vw;
     }
 
+    @include respond (tabletHorizontal){
+      padding-top: 20vw;
+    }
+
+    @include respond (tabletMediumHorizontal){
+      padding-top: 24vw;
+    }
+
 
     .pageSingleHeader{
       display: flex;
@@ -45,6 +53,13 @@
 
       @include respond (desktopXS){
         width: 80%;
+        
+      }
+
+      @include respond (tabletHorizontal){
+        min-width: auto;
+        width: 84%;
+
       }
 
   

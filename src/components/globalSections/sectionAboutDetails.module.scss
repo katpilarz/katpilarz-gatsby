@@ -50,7 +50,12 @@
         max-height: 62rem;
     }
 
-    @include respond (tablet){
+
+    @include respond (tabletMediumHorizontal){
+        max-height: 48rem;
+    }
+
+    @include respond (tabletHorizontal){
         //height: 67rem;
      }
 

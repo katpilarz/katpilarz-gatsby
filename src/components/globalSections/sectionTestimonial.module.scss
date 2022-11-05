@@ -27,7 +27,7 @@
 }
 
 .testimonialWrapper{
-    width:auto;
+    width:100%;
     display: flex;
     flex-direction: column;
     margin: auto;
@@ -43,6 +43,7 @@
         position: relative;
         z-index: 1;
         margin-bottom: 1vw;
+        width:100%;
 
         @include respond (desktop){
             margin-bottom: 5vw;
@@ -97,6 +98,14 @@
 
             @include respond (desktop){
                 transform: translate(-9vw, 5.7vw);
+            }
+
+            @include respond (tabletHorizontal){
+                transform: translate(-18vw, 5vw);
+            }
+
+            @include respond (tabletHorizontal){
+                transform: translate(-10vw, 5vw);
             }
            
         }

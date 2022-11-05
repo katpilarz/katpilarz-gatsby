@@ -9,6 +9,13 @@
     @include respond (desktopXS){
       margin: 16vw auto 4vw auto;
     }
+
+    @include respond (tabletHorizontal){
+      margin: 20vw auto 4vw auto;
+    }
+    @include respond (tabletMediumHorizontal){
+      margin: 24vw auto 4vw auto;
+  }
 }
 
 
@@ -50,6 +57,11 @@
 
       @include respond (desktopXS){
         margin-bottom: .4rem;
+      }
+
+      @include respond (tabletHorizontal){
+        margin-bottom: .1rem;
+
       }
 
     }

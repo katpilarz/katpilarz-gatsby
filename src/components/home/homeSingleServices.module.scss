@@ -13,7 +13,21 @@
         margin: 0 auto 0 auto;
     }
 
+    .sectionServicesHeader{
+        transform: translateY(-9vw);
 
+        @include respond (desktopXS){
+            transform: translateY(0);
+            margin-bottom: 10vw;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            margin-bottom: 14vw;
+        }
+    
+    }
+
+/*
     p{
         margin: 0 4vw 5vw 3vw;
 
@@ -21,10 +35,10 @@
             margin: 0 6vw 8vw 4vw;
          }
 
-         @include respond (tablet){
+         @include respond (tabletHorizontal){
             margin: 0 6vw 8vw 4vw;
          }
-    }
+    }*/
 
 }
 
@@ -43,6 +57,10 @@
 
     @include respond (desktopXS){
         width:300%;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        width:320%;
     }
 
 

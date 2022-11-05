@@ -71,13 +71,16 @@
         }
 
 
-        @include respond (tablet){
-            //height:40rem;
-
-        }
+       
 
         @include respond (tabletHorizontal){
             top:17vw
+        }
+
+        @include respond (tabletMediumHorizontal){
+            max-height:24rem;
+            top:20vw
+
         }
 
  

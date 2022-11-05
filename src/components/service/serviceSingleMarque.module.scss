@@ -21,9 +21,7 @@
     place-content: center;
     width: 145%;
     overflow-x: hidden;
-    padding: 4vw 0;
-    border-top:$border;
-    border-bottom:$border;
+
 
     @include respond (desktopXS){
         width: 160%;
@@ -31,6 +29,10 @@
 
     @include respond (tabletHorizontal){
         width: 170%;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        width:210%;
     }
 
     
@@ -41,6 +43,9 @@
         place-self: center;
         place-items: center;
         place-content: center;
+        padding: 4vw 0;
+        border-top:$border;
+        border-bottom:$border;
 
     .serviceSingle{
         display: flex;

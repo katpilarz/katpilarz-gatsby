@@ -23,23 +23,23 @@
 }
 
 .slideGallery{
-    width:75%;
+    width:100%;
     height: auto;
-    margin: auto 7vw;
-
+    display: flex;
 
     @include respond (tabletHorizontal){
-        margin: auto 0;
+        //margin: auto 0;
     }
 
 
     
 
     button{
+        flex-basis: 100%;
         width:100%;
         display: flex;
-        position: relative!important;
-        z-index: 1 ;
+        margin: 0 3vw;
+        //padding:0 3vw;
         
         .swiperImage{
             width:100%;
@@ -49,28 +49,5 @@
             }
         }
 
-        .swiperImageHover{
-            display: flex;
-            position: absolute;
-            top:0;
-            left:0;
-            z-index: 2;
-            transform: translate(-50% -50%);
-            opacity: 0;
-            visibility: hidden;
-
-            img{
-                width:100%;
-            }
-
-        }
-
-        &:hover{
-
-            .swiperImageHover{
-                opacity: 1;
-                visibility: visible;
-            }
-        }
     }
 }
