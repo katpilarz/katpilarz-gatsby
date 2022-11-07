@@ -6,6 +6,7 @@ import SectionAbout from "../globalSections/sectionAbout";
 import ServiceSingleFAQs from "./serviceSingleFAQs";
 import ServiceSingleMarque from "./serviceSingleMarque";
 import AnimatedBtn from "../globalComponents/animatedBtn";
+import Media from 'react-media';
 
 
 
@@ -19,9 +20,11 @@ const ServiceSingle = ({ service, contact, faqs }) => {
 
       <>
         <Banner title={service.title} image={service.image} video={service.video}/>
-        {window.innerWidth > 568 &&
-          <AnimatedBtn pageName="service"/>
-        }   
+        <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn pageName="service"/>
+          )}
+        />   
         <SectionAbout section={service.sectionDetails}/>
         <ServiceSingleMarque />
         <ServiceSingleGallery projects={service.relatedProjects}/>

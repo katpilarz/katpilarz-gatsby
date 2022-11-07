@@ -7,19 +7,24 @@ import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
 import AnimatedBtn from "../globalComponents/animatedBtn";
+import Media from 'react-media';
 
 
 
 const ProjectSingle = ({ project, video }) => {
+
+ 
 
 
   return (
 
       <>
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
-        {window.innerWidth > 568 &&
-         <AnimatedBtn pageName="project"/>
-        }
+        <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn pageName="project"/>
+          )}
+        />
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
         }

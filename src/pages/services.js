@@ -6,6 +6,7 @@ import Seo from "../components/globalComponents/seo";
 import { useEffect } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import { navigate } from 'gatsby';
+import Media from 'react-media';
 
 
 
@@ -96,9 +97,11 @@ const Services = props => {
   return (
     <main>
       <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords}  />
-      {window.innerWidth > 568 &&
-        <AnimatedBtn pageName="services"/>
-      }
+      <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn pageName="services"/>
+          )}
+        />
       <PagePreloader/>
       <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node.overview}/>
     </main>

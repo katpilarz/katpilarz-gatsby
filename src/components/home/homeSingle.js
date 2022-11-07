@@ -9,6 +9,7 @@ import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionContact from "../globalSections/sectionContact";
 import HomeSingleGallery from "./homeSingleGallery";
+import Media from 'react-media';
 
 
 
@@ -24,10 +25,11 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleFocus section={home.sectionFocus}/>
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />
-      {window.innerWidth > 568 &&
-        <AnimatedBtn pageName="home"/>
-      }
-      
+      <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn pageName="home"/>
+          )}
+        />
       <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
