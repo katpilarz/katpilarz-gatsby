@@ -32,6 +32,10 @@
             margin-bottom: 12vw;
         }
 
+        @include respond (tabletHorizontal){
+            width:100%;
+        }
+
     }
 
     

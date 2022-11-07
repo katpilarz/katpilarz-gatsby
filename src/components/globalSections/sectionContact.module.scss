@@ -92,8 +92,12 @@
         }
 
         @include respond (tabletMediumHorizontal){
-            grid-column:1/5;
+            grid-column:1/6;
             overflow-x: visible;
+            place-items: flex-start;
+            place-content: flex-start;
+            place-self: flex-start;
+            text-align: left;
         }
 
     }
@@ -162,7 +166,10 @@
 
         @include respond (tabletMediumHorizontal){
             margin-bottom: 2vw;
-            grid-column:7/15;
+            grid-column:7/-1;
+            place-items: flex-end;
+            place-content: flex-end;
+            place-self: flex-end;
         }
 
    

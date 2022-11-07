@@ -96,7 +96,9 @@ const Services = props => {
   return (
     <main>
       <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords}  />
-      <AnimatedBtn/>
+      {window.innerWidth > 568 &&
+        <AnimatedBtn pageName="services"/>
+      }
       <PagePreloader/>
       <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node.overview}/>
     </main>

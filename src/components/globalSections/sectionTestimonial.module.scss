@@ -15,7 +15,7 @@
     
 }
 
- .quoteIcon{
+.quoteIcon{
     width:14vw;
     height: auto;
     display: flex;
@@ -30,6 +30,9 @@
     width:100%;
     display: flex;
     flex-direction: column;
+    place-items: center;
+    place-content: center;
+    place-self: center;
     margin: auto;
  
     
@@ -56,6 +59,7 @@
             flex-direction: column;
             place-items: center;
             text-align: center;
+            place-content: center;
             
             p{
                 line-height: 1.4;
@@ -77,49 +81,19 @@
       
     }
 
-    .testimonialTextHome{
-        width:94vw;
-
-        @include respond (desktop){
-            //width:78vw;
-            width:100%;
-            margin-bottom: 5vw;
-        }
-        
-        .quoteIconLeft{
-            place-self: flex-start;
-            transform: translateX(7vw);
-           
-        }
-
-        .quoteIconRight{
-         place-self: flex-end;
-            transform: translate(-11.7vw, 5.7vw);
-
-            @include respond (desktop){
-                transform: translate(-9vw, 5.7vw);
-            }
-
-            @include respond (tabletHorizontal){
-                transform: translate(-18vw, 5vw);
-            }
-
-            @include respond (tabletHorizontal){
-                transform: translate(-10vw, 5vw);
-            }
-           
-        }
-
-       
-    }
 
     .testimonialTextProject{
-        width:72vw;
+        width:72%;
 
 
         @include respond (desktop){
-            width:80vw;
+            width:80%;
         }
+
+        @include respond (tabletHorizontal){
+            width:94%;
+        }
+
 
 
         .quoteIconProject{
@@ -135,8 +109,6 @@
       
     }
 
-
-   
 
 
     .clientsDetails{
@@ -162,12 +134,89 @@
 
 
 
+.testimonialTextHome{
+    width:100%;
+
+    @include respond (tabletHorizontal){
+        position: relative!important;
+        z-index: 2;
+        place-content: flex-start;
+        place-items: flex-start;
+        place-self: flex-start;
+        width:110%;
+    }
+
+   
+    .quoteIconLeft{
+        place-self: flex-start;
+        transform: translateX(7vw);
+
+        @include respond (tabletHorizontal){
+            position: absolute;
+            top:-2vw;
+            left:-9vw;
+            z-index: 1;
+        }
+    
+    }
+
+    .quoteIconRight{
+     place-self: flex-end;
+        transform: translate(-11.7vw, 5.7vw);
+
+        @include respond (desktopL){
+            transform: translate(-6vw, 5.7vw);
+        }
+
+        @include respond (desktop){
+            transform: translate(-30vw, 5.7vw);
+        }
+
+        @include respond (desktopM){
+            transform: translate(-22vw, 5.7vw);
+        }
+
+        @include respond (desktopXS){
+            transform: translate(-13vw, 5.7vw);
+        }
+
+        @include respond (tabletHorizontal){
+            transform: translate(-12vw, 5.7vw);
+        }
+
+        @include respond (tabletHorizontal){
+            position: absolute;
+            bottom:-1vw;
+            right:5vw;
+            z-index: 1;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            bottom:-1vw;
+            right:-9vw;
+            z-index: 1;
+        }
+
+
+
+       
+    }
+
+   
+}
+
+
 
 .testimonialImage{
     width:5vw;
     height: 5vw;
     border-radius: 50rem;
     margin-bottom: 1vw;
+
+    @include respond (desktop){
+        width:9vw;
+        height: 9vw;
+    }
 
     @include respond (desktopXS){
         width:12vw;

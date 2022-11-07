@@ -90,7 +90,7 @@ const HomeSingleFocus = ({ section}) => {
 
 
   return (
-        <section className={styles.sectionFocus}>
+        <section className={`${styles.sectionFocus} container`}>
             <h3 ref={headerRef}>{section.header}</h3>
             <SectionIntro subheader={section.subheader}/>
             <div ref={sectionRef} className={styles.focusAreasWrapper}>

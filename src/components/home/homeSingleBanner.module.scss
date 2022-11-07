@@ -11,6 +11,12 @@
     place-items: center;
     place-content: center;
 
+    @include respond (tabletMediumHorizontal){
+        height: 90vh;
+    }
+
+
+
 
     .introContent{
         display: flex;

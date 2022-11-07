@@ -52,13 +52,8 @@
 
 
     @include respond (tabletMediumHorizontal){
-        max-height: 48rem;
+        max-height: 47rem;
     }
-
-    @include respond (tabletHorizontal){
-        //height: 67rem;
-     }
-
 
     .aboutImageOne{
         grid-column:1/7;
@@ -114,8 +109,8 @@
             grid-column: 2/16;
             margin:6vw auto -10vw auto;
         }
-    
-        
+
+       
     }
 
 

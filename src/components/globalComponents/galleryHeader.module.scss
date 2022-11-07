@@ -20,7 +20,7 @@
                width:50%;
             }
 
-            @include respond (tabletMediumHorizontal){
+            @include respond (tabletHorizontal){
                 width:70%;
             }
         

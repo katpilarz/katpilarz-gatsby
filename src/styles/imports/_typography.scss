@@ -72,6 +72,15 @@ h3{
     font-size: calc(1rem + 5vw);
     line-height:1.1;
 
+}
+
+
+h3{
+
+    @include respond (tabletHorizontal){
+        font-size: calc(.6rem + 6.7vw);
+    }
+
 
 }
 
@@ -87,7 +96,9 @@ h4{
     font-size: calc(1rem + 4vw);
     line-height:1.1;
 
-
+    @include respond (tabletHorizontal){
+        font-size: calc( .6rem + 5.4vw);
+    }
 
 }
 
@@ -98,11 +109,19 @@ h4{
 .testimonial{
     font-size: calc(1rem + 3vw);
 
+    @include respond (tabletHorizontal){
+        font-size: calc( .6rem + 4.2vw);
+    }
+
 }
 
 
 .question{
     font-size: calc(1rem + 2.6vw);
+
+    @include respond (tabletHorizontal){
+        font-size: calc( .6rem + 3.7vw);
+    }
 
 
 }

@@ -60,24 +60,8 @@
 
     
     
-      @if $breakpoint == tablet {
-        @media only screen and (max-width: 64em) {
-          @content;
-        } //~1024px
-      }
   
-      @if $breakpoint == tabletS {
-        @media only screen and (max-width: 56.25em) {
-          @content;
-        } //~900px
-      }
-  
-      @if $breakpoint == tabletXS {
-        @media only screen and (max-width: 44.375em) {
-          @content;
-        } //~710px
-      }
-  
+ 
   
   
       @if $breakpoint == landscape {

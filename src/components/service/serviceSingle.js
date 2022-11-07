@@ -19,7 +19,9 @@ const ServiceSingle = ({ service, contact, faqs }) => {
 
       <>
         <Banner title={service.title} image={service.image} video={service.video}/>
-        <AnimatedBtn/>
+        {window.innerWidth > 568 &&
+          <AnimatedBtn pageName="service"/>
+        }   
         <SectionAbout section={service.sectionDetails}/>
         <ServiceSingleMarque />
         <ServiceSingleGallery projects={service.relatedProjects}/>

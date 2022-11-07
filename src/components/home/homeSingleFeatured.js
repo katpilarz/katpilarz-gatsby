@@ -126,7 +126,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                           </div>
                           <div  className={styles.projectSwiperSlideHeader}>
                               {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
-                              <span className="text-uppercase">{project.node.title}</span>
+                              <p>{project.node.title}</p>
                           </div>
                       </Link>
                     </div>

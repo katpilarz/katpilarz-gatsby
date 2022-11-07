@@ -1,7 +1,7 @@
 import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
-import HomeSingleBtn from "./homeSingleBtn";
+import AnimatedBtn from "../globalComponents/animatedBtn";
 import HomeSingleFeatured from "./homeSingleFeatured";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import SectionAbout from "../globalSections/sectionAbout";
@@ -24,7 +24,9 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleFocus section={home.sectionFocus}/>
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />
-      <HomeSingleBtn/>
+      {window.innerWidth > 568 &&
+        <AnimatedBtn pageName="home"/>
+      }
       
       <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>

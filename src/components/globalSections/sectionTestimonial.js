@@ -59,7 +59,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
   
   
   return (
-        <section className={pageName === 'home' ? styles.sectionTestimonial : styles.sectionTestimonialProject}>
+        <section className={pageName === 'home' ?  `${styles.sectionTestimonial} container`  : `${styles.sectionTestimonialProject} container`}>
             <SectionIntro subheader={pageName === 'home' ? `Hesitant? This is how my clients evaluated my work` : `This is how ${name} evaluated my work`}/>
             <div className={styles.testimonialWrapper} ref={testimonialRef}>
                 

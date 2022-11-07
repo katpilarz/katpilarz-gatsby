@@ -20,8 +20,16 @@
         z-index: 2;
     }
 
+    @include respond (tabletHorizontal){
+        width:40vw;
+    }
+
     @include respond (tabletMediumHorizontal){
-        width:42vw;
+        width:44vw;
+    }
+
+    @include respond (mobile){
+        width:50vw;
     }
 
     svg{

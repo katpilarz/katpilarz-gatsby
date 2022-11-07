@@ -17,7 +17,9 @@ const ProjectSingle = ({ project, video }) => {
 
       <>
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
-        <AnimatedBtn/>
+        {window.innerWidth > 568 &&
+         <AnimatedBtn pageName="project"/>
+        }
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
         }
