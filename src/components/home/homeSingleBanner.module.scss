@@ -15,6 +15,10 @@
         height: 90vh;
     }
 
+    @include respond (mobile){
+        min-height: 40rem;
+    }
+
 
 
 
@@ -33,6 +37,11 @@
             bottom:12vw;
         }
 
+        @include respond (mobile){
+            bottom:20vw;
+        }
+
+
        
 
 
@@ -44,6 +53,10 @@
 
             @include respond (tabletHorizontal){
                 margin-top: 2vw;
+            }
+
+            @include respond (mobile){
+                margin-top: 3vw;
             }
         }
     }
@@ -86,6 +99,13 @@
         @include respond (tabletMediumHorizontal){
             max-height:24rem;
             top:20vw
+
+        }
+
+        @include respond (mobile){
+            top:26vw;
+            max-height: 34vh;
+            min-height: 18rem;
 
         }
 

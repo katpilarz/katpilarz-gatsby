@@ -35,6 +35,10 @@
         max-height: 28rem;
     }
 
+    @include respond (mobile){
+        max-height: 18rem;
+    }
+
 
 
 

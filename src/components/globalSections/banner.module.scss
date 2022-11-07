@@ -15,7 +15,11 @@
     }
     @include respond (tabletMediumHorizontal){
       margin: 24vw auto 4vw auto;
-  }
+    }
+
+    @include respond (mobile){
+     margin: 34vw auto 6vw auto;
+    }
 }
 
 

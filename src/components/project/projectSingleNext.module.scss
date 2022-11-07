@@ -9,6 +9,10 @@
     height: auto;
     margin:14vw 0 12vw auto;
 
+    @include respond (mobile){
+       width:100%;
+    }
+
 
     
 }

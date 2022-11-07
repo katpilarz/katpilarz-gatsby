@@ -59,6 +59,10 @@ h2{
     line-height: 1;
     padding-top: 0;
     text-transform: uppercase;
+
+    @include respond (tabletHorizontal){
+        font-size: 12.7vw;
+    }
 }
 
 
@@ -81,6 +85,10 @@ h3{
         font-size: calc(.6rem + 6.7vw);
     }
 
+    @include respond (mobile){
+        font-size: 9.7vw;
+    }
+
 
 }
 
@@ -97,7 +105,11 @@ h4{
     line-height:1.1;
 
     @include respond (tabletHorizontal){
-        font-size: calc( .6rem + 5.4vw);
+        font-size: calc( .2rem + 6vw);
+    }
+
+    @include respond (mobile){
+        font-size: 7vw;
     }
 
 }

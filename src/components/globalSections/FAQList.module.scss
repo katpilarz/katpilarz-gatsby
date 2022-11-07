@@ -60,6 +60,10 @@
                 margin: 3vw 0;
             }
 
+            @include respond (mobile){
+                width:100%;
+              }
+
 
             .answer{
                 width:100%;

@@ -25,32 +25,78 @@ const ProjectSingleNext = ({ nextProject }) => {
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: nextProjectHeaderRef.current,
-          start: "top 57%",
-          end: "top 27%",
-          scrub:1, 
-          repeatRefresh: true,
-          toggleActions: "restart pause resume none",
-        }
-      });
-        tl.from(headerRef.current, {
+
+      const animation = gsap.matchMedia()
+      animation.add()
+
+
+      
+      animation.add("(min-width:  1025px)", () => {
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: nextProjectHeaderRef.current,
+            start: "top 57%",
+            end: "top 27%",
+            scrub:1, 
+            repeatRefresh: true,
+            toggleActions: "restart pause resume none",
+          }
+        });
+          tl.from(headerRef.current, {
+              duration: 1,
+              ease: "power4.out",
+              css: {
+                autoAlpha: 0,
+                opacity:0,
+                yPercent:'30',
+          }})
+          tl.from(subheaderRef.current, {
             duration: 1,
             ease: "power4.out",
             css: {
               autoAlpha: 0,
               opacity:0,
-              yPercent:'30',
-        }})
-        tl.from(subheaderRef.current, {
-          duration: 1,
-          ease: "power4.out",
-          css: {
-            autoAlpha: 0,
-            opacity:0,
-            yPercent:'-30',
-      }},'-=1')
+              yPercent:'-30',
+        }},'-=1')
+
+
+      })
+
+
+      animation.add("(max-width: 1024px)", () => {
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: nextProjectHeaderRef.current,
+            start: "top 80%",
+            end: "top 60%",
+            scrub:1, 
+            repeatRefresh: true,
+            toggleActions: "restart pause resume none",
+          }
+        });
+          tl.from(headerRef.current, {
+              duration: 1,
+              ease: "power4.out",
+              css: {
+                autoAlpha: 0,
+                opacity:0,
+                yPercent:'30',
+          }})
+          tl.from(subheaderRef.current, {
+            duration: 1,
+            ease: "power4.out",
+            css: {
+              autoAlpha: 0,
+              opacity:0,
+              yPercent:'-30',
+        }},'-=1')
+
+
+      })
+
+      
   
     }, nextProjectHeaderRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     

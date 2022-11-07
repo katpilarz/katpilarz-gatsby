@@ -37,24 +37,19 @@
       @media only screen and (max-width: 64em) and (max-height: 85.375em) {
         @content;
       } //1024px || 1024px || 1366px
-
-      /*
-      @media only screen and (max-width: 64em) and (max-height: 85.375em) {
-        @content;
-      } //1024px || 1366px
-      
-      @media only screen and (min-width: 48em) and (min-height: 64em) {
-          @content;
-          //768px || 1024px
-          //600 || 962px
-      }*/
   }
 
 
   @if $breakpoint == tabletMediumHorizontal {
     @media only screen and (max-width: 46em) and (max-height: 64em) {
       @content;
-    } //768px || 1024px
+    } //738px || 1024px
+}
+
+@if $breakpoint == mobile {
+  @media only screen and (max-width: 35.5em) {
+    @content;
+  } //~568px
 }
 
 
@@ -72,11 +67,7 @@
    
   
   
-      @if $breakpoint == mobile {
-        @media only screen and (max-width: 35.5em) {
-          @content;
-        } //~568px
-      }
+      
   
       
       @if $breakpoint == mobileS {

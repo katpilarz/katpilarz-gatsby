@@ -13,6 +13,8 @@
         margin: 0 auto 0 auto;
     }
 
+    
+
     .sectionServicesHeader{
         transform: translateY(-9vw);
 
@@ -23,6 +25,10 @@
 
         @include respond (tabletMediumHorizontal){
             margin-bottom: 14vw;
+        }
+
+        @include respond (mobile){
+            margin:16vw auto 14vw auto;
         }
     
     }

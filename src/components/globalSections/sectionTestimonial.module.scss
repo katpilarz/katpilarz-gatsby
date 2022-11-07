@@ -126,6 +126,12 @@
                 display: flex;
                 padding-left: 2rem;
                 font-style: italic;
+
+                @include respond (mobile){
+                    padding-left: 1rem;
+                }
+
+
                 
             }
         }
@@ -223,6 +229,14 @@
         height: 12vw;
         margin-bottom: 1rem;
     }
+
+
+    @include respond (mobile){
+        width:20vw;
+        height: 20vw;
+    }
+
+
 }
 
 

@@ -55,6 +55,10 @@
         max-height: 47rem;
     }
 
+    @include respond (mobile){
+        //max-height: 42rem;
+    }
+
     .aboutImageOne{
         grid-column:1/7;
         grid-row: auto;
@@ -109,6 +113,13 @@
             grid-column: 2/16;
             margin:6vw auto -10vw auto;
         }
+
+        @include respond (mobile){
+            grid-column: 2/-1;
+            margin:8vw auto -4vw auto;
+        }
+
+        
 
        
     }

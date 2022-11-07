@@ -21,6 +21,11 @@
     }
 
 
+    @include respond (mobile){
+      padding-top: 34vw;
+    }
+
+
     .pageSingleHeader{
       display: flex;
       //flex-direction: column;
@@ -39,6 +44,11 @@
       @include respond (desktopXS){
         width: 84%;
         margin: 7vw auto 10vw auto;
+      }
+
+      @include respond (mobile){
+        width: 94%;
+        margin: 14vw 0 10vw auto;
       }
   
       p{
@@ -59,7 +69,13 @@
       @include respond (tabletHorizontal){
         min-width: auto;
         width: 84%;
+        margin-bottom:6vw;
 
+      }
+
+      @include respond (mobile){
+        width: 94%;
+        margin-bottom:10vw;
       }
 
   

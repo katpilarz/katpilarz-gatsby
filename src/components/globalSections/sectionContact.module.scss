@@ -46,6 +46,11 @@
     place-content: center;
     display: flex;
 
+    @include respond (mobile){
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
     
 
     .contactLink{
@@ -55,6 +60,10 @@
 
         @include respond (tabletHorizontal){
             margin: auto 5vw;
+        }
+
+        @include respond (mobile){
+            margin: auto .2rem 1rem 0;
         }
     }
 }
@@ -106,6 +115,13 @@
         grid-column: 5/14;
         grid-row: 2/3;
         width: auto;
+
+        @include respond (tabletHorizontal){
+            grid-column: 4/-1;
+            place-content: flex-start;
+            place-items: flex-start;
+
+        }
     }
 
     .headerThree{
@@ -133,6 +149,11 @@
         @include respond (tabletMediumHorizontal){
             //margin-bottom: 4vw;
             grid-column:1/11;
+        }
+
+
+        @include respond (mobile){
+            margin-bottom: 1vw;
         }
 
     }
