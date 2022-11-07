@@ -7,15 +7,19 @@
     height: auto;
     flex-wrap: wrap;
     place-content: space-between;
-    margin: 12vw auto 14vw auto;
+    margin: 12vw auto 0 auto;
 
 
     @include respond (desktopXS){
-        margin: 16vw auto 20vw auto;
+        margin: 16vw auto 0 auto;
     }
 
     @include respond (tabletMediumHorizontal){
-        margin: 20vw auto 20vw auto;
+        margin: 20vw auto 0 auto;
+    }
+
+    @include respond (mobile){
+        margin:26vw auto 0 auto;
     }
 
     .sectionGalleryWrapper{

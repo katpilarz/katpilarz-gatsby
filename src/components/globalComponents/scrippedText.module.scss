@@ -7,6 +7,7 @@
     visibility: visible;
     transform: translate(0,0);
     margin-top: 1vw;
+    height: auto;
 
 
     @include respond (desktop){
@@ -52,6 +53,10 @@
     place-self: center;
     place-content: center;
     place-items: center;
+
+    @include respond (mobile){
+        grid-row: 6/9;
+    }
 }
 
 

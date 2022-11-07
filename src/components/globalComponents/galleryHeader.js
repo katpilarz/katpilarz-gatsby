@@ -47,7 +47,7 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
           duration:2, 
           ease: "power2.out",
           css: {
-            xPercent:'50',
+            xPercent:'-50',
             autoAlpha:0,
           }
         });
@@ -55,7 +55,7 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
             duration:1, 
             ease: "power2.out",
             css: {
-            xPercent:'-50',
+            xPercent:'50',
             autoAlpha:0,
             }
         },'-=2');

@@ -12,6 +12,10 @@
         margin: 14vw auto 0 auto;
     }
 
+    @include respond (mobile){
+        margin: 22vw auto 0 auto;
+    }
+
 }
 
 .swiper{

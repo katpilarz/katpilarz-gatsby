@@ -112,7 +112,7 @@ const FAQListItem = ({ item }) => {
                 xPercent:0,
                 ease: "power4.out",
                 stagger:2,
-                delay:.97,
+                delay:1.4,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,

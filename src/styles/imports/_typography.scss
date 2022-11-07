@@ -20,6 +20,11 @@ font-weight: 400;
     @include respond (desktopXS){
         font-size: calc( .7rem + .87vw);
     }
+
+    @include respond (mobile){
+        //font-size: calc( .2rem + 3vw);
+        font-size: calc( .7rem + 1.2vw)
+    }
 }  
 
 

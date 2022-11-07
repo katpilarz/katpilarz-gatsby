@@ -5,6 +5,9 @@
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    height: auto;
+
+
 
     .contactSection{
         display: grid;
@@ -15,6 +18,13 @@
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(12, 1fr);
         margin-bottom:6vw;
+        height: auto;
+
+        @include respond (mobile){
+            max-height: 36rem;
+        }
+
+        
    
     }
 
@@ -22,16 +32,26 @@
     @include respond (tabletMediumHorizontal){
         margin-bottom:10vw;
     }
+
+    @include respond (mobile){
+        margin-bottom: 0;
+    }
     
     .contactSectionImage{
         width:100%;
         display: flex;
         overflow-x: hidden;
+
+        
         
 
         img{
             width:100%;
             height: auto;
+
+            @include respond (mobile){
+                height: 50rem!important;
+             }
         }
     }
 }
@@ -49,6 +69,9 @@
     @include respond (mobile){
         justify-content: space-between;
         flex-wrap: wrap;
+        grid-row: 10/-1;
+        place-items: flex-start;
+        place-self: flex-start;
     }
 
     
@@ -79,6 +102,7 @@
     grid-template-rows: repeat(4, 1fr);
     grid-gap: 1.2vw;
     overflow: visible;
+    height: auto;
 
     @include respond (desktopXS){
         width:100%;
@@ -109,6 +133,10 @@
             text-align: left;
         }
 
+        @include respond (mobile){
+            grid-column:1/7;
+        }
+
     }
 
     .headerTwo{
@@ -120,8 +148,13 @@
             grid-column: 4/-1;
             place-content: flex-start;
             place-items: flex-start;
-
         }
+
+
+        @include respond (mobile){
+            grid-row: 2/2;
+        }
+
     }
 
     .headerThree{
@@ -192,6 +225,11 @@
             place-content: flex-end;
             place-self: flex-end;
         }
+        @include respond (mobile){
+            margin-bottom: 1.2vw;
+        }
+
+        
 
    
     }

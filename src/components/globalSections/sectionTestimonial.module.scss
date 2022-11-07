@@ -4,7 +4,16 @@
     margin:0 auto 14vw auto;
 
     @include respond (desktopXS){
-        margin:10vw auto 20vw auto;
+        margin:20vw auto 20vw auto;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        margin: 20vw auto 30vw auto;
+    }
+
+
+    @include respond (mobile){
+        margin:30vw auto 30vw auto;
     }
 }
 

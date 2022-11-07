@@ -69,6 +69,10 @@
         width:350%;
     }
 
+    @include respond (mobile){
+        width:380%;
+    }
+
 
     .serviceMedia{
         position: absolute;

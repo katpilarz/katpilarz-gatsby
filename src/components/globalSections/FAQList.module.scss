@@ -104,6 +104,10 @@
         margin: 10vw auto 6vw auto;
     }
 
+    @include respond (mobile){
+        margin: 22vw auto 22vw auto;
+    }
+
 }
 
 
