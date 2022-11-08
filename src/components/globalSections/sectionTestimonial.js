@@ -35,7 +35,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
           scrollTrigger: {
             trigger: testimonialRef.current,
             start: "top 57%",
-            end: "top 30%",
+            end: "top 27%",
             scrub:1, 
             repeatRefresh: true,
             //toggleActions: "restart pause resume none",

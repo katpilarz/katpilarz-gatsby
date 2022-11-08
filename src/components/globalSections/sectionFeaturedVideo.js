@@ -46,12 +46,7 @@ const SectionFeaturedVideo = ({ video }) => {
                       ease: "power4.out",
                       css: {
                           clipPath: 'circle(20.0% at 50% 50%)',
-                          position: 'absolute',
-                          top:'20vw',
-                          margin: 'auto',
-                          zIndex:1,
                           width:'40vw',
-                          transformOrigin:'center',
                       }
                   },{
                       duration:4,
@@ -59,12 +54,6 @@ const SectionFeaturedVideo = ({ video }) => {
                       css: {
                           clipPath: 'circle(100% at 50% 50%)',
                           width:'67vw',
-                          position: 'absolute',
-                          top:'6vw',
-                          margin: 'auto',
-                          zIndex:1,
-                          transformOrigin:'center',
-  
                       }
                   })   
   
@@ -88,11 +77,7 @@ const SectionFeaturedVideo = ({ video }) => {
                   tl.fromTo(videoRef.current, {
                       css: {
                           clipPath: 'circle(20.0% at 50% 50%)',
-                          position: 'absolute',
-                          top:'20vw',
-                          zIndex:1,
                           width:'50vw',
-                          transformOrigin:'center',
                       }
                   },{
                       duration:10,
@@ -100,11 +85,6 @@ const SectionFeaturedVideo = ({ video }) => {
                       css: {
                           clipPath: 'circle(100% at 50% 50%)',
                           width:'90vw',
-                          position: 'absolute',
-                          top:'20vw',
-                          zIndex:1,
-                          transformOrigin:'center',
-  
                       }
                   })   
   

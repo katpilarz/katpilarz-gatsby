@@ -6,7 +6,6 @@
     z-index: 1;
     width:100%;
     height: 100vh;
-    margin: auto;
     display: flex;
     place-items: center;
     place-content: center;
@@ -48,7 +47,11 @@
 
     .featuredVideo{
         width: auto;
-        margin: auto;
+        //margin: auto;
+        z-index: 1;
+        position: absolute;
+        transform-origin:center;
+        top:14vw;
     }
 
 

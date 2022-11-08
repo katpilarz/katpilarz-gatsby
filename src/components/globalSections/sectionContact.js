@@ -42,8 +42,8 @@ const SectionContact = ({section, pageName }) => {
             }
           });
             tl.from(headerOneRef.current, {
-                duration: 1,
-                ease: "power4.out",
+                duration: 1.4,
+                ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -51,14 +51,14 @@ const SectionContact = ({section, pageName }) => {
             }})
             tl.from(typingRef.current, {
                 duration: 1,
-                ease: "power4.out",
+                ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
             }},'-=1')
             tl.from(headerTwoRef.current, {
-                duration: 1,
-                ease: "power4.out",
+                duration: 1.4,
+                ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -66,8 +66,8 @@ const SectionContact = ({section, pageName }) => {
             }},'-=1')
 
             tl.from(subheaderRef.current, {
-                duration: 1,
-                ease: "power4.out",
+                duration: 1.4,
+                ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
@@ -75,14 +75,14 @@ const SectionContact = ({section, pageName }) => {
             }},'-=1')
             tl.from(linksRefOne.current, {
               duration:1,
-              ease: "circe.out",
+              ease: "power2.out",
               css: {
                 opacity: 0,
                 xPercent:'40',
             }})
             tl.from(linksRefTwo.current, {
                 duration:1,
-                ease: "circe.out",
+                ease: "power2.out",
                 css: {
                   opacity: 0,
                   xPercent:'40',
