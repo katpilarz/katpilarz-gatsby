@@ -116,10 +116,10 @@ const SectionContact = ({section, pageName }) => {
                         speed={120}
                         eraseDelay={700}
                         eraseSpeed={120}
-                        cursorRenderer={cursor => <h2 className="header-features">{cursor}</h2>}
+                        cursorRenderer={cursor => <h2 className="header-features text-color">{cursor}</h2>}
                         displayTextRenderer={(text, i) => {
                         return (
-                            <h2 className={"header-features"}>
+                            <h2 className={"header-features text-color"}>
                             {text.split('').map((char, i) => {
                                 const key = `${i}`;
                                 return (

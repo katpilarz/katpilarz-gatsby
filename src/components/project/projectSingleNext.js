@@ -114,7 +114,7 @@ const ProjectSingleNext = ({ nextProject }) => {
         <div ref={nextProjectHeaderRef} className={styles.nextProjectHeader}>
                 <p ref={subheaderRef} className="text-uppercase">Continue to Next Project</p>
                 <div ref={headerRef}  className={styles.nextProjectHeaderWrapper}>
-                  <h2 className="project-header">{nextProject.title}</h2>
+                  <h3 className="text-color">{nextProject.title}</h3>
                   <ArrowIcon arrowIconClass="projectNextIcon"/>
                 </div>
                 

@@ -45,7 +45,7 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription,
   return (
     <div ref={pageSingleRef} className={`${styles.pageSingle} container`}>
         <header className={styles.pageSingleHeader}>
-            <h2>{pageTitle} </h2>
+            <h2 className="text-color">{pageTitle} </h2>
         </header>
         <div className={styles.itemsList}>
             <p className="text-uppercase">{pageDescription}</p>

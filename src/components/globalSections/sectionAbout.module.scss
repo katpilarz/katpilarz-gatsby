@@ -44,6 +44,10 @@
 
         p{
             margin-bottom: 2vw;
+
+            @include respond (mobile){
+                margin-bottom: 6vw;
+            }
         }
     }
 

@@ -97,7 +97,7 @@ const HomeSingleFocus = ({ section}) => {
                 {section.focusAreas.map( (area, index) => {
                     return (
                     <div className={styles.focusArea} key={index} ref={addToRefs}>
-                        <h4>{area.text}</h4>
+                        <h4 className="text-color">{area.text}</h4>
                         {area.image &&
                             <div className={styles.focusAreaMedia} key={index}>
                                 <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/>   

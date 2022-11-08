@@ -338,7 +338,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
   return (
       <header ref={introRef} className={`${styles.intro} intro`}>
         <div ref={introContentRef} className={styles.introContent}>
-          <h1 ref={headerRef}>{name}</h1>
+          <h1 className="text-color" ref={headerRef}>{name}</h1>
           <span ref={jobRef}> {title}</span>
           <div ref={btnRef} className={`${styles.introBtn} animated-btn`}>
             <Btn btnClassName='introBtn'/>

@@ -7,6 +7,10 @@ body {
     color: $grey-dark;
     transition: all 0.2s linear;
     overflow-x: hidden;
+
+    .text-color{
+      color: $color;
+    }
   
   
     .overlay{
@@ -28,11 +32,11 @@ body {
       }
     }
   
-  
+  /*
     .project-header,
     h1, h2, h4{
       color: $color;
-    }
+    }*/
   
   
     .menu-link{
@@ -56,6 +60,10 @@ body {
     -webkit-font-smoothing: antialiased;
     background-color: $black;
     color:$white-dark;
+
+    .text-color{
+      color: $color;
+    }
   
     .intro span{
       color:$white-dark;
@@ -80,12 +88,14 @@ body {
         }
       }
     }
-  
+    
+
+    /*
   
     .project-header,
     h1, h2, h4{
       color: $color-lighter;
-    }
+    }*/
   
     .menu-link{
       &:hover{

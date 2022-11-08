@@ -47,7 +47,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
   return (
     <header ref={pageSingleRef} className={`${styles.projectBanner} container`}>
         <div className={styles.projectBannerHeader}>
-            <h2>{title}</h2>
+            <h2 className="text-color">{title}</h2>
             { services &&
                 <Media query="(min-width: 569px)" render={() =>
                 (

@@ -9,7 +9,7 @@ const SectionServicesSingle = ({ title }) => {
   
   return (
     <div className={styles.serviceSingle}>
-        <h4>{title}</h4>
+        <h4 className="text-color">{title}</h4>
         <Icon iconClass="sectionServiceIcon"/>
     </div>
   )

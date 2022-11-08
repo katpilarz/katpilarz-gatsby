@@ -127,19 +127,19 @@ const ServiceSingleMarque = ({}) => {
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefOne}>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Create</h4>
+                            <h4 className="text-color">Create</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Outstanding Experience</h4>
+                            <h4 className="text-color">Outstanding Experience</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                     </div>
@@ -147,19 +147,19 @@ const ServiceSingleMarque = ({}) => {
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefTwo}>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Achieve More</h4>
+                            <h4 className="text-color">Achieve More</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Achieve More</h4>
+                            <h4 className="text-color">Achieve More</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                     </div>
@@ -167,19 +167,19 @@ const ServiceSingleMarque = ({}) => {
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefThree}>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Create</h4>
+                            <h4 className="text-color">Create</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Outstanding Experience</h4>
+                            <h4 className="text-color">Outstanding Experience</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                     </div>
@@ -187,19 +187,19 @@ const ServiceSingleMarque = ({}) => {
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefFour}>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Achieve More</h4>
+                            <h4 className="text-color">Achieve More</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Helping Brands</h4>
+                            <h4 className="text-color">Helping Brands</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                         <div className={styles.serviceSingle}>
-                            <h4>Achieve More</h4>
+                            <h4 className="text-color">Achieve More</h4>
                             <Icon iconClass="sectionServiceIcon"/>
                         </div>
                     </div>
