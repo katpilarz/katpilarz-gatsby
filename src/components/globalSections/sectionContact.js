@@ -33,7 +33,7 @@ const SectionContact = ({section, pageName }) => {
           // create as many GSAP animations and/or ScrollTriggers here as you want...
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: headerOneRef.current,
+              trigger: headerTwoRef.current,
               start: "top 65%",
               end: "top 20%",
               scrub:1, 
@@ -79,7 +79,7 @@ const SectionContact = ({section, pageName }) => {
               css: {
                 opacity: 0,
                 xPercent:'40',
-            }},'-=1')
+            }})
             tl.from(linksRefTwo.current, {
                 duration:1,
                 ease: "circe.out",

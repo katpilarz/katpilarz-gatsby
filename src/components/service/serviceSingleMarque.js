@@ -44,7 +44,7 @@ const ServiceSingleMarque = ({}) => {
                         scrollTrigger: {
                             id: marqueRefOne.current,
                             trigger: marqueRefOne.current,
-                            start: 'top 97%',
+                            start: 'top 87%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
@@ -64,7 +64,7 @@ const ServiceSingleMarque = ({}) => {
                         scrollTrigger: {
                             id: marqueRefTwo.current,
                             trigger: marqueRefTwo.current,
-                            start: 'top 97%',
+                            start: 'top 87%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
@@ -85,7 +85,7 @@ const ServiceSingleMarque = ({}) => {
                         scrollTrigger: {
                             id: marqueRefThree.current,
                             trigger: marqueRefThree.current,
-                            start: 'top 97%',
+                            start: 'top 87%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
@@ -105,7 +105,7 @@ const ServiceSingleMarque = ({}) => {
                         scrollTrigger: {
                             id: marqueRefFour.current,
                             trigger: marqueRefFour.current,
-                            start: 'top 97%',
+                            start: 'top 87%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',

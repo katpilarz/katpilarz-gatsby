@@ -135,7 +135,7 @@ const ProjectSingleDetails = ({ project }) => {
     <section ref={projectDetailsRef} className={`${styles.projectDetails} container`}>
         <div className={styles.projectDetailsLeft}>
             <div className={styles.projectDetailsHeader}>
-                <p ref={subheaderRef}>PROJECT DETAILS</p>
+                <p className="text-uppercase" ref={subheaderRef}>Project Details</p>
                 <h3 ref={headerRef}>{project.header}</h3>
            </div>
 
@@ -156,15 +156,15 @@ const ProjectSingleDetails = ({ project }) => {
            
            <div className={styles.projectDetailsOverview}>
                 <div ref={detailOneRef}  className={styles.projectOverviewCard}>
-                    <p className={styles.overviewName}>CLIENT</p>
+                    <p className={`${styles.overviewName} text-uppercase`}>Client</p>
                     <span>{project.title}</span>
                 </div>
                 <div ref={detailTwoRef} className={styles.projectOverviewCard}>
-                    <p className={styles.overviewName}>SCOPE</p>
+                    <p className={`${styles.overviewName} text-uppercase`}>Scope</p>
                     <span>{project.scope}</span>
                 </div>
                 <div ref={detailThreeRef}  className={styles.projectOverviewCard}>
-                    <p className={styles.overviewName}>TOOLS</p>
+                    <p cclassName={`${styles.overviewName} text-uppercase`}>Tools</p>
                     <div className={styles.toolsList}>
                         {project.tools.map((tool, index) => {
                             return(
@@ -189,7 +189,7 @@ const ProjectSingleDetails = ({ project }) => {
                 
                 {project.isDevelopment &&
                     <div ref={detailFourRef}  className={styles.projectOverviewCard}>
-                        <p>WEBSITE</p>
+                        <p className='text-uppercase'>Website</p>
                         <a href={project.url} aria-label={`${project.title} development link view`} rel="noopener noreferrer" target="_blank">
                             View Live Page
                         </a>

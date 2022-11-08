@@ -66,7 +66,7 @@ const FAQListItem = ({ item }) => {
                     height:'2vw',
                 }})
                 tl.current.from(answer.current, {
-                    delay:-.40,
+                    delay:-.17,
                     duration: 1,
                     ease: "power2.out",
                     css: {
@@ -112,11 +112,11 @@ const FAQListItem = ({ item }) => {
                 xPercent:0,
                 ease: "power4.out",
                 stagger:2,
-                delay:1.2,
+                delay:2,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
-                    start: 'top 80%',
+                    start: 'top 77%',
                     end:'top 34%',
                     toggleActions: "restart pause resume none",
                     //toggleActions: 'play none none reverse',

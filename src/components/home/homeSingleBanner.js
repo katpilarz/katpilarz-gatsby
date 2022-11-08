@@ -250,7 +250,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 trigger: introRef.current,
                 start: "bottom bottom",
                 end: "bottom -100%",
-                scrub: 1,
+                scrub: true,
                 pin: true,
                 pinSpacing: true,
                 toggleActions: 'play none none reverse',
