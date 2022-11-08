@@ -34,8 +34,8 @@ const SectionContact = ({section, pageName }) => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: contactRef.current,
-              start: "top 70%",
-              end: "top 32%",
+              start: "top 65%",
+              end: "top 20%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -92,8 +92,8 @@ const SectionContact = ({section, pageName }) => {
             const tl2 = gsap.timeline({
                 scrollTrigger: {
                     trigger: headerTwoRef.current,
-                    start: "top 80%",
-                    end: "top 50%",
+                    start: "top 70%",
+                    end: "top 40%",
                     scrub: 1,
                     toggleActions: "restart pause resume none",
                 }
@@ -112,15 +112,6 @@ const SectionContact = ({section, pageName }) => {
                       opacity: 0,
                       xPercent:'40',
                 }},'-=.3')
-                // THIS WILL BE ADDED WHEN CONTACT PAGE WILL BE ADDED
-                /*tl2.from(linksRefThree.current, {
-                    duration:1,
-                    stagger:1.6,
-                    ease: "circe.out",
-                    css: {
-                      opacity: 0,
-                      xPercent:'40',
-                }},'-=.3')*/
   
       
         }, headerTwoRef); // <- scopes all selector text inside the context to this component (optional, default is document)

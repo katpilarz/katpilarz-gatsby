@@ -47,7 +47,7 @@
       }
 
       @include respond (mobile){
-        width: 94%;
+        width: 100%;
         margin: 14vw 0 10vw auto;
       }
   
@@ -74,7 +74,7 @@
       }
 
       @include respond (mobile){
-        width: 94%;
+        width: 98%;
         margin-bottom:10vw;
       }
 
@@ -101,6 +101,11 @@
           @include respond (desktop){
             padding: 3vw 0;
           }
+
+          @include respond (mobile){
+            padding: 6vw 0;
+          }
+
 
           // this class is also copied to video scss module
           .itemCardMedia{

@@ -23,7 +23,7 @@ font-weight: 400;
 
     @include respond (mobile){
         //font-size: calc( .2rem + 3vw);
-        font-size: calc( .7rem + 1.6vw)
+        font-size: calc( .47rem + 2.47vw)
     }
 }  
 
@@ -61,7 +61,8 @@ h2{
     line-height: 1;
 
     @include respond (mobile){
-         font-size: calc(.2rem + 13.2vw);
+        font-size: calc(.2rem + 20.7vw);
+        text-align: center;
     }
 
 
@@ -103,7 +104,7 @@ h3{
     }
 
     @include respond (mobile){
-        font-size: 9.7vw;
+        font-size: calc(.2rem + 9vw);
     }
 
 
@@ -153,7 +154,7 @@ h4{
     }
 
     @include respond (mobile){
-        font-size: 6vw;
+        font-size: calc( .4rem + 5.7vw);
     }
 
 
@@ -168,6 +169,10 @@ h5{
 
     @include respond (tabletHorizontal){
         font-size: calc( 1rem + 2.4vw);
+    }
+
+    @include respond (mobile){
+        font-size: calc( 1rem + 3.2vw);
     }
 
    
@@ -190,7 +195,8 @@ p{
     text-transform:uppercase;
 
     @include respond (mobile){
-        font-size: calc( .7rem + 1.17vw);
+        //font-size: calc( .7rem + 1.17vw);
+        font-size: calc( .47rem + 2vw)
     }
 }
 

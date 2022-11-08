@@ -56,7 +56,7 @@
     }
 
     @include respond (mobile){
-        max-height: 68rem;
+        max-height: 66rem;
     }
 
     .aboutImageOne{
@@ -83,6 +83,7 @@
 
         @include respond (mobile){
             grid-column: 1/12;
+            transform: translateY(-6vw);
         }
 
    

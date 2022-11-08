@@ -66,7 +66,7 @@ const FAQListItem = ({ item }) => {
                     height:'2vw',
                 }})
                 tl.current.from(answer.current, {
-                    delay:-.75,
+                    delay:-.37,
                     duration: 1,
                     ease: "power2.out",
                     css: {
@@ -112,7 +112,7 @@ const FAQListItem = ({ item }) => {
                 xPercent:0,
                 ease: "power4.out",
                 stagger:2,
-                delay:1.4,
+                delay:1.2,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,

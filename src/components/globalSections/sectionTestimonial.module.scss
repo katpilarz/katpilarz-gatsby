@@ -213,6 +213,13 @@
         }
 
 
+        @include respond (mobile){
+            bottom:-1vw;
+            right:-12vw;
+            z-index: 1;
+        }
+
+
 
        
     }

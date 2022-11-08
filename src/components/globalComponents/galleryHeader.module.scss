@@ -23,6 +23,10 @@
             @include respond (tabletHorizontal){
                 width:70%;
             }
+
+            @include respond (mobile){
+                width:80%;
+            }
         
         }
 
@@ -34,7 +38,7 @@
             }
 
             @include respond (mobile){
-                margin-top: 2vw;
+                margin-top: 6vw;
             }
             
         }

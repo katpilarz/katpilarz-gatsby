@@ -5,6 +5,7 @@ import { navigate } from 'gatsby';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import ArrowIcon from "../globalComponents/arrow";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -112,7 +113,11 @@ const ProjectSingleNext = ({ nextProject }) => {
       }}>
         <div ref={nextProjectHeaderRef} className={styles.nextProjectHeader}>
                 <p ref={subheaderRef} className="text-uppercase">Continue to Next Project</p>
-                <h2 ref={headerRef} className="project-header">{nextProject.title}</h2>
+                <div ref={headerRef}  className={styles.nextProjectHeaderWrapper}>
+                  <h2 className="project-header">{nextProject.title}</h2>
+                  <ArrowIcon arrowIconClass="projectNextIcon"/>
+                </div>
+                
         </div>
         <div className={styles.nextProjectImage}>
               <AnimatedImage imagePath={nextProject.bannerImage.asset.gatsbyImageData} imageAlt={nextProject.bannerImage.alt}/>   

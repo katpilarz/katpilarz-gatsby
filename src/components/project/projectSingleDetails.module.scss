@@ -86,6 +86,10 @@
         @include respond (desktopXS){
             width:70%;
         }
+
+        @include respond (mobile){
+            width:90%;
+        }
     }
 
     

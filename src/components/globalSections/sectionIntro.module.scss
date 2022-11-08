@@ -29,6 +29,10 @@
         @include respond (desktopXS){
             height:15vw;
         }
+
+        @include respond (mobile){
+            width: .04rem;
+        }
     }
 
     

@@ -36,7 +36,11 @@
 
         @include respond (desktopXS){
             width:80%;
-         }
+        }
+
+        @include respond (mobile){
+            width:94%;
+        }
 
         p{
             margin-bottom: 2vw;

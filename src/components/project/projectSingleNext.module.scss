@@ -25,13 +25,29 @@
     place-content: flex-start;
     text-align: left;
     z-index: 2;
+    margin-bottom: 4vw;
+
+    @include respond (mobile){
+        margin-bottom: 10vw;
+     }
+
+    .nextProjectHeaderWrapper{
+        display: flex;
+        place-items: center;
+        height: auto;
+        width:100%;
+
+        h2{
+            line-height: 1;
+            margin-right: 3vw;
+        }
 
 
-
-    h2{
-        line-height: 1;
-        margin-bottom: 4vw;
     }
+
+
+
+    
 }
 
 
