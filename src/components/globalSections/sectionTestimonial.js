@@ -34,8 +34,8 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: testimonialRef.current,
-            start: "top 67%",
-            end: "top 35%",
+            start: "top 57%",
+            end: "top 30%",
             scrub:1, 
             repeatRefresh: true,
             //toggleActions: "restart pause resume none",
