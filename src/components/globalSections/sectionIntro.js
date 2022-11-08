@@ -27,8 +27,8 @@ const SectionIntro = ({ subheader }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionIntroRef.current,
-          start: "top 87%",
-          end: "top 40%",
+          start: "top 77%",
+          end: "top 37%",
           scrub:.5, 
           repeatRefresh: true,
           toggleActions: 'play none none reverse'
