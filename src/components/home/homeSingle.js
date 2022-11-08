@@ -4,7 +4,7 @@ import HomeSingleFocus from "./homeSingleFocus";
 import AnimatedBtn from "../globalComponents/animatedBtn";
 import HomeSingleFeatured from "./homeSingleFeatured";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
-//import SectionAbout from "../globalSections/sectionAbout";
+import SectionAbout from "../globalSections/sectionAbout";
 import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionContact from "../globalSections/sectionContact";
@@ -31,7 +31,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
           )}
         />
       <SectionFeaturedVideo video={home.featuredVideo}/>
-      {/*<SectionAbout section={home.sectionAbout}/>*/}
+      <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
