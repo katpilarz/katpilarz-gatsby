@@ -33,11 +33,12 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
-
-      <HomeSingleGallery gallery={home.gallery}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
        slug={testimonialProject.node.slug.current} />
+
+      <HomeSingleGallery gallery={home.gallery}/>
+
 
       <SectionContact section={home.sectionContact} pageName='home'/>
     </>
