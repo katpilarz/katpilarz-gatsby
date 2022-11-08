@@ -42,7 +42,7 @@ const SectionContact = ({section, pageName }) => {
             }
           });
             tl.from(headerOneRef.current, {
-                duration: 1.4,
+                duration: 2,
                 ease: "power2.out",
                 css: {
                   autoAlpha: 0,
@@ -55,24 +55,24 @@ const SectionContact = ({section, pageName }) => {
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
-            }},'-=1')
+            }},'-=2')
             tl.from(headerTwoRef.current, {
-                duration: 1.4,
+                duration: 2,
                 ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
                   yPercent:'50',
-            }},'-=1')
+            }},'-=2')
 
             tl.from(subheaderRef.current, {
-                duration: 1.4,
+                duration: 2,
                 ease: "power2.out",
                 css: {
                   autoAlpha: 0,
                   visibility:'hidden',
                   xPercent:'40',
-            }},'-=1')
+            }},'-=2')
             tl.from(linksRefOne.current, {
               duration:1.2,
               ease: "power2.out",

@@ -60,8 +60,8 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: scrippedTextRef.current,
-              start: "top 67%",
-              end: "top 37%",
+              start: "top 57%",
+              end: "top 27%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
