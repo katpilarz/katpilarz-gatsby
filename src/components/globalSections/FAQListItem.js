@@ -66,7 +66,7 @@ const FAQListItem = ({ item }) => {
                     height:'2vw',
                 }})
                 tl.current.from(answer.current, {
-                    delay:-.37,
+                    delay:-.40,
                     duration: 1,
                     ease: "power2.out",
                     css: {

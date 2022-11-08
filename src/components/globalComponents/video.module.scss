@@ -107,6 +107,11 @@ article{
             width:29vw;
             left:36vw!important;
           }
+
+          @include respond (mobile){
+            width:44vw;
+            left:30vw!important;
+          }
         
       
     }

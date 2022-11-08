@@ -23,7 +23,7 @@ font-weight: 400;
 
     @include respond (mobile){
         //font-size: calc( .2rem + 3vw);
-        font-size: calc( .47rem + 2.27vw)
+        font-size: calc( .47rem + 2.17vw)
     }
 }  
 
@@ -89,11 +89,6 @@ h3{
     font-size: calc(1rem + 5vw);
     line-height:1.1;
 
-}
-
-
-h3{
-
     @include respond (tabletHorizontal){
         font-size: calc(.6rem + 6.7vw);
     }
@@ -104,6 +99,20 @@ h3{
 
 
 }
+
+
+/*h3{
+
+    @include respond (tabletHorizontal){
+        font-size: calc(.6rem + 6.7vw);
+    }
+
+    @include respond (mobile){
+        font-size: calc(.2rem + 8.7vw);
+    }
+
+
+}*/
 
 
 .banner-header{
@@ -138,6 +147,11 @@ h4{
         font-size: calc( .6rem + 4.2vw);
     }
 
+    @include respond (mobile){
+        font-size: calc( .37rem + 5.7vw);
+    }
+
+
 }
 
 
@@ -149,7 +163,7 @@ h4{
     }
 
     @include respond (mobile){
-        font-size: calc( .4rem + 5.7vw);
+        font-size: calc( .37rem + 5.7vw);
     }
 
 
@@ -191,7 +205,7 @@ p{
 
     @include respond (mobile){
         //font-size: calc( .7rem + 1.17vw);
-        font-size: calc( .47rem + 2vw)
+        font-size: calc( .47rem + 1.87vw)
     }
 }
 

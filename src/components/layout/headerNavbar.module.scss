@@ -12,15 +12,15 @@
     z-index: 9999;
 
     @include respond (desktopXS){
-        padding: 2.6vw 6vw;
+        padding: 2.6vw 5vw;
     }
 
     @include respond (tabletMediumHorizontal){
-        padding: 5vw 6vw;
+        padding: 5vw;
     }
 
     @include respond (mobile){
-        padding: 12vw 6vw 3.3vw 6vw;
+        padding: 12vw 5vw 3.3vw 5vw;
     }
 
 }

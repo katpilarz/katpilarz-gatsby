@@ -91,7 +91,7 @@ const SectionFeaturedVideo = ({ video }) => {
                       css: {
                           clipPath: 'circle(20.0% at 50% 50%)',
                           position: 'absolute',
-                          top:'20%',
+                          top:'20vw',
                           margin: 'auto',
                           zIndex:1,
                           width:'50vw',

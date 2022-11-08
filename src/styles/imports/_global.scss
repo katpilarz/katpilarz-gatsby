@@ -47,6 +47,7 @@
 
     @include respond (desktopXS){
         top:7vw;
+        right:4.4vw;
     }
 
     @include respond (tabletMediumHorizontal){
@@ -70,7 +71,7 @@
     padding: 0 4vw 0 4vw;
 
     @include respond (desktopXS){
-        padding: 0 6vw 0 6vw;
+        padding: 0 5vw 0 5vw;
     }
   }
   
