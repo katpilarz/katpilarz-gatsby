@@ -51,6 +51,7 @@
     place-self: center;
     place-content: center;
     width:100%;
+    overflow-x: visible;
 
 
     
@@ -64,6 +65,7 @@
 
 
         h4{
+            flex-basis: auto;
             width:auto;
             line-height: 1;
             display: flex;

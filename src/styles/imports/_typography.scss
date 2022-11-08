@@ -51,7 +51,7 @@ h1{
     line-height: .8;
 
     @include respond (mobile){
-        font-size: 26.2vw;
+        font-size: 26vw;
     }
 }
   
@@ -61,8 +61,7 @@ h2{
     line-height: 1;
 
     @include respond (mobile){
-        font-size: calc(.2rem + 20.7vw);
-        text-align: center;
+        font-size: calc(.2rem + 13vw);
     }
 
 
@@ -84,10 +83,6 @@ h2{
 }
 
 
-.project-header{
-    font-size: calc(1rem + 6vw);
-}
-
 
 .menu-link,
 h3{
@@ -104,7 +99,7 @@ h3{
     }
 
     @include respond (mobile){
-        font-size: calc(.2rem + 9vw);
+        font-size: calc(.2rem + 8.7vw);
     }
 
 

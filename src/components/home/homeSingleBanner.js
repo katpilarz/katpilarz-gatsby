@@ -262,7 +262,6 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 ease: "circe.inOut",
                 css: {
                   rotation: 360*2,
-                  autoAlpha:1,
               }})
               tl2.to(sectionRef.current, {
                 duration:6, 

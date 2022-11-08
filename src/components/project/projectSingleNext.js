@@ -38,7 +38,7 @@ const ProjectSingleNext = ({ nextProject }) => {
           scrollTrigger: {
             trigger: nextProjectHeaderRef.current,
             start: "top 57%",
-            end: "top 27%",
+            end: "top 20%",
             scrub:1, 
             repeatRefresh: true,
             toggleActions: "restart pause resume none",

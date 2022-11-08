@@ -73,7 +73,7 @@ const HomeSingleServices = ({ services }) => {
                             id: `section-${index+1}`,
                             trigger: el,
                             start: 'top 97%',
-                            end:'top 10%',
+                            //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
                             refreshPriority: 1,

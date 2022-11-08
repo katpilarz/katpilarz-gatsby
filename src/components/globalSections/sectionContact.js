@@ -33,7 +33,7 @@ const SectionContact = ({section, pageName }) => {
           // create as many GSAP animations and/or ScrollTriggers here as you want...
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: contactRef.current,
+              trigger: headerOneRef.current,
               start: "top 65%",
               end: "top 20%",
               scrub:1, 
@@ -74,6 +74,31 @@ const SectionContact = ({section, pageName }) => {
                   xPercent:'40',
             }},'-=1')
 
+            const tl2 = gsap.timeline({
+              scrollTrigger: {
+                  trigger: headerTwoRef.current,
+                  start: "top 70%",
+                  end: "top 40%",
+                  scrub: 1,
+                  toggleActions: "restart pause resume none",
+              }
+              });
+              tl2.from(linksRefOne.current, {
+                  duration:1,
+                  ease: "circe.out",
+                  css: {
+                    opacity: 0,
+                    xPercent:'40',
+              }},'-=1')
+              tl2.from(linksRefTwo.current, {
+                  duration:1,
+                  ease: "circe.out",
+                  css: {
+                    opacity: 0,
+                    xPercent:'40',
+              }},'-=.3')
+
+
 
      
         }, contactRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -82,43 +107,7 @@ const SectionContact = ({section, pageName }) => {
       }, []);
 
 
-      useEffect(() => {
    
-        // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
-        // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
-        let ctx = gsap.context(() => {
-          // create as many GSAP animations and/or ScrollTriggers here as you want...
-   
-            const tl2 = gsap.timeline({
-                scrollTrigger: {
-                    trigger: headerTwoRef.current,
-                    start: "top 70%",
-                    end: "top 40%",
-                    scrub: 1,
-                    toggleActions: "restart pause resume none",
-                }
-                });
-                tl2.from(linksRefOne.current, {
-                    duration:1,
-                    ease: "circe.out",
-                    css: {
-                      opacity: 0,
-                      xPercent:'40',
-                }},'-=1')
-                tl2.from(linksRefTwo.current, {
-                    duration:1,
-                    ease: "circe.out",
-                    css: {
-                      opacity: 0,
-                      xPercent:'40',
-                }},'-=.3')
-  
-      
-        }, headerTwoRef); // <- scopes all selector text inside the context to this component (optional, default is document)
-        
-        return () => ctx.revert(); // cleanup! 
-      }, []);
-    
 
   return (
     

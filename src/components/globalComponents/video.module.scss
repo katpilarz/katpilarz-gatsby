@@ -65,7 +65,7 @@
 .focusAreaMedia{
     width:10vw;
     height: auto;
-    margin: auto .5vw;
+    margin: auto 0vw;
 
     @include respond (desktop){
         width:13vw;
