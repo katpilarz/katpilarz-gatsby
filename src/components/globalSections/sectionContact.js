@@ -74,14 +74,14 @@ const SectionContact = ({section, pageName }) => {
                   xPercent:'40',
             }},'-=1')
             tl.from(linksRefOne.current, {
-              duration:1,
+              duration:1.2,
               ease: "power2.out",
               css: {
                 opacity: 0,
                 xPercent:'40',
             }})
             tl.from(linksRefTwo.current, {
-                duration:1,
+                duration:1.2,
                 ease: "power2.out",
                 css: {
                   opacity: 0,
