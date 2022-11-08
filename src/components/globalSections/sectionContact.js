@@ -73,30 +73,21 @@ const SectionContact = ({section, pageName }) => {
                   visibility:'hidden',
                   xPercent:'40',
             }},'-=1')
-
-            const tl2 = gsap.timeline({
-              scrollTrigger: {
-                  trigger: headerTwoRef.current,
-                  start: "top 70%",
-                  end: "top 40%",
-                  scrub: 1,
-                  toggleActions: "restart pause resume none",
-              }
-              });
-              tl2.from(linksRefOne.current, {
-                  duration:1,
-                  ease: "circe.out",
-                  css: {
-                    opacity: 0,
-                    xPercent:'40',
-              }},'-=1')
-              tl2.from(linksRefTwo.current, {
-                  duration:1,
-                  ease: "circe.out",
-                  css: {
-                    opacity: 0,
-                    xPercent:'40',
-              }},'-=.3')
+            tl.from(linksRefOne.current, {
+              duration:1,
+              ease: "circe.out",
+              css: {
+                opacity: 0,
+                xPercent:'40',
+            }},'-=1')
+            tl.from(linksRefTwo.current, {
+                duration:1,
+                ease: "circe.out",
+                css: {
+                  opacity: 0,
+                  xPercent:'40',
+            }},'-=.3')
+              
 
 
 

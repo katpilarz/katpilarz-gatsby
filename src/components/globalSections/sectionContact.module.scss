@@ -7,6 +7,7 @@
     overflow-x: hidden;
     height: auto;
 
+   
 
 
     .contactSection{
@@ -23,6 +24,7 @@
         @include respond (mobile){
             max-height: 36rem;
         }
+
 
         
    
@@ -41,8 +43,7 @@
         width:100%;
         display: flex;
         overflow-x: hidden;
-
-        
+      
         
 
         img{

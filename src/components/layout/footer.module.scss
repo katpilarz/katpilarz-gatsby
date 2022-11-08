@@ -1,4 +1,4 @@
-@use 'src/styles/layout';
+@import 'src/styles/layout';
 
 .footer{
     height: auto;
@@ -9,6 +9,11 @@
     //border-top: layout.$border;
     //padding-top: 6vw;
     margin-top: 3vw;
+
+    @include respond (mobile){
+        margin-top: 12vw;
+    }
+
 
     p{
         text-align: center;
@@ -24,7 +29,7 @@
     place-items: center;
     place-self: center;
 
-    .footerLink{
+    /*.footerLink{
         display: flex;
         width: auto;
         margin-right: 2vw;
@@ -35,7 +40,7 @@
             transition: all .4s linear;
 
             &:hover{
-                color:layout.$color;
+                color:$color;
                 transform: translateY(-20%);
             }
         }
@@ -46,6 +51,6 @@
             }
         }
 
-    }
+    }*/
 }
 
