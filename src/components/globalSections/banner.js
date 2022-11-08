@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import AnimatedImage from "../globalComponents/animatedImage";
 import Video from "../globalComponents/video";
+import Media from 'react-media';
 
 
 
@@ -48,20 +49,27 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
         <div className={styles.projectBannerHeader}>
             <h2>{title}</h2>
             { services &&
-                <div className={styles.projectBannerDetails}>
-                    <p>{publishedAt}</p>
-                    <div className={styles.servicesList}>
-                        {services.map((service, index) => {
-                            return(
-                            <div className={styles.serviceSingle} key={index}>
-                                <p>{service.title}</p> 
-                            </div> 
-                            )
-                        })}
-                    </div> 
-                    <p>{overview}</p> 
-                </div>
+                <Media query="(min-width: 569px)" render={() =>
+                (
+                    
+                    <div className={styles.projectBannerDetails}>
+                        <p>{publishedAt}</p>
+                        <div className={styles.servicesList}>
+                            {services.map((service, index) => {
+                                return(
+                                <div className={styles.serviceSingle} key={index}>
+                                    <p>{service.title}</p> 
+                                </div> 
+                                )
+                            })}
+                        </div> 
+                        <p>{overview}</p> 
+                    </div>
+                
+                )}
+                />
             }
+            
         </div>
         { image &&
             <div className={styles.projectImageContainer}>

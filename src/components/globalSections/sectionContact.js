@@ -167,17 +167,17 @@ const SectionContact = ({section, pageName }) => {
                     <h3 className="header-section">{section.headerTwo}</h3>
                 </div>
                 <div ref={subheaderRef} className={styles.paragraph}>
-                <p>{section.subheader}</p>
+                <p className="text-uppercase">{section.subheader}</p>
                 </div>
             
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
             <div className={styles.linksWrapper}>
-                    <a ref={linksRefOne} className={styles.contactLink} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
+                    <a ref={linksRefOne} className={`${styles.contactLink} text-uppercase`} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
                         {section.brief.text}
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </a>
-                    <Link className={styles.contactLink} ref={linksRefTwo} to='#'onClick={(e) => {
+                    <Link className={`${styles.contactLink} text-uppercase`} ref={linksRefTwo} to='#'onClick={(e) => {
                         window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
                         e.preventDefault();
                         }}>

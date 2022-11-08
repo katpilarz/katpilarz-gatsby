@@ -16,6 +16,8 @@
         margin: 22vw auto 0 auto;
     }
 
+
+
 }
 
 .swiper{
@@ -23,35 +25,39 @@
     width: 100%;
     margin: 10vw auto 12vw auto;
     overflow: visible;
-    
-}
 
-.slideGallery{
-    width:100%;
-    height: auto;
-    display: flex;
-
-    @include respond (tabletHorizontal){
-        //margin: auto 0;
+    @include respond (mobile){
+        margin:20vw auto;
     }
 
 
-    
-
-    button{
-        flex-basis: 100%;
-        width:100%;
+    .swiperSlide{
+        width:75%;
+        height: auto;
         display: flex;
-        margin: 0 3vw;
-        //padding:0 3vw;
-        
-        .swiperImage{
-            width:100%;
 
-            img{
-                width:100%;
-            }
+        @include respond (mobile){
+            width:85%;
         }
 
+
+        
+    .swiperSlideItem{
+            flex-basis: 100%;
+            width:100%;
+            display: flex;
+            margin: 0 3vw;
+            
+            .swiperImage{
+                width:100%;
+
+                img{
+                    width:100%;
+                }
+            }
+
+        }
     }
+
+    
 }

@@ -4,6 +4,8 @@ import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import Media from 'react-media';
+
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -18,6 +20,7 @@ const ProjectSingleDetails = ({ project }) => {
   const detailTwoRef = useRef(null);
   const detailThreeRef = useRef(null);
   const detailFourRef = useRef(null);
+  const detailFiveRef = useRef(null);
   const subheaderRef = useRef(null);
   const headerRef = useRef(null);
   const descriptionRef = useRef(null);
@@ -133,7 +136,7 @@ const ProjectSingleDetails = ({ project }) => {
         <div className={styles.projectDetailsLeft}>
             <div className={styles.projectDetailsHeader}>
                 <p ref={subheaderRef}>PROJECT DETAILS</p>
-                <h4 ref={headerRef}>{project.header}</h4>
+                <h3 ref={headerRef}>{project.header}</h3>
            </div>
 
            <div ref={descriptionRef} className={styles.projectDescription}>
@@ -172,6 +175,18 @@ const ProjectSingleDetails = ({ project }) => {
                         })}
                     </div> 
                 </div>
+{/*}
+                    <Media query="(max-width: 568px)" render={() =>
+                    (
+                        
+                        <div ref={detailFiveRef} className={styles.projectOverviewCard}>
+                            <p className={styles.overviewName}>YEAR</p>
+                            <span>{project.publishedAt}</span>
+                        </div>
+                    
+                    )}
+                    />*/}
+                
                 {project.isDevelopment &&
                     <div ref={detailFourRef}  className={styles.projectOverviewCard}>
                         <p>WEBSITE</p>

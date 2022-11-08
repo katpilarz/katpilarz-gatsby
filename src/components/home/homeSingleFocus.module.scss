@@ -19,13 +19,13 @@
 
     h3{
         color:inherit;
-        width:84%;
+        width:70%;
         margin: auto;
         text-align: center;
         margin-bottom: 6vw;
 
         @include respond (desktop){
-            width:92%;
+            width:77%;
         }
 
         @include respond (desktopXS){
@@ -59,7 +59,7 @@
         place-items: center;
         place-content: center;
         place-self: center;
-        margin-top: 1vw;
+        margin-top: .5vw;
         width:auto;
 
 

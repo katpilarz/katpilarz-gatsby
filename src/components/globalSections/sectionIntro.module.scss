@@ -7,7 +7,6 @@
     flex-direction: column;
     place-items: center;
     place-content: center;
-    min-height: 20vw;
     transform-origin: top;
     margin-bottom: 7vw;
 
@@ -21,7 +20,7 @@
     }
 
     .line{
-        height: 10vw;
+        height: 7.7vw;
         width: .07rem;
         background-color: $grey-dark;
         display: block;

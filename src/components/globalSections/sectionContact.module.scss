@@ -48,10 +48,6 @@
         img{
             width:100%;
             height: auto;
-
-            @include respond (mobile){
-                height: 50rem!important;
-             }
         }
     }
 }
@@ -79,7 +75,6 @@
     .contactLink{
         margin: auto 2vw;
         display: flex;
-        text-transform: uppercase;
 
         @include respond (tabletHorizontal){
             margin: auto 5vw;
@@ -153,6 +148,7 @@
 
         @include respond (mobile){
             grid-row: 2/2;
+            grid-column: 3/-1;
         }
 
     }

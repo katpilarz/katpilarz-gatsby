@@ -35,6 +35,11 @@
         width:220%;
     }
 
+
+    @include respond (mobile){
+        width:230%;
+    }
+
     
 
  .serviceSingleWrapper{

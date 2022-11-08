@@ -259,10 +259,10 @@ const HomeSingleBanner = ({ name, title, images }) => {
             });
               tl2.to(btnRef.current, {
                 duration: 8,
-                autoAlpha:1,
                 ease: "circe.inOut",
                 css: {
                   rotation: 360*2,
+                  autoAlpha:1,
               }})
               tl2.to(sectionRef.current, {
                 duration:6, 
@@ -280,7 +280,8 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   autoAlpha:0,
                   opacity:0,
                    }
-              },'-=3');
+              },'-=3')
+
 
 
               revealRefs.current.forEach((el, index) => {

@@ -23,7 +23,7 @@ font-weight: 400;
 
     @include respond (mobile){
         //font-size: calc( .2rem + 3vw);
-        font-size: calc( .7rem + 1.2vw)
+        font-size: calc( .7rem + 1.6vw)
     }
 }  
 
@@ -45,16 +45,24 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: 27vw;
+    font-size: 26.7vw;
     text-align: center;
     padding: 5vw 0 0 0;
     line-height: .8;
+
+    @include respond (mobile){
+        font-size: 26.2vw;
+    }
 }
   
 
 h2{
     font-size: calc(1rem + 9vw);
     line-height: 1;
+
+    @include respond (mobile){
+         font-size: calc(.2rem + 13.2vw);
+    }
 
 
 }
@@ -67,6 +75,10 @@ h2{
 
     @include respond (tabletHorizontal){
         font-size: 12.7vw;
+    }
+
+    @include respond (mobile){
+        font-size: 14.7vw;
     }
 }
 
@@ -114,7 +126,7 @@ h4{
     }
 
     @include respond (mobile){
-        font-size: 7vw;
+        font-size: 7.4vw;
     }
 
 }
@@ -139,6 +151,11 @@ h4{
     @include respond (tabletHorizontal){
         font-size: calc( .6rem + 3.7vw);
     }
+
+    @include respond (mobile){
+        font-size: 6vw;
+    }
+
 
 
 }
@@ -167,8 +184,14 @@ p{
     line-height: 1.7;
 }
 
+
+
 .text-uppercase{
     text-transform:uppercase;
+
+    @include respond (mobile){
+        font-size: calc( .7rem + 1.17vw);
+    }
 }
 
   

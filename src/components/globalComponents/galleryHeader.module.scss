@@ -32,6 +32,10 @@
             @include respond (desktopXS){
                 margin-top: 1vw;
             }
+
+            @include respond (mobile){
+                margin-top: 2vw;
+            }
             
         }
         

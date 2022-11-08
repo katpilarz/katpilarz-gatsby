@@ -1,7 +1,7 @@
 @import 'src/styles/layout';
 
 .sectionTestimonial{
-    margin:0 auto 14vw auto;
+    margin:14vw auto 14vw auto;
 
     @include respond (desktopXS){
         margin:20vw auto 20vw auto;

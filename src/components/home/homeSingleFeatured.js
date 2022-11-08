@@ -116,7 +116,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
             {featuredProjects.map((project, index) => {
                   return (
                     <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
-                      <Link to={`projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
+                      <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
                           <div className={styles.projectSwiperSlideImage}>
                               <AnimatedImage imagePath={project.node.bannerImage.asset.gatsbyImageData} imageAlt={project.node.bannerImage.alt}/> 
                               <GatsbyImage className={styles.projectSwiperSlideImageHover}

@@ -12,7 +12,7 @@ import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
 import 'swiper/css/effect-fade';
 import 'swiper/css/zoom';
-import { navigate } from 'gatsby';
+import { Link } from 'gatsby';
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -67,11 +67,8 @@ const ServiceSingleGallery = ({ projects }) => {
             <GalleryHeader header='Related Projects' linkText="See All Projects" linkUrl="/projects"/>
           </div>
           <Swiper ref={swiperContainer}  className={styles.swiper}
-              style={{
-                "--swiper-pagination-color": "#fff",
-            }}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
-            slidesPerView={2}
+            slidesPerView={"auto"}
             centeredSlides={true}
             direction={"horizontal"}
             spaceBetween={0}
@@ -86,20 +83,13 @@ const ServiceSingleGallery = ({ projects }) => {
             {projects.map((item, index) => {
                 return (
                   
-                  <SwiperSlide key={index} className={styles.slideGallery}>
-                     <button  onClick={(e) => {
-                          e.preventDefault();
-                          navigate(`/projects/${item.slug.current}`);
-                        }}>
+                  <SwiperSlide key={index} className={styles.swiperSlide}>
+                     <Link to={`/projects/${item.slug.current}`} className={styles.swiperSlideItem}>
                         <GatsbyImage className={styles.swiperImage}
                             image={getImage(item.socialMediaImage.asset.gatsbyImageData)}
                             alt={`${item.socialMediaImage.alt}`}
                         />
-                        <GatsbyImage className={styles.swiperImageHover}
-                            image={getImage(item.bannerImage.asset.gatsbyImageData)}
-                            alt={`${item.bannerImage.alt}`}
-                        />
-                     </button>
+                     </Link>
                   </SwiperSlide>
                 
               )

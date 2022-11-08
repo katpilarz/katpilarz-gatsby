@@ -27,21 +27,21 @@ const SectionIntro = ({ subheader }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionIntroRef.current,
-          start: "top 90%",
-          end: "top 37%",
-          scrub:1, 
+          start: "top 87%",
+          end: "top 40%",
+          scrub:.5, 
           repeatRefresh: true,
           toggleActions: 'play none none reverse'
           //toggleActions: "restart pause resume none",
         }
       });
         tl.from(iconRef.current, {
-            duration: 1,
+            duration: 4,
             ease: "power4.out",
             css: {
               autoAlpha: 0,
               opacity:0, 
-              rotation:'-360deg'
+              rotation:360*3,
         }})
 
         tl.from(lineRef.current, {
@@ -52,20 +52,15 @@ const SectionIntro = ({ subheader }) => {
             autoAlpha: 0,
             opacity:0, 
             height:'0vw',
-          }},'-=.5')
+          }},'-=3.7')
           tl.from(paragraphRef.current, {
             duration: 1,
             ease: "power4.out",
             css: {
               autoAlpha: 0,
               opacity:0, 
-        }},'-=1')
-          tl.to(iconRef.current, {
-            duration: 1,
-            ease: "power4.out",
-            css: {
-              rotation:'360deg'
-        }},'-=2')
+        }},'-=1.7')
+
 
   
     }, sectionIntroRef); // <- scopes all selector text inside the context to this component (optional, default is document)

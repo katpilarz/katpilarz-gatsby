@@ -53,6 +53,10 @@
         margin:0 0 2vw 0;
     }
 
+    @include respond (mobile){
+        width:77vw;
+    }
+
 
     &:nth-child(2){
 
@@ -60,6 +64,12 @@
             place-self: flex-end;
             margin:0 0 2vw auto;
        }
+
+       @include respond (mobile){
+            margin:10vw 0 10vw auto;
+        }
+
+
         
     }
 

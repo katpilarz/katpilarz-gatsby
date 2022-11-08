@@ -59,6 +59,10 @@
                 @include respond (desktopXS){
                     width:45%;
                 }
+
+                @include respond (mobile){
+                    width:67%;
+                }
             }
 
 
@@ -70,7 +74,10 @@
                 z-index: 1;
                 @include respond (desktopXS){
                     width:47%;
-                  
+                }
+
+                @include respond (mobile){
+                    width:84%;
                 }
             }
         
@@ -85,6 +92,10 @@
 
                 @include respond (desktopXS){
                     width:45%;
+                }
+
+                @include respond (mobile){
+                    width:67%;
                 }
             }
         }

@@ -56,7 +56,7 @@
     }
 
     @include respond (mobile){
-        //max-height: 42rem;
+        max-height: 68rem;
     }
 
     .aboutImageOne{
@@ -79,6 +79,10 @@
 
         @include respond (tabletHorizontal){
             width:100%;
+        }
+
+        @include respond (mobile){
+            grid-column: 1/12;
         }
 
    
@@ -116,7 +120,8 @@
 
         @include respond (mobile){
             grid-column: 2/-1;
-            margin:8vw auto -4vw auto;
+            grid-row: 12/-1;
+            margin:0 auto 0 auto;
         }
 
         
@@ -146,6 +151,13 @@
          @include respond (tabletHorizontal){
             grid-column: 8/-1;
         }
+
+        @include respond (mobile){
+            grid-column: 6/-1;
+            grid-row:6/8
+        }
+
+        
     }
 }
 

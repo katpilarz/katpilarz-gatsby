@@ -71,6 +71,11 @@
             width:84%;
         }
 
+        @include respond (mobile){
+            width:90%;
+            margin: 20vw 0 20vw auto;
+        }
+
         
     }
 
