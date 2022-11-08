@@ -164,7 +164,7 @@ const ProjectSingleDetails = ({ project }) => {
                     <span>{project.scope}</span>
                 </div>
                 <div ref={detailThreeRef}  className={styles.projectOverviewCard}>
-                    <p cclassName={`${styles.overviewName} text-uppercase`}>Tools</p>
+                    <p className={`${styles.overviewName} text-uppercase`}>Tools</p>
                     <div className={styles.toolsList}>
                         {project.tools.map((tool, index) => {
                             return(

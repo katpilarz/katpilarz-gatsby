@@ -32,8 +32,8 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 55%',
-          end:'top 25%',
+          start: 'top 50%',
+          end:'top 22%',
           scrub: 1,
           pin: false,
           pinSpacing: false,

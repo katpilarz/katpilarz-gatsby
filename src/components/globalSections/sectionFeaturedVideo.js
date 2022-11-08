@@ -86,26 +86,22 @@ const SectionFeaturedVideo = ({ video }) => {
               }
             });
                   tl.fromTo(videoRef.current, {
-                      duration:10,
-                      ease: "power4.out",
                       css: {
                           clipPath: 'circle(20.0% at 50% 50%)',
                           position: 'absolute',
                           top:'20vw',
-                          margin: 'auto',
                           zIndex:1,
                           width:'50vw',
                           transformOrigin:'center',
                       }
                   },{
-                      duration:4,
-                      ease: "power4.out",
+                      duration:10,
+                      ease: "power2.out",
                       css: {
                           clipPath: 'circle(100% at 50% 50%)',
                           width:'90vw',
                           position: 'absolute',
-                          top:'3.4vw',
-                          margin: 'auto',
+                          top:'20vw',
                           zIndex:1,
                           transformOrigin:'center',
   
