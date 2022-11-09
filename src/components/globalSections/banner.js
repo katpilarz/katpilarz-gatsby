@@ -48,28 +48,29 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
     <header ref={pageSingleRef} className={`${styles.projectBanner} container`}>
         <div className={styles.projectBannerHeader}>
             <h2 className="text-color">{title}</h2>
-            { services &&
-                <Media query="(min-width: 569px)" render={() =>
-                (
+
+            <div className={styles.projectBannerDetails}>
+                <p>{publishedAt}</p>
+                { services &&
+                    <Media query="(min-width: 569px)" render={() =>
+                    (
+                        <>
+                            <div className={styles.servicesList}>
+                                {services.map((service, index) => {
+                                    return(
+                                    <div className={styles.serviceSingle} key={index}>
+                                        <p>{service.title}</p> 
+                                    </div> 
+                                    )
+                                })}
+                            </div> 
+                            <p>{overview}</p> 
+                        </>
                     
-                    <div className={styles.projectBannerDetails}>
-                        <p>{publishedAt}</p>
-                        <div className={styles.servicesList}>
-                            {services.map((service, index) => {
-                                return(
-                                <div className={styles.serviceSingle} key={index}>
-                                    <p>{service.title}</p> 
-                                </div> 
-                                )
-                            })}
-                        </div> 
-                        <p>{overview}</p> 
-                    </div>
-                
-                )}
-                />
-            }
-            
+                    )}
+                    />
+                }
+            </div>
         </div>
         { image &&
             <div className={styles.projectImageContainer}>

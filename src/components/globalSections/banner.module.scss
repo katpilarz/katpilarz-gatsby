@@ -36,6 +36,13 @@
       place-items: flex-start;
     }
 
+    @include respond (mobile){
+      flex-direction: row;
+      place-content: space-between;
+
+    }
+
+
 
     
   }
@@ -54,6 +61,12 @@
     @include respond (desktopXS){
       width:100%;
       margin:2vw 0 0 0;
+    }
+
+    @include respond (mobile){
+      width: auto;
+      place-self: flex-end;
+      margin-left: 1vw;
     }
   
     p{

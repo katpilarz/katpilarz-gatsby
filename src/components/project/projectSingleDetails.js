@@ -39,8 +39,8 @@ const ProjectSingleDetails = ({ project }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: projectDetailsRef.current,
-          start: "top 60%",
-          end: "top 30%",
+          start: "top 57%",
+          end: "top 17%",
           scrub:1, 
           repeatRefresh: true,
           toggleActions: "restart pause resume none",
@@ -89,8 +89,8 @@ const ProjectSingleDetails = ({ project }) => {
         const tl2 = gsap.timeline({
             scrollTrigger: {
               trigger: projectDetailsRef.current,
-              start: "top 77%",
-              end: "top 35%",
+              start: "top 57%",
+              end: "top 27%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",

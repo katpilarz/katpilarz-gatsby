@@ -65,7 +65,6 @@ const SectionFeaturedVideo = ({ video }) => {
               scrollTrigger: {
                 trigger: sectionRef.current,
                 start: "center center",
-                end:"center center",
                 scrub: true, 
                 pin: true, 
                 pinSpacing: true,
