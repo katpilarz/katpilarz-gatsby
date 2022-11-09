@@ -133,7 +133,7 @@ h4{
     }
 
     @include respond (mobile){
-        font-size: calc( .37rem + 5.7vw);
+        font-size: calc( .36rem + 5.7vw);
     }
 
 
@@ -166,7 +166,7 @@ h5{
     }
 
     @include respond (mobile){
-        font-size: calc( .7rem + 3.2vw);
+        font-size: calc( .8rem + 3.2vw);
     }
 
    

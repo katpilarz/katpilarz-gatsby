@@ -3,6 +3,7 @@ import * as styles from "./sectionAboutDetails.module.scss";
 import AnimatedImage from "../globalComponents/animatedImage";
 import PortableText from "react-portable-text"
 import Video from "../globalComponents/video";
+import Description from "../globalComponents/description";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -66,15 +67,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                 <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
             </div>
         }
-
-        <div  className={styles.aboutDescription} ref={paragraphRef}>    
-            <PortableText
-                content={text}
-                projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                dataset={process.env.GATSBY_SANITY_DATASET}
-            />
-        </div>
-        
+        <Description description={text} descriptionCustomClass="aboutDescription"/>
     </div>
             
   )

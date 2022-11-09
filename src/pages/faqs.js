@@ -6,6 +6,7 @@ import Seo from "../components/globalComponents/seo";
 import { useEffect } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import { navigate } from 'gatsby';
+import Media from 'react-media';
 
 
 
@@ -71,7 +72,11 @@ const FrequentQuestions = props => {
   return (
     <main>
       <Seo title={faqsPage.node.title} description={faqsPage.node.overview} keywords={keywords}  />
-      <AnimatedBtn/>
+      <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn pageName="faqs"/>
+          )}
+        />
       <PagePreloader/>
       <PageSingle faqs={faqs} pageName={faqsPage.node.name} pageTitle={faqsPage.node.title} pageImage={faqsPage.node.image} pageDescription={faqsPage.node.overview}/>
     </main>

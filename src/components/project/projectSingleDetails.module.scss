@@ -57,27 +57,6 @@
         margin-top:4vw;
     }
 
-    .projectDescription{
-        margin: 10vw 0 auto auto;
-        width:100%;
-
-        @include respond (desktopXS){
-            margin: 12vw 0 12vw auto;
-            width:76%;
-        }
-
-
-        @include respond (tabletHorizontal){
-            width:84%;
-        }
-
-        @include respond (mobile){
-            width:90%;
-            margin: 20vw 0 20vw auto;
-        }
-
-        
-    }
 
     .projectDetailsHeader{
         display: flex;

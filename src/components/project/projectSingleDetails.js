@@ -1,10 +1,9 @@
 import React from "react";
 import * as styles from "./projectSingleDetails.module.scss";
-import PortableText from "react-portable-text"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import Media from 'react-media';
+import Description from "../globalComponents/description";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -20,10 +19,8 @@ const ProjectSingleDetails = ({ project }) => {
   const detailTwoRef = useRef(null);
   const detailThreeRef = useRef(null);
   const detailFourRef = useRef(null);
-  const detailFiveRef = useRef(null);
   const subheaderRef = useRef(null);
   const headerRef = useRef(null);
-  const descriptionRef = useRef(null);
 
 
 
@@ -38,9 +35,9 @@ const ProjectSingleDetails = ({ project }) => {
       // FIRST TIMELINE
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: projectDetailsRef.current,
-          start: "top 57%",
-          end: "top 17%",
+          trigger: detailOneRef.current,
+          start: "top 67%",
+          end: "top 27%",
           scrub:1, 
           repeatRefresh: true,
           toggleActions: "restart pause resume none",
@@ -88,9 +85,9 @@ const ProjectSingleDetails = ({ project }) => {
 
         const tl2 = gsap.timeline({
             scrollTrigger: {
-              trigger: projectDetailsRef.current,
-              start: "top 57%",
-              end: "top 27%",
+              trigger: subheaderRef.current,
+              start: "top 47%",
+              end: "top 17%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -114,15 +111,6 @@ const ProjectSingleDetails = ({ project }) => {
                 yPercent:'30',
             }},'-=1')
 
-            tl2.from(descriptionRef.current, {
-                duration: 1,
-                ease: "power2.out",
-                css: {
-                autoAlpha: 0,
-                opacity:0,
-                yPercent:'50'
-            }})
-
   
     }, projectDetailsRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
@@ -138,19 +126,8 @@ const ProjectSingleDetails = ({ project }) => {
                 <p className="text-uppercase" ref={subheaderRef}>Project Details</p>
                 <h3 ref={headerRef}>{project.header}</h3>
            </div>
-
-           <div ref={descriptionRef} className={styles.projectDescription}>
-                <PortableText 
-                    content={project._rawDetails}
-                    projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                    dataset={process.env.GATSBY_SANITY_DATASET}
-                />
-           </div>
+           <Description description={project._rawDetails} descriptionCustomClass="projectDescription"/>
            
-
-
-
-            
         </div>
         <div className={styles.projectDetailsRight}>
            
@@ -175,18 +152,6 @@ const ProjectSingleDetails = ({ project }) => {
                         })}
                     </div> 
                 </div>
-{/*}
-                    <Media query="(max-width: 568px)" render={() =>
-                    (
-                        
-                        <div ref={detailFiveRef} className={styles.projectOverviewCard}>
-                            <p className={styles.overviewName}>YEAR</p>
-                            <span>{project.publishedAt}</span>
-                        </div>
-                    
-                    )}
-                    />*/}
-                
                 {project.isDevelopment &&
                     <div ref={detailFourRef}  className={styles.projectOverviewCard}>
                         <p className='text-uppercase'>Website</p>
