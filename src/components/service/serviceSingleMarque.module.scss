@@ -37,6 +37,25 @@
         width:230%;
     }
 
+
+
+    &:nth-child(even){
+        border-top: $border;
+        border-bottom:$border;
+
+        @include respond (desktopXS){
+            border-top: $border;
+        }
+    }
+
+    &:first-child{
+        border-top: none;
+
+        @include respond (desktopXS){
+            border-top: $border;
+        }
+    }
+
     
 
  .serviceSingleWrapper{
@@ -46,19 +65,18 @@
         place-items: center;
         place-content: center;
         padding: 4vw 0;
-        border-bottom:$border;
+        //border-bottom:$border!important;
+        overflow-y: visible;
 
 
         @include respond (mobile){
             padding: 6vw 0;
         }
 
-        &:first-child{
 
-            @include respond (desktopXS){
-                border-top: $border;
-            }
-        }
+
+
+
 
     .serviceSingle{
         display: flex;
