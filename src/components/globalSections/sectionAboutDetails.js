@@ -1,73 +1,35 @@
 import React from "react"
 import * as styles from "./sectionAboutDetails.module.scss";
 import AnimatedImage from "../globalComponents/animatedImage";
-import PortableText from "react-portable-text"
 import Video from "../globalComponents/video";
 import Description from "../globalComponents/description";
-import gsap from 'gsap/dist/gsap';
-import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { useEffect, useRef } from 'react';
-gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 
 const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
 
 
-    const sectionRef = useRef(null);
-    const paragraphRef = useRef(null);
-
-
-    useEffect(() => {
-   
-        // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
-        // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
-        let ctx = gsap.context(() => {
-
-
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 60%",
-                    end: "top 27%",
-                    scrub:1, 
-                    repeatRefresh: true,
-                    toggleActions: "restart pause resume none",
-                    }
-                });
-                tl.from(paragraphRef.current, {
-                    duration: 4,
-                    ease: "power2.out",
-                    css: {
-                    autoAlpha: 0,
-                    yPercent:'100',
-                }})
-      
-        }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
-        
-        return () => ctx.revert(); // cleanup! 
-      }, []);
-
   
   return (
             
-    <div ref={sectionRef} className={`${styles.sectionContentWrapper} container`}>   
-        <div className={styles.aboutImageOne}>
+    <div className={`${styles.sectionContentWrapper} container`}>   
+        <div className={styles.aboutImageMain}>
                 <AnimatedImage imagePath={imageOne.asset.gatsbyImageData} imageAlt={imageOne.alt}/>   
-        </div> 
-        {imageTwo &&
-            <div className={styles.aboutMedia}>
-                <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
-            </div>
-        }
-        {video &&
-            <div className={styles.aboutMedia}>
-                <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
-            </div>
-        }
-        <Description description={text} descriptionCustomClass="aboutDescription"/>
+        </div>
+        <div className={styles.mediaDescriptionWrapper}>
+            {imageTwo &&
+                <div className={styles.aboutMedia}>
+                    <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>   
+                </div>
+            }
+            {video &&
+                <div className={styles.aboutMedia}>
+                    <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
+                </div>
+            }
+            <Description description={text} descriptionCustomClass="aboutDescription"/>
+        </div>
+        
     </div>
             
   )

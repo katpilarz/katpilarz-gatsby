@@ -25,40 +25,18 @@
 }
 
 .aboutDescription{
-    grid-column: 8/15;
-    grid-row: 1/6;
+
     display: flex;
     place-self: flex-start;
-    margin: 10vw 0 auto 3vw;
-    width:95%;
+    margin: auto auto auto 0;
+    width:80%;
     flex-basis: auto;
     height: auto;
     z-index: 2;
-
-    @include respond (desktopM){
-        margin: 8vw 0 auto 3vw;
-     }
-
-     @include respond (desktopXS){
-        width:100%;
-        grid-column: 3/15;
-        grid-row: 12/-1;
-        margin:4vw auto -8vw auto;
-
-     }
-
-    @include respond (tabletHorizontal){
-        grid-column: 2/16;
-        margin:6vw auto -10vw auto;
-    }
+    order:1;
 
     @include respond (mobile){
-        grid-column: 2/-1;
-        grid-row: 12/-1;
-        margin:0 auto 0 auto;
+        width:93%;
+        margin: 6vw 0 auto auto;
     }
-
-    
-
-   
 }

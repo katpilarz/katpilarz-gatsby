@@ -3,16 +3,12 @@
 .sectionServices{
     display: flex;
     flex-direction: column;
-    margin: 14vw auto 0 auto;
     width:auto;
     height: auto;
 
 
-    @include respond (desktopXS){
-        margin: 0 auto 0 auto;
-    }
 
- 
+
 
 
 
@@ -50,14 +46,18 @@
         place-items: center;
         place-content: center;
         padding: 4vw 0;
-        border-top:$border;
+        border-bottom:$border;
+
 
         @include respond (mobile){
             padding: 6vw 0;
         }
 
-        &:last-child{
-            border-bottom: $border;
+        &:first-child{
+
+            @include respond (desktopXS){
+                border-top: $border;
+            }
         }
 
     .serviceSingle{

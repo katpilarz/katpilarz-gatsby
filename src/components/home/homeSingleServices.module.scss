@@ -16,10 +16,9 @@
     
 
     .sectionServicesHeader{
-        transform: translateY(-9vw);
+        margin:2vw auto 7vw auto;
 
         @include respond (desktopXS){
-            transform: translateY(0);
             margin-bottom: 10vw;
         }
 
