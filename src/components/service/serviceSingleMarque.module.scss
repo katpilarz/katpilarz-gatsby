@@ -39,7 +39,7 @@
 
 
 
-    &:nth-child(even){
+    &:nth-child(odd){
         border-top: $border;
         border-bottom:$border;
 
@@ -54,6 +54,10 @@
         @include respond (desktopXS){
             border-top: $border;
         }
+    }
+
+    &:last-child{
+        border-bottom:$border;
     }
 
     
