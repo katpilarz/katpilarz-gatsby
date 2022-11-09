@@ -68,4 +68,8 @@
     place-content: center;
     place-items: center;
     margin-left: 27vw;
+
+    @include respond (desktop){
+        margin-left: 25vw;
+    }
 }

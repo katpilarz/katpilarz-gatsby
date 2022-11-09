@@ -3,7 +3,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./homeSingleServices.module.scss";
 import { Link } from "gatsby"
 import Video from "../globalComponents/video";
-import HomeSingleServicesSingle from "./homeSingleServicesSingle";
+import MarqueText from "../globalSections/marqueText";
 import GalleryHeader from "../globalComponents/galleryHeader";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -72,7 +72,7 @@ const HomeSingleServices = ({ services }) => {
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 67%',
+                            start: 'top 47%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                             //toggleActions: 'play none none reverse',
@@ -102,11 +102,11 @@ const HomeSingleServices = ({ services }) => {
                 return (
                 <article key={index} className={styles.serviceMarqueeCard} ref={addToRefs}>
                     <Link  to={`/services/${service.node.slug.current}`} className={styles.serviceWrapper}>
-                        <HomeSingleServicesSingle title={service.node.title}/>
-                        <HomeSingleServicesSingle title={service.node.title}/>
-                        <HomeSingleServicesSingle title={service.node.title}/>
-                        <HomeSingleServicesSingle title={service.node.title}/>
-                        <HomeSingleServicesSingle title={service.node.title}/>
+                        <MarqueText title={service.node.title}/>
+                        <MarqueText title={service.node.title}/>
+                        <MarqueText title={service.node.title}/>
+                        <MarqueText title={service.node.title}/>
+                        <MarqueText title={service.node.title}/>
                         { service.node.video && 
                             <Video key={index} videoWebm={service.node.video.webm} videoFallback={service.node.video.fallback} videoAlt={service.node.video.alt}  videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }

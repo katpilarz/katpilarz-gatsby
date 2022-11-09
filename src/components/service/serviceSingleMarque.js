@@ -1,11 +1,9 @@
 import React from "react"
 import * as styles from "./serviceSingleMarque.module.scss";
-import Icon from "../globalComponents/icon";
-
-
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
+import MarqueText from "../globalSections/marqueText";
 gsap.registerPlugin(ScrollTrigger);
 
 
@@ -45,9 +43,7 @@ const ServiceSingleMarque = ({}) => {
                             id: marqueRefOne.current,
                             trigger: marqueRefOne.current,
                             start: 'top 77%',
-                            //end:'top 10%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
                             scrub:2,
                         }
@@ -65,9 +61,7 @@ const ServiceSingleMarque = ({}) => {
                             id: marqueRefTwo.current,
                             trigger: marqueRefTwo.current,
                             start: 'top 77%',
-                            //end:'top 10%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
                             scrub:2,
                         }
@@ -86,9 +80,7 @@ const ServiceSingleMarque = ({}) => {
                             id: marqueRefThree.current,
                             trigger: marqueRefThree.current,
                             start: 'top 77%',
-                            //end:'top 10%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
                             scrub:2,
                         }
@@ -106,9 +98,7 @@ const ServiceSingleMarque = ({}) => {
                             id: marqueRefFour.current,
                             trigger: marqueRefFour.current,
                             start: 'top 77%',
-                            //end:'top 10%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
                             refreshPriority: 1,
                             scrub:2,
                         }
@@ -126,82 +116,36 @@ const ServiceSingleMarque = ({}) => {
         <section ref={sectionRef} className={`${styles.sectionServices}`}>
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefOne}>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Create</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Outstanding Experience</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Create"/>
+                        <MarqueText title="Outstanding Experience"/>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Create"/>
                     </div>
                 </article>
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefTwo}>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Achieve More</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Achieve More</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Achieve More"/>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Achieve More"/>
                     </div>
                 </article>
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefThree}>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Create</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Outstanding Experience</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Create"/>
+                        <MarqueText title="Outstanding Experience"/>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Create"/>
                     </div>
                 </article>
                 <article className={styles.serviceMarqueeCard} >
                     <div className={styles.serviceSingleWrapper} ref={marqueRefFour}>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Achieve More</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Helping Brands</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
-                        <div className={styles.serviceSingle}>
-                            <h4 className="text-color">Achieve More</h4>
-                            <Icon iconClass="sectionServiceIcon"/>
-                        </div>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Achieve More"/>
+                        <MarqueText title="Helping Brands"/>
+                        <MarqueText title="Achieve More"/>
                     </div>
                 </article>
                 

@@ -23,6 +23,10 @@
         place-items: flex-end;
         padding-top: 18vh;
 
+        @include respond (desktop){
+            flex-basis: 55%;
+        }
+
         @include respond (desktopXS){
             padding-top: 0;
             flex-basis: 100%;
