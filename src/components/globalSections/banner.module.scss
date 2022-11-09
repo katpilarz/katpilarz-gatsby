@@ -20,6 +20,12 @@
     @include respond (mobile){
      margin: 34vw auto 6vw auto;
     }
+
+    @include respond (mobileXS){
+      margin: 44vw auto 6vw auto;
+     }
+
+
 }
 
 

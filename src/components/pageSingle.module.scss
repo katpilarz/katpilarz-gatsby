@@ -25,6 +25,10 @@
       padding-top: 34vw;
     }
 
+    @include respond (mobileXS){
+      padding-top: 44vw;
+    }
+
 
     .pageSingleHeader{
       display: flex;
@@ -48,7 +52,13 @@
 
       @include respond (mobile){
         width: 94%;
-        margin: 14vw 0 10vw auto;
+        margin: 14vw 0 16vw auto;
+      }
+
+
+      @include respond (mobileXS){
+        width: 100%;
+        margin: 14vw 0 20vw auto;
       }
   
       p{
@@ -75,8 +85,15 @@
 
       @include respond (mobile){
         width: 98%;
-        margin-bottom:10vw;
+        margin-bottom:14vw;
       }
+
+      @include respond (mobileXS){
+        width: 100%;
+        margin-bottom:16vw;
+      }
+
+
 
   
       }

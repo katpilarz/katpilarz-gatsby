@@ -22,8 +22,10 @@
         flex-direction: column;
         place-items: flex-end;
         padding-top: 18vh;
+
         @include respond (desktopXS){
             padding-top: 0;
+            flex-basis: 100%;
         }
 
         
@@ -43,6 +45,10 @@
                 transform: translateY(-14vw);
                 z-index: 2;
             }
+
+            @include respond (mobile){
+                width:70%;
+            }
             
         }
    }
@@ -60,6 +66,10 @@
 
         @include respond (desktopXS){
             width:55%;
+        }
+
+        @include respond (mobile){
+            width:65%;
         }
    
     }

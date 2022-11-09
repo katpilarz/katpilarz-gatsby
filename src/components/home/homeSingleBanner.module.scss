@@ -110,6 +110,11 @@
 
         }
 
+        @include respond (mobileXS){
+            max-height: 34vh;
+            min-height: 14rem;
+        }
+
  
         :nth-child(1){
             grid-column: 7/10;

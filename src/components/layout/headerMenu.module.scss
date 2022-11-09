@@ -51,6 +51,9 @@
     @include respond (mobile){
         top:22vw!important;
     }
+    @include respond (mobileXS){
+        top:27vw!important;
+    }
 
 
 
@@ -76,6 +79,10 @@
 
     @include respond (mobile){
         bottom:22vw!important;
+    }
+
+    @include respond (mobileXS){
+        bottom:23vw!important;
     }
 
 }
@@ -214,6 +221,10 @@
 
             @include respond (mobile){
                 padding-right: 1rem;
+            }
+
+            @include respond (mobileXS){
+                padding-right: .7rem;
             }
         }
 

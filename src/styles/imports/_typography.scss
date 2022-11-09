@@ -24,6 +24,11 @@ font-weight: 400;
     @include respond (mobile){
         font-size: calc( .47rem + 2.17vw)
     }
+
+    @include respond (mobileXS){
+        font-size: calc( .3rem + 3.37vw)
+    }
+
 }  
 
 
@@ -33,9 +38,13 @@ figcaption{
     text-transform: uppercase;
 }
 
+.intro span{
+    font-weight: 200;
+    font-size: calc(.37rem + 3.37vw);
+}
+
 
 .detailsTextPortable h4,
-.intro span,
 .testimonial,
 .link,
 .menu-link,
@@ -63,6 +72,10 @@ h2{
         font-size: calc(.2rem + 13vw);
     }
 
+    @include respond (mobileXS){
+        font-size: calc(.2rem + 14vw);
+    }
+
 
 }
 
@@ -79,6 +92,8 @@ h2{
     @include respond (mobile){
         font-size: 14.7vw;
     }
+
+
 }
 
 
@@ -94,6 +109,10 @@ h3{
 
     @include respond (mobile){
         font-size: calc(.2rem + 8.7vw);
+    }
+
+    @include respond (mobileXS){
+        font-size: calc(.2rem + 10vw);
     }
 
 
@@ -124,7 +143,6 @@ h4{
 
 
 .detailsTextPortable h4,
-.intro span,
 .testimonial{
     font-size: calc(1rem + 3vw);
 
@@ -191,6 +209,11 @@ p{
     @include respond (mobile){
         font-size: calc( .47rem + 1.87vw)
     }
+
+    @include respond (mobileXS){
+        font-size: calc( .3rem + 2.67vw)
+    }
+
 }
 
   

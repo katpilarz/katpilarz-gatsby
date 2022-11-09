@@ -17,8 +17,12 @@
     }
 
     @include respond (mobile){
-        width:90%;
+        width:93%;
         margin: 20vw 0 20vw auto;
+    }
+
+    @include respond (mobileXS){
+        width:100%;
     }
 
     
@@ -37,6 +41,11 @@
 
     @include respond (mobile){
         width:93%;
-        margin: 6vw 0 auto auto;
+        margin: 8vw 0 auto auto;
+        place-self: flex-end;
+    }
+
+    @include respond (mobileXS){
+        width:100%;
     }
 }

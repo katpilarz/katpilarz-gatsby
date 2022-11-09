@@ -23,6 +23,11 @@
         padding: 12vw 5vw 3.3vw 5vw;
     }
 
+
+    @include respond (mobileXS){
+        padding: 14vw 5vw 3.3vw 5vw;
+    }
+
 }
 
 .branding{
