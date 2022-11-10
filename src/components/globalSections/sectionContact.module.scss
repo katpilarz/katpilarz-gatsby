@@ -69,6 +69,7 @@
         grid-row: 10/-1;
         place-items: flex-start;
         place-self: flex-start;
+        height: 100%;
     }
 
     
@@ -76,6 +77,7 @@
     .contactLink{
         margin: auto 2vw;
         display: flex;
+        width: auto;
 
         @include respond (tabletHorizontal){
             margin: auto 5vw;
@@ -83,6 +85,10 @@
 
         @include respond (mobile){
             margin: auto .2rem 1rem 0;
+        }
+
+        @include respond (mobileXS){
+           width:100%;
         }
     }
 }
@@ -230,13 +236,18 @@
             place-content: flex-end;
             place-self: flex-end;
         }
+
+
         @include respond (mobile){
             margin-bottom: 1.2vw;
+            grid-column:7/-1;
         }
+
 
         @include respond (mobileLandscape){
             grid-column: 8/15;
         }
+
 
         
 

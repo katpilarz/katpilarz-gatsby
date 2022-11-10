@@ -40,6 +40,10 @@
             margin-bottom: 16vw;
         }
 
+        @include respond (mobileLandscape){
+            width:77%;
+        }
+
     }
 
     

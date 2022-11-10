@@ -1,6 +1,6 @@
 @import 'src/styles/layout';
 .description{
-    width:100%
+    width:auto;
 }
 
 .projectDescription{
@@ -47,5 +47,6 @@
 
     @include respond (mobileXS){
         width:100%;
+        margin: 0;
     }
 }

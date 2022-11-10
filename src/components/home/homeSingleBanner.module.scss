@@ -20,7 +20,7 @@
     }
 
     @include respond (mobileLandscape){
-        height: 30rem;
+        height: 26rem;
     }
 
 
@@ -45,6 +45,10 @@
         @include respond (mobile){
             bottom:20vw;
             width:96%;
+        }
+
+        @include respond (mobileLandscape){
+            bottom:3vw;
         }
 
 
@@ -120,6 +124,12 @@
         @include respond (mobileXS){
             max-height: 34vh;
             min-height: 14rem;
+        }
+
+        @include respond (mobileLandscape){
+            top:10vw;
+            height: 65vw;
+            max-height: 18rem;
         }
 
  
