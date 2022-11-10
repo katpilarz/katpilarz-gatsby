@@ -3,8 +3,10 @@ import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import HomeSingle from "../components/home/homeSingle";
 import PagePreloader from "../components/globalSections/pagePreloader";
-import { useEffect } from 'react';
+import AnimatedBtn from "../components/globalComponents/animatedBtn";
+import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
+import Media from 'react-media';
 
 
 
@@ -255,6 +257,8 @@ const IndexPage = props => {
   const testimonialProject =  (data || {}).testimonialProject.edges[0];
   const galleryMockups =  (data || {}).galleryMockups.edges;
 
+  const [isHome] = useState(true)
+
   useEffect(() => window.scrollTo(0, 0), []) 
 
   const siteTitle = site.author + ': ' + site.title
@@ -270,6 +274,11 @@ const IndexPage = props => {
     <main>
       <Seo title={siteTitle} description={site.description} keywords={site.keywords}  />
       <PagePreloader/>
+      <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn isHome={isHome}/>
+          )}
+        />
       <HomeSingle galleryMockups={galleryMockups} home={home} site={site} services={services} testimonialProject={testimonialProject}
       featuredProjects={featuredProjects}/>
     </main>

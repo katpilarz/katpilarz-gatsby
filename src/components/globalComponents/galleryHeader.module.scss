@@ -27,6 +27,10 @@
             @include respond (mobile){
                 width:80%;
             }
+
+            @include respond (mobileLandscape){
+                width: 55%;
+            }
         
         }
 

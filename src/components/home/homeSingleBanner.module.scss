@@ -19,6 +19,10 @@
         //min-height: 40rem;
     }
 
+    @include respond (mobileLandscape){
+        height: 30rem;
+    }
+
 
 
 
@@ -32,6 +36,7 @@
         position: absolute;
         bottom:2vw;
         z-index: 2;
+
 
         @include respond (tabletHorizontal){
             bottom:12vw;
@@ -51,13 +56,15 @@
         .introBtn{
             place-content: center;
             margin-top: 2vw;
+            opacity: 1;
+            visibility: 1;
 
             @include respond (tabletHorizontal){
                 margin-top: 2vw;
             }
 
             @include respond (mobile){
-                margin-top: 3vw;
+                margin-top: 8vw;
             }
         }
     }

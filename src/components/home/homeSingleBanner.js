@@ -17,7 +17,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
   const introContentRef = useRef(null);
   const headerRef = useRef(null);
   const jobRef = useRef(null);
-  const btnRef = useRef(null);
+  const homeBtnRef = useRef(null);
 
 
   const sectionRef = useRef(null);
@@ -74,22 +74,22 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 scrub: 1,
                 pin: true,
                 pinSpacing: true,
-                toggleActions: 'play none none reverse',
+                toggleActions: 'restart pause resume none',
                 refreshPriority: 1,
               }
             });
-              tl2.to(btnRef.current, {
+              tl2.to(homeBtnRef.current, {
                 duration: 8,
-                ease: "circe.inOut",
+                ease: "power2.out",
                 css: {
                   rotation: 360*2,
               }},'-=4')
-              tl2.to(btnRef.current, {
-                  duration: 2,
-                  ease: "circe.inOut",
+              tl2.to(homeBtnRef.current, {
+                  duration: 1,
+                  ease: "power2.out",
                   css: {
                     autoAlpha: 0,
-              }},'-=3')
+              }})
               tl2.to(jobRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -150,7 +150,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                         start: 'top top',
                         //end:'top 30%',
                         //toggleActions: "restart pause resume none",
-                        toggleActions: 'play none none reverse',
+                        toggleActions: 'restart pause resume none',
                         refreshPriority: 1,
                         pin: false,
                         pinSpacing: false,
@@ -173,22 +173,22 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 scrub: 1,
                 pin: true,
                 pinSpacing: true,
-                toggleActions: 'play none none reverse',
+                toggleActions: 'restart pause resume none',
                 refreshPriority: 1,
               }
             });
-              tl2.to(btnRef.current, {
+              tl2.to(homeBtnRef.current, {
                 duration: 8,
-                ease: "circe.inOut",
+                ease: "power2.out",
                 css: {
                   rotation: 360*2,
               }},'-=4')
-              tl2.to(btnRef.current, {
-                  duration: 2,
-                  ease: "circe.inOut",
+              tl2.to(homeBtnRef.current, {
+                  duration: 1,
+                  ease: "power2.out",
                   css: {
                     autoAlpha: 0,
-              }},'-=3')
+              }})
               tl2.to(sectionRef.current, {
                 duration:6, 
                 ease: "power2.out",
@@ -228,7 +228,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                         id: `section-${index+1}`,
                         trigger: el,
                         start: 'top top',
-                        toggleActions: 'play none none reverse',
+                        toggleActions: 'restart pause resume none',
                         refreshPriority: 1,
                         pin: false,
                         pinSpacing: false,
@@ -253,15 +253,16 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 scrub: 1,
                 pin: true,
                 pinSpacing: true,
-                toggleActions: 'play none none reverse',
+                toggleActions: 'restart pause resume none',
                 refreshPriority: 1,
               }
             });
-              tl2.to(btnRef.current, {
+              tl2.to(homeBtnRef.current, {
                 duration: 8,
-                ease: "circe.inOut",
+                ease: "power2.out",
                 css: {
-                  rotation: 360*2,
+                  rotation: 360*8,
+                  autoAlpha:1,
               }})
               tl2.to(sectionRef.current, {
                 duration:6, 
@@ -280,6 +281,8 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   opacity:0,
                    }
               },'-=3')
+
+              
 
 
 
@@ -303,7 +306,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                         id: `section-${index+1}`,
                         trigger: el,
                         start: 'top top',
-                        toggleActions: 'play none none reverse',
+                        toggleActions: 'restart pause resume none',
                         refreshPriority: 1,
                         pin: false,
                         pinSpacing: false,
@@ -340,7 +343,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
         <div ref={introContentRef} className={styles.introContent}>
           <h1 className="text-color" ref={headerRef}>{name}</h1>
           <span ref={jobRef}> {title}</span>
-          <div ref={btnRef} className={`${styles.introBtn} animated-btn`}>
+          <div ref={homeBtnRef} className={`${styles.introBtn} animated-btn`}>
             <Btn btnClassName='introBtn'/>
           </div>
         </div>

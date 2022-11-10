@@ -28,6 +28,10 @@
         padding: 14vw 5vw 3.3vw 5vw;
     }
 
+    @include respond (mobileLandscape){
+        padding: 2.6vw 5vw;
+    }
+
 }
 
 .branding{

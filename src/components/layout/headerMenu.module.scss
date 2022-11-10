@@ -51,8 +51,14 @@
     @include respond (mobile){
         top:22vw!important;
     }
+
+
     @include respond (mobileXS){
         top:27vw!important;
+    }
+
+    @include respond (mobileLandscape){
+        display: none;
     }
 
 
@@ -85,6 +91,10 @@
         bottom:23vw!important;
     }
 
+    @include respond (mobileLandscape){
+        display: none;
+    }
+
 }
 
 .menuImageDefault{
@@ -98,6 +108,8 @@
     @include respond (tabletHorizontal){
         width:26vw;
     }
+
+    
 }
 
 
@@ -207,6 +219,11 @@
 
     @include respond (desktopXS){
         left:6vw;
+    }
+
+
+    @include respond (mobileLandscape){
+        bottom: 1.4vw;
     }
 
     .socialMediaLink{

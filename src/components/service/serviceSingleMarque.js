@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const ServiceSingleMarque = ({}) => {
+const ServiceSingleMarque = () => {
 
 
     const sectionRef = useRef(null);

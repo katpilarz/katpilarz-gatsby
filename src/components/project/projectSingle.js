@@ -1,4 +1,5 @@
 import * as React from "react"
+import {useState} from "react"
 import Banner from "../globalSections/banner";
 import ProjectSingleDetails from "./projectSingleDetails";
 import ProjectSingleGallery from "./projectSingleGallery";
@@ -13,6 +14,7 @@ import Media from 'react-media';
 
 const ProjectSingle = ({ project, video }) => {
 
+  const [isHome] = useState(false)
  
 
 
@@ -22,7 +24,7 @@ const ProjectSingle = ({ project, video }) => {
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
         <Media query="(min-width: 569px)" render={() =>
           (
-            <AnimatedBtn pageName="project"/>
+            <AnimatedBtn isHome={isHome}/>
           )}
         />
         {project.isTestimonial &&

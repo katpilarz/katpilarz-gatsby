@@ -18,11 +18,11 @@
     }
 
     @include respond (mobile){
-     margin: 34vw auto 6vw auto;
+     margin: 40vw auto 20vw auto;
     }
 
     @include respond (mobileXS){
-      margin: 44vw auto 6vw auto;
+      margin: 44vw auto 20vw auto;
      }
 
 

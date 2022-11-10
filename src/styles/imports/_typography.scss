@@ -61,6 +61,9 @@ h1{
     @include respond (mobile){
         font-size: 26.17vw;
     }
+    @include respond (mobileLandscape){
+        font-size: 26.17vw;
+    }
 }
   
 
@@ -74,6 +77,9 @@ h2{
 
     @include respond (mobileXS){
         font-size: calc(.2rem + 14vw);
+    }
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 9vw);
     }
 
 
@@ -91,6 +97,10 @@ h2{
 
     @include respond (mobile){
         font-size: 14.7vw;
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 7vw);
     }
 
 
@@ -115,7 +125,26 @@ h3{
         font-size: calc(.2rem + 10vw);
     }
 
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 5vw);
+    }
 
+
+
+}
+
+.menu-link{
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 3.7vw);
+    }
+}
+
+.marque-text{
+
+
+    @include respond (mobile){
+        font-size: calc(.2rem + 8vw);
+    }
 }
 
 
@@ -138,6 +167,10 @@ h4{
         font-size: 7.4vw;
     }
 
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 4vw);
+    }
+
 }
 
 
@@ -152,6 +185,10 @@ h4{
 
     @include respond (mobile){
         font-size: calc( .36rem + 5.7vw);
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 3vw);
     }
 
 
@@ -169,6 +206,9 @@ h4{
         font-size: calc( .37rem + 6vw);
     }
 
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 2.6vw);
+    }
 
 
 }
@@ -185,6 +225,10 @@ h5{
 
     @include respond (mobile){
         font-size: calc( .8rem + 3.2vw);
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 1.6vw);
     }
 
    

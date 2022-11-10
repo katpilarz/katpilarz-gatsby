@@ -33,6 +33,10 @@
         width:54vw;
     }
 
+    @include respond (mobileLandscape){
+        width: 40vw;
+    }
+
     svg{
         width:100%;
         height: auto;

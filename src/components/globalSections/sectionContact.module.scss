@@ -133,6 +133,10 @@
             grid-column:1/7;
         }
 
+        @include respond (mobileLandscape){
+            grid-column:3/8;
+        }
+
     }
 
     .headerTwo{
@@ -186,6 +190,10 @@
             margin-bottom: 1vw;
         }
 
+        @include respond (mobileLandscape){
+            grid-column: 2/11;
+        }
+
     }
 
     .paragraph{
@@ -224,6 +232,10 @@
         }
         @include respond (mobile){
             margin-bottom: 1.2vw;
+        }
+
+        @include respond (mobileLandscape){
+            grid-column: 8/15;
         }
 
         

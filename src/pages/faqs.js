@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import PageSingle from "../components/pageSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import { navigate } from 'gatsby';
 import Media from 'react-media';
@@ -60,6 +60,7 @@ const FrequentQuestions = props => {
     return faq.node.question;
   });
 
+  const [isHome] = useState(false)
   useEffect(() => window.scrollTo(0, 0), []) 
 
 
@@ -74,7 +75,7 @@ const FrequentQuestions = props => {
       <Seo title={faqsPage.node.title} description={faqsPage.node.overview} keywords={keywords}  />
       <Media query="(min-width: 569px)" render={() =>
           (
-            <AnimatedBtn pageName="faqs"/>
+            <AnimatedBtn isHome={isHome}/>
           )}
         />
       <PagePreloader/>

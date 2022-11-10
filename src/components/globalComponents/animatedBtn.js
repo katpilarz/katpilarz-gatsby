@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const AnimatedBtn = ({ pageName }) => {
+const AnimatedBtn = ({ isHome }) => {
 
     const btnRef = useRef(null)
 
@@ -19,12 +19,12 @@ const AnimatedBtn = ({ pageName }) => {
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
 
-            if(pageName === "home" ){
+            if(isHome){
 
-                const btnTl = gsap.timeline({
+                const btnTl1 = gsap.timeline({
                     scrollTrigger: {
                     trigger: btnRef.current,
-                    start: 'bottom -2000',
+                    start: 'bottom -100%',
                     end:'+=100000',
                     pin: false, 
                     scrub:true, 
@@ -32,19 +32,20 @@ const AnimatedBtn = ({ pageName }) => {
                     toggleActions: "restart pause resume none",
                      }
                 });
-                    btnTl.from(btnRef.current, {
+                    btnTl1.from(btnRef.current, {
                         duration: 1,
                         ease: "power2.out",
                         css: {
                         autoAlpha: 0,
                         opacity:0,
                     }})
-                    btnTl.to(btnRef.current, {
-                        duration: 122,
+                    btnTl1.to(btnRef.current, {
+                        duration: 36,
                         ease: "power2.out",
                         css: {
-                            rotation:360*5,
+                            rotation:360*9,
                     }},'-=1')
+
             }
 
             else{
@@ -83,7 +84,7 @@ const AnimatedBtn = ({ pageName }) => {
         }, btnRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
-      }, [pageName]);
+      }, [isHome]);
 
   
   return (

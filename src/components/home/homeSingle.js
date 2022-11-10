@@ -1,7 +1,6 @@
 import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
-import AnimatedBtn from "../globalComponents/animatedBtn";
 import HomeSingleFeatured from "./homeSingleFeatured";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import SectionAbout from "../globalSections/sectionAbout";
@@ -9,7 +8,7 @@ import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionContact from "../globalSections/sectionContact";
 import HomeSingleGallery from "./homeSingleGallery";
-import Media from 'react-media';
+
 
 
 
@@ -17,7 +16,8 @@ import Media from 'react-media';
 
 // markup
 const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups  }) => {
-  
+
+   
 
   return (
     <>
@@ -25,11 +25,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleFocus section={home.sectionFocus}/>
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />
-      <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn pageName="home"/>
-          )}
-        />
+
       <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>

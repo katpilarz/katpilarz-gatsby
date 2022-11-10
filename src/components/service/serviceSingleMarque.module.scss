@@ -17,11 +17,11 @@
 
 
     @include respond (desktopXS){
-        width: 160%;
+        width: 175%;
     }
 
     @include respond (tabletHorizontal){
-        width: 180%;
+        width: 185%;
     }
 
     @include respond (tabletMediumHorizontal){
@@ -30,7 +30,7 @@
 
 
     @include respond (mobile){
-        width:230%;
+        width:260%;
     }
 
 

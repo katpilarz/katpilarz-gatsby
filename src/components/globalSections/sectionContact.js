@@ -19,80 +19,155 @@ const SectionContact = ({section, pageName }) => {
     const headerTwoRef = useRef(null);
     const typingRef = useRef(null);
     const subheaderRef = useRef(null);
-    const contactRef = useRef(null);
+    const sectionRef = useRef(null);
     const linksRefOne = useRef(null);
     const linksRefTwo = useRef(null);
     //const linksRefThree = useRef(null); once contact page will be created
 
 
-    useEffect(() => {
+
+      useEffect(() => {
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
-          // create as many GSAP animations and/or ScrollTriggers here as you want...
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: headerTwoRef.current,
-              start: "top 50%",
-              end: "top 17%",
-              scrub:1, 
-              repeatRefresh: true,
-              toggleActions: "restart pause resume none",
-            }
-          });
-            tl.from(headerOneRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  yPercent:'-20',
-            }})
-            tl.from(typingRef.current, {
-                duration: 1,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-            }},'-=2')
-            tl.from(headerTwoRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  yPercent:'50',
-            }},'-=2')
-
-            tl.from(subheaderRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  xPercent:'40',
-            }},'-=2')
-            tl.from(linksRefOne.current, {
-              duration:1.2,
-              ease: "power2.out",
-              css: {
-                opacity: 0,
-                xPercent:'40',
-            }})
-            tl.from(linksRefTwo.current, {
-                duration:1.2,
-                ease: "power2.out",
-                css: {
-                  opacity: 0,
-                  xPercent:'40',
-            }},'-=.3')
+    
+    
+          const animation = gsap.matchMedia()
+              animation.add()
+    
+    
               
+              animation.add("(min-width:  569px)", () => {
 
+                const tl = gsap.timeline({
+                  scrollTrigger: {
+                    trigger: headerTwoRef.current,
+                    start: "top 50%",
+                    end: "top 17%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                  }
+                });
+                  tl.from(headerOneRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        yPercent:'-20',
+                  }})
+                  tl.from(typingRef.current, {
+                      duration: 1,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                  }},'-=2')
+                  tl.from(headerTwoRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        yPercent:'50',
+                  }},'-=2')
+      
+                  tl.from(subheaderRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        xPercent:'40',
+                  }},'-=2')
+                  tl.from(linksRefOne.current, {
+                    duration:1.2,
+                    ease: "power2.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                  }})
+                  tl.from(linksRefTwo.current, {
+                      duration:1.2,
+                      ease: "power2.out",
+                      css: {
+                        opacity: 0,
+                        xPercent:'40',
+                  }},'-=.3')
+        
+              })
+    
+    
+              animation.add("(max-width: 568px)", () => {
 
-
-     
-        }, contactRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+                const tl = gsap.timeline({
+                  scrollTrigger: {
+                    trigger: headerTwoRef.current,
+                    start: "top 70%",
+                    end: "top 37%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                  }
+                });
+                  tl.from(headerOneRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        yPercent:'-20',
+                  }})
+                  tl.from(typingRef.current, {
+                      duration: 1,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                  }},'-=2')
+                  tl.from(headerTwoRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        yPercent:'50',
+                  }},'-=2')
+      
+                  tl.from(subheaderRef.current, {
+                      duration: 2,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        xPercent:'40',
+                  }},'-=2')
+                  tl.from(linksRefOne.current, {
+                    duration:1.2,
+                    ease: "power2.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                  }})
+                  tl.from(linksRefTwo.current, {
+                      duration:1.2,
+                      ease: "power2.out",
+                      css: {
+                        opacity: 0,
+                        xPercent:'40',
+                  }},'-=.3')
+                
+      
+        
+              })
+    
+    
+            
+                
+      
+        }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
       }, []);
@@ -103,7 +178,7 @@ const SectionContact = ({section, pageName }) => {
   return (
     
     //{/*<section ref={contactRef} className={pageName === 'home' ? `${styles.contact} container` : styles.contact}>*/}
-    <section ref={contactRef} className={`${styles.contact} container`}>
+    <section ref={sectionRef} className={`${styles.contact} container`}>
         <div className={styles.contactSection}>
             <div className={styles.contactSectionContent}>
                 <div ref={headerOneRef} className={styles.headerOne}>

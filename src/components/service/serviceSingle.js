@@ -1,4 +1,5 @@
 import React from "react"
+import {useState} from "react"
 import Banner from "../globalSections/banner";
 import SectionContact from "../globalSections/sectionContact";
 import ServiceSingleGallery from "./serviceSingleGallery";
@@ -15,6 +16,7 @@ import Media from 'react-media';
 
 const ServiceSingle = ({ service, contact, faqs }) => {
 
+  const [isHome] = useState(false)
    
   return (
 
@@ -22,7 +24,7 @@ const ServiceSingle = ({ service, contact, faqs }) => {
         <Banner title={service.title} image={service.image} video={service.video}/>
         <Media query="(min-width: 569px)" render={() =>
           (
-            <AnimatedBtn pageName="service"/>
+            <AnimatedBtn isHome={isHome}/>
           )}
         />   
         <SectionAbout section={service.sectionDetails}/>

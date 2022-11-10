@@ -37,7 +37,7 @@
   
   .page-btn{
     position: fixed!important;
-    right:3.4vw;
+    right:4vw;
     top:4.7vw;
     z-index: 9999;
 
@@ -47,7 +47,7 @@
 
     @include respond (desktopXS){
         top:7vw;
-        right:4.4vw;
+        right:5vw;
     }
 
     @include respond (tabletMediumHorizontal){
@@ -55,14 +55,14 @@
   }
   }
 
-  .animated-btn{
-    display: flex;
-    width:9.7vw;
-    min-width: 6rem;
+    .animated-btn{
+      display: flex;
+      width:8.7vw;
+      min-width: 6rem;
 
-    @include respond (tabletHorizontal){
-      width:14vw;
-  }
+      @include respond (tabletHorizontal){
+          width:13vw;
+      }
   }
   
   

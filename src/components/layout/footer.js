@@ -5,7 +5,7 @@ import * as styles from "./footer.module.scss";
 
 
 
-const Footer = ({ }) => {
+const Footer = () => {
 
   
   return (
