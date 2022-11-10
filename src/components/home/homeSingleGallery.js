@@ -56,7 +56,7 @@ const HomeSingleGallery = ({ gallery }) => {
                         start: 'top 47%',
                         end:'top 7%',
                         toggleActions: "restart pause resume none",
-                        //toggleActions: 'play none none reverse',
+                       
                         refreshPriority: 1,
                         scrub:2,
                     }

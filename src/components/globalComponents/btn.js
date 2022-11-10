@@ -65,8 +65,8 @@ const Btn = () => {
           end: "top -100%",
           scrub:1, 
           repeatRefresh: true,
-          //toggleActions: "restart pause resume none",
-          toggleActions: 'play none none reverse'
+         
+          toggleActions: "restart pause resume none"
 
         }
       });

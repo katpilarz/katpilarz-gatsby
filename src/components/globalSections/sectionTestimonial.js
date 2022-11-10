@@ -40,8 +40,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                   end: "top top",
                   scrub:1, 
                   repeatRefresh: true,
-                  //toggleActions: "restart pause resume none",
-                  toggleActions: 'play none none reverse'
+                  toggleActions: "restart pause resume none"
       
                 }
               });
@@ -62,8 +61,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                 end: "top 17%",
                 scrub:1, 
                 repeatRefresh: true,
-                //toggleActions: "restart pause resume none",
-                toggleActions: 'play none none reverse'
+                toggleActions: "restart pause resume none"
 
             }
             });

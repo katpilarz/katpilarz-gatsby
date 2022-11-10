@@ -72,7 +72,7 @@ const HomeSingleFocus = ({ section}) => {
                             start: 'top 80%',
                             end:'top 34%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
+                           
                             refreshPriority: 1,
                             scrub:2,
                         }

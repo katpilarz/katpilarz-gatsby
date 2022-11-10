@@ -37,8 +37,8 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
           scrub: 1,
           pin: false,
           pinSpacing: false,
-          //toggleActions: "restart pause resume none",
-          toggleActions: 'play none none reverse',
+         
+          toggleActions: "restart pause resume none",
           refreshPriority: 1,
         }
       })

@@ -53,7 +53,7 @@ const PageSingleItemList = ({ itemList, pageName }) => {
                 start: 'top 89%',
                 end:'top 40%',
                 toggleActions: "restart pause resume none",
-                //toggleActions: 'play none none reverse',
+               
                 refreshPriority: 1,
                 scrub:2,
             }

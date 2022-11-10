@@ -75,7 +75,7 @@ const HomeSingleServices = ({ services }) => {
                             start: 'top 47%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
-                            //toggleActions: 'play none none reverse',
+                           
                             refreshPriority: 1,
                             scrub:3,
                         }

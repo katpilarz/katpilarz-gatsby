@@ -53,8 +53,8 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
           scrub: 1,
           pin: false,
           pinSpacing: false,
-          //toggleActions: "restart pause resume none",
-          toggleActions: 'play none none reverse',
+         
+          toggleActions: "restart pause resume none",
           refreshPriority: 1,
         }
       })
@@ -88,8 +88,8 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                 trigger: el,
                 start: 'top 65%',
                 end:'top 30%',
-                //toggleActions: "restart pause resume none",
-                toggleActions: 'play none none reverse',
+               
+                toggleActions: "restart pause resume none",
                 refreshPriority: 1,
                 pin: false,
                 pinSpacing: false,

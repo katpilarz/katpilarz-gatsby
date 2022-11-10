@@ -119,7 +119,7 @@ const FAQListItem = ({ item }) => {
                     start: 'top 77%',
                     end:'top 34%',
                     toggleActions: "restart pause resume none",
-                    //toggleActions: 'play none none reverse',
+                   
                     refreshPriority: 1,
                     scrub:2,
                 }

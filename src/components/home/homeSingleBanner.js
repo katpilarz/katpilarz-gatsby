@@ -149,7 +149,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                         trigger: el,
                         start: 'top top',
                         //end:'top 30%',
-                        //toggleActions: "restart pause resume none",
+                       
                         toggleActions: 'restart pause resume none',
                         refreshPriority: 1,
                         pin: false,

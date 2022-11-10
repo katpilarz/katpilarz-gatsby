@@ -40,8 +40,8 @@ const SectionIntro = ({ subheader }) => {
                 end: "top 27%",
                 scrub:.5, 
                 repeatRefresh: true,
-                toggleActions: 'play none none reverse'
-                //toggleActions: "restart pause resume none",
+                toggleActions: "restart pause resume none"
+               
               }
             });
               tl.from(iconRef.current, {
@@ -83,8 +83,8 @@ const SectionIntro = ({ subheader }) => {
                 end: "top 47%",
                 scrub:.5, 
                 repeatRefresh: true,
-                toggleActions: 'play none none reverse'
-                //toggleActions: "restart pause resume none",
+                toggleActions: "restart pause resume none"
+               
               }
             });
               tl.from(iconRef.current, {
