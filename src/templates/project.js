@@ -3,8 +3,11 @@ import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import ProjectSingle from "../components/project/projectSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
-import { useEffect} from 'react';
+import { useEffect, useState} from 'react';
 import { navigate } from 'gatsby';
+import AnimatedBtn from "../components/globalComponents/animatedBtn";
+import Media from 'react-media';
+
 
 
 
@@ -115,6 +118,8 @@ const ProjectTemplate = props => {
   // BELOW WILL BE DELETED ONCE SCHEMA FOR VIDEO IS UPDATED
   const projectVideo = data && data.video.featuredVideo;
 
+  const [isHome] = useState(false)
+
   useEffect(() => window.scrollTo(0, 0), []) 
 
   if (errors) {
@@ -129,7 +134,12 @@ const ProjectTemplate = props => {
       <main>
         <PagePreloader/>
         <Seo title={project.title} description={project.overview}  />
-        <ProjectSingle project={project} video={projectVideo}/>
+        <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn isHome={isHome}/>
+          )}
+        />
+        <ProjectSingle project={project} video={projectVideo} isHome={isHome}/>
       </main>
       
   );

@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug }) => {
+const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug, isHome }) => {
 
     const testimonialRef = useRef(null);
 
@@ -31,31 +31,57 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
         // create as many GSAP animations and/or ScrollTriggers here as you want...
         
         // FIRST TIMELINE
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: testimonialRef.current,
-            start: "top 40%",
-            end: "top 17%",
-            scrub:1, 
-            repeatRefresh: true,
-            //toggleActions: "restart pause resume none",
-            toggleActions: 'play none none reverse'
 
-          }
-        });
-          tl.from(testimonialRef.current, {
-              duration: 1,
-              ease: "power2.out",
-              css: {
-              autoAlpha: 0,
-              opacity:0,
-              yPercent:'-20',
-          }})
+        if(isHome){
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: testimonialRef.current,
+                  start: "top 37%",
+                  end: "top top",
+                  scrub:1, 
+                  repeatRefresh: true,
+                  //toggleActions: "restart pause resume none",
+                  toggleActions: 'play none none reverse'
+      
+                }
+              });
+                tl.from(testimonialRef.current, {
+                    duration: 1,
+                    ease: "power2.out",
+                    css: {
+                    autoAlpha: 0,
+                    opacity:0,
+                    yPercent:'-20',
+                }})
+        }
+        else {
+            const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: testimonialRef.current,
+                start: "top 40%",
+                end: "top 17%",
+                scrub:1, 
+                repeatRefresh: true,
+                //toggleActions: "restart pause resume none",
+                toggleActions: 'play none none reverse'
+
+            }
+            });
+            tl.from(testimonialRef.current, {
+                duration: 1,
+                ease: "power2.out",
+                css: {
+                autoAlpha: 0,
+                opacity:0,
+                yPercent:'-20',
+            }})
+        }
+      
     
       }, testimonialRef); // <- scopes all selector text inside the context to this component (optional, default is document)
       
       return () => ctx.revert(); // cleanup! 
-    }, []);
+    }, [isHome]);
   
   
   return (

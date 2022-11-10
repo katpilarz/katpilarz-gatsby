@@ -15,7 +15,7 @@ import HomeSingleGallery from "./homeSingleGallery";
 
 
 // markup
-const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups  }) => {
+const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups, isHome  }) => {
 
    
 
@@ -31,7 +31,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleServices services={services}/>
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.socialMediaImage} services={testimonialProject.node.services}
-       slug={testimonialProject.node.slug.current} />
+       slug={testimonialProject.node.slug.current} isHome={isHome}/>
 
       <HomeSingleGallery gallery={home.gallery}/>
 

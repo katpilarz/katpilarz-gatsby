@@ -1,5 +1,4 @@
 import * as React from "react"
-import {useState} from "react"
 import Banner from "../globalSections/banner";
 import ProjectSingleDetails from "./projectSingleDetails";
 import ProjectSingleGallery from "./projectSingleGallery";
@@ -7,14 +6,12 @@ import ProjectSingleGallery from "./projectSingleGallery";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
-import AnimatedBtn from "../globalComponents/animatedBtn";
-import Media from 'react-media';
 
 
 
-const ProjectSingle = ({ project, video }) => {
+const ProjectSingle = ({ project, video, isHome }) => {
 
-  const [isHome] = useState(false)
+ 
  
 
 
@@ -22,13 +19,8 @@ const ProjectSingle = ({ project, video }) => {
 
       <>
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
-        <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn isHome={isHome}/>
-          )}
-        />
         {project.isTestimonial &&
-          <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title}/>
+          <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
         }
         {project.isInteractive &&
           <SectionFeaturedVideo video={video}/>

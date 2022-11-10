@@ -3,8 +3,10 @@ import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import ServiceSingle from "../components/service/serviceSingle";
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
+import AnimatedBtn from "../components/globalComponents/animatedBtn";
+import Media from 'react-media';
 
 
 
@@ -137,7 +139,7 @@ const ServiceTemplate = props => {
   const contact = data && data.contact.sectionContact;
   const faqs  = data && data.faqs.edges
 
-
+  const [isHome] = useState(false)
   useEffect(() => window.scrollTo(0, 0), []) 
 
   if (errors) {
@@ -150,6 +152,11 @@ const ServiceTemplate = props => {
       <main>
         <Seo title={service.title} description={service.title}  />
         <PagePreloader/>
+        <Media query="(min-width: 569px)" render={() =>
+          (
+            <AnimatedBtn isHome={isHome}/>
+          )}
+        />
         <ServiceSingle service={service} contact={contact} faqs={faqs}/>
       </main>
       

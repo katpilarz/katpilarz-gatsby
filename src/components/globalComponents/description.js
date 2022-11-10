@@ -59,7 +59,7 @@ const Description = ({ description, descriptionCustomClass  }) => {
                 scrollTrigger: {
                   trigger: descriptionRef.current,
                   start: "top 87%",
-                  end: "top 47%",
+                  end: "top 52%",
                   scrub:1, 
                   repeatRefresh: true,
                   toggleActions: "restart pause resume none",

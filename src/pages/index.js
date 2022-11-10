@@ -279,7 +279,7 @@ const IndexPage = props => {
             <AnimatedBtn isHome={isHome}/>
           )}
         />
-      <HomeSingle galleryMockups={galleryMockups} home={home} site={site} services={services} testimonialProject={testimonialProject}
+      <HomeSingle isHome={isHome} galleryMockups={galleryMockups} home={home} site={site} services={services} testimonialProject={testimonialProject}
       featuredProjects={featuredProjects}/>
     </main>
   )
