@@ -17,6 +17,11 @@
     }
 
 
+    @include respond (mobileXS){
+        margin: 26vw auto 8vw auto;
+    }
+
+
 
 }
 

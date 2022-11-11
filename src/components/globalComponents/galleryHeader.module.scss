@@ -45,6 +45,9 @@
                 margin-top: 6vw;
             }
             
+            @include respond (mobileXS){
+                margin-top: 8vw;
+            }
         }
         
     }

@@ -22,6 +22,11 @@
         margin:26vw auto 26vw auto;
     }
 
+
+    @include respond (mobileXS){
+        margin:26vw auto 32vw auto;
+    }
+
     .sectionGalleryWrapper{
     /*display: flex;
     justify-content: space-between;*/

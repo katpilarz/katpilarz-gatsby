@@ -81,8 +81,8 @@ const SectionFeaturedVideo = ({ video }) => {
                       duration:8,
                       ease: "power2.out",
                       css: {
-                          clipPath: 'circle(100% at 50% 50%)',
-                          width:'90vw',
+                        clipPath: 'circle(70.7% at 50% 50%)',
+                        width:'90vw',
                       }
                   })   
   

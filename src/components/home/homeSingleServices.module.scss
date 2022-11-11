@@ -72,6 +72,12 @@
         padding: 6vw 0;
     }
 
+    @include respond (mobileXS){
+        width:500%;
+        padding: 7vw 0;
+    }
+
+
     &:last-child{
         border-bottom:$border;
     }

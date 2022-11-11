@@ -26,6 +26,10 @@
         margin: 20vw auto 20vw auto;
     }
 
+    @include respond (mobileXS){
+        margin: 26vw auto 22vw auto;
+    }
+
      
 
      

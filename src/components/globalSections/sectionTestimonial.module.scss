@@ -252,6 +252,12 @@
     }
 
 
+    @include respond (mobileXS){
+        width:26vw;
+        height: 26vw;
+    }
+
+
 }
 
 

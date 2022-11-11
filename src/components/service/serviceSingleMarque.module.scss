@@ -33,6 +33,11 @@
         width:260%;
     }
 
+    @include respond (mobileXS){
+        width:280%;
+
+    }
+
 
 
     &:nth-child(odd){
@@ -71,6 +76,12 @@
 
         @include respond (mobile){
             padding: 6vw 0;
+        }
+
+
+        @include respond (mobileXS){
+            padding: 7vw 0;
+
         }
 
 

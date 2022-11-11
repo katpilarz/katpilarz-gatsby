@@ -12,5 +12,11 @@
     @include respond (desktopXS){
         margin: 4vw auto 10vw auto;
      }
+
+                     
+    @include respond (mobileXS){
+        margin: 12vw auto 0 auto;
+    }
+
 }
 
