@@ -7,6 +7,7 @@
     width:100%; 
     height: auto;
     padding-top: 11vw;
+    min-height: 100vh;
 
     @include respond (desktopXS){
       padding-top: 16vw;
@@ -60,6 +61,12 @@
         width: 100%;
         margin: 14vw 0 20vw auto;
       }
+
+
+      @include respond (mobileLandscape){
+          width:77%;
+          margin: 14vw 14vw 20vw auto;
+      }
   
       p{
         width: 55%;
@@ -92,6 +99,7 @@
         width: 100%;
         margin-bottom:16vw;
       }
+
 
 
 
@@ -236,3 +244,29 @@
   
   
   
+
+ .linksWrapper{
+  width:100%;
+  place-self: flex-start;
+  place-items: start;
+  place-content: start;
+  display: flex;
+
+  @include respond (mobile){
+      justify-content: space-between;
+      flex-wrap: wrap;
+  }
+
+
+  .contactLink{
+      margin: auto 2vw auto 0;
+      display: flex;
+      width: auto;
+
+
+      @include respond (tabletHorizontal){
+          margin: auto 4vw auto 0;
+      }
+
+  }
+}

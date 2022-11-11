@@ -50,7 +50,7 @@ const SectionFeaturedVideo = ({ video }) => {
                       duration:8,
                       ease: "power2.out",
                       css: {
-                          clipPath: 'circle(100% at 50% 50%)',
+                          clipPath: 'circle(70.7% at 50% 50%)',
                           width:'67vw',
                       }
                   })   
@@ -75,7 +75,7 @@ const SectionFeaturedVideo = ({ video }) => {
                   tl.fromTo(videoRef.current, {
                       css: {
                           clipPath: 'circle(20.0% at 50% 50%)',
-                          width:'50vw',
+                          width:'60vw',
                       }
                   },{
                       duration:8,

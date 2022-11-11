@@ -197,10 +197,6 @@
         }
 
         @include respond (tabletHorizontal){
-            transform: translate(-12vw, 5.7vw);
-        }
-
-        @include respond (tabletHorizontal){
             position: absolute;
             bottom:-1vw;
             right:5vw;
@@ -210,14 +206,16 @@
         @include respond (tabletMediumHorizontal){
             bottom:-1vw;
             right:-9vw;
-            z-index: 1;
         }
 
 
         @include respond (mobile){
             bottom:-1vw;
             right:-12vw;
-            z-index: 1;
+        }
+
+        @include respond (mobileLandscape){
+            right:-13vw;
         }
 
 

@@ -51,8 +51,8 @@
     }
 
      @include respond (mobileLandscape){
-        width:93%;
-        margin: 8vw 0 auto auto;
-        place-self: flex-end;
+        width:86%;
+        margin: auto auto auto 0;
+        place-self: flex-start;
     }
 }

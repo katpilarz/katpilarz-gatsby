@@ -20,36 +20,77 @@ const SectionAbout = ({ section }) => {
     const headerRef = useRef(null);
 
 
-    useEffect(() => {
+
+  useEffect(() => {
    
-        // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
-        // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
-        let ctx = gsap.context(() => {
+    // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
+    // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
+    let ctx = gsap.context(() => {
 
 
-                const tl = gsap.timeline({
-                    scrollTrigger: {
-                    trigger: headerRef.current,
-                    start: "top 57%",
-                    end: "top 17%",
-                    scrub:2, 
-                    repeatRefresh: true,
-                    toggleActions: "restart pause resume none",
-                    }
-                });
-                tl.from(headerRef.current, {
-                    duration: 2,
-                    ease: "power2.out",
-                    css: {
-                    autoAlpha: 0,
-                    yPercent:'50',
-                }})
-      
-        }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+      const animation = gsap.matchMedia()
+          animation.add()
+
+
+          
+          animation.add("(min-width:  1025px)", () => {
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                trigger: headerRef.current,
+                start: "top 57%",
+                end: "top 17%",
+                scrub:2, 
+                repeatRefresh: true,
+                toggleActions: "restart pause resume none",
+                }
+            });
+            tl.from(headerRef.current, {
+                duration: 2,
+                ease: "power2.out",
+                css: {
+                autoAlpha: 0,
+                yPercent:'50',
+            }})  
+  
+    
+          })
+
+
+          animation.add("(max-width: 1024px)", () => {
+
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                trigger: headerRef.current,
+                start: "top 77%",
+                end: "top 37%",
+                scrub:2, 
+                repeatRefresh: true,
+                toggleActions: "restart pause resume none",
+                }
+            });
+            tl.from(headerRef.current, {
+                duration: 2,
+                ease: "power2.out",
+                css: {
+                autoAlpha: 0,
+                yPercent:'50',
+            }})  
+  
+    
+          })
+
+
         
-        return () => ctx.revert(); // cleanup! 
-      }, []);
-   
+            
+  
+    }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+    
+    return () => ctx.revert(); // cleanup! 
+  }, []);
+
+    
+
   return (
         <section ref={sectionRef} className={`${styles.sectionAbout}`}>
             <SectionIntro subheader={ section.subheader}/>

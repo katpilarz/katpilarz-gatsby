@@ -3,6 +3,9 @@ import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageSingleItemList from "./pageSingleItemList";
 import FAQList from "./globalSections/FAQList";
+import { Link } from "gatsby"
+import ArrowIcon from "./globalComponents/arrow";
+import ErrorImage from "./globalComponents/error";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -49,6 +52,21 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription,
         </header>
         <div className={styles.itemsList}>
             <p className="text-uppercase">{pageDescription}</p>
+            { pageName === '404'&&
+                <div className={styles.linksWrapper}>
+                <Link className={`${styles.contactLink} text-uppercase`} to='/'>
+                    Return Home
+                    <ArrowIcon arrowIconClass="linkIcon"/>
+                </Link>
+                <Link className={`${styles.contactLink} text-uppercase`} to='#'onClick={(e) => {
+                    window.location.href = 'mailto:katgolek@pm.me?subject=Reporting Error&body=Hello Kate, Pls note I have encountered the following error on your page:';
+                    e.preventDefault();
+                    }}>
+                    Contact Me
+                    <ArrowIcon arrowIconClass="linkIcon"/>
+                </Link>
+                </div>
+            }
             { itemList &&
                 <PageSingleItemList pageName={pageName} itemList={itemList}/>
             }
@@ -57,6 +75,9 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription,
                 <FAQList faqs={faqs} faqCustomClass='faqPage'/>
             }
         </div>
+        { pageName === '404'&&
+            <ErrorImage/>
+        }
       
         { pageImage &&
             <div className={styles.pageFooterImage}>
