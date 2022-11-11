@@ -33,15 +33,12 @@
         }
 
         @include respond (mobile){
-            margin-top: 18vw;
+            margin-top: 10vw;
         }
 
-
-
-
-
-
-
+        @include respond (mobileXS){
+            margin-top: 16vw;
+        }
 
     }
 
@@ -62,7 +59,11 @@
     }
 
     @include respond (mobile){
-        width:77vw;
+        width:100%;
+    }
+
+    @include respond (mobileXS){
+        width:100%;
     }
 
 
@@ -80,15 +81,6 @@
 
         
     }
-
-
-
-
-
-
- 
-
-
 
 
 

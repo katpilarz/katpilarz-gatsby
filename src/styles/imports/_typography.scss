@@ -16,20 +16,13 @@ body {
 font: 100% $font-body;
 font-size: calc( .47rem + .77vw);
 font-weight: 400;
-//font-size: clamp(1.07rem, 4vw, 2.37rem);
 
    @include respond (desktopXS){
         font-size: calc( .7rem + .87vw);
     }
 
     @include respond (mobile){
-        //font-size: calc( .47rem + 2.17vw)
-
-        font-size: clamp(1.07rem, 4vw, 2.2rem);
-    }
-
-    @include respond (mobileXS){
-        //font-size: calc( .3rem + 3.37vw)
+        font-size: clamp(1.07rem, 3.3vw, 1.6rem);
     }
 
 }  
@@ -39,6 +32,7 @@ font-weight: 400;
 figcaption{
     font-size: calc( .4rem + .4vw);
     text-transform: uppercase;
+
 }
 
 .intro span{
@@ -46,6 +40,12 @@ figcaption{
     //font-size: calc(.47rem + 3vw);
     text-transform: uppercase;
     font-size: calc(.37rem + 2.47vw);
+
+
+    @include respond (mobile){
+        font-weight: 300;
+    }
+
 }
 
 
@@ -67,7 +67,7 @@ h1{
         font-size: 26.17vw;
     }
     @include respond (mobileLandscape){
-        font-size: 24vw;
+        font-size: 22.7vw;
     }
 }
   
@@ -178,7 +178,7 @@ h4{
 
 
     @include respond (mobileLandscape){
-        font-size: calc(1rem + 4vw);
+        font-size: calc(1rem + 3.4vw);
     }
 
 
@@ -261,12 +261,16 @@ p{
 .text-uppercase{
     text-transform:uppercase;
 
-    @include respond (mobile){
+    /*@include respond (mobile){
         font-size: calc( .47rem + 1.87vw)
     }
 
     @include respond (mobileXS){
         font-size: calc( .3rem + 2.57vw)
+    }*/
+
+    @include respond (mobile){
+        font-size: clamp(.94rem, 3.17vw, 1.6rem);
     }
 
 }

@@ -47,13 +47,13 @@
 }
 
 @if $breakpoint == mobile {
-  @media only screen and (max-width: 35.5em) and (min-height: 37em){
+  @media only screen and (max-width: 35.5em) and (min-height: 37.5em) and (max-height: 64em) {
     @content;
   } //~568px || 600px
 }
 
 @if $breakpoint == mobileXS {
-  @media only screen and (max-width: 25em) and (min-height: 33.75em){
+  @media only screen and (max-width: 24.9375em) {
     @content;
   } //~400px || 600px
 }
@@ -65,9 +65,9 @@
   
   
       @if $breakpoint == mobileLandscape {
-        @media only screen and (max-height: 37.499em)   and (min-width: 33.75em) and (max-width: 56.25em){
+        @media only screen and (max-height: 35.5em)  and (min-width: 33.75em) and (max-width: 57.875em){
           @content;
-        } //590px
+        } //568px// 540 // 926
       }
    
   

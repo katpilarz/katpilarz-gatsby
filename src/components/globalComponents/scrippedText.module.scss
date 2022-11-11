@@ -33,6 +33,11 @@
         width:54vw;
     }
 
+
+    @include respond (mobileXS){
+        width:56vw;
+    }
+
     @include respond (mobileLandscape){
         width: 40vw;
     }

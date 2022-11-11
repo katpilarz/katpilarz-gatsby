@@ -53,6 +53,11 @@
             @include respond (mobile){
                 width:70%;
             }
+
+
+            @include respond (mobileXS){
+                width:75%;
+            }
             
         }
    }
@@ -74,6 +79,10 @@
 
         @include respond (mobile){
             width:65%;
+        }
+
+        @include respond (mobileXS){
+            width:75%;
         }
    
     }

@@ -72,7 +72,7 @@ const Description = ({ description, descriptionCustomClass  }) => {
                     css: {
                     autoAlpha: 0,
                     opacity:0,
-                    yPercent:'50'
+                    yPercent:'20'
                 }})
     
           })

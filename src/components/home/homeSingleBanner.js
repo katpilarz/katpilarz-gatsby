@@ -125,43 +125,8 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 }
               });
 
-
-              revealRefs.current.forEach((el, index) => {
-        
-                gsap.fromTo(el, {
-                    yPercent:20,
-                    xPercent:20,
-                    opacity:0,
-                    autoAlpha:0,
-                    scale:.6,
-                }, {
-                    duration: 2,
-                    xPercent:0,
-                    yPercent:0,
-                    opacity:1,
-                    autoAlpha:1,
-                    scale:1.1,
-                    ease: "power4.out",
-                    //stagger:4,
-                    delay:6,
-                    scrollTrigger: {
-                        id: `section-${index+1}`,
-                        trigger: el,
-                        start: 'top top',
-                        //end:'top 30%',
-                       
-                        toggleActions: 'restart pause resume none',
-                        refreshPriority: 1,
-                        pin: false,
-                        pinSpacing: false,
-                        scrub:3,
-                    }
-                });
-        
-            });
-    
-      
           })
+          
 
           bannerAnimation.add("(max-width: 1024px)", () => {
 
@@ -207,40 +172,7 @@ const HomeSingleBanner = ({ name, title, images }) => {
                    }
               },'-=3');
 
-
-              revealRefs.current.forEach((el, index) => {
-        
-                gsap.fromTo(el, {
-                    yPercent:-20,
-                    xPercent:10,
-                    scale:.8,
-                    autoAlpha:0,
-                }, {
-                    duration: 2,
-                    xPercent:0,
-                    yPercent:20,
-                    opacity:1,
-                    autoAlpha:1,
-                    scale:1.4,
-                    ease: "power4.out",
-                    delay:6,
-                    scrollTrigger: {
-                        id: `section-${index+1}`,
-                        trigger: el,
-                        start: 'top top',
-                        toggleActions: 'restart pause resume none',
-                        refreshPriority: 1,
-                        pin: false,
-                        pinSpacing: false,
-                        scrub:3,
-                    }
-                });
-        
-            });
-
-
-                
-      
+     
           })
 
           bannerAnimation.add("(max-width: 568px)", () => {
@@ -282,44 +214,40 @@ const HomeSingleBanner = ({ name, title, images }) => {
                    }
               },'-=3')
 
-              
-
-
-
-              revealRefs.current.forEach((el, index) => {
-        
-                gsap.fromTo(el, {
-                    yPercent:-20,
-                    xPercent:10,
-                    scale:.8,
-                    autoAlpha:0,
-                }, {
-                    duration: 2,
-                    xPercent:0,
-                    yPercent:20,
-                    opacity:1,
-                    autoAlpha:1,
-                    scale:1.4,
-                    ease: "power4.out",
-                    delay:6,
-                    scrollTrigger: {
-                        id: `section-${index+1}`,
-                        trigger: el,
-                        start: 'top top',
-                        toggleActions: 'restart pause resume none',
-                        refreshPriority: 1,
-                        pin: false,
-                        pinSpacing: false,
-                        scrub:3,
-                    }
-                });
-        
-            });
-
-
-                
-      
+     
           })
+
+
+
+          revealRefs.current.forEach((el, index) => {
+        
+            gsap.fromTo(el, {
+                yPercent:-20,
+                xPercent:10,
+                scale:.8,
+                autoAlpha:0,
+            }, {
+                duration: 2,
+                xPercent:0,
+                yPercent:20,
+                opacity:1,
+                autoAlpha:1,
+                scale:1.4,
+                ease: "power4.out",
+                delay:6,
+                scrollTrigger: {
+                    id: `section-${index+1}`,
+                    trigger: el,
+                    start: 'top top',
+                    toggleActions: 'restart pause resume none',
+                    refreshPriority: 1,
+                    pin: false,
+                    pinSpacing: false,
+                    scrub:3,
+                }
+            });
+    
+        });
           
           
 

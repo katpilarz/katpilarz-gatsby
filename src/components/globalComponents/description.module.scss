@@ -47,6 +47,12 @@
 
     @include respond (mobileXS){
         width:100%;
-        margin: 0;
+        margin: 8vw auto auto auto;
+    }
+
+     @include respond (mobileLandscape){
+        width:93%;
+        margin: 8vw 0 auto auto;
+        place-self: flex-end;
     }
 }

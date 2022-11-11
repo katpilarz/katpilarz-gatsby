@@ -25,6 +25,10 @@
             max-height: 36rem;
         }
 
+        @include respond (mobileXS){
+            max-height: 30rem;
+        }
+
 
         
    
@@ -67,8 +71,18 @@
         justify-content: space-between;
         flex-wrap: wrap;
         grid-row: 10/-1;
-        place-items: flex-start;
-        place-self: flex-start;
+        place-items: center;
+        place-self: center;
+        height: 100%;
+    }
+
+
+    @include respond (mobileXS){
+        justify-content: space-between;
+        flex-wrap: wrap;
+        grid-row: 8/-1;
+        place-items: center;
+        place-self: center;
         height: 100%;
     }
 

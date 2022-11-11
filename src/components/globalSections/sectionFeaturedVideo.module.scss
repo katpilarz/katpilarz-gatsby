@@ -39,6 +39,11 @@
         height: 50vh;
     }
 
+    @include respond (mobileXS){
+        max-height: 18rem;
+        height: 50vh;
+    }
+
 
 
 

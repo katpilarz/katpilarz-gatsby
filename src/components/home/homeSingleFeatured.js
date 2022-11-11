@@ -42,62 +42,114 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
+      const animation = gsap.matchMedia()
+      animation.add()
+
+
+          
+      animation.add("(min-width:  1280px)", () => {
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 90%',
+            end:'top 50%',
+            scrub: 1,
+            pin: false,
+            pinSpacing: false,
+           
+            toggleActions: "restart pause resume none",
+            refreshPriority: 1,
+          }
+        })
+  
+        tl.from(containerRef.current, {
+            duration:6, 
+            ease: "power2.out",
+            css: {
+              xPercent:'50',
+            }
+          });
 
 
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top 90%',
-          end:'top 50%',
-          scrub: 1,
-          pin: false,
-          pinSpacing: false,
-         
-          toggleActions: "restart pause resume none",
-          refreshPriority: 1,
-        }
+
+          revealRefs.current.forEach((el, index) => {
+
+            gsap.fromTo(el, {
+                xPercent:50,
+                scale:2,
+
+            }, {
+                duration: 2,
+                xPercent:0,
+                autoAlpha:1,
+                scale:1,
+                ease: "power4.out",
+                stagger:4,
+                delay:4,
+                scrollTrigger: {
+                    id: `section-${index+1}`,
+                    trigger: el,
+                    start: 'top 65%',
+                    end:'top 30%',
+                  
+                    toggleActions: "restart pause resume none",
+                    refreshPriority: 1,
+                    pin: false,
+                    pinSpacing: false,
+                    scrub:4,
+                }
+            });
+    
+        });
+
+
+
       })
 
-      tl.from(containerRef.current, {
-          duration:6, 
-          ease: "power2.out",
-          css: {
-            xPercent:'50',
-          }
+
+      animation.add("(max-width:  1279px)", () => {
+
+
+          revealRefs.current.forEach((el, index) => {
+
+            gsap.fromTo(el, {
+                xPercent:20,
+                scale1:1,
+                autoAlpha:0,
+
+            }, {
+                duration: 2,
+                xPercent:0,
+                autoAlpha:1,
+                scale:1,
+                ease: "power4.out",
+                stagger:4,
+                delay:4,
+                scrollTrigger: {
+                    id: `section-${index+1}`,
+                    trigger: el,
+                    start: 'top 77%',
+                    end:'top 37%',
+                  
+                    toggleActions: "restart pause resume none",
+                    refreshPriority: 1,
+                    pin: false,
+                    pinSpacing: false,
+                    scrub:4,
+                }
+            });
+    
         });
 
 
 
-      revealRefs.current.forEach((el, index) => {
+      })
 
-        gsap.fromTo(el, {
-            xPercent:50,
-            scale:2,
 
-        }, {
-            duration: 2,
-            xPercent:0,
-            autoAlpha:1,
-            scale:1,
-            ease: "power4.out",
-            stagger:4,
-            delay:4,
-            scrollTrigger: {
-                id: `section-${index+1}`,
-                trigger: el,
-                start: 'top 65%',
-                end:'top 30%',
-               
-                toggleActions: "restart pause resume none",
-                refreshPriority: 1,
-                pin: false,
-                pinSpacing: false,
-                scrub:4,
-            }
-        });
- 
-    });
+      
+
 
 
 
