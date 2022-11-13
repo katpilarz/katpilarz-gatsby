@@ -116,8 +116,8 @@ const FAQListItem = ({ item }) => {
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
-                    start: 'top 77%',
-                    end:'top 34%',
+                    start: 'top 80%',
+                    end:'top 37%',
                     toggleActions: "restart pause resume none",
                    
                     refreshPriority: 1,

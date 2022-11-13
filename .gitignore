@@ -6,3 +6,4 @@ public
 .env.production
 
 src/components/deprecated
+src/assets/svg

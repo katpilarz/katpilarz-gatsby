@@ -32,12 +32,13 @@ export const query = graphql`
         }
       }
     }
-    faqs:allSanityFaq{
+    faqs:allSanityFaq(sort: {order: DESC, fields: publishedAt}) {
       edges {
         node {
           isFeaturedInService
           question
           _rawAnswer
+          publishedAt
         }
       }
     }
