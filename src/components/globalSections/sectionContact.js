@@ -200,7 +200,7 @@ const SectionContact = ({section, pageName }) => {
                                 return (
                                 <span
                                     key={key}
-                                    style={i%2 === 0 ? { color: '#326DC5'} : {}}
+                                    style={i%2 === 0 ? { color: '#1E6DB6'} : {}}
                                 >{char}</span>
                                 );
                             })}
