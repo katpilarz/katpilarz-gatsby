@@ -1,12 +1,14 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import PageSingle from "../components/pageSingle";
+import PageSingle from "../components/page/pageSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
+import Header from "../components/globalSections/header";
 import Seo from "../components/globalComponents/seo";
-import { useEffect, useState } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import { navigate } from 'gatsby';
 import Media from 'react-media';
+import { useEffect, useState } from 'react';
+import { navigate } from 'gatsby';
+
 
 
 
@@ -80,6 +82,7 @@ const FrequentQuestions = props => {
           )}
         />
       <PagePreloader/>
+      <Header isHome={isHome}/>
       <PageSingle faqs={faqs} pageName={faqsPage.node.name} pageTitle={faqsPage.node.title} pageImage={faqsPage.node.image} pageDescription={faqsPage.node.overview}/>
     </main>
   )

@@ -3,10 +3,12 @@ import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import ProjectSingle from "../components/project/projectSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
-import { useEffect, useState} from 'react';
-import { navigate } from 'gatsby';
+import Header from "../components/globalSections/header";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Media from 'react-media';
+import { useEffect, useState} from 'react';
+import { navigate } from 'gatsby';
+
 
 
 
@@ -141,6 +143,7 @@ const ProjectTemplate = props => {
             <AnimatedBtn isHome={isHome}/>
           )}
         />
+        <Header isHome={isHome}/>
         <ProjectSingle project={project} video={projectVideo} isHome={isHome}/>
       </main>
       

@@ -4,9 +4,11 @@ import Seo from "../components/globalComponents/seo";
 import HomeSingle from "../components/home/homeSingle";
 import PagePreloader from "../components/globalSections/pagePreloader";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
+import Header from "../components/globalSections/header";
+import Media from 'react-media';
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
-import Media from 'react-media';
+
 
 
 
@@ -262,7 +264,7 @@ const IndexPage = props => {
   useEffect(() => window.scrollTo(0, 0), []) 
 
   const siteTitle = site.author + ': ' + site.title
-
+  
   if (errors) {
     return (
       navigate(`/404`)
@@ -273,6 +275,7 @@ const IndexPage = props => {
   return (
     <main>
       <Seo title={siteTitle} description={site.description} keywords={site.keywords}  />
+      <Header isHome={isHome}/>
       <PagePreloader/>
       <Media query="(min-width: 569px)" render={() =>
           (

@@ -2,6 +2,7 @@ import React from "react";
 import * as styles from "./homeSingleBanner.module.scss";
 import { useEffect, useRef } from 'react';
 import Btn from "../globalComponents/btn";
+import Branding from "../globalComponents/branding";
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -12,13 +13,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const HomeSingleBanner = ({ name, title, images }) => {
+const HomeSingleBanner = ({ name, title, images, author }) => {
   const introRef = useRef(null);
   const introContentRef = useRef(null);
   const headerRef = useRef(null);
   const jobRef = useRef(null);
   const homeBtnRef = useRef(null);
-
+  const brandingRef = useRef(null);
 
   const sectionRef = useRef(null);
 
@@ -62,7 +63,10 @@ const HomeSingleBanner = ({ name, title, images }) => {
           const bannerAnimation = gsap.matchMedia()
           bannerAnimation.add()
 
-
+          
+          /************************************************************************/
+          // DESKTOP ANIMATION
+          /***********************************************************************/
           
           bannerAnimation.add("(min-width: 1025px)", () => {
 
@@ -124,6 +128,14 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   opacity:0.0,
                 }
               });
+              tl2.from(brandingRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0, 
+                  opacity:0,
+                }
+              });
 
 
               revealRefs.current.forEach((el, index) => {
@@ -162,6 +174,11 @@ const HomeSingleBanner = ({ name, title, images }) => {
     
       
           })
+
+          /************************************************************************/
+          // TABLET ANIMATION
+          /***********************************************************************/
+          
 
           bannerAnimation.add("(max-width: 1024px)", () => {
 
@@ -206,6 +223,14 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   opacity:0,
                    }
               },'-=3');
+              tl2.from(brandingRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0, 
+                  opacity:0,
+                }
+              });
 
 
               revealRefs.current.forEach((el, index) => {
@@ -242,6 +267,11 @@ const HomeSingleBanner = ({ name, title, images }) => {
                 
       
           })
+
+          /************************************************************************/
+          // MOBILE ANIMATION
+          /***********************************************************************/
+          
 
           bannerAnimation.add("(max-width: 568px)", () => {
 
@@ -281,6 +311,14 @@ const HomeSingleBanner = ({ name, title, images }) => {
                   opacity:0,
                    }
               },'-=3')
+              tl2.from(brandingRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0, 
+                  opacity:0,
+                }
+              });
 
               
 
@@ -339,7 +377,8 @@ const HomeSingleBanner = ({ name, title, images }) => {
 
   
   return (
-      <header ref={introRef} className={`${styles.intro} intro`}>
+    <>
+      <div ref={introRef} className={`${styles.intro} intro`}>
         <div ref={introContentRef} className={styles.introContent}>
           <h1 className="text-color" ref={headerRef}>{name}</h1>
           <span ref={jobRef}> {title}</span>
@@ -365,7 +404,11 @@ const HomeSingleBanner = ({ name, title, images }) => {
          </div>
 
 
-      </header>
+      </div>
+      <div ref={brandingRef}>
+        <Branding author={author}/>
+      </div>
+     </>
        
   )
 }

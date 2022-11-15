@@ -9,7 +9,7 @@
     top:0;
     left:0%;
     padding: 2vw 4vw;
-    z-index: 9999;
+    z-index: 999;
 
     @include respond (desktopXS){
         padding: 2.6vw 5vw;
@@ -35,43 +35,36 @@
 
 }
 
-.branding{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top:60%;
-    left:50%;
-    z-index: 101;
 
-    @include respond (desktopXS){
-        top:45%;
-    }
-
-    @include respond (mobile){
-        top:37%;
-    }
-}
 .buttonsWrapper{
     display: flex;
 
-   
+
+    a{
+        margin:auto 2vw auto 2vw;
+        display: flex;
+        place-self: center;
+        cursor: pointer;
+    
+    }
+
+    .themeToggler{
+        position: relative;
+        z-index: 999;
+       
+    }
+
+
     
 
 }
 
-.buttonsWrapper :first-child{
-    margin-right: 2vw;
-    display: flex;
-    place-self: center;
-    cursor: pointer;
-
-}
 
 
 
-.themeToggler{
-    position: relative;
-    z-index: 999;
-  }
+
+
+
 
 
 

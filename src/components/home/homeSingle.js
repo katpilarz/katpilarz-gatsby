@@ -21,7 +21,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
 
   return (
     <>
-      <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups}/>
+      <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups} author={site.author}/>
       <HomeSingleFocus section={home.sectionFocus}/>
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />

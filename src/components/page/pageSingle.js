@@ -2,10 +2,10 @@ import React from "react";
 import * as styles from "./pageSingle.module.scss";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import PageSingleItemList from "./pageSingleItemList";
-import FAQList from "./globalSections/FAQList";
+import FAQList from "../globalSections/FAQList";
+import ArrowIcon from "../globalComponents/arrow";
+import ErrorImage from "../globalComponents/error";
 import { Link } from "gatsby"
-import ArrowIcon from "./globalComponents/arrow";
-import ErrorImage from "./globalComponents/error";
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';

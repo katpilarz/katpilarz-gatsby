@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Icon from "../globalComponents/icon";
 import { Link } from "gatsby"
 //import TransitionLink from 'gatsby-plugin-transition-link';
-import BackgroundImage from "./backgroundImage"
+import BackgroundImage from "../globalComponents/backgroundImage"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';

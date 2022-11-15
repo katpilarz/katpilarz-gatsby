@@ -2,11 +2,12 @@ import React from "react";
 import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import PagePreloader from "../components/globalSections/pagePreloader"
+import Header from "../components/globalSections/header";
 import ServiceSingle from "../components/service/serviceSingle";
-import { useEffect, useState } from 'react';
-import { navigate } from 'gatsby';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Media from 'react-media';
+import { useEffect, useState } from 'react';
+import { navigate } from 'gatsby';
 
 
 
@@ -157,6 +158,7 @@ const ServiceTemplate = props => {
             <AnimatedBtn isHome={isHome}/>
           )}
         />
+        <Header isHome={isHome}/>
         <ServiceSingle service={service} contact={contact} faqs={faqs}/>
       </main>
       

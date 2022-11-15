@@ -1,12 +1,13 @@
 import * as React from "react"
 import { graphql } from "gatsby";
-import PageSingle from "../components/pageSingle";
+import PageSingle from "../components/page/pageSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
-import { useEffect, useState } from 'react';
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import { navigate } from 'gatsby';
+import Header from "../components/globalSections/header";
 import Media from 'react-media';
+import { useEffect, useState } from 'react';
+import { navigate } from 'gatsby';
 
 
 
@@ -105,6 +106,7 @@ const Services = props => {
           )}
         />
       <PagePreloader/>
+      <Header isHome={isHome}/>
       <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node.overview}/>
     </main>
   )

@@ -1,0 +1,37 @@
+@import 'src/styles/layout';
+
+.branding{
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top:2.7vw;
+    left:50%;
+    z-index: 99999;
+    cursor: pointer;
+    display: flex;
+
+    a{
+        cursor: pointer;
+    }
+    
+
+    @include respond (desktopXS){
+        //top:45%;
+        top:3.3vw;
+    }
+
+    @include respond (tabletHorizontal){
+        //top:45%;
+        top:4vw;
+    }
+
+    @include respond (tabletMediumHorizontal){
+        //top:45%;
+        top:6.2vw;
+    }
+
+
+    @include respond (mobile){
+        //top:37%;
+        top:7vw;
+    }
+}
