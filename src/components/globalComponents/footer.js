@@ -35,7 +35,7 @@ const Footer = () => {
             </div>*/}
             <div className={styles.footerLinksWrapper}>
                 <p>&copy;Copyright {new Date().getFullYear()}. All rights reserved.</p>
-                <p>Designed & developed with love &hearts;</p>
+                <p>Made with love &hearts;</p>
             </div>
             
         </footer>

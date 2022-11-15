@@ -110,6 +110,14 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'-100',
                 }
               },'-=4');
+              tl2.from(brandingRef.current, {
+                duration:1, 
+                ease: "power2.out",
+                css: {
+                  autoAlpha:0, 
+                  opacity:0,
+                }
+              },'-=2');
               tl2.to(sectionRef.current, {
                 duration:4, 
                 ease: "power2.out",
@@ -119,7 +127,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   scale:5.2,
                 }
               },'+=4');
-      
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -128,14 +135,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0.0,
                 }
               });
-              tl2.from(brandingRef.current, {
-                duration:1, 
-                ease: "power2.out",
-                css: {
-                  autoAlpha:0, 
-                  opacity:0,
-                }
-              });
+
 
 
               revealRefs.current.forEach((el, index) => {
@@ -230,7 +230,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   autoAlpha:0, 
                   opacity:0,
                 }
-              });
+              },'-=3');
 
 
               revealRefs.current.forEach((el, index) => {
@@ -318,7 +318,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   autoAlpha:0, 
                   opacity:0,
                 }
-              });
+              },'-=3');
 
               
 
