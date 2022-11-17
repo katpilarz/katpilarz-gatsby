@@ -38,7 +38,7 @@ const HomeSingleGallery = ({ gallery }) => {
                 gsap.fromTo(el, {
                     autoAlpha: 0,
                     xPercent:'-10',
-                    scale:.7,
+                    scale:.77,
                     transformOrigin:'left',
                 }, {
                     duration: 1,
