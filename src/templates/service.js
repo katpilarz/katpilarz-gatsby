@@ -17,7 +17,7 @@ export const query = graphql`
 query ServiceTemplateQuery($id: String!){
   faqs: allSanityFaq(
     filter: {isFeaturedInService: {eq: true}}
-  ) {
+    sort: {order: DESC, fields: publishedAt})  {
     edges {
       node {
         isFeaturedInService

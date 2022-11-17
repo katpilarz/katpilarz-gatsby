@@ -1,7 +1,8 @@
 import React from "react"
 import * as styles from "./homeSingleGallery.module.scss";
 import Video from "../globalComponents/video";
-import AnimatedImage from "../globalComponents/animatedImage";
+//import AnimatedImage from "../globalComponents/animatedImage";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -83,8 +84,12 @@ const HomeSingleGallery = ({ gallery }) => {
                         {item.webm &&
                             <Video videoWebm={item.webm} videoFallback={item.fallback} videoAlt={item.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/> 
                         }
+                        {/*<AnimatedImage imagePath={item.asset.gatsbyImageData} imageAlt={item.alt}/>*/}
+
                         {item.asset &&
-                            <AnimatedImage imagePath={item.asset.gatsbyImageData} imageAlt={item.alt}/>   
+                            <GatsbyImage class={styles.image}
+                            image={getImage(item.asset.gatsbyImageData)}
+                            alt={item.alt}/>
                         }
                     </div>
                 

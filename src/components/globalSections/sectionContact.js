@@ -234,7 +234,7 @@ const SectionContact = ({section, pageName }) => {
             </div>
         </div>
         {/*<AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>*/}   
-        <GatsbyImage className={styles.image}
+        <GatsbyImage className={styles.contactSectionImage}
                     image={getImage(section.image.asset.gatsbyImageData)}
                     alt={section.image.alt}/>
      
