@@ -311,12 +311,12 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3')
-              tl2.from(brandingRef.current, {
+              tl2.to(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
-                  autoAlpha:0, 
-                  opacity:0,
+                  autoAlpha:1, 
+                  opacity:1,
                 }
               },'-=4');
 

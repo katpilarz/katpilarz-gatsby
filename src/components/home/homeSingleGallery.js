@@ -47,7 +47,7 @@ const HomeSingleGallery = ({ gallery }) => {
                     scale:1,
                     transformOrigin:'left',
 
-                    ease: "power4.out",
+                    ease: "power2.out",
                     //stagger:2,
                     //delay:4,
                     scrollTrigger: {
@@ -58,7 +58,7 @@ const HomeSingleGallery = ({ gallery }) => {
                         toggleActions: "restart pause resume none",
                        
                         refreshPriority: 1,
-                        scrub:2,
+                        scrub:1,
                     }
                 },'+=10');
          
