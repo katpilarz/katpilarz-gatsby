@@ -4,7 +4,8 @@ import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
 import ArrowIcon from "../globalComponents/arrow";
 import ScrippedText from "../globalComponents/scrippedText";
-import AnimatedImage from "../globalComponents/animatedImage";
+//import AnimatedImage from "../globalComponents/animatedImage";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -232,7 +233,10 @@ const SectionContact = ({section, pageName }) => {
                     </Link>
             </div>
         </div>
-        <AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>   
+        {/*<AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>*/}   
+        <GatsbyImage className={styles.image}
+                    image={getImage(section.image.asset.gatsbyImageData)}
+                    alt={section.image.alt}/>
      
     </section>
   )
