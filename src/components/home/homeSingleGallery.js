@@ -48,19 +48,19 @@ const HomeSingleGallery = ({ gallery }) => {
                     transformOrigin:'left',
 
                     ease: "power4.out",
-                    stagger:2,
-                    delay:4,
+                    //stagger:2,
+                    //delay:4,
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
-                        start: 'top 57%',
-                        end:'top 12%',
+                        start: 'top 47%',
+                        end:'top 7%',
                         toggleActions: "restart pause resume none",
                        
                         refreshPriority: 1,
                         scrub:2,
                     }
-                });
+                },'+=10');
          
             });
 

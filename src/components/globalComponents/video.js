@@ -49,7 +49,7 @@ const Video = ({ videoWebm, videoFallback, videoAlt, videoCustomClass, isDecript
         scrollTrigger: {
         trigger: videoContainerRef.current,
         start: 'top 65%',
-        end: 'top -200%',
+        end: 'top -160%',
         scrub:1,
         onEnter: () => videoRef.current.play(),
         onEnterBack: () => videoRef.current.play(),
