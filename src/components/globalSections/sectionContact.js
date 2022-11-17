@@ -44,7 +44,7 @@ const SectionContact = ({section, pageName }) => {
                   scrollTrigger: {
                     trigger: headerTwoRef.current,
                     start: "top 40%",
-                    end: "top 17%",
+                    //end: "top 17%",
                     scrub:1, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",

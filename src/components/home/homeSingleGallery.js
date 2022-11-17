@@ -41,7 +41,7 @@ const HomeSingleGallery = ({ gallery }) => {
                     scale:.77,
                     transformOrigin:'left',
                 }, {
-                    duration: 1,
+                    duration: 2,
                     autoAlpha: 1,
                     xPercent:0,
                     scale:1,
@@ -54,7 +54,7 @@ const HomeSingleGallery = ({ gallery }) => {
                         id: `section-${index+1}`,
                         trigger: el,
                         start: 'top 27%',
-                        end:'top top',
+                        //end:'top -20%',
                         toggleActions: "restart pause resume none",
                        
                         refreshPriority: 1,
@@ -72,7 +72,7 @@ const HomeSingleGallery = ({ gallery }) => {
   }, []);
 
  
-
+  // NO STYLING FOR VIDEO - MORE LIKELY SHOULD NOT BE CONSIDERED FOR THIS SECTION DUE TO BANDWIDTH
    
   return (
     <section ref={sectionRef} className={`${styles.sectionGallery} container`}>
