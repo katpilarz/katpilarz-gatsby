@@ -30,7 +30,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
 
 
                     gsap.fromTo(mediaOneRef.current, {
-                        xPercent:'-10',
+                        xPercent:'-20',
                         autoAlpha:0,
                     }, {
                         duration: 2,
@@ -41,13 +41,14 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
                             start: 'top 77%',
+                            end: 'top top',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
                             scrub:1,
                         }
                     });
                     gsap.fromTo(mediaTwoRef.current, {
-                        xPercent:'10',
+                        xPercent:'20',
                         autoAlpha:0,
                     }, {
                         duration: 2,
@@ -58,7 +59,8 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         scrollTrigger: {
                             id: mediaTwoRef.current,
                             trigger: mediaTwoRef.current,
-                            start: 'top 57%',
+                            start: 'top 67%',
+                            end: 'top 27%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
                             scrub:1,
@@ -85,20 +87,19 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                             image={getImage(imageOne.asset.gatsbyImageData)}
                             alt={imageOne.alt}/>  
         </div>
-        <div ref={mediaTwoRef} className={styles.mediaDescriptionWrapper}>
-            {imageTwo &&
-                <div className={styles.aboutMedia}>
-                    {/*<AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/> */}  
+        <div className={styles.mediaDescriptionWrapper}>
+            <div ref={mediaTwoRef}  className={styles.aboutMedia}>
+
+                {imageTwo &&
                     <GatsbyImage class={styles.image}
                             image={getImage(imageTwo.asset.gatsbyImageData)}
                             alt={imageTwo.alt}/>
-                </div>
-            }
-            {video &&
-                <div className={styles.aboutMedia}>
-                    <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
-                </div>
-            }
+                }
+                {video &&
+                        <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
+                }
+            </div>
+
             <Description description={text} descriptionCustomClass="aboutDescription"/>
         </div>
         
