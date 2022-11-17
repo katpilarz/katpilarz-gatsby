@@ -12,6 +12,7 @@
     gap:2vw;
 
 
+
     @include respond (desktopXS){
         margin: 16vw auto 16vw auto;
     }
@@ -22,6 +23,7 @@
 
     @include respond (mobile){
         margin:26vw auto 26vw auto;
+        gap:12vw;
     }
 
 
@@ -37,7 +39,7 @@
         place-content: space-between;
 
         @include respond (mobile){
-            flex-basis: 100%;
+            flex-basis: 80%;
             width:100%;
         }
 
@@ -48,6 +50,10 @@
 
         &:nth-child(even){
             margin-top: 7vw;
+
+            @include respond (mobile){
+                margin: 0 0 0 auto;
+            }
         }
     }
 
