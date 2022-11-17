@@ -33,6 +33,7 @@
             flex-basis: 100%;
         }
 
+
         
 
         .aboutMedia{
@@ -52,8 +53,12 @@
                 z-index: 2;
             }
 
+            @include respond (tabletHorizontal){
+                width:60%;
+            }
+
             @include respond (mobile){
-                width:80%;
+                width:85%;
                 transform: translateY(0vw);
                 margin: 4vw 0 16vw 0;
             }
@@ -81,8 +86,12 @@
             width:55%;
         }
 
+        @include respond (tabletHorizontal){
+            width:60%;
+        }
+
         @include respond (mobile){
-            width:75%;
+            width:85%;
         }
 
         @include respond (mobileXS){

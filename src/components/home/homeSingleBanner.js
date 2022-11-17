@@ -223,14 +223,14 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3');
-              tl2.to(brandingRef.current, {
+              tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
-                  autoAlpha:1, 
-                  opacity:1,
+                  autoAlpha:0, 
+                  opacity:0,
                 }
-              },'-=5');
+              },'-=4');
 
 
               revealRefs.current.forEach((el, index) => {
@@ -311,14 +311,14 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3')
-              tl2.to(brandingRef.current, {
+              tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
-                  autoAlpha:1, 
-                  opacity:1,
+                  autoAlpha:0, 
+                  opacity:0,
                 }
-              },'-=5');
+              },'-=4');
 
               
 
