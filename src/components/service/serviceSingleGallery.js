@@ -52,7 +52,6 @@ const ServiceSingleGallery = ({ projects }) => {
             css: {
               autoAlpha: 0,
               opacity:0,
-              xPercent:'30',
         }})
   
     }, swiperContainer); // <- scopes all selector text inside the context to this component (optional, default is document)

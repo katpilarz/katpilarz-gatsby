@@ -70,7 +70,7 @@
     @include respond (mobile){
         justify-content: space-between;
         flex-wrap: wrap;
-        grid-row: 10/-1;
+        grid-row: 9/-1;
         place-items: center;
         place-self: center;
         height: 100%;

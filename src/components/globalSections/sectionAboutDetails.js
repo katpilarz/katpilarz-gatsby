@@ -1,6 +1,6 @@
 import React from "react"
 import * as styles from "./sectionAboutDetails.module.scss";
-//import AnimatedImage from "../globalComponents/animatedImage";
+import AnimatedImage from "../globalComponents/animatedImage";
 import Video from "../globalComponents/video";
 import Description from "../globalComponents/description";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -40,7 +40,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         scrollTrigger: {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
-                            start: 'top 77%',
+                            start: 'top 67%',
                             end: 'top top',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
@@ -48,12 +48,12 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         }
                     });
                     gsap.fromTo(mediaTwoRef.current, {
-                        xPercent:'20',
+                        //xPercent:'20',
                         autoAlpha:0,
                     }, {
                         duration: 2,
                         autoAlpha:1,
-                        xPercent:0,
+                        //xPercent:0,
                         ease: "power2.out",
                         delay:1,
                         scrollTrigger: {
@@ -91,9 +91,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
             <div ref={mediaTwoRef}  className={styles.aboutMedia}>
 
                 {imageTwo &&
-                    <GatsbyImage class={styles.image}
-                            image={getImage(imageTwo.asset.gatsbyImageData)}
-                            alt={imageTwo.alt}/>
+                    <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>
                 }
                 {video &&
                         <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
