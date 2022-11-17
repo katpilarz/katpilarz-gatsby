@@ -48,6 +48,11 @@
             flex-basis: 48%;
         }
 
+        @include respond (mobile){
+            flex-basis: 100%;
+        }
+
+
         img{
             width:100%;
             height: auto;
@@ -59,6 +64,8 @@
             @include respond (tabletHorizontal){
                 padding-top: 0;
             }
+
+
         }
     }
 
