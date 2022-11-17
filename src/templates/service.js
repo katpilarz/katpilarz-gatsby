@@ -55,6 +55,22 @@ query ServiceTemplateQuery($id: String!){
           }
         }
       }
+      featuredVideo {
+        fallback {
+          asset {
+            url
+            extension
+            altText
+          }
+        }
+        webm {
+          asset {
+            altText
+            url
+            extension
+          }
+        }
+      }
       sectionDetails {
         _rawDescription
         imageOne {

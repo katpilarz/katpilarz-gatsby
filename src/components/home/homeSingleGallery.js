@@ -53,8 +53,8 @@ const HomeSingleGallery = ({ gallery }) => {
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
-                        start: 'top 47%',
-                        end:'top 7%',
+                        start: 'top 57%',
+                        end:'top 12%',
                         toggleActions: "restart pause resume none",
                        
                         refreshPriority: 1,
@@ -77,7 +77,6 @@ const HomeSingleGallery = ({ gallery }) => {
   return (
     <section ref={sectionRef} className={`${styles.sectionGallery} container`}>
         
-            <div className={styles.sectionGalleryWrapper}>
             {galleryItems.map((item, index) => {
                 return (
                     <div key={index} className={styles.projectMockup} ref={addToRefs}>
@@ -91,7 +90,6 @@ const HomeSingleGallery = ({ gallery }) => {
                 
                 )
             })}
-            </div>
     </section>
 
   )

@@ -9,7 +9,7 @@ import ProjectSingleNext from "./projectSingleNext";
 
 
 
-const ProjectSingle = ({ project, video, isHome }) => {
+const ProjectSingle = ({ project, isHome }) => {
 
  
  
@@ -23,7 +23,7 @@ const ProjectSingle = ({ project, video, isHome }) => {
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
         }
         {project.isInteractive &&
-          <SectionFeaturedVideo video={video}/>
+          <SectionFeaturedVideo video={project.prototype} isDecriptionDisplayed="false"/>
         }
 
         <ProjectSingleDetails project={project}/>

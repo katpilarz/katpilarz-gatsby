@@ -18,7 +18,7 @@ const ServiceSingle = ({ service, contact, faqs }) => {
   return (
 
       <>
-        <Banner title={service.title} image={service.image} video={service.video}/>
+        <Banner title={service.title} image={service.image} video={service.featuredVideo}/>
         <SectionAbout section={service.sectionDetails}/>
         <ServiceSingleMarque />
         <ServiceSingleGallery projects={service.relatedProjects}/>

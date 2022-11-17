@@ -8,6 +8,8 @@
     flex-wrap: wrap;
     place-content: space-between;
     margin: 12vw auto 12vw auto;
+    flex-wrap: wrap;
+    gap:2vw;
 
 
     @include respond (desktopXS){
@@ -27,100 +29,28 @@
         margin:26vw auto 32vw auto;
     }
 
-    .sectionGalleryWrapper{
-    /*display: flex;
-    justify-content: space-between;*/
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows:repeat(12, 1fr);
-    width:100%;
+    .projectMockup{
+        display: flex;
+        flex-basis: 46%;
+        width:100%;
+        height: auto;
+        place-content: space-between;
 
-    
-
- 
-
-        .projectMockup{
-            /*display: flex;
-            flex-basis: 30%;
-            width:100%;*/
-            height: auto;
-     
-
-            img{
-                width:100%;
-                height: auto;
-            }
-
-
-            &:nth-child(1){
-                place-self: flex-start;
-                place-content: flex-start;
-                place-items: flex-start;
-                grid-column: 1/-1;
-                grid-row: 1/-1;
-                width:35%;
-                z-index: 2;
-
-                @include respond (desktopXS){
-                    width:45%;
-                }
-
-                @include respond (mobile){
-                    width:67%;
-                }
-
-
-                @include respond (mobileXS){
-                    width:70%;
-                }
-            }
-
-
-            &:nth-child(2){
-                grid-column: 1/-1;
-                grid-row: 2/12;
-                width:40%;
-                margin:2vw auto;
-                z-index: 1;
-                @include respond (desktopXS){
-                    width:47%;
-                }
-
-                @include respond (mobile){
-                    width:84%;
-                }
-
-
-                @include respond (mobileXS){
-                    width:85%;
-                }
-            }
-        
-            &:nth-child(3){
-                place-self: flex-end;
-                place-content: flex-end;
-                place-items: flex-end;
-                grid-column: 1/-1;
-                grid-row: 1/-1;
-                width:35%;
-                z-index: 2;
-
-                @include respond (desktopXS){
-                    width:45%;
-                }
-
-                @include respond (mobile){
-                    width:67%;
-                }
-
-
-                @include respond (mobileXS){
-                    width:70%;
-                }
-            }
+        @include respond (mobile){
+            flex-basis: 100%;
+            width:100%;
         }
 
+        img{
+            width:100%;
+            height: auto;
+        }
+
+        &:nth-child(even){
+            margin-top: 7vw;
+        }
     }
+
 
 
 }

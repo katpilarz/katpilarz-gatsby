@@ -51,7 +51,7 @@ query ProjectTemplateQuery($id: String!){
       }
       title
       url
-      projectPrototypes {
+      prototype {
         fallback {
           asset {
             url
@@ -118,7 +118,6 @@ const ProjectTemplate = props => {
   const project = data && data.singleProject;
 
   // BELOW WILL BE DELETED ONCE SCHEMA FOR VIDEO IS UPDATED
-  const projectVideo = data && data.video.featuredVideo;
 
   const [isHome] = useState(false)
 
@@ -144,7 +143,7 @@ const ProjectTemplate = props => {
           )}
         />
         <Header isHome={isHome}/>
-        <ProjectSingle project={project} video={projectVideo} isHome={isHome}/>
+        <ProjectSingle project={project} isHome={isHome}/>
       </main>
       
   );

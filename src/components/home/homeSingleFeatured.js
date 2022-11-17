@@ -116,7 +116,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
             gsap.fromTo(el, {
                 xPercent:20,
-                scale1:1,
+                scale:1,
                 autoAlpha:0,
 
             }, {

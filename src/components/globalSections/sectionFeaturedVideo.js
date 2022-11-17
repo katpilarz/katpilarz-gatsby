@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionFeaturedVideo = ({ video }) => {
+const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
 
 
  const sectionRef = useRef(null)
@@ -51,7 +51,8 @@ const SectionFeaturedVideo = ({ video }) => {
                       ease: "power2.out",
                       css: {
                           clipPath: 'circle(70.7% at 50% 50%)',
-                          width:'67vw',
+                          //width:'67vw',
+                          width:'70vw',
                       }
                   })   
   
@@ -104,7 +105,7 @@ const SectionFeaturedVideo = ({ video }) => {
   return (
     <section ref={sectionRef} className={styles.featuredVideoSection}>
         <div ref={videoRef} className={styles.featuredVideo}>
-            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed='false'/> 
+            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed={isDecriptionDisplayed}/> 
         </div>
     </section>
 

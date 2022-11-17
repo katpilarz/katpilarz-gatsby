@@ -32,6 +32,18 @@ module.exports = {
       },
     },
   },
+  {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: 'Katarzyna Gołek',
+      short_name: 'Kate Golek',
+      start_url: '/',
+      background_color: '#f7f0eb',
+      theme_color: '#a2466c',
+      display: 'standalone',
+      icon: 'src/assets/images/favicon.png',
+    },
+  },
   `gatsby-plugin-transition-link`,
   "gatsby-plugin-dark-mode",
   "gatsby-plugin-sass",
@@ -46,6 +58,7 @@ module.exports = {
       "path": "./src/assets/images/", 
       "name": "fonts",
       "path": `${__dirname}/static/fonts`, 
+
       
     },
     __key: "images",
