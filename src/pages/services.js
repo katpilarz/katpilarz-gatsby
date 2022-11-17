@@ -24,7 +24,7 @@ export const query = graphql`
             current
           }
           id
-          image {
+          thumbnail {
             asset {
               url
               gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)

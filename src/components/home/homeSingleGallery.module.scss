@@ -46,7 +46,6 @@
 
         @include respond (tabletHorizontal){
             flex-basis: 48%;
-            //width:100%;
         }
 
         img{
@@ -55,10 +54,9 @@
         }
 
         &:nth-child(even){
-            padding-top: 6vw;
+            padding-top: 16vw;
 
             @include respond (tabletHorizontal){
-                //margin: 0 0 0 auto;
                 padding-top: 0;
             }
         }

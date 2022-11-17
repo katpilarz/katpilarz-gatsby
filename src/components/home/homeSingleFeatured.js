@@ -170,10 +170,10 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                     <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
                       <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
                           <div className={styles.projectSwiperSlideImage}>
-                              <AnimatedImage imagePath={project.node.bannerImage.asset.gatsbyImageData} imageAlt={project.node.bannerImage.alt}/> 
+                              <AnimatedImage imagePath={project.node.thumbnailBannerImage.asset.gatsbyImageData} imageAlt={project.node.thumbnailBannerImage.alt}/> 
                               <GatsbyImage className={styles.projectSwiperSlideImageHover}
-                                image={getImage(project.node.socialMediaImage.asset.gatsbyImageData)}
-                                alt={`${project.node.socialMediaImage.alt}`}
+                                image={getImage(project.node.thumbnailSocialMedia.asset.gatsbyImageData)}
+                                alt={`${project.node.thumbnailSocialMedia.alt}`}
                               />
                           </div>
                           <div  className={styles.projectSwiperSlideHeader}>

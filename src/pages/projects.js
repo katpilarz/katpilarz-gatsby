@@ -22,10 +22,10 @@ query Projects{
     ) {
       edges {
         node {
-          socialMediaImage {
+          thumbnailSocialMedia {
+            alt
             asset {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH,formats: WEBP)
-              url
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
             }
           }
           publishedAt(formatString: "YYYY/MM")

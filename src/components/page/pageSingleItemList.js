@@ -80,19 +80,19 @@ const PageSingleItemList = ({ itemList, pageName }) => {
                 { item.node.video && 
                     <Video key={index} videoWebm={item.node.video.webm} videoFallback={item.node.video.fallback} videoAlt={item.node.video.alt}  videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
                 }
-                { item.node.image && 
+                { item.node.thumbnail && 
                 <div className={styles.itemCardMedia}>
                     <GatsbyImage 
-                        image={getImage(item.node.image.asset.gatsbyImageData)}
-                        alt={`${item.node.image.alt}`}
+                        image={getImage(item.node.thumbnail.asset.gatsbyImageData)}
+                        alt={`${item.node.thumbnail.alt}`}
                     />
                 </div>
                 }
-                { item.node.socialMediaImage && 
+                { item.node.thumbnailSocialMedia && 
                 <div className={styles.itemCardMedia}>
                     <GatsbyImage
-                    image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
-                    alt={`${item.node.socialMediaImage.alt}`}
+                    image={getImage(item.node.thumbnailSocialMedia.asset.gatsbyImageData)}
+                    alt={`${item.node.thumbnailSocialMedia.alt}`}
                     />
                 </div>
                 

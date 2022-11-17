@@ -161,14 +161,14 @@ query HomePageQuery{
       edges {
         node {
           id
-          bannerImage {
+          thumbnailBannerImage {
             alt
             asset {
               gatsbyImageData(formats: WEBP, placeholder: BLURRED, layout: FULL_WIDTH)
               url
             }
           }
-          socialMediaImage {
+          thumbnailSocialMedia {
             alt
             asset {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
@@ -195,7 +195,7 @@ query HomePageQuery{
           id
           _rawTestimonial
           title
-          socialMediaImage {
+          thumbnailSocialMedia {
             alt
             asset {
               gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
@@ -218,7 +218,7 @@ query HomePageQuery{
             current
           }
           id
-          image {
+          thumbnail {
             asset {
               url
               gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)

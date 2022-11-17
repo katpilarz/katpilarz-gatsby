@@ -110,10 +110,10 @@ const HomeSingleServices = ({ services }) => {
                         { service.node.video && 
                             <Video key={index} videoWebm={service.node.video.webm} videoFallback={service.node.video.fallback} videoAlt={service.node.video.alt}  videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }
-                        { service.node.image &&
+                        { service.node.thumbnail &&
                             <GatsbyImage className={styles.serviceMedia}
-                                image={getImage(service.node.image.asset.gatsbyImageData)}
-                                alt={`${service.node.image.alt}`}
+                                image={getImage(service.node.thumbnail.asset.gatsbyImageData)}
+                                alt={`${service.node.thumbnail.alt}`}
                             />
                         }
                         
