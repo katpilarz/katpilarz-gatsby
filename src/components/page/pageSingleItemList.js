@@ -55,7 +55,7 @@ const PageSingleItemList = ({ itemList, pageName }) => {
                 toggleActions: "restart pause resume none",
                
                 refreshPriority: 1,
-                scrub:2,
+                scrub:1,
             }
         });
  

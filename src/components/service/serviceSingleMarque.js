@@ -45,7 +45,7 @@ const ServiceSingleMarque = () => {
                             start: 'top 77%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:2,
+                            scrub:1,
                         }
                     });
                     gsap.fromTo(marqueRefTwo.current, {
@@ -63,7 +63,7 @@ const ServiceSingleMarque = () => {
                             start: 'top 77%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:2,
+                            scrub:1,
                         }
                     });
 
@@ -82,7 +82,7 @@ const ServiceSingleMarque = () => {
                             start: 'top 77%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:2,
+                            scrub:1,
                         }
                     });
                     gsap.fromTo(marqueRefFour.current, {
@@ -100,7 +100,7 @@ const ServiceSingleMarque = () => {
                             start: 'top 77%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:2,
+                            scrub:1,
                         }
                     });
 

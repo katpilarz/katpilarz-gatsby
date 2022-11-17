@@ -40,7 +40,7 @@ const SectionAbout = ({ section }) => {
                 trigger: headerRef.current,
                 start: "top 57%",
                 end: "top 17%",
-                scrub:2, 
+                scrub:1, 
                 repeatRefresh: true,
                 toggleActions: "restart pause resume none",
                 }
@@ -64,7 +64,7 @@ const SectionAbout = ({ section }) => {
                 trigger: headerRef.current,
                 start: "top 77%",
                 end: "top 37%",
-                scrub:2, 
+                scrub:1, 
                 repeatRefresh: true,
                 toggleActions: "restart pause resume none",
                 }

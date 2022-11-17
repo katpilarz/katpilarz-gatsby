@@ -105,8 +105,8 @@ const SectionContact = ({section, pageName }) => {
                 const tl = gsap.timeline({
                   scrollTrigger: {
                     trigger: headerTwoRef.current,
-                    start: "top 77%",
-                    end: "top 37%",
+                    start: "top 80%",
+                    end: "top 40%",
                     scrub:1, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",

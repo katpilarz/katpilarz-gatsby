@@ -45,7 +45,7 @@ const HomeSingleServices = ({ services }) => {
                     trigger: sectionRef.current,
                     start: "top 90%",
                     end: "top 50%",
-                    scrub:2, 
+                    scrub:1, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
@@ -77,7 +77,7 @@ const HomeSingleServices = ({ services }) => {
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
-                            scrub:3,
+                            scrub:1,
                         }
                     });
              
