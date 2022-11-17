@@ -23,7 +23,7 @@
 
     @include respond (mobile){
         margin:26vw auto 26vw auto;
-        gap:12vw;
+        gap:10vw;
     }
 
 
@@ -39,7 +39,7 @@
         place-content: space-between;
 
         @include respond (mobile){
-            flex-basis: 80%;
+            flex-basis: 90%;
             width:100%;
         }
 
