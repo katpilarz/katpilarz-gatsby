@@ -33,9 +33,6 @@
 
     .pageSingleHeader{
       display: flex;
-      //flex-direction: column;
-      //place-content: center;
-      //text-align: center;
     }
 
     .itemsList{
@@ -100,19 +97,12 @@
         margin-bottom:16vw;
       }
 
-
-
-
-  
-      }
+ 
+    }
 
       .itemListWrapper{
         width:100%;
-      
-  
-
-
-          
+        
           
         .itemCard{
           width:100%;
@@ -175,7 +165,7 @@
 
           .itemCardHeader{
               display: flex;
-              justify-content: space-between;
+              place-content: space-between;
               width:100%;
               z-index: 9999999;
 
@@ -196,7 +186,7 @@
 
             .itemCardHeader{
               display: flex;
-              justify-content: space-between;
+              place-content: space-between;
               width:100%;
 
               h3{
@@ -253,7 +243,7 @@
   display: flex;
 
   @include respond (mobile){
-      justify-content: space-between;
+      place-content: space-between;
       flex-wrap: wrap;
   }
 

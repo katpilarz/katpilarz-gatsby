@@ -228,7 +228,7 @@ const SectionContact = ({section, pageName }) => {
                         window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
                         e.preventDefault();
                         }}>
-                        Send me an email
+                        Free Consulting
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </Link>
             </div>

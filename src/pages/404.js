@@ -9,6 +9,7 @@ import PageSingle from "../components/page/pageSingle";
 const NotFoundPage = () => {
 
   const [isHome] = useState(false)
+  //const [isError] = useState(true)
   return (
     <main>
         <PagePreloader/>
