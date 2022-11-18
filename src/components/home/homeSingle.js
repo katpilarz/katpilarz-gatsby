@@ -36,7 +36,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleGallery gallery={home.gallery}/>
 
 
-      <SectionContact section={home.sectionContact} pageName='home'/>
+      <SectionContact isHome={isHome} section={home.sectionContact} pageName='home'/>
     </>
   )
 }

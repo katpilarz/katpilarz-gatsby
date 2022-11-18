@@ -14,7 +14,7 @@ import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const SectionContact = ({section, pageName }) => {
+const SectionContact = ({section, isHome }) => {
 
     const headerOneRef = useRef(null);
     const headerTwoRef = useRef(null);
@@ -36,134 +36,266 @@ const SectionContact = ({section, pageName }) => {
     
           const animation = gsap.matchMedia()
               animation.add()
-    
-    
-              
-              animation.add("(min-width:  569px)", () => {
 
-                const tl = gsap.timeline({
-                  scrollTrigger: {
-                    trigger: headerTwoRef.current,
-                    start: "top 57%",
-                    //end: "top 17%",
-                    scrub:1, 
-                    repeatRefresh: true,
-                    toggleActions: "restart pause resume none",
-                  }
-                });
-                  tl.from(headerOneRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        yPercent:'-20',
-                  }})
-                  tl.from(typingRef.current, {
-                      duration: 1,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                  }},'-=2')
-                  tl.from(headerTwoRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        yPercent:'50',
-                  }},'-=2')
-      
-                  tl.from(subheaderRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        xPercent:'40',
-                  }},'-=2')
-                  tl.from(linksRefOne.current, {
-                    duration:1.2,
-                    ease: "power2.out",
-                    css: {
-                      opacity: 0,
-                      xPercent:'40',
-                  }})
-                  tl.from(linksRefTwo.current, {
+
+              if(isHome){
+                                
+                animation.add("(min-width:  569px)", () => {
+
+                  const tl = gsap.timeline({
+                    scrollTrigger: {
+                      trigger: headerTwoRef.current,
+                      start: "top 57%",
+                      //end: "top 17%",
+                      scrub:1, 
+                      repeatRefresh: true,
+                      toggleActions: "restart pause resume none",
+                    }
+                  });
+                    tl.from(headerOneRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'-20',
+                    }})
+                    tl.from(typingRef.current, {
+                        duration: 1,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                    }},'-=2')
+                    tl.from(headerTwoRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'50',
+                    }},'-=2')
+        
+                    tl.from(subheaderRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          xPercent:'40',
+                    }},'-=2')
+                    tl.from(linksRefOne.current, {
                       duration:1.2,
                       ease: "power2.out",
                       css: {
                         opacity: 0,
                         xPercent:'40',
-                  }},'-=.3')
-        
-              })
-    
-    
-              animation.add("(max-width: 568px)", () => {
-
-                const tl = gsap.timeline({
-                  scrollTrigger: {
-                    trigger: headerTwoRef.current,
-                    start: "top 87%",
-                    end: "top 50%",
-                    scrub:1, 
-                    repeatRefresh: true,
-                    toggleActions: "restart pause resume none",
-                  }
-                });
-                  tl.from(headerOneRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        yPercent:'-20',
-                  }})
-                  tl.from(typingRef.current, {
-                      duration: 1,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                  }},'-=2')
-                  tl.from(headerTwoRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        yPercent:'50',
-                  }},'-=2')
+                    }})
+                    tl.from(linksRefTwo.current, {
+                        duration:1.2,
+                        ease: "power2.out",
+                        css: {
+                          opacity: 0,
+                          xPercent:'40',
+                    }},'-=.3')
+          
+                })
       
-                  tl.from(subheaderRef.current, {
-                      duration: 2,
-                      ease: "power2.out",
-                      css: {
-                        autoAlpha: 0,
-                        visibility:'hidden',
-                        xPercent:'40',
-                  }},'-=2')
-                  tl.from(linksRefOne.current, {
-                    duration:1.2,
-                    ease: "power2.out",
-                    css: {
-                      opacity: 0,
-                      xPercent:'40',
-                  }})
-                  tl.from(linksRefTwo.current, {
+      
+                animation.add("(max-width: 568px)", () => {
+
+                  const tl = gsap.timeline({
+                    scrollTrigger: {
+                      trigger: headerTwoRef.current,
+                      start: "top 87%",
+                      end: "top 50%",
+                      scrub:1, 
+                      repeatRefresh: true,
+                      toggleActions: "restart pause resume none",
+                    }
+                  });
+                    tl.from(headerOneRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'-20',
+                    }})
+                    tl.from(typingRef.current, {
+                        duration: 1,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                    }},'-=2')
+                    tl.from(headerTwoRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'50',
+                    }},'-=2')
+        
+                    tl.from(subheaderRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          xPercent:'40',
+                    }},'-=2')
+                    tl.from(linksRefOne.current, {
                       duration:1.2,
                       ease: "power2.out",
                       css: {
                         opacity: 0,
                         xPercent:'40',
-                  }},'-=.3')
-                
-      
+                    }})
+                    tl.from(linksRefTwo.current, {
+                        duration:1.2,
+                        ease: "power2.out",
+                        css: {
+                          opacity: 0,
+                          xPercent:'40',
+                    }},'-=.3')
+                  
         
-              })
+          
+                })
     
+              }else{
+                                  
+                animation.add("(min-width:  569px)", () => {
+
+                  const tl = gsap.timeline({
+                    scrollTrigger: {
+                      trigger: headerTwoRef.current,
+                      start: "top 87%",
+                      end: "top 20%",
+                      scrub:1, 
+                      repeatRefresh: true,
+                      toggleActions: "restart pause resume none",
+                    }
+                  });
+                    tl.from(headerOneRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'-20',
+                    }})
+                    tl.from(typingRef.current, {
+                        duration: 1,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                    }},'-=2')
+                    tl.from(headerTwoRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'50',
+                    }},'-=2')
+        
+                    tl.from(subheaderRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          xPercent:'40',
+                    }},'-=2')
+                    tl.from(linksRefOne.current, {
+                      duration:1.2,
+                      ease: "power2.out",
+                      css: {
+                        opacity: 0,
+                        xPercent:'40',
+                    }})
+                    tl.from(linksRefTwo.current, {
+                        duration:1.2,
+                        ease: "power2.out",
+                        css: {
+                          opacity: 0,
+                          xPercent:'40',
+                    }},'-=.3')
+          
+                })
+      
+      
+                animation.add("(max-width: 568px)", () => {
+
+                  const tl = gsap.timeline({
+                    scrollTrigger: {
+                      trigger: headerTwoRef.current,
+                      start: "top 87%",
+                      end: "top 50%",
+                      scrub:1, 
+                      repeatRefresh: true,
+                      toggleActions: "restart pause resume none",
+                    }
+                  });
+                    tl.from(headerOneRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'-20',
+                    }})
+                    tl.from(typingRef.current, {
+                        duration: 1,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                    }},'-=2')
+                    tl.from(headerTwoRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          yPercent:'50',
+                    }},'-=2')
+        
+                    tl.from(subheaderRef.current, {
+                        duration: 2,
+                        ease: "power2.out",
+                        css: {
+                          autoAlpha: 0,
+                          visibility:'hidden',
+                          xPercent:'40',
+                    }},'-=2')
+                    tl.from(linksRefOne.current, {
+                      duration:1.2,
+                      ease: "power2.out",
+                      css: {
+                        opacity: 0,
+                        xPercent:'40',
+                    }})
+                    tl.from(linksRefTwo.current, {
+                        duration:1.2,
+                        ease: "power2.out",
+                        css: {
+                          opacity: 0,
+                          xPercent:'40',
+                    }},'-=.3')
+                  
+        
+          
+                })
+    
+              }
+    
+             
+
     
             
                 
@@ -171,7 +303,7 @@ const SectionContact = ({section, pageName }) => {
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
-      }, []);
+      }, [isHome]);
 
 
    

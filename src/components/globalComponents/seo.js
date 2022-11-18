@@ -9,7 +9,6 @@ function SEO({ description, lang, meta, keywords, title, overview }) {
       query={detailsQuery}
       render={data => {
         const metaDescription = description || (data.site && data.site.description) || "";
-        const siteOverview = (data.site && data.site.overview) || "";
         const siteTitle = (data.site && data.site.title) || "";
         const siteAuthor = (data.site && data.site.author) || "";
         const metaImage = (data.site && data.site.socialMediaImage.asset.url) || "";

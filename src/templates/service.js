@@ -175,7 +175,7 @@ const ServiceTemplate = props => {
           )}
         />
         <Header isHome={isHome}/>
-        <ServiceSingle service={service} contact={contact} faqs={faqs}/>
+        <ServiceSingle isHome={isHome} service={service} contact={contact} faqs={faqs}/>
       </main>
       
   );

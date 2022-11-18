@@ -12,7 +12,7 @@ import ServiceSingleMarque from "./serviceSingleMarque";
 
 
 
-const ServiceSingle = ({ service, contact, faqs }) => {
+const ServiceSingle = ({ service, contact, faqs, isHome }) => {
 
   
   return (
@@ -23,7 +23,7 @@ const ServiceSingle = ({ service, contact, faqs }) => {
         <ServiceSingleMarque />
         <ServiceSingleGallery projects={service.relatedProjects}/>
         <ServiceSingleFAQs  faqs={faqs}/>
-        <SectionContact section={contact}/>
+        <SectionContact isHome={isHome} section={contact}/>
       </>
       
   );
