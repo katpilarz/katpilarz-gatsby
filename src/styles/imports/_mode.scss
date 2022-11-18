@@ -11,6 +11,14 @@ body {
     .text-color{
       color: $color;
     }
+
+    .btn{
+      svg{
+        path{
+          fill: $color;
+        }
+      }
+    }
   
   
     .overlay{
@@ -31,6 +39,8 @@ body {
         }
       }
     }
+
+
   
     .menu-link{
       &:hover{
@@ -55,7 +65,16 @@ body {
     color:$white-dark;
 
     .text-color{
-      color: $color;
+      color: $color-lighter;
+    }
+
+
+    .btn{
+      svg{
+        path{
+          fill: $color-lighter;
+        }
+      }
     }
   
     .intro span{
@@ -81,6 +100,7 @@ body {
         }
       }
     }
+
     
 
 
