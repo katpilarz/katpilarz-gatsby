@@ -52,10 +52,25 @@
             flex-basis: 100%;
         }*/
 
+
+
+
         @include respond (mobile){
             flex-basis: 49%;
             margin-bottom: 2vw;
         }
+
+        &:nth-child(3){
+            flex-basis: 75%;
+            margin:0 auto 6vw auto;
+
+            
+            @include respond (mobile){
+                flex-basis: 49%;
+                margin:0 auto 2vw auto;
+            }
+        }
+
 
 
         .image{
