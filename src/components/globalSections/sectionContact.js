@@ -173,7 +173,7 @@ const SectionContact = ({section, isHome }) => {
                     scrollTrigger: {
                       trigger: headerTwoRef.current,
                       start: "top 87%",
-                      end: "top 20%",
+                      end: "top 27%",
                       scrub:1, 
                       repeatRefresh: true,
                       toggleActions: "restart pause resume none",

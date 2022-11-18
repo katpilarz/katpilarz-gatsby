@@ -1,22 +1,19 @@
 import * as React from "react"
 import * as styles from "./serviceSingleGallery.module.scss";
 import GalleryHeader from "../globalComponents/galleryHeader";
+import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
 
 // Import Swiper styles
 import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
-import 'swiper/scss/scrollbar';
-import 'swiper/css/effect-fade';
-import 'swiper/css/zoom';
-import { Link } from 'gatsby';
-import { useEffect, useRef } from 'react';
+
+
+/*import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);*/
 
 
 
@@ -27,7 +24,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServiceSingleGallery = ({ projects }) => {
 
-  const swiperContainer = useRef(null);
+  /*const swiperContainer = useRef(null);
 
 
   useEffect(() => {
@@ -57,7 +54,7 @@ const ServiceSingleGallery = ({ projects }) => {
     }, swiperContainer); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
-  }, []);
+  }, []);*/
 
   return (
 
@@ -65,7 +62,7 @@ const ServiceSingleGallery = ({ projects }) => {
           <div className='container'>
             <GalleryHeader header='Related Projects' linkText="See All Projects" linkUrl="/projects"/>
           </div>
-          <Swiper ref={swiperContainer}  className={styles.swiper}
+          <Swiper className={styles.swiper}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
             slidesPerView={"auto"}
             centeredSlides={true}

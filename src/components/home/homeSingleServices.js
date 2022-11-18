@@ -1,6 +1,6 @@
 import React from "react"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./homeSingleServices.module.scss";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import Video from "../globalComponents/video";
 import MarqueText from "../globalSections/marqueText";
@@ -19,8 +19,6 @@ const HomeSingleServices = ({ services }) => {
 
     const sectionRef = useRef([]);
 
-    //const paragraphRef = useRef([]);
-
     const revealRefs = useRef([]);
     revealRefs.current = [];
  
@@ -36,27 +34,6 @@ const HomeSingleServices = ({ services }) => {
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
-
-
-             // BELOW IS NOT USED ENY MORE
-
-                /*const tl = gsap.timeline({
-                    scrollTrigger: {
-                    trigger: sectionRef.current,
-                    start: "top 90%",
-                    end: "top 50%",
-                    scrub:1, 
-                    repeatRefresh: true,
-                    toggleActions: "restart pause resume none",
-                    }
-                });
-                    tl.from(paragraphRef.current, {
-                        duration: 1,
-                        ease: "power4.out",
-                        css: {
-                        autoAlpha: 0,
-                        xPercent:'5',
-                    }})*/
 
                 revealRefs.current.forEach((el, index) => {
 
@@ -77,7 +54,7 @@ const HomeSingleServices = ({ services }) => {
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
-                            scrub:1,
+                            scrub:2,
                         }
                     });
              
@@ -92,7 +69,6 @@ const HomeSingleServices = ({ services }) => {
   
   return (
         <section ref={sectionRef} className={`${styles.sectionServices}`}>
-            {/*<p ref={paragraphRef} className="text-uppercase">Project Multidisciplinary Approach</p>*/}
 
             <div className={`${styles.sectionServicesHeader} container`}>
                 <GalleryHeader header='Multidisciplinary approach' linkText="See All Services" linkUrl="/services"/>
