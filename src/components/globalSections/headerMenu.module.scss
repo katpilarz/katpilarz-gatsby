@@ -98,7 +98,7 @@
 }
 
 .menuImageDefault{
-    z-index: 99;
+    z-index: -1;
     width:17vw;
     visibility: visible;
     opacity: 1;
@@ -127,7 +127,7 @@
     transition: all .6s ease;
     //animation: menu 1s backwards;
     position: relative!important;
-    z-index: 9;
+    z-index: 99;
     
 
     .menuSingleLink{

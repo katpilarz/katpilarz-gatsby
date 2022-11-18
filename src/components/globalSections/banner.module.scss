@@ -11,19 +11,24 @@
     }
 
     @include respond (tabletHorizontal){
-      margin: 20vw auto 4vw auto;
+      margin: 24vw auto 4vw auto;
     }
     @include respond (tabletMediumHorizontal){
-      margin: 24vw auto 4vw auto;
+      margin: 30vw auto 4vw auto;
     }
 
     @include respond (mobile){
-     margin: 40vw auto 20vw auto;
+     margin: 44vw auto 20vw auto;
     }
 
     @include respond (mobileXS){
-      margin: 44vw auto 20vw auto;
+      margin: 48vw auto 20vw auto;
      }
+
+
+    @include respond (mobileLandscape){
+      margin: 14vw auto 20vw auto;
+    }
 
 
 }

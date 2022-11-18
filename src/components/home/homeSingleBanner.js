@@ -154,8 +154,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                     autoAlpha:1,
                     scale:1.1,
                     ease: "power4.out",
-                    //stagger:4,
-                    delay:6,
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
@@ -168,7 +166,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                         pinSpacing: false,
                         scrub:3,
                     }
-                });
+                },"+=7");
         
             });
     
@@ -223,12 +221,12 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3');
-              tl2.to(brandingRef.current, {
+              tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
-                  autoAlpha:1, 
-                  opacity:1,
+                  autoAlpha:0, 
+                  opacity:0,
                 }
               },'-=4');
 
@@ -248,7 +246,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                     autoAlpha:1,
                     scale:1.4,
                     ease: "power4.out",
-                    delay:6,
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
@@ -259,7 +256,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                         pinSpacing: false,
                         scrub:3,
                     }
-                });
+                },"+=7");
         
             });
 
@@ -311,14 +308,14 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3')
-              tl2.to(brandingRef.current, {
+              tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
                 css: {
-                  autoAlpha:1, 
-                  opacity:1,
+                  autoAlpha:0, 
+                  opacity:0,
                 }
-              },'-=4');
+              },'-=7');
 
               
 
@@ -350,7 +347,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                         pinSpacing: false,
                         scrub:3,
                     }
-                });
+                },"+=7");
         
             });
 

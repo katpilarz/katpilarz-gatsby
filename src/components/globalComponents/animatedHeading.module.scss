@@ -40,7 +40,7 @@
                 margin-top: 1vw;
             }
 
-            @include respond (mobile){
+            @include respond (tabletHorizontal){
                 margin-top: 6vw;
             }
             

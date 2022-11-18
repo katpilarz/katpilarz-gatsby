@@ -22,7 +22,7 @@ gsap.registerPlugin(ScrollTrigger);*/
 
 
 
-const ServiceSingleGallery = ({ projects, title }) => {
+const ServiceSingleGallery = ({ projects }) => {
 
   /*const swiperContainer = useRef(null);
 
@@ -61,7 +61,7 @@ const ServiceSingleGallery = ({ projects, title }) => {
 
       <div className={styles.gallerySwiper}>
           <div className='container'>
-            <AnimatedHeading headerOne='Related Projects in' headerTwo={title} linkText="See All Projects" linkUrl="/projects"/>
+            <AnimatedHeading headerOne='Some of related' headerTwo='projects' linkText="See All Projects" linkUrl="/projects"/>
           </div>
           <Swiper className={styles.swiper}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}

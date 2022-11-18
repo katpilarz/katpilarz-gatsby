@@ -32,6 +32,10 @@
             place-content: flex-start;
         }
 
+        @include respond (tabletHorizontal){
+            margin-top: 10vw;
+        }
+
         @include respond (mobile){
             margin-top: 14vw;
         }

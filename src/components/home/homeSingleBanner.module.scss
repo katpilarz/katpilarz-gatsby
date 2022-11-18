@@ -12,7 +12,7 @@
     place-content: center;
 
     @include respond (tabletMediumHorizontal){
-        height: 90vh;
+        height: 87vh;
     }
 
     @include respond (mobile){
@@ -20,7 +20,8 @@
     }
 
     @include respond (mobileLandscape){
-        height: 24rem;
+        min-height: 100vh;
+        height: auto;
     }
 
 
@@ -100,9 +101,7 @@
             max-height:32rem;
 
         }
-
-
-       
+      
 
         @include respond (tabletHorizontal){
             top:17vw
@@ -113,6 +112,8 @@
             top:20vw
 
         }
+
+
 
         @include respond (mobile){
             top:26vw;
@@ -127,10 +128,12 @@
         }
 
         @include respond (mobileLandscape){
-            top:10vw;
-            height: 60vw;
-            max-height: 16rem;
+            top:4rem;
+            height: 90vh;
+            max-height: auto;
         }
+
+
 
  
         :nth-child(1){

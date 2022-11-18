@@ -14,20 +14,24 @@
     }
 
     @include respond (tabletHorizontal){
-      padding-top: 20vw;
+      padding-top: 24vw;
     }
 
     @include respond (tabletMediumHorizontal){
-      padding-top: 24vw;
+      padding-top: 30vw;
     }
 
 
     @include respond (mobile){
-      padding-top: 40vw;
+      padding-top: 44vw;
     }
 
     @include respond (mobileXS){
-      padding-top: 44vw;
+      padding-top: 48vw;
+    }
+
+    @include respond (mobileLandscape){
+      padding-top: 14vw;
     }
 
 
@@ -62,7 +66,7 @@
 
       @include respond (mobileLandscape){
           width:77%;
-          margin: 14vw 14vw 20vw auto;
+          margin: 10vw 14vw 20vw auto;
       }
   
       p{

@@ -12,6 +12,10 @@
         margin: 14vw auto 0 auto;
     }
 
+    @include respond (tabletHorizontal){
+        margin: 18vw auto 0 auto;
+    }
+
     @include respond (mobile){
         margin: 22vw auto 0 auto;
     }
@@ -30,6 +34,10 @@
     width: 100%;
     margin: 10vw auto 12vw auto;
     overflow: visible;
+
+    @include respond (tabletHorizontal){
+        margin: 18vw auto 16vw auto;
+    }
 
     @include respond (mobile){
         margin:20vw auto;

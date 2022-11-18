@@ -39,6 +39,7 @@ a{
             opacity: 1;
             padding: 0 2%;
             transition: all .4s linear;
+            min-width: 1.77rem;
         
         }
 
@@ -46,11 +47,11 @@ a{
 }
 
 .sectionIcon{
-    width: 2vw;
+    width: 2.7vw;
     display: flex;
     position: relative;
     z-index: 2;
-    min-width: 1.4rem;
+    min-width: 1.77rem;
 
     @include respond (desktop){
         width: 2.7vw;
