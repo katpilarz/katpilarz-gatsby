@@ -136,7 +136,7 @@ const ProjectTemplate = props => {
 
       <main>
         <PagePreloader/>
-        <Seo title={project.title} description={project.overview}  />
+        <Seo title={project.title} description={project.description} overview={project.header} />
         <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>

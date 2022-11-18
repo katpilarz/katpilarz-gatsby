@@ -167,7 +167,7 @@ const ServiceTemplate = props => {
 
   return (
       <main>
-        <Seo title={service.title} description={service.title}  />
+        <Seo title={service.title} description={service.sectionDetails.header} overview={service.sectionDetails.header}/>
         <PagePreloader/>
         <Media query="(min-width: 569px)" render={() =>
           (

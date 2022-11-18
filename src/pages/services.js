@@ -99,7 +99,7 @@ const Services = props => {
 
   return (
     <main>
-      <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords}  />
+      <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords} overview='Helping Brands to create outstanding Experience' />
       <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>

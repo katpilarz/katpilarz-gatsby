@@ -75,7 +75,7 @@ const FrequentQuestions = props => {
 
   return (
     <main>
-      <Seo title={faqsPage.node.title} description={faqsPage.node.overview} keywords={keywords}  />
+      <Seo title={faqsPage.node.title} description={faqsPage.node.overview} overview={faqsPage.node.overview} keywords={keywords}  />
       <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>

@@ -51,31 +51,63 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
         };
       }, []);*/
 
+
+
       useEffect(() => {
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
-          // create as many GSAP animations and/or ScrollTriggers here as you want...
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: scrippedTextRef.current,
-              start: "top 50%",
-              //end: "top 27%",
-              scrub:1, 
-              repeatRefresh: true,
-              toggleActions: "restart pause resume none",
-            }
-          });
-            tl.from(scrippedTextRef.current, {
-                duration: 1,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  xPercent:'30',
-            }})
-  
+    
+    
+          const animation = gsap.matchMedia()
+              animation.add()
+    
+    
+              
+              animation.add("(min-width:  569px)", () => {
+                const tl = gsap.timeline({
+                  scrollTrigger: {
+                    trigger: scrippedTextRef.current,
+                    start: "top 50%",
+                    //end: "top 27%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                  }
+                });
+                  tl.from(scrippedTextRef.current, {
+                      duration: 1,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        xPercent:'30',
+                  }})
+            
+              })
+    
+    
+              animation.add("(max-width: 568px)", () => {
+                const tl = gsap.timeline({
+                  scrollTrigger: {
+                    trigger: scrippedTextRef.current,
+                    start: "top 77%",
+                    scrub:1, 
+                    repeatRefresh: true,
+                    toggleActions: "restart pause resume none",
+                  }
+                });
+                  tl.from(scrippedTextRef.current, {
+                      duration: 1,
+                      ease: "power2.out",
+                      css: {
+                        autoAlpha: 0,
+                        visibility:'hidden',
+                        xPercent:'30',
+                  }})
+       
+              })
       
         }, scrippedTextRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         

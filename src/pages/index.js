@@ -274,7 +274,7 @@ const IndexPage = props => {
 
   return (
     <main>
-      <Seo title={siteTitle} description={site.description} keywords={site.keywords}  />
+      <Seo title={siteTitle} description={site.description} keywords={site.keywords} overview={home.sectionAbout.header} />
       <Header isHome={isHome}/>
       <PagePreloader/>
       <Media query="(min-width: 569px)" render={() =>

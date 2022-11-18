@@ -88,7 +88,7 @@ const Projects = props => {
   return (
    
     <main>
-      <Seo title={projectsPage.node.title} description={projectsPage.node.overview} keywords={keywords}  />
+      <Seo title={projectsPage.node.title} description={projectsPage.node.overview} keywords={keywords} overview='Helping Brands to create outstanding Experience' />
       <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>
