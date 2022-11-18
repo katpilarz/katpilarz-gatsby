@@ -12,12 +12,23 @@
   
   
   body {
-    transition: all 0.2s linear;
+    transition: all .47s linear;
     position: relative!important;
     z-index: 1;
     width:100vw;
     overflow-x: hidden;
+    -webkit-transition:background-image all .47s linear;     
+   -moz-transition:background-image all .47s linear;
+     -o-transition:background-image all .47s linear;
 
+
+  }
+
+  nav{
+    transition: all 0.47s linear;
+    -webkit-transition:background-image all .47s linear;     
+    -moz-transition:background-image all .47s linear;
+      -o-transition:background-image all .47s linear; 
   }
 
 
@@ -91,7 +102,7 @@
     cursor: pointer;
     display: flex;
     place-self: center;
-    transition: all .6s ease;
+    transition: all .6s linear;
   }
   
   
