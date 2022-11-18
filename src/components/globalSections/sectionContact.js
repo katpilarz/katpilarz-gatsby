@@ -38,6 +38,7 @@ const SectionContact = ({section }) => {
             scrollTrigger: {
               trigger: headerTwoRef.current,
               start: "top 89%",
+              end:"top 17%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -81,14 +82,14 @@ const SectionContact = ({section }) => {
               css: {
                 opacity: 0,
                 xPercent:'40',
-            }},'-=1')
+            }},'-=1.2')
             tl.from(linksRefTwo.current, {
                 duration:1.2,
                 ease: "power2.out",
                 css: {
                   opacity: 0,
                   xPercent:'40',
-            }},'-=1')
+            }},'-=1.2')
   
            
                 
