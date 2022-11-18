@@ -48,14 +48,13 @@ const HomeSingleServices = ({ services }) => {
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 57%',
-                            //end:'top 10%',
+                            start: 'top 80%',
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    },'+=2');
+                    },'+=7');
              
                 });
     

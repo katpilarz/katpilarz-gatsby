@@ -51,7 +51,7 @@ const HomeSingleGallery = ({ gallery }) => {
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
-                        start: 'top 55%',
+                        start: 'top 77%',
                         //end:'top -20%',
                         toggleActions: "restart pause resume none",
                        

@@ -79,7 +79,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
             gsap.fromTo(el, {
                 xPercent:50,
                 scale:2,
-                marginTop:'10vw'
+                marginTop:'12vw'
 
             }, {
                 duration: 2,

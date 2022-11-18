@@ -40,7 +40,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         scrollTrigger: {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
-                            start: 'top 67%',
+                            start: 'top 77%',
                             end: 'top top',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
@@ -48,18 +48,18 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         }
                     });
                     gsap.fromTo(mediaTwoRef.current, {
-                        //xPercent:'20',
+                        xPercent:'20',
                         autoAlpha:0,
                     }, {
                         duration: 2,
                         autoAlpha:1,
-                        //xPercent:0,
+                        xPercent:0,
                         ease: "power2.out",
                         delay:1,
                         scrollTrigger: {
                             id: mediaTwoRef.current,
                             trigger: mediaTwoRef.current,
-                            start: 'top 67%',
+                            start: 'top 77%',
                             end: 'top 27%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,

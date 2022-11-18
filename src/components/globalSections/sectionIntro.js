@@ -25,99 +25,43 @@ const SectionIntro = ({ subheader }) => {
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
 
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 77%",
+          end: "top 47%",
+          scrub:.5, 
+          repeatRefresh: true,
+          toggleActions: "restart pause resume none"
+         
+        }
+      });
+        tl.from(iconRef.current, {
+            duration: 4,
+            ease: "power4.out",
+            css: {
+              autoAlpha: 0,
+              opacity:0, 
+              rotation:360*3,
+        }})
 
-      const animation = gsap.matchMedia()
-          animation.add()
-
-
-          
-          animation.add("(min-width:  1025px)", () => {
-
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 67%",
-                //end: "top 27%",
-                scrub:.5, 
-                repeatRefresh: true,
-                toggleActions: "restart pause resume none"
-               
-              }
-            });
-              tl.from(iconRef.current, {
-                  duration: 4,
-                  ease: "power4.out",
-                  css: {
-                    autoAlpha: 0,
-                    opacity:0, 
-                    rotation:360*3,
-              }})
-      
-              tl.from(lineRef.current, {
-                duration: 2,
-                ease: "power4.out",
-                css: {
-                  transformOrigin:'top',
-                  autoAlpha: 0,
-                  opacity:0, 
-                  height:'0vw',
-                  marginBottom:'7vw',
-                }},'-=3.7')
-                tl.from(paragraphRef.current, {
-                  duration: 1,
-                  ease: "power4.out",
-                  css: {
-                    autoAlpha: 0,
-                    opacity:0, 
-              }},'-=1.7')
-
-    
-          })
-
-
-          animation.add("(max-width: 1024px)", () => {
-
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "top 77%",
-                end: "top 47%",
-                scrub:.5, 
-                repeatRefresh: true,
-                toggleActions: "restart pause resume none"
-               
-              }
-            });
-              tl.from(iconRef.current, {
-                  duration: 4,
-                  ease: "power4.out",
-                  css: {
-                    autoAlpha: 0,
-                    opacity:0, 
-                    rotation:360*3,
-              }})
-      
-              tl.from(lineRef.current, {
-                duration: 2,
-                ease: "power4.out",
-                css: {
-                  transformOrigin:'top',
-                  autoAlpha: 0,
-                  opacity:0, 
-                  height:'0vw',
-                  marginBottom:'7vw',
-                }},'-=3.7')
-                tl.from(paragraphRef.current, {
-                  duration: 1,
-                  ease: "power4.out",
-                  css: {
-                    autoAlpha: 0,
-                    opacity:0, 
-              }},'-=1.7')
-  
-    
-          })
-
+        tl.from(lineRef.current, {
+          duration: 2,
+          ease: "power4.out",
+          css: {
+            transformOrigin:'top',
+            autoAlpha: 0,
+            opacity:0, 
+            height:'0vw',
+            marginBottom:'7vw',
+          }},'-=3.7')
+          tl.from(paragraphRef.current, {
+            duration: 1,
+            ease: "power4.out",
+            css: {
+              autoAlpha: 0,
+              opacity:0, 
+        }},'-=1.7')
 
         
             

@@ -27,60 +27,23 @@ const SectionAbout = ({ section }) => {
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
 
-
-      const animation = gsap.matchMedia()
-          animation.add()
-
-
-          
-          animation.add("(min-width:  1025px)", () => {
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                trigger: headerRef.current,
-                start: "top 57%",
-                end: "top 17%",
-                scrub:1, 
-                repeatRefresh: true,
-                toggleActions: "restart pause resume none",
-                }
-            });
-            tl.from(headerRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                autoAlpha: 0,
-                yPercent:'50',
-            }})  
-  
-    
-          })
-
-
-          animation.add("(max-width: 1024px)", () => {
-
-            const tl = gsap.timeline({
-                scrollTrigger: {
-                trigger: headerRef.current,
-                start: "top 77%",
-                end: "top 37%",
-                scrub:1, 
-                repeatRefresh: true,
-                toggleActions: "restart pause resume none",
-                }
-            });
-            tl.from(headerRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                autoAlpha: 0,
-                yPercent:'50',
-            }})  
-  
-    
-          })
-
-
+      const tl = gsap.timeline({
+          scrollTrigger: {
+          trigger: headerRef.current,
+          start: "top 77%",
+          end: "top 37%",
+          scrub:1, 
+          repeatRefresh: true,
+          toggleActions: "restart pause resume none",
+          }
+      });
+      tl.from(headerRef.current, {
+          duration: 2,
+          ease: "power2.out",
+          css: {
+          autoAlpha: 0,
+          yPercent:'50',
+      }}) 
         
             
   

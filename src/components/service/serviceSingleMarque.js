@@ -47,7 +47,7 @@ const ServiceSingleMarque = () => {
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    });
+                    }, '+=2');
                     gsap.fromTo(marqueRefTwo.current, {
                         xPercent:'-1',
                         autoAlpha:0,
@@ -56,7 +56,6 @@ const ServiceSingleMarque = () => {
                         autoAlpha:1,
                         xPercent:'-20',
                         ease: "power4.out",
-                        delay:1,
                         scrollTrigger: {
                             id: marqueRefTwo.current,
                             trigger: marqueRefTwo.current,
@@ -65,7 +64,7 @@ const ServiceSingleMarque = () => {
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    });
+                    },'+=2');
 
                     gsap.fromTo(marqueRefThree.current, {
                         xPercent:'-1',
@@ -75,7 +74,6 @@ const ServiceSingleMarque = () => {
                         autoAlpha:1,
                         xPercent:-10,
                         ease: "power4.out",
-                        delay:.5,
                         scrollTrigger: {
                             id: marqueRefThree.current,
                             trigger: marqueRefThree.current,
@@ -84,7 +82,7 @@ const ServiceSingleMarque = () => {
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    });
+                    },'+=2');
                     gsap.fromTo(marqueRefFour.current, {
                         xPercent:'-1',
                         autoAlpha:0,
@@ -93,7 +91,6 @@ const ServiceSingleMarque = () => {
                         autoAlpha:1,
                         xPercent:-10,
                         ease: "power4.out",
-                        delay:.5,
                         scrollTrigger: {
                             id: marqueRefFour.current,
                             trigger: marqueRefFour.current,
@@ -102,7 +99,7 @@ const ServiceSingleMarque = () => {
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    });
+                    },'+=2');
 
 
   
