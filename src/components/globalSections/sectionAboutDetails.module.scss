@@ -23,9 +23,11 @@
         flex-direction: column;
         place-items: flex-end;
         //padding-top: 22vh;
-        padding-top: 10vw;
+        padding-top: 9vw;
+
         @include respond (desktop){
             flex-basis: 55%;
+            padding-top: 7vw;
         }
 
         @include respond (desktopXS){
@@ -43,7 +45,11 @@
             flex-direction: column;
             order:2;
             //margin-top: 24vh;
-            margin-top: 12vw;
+            margin-top: 11vw;
+
+            @include respond (desktop){
+                margin-top: 9vw;
+            }
 
             @include respond (desktopXS){
                 width:55%;

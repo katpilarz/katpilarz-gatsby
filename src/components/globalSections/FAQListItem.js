@@ -111,8 +111,6 @@ const FAQListItem = ({ item }) => {
                 autoAlpha: 1,
                 xPercent:0,
                 ease: "power4.out",
-                stagger:2,
-                delay:2,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
@@ -123,7 +121,7 @@ const FAQListItem = ({ item }) => {
                     refreshPriority: 1,
                     scrub:2,
                 }
-            });
+            },'+=4');
      
         });
 

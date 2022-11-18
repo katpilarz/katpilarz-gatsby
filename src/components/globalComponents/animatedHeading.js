@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "./galleryHeader.module.scss";
+import * as styles from "./animatedHeading.module.scss";
 import { Link } from "gatsby"
 import ArrowIcon from "./arrow";
 import { useEffect, useRef } from 'react';
@@ -9,12 +9,13 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const GalleryHeader = ({ header, linkText, linkUrl }) => {
+const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
 
 
   const sectionRef = useRef(null);
 
-  const headerRef = useRef(null);
+  const headerOneRef = useRef(null);
+  const headerTwoRef = useRef(null);
   const linkRef = useRef(null);
 
 
@@ -43,7 +44,7 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
         }
       })
 
-      tl.from(headerRef.current, {
+      tl.from(headerOneRef.current, {
           duration:2, 
           ease: "power2.out",
           css: {
@@ -51,11 +52,19 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
             autoAlpha:0,
           }
         });
+        tl.from(headerTwoRef.current, {
+          duration:1, 
+          ease: "power2.out",
+          css: {
+          xPercent:'50',
+          autoAlpha:0,
+          }
+      },'-=2');
         tl.from(linkRef.current, {
             duration:1, 
             ease: "power2.out",
             css: {
-            xPercent:'50',
+            xPercent:'-50',
             autoAlpha:0,
             }
         },'-=2');
@@ -73,7 +82,10 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
   return (
 
     <div ref={sectionRef} className={styles.header}>
-        <h3 ref={headerRef}>{header}</h3>
+        <div ref={sectionRef} className={styles.headerWrapper}>
+          <h3 ref={headerOneRef}>{headerOne}</h3>
+          <h3 ref={headerTwoRef}>{headerTwo}</h3>
+        </div>
         <Link to={linkUrl} ref={linkRef}>
            {linkText}
             <ArrowIcon arrowIconClass="linkIcon"/>
@@ -82,4 +94,4 @@ const GalleryHeader = ({ header, linkText, linkUrl }) => {
   )
 }
 
-export default GalleryHeader
+export default AnimatedHeading

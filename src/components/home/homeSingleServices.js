@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import Video from "../globalComponents/video";
 import MarqueText from "../globalSections/marqueText";
-import GalleryHeader from "../globalComponents/galleryHeader";
+import AnimatedHeading from "../globalComponents/animatedHeading";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -45,18 +45,17 @@ const HomeSingleServices = ({ services }) => {
                         xPercent:-10,
                         autoAlpha:1,
                         ease: "power4.out",
-                        delay:.1,
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 47%',
+                            start: 'top 57%',
                             //end:'top 10%',
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
                             scrub:2,
                         }
-                    });
+                    },'+=2');
              
                 });
     
@@ -71,7 +70,7 @@ const HomeSingleServices = ({ services }) => {
         <section ref={sectionRef} className={`${styles.sectionServices}`}>
 
             <div className={`${styles.sectionServicesHeader} container`}>
-                <GalleryHeader header='Multidisciplinary approach' linkText="See All Services" linkUrl="/services"/>
+                <AnimatedHeading headerOne='Multidisciplinary' headerTwo='approach' linkText="See All Services" linkUrl="/services"/>
             </div>
 
             {services.map((service, index) => {

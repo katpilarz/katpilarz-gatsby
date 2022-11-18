@@ -64,8 +64,6 @@ const HomeSingleFocus = ({ section}) => {
                         autoAlpha: 1,
                         xPercent:0,
                         ease: "power4.out",
-                        stagger:2,
-                        delay:.97,
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
@@ -76,7 +74,7 @@ const HomeSingleFocus = ({ section}) => {
                             refreshPriority: 1,
                             scrub:1,
                         }
-                    });
+                    },'+=7');
              
                 });
     

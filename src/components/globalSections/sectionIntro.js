@@ -61,6 +61,7 @@ const SectionIntro = ({ subheader }) => {
                   autoAlpha: 0,
                   opacity:0, 
                   height:'0vw',
+                  marginBottom:'7vw',
                 }},'-=3.7')
                 tl.from(paragraphRef.current, {
                   duration: 1,
@@ -104,6 +105,7 @@ const SectionIntro = ({ subheader }) => {
                   autoAlpha: 0,
                   opacity:0, 
                   height:'0vw',
+                  marginBottom:'7vw',
                 }},'-=3.7')
                 tl.from(paragraphRef.current, {
                   duration: 1,

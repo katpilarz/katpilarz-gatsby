@@ -54,7 +54,6 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
             opacity:1,
             autoAlpha:1,
             ease: "power2.out",
-            delay:.1,
             scrollTrigger: {
                 id: `section-${index+1}`,
                 trigger: el,
@@ -65,7 +64,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
                 refreshPriority: 1,
                 scrub:1,
             }
-        });
+        },'+=2');
  
     });
 

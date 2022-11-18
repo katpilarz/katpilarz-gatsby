@@ -46,7 +46,6 @@ const PageSingleItemList = ({ itemList, pageName }) => {
             opacity:1,
             autoAlpha:1,
             ease: "power4.out",
-            delay:.1,
             scrollTrigger: {
                 id: `section-${index+1}`,
                 trigger: el,
@@ -57,7 +56,7 @@ const PageSingleItemList = ({ itemList, pageName }) => {
                 refreshPriority: 1,
                 scrub:1,
             }
-        });
+        },'+=4');
  
     });
 

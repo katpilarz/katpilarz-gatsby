@@ -48,8 +48,8 @@ const Video = ({ videoWebm, videoFallback, videoAlt, videoCustomClass, isDecript
       gsap.timeline({
         scrollTrigger: {
         trigger: videoContainerRef.current,
-        start: 'top 65%',
-        end: 'top -160%',
+        start: 'top 70%',
+        end: 'top -150%',
         scrub:1,
         onEnter: () => videoRef.current.play(),
         onEnterBack: () => videoRef.current.play(),

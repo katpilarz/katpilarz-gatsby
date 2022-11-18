@@ -1,7 +1,7 @@
 import React from "react";
 import * as styles from "./homeSingleFeatured.module.scss";
 import { Link } from "gatsby"
-import GalleryHeader from "../globalComponents/galleryHeader";
+import AnimatedHeading from "../globalComponents/animatedHeading";
 import AnimatedImage from "../globalComponents/animatedImage";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
@@ -79,20 +79,20 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
             gsap.fromTo(el, {
                 xPercent:50,
                 scale:2,
+                marginTop:'10vw'
 
             }, {
                 duration: 2,
                 xPercent:0,
                 autoAlpha:1,
                 scale:1,
+                marginTop:0,
                 ease: "power4.out",
-                stagger:4,
-                delay:4,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
-                    start: 'top 65%',
-                    end:'top 30%',
+                    start: 'top 77%',
+                    end:'top 37%',
                   
                     toggleActions: "restart pause resume none",
                     refreshPriority: 1,
@@ -100,7 +100,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                     pinSpacing: false,
                     scrub:4,
                 }
-            });
+            },'+=4');
     
         });
 
@@ -115,18 +115,14 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
           revealRefs.current.forEach((el, index) => {
 
             gsap.fromTo(el, {
-                xPercent:20,
-                scale:1,
+                xPercent:30,
                 autoAlpha:0,
 
             }, {
                 duration: 2,
                 xPercent:0,
                 autoAlpha:1,
-                scale:1,
                 ease: "power4.out",
-                stagger:4,
-                delay:4,
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
@@ -139,7 +135,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                     pinSpacing: false,
                     scrub:4,
                 }
-            });
+            },'+=4');
     
         });
 
@@ -163,7 +159,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
   return (
 
       <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
-          <GalleryHeader header='Latest Projects' linkText="See All Projects" linkUrl="/projects"/>
+          <AnimatedHeading headerOne='Some of my' headerTwo='latest projects' linkText="See All Projects" linkUrl="/projects"/>
           <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
             {featuredProjects.map((project, index) => {
                   return (

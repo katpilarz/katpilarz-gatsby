@@ -7,32 +7,31 @@
         place-content: space-between;
         flex-direction: column;
 
-
-        h3{
-            width:40%;
+        .headerWrapper{
+            display: flex;
+            flex-direction: column;
             place-content: flex-start;
-            place-items: center;
+            place-items: flex-start;
             place-self: flex-start;
-            text-align: left;
-        
-        
-            @include respond (desktop){
-               width:50%;
-            }
+            width:80%;
 
-            @include respond (tabletHorizontal){
-                width:70%;
-            }
 
-            @include respond (mobile){
-                width:80%;
-            }
+         
 
-            @include respond (mobileLandscape){
-                width: 55%;
+
+            h3{
+                place-content: flex-start;
+                place-items: center;
+                place-self: flex-start;
+                text-align: left;
+            
+            
+
             }
-        
         }
+
+
+
 
         a{
             place-self: flex-end;
