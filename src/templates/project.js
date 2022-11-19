@@ -73,6 +73,13 @@ query ProjectTemplateQuery($id: String!){
           gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
         }
       }
+      desktopMockups {
+        alt
+        asset {
+          url
+          gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+        }
+      }
       bannerImage {
         asset {
           url

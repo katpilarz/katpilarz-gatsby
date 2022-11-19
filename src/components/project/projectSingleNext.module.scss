@@ -9,14 +9,19 @@
     height: auto;
     margin:14vw 0 12vw auto;
 
+    @include respond (tabletHorizontal){
+        margin:26vw 0 16vw auto;
+     }
+ 
+
     @include respond (mobile){
        width:100%;
-       margin:26vw 0 12vw auto;
+       margin:26vw 0 16vw auto;
     }
 
     @include respond (mobileXS){
         width:100%;
-        margin:26vw 0 12vw auto;
+        margin:26vw 0 16vw auto;
      }
 
     

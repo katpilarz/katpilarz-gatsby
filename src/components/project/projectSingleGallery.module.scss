@@ -2,12 +2,13 @@
 .projectGallery{
     display: grid;
     grid-gap:14vw;
-    margin-top: 4vw;
+    margin:4vw 0 14vw auto;
 
     @include respond (tabletHorizontal){
         grid-gap:17vw;
     }
-    
+
+ 
 }
   
 

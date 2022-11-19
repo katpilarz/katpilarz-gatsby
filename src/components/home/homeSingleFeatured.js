@@ -159,7 +159,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
   return (
 
       <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
-          <AnimatedHeading headerOne='How I have done' headerTwo='it for others' linkText="See All Projects" linkUrl="/projects"/>
+          <AnimatedHeading headerOne='Creating Competitive' headerTwo='startup experience' linkText="See All Projects" linkUrl="/projects"/>
           <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
             {featuredProjects.map((project, index) => {
                   return (

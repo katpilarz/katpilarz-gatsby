@@ -6,6 +6,7 @@ import ProjectSingleGallery from "./projectSingleGallery";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
+import Media from 'react-media';
 
 
 
@@ -30,6 +31,15 @@ const ProjectSingle = ({ project, isHome }) => {
 
         
         <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
+        { project.desktopMockups &&
+          <Media query="(min-width: 768px)" render={() =>
+            (
+                <ProjectSingleGallery images={project.desktopMockups} galleryClassName='projectGallery'/>
+
+              
+            )}
+          />
+        }
 
         {project.nextProject.map((nextProject, index) => {
             return(

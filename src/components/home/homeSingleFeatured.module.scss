@@ -13,7 +13,7 @@
     z-index: 1;
 
     @include respond (mobile){
-        margin-top: 20vw;
+        margin-top: 28vw;
     }
 
    
@@ -37,11 +37,11 @@
         }
 
         @include respond (mobile){
-            margin-top: 14vw;
+            margin-top: 18vw;
         }
 
         @include respond (mobileXS){
-            margin-top: 16vw;
+            margin-top: 20vw;
         }
 
     }

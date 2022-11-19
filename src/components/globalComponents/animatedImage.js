@@ -37,7 +37,7 @@ const AnimatedImage = ({ imageAlt, imagePath }) => {
                     duration: 2,
                     ease: "sine.out",
                     css: {
-                    scale:1.27,
+                    scale:1.17,
                     transformOrigin:'top'
                 }})
 
