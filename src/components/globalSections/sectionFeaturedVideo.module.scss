@@ -51,12 +51,16 @@
 
 
     .featuredVideo{
-        width: auto;
+        width: 67%;
         z-index: 2;
         position: absolute;
         transform-origin:center;
-        top:auto;
+        top:10%;
         height: auto;
+
+        @include respond (mobile){
+            width:100%;
+        }
     }
 
 

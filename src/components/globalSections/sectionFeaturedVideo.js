@@ -23,72 +23,32 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
     let ctx = gsap.context(() => {
 
 
-      const animation = gsap.matchMedia()
-          animation.add()
 
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "center center",
+          scrub: true, 
+          pin: true, 
+          pinSpacing: true,
+          repeatRefresh: true,
+          toggleActions: "restart pause none none",
+        }
+      });
+            tl.fromTo(videoRef.current, {
+                css: {
+                    clipPath: 'circle(20.0% at 50% 50%)',
+                    scale:.77,
+                }
+            },{
+                duration:8,
+                ease: "power2.out",
+                css: {
+                  clipPath: 'circle(70.7% at 50% 50%)',
+                  scale:1,
+                }
+            })   
 
-          
-          animation.add("(min-width:  1025px)", () => {
-
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "center center",
-                scrub: true, 
-                pin: true, 
-                pinSpacing: true,
-                repeatRefresh: true,
-                toggleActions: "restart pause none none",
-              }
-            });
-                  tl.fromTo(videoRef.current, {
-                      css: {
-                          clipPath: 'circle(20.0% at 50% 50%)',
-                          width:'40vw',
-                      }
-                  },{
-                      duration:8,
-                      ease: "power2.out",
-                      css: {
-                          clipPath: 'circle(70.7% at 50% 50%)',
-                          //width:'67vw',
-                          width:'70vw',
-                      }
-                  })   
-  
-    
-          })
-
-
-          animation.add("(max-width: 1024px)", () => {
-
-            const tl = gsap.timeline({
-              scrollTrigger: {
-                trigger: sectionRef.current,
-                start: "center center",
-                scrub: true, 
-                pin: true, 
-                pinSpacing: true,
-                repeatRefresh: true,
-                toggleActions: "restart pause none none",
-              }
-            });
-                  tl.fromTo(videoRef.current, {
-                      css: {
-                          clipPath: 'circle(20.0% at 50% 50%)',
-                          width:'60vw',
-                      }
-                  },{
-                      duration:8,
-                      ease: "power2.out",
-                      css: {
-                        clipPath: 'circle(70.7% at 50% 50%)',
-                        width:'90vw',
-                      }
-                  })   
-  
-    
-          })
 
 
         
@@ -103,7 +63,7 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
 
    
   return (
-    <section ref={sectionRef} className={styles.featuredVideoSection}>
+    <section ref={sectionRef} className={`${styles.featuredVideoSection} container`}>
         <div ref={videoRef} className={styles.featuredVideo}>
             <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed={isDecriptionDisplayed}/> 
         </div>
