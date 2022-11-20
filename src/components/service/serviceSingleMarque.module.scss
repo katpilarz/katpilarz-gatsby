@@ -9,11 +9,8 @@
 
 
 
-
 .serviceMarqueeCard{
-    display: flex;
-    place-items: center;
-    place-content: center;
+    @include flex-center;
     width: 165%;
     overflow-x: hidden;
 
@@ -23,16 +20,16 @@
     }
 
     @include respond (tabletHorizontal){
-        width: 195%;
+        width: 200%;
     }
 
     @include respond (tabletMediumHorizontal){
-        width:220%;
+        width:250%;
     }
 
 
     @include respond (mobile){
-        width:260%;
+        width:270%;
     }
 
     @include respond (mobileXS){
@@ -42,17 +39,15 @@
 
 
 
-
-    
+   
 
     .serviceSingleWrapper{
-        display: flex;
-        width:100%;
+        @include fullWidth;
+        @include flex-center;
         place-self: center;
-        place-items: center;
-        place-content: center;
         padding: 4vw 0;
         overflow-y: visible;
+        @include border-bottom;
 
 
         @include respond (mobile){
@@ -65,29 +60,16 @@
 
         }
 
+        
 
-    &:nth-child(odd){
-        border-top: $border;
-        border-bottom:$border;
-
-        @include respond (desktopXS){
-            border-top: $border;
-        }
     }
 
     &:first-child{
         border-top: none;
 
         @include respond (desktopXS){
-            border-top: $border;
+            @include border-top;
         }
-    }
-
-    &:last-child{
-        border-bottom:$border;
-    }
-
-
     }
 
 

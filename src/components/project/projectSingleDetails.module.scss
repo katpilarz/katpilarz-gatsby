@@ -88,7 +88,7 @@
 
     .projectOverviewCard{
         width:100%;
-        border-top:$border; 
+        @include border-top; 
         padding: 2vw 3vw 2vw 0;
         display: flex;
         place-items: center;
@@ -124,7 +124,7 @@
         
 
         &:last-child{
-            border-bottom:$border; 
+            @include border-bottom; 
         }
 
         .toolsList{

@@ -54,7 +54,7 @@
     width: 250%;
     overflow-x: hidden;
     padding: 4vw 0;
-    border-top:$border;
+    @include border-top;
     overflow-x: hidden;
     position: relative;
     z-index: 1;
@@ -79,7 +79,7 @@
 
 
     &:last-child{
-        border-bottom:$border;
+        @include border-bottom;
     }
 
 

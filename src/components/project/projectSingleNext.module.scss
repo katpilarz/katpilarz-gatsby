@@ -44,8 +44,7 @@
     .nextProjectHeaderWrapper{
         display: flex;
         place-items: center;
-        height: auto;
-        width:100%;
+        @include fullWidth;
 
         h3{
             line-height: 1;

@@ -1,8 +1,7 @@
 @import 'src/styles/layout';
 
 .gallerySwiper{
-    height: auto;
-    width:100%;
+    @include fullWidth;
     display: flex;
     flex-direction: column;
     margin-top: 12vw;
@@ -30,8 +29,7 @@
 }
 
 .swiper{
-    height: auto; 
-    width: 100%;
+    @include fullWidth;
     margin: 10vw auto 12vw auto;
     overflow: visible;
 

@@ -1,9 +1,7 @@
 .projectPrototypes{
     height: auto;
-    display: flex;
+    @include flex-center;
     flex-direction: column;
-    place-items: center;
-    place-content: center;
     place-self: center;
    
 }

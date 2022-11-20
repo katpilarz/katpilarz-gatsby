@@ -72,7 +72,7 @@ const ServiceSingleMarque = () => {
                     }, {
                         duration: 4,                        
                         autoAlpha:1,
-                        xPercent:-10,
+                        xPercent:'-20',
                         ease: "power4.out",
                         scrollTrigger: {
                             id: marqueRefThree.current,
@@ -89,7 +89,7 @@ const ServiceSingleMarque = () => {
                     }, {
                         duration: 4,
                         autoAlpha:1,
-                        xPercent:-10,
+                        xPercent:'-20',
                         ease: "power4.out",
                         scrollTrigger: {
                             id: marqueRefFour.current,

@@ -1,0 +1,37 @@
+@import './media';
+
+
+
+@mixin border-top {
+    border-top: $border;
+
+    @include respond (mobile){
+        border-top: $borderMobile;
+    }
+
+}
+
+@mixin border-bottom {
+    border-bottom: $border;
+
+    @include respond (mobile){
+        border-bottom: $borderMobile;
+    }
+
+}
+
+
+@mixin flex-center {
+    display: flex;
+    place-items: center;
+    place-content: center;
+}
+
+
+@mixin fullWidth {
+    width:100%;
+    height: auto;
+}
+
+
+  
