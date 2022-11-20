@@ -16,7 +16,6 @@ const HomeSingleGallery = ({ gallery }) => {
  const galleryItems = gallery
 
 
- const sectionRef = useRef(null)
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
@@ -64,7 +63,7 @@ const HomeSingleGallery = ({ gallery }) => {
 
 
   
-    }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+    }, revealRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
@@ -73,7 +72,7 @@ const HomeSingleGallery = ({ gallery }) => {
   // NO STYLING FOR VIDEO - MORE LIKELY SHOULD NOT BE CONSIDERED FOR THIS SECTION DUE TO BANDWIDTH
    
   return (
-    <section ref={sectionRef} className={`${styles.sectionGallery} container`}>
+    <section className={`${styles.sectionGallery} container`}>
         
             {galleryItems.map((item, index) => {
                 return (

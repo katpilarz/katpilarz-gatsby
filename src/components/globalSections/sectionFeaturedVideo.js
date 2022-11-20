@@ -37,8 +37,8 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
       });
             tl.fromTo(videoRef.current, {
                 css: {
-                    clipPath: 'circle(20.0% at 50% 50%)',
-                    scale:.77,
+                    clipPath: 'circle(22.7% at 50% 50%)',
+                    scale:.47,
                 }
             },{
                 duration:8,
