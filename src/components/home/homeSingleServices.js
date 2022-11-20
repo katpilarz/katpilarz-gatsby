@@ -46,7 +46,7 @@ const HomeSingleServices = ({ services }) => {
                         autoAlpha:1,
                         ease: "power4.out",
                         scrollTrigger: {
-                            id: `section-${index+1}`,
+                            id: `article-${index+1}`,
                             trigger: el,
                             start: 'top 87%',
                             end:'top 7%',
@@ -61,7 +61,7 @@ const HomeSingleServices = ({ services }) => {
     
   
       
-        }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+        }, revealRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
       }, []);

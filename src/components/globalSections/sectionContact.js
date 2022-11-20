@@ -36,7 +36,7 @@ const SectionContact = ({section }) => {
     
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: headerOneRef.current,
+              trigger: typingRef.current,
               start: "top 77%",
               end:"top top",
               scrub:1, 
@@ -82,14 +82,14 @@ const SectionContact = ({section }) => {
               css: {
                 opacity: 0,
                 xPercent:'40',
-            }},'-=1.2')
+            }},'-=.7')
             tl.from(linksRefTwo.current, {
                 duration:1.2,
                 ease: "power2.out",
                 css: {
                   opacity: 0,
                   xPercent:'40',
-            }},'-=1.2')
+            }},'-=.7')
   
            
                 

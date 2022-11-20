@@ -61,7 +61,7 @@ const ServiceSingleGallery = ({ projects }) => {
 
       <div className={styles.gallerySwiper}>
           <div className='container'>
-            <AnimatedHeading headerOne='Check Related' headerTwo='projects' linkText="See All Projects" linkUrl="/projects"/>
+            <AnimatedHeading headerOne='How I have done it' headerTwo='for others' linkText="See All Projects" linkUrl="/projects"/>
           </div>
           <Swiper className={styles.swiper}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}

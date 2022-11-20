@@ -15,7 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 const ProjectSingleGallery = ({ images, galleryClassName }) => {
 
 
-  const itemListRef = useRef(null);
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
@@ -71,7 +70,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
 
 
   
-    }, itemListRef); // <- scopes all selector text inside the context to this component (optional, default is document)
+    }, revealRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
@@ -79,7 +78,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
 
  
   return (
-    <section ref={itemListRef} className={`${styles[galleryClassName]} container`}>
+    <section className={`${styles[galleryClassName]} container`}>
         {images.map((image, index) => {
             return (
             <div className={styles.galleryImages} key={index} ref={addToRefs}>

@@ -17,6 +17,7 @@
 
     @include respond (mobile){
         //min-height: 40rem;
+        height: 100vh;
     }
 
     @include respond (mobileLandscape){
@@ -120,7 +121,7 @@
 
 
         @include respond (mobile){
-            top:12vw;
+            top:27vw;
             //max-height: auto;
            // min-height: auto;
             max-height: 22rem;
