@@ -40,11 +40,11 @@
 
 
         @include respond (tabletHorizontal){
-            bottom:12vw;
+            bottom:8vw;
         }
 
         @include respond (mobile){
-            bottom:20vw;
+            bottom:12vw;
             width:96%;
         }
 
@@ -104,22 +104,26 @@
       
 
         @include respond (tabletHorizontal){
-            top:17vw
+            top:14vw;
+            max-height: 50rem;
+            grid-gap:2vw;
+            height:auto;
         }
 
         @include respond (tabletMediumHorizontal){
-            max-height:24rem;
-            top:20vw
+            top:4vw;
+            //max-height:30rem;
+            max-height: 30rem;
 
         }
 
 
 
         @include respond (mobile){
-            top:26vw;
-            max-height: 34vh;
-            min-height: 18rem;
-
+            top:6vw;
+            //max-height: auto;
+           // min-height: auto;
+            max-height: 22rem;
         }
 
         @include respond (mobileXS){
@@ -130,7 +134,7 @@
         @include respond (mobileLandscape){
             top:4rem;
             height: 90vh;
-            max-height: auto;
+            max-height: 16rem;
         }
 
 
@@ -140,36 +144,94 @@
             grid-column: 7/10;
             grid-row: 5/9;
             z-index: 4;
-            width:70%;
+
+            @include respond (tabletHorizontal){
+                grid-column: 6/11;
+                grid-row: 6/10;
+
+            }
+
+            @include respond (mobileLandscape){
+                grid-column: 7/10;
+                grid-row: 5/9;
+            }
+    
+
         }
 
         :nth-child(2){
             grid-column: 3/6;
             grid-row: 4/9;
             z-index: 6;
-            width:70%;
+
+
+            @include respond (tabletHorizontal){
+                grid-column: 2/7;
+                grid-row: 4/9;
+
+            }
+
+            @include respond (mobileLandscape){
+                grid-column: 3/6;
+                grid-row: 4/9;
+            }
+
         }
 
         :nth-child(3){
             grid-column: 4/7;
             grid-row: 1/4;
             z-index: 2;
-            width:70%;
+
+
+            @include respond (tabletHorizontal){
+                grid-column: 4/9;
+
+            }
+
+            @include respond (mobileLandscape){
+                grid-column: 4/7;
+                grid-row: 1/4
+            }
+
         }
 
 
         :nth-child(4){
             grid-column: 8/11;
             grid-row: 2/5;
-            width:70%;
             z-index: 5;
+
+
+            @include respond (tabletHorizontal){
+                grid-column: 7/12;
+                grid-row: 3/7;
+            }
+
+            @include respond (mobileLandscape){
+                grid-column: 8/11;
+                grid-row: 2/5;
+            }
+
         }
 
         :nth-child(5){
             grid-column: 5/8;
             grid-row: 8/-1;
-            width:70%;
             z-index: 3;
+
+
+            @include respond (tabletHorizontal){
+                grid-column: 3/8;
+                grid-row: 8/-1;
+
+            }
+
+            @include respond (mobileLandscape){
+                grid-column: 5/8;
+                grid-row: 8/-1;
+            }
+
         }
 
 
@@ -186,6 +248,8 @@
 
                 width:100%;
                 height: auto;
+
+
 
                 .galleryImage{
                     width:100%;

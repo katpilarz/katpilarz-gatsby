@@ -174,7 +174,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
           })
 
           /************************************************************************/
-          // TABLET ANIMATION
+          // TABLET & MOBILE ANIMATION
           /***********************************************************************/
           
 
@@ -198,12 +198,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 css: {
                   rotation: 360*2,
               }},'-=4')
-              tl2.to(homeBtnRef.current, {
-                  duration: 1,
-                  ease: "power2.out",
-                  css: {
-                    autoAlpha: 0,
-              }})
               tl2.to(sectionRef.current, {
                 duration:6, 
                 ease: "power2.out",
@@ -212,7 +206,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'130',
                   xPercent:'130',
                    }
-              },'+=4');
+              },'+=1');
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -221,6 +215,12 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                    }
               },'-=3');
+              tl2.to(homeBtnRef.current, {
+                duration: 1,
+                ease: "power2.out",
+                css: {
+                  autoAlpha: 0,
+            }},'-=1.7')
               tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -231,34 +231,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
               },'-=4');
 
 
-              revealRefs.current.forEach((el, index) => {
-        
-                gsap.fromTo(el, {
-                    yPercent:-20,
-                    xPercent:10,
-                    scale:.8,
-                    autoAlpha:0,
-                }, {
-                    duration: 2,
-                    xPercent:0,
-                    yPercent:20,
-                    opacity:1,
-                    autoAlpha:1,
-                    scale:1.4,
-                    ease: "power4.out",
-                    scrollTrigger: {
-                        id: `section-${index+1}`,
-                        trigger: el,
-                        start: 'top top',
-                        toggleActions: 'restart pause resume none',
-                        refreshPriority: 1,
-                        pin: false,
-                        pinSpacing: false,
-                        scrub:3,
-                    }
-                },"+=7");
-        
-            });
+             
 
 
                 

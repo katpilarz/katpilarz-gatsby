@@ -48,7 +48,7 @@ const HomeSingleServices = ({ services }) => {
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
-                            start: 'top 80%',
+                            start: 'top 87%',
                             end:'top 7%',
                             toggleActions: "restart pause resume none",
                            

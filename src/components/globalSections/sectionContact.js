@@ -36,9 +36,9 @@ const SectionContact = ({section }) => {
     
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: headerTwoRef.current,
-              start: "top 89%",
-              end:"top 17%",
+              trigger: headerOneRef.current,
+              start: "top 70%",
+              end:"top top",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
@@ -125,7 +125,7 @@ const SectionContact = ({section }) => {
                             {text.split('').map((char, i) => {
                                 const key = `${i}`;
                                 return (
-                                <span
+                                <span className="text-color"
                                     key={key}
                                     style={i%2 === 0 ? { color: '#1E6DB6'} : {}}
                                 >{char}</span>

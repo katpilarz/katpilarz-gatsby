@@ -2,7 +2,6 @@ import * as React from "react"
 import Banner from "../globalSections/banner";
 import ProjectSingleDetails from "./projectSingleDetails";
 import ProjectSingleGallery from "./projectSingleGallery";
-//import ProjectSinglePrototype from "./projectSinglePrototype";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
@@ -31,6 +30,16 @@ const ProjectSingle = ({ project, isHome }) => {
 
         
         <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
+
+        { project.mobileMockups &&
+          <Media query="(max-width: 1024px)" render={() =>
+            (
+                <ProjectSingleGallery images={project.mobileMockups} galleryClassName='projectGallery'/>
+
+              
+            )}
+          />
+        }
         { project.desktopMockups &&
           <Media query="(min-width: 768px)" render={() =>
             (

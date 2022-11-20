@@ -5,6 +5,7 @@
     position: relative;
     z-index: 1;
     width:100%;
+    height: auto;
     height: 100vh;
     display: flex;
     place-items: center;
@@ -55,11 +56,11 @@
         z-index: 2;
         position: absolute;
         transform-origin:center;
-        top:10%;
+        top:auto;
         height: auto;
 
         @include respond (mobile){
-            width:100%;
+            width:90%;
         }
     }
 

@@ -44,7 +44,7 @@
       margin: 4vw auto 7vw auto;
       width:62vw;
       place-self: flex-end;
-      position: static!important;
+      position: static;
 
 
       @include respond (desktopXS){
@@ -75,34 +75,34 @@
         margin-bottom: 4vw;
 
 
-      @include respond (desktop){
-        width: 65%;
-      }
+          @include respond (desktop){
+            width: 65%;
+          }
 
-      @include respond (desktopXS){
-        width: 80%;
-        
-      }
+          @include respond (desktopXS){
+            width: 80%;
+            
+          }
 
-      @include respond (tabletHorizontal){
-        min-width: auto;
-        width: 84%;
-        margin-bottom:6vw;
+          @include respond (tabletHorizontal){
+            min-width: auto;
+            width: 84%;
+            margin-bottom:6vw;
 
-      }
+          }
 
-      @include respond (mobile){
-        width: 98%;
-        margin-bottom:14vw;
-      }
+          @include respond (mobile){
+            width: 98%;
+            margin-bottom:14vw;
+          }
 
-      @include respond (mobileXS){
-        width: 100%;
-        margin-bottom:16vw;
-      }
+          @include respond (mobileXS){
+            width: 100%;
+            margin-bottom:16vw;
+          }
 
- 
-    }
+    
+        }
 
       .itemListWrapper{
         width:100%;
@@ -242,8 +242,8 @@
  .linksWrapper{
   width:100%;
   place-self: flex-start;
-  place-items: start;
-  place-content: start;
+  place-items: flex-start;
+  place-content: flex-start;
   display: flex;
 
   @include respond (mobile){

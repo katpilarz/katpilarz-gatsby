@@ -80,6 +80,10 @@
       @include respond (mobileLandscape){
           width:4vw;
       }
+
+      @include respond (mobileLandscape){
+        width: 3.4vw;
+    }
   }
   
   

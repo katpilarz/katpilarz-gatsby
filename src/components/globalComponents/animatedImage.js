@@ -28,7 +28,7 @@ const AnimatedImage = ({ imageAlt, imagePath }) => {
                     trigger: imageRef.current,
                     start: "top 57%",
                     end: "top 7%",
-                    scrub:1, 
+                    scrub:1.7, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
@@ -37,7 +37,7 @@ const AnimatedImage = ({ imageAlt, imagePath }) => {
                     duration: 2,
                     ease: "sine.out",
                     css: {
-                    scale:1.17,
+                    scale:1.27,
                     transformOrigin:'top'
                 }})
 
