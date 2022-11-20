@@ -25,10 +25,10 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleFocus section={home.sectionFocus}/>
       
       <HomeSingleFeatured featuredProjects={featuredProjects} />
-
-      <SectionFeaturedVideo video={home.featuredVideo}/>
       <SectionAbout section={home.sectionAbout}/>
       <HomeSingleServices services={services}/>
+      <SectionFeaturedVideo video={home.featuredVideo}/>
+
       <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
        image={testimonialProject.node.thumbnailSocialMedia} services={testimonialProject.node.services}
        slug={testimonialProject.node.slug.current} isHome={isHome}/>
