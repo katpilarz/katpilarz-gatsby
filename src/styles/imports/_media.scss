@@ -41,13 +41,13 @@
 
 
   @if $breakpoint == tabletMediumHorizontal {
-    @media only screen and (max-width: 46em) and (max-height: 64em) {
+    @media only screen and (max-width: 48em) and (max-height: 64em) {
       @content;
-    } //738px || 1024px
+    } //768px || 1024px
 }
 
 @if $breakpoint == mobileLandscape {
-  @media only screen and (max-height: 38em)  and (min-width: 33.75em) and (max-width: 64em){
+  @media only screen and (max-height: 48em)  and (min-width: 33.75em) and (max-width: 64em){
     @content;
   } //568px// 540 // 926
 }

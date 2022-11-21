@@ -21,84 +21,31 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
     let ctx = gsap.context(() => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
 
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          scrub: true, 
+          pin: true, 
+          pinSpacing: false,
+          repeatRefresh: true,
+          toggleActions: "restart pause none none",
+        }
+      });
+            tl.fromTo(videoRef.current, {
+                css: {
+                    clipPath: 'circle(22.7% at 50% 50%)',
+                    scale:.47,
+                }
+            },{
+                duration:8,
+                ease: "power2.out",
+                css: {
+                  clipPath: 'circle(70.7% at 50% 50%)',
+                  scale:1,
+                }
+            })   
 
-
-        const bannerAnimation = gsap.matchMedia()
-        bannerAnimation.add()
-
-        
-        /************************************************************************/
-        // DESKTOP ANIMATION
-        /***********************************************************************/
-        
-        bannerAnimation.add("(min-width: 1025px)", () => {
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top top",
-              scrub: true, 
-              pin: true, 
-              pinSpacing: false,
-              repeatRefresh: true,
-              toggleActions: "restart pause none none",
-            }
-          });
-                tl.fromTo(videoRef.current, {
-                    css: {
-                        clipPath: 'circle(22.7% at 50% 50%)',
-                        scale:.47,
-                    }
-                },{
-                    duration:8,
-                    ease: "power2.out",
-                    css: {
-                      clipPath: 'circle(70.7% at 50% 50%)',
-                      scale:1,
-                    }
-                })   
-    
-    
-        })
-
-        /************************************************************************/
-        // TABLET & MOBILE ANIMATION
-        /***********************************************************************/
-        
-
-        bannerAnimation.add("(max-width: 1024px)", () => {
-
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: sectionRef.current,
-              start: "top 15%",
-              scrub: true, 
-              pin: true, 
-              pinSpacing: false,
-              repeatRefresh: true,
-              toggleActions: "restart pause none none",
-            }
-          });
-                tl.fromTo(videoRef.current, {
-                    css: {
-                        clipPath: 'circle(22.7% at 50% 50%)',
-                        scale:.47,
-                    }
-                },{
-                    duration:8,
-                    ease: "power2.out",
-                    css: {
-                      clipPath: 'circle(70.7% at 50% 50%)',
-                      scale:1,
-                    }
-                })   
-    
-           
-
-
-              
-    
-        })
 
    
  

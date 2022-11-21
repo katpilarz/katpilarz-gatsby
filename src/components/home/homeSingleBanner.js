@@ -180,6 +180,22 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
 
           bannerAnimation.add("(max-width: 1024px)", () => {
 
+            revealRefs.current.forEach((el) => {
+        
+              gsap.fromTo(el, {
+                  scale:.57,
+                  autoAlpha:0,
+
+              }, {
+                  delay:.67,
+                  duration: 1.77,
+                  scale:1,
+                  autoAlpha:1,
+                  ease: "power2.out",
+              });
+      
+          });
+
             const tl2 = gsap.timeline({
               scrollTrigger: {
                 trigger: introRef.current,
@@ -206,7 +222,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'130',
                   xPercent:'130',
                    }
-              },'+=1');
+              },'+=.5');
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -228,7 +244,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   autoAlpha:0, 
                   opacity:0,
                 }
-              },'-=4');
+              },'-=2');
 
 
              

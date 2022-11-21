@@ -11,42 +11,47 @@
     place-items: center;
     place-content: center;
     text-align: center;
-    margin-top: 10vw;
     margin-bottom: 64vw;
 
     @include respond (desktopL){
-        max-height: 60rem;
+        //max-height: 60rem;
      }
 
 
     @include respond (desktop){
-        max-height: 48rem;
+        //max-height: 48rem;
      }
  
 
     @include respond (desktopXS){
-       max-height: 36rem;
+       //max-height: 36rem;
     }
 
      @include respond (tabletHorizontal){
-        max-height: 38rem;
+        //max-height: 38rem;
         margin-bottom: 107vw;
     }
 
 
     @include respond (tabletMediumHorizontal){
-        max-height: 28rem;
+        //max-height: 28rem;
+        margin-bottom: 101vw;
     }
 
     @include respond (mobile){
-        max-height: 22rem;
-        height: 50vh;
+        //max-height: 22rem;
+        //height: 50vh;
         margin-bottom: 130vw;
     }
 
     @include respond (mobileXS){
-        max-height: 18rem;
-        height: 50vh;
+        //max-height: 18rem;
+        //height: 50vh;
+    }
+
+    @include respond (mobileLandscape){
+        //max-height: 28rem;
+        margin-bottom: 90vw;
     }
 
 
@@ -60,11 +65,12 @@
         z-index: 2;
         position: absolute;
         transform-origin:center;
-        top:auto;
+        top:8.7%;
         height: auto;
 
         @include respond (tabletHorizontal){
             width:90%;
+            top:14%;
         }
     }
 

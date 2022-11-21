@@ -169,6 +169,8 @@
             @include respond (tabletHorizontal){
                 grid-column: 2/7;
                 grid-row: 4/9;
+                margin: 0 1.4vw 0 0;
+
 
             }
 
@@ -187,6 +189,7 @@
 
             @include respond (tabletHorizontal){
                 grid-column: 4/9;
+
 
             }
 
@@ -207,11 +210,14 @@
             @include respond (tabletHorizontal){
                 grid-column: 7/12;
                 grid-row: 3/7;
+                margin: 2vw 0 0 1.4vw;
+                
             }
 
             @include respond (mobileLandscape){
                 grid-column: 8/11;
                 grid-row: 2/5;
+                
             }
 
         }

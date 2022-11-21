@@ -20,6 +20,16 @@
 .sectionTestimonialProject{
     margin:10vw auto 0 auto;
 
+    @include respond (tabletHorizontal){
+        margin:18vw auto 0 auto;
+
+    }
+
+    @include respond (tabletHorizontal){
+        margin:26vw auto 0 auto;
+
+    }
+
 
     
 }
@@ -54,8 +64,7 @@
         margin: auto;
         position: relative;
         z-index: 1;
-        margin-bottom: 1vw;
-        width:100%;
+        margin-bottom: 4vw;
 
         @include respond (desktop){
             margin-bottom: 5vw;
@@ -158,7 +167,11 @@
 
 
 .testimonialTextHome{
-    width:100%;
+    width:99%;
+
+    @include respond (desktopL){
+        width:100%;
+    }
 
     @include respond (tabletHorizontal){
         position: relative!important;
@@ -166,7 +179,6 @@
         place-content: flex-start;
         place-items: flex-start;
         place-self: flex-start;
-        width:110%;
     }
 
    
@@ -185,10 +197,10 @@
 
     .quoteIconRight{
      place-self: flex-end;
-        transform: translate(-11.7vw, 5.7vw);
+        transform: translate(-10.7vw, 5.7vw);
 
         @include respond (desktopL){
-            transform: translate(-6vw, 5.7vw);
+            transform: translate(-32vw, 5.7vw);
         }
 
         @include respond (desktop){
@@ -218,7 +230,7 @@
 
         @include respond (mobile){
             bottom:-1vw;
-            right:-12vw;
+            right:-14vw;
         }
 
         @include respond (mobileLandscape){
@@ -239,7 +251,7 @@
     width:5vw;
     height: 5vw;
     border-radius: 50rem;
-    margin-bottom: 1vw;
+    margin-bottom: 2vw;
 
     @include respond (desktop){
         width:9vw;

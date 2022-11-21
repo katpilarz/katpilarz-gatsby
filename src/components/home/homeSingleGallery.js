@@ -46,7 +46,7 @@ const HomeSingleGallery = ({ gallery }) => {
                     xPercent:0,
                     scale:1,
                     transformOrigin:'left',
-                    ease: "power2.out",
+                    ease: "sine.out",
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
