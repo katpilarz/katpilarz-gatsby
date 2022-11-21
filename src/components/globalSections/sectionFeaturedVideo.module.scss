@@ -35,13 +35,12 @@
 
     @include respond (tabletMediumHorizontal){
         //max-height: 28rem;
-        margin-bottom: 101vw;
     }
 
     @include respond (mobile){
         //max-height: 22rem;
         //height: 50vh;
-        margin-bottom: 130vw;
+        margin-bottom: 137vw;
     }
 
     @include respond (mobileXS){
@@ -71,6 +70,14 @@
         @include respond (tabletHorizontal){
             width:90%;
             top:14%;
+        }
+
+        @include respond (tabletMediumHorizontal){
+            top:18%;
+        }
+
+        @include respond (mobile){
+            top:24%;
         }
     }
 
