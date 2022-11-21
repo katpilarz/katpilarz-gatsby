@@ -11,6 +11,8 @@
     place-items: center;
     place-content: center;
     text-align: center;
+    margin-top: 10vw;
+    margin-bottom: 64vw;
 
     @include respond (desktopL){
         max-height: 60rem;
@@ -28,6 +30,7 @@
 
      @include respond (tabletHorizontal){
         max-height: 38rem;
+        margin-bottom: 107vw;
     }
 
 
@@ -38,6 +41,7 @@
     @include respond (mobile){
         max-height: 22rem;
         height: 50vh;
+        margin-bottom: 130vw;
     }
 
     @include respond (mobileXS){
@@ -59,7 +63,7 @@
         top:auto;
         height: auto;
 
-        @include respond (mobile){
+        @include respond (tabletHorizontal){
             width:90%;
         }
     }

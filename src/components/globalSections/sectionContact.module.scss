@@ -254,6 +254,10 @@
 
         @include respond (mobile){
             margin-bottom: 1.2vw;
+            grid-column:8/-1;
+        }
+
+        @include respond (mobileXS){
             grid-column:7/-1;
         }
 

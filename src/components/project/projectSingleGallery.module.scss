@@ -12,3 +12,25 @@
 }
   
 
+
+// replaced and moved to section Gallery - modified accordingly
+
+.otherGallery{
+    display: flex;
+    @include fullWidth;
+    flex-wrap: wrap;
+    place-content: space-between;
+    margin: 14vw auto 0 auto;
+   
+
+
+
+    .galleryImages{
+        @include fullWidth;
+        margin-bottom: 14vw;
+        
+       }
+    
+
+}
+

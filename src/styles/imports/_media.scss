@@ -59,9 +59,9 @@
 }
 
 @if $breakpoint == mobileXS {
-  @media only screen and (max-width: 24.9375em) {
+  @media only screen and (max-width: 23.4375em) {
     @content;
-  } //~400px || 600px
+  } //~375px || 600px
 }
 
 

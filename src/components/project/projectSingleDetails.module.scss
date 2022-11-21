@@ -16,6 +16,10 @@
         margin:16vw auto 16vw auto;
     }
 
+    @include respond (mobile){
+        margin:18vw auto 30vw auto;
+    }
+
 
 }
 
