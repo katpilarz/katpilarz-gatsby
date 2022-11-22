@@ -8,11 +8,12 @@
     position: relative;
     z-index: 1;
     padding-top: 3vw;
-    place-items: center;
-    place-content: center;
+    place-items: space-evenly;
+    place-content: space-evenly;
 
     @include respond (tabletMediumHorizontal){
-        height: 87vh;
+        //height: 87vh;
+        
     }
 
     @include respond (mobile){
@@ -112,8 +113,6 @@
         }
 
         @include respond (tabletMediumHorizontal){
-            top:4vw;
-            //max-height:30rem;
             max-height: 30rem;
 
         }
@@ -122,8 +121,6 @@
 
         @include respond (mobile){
             top:22vw;
-            //max-height: auto;
-           // min-height: auto;
             max-height: 22rem;
         }
 

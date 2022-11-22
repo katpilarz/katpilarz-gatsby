@@ -24,7 +24,7 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top top",
+          start: "center center",
           scrub: true, 
           pin: true, 
           pinSpacing: false,
@@ -34,8 +34,8 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
       });
             tl.fromTo(videoRef.current, {
                 css: {
-                    clipPath: 'circle(22.7% at 50% 50%)',
-                    scale:.47,
+                    clipPath: 'circle(24.7% at 50% 50%)',
+                    scale:.67,
                 }
             },{
                 duration:8,

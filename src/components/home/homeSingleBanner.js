@@ -117,7 +117,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   autoAlpha:0, 
                   opacity:0,
                 }
-              },'-=2');
+              },'-=2.7');
               tl2.to(sectionRef.current, {
                 duration:4, 
                 ease: "power2.out",
@@ -126,7 +126,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'40',
                   scale:5.2,
                 }
-              },'+=4');
+              });
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -135,6 +135,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0.0,
                 }
               });
+
 
 
 
@@ -222,7 +223,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'130',
                   xPercent:'130',
                    }
-              },'+=.5');
+              },'-=3');
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -245,12 +246,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   opacity:0,
                 }
               },'-=2');
-
-
-             
-
-
-                
       
           })
 
