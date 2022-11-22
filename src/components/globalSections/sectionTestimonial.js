@@ -49,6 +49,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                 autoAlpha: 0,
                 opacity:0,
                 yPercent:'-20',
+                marginTop:'10vw'
             }})
       
     

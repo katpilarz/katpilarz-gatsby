@@ -40,7 +40,7 @@
 
     @include respond (mobile){
         //max-height: 22rem;
-        margin-bottom: 137vw;
+        margin-bottom: 150vw;
     }
 
     @include respond (mobileXS){
@@ -62,9 +62,9 @@
     .featuredVideo{
         width: 77%;
         z-index: 2;
-        position: absolute;
+        /*position: absolute;
         transform-origin:center;
-        top:9.7%;
+        top:9.7%;*/
         height: auto;
 
         @include respond (tabletHorizontal){
@@ -76,7 +76,7 @@
         }
 
 
-        @include respond (mobileXS){
+        @include respond (mobile){
             top:20%;
         }
 

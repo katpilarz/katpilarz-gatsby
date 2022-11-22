@@ -223,7 +223,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   yPercent:'130',
                   xPercent:'130',
                    }
-              },'-=3');
+              },'-=4');
               tl2.to(sectionRef.current, {
                 duration:1, 
                 ease: "power2.out",
