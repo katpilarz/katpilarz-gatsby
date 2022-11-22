@@ -9,12 +9,12 @@
     place-content: center;
     position: relative;
     z-index: 1;
+    width:100%;
+
 
     @include respond (desktopXS){
         margin: 0 auto 20vw auto;
     }
-
-    width:100%;
 
 
     h3{

@@ -64,6 +64,12 @@
   } //~375px || 600px
 }
 
+@if $breakpoint == mobileLandscapeXS {
+  @media only screen and (max-height: 31.9375){
+    @content;
+  } 
+}
+
 
 
     

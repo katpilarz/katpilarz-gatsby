@@ -3,6 +3,7 @@ import * as styles from "./homeSingleBanner.module.scss";
 import { useEffect, useRef } from 'react';
 import Btn from "../globalComponents/btn";
 import Branding from "../globalComponents/branding";
+import Media from 'react-media';
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -181,21 +182,24 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
 
           bannerAnimation.add("(max-width: 1024px)", () => {
 
-            revealRefs.current.forEach((el) => {
-        
-              gsap.fromTo(el, {
-                  scale:.57,
-                  autoAlpha:0,
+            if(sectionRef.current){
 
-              }, {
-                  delay:.67,
-                  duration: 1.77,
-                  scale:1,
-                  autoAlpha:1,
-                  ease: "power2.out",
+                revealRefs.current.forEach((el) => {
+            
+                  gsap.fromTo(el, {
+                      scale:.57,
+                      autoAlpha:0,
+
+                  }, {
+                      delay:.67,
+                      duration: 1.77,
+                      scale:1,
+                      autoAlpha:1,
+                      ease: "power2.out",
+                  });
+          
               });
-      
-          });
+            }
 
             const tl2 = gsap.timeline({
               scrollTrigger: {
@@ -215,23 +219,28 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 css: {
                   rotation: 360*2,
               }},'-=4')
-              tl2.to(sectionRef.current, {
-                duration:6, 
-                ease: "power2.out",
-                css: {
-                  scale:10,
-                  yPercent:'130',
-                  xPercent:'130',
-                   }
-              },'-=4');
-              tl2.to(sectionRef.current, {
-                duration:1, 
-                ease: "power2.out",
-                css: {
-                  autoAlpha:0,
-                  opacity:0,
-                   }
-              },'-=3');
+
+              // ANIMATION WILL BE TRIGGERED IF SECTION IS AVAIABLE
+              if(sectionRef.current){
+                  tl2.to(sectionRef.current, {
+                    duration:6, 
+                    ease: "power2.out",
+                    css: {
+                      scale:10,
+                      yPercent:'130',
+                      xPercent:'130',
+                      }
+                  },'-=4');
+                  tl2.to(sectionRef.current, {
+                    duration:1, 
+                    ease: "power2.out",
+                    css: {
+                      autoAlpha:0,
+                      opacity:0,
+                      }
+                  },'-=3');
+              }
+
               tl2.to(homeBtnRef.current, {
                 duration: 1,
                 ease: "power2.out",
@@ -258,7 +267,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     
-  }, []);
+  }, [sectionRef]);
 
 
   
@@ -272,24 +281,26 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
             <Btn btnClassName='introBtn'/>
           </div>
         </div>
-        <div ref={sectionRef} className={styles.bannerGallery}>
-            {images.map((item, index) => {
-                return (
-                
-                <div key={index} className={styles.bannerGalleryWrapper} ref={addToRefs}>
-                    <Link to={`projects/${item.node.slug.current}`} className={styles.bannerGalleryItem}>
-                        <GatsbyImage className={styles.galleryImage}
-                            image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
-                            alt={`${item.node.socialMediaImage.alt}`}
-                        />
-                    </Link>
-                </div>
-                
-                )
-            })}
-         </div>
-
-
+        <Media query="(min-height: 512px)" render={() =>
+          (
+            <div ref={sectionRef} className={styles.bannerGallery}>
+              {images.map((item, index) => {
+                  return (
+                  
+                  <div key={index} className={styles.bannerGalleryWrapper} ref={addToRefs}>
+                      <Link to={`projects/${item.node.slug.current}`} className={styles.bannerGalleryItem}>
+                          <GatsbyImage className={styles.galleryImage}
+                              image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
+                              alt={`${item.node.socialMediaImage.alt}`}
+                          />
+                      </Link>
+                  </div>
+                  
+                  )
+              })}
+            </div>
+          )}
+        />
       </div>
       <div ref={brandingRef}>
         <Branding author={author}/>
