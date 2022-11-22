@@ -50,7 +50,8 @@
 
     @include respond (mobileLandscape){
         min-height: 100vh;
-        margin-bottom: 90vw;
+        margin-top: 7vw;
+        margin-bottom: 70vw;
     }
 
 
@@ -60,18 +61,18 @@
 
 
     .featuredVideo{
-        width: 87%;
-        z-index: 2;
-        /*position: absolute;
+        width: 77%;
+        position: absolute;
         transform-origin:center;
-        top:9.7%;*/
+        top:9.7%;
+        z-index: 2;
         height: auto;
         margin: auto;
         
 
         @include respond (tabletHorizontal){
             top:12%;
-            width:100%;
+            width:90%;
         }
 
         @include respond (tabletMediumHorizontal){
@@ -80,12 +81,13 @@
 
 
         @include respond (mobile){
-            //top:20%;
+            top:20%;
             //width:90%;
         }
 
 
         @include respond (mobileLandscape){
+            top:20%;
             width: 77%;
         }
 
