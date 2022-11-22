@@ -105,13 +105,14 @@
       
 
         @include respond (tabletHorizontal){
-            top:14vw;
+            top:16vw;
             max-height: 50rem;
             grid-gap:2vw;
             height:auto;
         }
 
         @include respond (tabletMediumHorizontal){
+            top:20vw;
             max-height: 30rem;
 
         }
@@ -119,7 +120,7 @@
 
 
         @include respond (mobile){
-            top:27vw;
+            top:32vw;
             max-height: 22rem;
         }
 
