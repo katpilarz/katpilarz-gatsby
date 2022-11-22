@@ -229,16 +229,9 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                       scale:10,
                       yPercent:'130',
                       xPercent:'130',
-                      }
-                  },'-=4');
-                  tl2.to(sectionRef.current, {
-                    duration:1, 
-                    ease: "power2.out",
-                    css: {
                       autoAlpha:0,
-                      opacity:0,
                       }
-                  },'-=3');
+                  },'-=6');
               }
 
               tl2.to(homeBtnRef.current, {
