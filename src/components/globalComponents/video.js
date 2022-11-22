@@ -11,7 +11,7 @@ const Video = ({ videoWebm, videoFallback, videoAlt, videoCustomClass, isDecript
         <video className={styles.video} 
             title={videoAlt ? `${videoAlt}` : null}
             loop muted autoPlay playsInline>
-              <source src={videoWebm.asset.url} type={`video/${videoWebm.asset.extension}`} />
+              {/*<source src={videoWebm.asset.url} type={`video/${videoWebm.asset.extension}`} />*/}
               <source src={videoFallback.asset.url} type={`video/${videoFallback.asset.extension}`} />
            
         </video>

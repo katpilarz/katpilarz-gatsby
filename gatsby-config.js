@@ -36,10 +36,10 @@ module.exports = {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: 'Katarzyna Gołek',
-      short_name: 'Kate Golek',
+      short_name: 'katgolek',
       start_url: '/',
-      background_color: '#f7f0eb',
-      theme_color: '#a2466c',
+      background_color: '#F8F8F8',
+      theme_color: '#1E6DB6',
       display: 'standalone',
       icon: 'src/assets/images/favicon.png',
     },
