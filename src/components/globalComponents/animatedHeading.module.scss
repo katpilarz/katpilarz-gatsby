@@ -15,6 +15,10 @@
             place-self: flex-start;
             width:80%;
 
+            @include respond (mobile){
+                width:100%;
+            }
+
 
          
 

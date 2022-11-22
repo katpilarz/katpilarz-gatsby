@@ -22,7 +22,8 @@ a{
         width: 6.4vw;
         height: auto;
         opacity: 0;
-        padding: 0 2%;
+        padding: 0 2vw;
+        min-width: 2.4rem;
         transition: all .4s linear;
 
     }
@@ -39,8 +40,6 @@ a{
             opacity: 1;
             padding: 0 2%;
             transition: all .4s linear;
-            min-width: 1.77rem;
-        
         }
 
     }
@@ -51,7 +50,7 @@ a{
     display: flex;
     position: relative;
     z-index: 2;
-    min-width: 1.77rem;
+    min-width: 1.67rem;
 
     @include respond (desktop){
         width: 2.7vw;
