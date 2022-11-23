@@ -80,7 +80,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
 
         { video &&
             <div className={styles.projectImageContainer}>
-                <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/> 
+                <Video videoWebm={video.webm} videoFallback={video.fallback}  videoAlt={video.alt} videoCloudinary={video.cloudinaryVideo} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/> 
             </div>
         }
 

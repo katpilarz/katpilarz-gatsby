@@ -103,7 +103,7 @@ const HomeSingleFocus = ({ section}) => {
                         }
                         {area.video &&
                             <div className={styles.focusAreaMedia} key={index}>
-                                <Video videoWebm={area.video.webm} videoFallback={area.video.fallback} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
+                                <Video videoWebm={area.video.webm} videoFallback={area.video.fallback}  videoCloudinary={area.video.cloudinaryVideo} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
                             </div>
                         }
                     </div>

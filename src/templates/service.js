@@ -70,6 +70,11 @@ query ServiceTemplateQuery($id: String!){
             extension
           }
         }
+        cloudinaryVideo {
+          url
+          secure_url
+          format
+        }
       }
       sectionDetails {
         _rawDescription
@@ -100,6 +105,11 @@ query ServiceTemplateQuery($id: String!){
               extension
               url
             }
+          }
+          cloudinaryVideo {
+            url
+            secure_url
+            format
           }
         }
         header

@@ -93,7 +93,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>
                 }
                 {video &&
-                        <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
+                        <Video videoWebm={video.webm} videoFallback={video.fallback} videoCloudinary={video.cloudinaryVideo} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  
                 }
             </div>
 

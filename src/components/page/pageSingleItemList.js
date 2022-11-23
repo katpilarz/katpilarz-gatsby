@@ -77,7 +77,7 @@ const PageSingleItemList = ({ itemList, pageName }) => {
             return (
             <article key={index} className={styles.itemCard} ref={addToRefs}>
                 { item.node.video && 
-                    <Video key={index} videoWebm={item.node.video.webm} videoFallback={item.node.video.fallback} videoAlt={item.node.video.alt}  videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
+                    <Video key={index} videoWebm={item.node.video.webm} videoFallback={item.node.video.fallback} videoCloudinary={item.node.video.cloudinaryVideo} videoAlt={item.node.video.alt}  videoCustomClass='itemCardMedia' isDecriptionDisplayed='false'/> 
                 }
                 { item.node.thumbnail && 
                 <div className={styles.itemCardMedia}>

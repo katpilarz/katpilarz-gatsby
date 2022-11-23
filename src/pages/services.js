@@ -46,6 +46,11 @@ export const query = graphql`
                 extension
               }
             }
+            cloudinaryVideo {
+              url
+              secure_url
+              format
+            }
           }
         }
       }

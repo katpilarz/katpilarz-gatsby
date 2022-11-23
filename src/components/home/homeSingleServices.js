@@ -83,7 +83,7 @@ const HomeSingleServices = ({ services }) => {
                         <MarqueText title={service.node.title}/>
                         <MarqueText title={service.node.title}/>
                         { service.node.video && 
-                            <Video key={index} videoWebm={service.node.video.webm} videoFallback={service.node.video.fallback} videoAlt={service.node.video.alt}  videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
+                            <Video key={index} videoWebm={service.node.video.webm} videoFallback={service.node.video.fallback}  videoCloudinary={service.node.video.cloudinaryVideo} videoAlt={service.node.video.alt}  videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/>
                         }
                         { service.node.thumbnail &&
                             <GatsbyImage className={styles.serviceMedia}

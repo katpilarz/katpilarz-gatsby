@@ -65,6 +65,11 @@ query ProjectTemplateQuery($id: String!){
             extension
           }
         }
+        cloudinaryVideo {
+          url
+          secure_url
+          format
+        }
       }
       mockups {
         alt
