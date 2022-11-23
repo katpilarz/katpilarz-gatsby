@@ -27,7 +27,7 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
           start: "center center",
           scrub: true, 
           pin: true, 
-          pinSpacing: true,
+          pinSpacing: false,
           repeatRefresh: true,
           toggleActions: "restart pause none none",
         }
