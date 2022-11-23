@@ -65,7 +65,7 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
   return (
     <section ref={sectionRef} className={`${styles.featuredVideoSection} container`}>
         <div ref={videoRef} className={styles.featuredVideo}>
-            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt}   isDecriptionDisplayed={isDecriptionDisplayed}/> 
+            <Video videoWebm={video.webm} videoFallback={video.fallback} videoAlt={video.alt} videoCloudinary={video.cloudinaryVideo}  isDecriptionDisplayed={isDecriptionDisplayed}/> 
         </div>
     </section>
 

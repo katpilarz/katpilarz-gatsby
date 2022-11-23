@@ -52,6 +52,10 @@ query HomePageQuery{
                 extension
               }
             }
+            cloudinaryVideo {
+              url
+              format
+            }
           }
         }
       }
@@ -88,6 +92,10 @@ query HomePageQuery{
             extension
           }
         }
+        cloudinaryVideo {
+          url
+          format
+        }
       }
       gallery {
         ... on SanityFigure {
@@ -111,6 +119,10 @@ query HomePageQuery{
               url
               extension
             }
+          }
+          cloudinaryVideo {
+            url
+            format
           }
           alt
         }
@@ -239,6 +251,10 @@ query HomePageQuery{
                 url
                 extension
               }
+            }
+            cloudinaryVideo {
+              url
+              format
             }
           }
         }
