@@ -24,7 +24,7 @@ const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "center center",
+          start: "top top",
           scrub: true, 
           pin: true, 
           pinSpacing: false,
