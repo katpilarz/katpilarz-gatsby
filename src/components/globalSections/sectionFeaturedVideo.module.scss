@@ -10,7 +10,7 @@
     display: flex;
     place-items: center;
     place-content: center;
-    margin-bottom: 64vw;
+    margin-bottom: 65vw;
 
     @include respond (desktopL){
         //max-height: 60rem;
@@ -35,13 +35,14 @@
 
     @include respond (tabletMediumHorizontal){
         //max-height: 28rem;
+        margin-bottom: 107vw;
     }
 
     @include respond (mobile){
         //max-height: 22rem;
-       //margin-bottom: 147vw;
+       margin-bottom: 157vw;
        height: 50vh;
-       margin-bottom: 0;
+       //margin-bottom: 0;
     }
 
     @include respond (mobileXS){
@@ -52,7 +53,7 @@
     @include respond (mobileLandscape){
         height: 100vh;
         margin-top: 7vw;
-        //margin-bottom: 70vw;
+        margin-bottom: 85vw;
     }
 
 
@@ -62,7 +63,7 @@
 
 
     .featuredVideo{
-        width: 77%;
+        width: 67%;
         position: absolute;
         top:10.7%;
         z-index: 2;
