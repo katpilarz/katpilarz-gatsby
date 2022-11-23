@@ -29,7 +29,7 @@
      @include respond (tabletHorizontal){
         //max-height: 38rem;
         //min-height: 50vh;
-        //margin-bottom: 117vw;
+        margin-bottom: 97vw;
     }
 
 
@@ -39,8 +39,9 @@
 
     @include respond (mobile){
         //max-height: 22rem;
-       margin-bottom: 147vw;
+       //margin-bottom: 147vw;
        height: 50vh;
+       margin-bottom: 0;
     }
 
     @include respond (mobileXS){
@@ -63,7 +64,7 @@
     .featuredVideo{
         width: 77%;
         position: absolute;
-        top:9.7%;
+        top:10.7%;
         z-index: 2;
         height: auto;
         
@@ -74,6 +75,7 @@
         }
 
         @include respond (tabletMediumHorizontal){
+            top:16%;
             //width:90%;
         }
 
