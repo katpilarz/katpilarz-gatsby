@@ -54,6 +54,7 @@ query HomePageQuery{
             }
             cloudinaryVideo {
               url
+              secure_url
               format
             }
           }
@@ -94,6 +95,7 @@ query HomePageQuery{
         }
         cloudinaryVideo {
           url
+          secure_url
           format
         }
       }
@@ -122,6 +124,7 @@ query HomePageQuery{
           }
           cloudinaryVideo {
             url
+            secure_url
             format
           }
           alt
@@ -254,6 +257,7 @@ query HomePageQuery{
             }
             cloudinaryVideo {
               url
+              secure_url
               format
             }
           }

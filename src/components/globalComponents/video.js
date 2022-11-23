@@ -18,7 +18,7 @@ const Video = ({ videoWebm, videoFallback, videoAlt, videoCustomClass, isDecript
                 <source src={videoFallback.asset.url} type={`video/${videoFallback.asset.extension}`} />
               }
               {  videoCloudinary &&
-                <source src={videoCloudinary.url} type={`video/${videoCloudinary.format}`} />
+                <source src={videoCloudinary.secure_url} type={`video/${videoCloudinary.format}`} />
               }
            
         </video>
