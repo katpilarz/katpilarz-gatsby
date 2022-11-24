@@ -44,12 +44,17 @@ module.exports = {
       icon: 'src/assets/images/favicon.png',
       cache_busting_mode: 'none',
       icons: [
-        
         {
-          src: "src/assets/images/maskable_icon.png",
+          src: "src/assets/images/maskable_icon_x512.png",
           sizes: "512x512",
           type: "image/png",
-          purpose: "maskable"
+          purpose: "any maskable"
+        },
+        {
+          src: "src/assets/images/maskable_icon_x192.png",
+          sizes: "192x192",
+          type: "image/png",
+          purpose: "any maskable"
         }
       ],
     },
@@ -57,9 +62,9 @@ module.exports = {
   {
     resolve: 'gatsby-plugin-offline',
     options: {
-       workboxConfig: {
+       /*workboxConfig: {
           globPatterns: ['src/assets/images/favicon.png']
-       },
+       },*/
        precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
     }
  },
