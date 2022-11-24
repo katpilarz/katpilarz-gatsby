@@ -13,7 +13,7 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || "false").toLowerCase() 
 
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://kategolek.netlify.app`,
+    siteUrl:`https://www.katgolek.eu/`,
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',

@@ -96,6 +96,10 @@
         }
 
         @include respond (mobile){
+            width:82%;
+        }
+
+        @include respond (mobileXS){
             width:85%;
         }
 
