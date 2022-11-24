@@ -54,17 +54,15 @@ module.exports = {
       ],
     },
   },
-  /*{
+  {
     resolve: 'gatsby-plugin-offline',
     options: {
        workboxConfig: {
           globPatterns: ['src/assets/images/favicon.png']
        },
-       options: {
-        precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
-      },
+       precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
     }
- }*/,
+ },
 
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-transition-link`,
