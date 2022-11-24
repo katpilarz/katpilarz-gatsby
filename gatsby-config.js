@@ -54,7 +54,7 @@ module.exports = {
       ],
     },
   },
-  {
+  /*{
     resolve: 'gatsby-plugin-offline',
     options: {
        workboxConfig: {
@@ -63,7 +63,7 @@ module.exports = {
        options: {
         precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
       },
-    }
+    }*/
  },
 
   `gatsby-plugin-sitemap`,
