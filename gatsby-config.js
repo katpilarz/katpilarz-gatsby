@@ -63,8 +63,8 @@ module.exports = {
        options: {
         precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
       },
-    }*/
- },
+    }
+ }*/,
 
   `gatsby-plugin-sitemap`,
   `gatsby-plugin-transition-link`,
