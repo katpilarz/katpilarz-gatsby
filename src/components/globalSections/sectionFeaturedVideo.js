@@ -82,7 +82,7 @@ useEffect(() => {
         });
               tl.fromTo(videoRef.current, {
                   css: {
-                      clipPath: 'circle(22.7% at 50% 50%)',
+                      clipPath: 'circle(27.7% at 50% 50%)',
                       scale:.87,
                   }
               },{

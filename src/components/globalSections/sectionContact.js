@@ -38,7 +38,7 @@ const SectionContact = ({section }) => {
             scrollTrigger: {
               trigger: typingRef.current,
               start: "top 67%",
-              end:"top top",
+              end:"top 7%",
               scrub:1, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
