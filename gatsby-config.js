@@ -49,7 +49,7 @@ module.exports = {
           src: "src/assets/images/maskable_icon.png",
           sizes: "512x512",
           type: "image/png",
-          purpose: "any"
+          purpose: "maskable"
         }
       ],
     },
@@ -59,7 +59,10 @@ module.exports = {
     options: {
        workboxConfig: {
           globPatterns: ['src/assets/images/favicon.png']
-       }
+       },
+       options: {
+        precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
+      },
     }
  },
 
