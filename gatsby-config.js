@@ -42,8 +42,28 @@ module.exports = {
       theme_color: '#1E6DB6',
       display: 'standalone',
       icon: 'src/assets/images/favicon.png',
+      cache_busting_mode: 'none',
+      icons: [
+        
+        {
+          src: "src/assets/images/maskable_icon.png",
+          sizes: "512x512",
+          type: "image/png",
+          purpose: "any"
+        }
+      ],
     },
   },
+  {
+    resolve: 'gatsby-plugin-offline',
+    options: {
+       workboxConfig: {
+          globPatterns: ['src/assets/images/favicon.png']
+       }
+    }
+ },
+
+  `gatsby-plugin-sitemap`,
   `gatsby-plugin-transition-link`,
   "gatsby-plugin-dark-mode",
   "gatsby-plugin-sass",
