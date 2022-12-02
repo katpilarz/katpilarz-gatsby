@@ -58,23 +58,23 @@ const HomeSingleFocus = ({ section}) => {
 
                     gsap.fromTo(el, {
                         autoAlpha: 0,
-                        xPercent:15,
+                        xPercent:20,
                     }, {
                         duration: 1,
                         autoAlpha: 1,
                         xPercent:0,
-                        ease: "power4.out",
+                        ease: "sine.out",
                         scrollTrigger: {
                             id: `section-${index+1}`,
                             trigger: el,
                             start: 'top 80%',
-                            end:'top 34%',
+                            end:'top 47%',
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
                             scrub:1,
                         }
-                    },'+=7');
+                    });
              
                 });
     

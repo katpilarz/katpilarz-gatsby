@@ -30,8 +30,8 @@ const SectionAbout = ({ section }) => {
       const tl = gsap.timeline({
           scrollTrigger: {
           trigger: headerRef.current,
-          start: "top 77%",
-          end: "top 37%",
+          start: "top 90%",
+          end: "top 40%",
           scrub:1, 
           repeatRefresh: true,
           toggleActions: "restart pause resume none",

@@ -53,7 +53,7 @@ useEffect(() => {
                   }
               },{
                   duration:8,
-                  ease: "power2.out",
+                  ease: "sine.out",
                   css: {
                     clipPath: 'circle(70.7% at 50% 50%)',
                     scale:1,

@@ -40,8 +40,8 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         scrollTrigger: {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
-                            start: 'top 87%',
-                            end: 'top 10%',
+                            start: 'top 97%',
+                            end: 'top 17%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
                             scrub:1,
@@ -58,7 +58,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                         scrollTrigger: {
                             id: mediaTwoRef.current,
                             trigger: mediaTwoRef.current,
-                            start: 'top 87%',
+                            start: 'top 97%',
                             end: 'top 30%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,

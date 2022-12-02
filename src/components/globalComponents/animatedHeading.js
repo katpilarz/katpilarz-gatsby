@@ -46,7 +46,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
 
       tl.from(headerOneRef.current, {
           duration:2, 
-          ease: "power2.out",
+          ease: "sine.out",
           css: {
             xPercent:'-50',
             autoAlpha:0,
@@ -54,7 +54,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
         });
         tl.from(headerTwoRef.current, {
           duration:1, 
-          ease: "power2.out",
+          ease: "sine.out",
           css: {
           xPercent:'50',
           autoAlpha:0,
@@ -62,7 +62,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
       },'-=2');
         tl.from(linkRef.current, {
             duration:1, 
-            ease: "power2.out",
+            ease: "sine.out",
             css: {
             xPercent:'-50',
             autoAlpha:0,
