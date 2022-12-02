@@ -26,7 +26,7 @@ const AnimatedImage = ({ imageAlt, imagePath }) => {
                 const tl = gsap.timeline({
                     scrollTrigger: {
                     trigger: imageRef.current,
-                    start: "top 57%",
+                    start: "top 67%",
                     end: "top 7%",
                     scrub:1.7, 
                     repeatRefresh: true,

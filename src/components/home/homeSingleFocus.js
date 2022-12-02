@@ -3,10 +3,12 @@ import * as styles from "./homeSingleFocus.module.scss";
 import SectionIntro from "../globalSections/sectionIntro";
 import Video from "../globalComponents/video";
 import AnimatedImage from "../globalComponents/animatedImage";
+import Media from 'react-media';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger);
+
 
 
 
@@ -96,14 +98,25 @@ const HomeSingleFocus = ({ section}) => {
                     return (
                     <div className={styles.focusArea} key={index} ref={addToRefs}>
                         <h4 className="text-color">{area.text}</h4>
-                        {area.image &&
+                        {area.image && area.video === null &&
                             <div className={styles.focusAreaMedia} key={index}>
                                 <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/>   
                             </div>
                         }
                         {area.video &&
                             <div className={styles.focusAreaMedia} key={index}>
-                                <Video videoWebm={area.video.webm} videoFallback={area.video.fallback}  videoCloudinary={area.video.cloudinaryVideo} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
+                                <Media query="(min-width: 768px)" render={() =>
+                                    (
+                                        <Video videoWebm={area.video.webm} videoFallback={area.video.fallback}  videoCloudinary={area.video.cloudinaryVideo} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
+
+                                    )}
+                                />
+                                
+                                <Media query="(max-width: 767px)" render={() =>
+                                    (
+                                        <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/> 
+                                    )}
+                                />
                             </div>
                         }
                     </div>

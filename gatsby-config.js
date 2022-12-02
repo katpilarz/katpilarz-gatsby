@@ -75,7 +75,7 @@ module.exports = {
   resolve: "gatsby-plugin-robots-txt",
   options: {
     host: "https://www.katgolek.eu",
-    sitemap: "https://www.katgolek.eu/sitemap.xml",
+    sitemap: "https://www.katgolek.eu/sitemap-index.xml",
     policy: [{ userAgent: "*", allow: "/" }],
   },
 },
