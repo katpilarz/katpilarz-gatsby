@@ -59,7 +59,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
           xPercent:'50',
           autoAlpha:0,
           }
-      },'-=2');
+      },'-=1.4');
         tl.from(linkRef.current, {
             duration:1, 
             ease: "sine.out",
@@ -67,7 +67,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
             xPercent:'-50',
             autoAlpha:0,
             }
-        },'-=2');
+        },'-=1');
 
       
       

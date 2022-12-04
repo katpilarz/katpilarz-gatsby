@@ -41,7 +41,7 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
                             start: 'top 97%',
-                            end: 'top 17%',
+                            end: 'top 23%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
                             scrub:1,
