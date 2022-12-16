@@ -139,27 +139,6 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
     
         });*/
 
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: 'top 90%',
-            end:'top 50%',
-            scrub: 1,
-            pin: false,
-            pinSpacing: false,
-           
-            toggleActions: "restart pause resume none",
-            refreshPriority: 1,
-          }
-        })
-  
-        tl.from(containerRef.current, {
-            duration:6, 
-            ease: "power2.out",
-            css: {
-              xPercent:'-30',
-            }
-          });
 
 
 
@@ -167,10 +146,11 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
           revealRefs.current.forEach((el, index) => {
 
             gsap.fromTo(el, {
+                autoAlpha:0,
                 xPercent:'-30',
-                yPercent:'-5',
+                //yPercent:'-5',
                 scale:1.47,
-                marginTop:'16vw'
+                marginTop:'20vw'
 
             }, {
                 duration: 2,
@@ -183,8 +163,8 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                 scrollTrigger: {
                     id: `section-${index+1}`,
                     trigger: el,
-                    start: 'top 77%',
-                    end:'top 37%',
+                    start: 'top 97%',
+                    end:'top 57%',
                   
                     toggleActions: "restart pause resume none",
                     refreshPriority: 1,

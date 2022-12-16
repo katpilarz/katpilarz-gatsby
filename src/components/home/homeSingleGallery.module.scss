@@ -38,7 +38,7 @@
         width:100%;
         height: auto;
         place-content: space-between;
-        margin-bottom: 6vw;
+        margin-bottom: 8vw;
 
         /*@include respond (tabletHorizontal){
             flex-basis: 48%;
@@ -52,17 +52,19 @@
 
 
         @include respond (mobile){
-            margin-bottom: 2vw;
+            margin-bottom: 4vw;
+            flex-basis: 47.7%;
         }
 
         &:nth-child(3){
             flex-basis: 75%;
-            margin:0 auto 6vw auto;
+            place-self: center;
+            place-content: center;
+            place-items: center;
 
             
             @include respond (mobile){
                 flex-basis: 100%;
-                margin:6vw auto 8vw auto;
             }
         }
 

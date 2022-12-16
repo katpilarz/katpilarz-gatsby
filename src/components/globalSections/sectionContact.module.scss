@@ -159,6 +159,7 @@
 
         @include respond (mobile){
             grid-column:1/7;
+            padding-top: 6vw;
         }
 
         @include respond (mobileLandscape){

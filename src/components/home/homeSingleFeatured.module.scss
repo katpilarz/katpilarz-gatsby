@@ -26,11 +26,6 @@
         place-items: space-between;
         gap:2vw;
 
-        @include respond (desktopXS){
-            //width:100%;
-            //flex-wrap: wrap;
-            //place-content: flex-start;
-        }
 
         @include respond (tabletHorizontal){
             margin-top: 10vw;
@@ -65,14 +60,10 @@
     }
 
     @include respond (mobile){
-        width:70%;
+        width:80%;
         margin: 0 auto 14vw 0;
     }
 
-    @include respond (mobileXS){
-        width:80%;
-        margin: 0 auto 20vw 0;
-    }
 
 
     &:nth-child(2){
