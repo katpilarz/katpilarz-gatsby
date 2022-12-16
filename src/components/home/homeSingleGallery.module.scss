@@ -7,13 +7,13 @@
     height: auto;
     flex-wrap: wrap;
     place-content: space-between;
-    margin: 12vw auto 12vw auto;
+    margin: 12vw auto 8vw auto;
     flex-wrap: wrap;
 
 
 
     @include respond (desktopXS){
-        margin: 16vw auto 16vw auto;
+        margin: 16vw auto 12vw auto;
     }
 
 

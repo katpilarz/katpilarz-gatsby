@@ -30,11 +30,15 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
 
                     gsap.fromTo(mediaOneRef.current, {
                         xPercent:'-20',
+                        yPercent:'20',
+                        scale:1.27,
                         autoAlpha:0,
                     }, {
                         duration: 2,
                         autoAlpha:1,
                         xPercent:0,
+                        scale:1,
+                        yPercent:0,
                         ease: "power2.out",
                         scrollTrigger: {
                             id: mediaOneRef.current,
@@ -48,11 +52,17 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     });
                     gsap.fromTo(mediaTwoRef.current, {
                         xPercent:'20',
+                        yPercent:'20',
+
                         autoAlpha:0,
+                        scale:1.27,
                     }, {
                         duration: 2,
                         autoAlpha:1,
                         xPercent:0,
+                        scale:1,
+                        yPercent:0,
+
                         ease: "power2.out",
                         scrollTrigger: {
                             id: mediaTwoRef.current,

@@ -16,10 +16,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const SectionContact = ({section }) => {
 
-    const headerOneRef = useRef(null);
-    const headerTwoRef = useRef(null);
-    const subheaderRef = useRef(null);
     const sectionRef = useRef(null);
+    const linksWrapperRef = useRef(null);
     const linksRefOne = useRef(null);
     const linksRefTwo = useRef(null);
     //const linksRefThree = useRef(null); once contact page will be created
@@ -35,36 +33,14 @@ const SectionContact = ({section }) => {
     
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: headerTwoRef.current,
+              trigger: linksWrapperRef.current,
               start: "top 100%",
-              end:"top 80%",
+              end:"top 77%",
               scrub:3, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
             }
           });
-            tl.from(headerOneRef.current, {
-                duration: 3,
-                ease: "power2.out",
-                css: {
-                  //autoAlpha: 0,
-                  yPercent:'-40',
-            }})
-            tl.from(subheaderRef.current, {
-              duration: 3,
-              ease: "power2.out",
-              css: {
-                autoAlpha: 0,
-                xPercent:'40',
-          }},'-=3')
-            tl.from(headerTwoRef.current, {
-                duration: 3,
-                ease: "power2.out",
-                css: {
-                  //autoAlpha: 0,
-                  yPercent:'60',
-            }},'-=3')
-
 
             tl.from(linksRefOne.current, {
               duration:1.2,
@@ -72,7 +48,7 @@ const SectionContact = ({section }) => {
               css: {
                 opacity: 0,
                 xPercent:'40',
-            }},'+=3')
+            }})
             tl.from(linksRefTwo.current, {
                 duration:1.2,
                 ease: "power2.out",
@@ -98,7 +74,7 @@ const SectionContact = ({section }) => {
     <section ref={sectionRef} className={`${styles.contact} container`}>
         <div className={styles.contactSection}>
             <div className={styles.contactSectionContent}>
-                <div ref={headerOneRef} className={styles.headerOne}>
+                <div className={styles.headerOne}>
                     <h3 className="header-section">{section.headerOne}</h3>
                 </div>
                 
@@ -126,16 +102,16 @@ const SectionContact = ({section }) => {
                         }}        
                     />
                 </div>
-                <div ref={headerTwoRef} className={styles.headerThree}>
+                <div className={styles.headerThree}>
                     <h3 className="header-section">{section.headerTwo}</h3>
                 </div>
-                <div ref={subheaderRef} className={styles.paragraph}>
+                <div className={styles.paragraph}>
                   <p className="text-uppercase">{section.subheader}</p>
                 </div>
             
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
-            <div className={styles.linksWrapper}>
+            <div className={styles.linksWrapper} ref={linksWrapperRef}>
                     <a ref={linksRefOne} className={`${styles.contactLink} text-uppercase`} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
                         {section.brief.text}
                         <ArrowIcon arrowIconClass="linkIcon"/>

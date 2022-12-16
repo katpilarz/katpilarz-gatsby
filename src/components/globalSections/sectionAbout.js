@@ -42,7 +42,6 @@ const SectionAbout = ({ section }) => {
           ease: "power2.out",
           css: {
           autoAlpha: 0,
-          xPercent:'-10',
       }}) 
         
             

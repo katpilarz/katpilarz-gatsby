@@ -53,7 +53,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
           }
         });
         tl.from(headerTwoRef.current, {
-          duration:1, 
+          duration:2, 
           ease: "sine.out",
           css: {
           xPercent:'50',
