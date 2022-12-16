@@ -27,9 +27,9 @@
         gap:2vw;
 
         @include respond (desktopXS){
-            width:100%;
-            flex-wrap: wrap;
-            place-content: flex-start;
+            //width:100%;
+            //flex-wrap: wrap;
+            //place-content: flex-start;
         }
 
         @include respond (tabletHorizontal){
@@ -38,6 +38,8 @@
 
         @include respond (mobile){
             margin-top: 18vw;
+            flex-wrap: wrap;
+            place-content: flex-start;
         }
 
         @include respond (mobileXS){
@@ -58,38 +60,38 @@
     place-self: flex-start;
 
     @include respond (desktopXS){
-        width:60vw;
-        margin:0 0 2vw 0;
+        //width:60vw;
+        //margin:0 0 2vw 0;
     }
 
     @include respond (mobile){
-        width:100%;
+        width:70%;
+        margin: 0 auto 14vw 0;
     }
 
     @include respond (mobileXS){
-        width:100%;
+        width:80%;
+        margin: 0 auto 20vw 0;
     }
 
 
     &:nth-child(2){
 
-        @include respond (desktopXS){
-            place-self: flex-end;
-            margin:0 0 2vw auto;
-       }
 
        @include respond (mobile){
-            margin:10vw 0 10vw auto;
+            margin:0 0 14vw auto;
+            place-self: flex-end;
         }
 
 
        @include respond (mobileXS){
-            margin:12vw 0 12vw auto;
+            margin:0 0 20vw auto;
         }
 
 
         
     }
+
 
 
 
@@ -112,6 +114,8 @@
                 visibility: hidden;
                 transition: all .6s ease;
                 transform: translateY(2rem);
+                line-height: 1.1;
+                margin-top: 1vw;
 
                 @include respond (desktopXS){
                     opacity: 1;
@@ -120,13 +124,6 @@
                     place-items: flex-start;
                     place-content: flex-start;
                }
-
-
-
-                span{
-                    line-height: 1.1;
-                    margin-top: 1vw;
-                }
             }
 
             &:hover{

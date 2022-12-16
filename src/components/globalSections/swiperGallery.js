@@ -1,5 +1,5 @@
 import * as React from "react"
-import * as styles from "./serviceSingleGallery.module.scss";
+import * as styles from "./swiperGallery.module.scss";
 import AnimatedHeading from "../globalComponents/animatedHeading";
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -20,7 +20,7 @@ gsap.registerPlugin(ScrollTrigger);*/
 
 
 
-const ServiceSingleGallery = ({ projects }) => {
+const SwiperGallery = ({ projects, headerOne, headerTwo }) => {
 
   /*const swiperContainer = useRef(null);
 
@@ -59,7 +59,7 @@ const ServiceSingleGallery = ({ projects }) => {
 
       <div className={styles.gallerySwiper}>
           <div className='container'>
-            <AnimatedHeading headerOne='How I have done it' headerTwo='for others' linkText="See All Projects" linkUrl="/projects"/>
+            <AnimatedHeading headerOne={headerOne} headerTwo={headerTwo} linkText="See All Projects" linkUrl="/projects"/>
           </div>
           <Swiper className={styles.swiper}
             modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
@@ -77,16 +77,14 @@ const ServiceSingleGallery = ({ projects }) => {
           > 
             {projects.map((item, index) => {
                 return (
-                  
                   <SwiperSlide key={index} className={styles.swiperSlide}>
-                     <Link to={`/projects/${item.slug.current}`} className={styles.swiperSlideItem}>
+                     <Link to={`/projects/${item.node.slug.current}`} className={styles.swiperSlideItem}>
                         <GatsbyImage className={styles.swiperImage}
-                            image={getImage(item.socialMediaImage.asset.gatsbyImageData)}
-                            alt={`${item.socialMediaImage.alt}`}
+                            image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
+                            alt={`${item.node.socialMediaImage.alt}`}
                         />
                      </Link>
                   </SwiperSlide>
-                
               )
             })}
           </Swiper>
@@ -94,4 +92,4 @@ const ServiceSingleGallery = ({ projects }) => {
   )
 }
 
-export default ServiceSingleGallery;
+export default SwiperGallery;

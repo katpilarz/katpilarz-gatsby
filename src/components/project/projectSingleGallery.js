@@ -61,7 +61,7 @@ const ProjectSingleGallery = ({ images, galleryClassName }) => {
                
                 toggleActions: "restart pause resume none",
                 refreshPriority: 1,
-                scrub:1,
+                scrub:2,
             }
         },'+=2');
  

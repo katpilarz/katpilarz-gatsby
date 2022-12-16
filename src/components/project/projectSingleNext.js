@@ -39,7 +39,7 @@ const ProjectSingleNext = ({ nextProject }) => {
             trigger: nextProjectHeaderRef.current,
             start: "top 57%",
             end: "top 20%",
-            scrub:1, 
+            scrub:2, 
             repeatRefresh: true,
             toggleActions: "restart pause resume none",
           }
@@ -72,7 +72,7 @@ const ProjectSingleNext = ({ nextProject }) => {
             trigger: nextProjectHeaderRef.current,
             start: "top 80%",
             end: "top 60%",
-            scrub:1, 
+            scrub:2, 
             repeatRefresh: true,
             toggleActions: "restart pause resume none",
           }

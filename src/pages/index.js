@@ -189,6 +189,18 @@ query HomePageQuery{
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
             }
           }
+          homeFeaturedProjectImage{
+            alt
+            asset {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+            }
+          }
+          homeFeaturedProjectImageHover{
+            alt
+            asset {
+              gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+            }
+          }
           header
           isFeatured
           overview

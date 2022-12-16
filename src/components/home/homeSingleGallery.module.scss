@@ -17,10 +17,6 @@
     }
 
 
-    @include respond (tabletHorizontal){
-        //gap:3vw;
-
-    }
 
     @include respond (tabletMediumHorizontal){
         margin: 20vw auto 20vw auto;

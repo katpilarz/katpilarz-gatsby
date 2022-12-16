@@ -28,7 +28,7 @@ const AnimatedImage = ({ imageAlt, imagePath }) => {
                     trigger: imageRef.current,
                     start: "top 67%",
                     end: "top 7%",
-                    scrub:1.7, 
+                    scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }

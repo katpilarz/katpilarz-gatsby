@@ -76,7 +76,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 trigger: introRef.current,
                 start: "bottom bottom",
                 end: "bottom -100%",
-                scrub: 1,
+                scrub: 2,
                 pin: true,
                 pinSpacing: true,
                 toggleActions: 'restart pause resume none',
@@ -124,8 +124,8 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 ease: "power2.out",
                 css: {
                   xPercent: '100', 
-                  yPercent:'40',
-                  scale:5.2,
+                  yPercent:'60',
+                  scale:6.2,
                 }
               });
               tl2.to(sectionRef.current, {
@@ -166,7 +166,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                         refreshPriority: 1,
                         pin: false,
                         pinSpacing: false,
-                        scrub:3,
+                        scrub:4,
                     }
                 },"+=7");
         
@@ -206,7 +206,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 trigger: introRef.current,
                 start: "bottom bottom",
                 end: "bottom -100%",
-                scrub: 1,
+                scrub: 2,
                 pin: true,
                 pinSpacing: true,
                 toggleActions: 'restart pause resume none',
@@ -226,8 +226,8 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                     duration:6, 
                     ease: "power2.out",
                     css: {
-                      scale:10,
-                      yPercent:'130',
+                      scale:11,
+                      yPercent:'140',
                       xPercent:'130',
                       autoAlpha:0,
                       }
@@ -247,7 +247,7 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                   autoAlpha:0, 
                   opacity:0,
                 }
-              },'-=2');
+              });
       
           })
 

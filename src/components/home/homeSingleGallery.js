@@ -37,7 +37,7 @@ const HomeSingleGallery = ({ gallery }) => {
 
                 gsap.fromTo(el, {
                     autoAlpha: 0,
-                    xPercent:'-20',
+                    xPercent:'-7',
                     scale:.77,
                     transformOrigin:'left',
                 }, {
@@ -46,16 +46,16 @@ const HomeSingleGallery = ({ gallery }) => {
                     xPercent:0,
                     scale:1,
                     transformOrigin:'left',
-                    ease: "sine.out",
+                    ease: "power2.out",
                     scrollTrigger: {
                         id: `section-${index+1}`,
                         trigger: el,
                         start: 'top 97%',
-                        end:'top 37%',
+                        end:'top 57%',
                         toggleActions: "restart pause resume none",
                        
                         refreshPriority: 1,
-                        scrub:1,
+                        scrub:2,
                     }
                 },'+=10');
          

@@ -37,17 +37,25 @@
 
 
     .sectionHeader{
-        width:60%;
+        width:55.7%;
         text-align: center;
         margin: auto;
         height: auto;
 
         @include respond (desktopXS){
-            width:80%;
+            width:65%;
+        }
+
+        @include respond (tabletHorizontal){
+            width:70%;
         }
 
         @include respond (mobile){
             width:94%;
+        }
+
+        @include respond (mobileLandscape){
+            width:70%;
         }
 
         p{

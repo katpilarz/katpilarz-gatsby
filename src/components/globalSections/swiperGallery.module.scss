@@ -1,0 +1,74 @@
+@import 'src/styles/layout';
+
+.gallerySwiper{
+    @include fullWidth;
+    display: flex;
+    flex-direction: column;
+    margin-top: 12vw;
+
+
+    @include respond (desktopXS){
+        margin: 14vw auto 0 auto;
+    }
+
+    @include respond (tabletHorizontal){
+        margin: 18vw auto 0 auto;
+    }
+
+    @include respond (mobile){
+        margin: 22vw auto 0 auto;
+    }
+
+
+    @include respond (mobileXS){
+        margin: 26vw auto 8vw auto;
+    }
+
+
+
+}
+
+.swiper{
+    @include fullWidth;
+    margin: 10vw auto 12vw auto;
+    overflow: visible;
+
+    @include respond (tabletHorizontal){
+        margin: 18vw auto 16vw auto;
+    }
+
+    @include respond (mobile){
+        margin:20vw auto;
+    }
+
+
+    .swiperSlide{
+        width:75%;
+        height: auto;
+        display: flex;
+
+        @include respond (mobile){
+            width:85%;
+        }
+
+
+        
+    .swiperSlideItem{
+            flex-basis: 100%;
+            width:100%;
+            display: flex;
+            margin: 0 3vw;
+            
+            .swiperImage{
+                width:100%;
+
+                img{
+                    width:100%;
+                }
+            }
+
+        }
+    }
+
+    
+}

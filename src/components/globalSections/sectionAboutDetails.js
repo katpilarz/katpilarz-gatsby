@@ -1,6 +1,5 @@
 import React from "react"
 import * as styles from "./sectionAboutDetails.module.scss";
-import AnimatedImage from "../globalComponents/animatedImage";
 import Video from "../globalComponents/video";
 import Description from "../globalComponents/description";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -41,10 +40,10 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                             id: mediaOneRef.current,
                             trigger: mediaOneRef.current,
                             start: 'top 97%',
-                            end: 'top 23%',
+                            end: 'top 37%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:1,
+                            scrub:2,
                         }
                     });
                     gsap.fromTo(mediaTwoRef.current, {
@@ -59,10 +58,10 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                             id: mediaTwoRef.current,
                             trigger: mediaTwoRef.current,
                             start: 'top 97%',
-                            end: 'top 30%',
+                            end: 'top 37%',
                             toggleActions: "restart pause resume none",
                             refreshPriority: 1,
-                            scrub:1,
+                            scrub:2,
                         }
                     });
 
@@ -81,16 +80,17 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
             
     <div ref={sectionRef} className={`${styles.sectionContentWrapper} container`}>   
         <div ref={mediaOneRef} className={styles.aboutImageMain}>
-                {/*<AnimatedImage imagePath={imageOne.asset.gatsbyImageData} imageAlt={imageOne.alt}/> */}
                 <GatsbyImage class={styles.image}
                             image={getImage(imageOne.asset.gatsbyImageData)}
-                            alt={imageOne.alt}/>  
+                alt={imageOne.alt}/>  
         </div>
         <div className={styles.mediaDescriptionWrapper}>
             <div ref={mediaTwoRef}  className={styles.aboutMedia}>
 
                 {imageTwo &&
-                    <AnimatedImage imagePath={imageTwo.asset.gatsbyImageData} imageAlt={imageTwo.alt}/>
+                    <GatsbyImage class={styles.image}
+                            image={getImage(imageTwo.asset.gatsbyImageData)}
+                    alt={imageTwo.alt}/> 
                 }
                 {video &&
                         <Video videoWebm={video.webm} videoFallback={video.fallback} videoCloudinary={video.cloudinaryVideo} videoAlt={video.alt} videoCustomClass='projectPrototype' isDecriptionDisplayed='false'/>  

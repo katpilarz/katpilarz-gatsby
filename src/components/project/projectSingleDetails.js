@@ -38,7 +38,7 @@ const ProjectSingleDetails = ({ project }) => {
           trigger: detailOneRef.current,
           start: "top 67%",
           end: "top 27%",
-          scrub:1, 
+          scrub:2, 
           repeatRefresh: true,
           toggleActions: "restart pause resume none",
         }
@@ -88,7 +88,7 @@ const ProjectSingleDetails = ({ project }) => {
               trigger: subheaderRef.current,
               start: "top 47%",
               end: "top 17%",
-              scrub:1, 
+              scrub:2, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
             }

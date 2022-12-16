@@ -46,13 +46,13 @@
 
     @include respond (mobile){
         width:93%;
-        margin: 18vw 0 auto auto;
+        margin: 22vw 0 auto auto;
         place-self: flex-end;
     }
 
     @include respond (mobileXS){
         width:100%;
-        margin: 20vw auto auto auto;
+        //margin: 20vw auto auto auto;
     }
 
      @include respond (mobileLandscape){

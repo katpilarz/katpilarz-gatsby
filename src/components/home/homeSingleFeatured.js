@@ -47,7 +47,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
 
           
-      animation.add("(min-width:  1280px)", () => {
+      animation.add("(min-width:  569px)", () => {
 
         const tl = gsap.timeline({
           scrollTrigger: {
@@ -67,7 +67,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
             duration:6, 
             ease: "power2.out",
             css: {
-              xPercent:'50',
+              xPercent:'-50',
             }
           });
 
@@ -78,7 +78,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
             gsap.fromTo(el, {
                 xPercent:50,
-                scale:2,
+                scale:1.47,
                 marginTop:'12vw'
 
             }, {
@@ -109,19 +109,76 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
       })
 
 
-      animation.add("(max-width:  1279px)", () => {
+      animation.add("(max-width:  568px)", () => {
 
 
-          revealRefs.current.forEach((el, index) => {
+          /*revealRefs.current.forEach((el, index) => {
 
             gsap.fromTo(el, {
-                xPercent:30,
+                xPercent:-30,
                 autoAlpha:0,
 
             }, {
                 duration: 2,
                 xPercent:0,
                 autoAlpha:1,
+                ease: "power4.out",
+                scrollTrigger: {
+                    id: `section-${index+1}`,
+                    trigger: el,
+                    start: 'top 77%',
+                    end:'top 37%',
+                  
+                    toggleActions: "restart pause resume none",
+                    refreshPriority: 1,
+                    pin: false,
+                    pinSpacing: false,
+                    scrub:4,
+                }
+            },'+=4');
+    
+        });*/
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top 90%',
+            end:'top 50%',
+            scrub: 1,
+            pin: false,
+            pinSpacing: false,
+           
+            toggleActions: "restart pause resume none",
+            refreshPriority: 1,
+          }
+        })
+  
+        tl.from(containerRef.current, {
+            duration:6, 
+            ease: "power2.out",
+            css: {
+              xPercent:'-30',
+            }
+          });
+
+
+
+
+          revealRefs.current.forEach((el, index) => {
+
+            gsap.fromTo(el, {
+                xPercent:'-30',
+                yPercent:'-5',
+                scale:1.47,
+                marginTop:'16vw'
+
+            }, {
+                duration: 2,
+                xPercent:0,
+                yPercent:0,
+                autoAlpha:1,
+                scale:1,
+                marginTop:0,
                 ease: "power4.out",
                 scrollTrigger: {
                     id: `section-${index+1}`,
@@ -145,11 +202,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
 
       
-
-
-
-
-      
+     
  
     }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
@@ -166,10 +219,10 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                     <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
                       <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
                           <div className={styles.projectSwiperSlideImage}>
-                              <AnimatedImage imagePath={project.node.thumbnailBannerImage.asset.gatsbyImageData} imageAlt={project.node.thumbnailBannerImage.alt}/> 
+                              <AnimatedImage imagePath={project.node.homeFeaturedProjectImage.asset.gatsbyImageData} imageAlt={project.node.homeFeaturedProjectImage.alt}/> 
                               <GatsbyImage className={styles.projectSwiperSlideImageHover}
-                                image={getImage(project.node.thumbnailSocialMedia.asset.gatsbyImageData)}
-                                alt={`${project.node.thumbnailSocialMedia.alt}`}
+                                image={getImage(project.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
+                                alt={`${project.node.homeFeaturedProjectImageHover.alt}`}
                               />
                           </div>
                           <div  className={styles.projectSwiperSlideHeader}>

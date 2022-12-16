@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 
-const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug, isHome }) => {
+const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug, isHome, featuredVideo }) => {
 
     const testimonialRef = useRef(null);
 
@@ -34,9 +34,9 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: testimonialRef.current,
-                start: "top 87%",
-                end: "top 23%",
-                scrub:1, 
+                start: "top 97%",
+                end: "top 47%",
+                scrub:2, 
                 repeatRefresh: true,
                 toggleActions: "restart pause resume none"
 
@@ -46,7 +46,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                 duration: 1,
                 ease: "power2.out",
                 css: {
-                autoAlpha: 0,
+                autoAlpha: 0.2,
                 opacity:0,
                 yPercent:'27',
                 marginTop:'10vw'
@@ -84,7 +84,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                     <Link className={styles.clientsDetails} to={`projects/${slug}`}>
                         <GatsbyImage className={styles.testimonialImage}
                         image={getImage(image.asset.gatsbyImageData)}
-                        alt={`${image.alt}`}/> 
+                        alt={`${image.alt}`}/>
                         <p>{name}</p>
                         <div className={styles.testimonialServicesList}>
                             {services.map((service, index) => {

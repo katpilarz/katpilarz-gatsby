@@ -4,8 +4,8 @@ import ReactTypingEffect from 'react-typing-effect';
 import { Link } from "gatsby"
 import ArrowIcon from "../globalComponents/arrow";
 import ScrippedText from "../globalComponents/scrippedText";
-//import AnimatedImage from "../globalComponents/animatedImage";
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import AnimatedImage from "../globalComponents/animatedImage";
+//import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';
@@ -18,7 +18,6 @@ const SectionContact = ({section }) => {
 
     const headerOneRef = useRef(null);
     const headerTwoRef = useRef(null);
-    const typingRef = useRef(null);
     const subheaderRef = useRef(null);
     const sectionRef = useRef(null);
     const linksRefOne = useRef(null);
@@ -36,60 +35,51 @@ const SectionContact = ({section }) => {
     
           const tl = gsap.timeline({
             scrollTrigger: {
-              trigger: typingRef.current,
-              start: "top 97%",
-              end:"top 27%",
-              scrub:1, 
+              trigger: headerTwoRef.current,
+              start: "top 100%",
+              end:"top 80%",
+              scrub:3, 
               repeatRefresh: true,
               toggleActions: "restart pause resume none",
             }
           });
             tl.from(headerOneRef.current, {
-                duration: 2,
+                duration: 3,
                 ease: "power2.out",
                 css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  yPercent:'-20',
+                  //autoAlpha: 0,
+                  yPercent:'-40',
             }})
-            tl.from(typingRef.current, {
-                duration: 1,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-            }},'-=2')
-            tl.from(headerTwoRef.current, {
-                duration: 2,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  yPercent:'50',
-            }},'-=2')
-
             tl.from(subheaderRef.current, {
-                duration: 2,
+              duration: 3,
+              ease: "power2.out",
+              css: {
+                autoAlpha: 0,
+                xPercent:'40',
+          }},'-=3')
+            tl.from(headerTwoRef.current, {
+                duration: 3,
                 ease: "power2.out",
                 css: {
-                  autoAlpha: 0,
-                  visibility:'hidden',
-                  xPercent:'40',
-            }},'-=2')
+                  //autoAlpha: 0,
+                  yPercent:'60',
+            }},'-=3')
+
+
             tl.from(linksRefOne.current, {
               duration:1.2,
               ease: "power2.out",
               css: {
                 opacity: 0,
                 xPercent:'40',
-            }},'-=.7')
+            }},'+=3')
             tl.from(linksRefTwo.current, {
                 duration:1.2,
                 ease: "power2.out",
                 css: {
                   opacity: 0,
                   xPercent:'40',
-            }},'-=.7')
+            }}, '-=.7')
   
            
                 
@@ -112,12 +102,12 @@ const SectionContact = ({section }) => {
                     <h3 className="header-section">{section.headerOne}</h3>
                 </div>
                 
-                <div className={styles.headerTwo} ref={typingRef}>
+                <div className={styles.headerTwo}>
                     <ReactTypingEffect
                         text={section.projectFeatures}
-                        speed={120}
-                        eraseDelay={700}
-                        eraseSpeed={120}
+                        speed={100}
+                        eraseDelay={270}
+                        eraseSpeed={100}
                         cursorRenderer={cursor => <h2 className="header-features text-color">{cursor}</h2>}
                         displayTextRenderer={(text, i) => {
                         return (
@@ -140,7 +130,7 @@ const SectionContact = ({section }) => {
                     <h3 className="header-section">{section.headerTwo}</h3>
                 </div>
                 <div ref={subheaderRef} className={styles.paragraph}>
-                <p className="text-uppercase">{section.subheader}</p>
+                  <p className="text-uppercase">{section.subheader}</p>
                 </div>
             
             </div> 
@@ -159,10 +149,10 @@ const SectionContact = ({section }) => {
                     </Link>
             </div>
         </div>
-        {/*<AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>*/}   
-        <GatsbyImage className={styles.contactSectionImage}
+        {/*<GatsbyImage className={styles.contactSectionImage}
                     image={getImage(section.image.asset.gatsbyImageData)}
-                    alt={section.image.alt}/>
+                      alt={section.image.alt}/>*/}
+                    <AnimatedImage imagePath={section.image.asset.gatsbyImageData} imageAlt={section.image.alt}/>
      
     </section>
   )

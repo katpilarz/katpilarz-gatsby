@@ -41,7 +41,7 @@ const HomeSingleFocus = ({ section}) => {
                     trigger: headerRef.current,
                     start: "top 100%",
                     end: "top 37%",
-                    scrub:1, 
+                    scrub:2, 
                     repeatRefresh: true,
                     toggleActions: "restart pause resume none",
                     }
@@ -74,7 +74,7 @@ const HomeSingleFocus = ({ section}) => {
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,
-                            scrub:1,
+                            scrub:2,
                         }
                     });
              

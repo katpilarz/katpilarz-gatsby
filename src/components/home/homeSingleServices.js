@@ -49,7 +49,7 @@ const HomeSingleServices = ({ services }) => {
                             id: `article-${index+1}`,
                             trigger: el,
                             start: 'top 97%',
-                            end:'top 17%',
+                            end:'top 37%',
                             toggleActions: "restart pause resume none",
                            
                             refreshPriority: 1,

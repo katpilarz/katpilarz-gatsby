@@ -35,7 +35,7 @@ const Description = ({ description, descriptionCustomClass  }) => {
                   trigger: descriptionRef.current,
                   start: "top 80%",
                   end: "top 40%",
-                  scrub:1, 
+                  scrub:2, 
                   repeatRefresh: true,
                   toggleActions: "restart pause resume none",
                 }
@@ -60,7 +60,7 @@ const Description = ({ description, descriptionCustomClass  }) => {
                   trigger: descriptionRef.current,
                   start: "top 87%",
                   end: "top 52%",
-                  scrub:1, 
+                  scrub:2, 
                   repeatRefresh: true,
                   toggleActions: "restart pause resume none",
                 }
