@@ -99,6 +99,14 @@ query HomePageQuery{
           format
         }
       }
+      featuredVideoMobile{
+        alt
+        cloudinaryVideo {
+          url
+          secure_url
+          format
+        }
+      }
       gallery {
         ... on SanityFigure {
           _type

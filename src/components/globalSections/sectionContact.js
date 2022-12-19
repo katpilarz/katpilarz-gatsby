@@ -31,31 +31,81 @@ const SectionContact = ({section }) => {
         let ctx = gsap.context(() => {
     
     
-          const tl = gsap.timeline({
-            scrollTrigger: {
-              trigger: linksWrapperRef.current,
-              start: "top 100%",
-              end:"top 77%",
-              scrub:3, 
-              repeatRefresh: true,
-              toggleActions: "restart pause resume none",
-            }
-          });
 
-            tl.from(linksRefOne.current, {
-              duration:1.2,
-              ease: "power2.out",
-              css: {
-                opacity: 0,
-                xPercent:'40',
-            }})
-            tl.from(linksRefTwo.current, {
-                duration:1.2,
-                ease: "power2.out",
-                css: {
-                  opacity: 0,
-                  xPercent:'40',
-            }}, '-=.7')
+
+            const animation = gsap.matchMedia()
+            animation.add()
+  
+            
+            /************************************************************************/
+            // DESKTOP ANIMATION
+            /***********************************************************************/
+            
+            animation.add("(min-width: 569px)", () => {
+  
+              const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: linksWrapperRef.current,
+                  start: "top 97%",
+                  end:"top 67%",
+                  scrub:3, 
+                  repeatRefresh: true,
+                  toggleActions: "restart pause resume none",
+                }
+              });
+    
+                tl.from(linksRefOne.current, {
+                  duration:1.2,
+                  ease: "power2.out",
+                  css: {
+                    opacity: 0,
+                    xPercent:'40',
+                }})
+                tl.from(linksRefTwo.current, {
+                    duration:1.2,
+                    ease: "power2.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                }}, '-=.7')
+  
+      
+        
+            })
+  
+            animation.add("(max-width: 568px)", () => {
+  
+              const tl = gsap.timeline({
+                scrollTrigger: {
+                  trigger: linksWrapperRef.current,
+                  start: "top 87%",
+                  end:"top 47%",
+                  scrub:3, 
+                  repeatRefresh: true,
+                  toggleActions: "restart pause resume none",
+                }
+              });
+    
+                tl.from(linksRefOne.current, {
+                  duration:1.2,
+                  ease: "power2.out",
+                  css: {
+                    opacity: 0,
+                    xPercent:'40',
+                }})
+                tl.from(linksRefTwo.current, {
+                    duration:1.2,
+                    ease: "power2.out",
+                    css: {
+                      opacity: 0,
+                      xPercent:'40',
+                }}, '-=.7')
+  
+  
+    
+      
+          })
+  
   
            
                 

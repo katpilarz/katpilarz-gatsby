@@ -48,8 +48,8 @@
                 margin-top: 6vw;
             }
             
-            @include respond (mobileXS){
-                margin-top: 8vw;
+            @include respond (mobile){
+                margin-top: 14vw;
             }
         }
         
