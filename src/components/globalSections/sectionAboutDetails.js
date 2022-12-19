@@ -52,9 +52,9 @@ const SectionAboutDetails = ({ text, imageOne, imageTwo, video }) => {
                     });
                     gsap.fromTo(mediaTwoRef.current, {
                         xPercent:'20',
-                        yPercent:'20',
+                        yPercent:'40',
 
-                        autoAlpha:0,
+                        //autoAlpha:0,
                         scale:1.27,
                     }, {
                         duration: 2,

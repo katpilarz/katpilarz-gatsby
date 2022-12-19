@@ -33,8 +33,8 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 67%',
-          end:'top 22%',
+          start: 'top 87%',
+          end:'top 47%',
           scrub: 1,
           pin: false,
           pinSpacing: false,
@@ -61,7 +61,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
           }
       },'-=1.67');
         tl.from(linkRef.current, {
-            duration:1, 
+            duration:2, 
             ease: "sine.out",
             css: {
             xPercent:'-50',

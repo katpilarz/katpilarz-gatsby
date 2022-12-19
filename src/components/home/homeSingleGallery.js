@@ -16,7 +16,7 @@ const HomeSingleGallery = ({ gallery }) => {
  const galleryItems = gallery
 
 
-
+ const sectionRef = useRef(null);
   const revealRefs = useRef([]);
   revealRefs.current = [];
 
@@ -33,7 +33,19 @@ const HomeSingleGallery = ({ gallery }) => {
     let ctx = gsap.context(() => {
 
 
-            revealRefs.current.forEach((el, index) => {
+
+        const animation = gsap.matchMedia()
+          animation.add()
+
+          
+          /************************************************************************/
+          // DESKTOP ANIMATION
+          /***********************************************************************/
+          
+          animation.add("(min-width: 569px)", () => {
+
+
+              revealRefs.current.forEach((el, index) => {
 
                 gsap.fromTo(el, {
                     autoAlpha: 0,
@@ -61,9 +73,50 @@ const HomeSingleGallery = ({ gallery }) => {
          
             });
 
+    
+      
+          })
+
+          animation.add("(max-width: 568px)", () => {
+
+
+            revealRefs.current.forEach((el, index) => {
+
+              gsap.fromTo(el, {
+                  autoAlpha: 0,
+                  xPercent:'-7',
+                  scale:.77,
+                  transformOrigin:'left',
+              }, {
+                  duration: 3,
+                  autoAlpha: 1,
+                  xPercent:0,
+                  scale:1,
+                  transformOrigin:'left',
+                  ease: "power2.out",
+                  scrollTrigger: {
+                      id: `section-${index+1}`,
+                      trigger: el,
+                      start: 'top 87%',
+                      end:'top 27%',
+                      toggleActions: "restart pause resume none",
+                     
+                      refreshPriority: 1,
+                      scrub:2,
+                  }
+              },'+=10');
+       
+          });
 
   
-    }, revealRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
+    
+        })
+
+
+            
+
+  
+    }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
@@ -72,7 +125,7 @@ const HomeSingleGallery = ({ gallery }) => {
   // NO STYLING FOR VIDEO - MORE LIKELY SHOULD NOT BE CONSIDERED FOR THIS SECTION DUE TO BANDWIDTH
    
   return (
-    <section className={`${styles.sectionGallery} container`}>
+    <section ref={sectionRef} className={`${styles.sectionGallery} container`}>
         
             {galleryItems.map((item, index) => {
                 return (
