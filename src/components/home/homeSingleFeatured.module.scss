@@ -13,7 +13,7 @@
     z-index: 1;
 
     @include respond (mobile){
-        margin-top: 28vw;
+        margin-top: 32vw;
     }
 
    
@@ -54,10 +54,6 @@
     height: 100%;
     place-self: flex-start;
 
-    @include respond (desktopXS){
-        //width:60vw;
-        //margin:0 0 2vw 0;
-    }
 
     @include respond (mobile){
         width:80%;
@@ -94,28 +90,7 @@
 
 
 
-            .projectSwiperSlideHeader{
-                display: flex;
-                flex-direction: column;
-                place-items: center;
-                place-content: center;
-                text-align: left;
-                z-index: 2;
-                opacity: 0;
-                visibility: hidden;
-                transition: all .6s ease;
-                transform: translateY(2rem);
-                line-height: 1.1;
-                margin-top: 1vw;
-
-                @include respond (desktopXS){
-                    opacity: 1;
-                    visibility: visible;
-                    transform: translateY(0);
-                    place-items: flex-start;
-                    place-content: flex-start;
-               }
-            }
+          
 
             &:hover{
 
@@ -176,4 +151,62 @@
 }
 
 
+.projectSwiperSlideHeader{
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    text-align: left;
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s ease;
+    transform: translateY(2rem);
+    line-height: 1.1;
+    margin-top: 1vw;
 
+    @include respond (desktopXS){
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        place-items: flex-start;
+        place-content: flex-start;
+   }
+}
+
+
+.swiper{
+    @include fullWidth;
+    margin: 22vw auto 20vw auto;
+    overflow: visible;
+
+
+    .swiperSlide{
+        width:80%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding-left: 2vw;
+
+
+        
+    .swiperSlideItem{
+            flex-basis: 100%;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            margin: 0 3vw;
+            
+            .swiperImage{
+                width:100%;
+
+                img{
+                    width:100%;
+                }
+            }
+
+        }
+    }
+
+    
+}

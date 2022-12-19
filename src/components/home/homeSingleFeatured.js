@@ -3,8 +3,15 @@ import * as styles from "./homeSingleFeatured.module.scss";
 import { Link } from "gatsby"
 import AnimatedHeading from "../globalComponents/animatedHeading";
 import AnimatedImage from "../globalComponents/animatedImage";
+import Media from 'react-media';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
+
+// Import Swiper styles
+import 'swiper/scss';
+
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
@@ -108,80 +115,6 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
       })
 
-
-      animation.add("(max-width:  568px)", () => {
-
-
-          /*revealRefs.current.forEach((el, index) => {
-
-            gsap.fromTo(el, {
-                xPercent:-30,
-                autoAlpha:0,
-
-            }, {
-                duration: 2,
-                xPercent:0,
-                autoAlpha:1,
-                ease: "power4.out",
-                scrollTrigger: {
-                    id: `section-${index+1}`,
-                    trigger: el,
-                    start: 'top 77%',
-                    end:'top 37%',
-                  
-                    toggleActions: "restart pause resume none",
-                    refreshPriority: 1,
-                    pin: false,
-                    pinSpacing: false,
-                    scrub:4,
-                }
-            },'+=4');
-    
-        });*/
-
-
-
-
-
-          revealRefs.current.forEach((el, index) => {
-
-            gsap.fromTo(el, {
-                autoAlpha:0,
-                xPercent:'-30',
-                //yPercent:'-5',
-                scale:1.47,
-                marginTop:'20vw'
-
-            }, {
-                duration: 2,
-                xPercent:0,
-                yPercent:0,
-                autoAlpha:1,
-                scale:1,
-                marginTop:0,
-                ease: "power4.out",
-                scrollTrigger: {
-                    id: `section-${index+1}`,
-                    trigger: el,
-                    start: 'top 97%',
-                    end:'top 57%',
-                  
-                    toggleActions: "restart pause resume none",
-                    refreshPriority: 1,
-                    pin: false,
-                    pinSpacing: false,
-                    scrub:4,
-                }
-            },'+=4');
-    
-        });
-
-
-
-      })
-
-
-      
      
  
     }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -191,30 +124,78 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
   return (
 
-      <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
-          <AnimatedHeading headerOne='Creating Competitive' headerTwo='startup experience' linkText="See All Projects" linkUrl="/projects"/>
-          <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
-            {featuredProjects.map((project, index) => {
-                  return (
-                    <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
-                      <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
-                          <div className={styles.projectSwiperSlideImage}>
-                              <AnimatedImage imagePath={project.node.homeFeaturedProjectImage.asset.gatsbyImageData} imageAlt={project.node.homeFeaturedProjectImage.alt}/> 
-                              <GatsbyImage className={styles.projectSwiperSlideImageHover}
-                                image={getImage(project.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
-                                alt={`${project.node.homeFeaturedProjectImageHover.alt}`}
-                              />
+      <>
+        <Media query="(min-width: 569px)" render={() =>
+          (
+            <div ref={sectionRef} className={`${styles.sectionFeatured} container`}>
+                <AnimatedHeading headerOne='Creating Competitive' headerTwo='startup experience' linkText="See All Projects" linkUrl="/projects"/>
+                <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
+                  {featuredProjects.map((project, index) => {
+                        return (
+                          <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
+                            <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
+                                <div className={styles.projectSwiperSlideImage}>
+                                    <AnimatedImage imagePath={project.node.homeFeaturedProjectImage.asset.gatsbyImageData} imageAlt={project.node.homeFeaturedProjectImage.alt}/> 
+                                    <GatsbyImage className={styles.projectSwiperSlideImageHover}
+                                      image={getImage(project.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
+                                      alt={`${project.node.homeFeaturedProjectImageHover.alt}`}
+                                    />
+                                </div>
+                                <div  className={styles.projectSwiperSlideHeader}>
+                                    {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
+                                    <p>{project.node.title}</p>
+                                </div>
+                            </Link>
                           </div>
-                          <div  className={styles.projectSwiperSlideHeader}>
-                              {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
-                              <p>{project.node.title}</p>
-                          </div>
-                      </Link>
-                    </div>
-                )
-              })}
+                      )
+                    })}
+              </div>
             </div>
-        </div>  
+          )}
+        />
+        <Media query="(max-width: 568px)" render={() =>
+          ( 
+            <div className={styles.sectionFeatured}>
+                <div className='container'>
+                  <AnimatedHeading headerOne='Creating Competitive' headerTwo='startup experience' linkText="See All Projects" linkUrl="/projects"/>
+                </div>
+                <Swiper className={styles.swiper} 
+                    modules={[EffectFade, Navigation, Pagination,Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom]}
+                    slidesPerView={"auto"}
+                    centeredSlides={false}
+                    direction={"horizontal"}
+                    spaceBetween={30}
+                    grabCursor={true}
+                    mousewheel={true}
+                    keyboard={{
+                        enabled: true,
+                    }}
+                    speed={1000}
+                    effect={"slide"}
+                  > 
+                    {featuredProjects.map((item, index) => {
+                        return (
+                          <SwiperSlide key={index} className={styles.swiperSlide}>
+                            <Link to={`/projects/${item.node.slug.current}`} className={styles.swiperSlideItem}>
+                                <GatsbyImage className={styles.swiperImage}
+                                    image={getImage(item.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
+                                    alt={`${item.node.homeFeaturedProjectImageHover.alt}`}
+                                />
+                                <div  className={styles.projectSwiperSlideHeader}>
+                                  <p>{item.node.title}</p>
+                              </div>
+                            </Link>
+                          </SwiperSlide>
+                      )
+                    })}
+                 </Swiper>
+              </div>
+          )}
+        />
+            
+
+      </>
+          
   )
 }
 

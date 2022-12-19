@@ -2,7 +2,6 @@ import * as React from "react"
 import HomeSingleBanner from "./homeSingleBanner";
 import HomeSingleFocus from "./homeSingleFocus";
 import HomeSingleFeatured from "./homeSingleFeatured";
-import SwiperGallery from "../globalSections/swiperGallery";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import SectionAbout from "../globalSections/sectionAbout";
 import HomeSingleServices from "./homeSingleServices";
