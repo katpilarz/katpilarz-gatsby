@@ -71,18 +71,15 @@
     .animated-btn{
       display: flex;
       width:8.7vw;
-      min-width: 5rem;
+      min-width: 6rem;
 
       @include respond (tabletHorizontal){
           width:13vw;
       }
 
       @include respond (mobileLandscape){
-          width:4vw;
-      }
-
-      @include respond (mobileLandscape){
         width: 3.4vw;
+        min-width: 5rem;
     }
   }
   

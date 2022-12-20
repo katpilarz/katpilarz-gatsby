@@ -114,6 +114,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
 
 
       })
+      
 
      
  
@@ -132,16 +133,16 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                 <div ref={containerRef} className={styles.sectionFeaturedWrapper}>
                   {featuredProjects.map((project, index) => {
                         return (
-                          <div key={index} className={styles.projectSwiperSlide} ref={addToRefs}>
-                            <Link to={`/projects/${project.node.slug.current}`} className={styles.projectSwiperSlideContainer}>
-                                <div className={styles.projectSwiperSlideImage}>
+                          <div key={index} className={styles.projectCard} ref={addToRefs}>
+                            <Link to={`/projects/${project.node.slug.current}`} className={styles.projectCardWrapper}>
+                                <div className={styles.projectCardImage}>
                                     <AnimatedImage imagePath={project.node.homeFeaturedProjectImage.asset.gatsbyImageData} imageAlt={project.node.homeFeaturedProjectImage.alt}/> 
-                                    <GatsbyImage className={styles.projectSwiperSlideImageHover}
+                                    <GatsbyImage className={styles.projectCardImageHover}
                                       image={getImage(project.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
                                       alt={`${project.node.homeFeaturedProjectImageHover.alt}`}
                                     />
                                 </div>
-                                <div  className={styles.projectSwiperSlideHeader}>
+                                <div  className={styles.projectCardHeader}>
                                     {/*<p  className="text-uppercase">{project.node.overview}</p>*/}
                                     <p>{project.node.title}</p>
                                 </div>
@@ -181,7 +182,7 @@ const HomeSingleFeatured = ({ featuredProjects }) => {
                                     image={getImage(item.node.homeFeaturedProjectImageHover.asset.gatsbyImageData)}
                                     alt={`${item.node.homeFeaturedProjectImageHover.alt}`}
                                 />
-                                <div  className={styles.projectSwiperSlideHeader}>
+                                <div  className={styles.projectCardHeader}>
                                   <p>{item.node.title}</p>
                               </div>
                             </Link>

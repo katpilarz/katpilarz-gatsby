@@ -71,6 +71,14 @@ query ProjectTemplateQuery($id: String!){
           format
         }
       }
+      prototypeMobile {
+        alt
+        cloudinaryVideo {
+          url
+          secure_url
+          format
+        }
+      }
       mockups {
         alt
         asset {

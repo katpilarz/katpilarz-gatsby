@@ -74,6 +74,7 @@
         place-items: center;
         place-self: center;
         height: 100%;
+        margin-bottom: 10vw;
     }
 
 
@@ -122,6 +123,8 @@
     @include respond (desktopXS){
         width:100%;
     }
+
+
 
     .headerOne{
         grid-column: 3/9;

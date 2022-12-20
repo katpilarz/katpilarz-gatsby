@@ -64,7 +64,7 @@ const AnimatedHeading = ({ headerOne,headerTwo, linkText, linkUrl }) => {
             duration:2, 
             ease: "sine.out",
             css: {
-            xPercent:'-50',
+            xPercent:'-20',
             autoAlpha:0,
             }
         },'-=1');

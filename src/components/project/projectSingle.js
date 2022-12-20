@@ -11,9 +11,6 @@ import Media from 'react-media';
 
 const ProjectSingle = ({ project, isHome }) => {
 
- 
- 
-
 
   return (
 
@@ -22,8 +19,25 @@ const ProjectSingle = ({ project, isHome }) => {
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
         }
-        {project.isInteractive &&
-          <SectionFeaturedVideo video={project.prototype} isDecriptionDisplayed="false"/>
+        {project.isInteractive && project.prototype &&
+         
+          <Media query="(min-width: 569px)" render={() =>
+            (
+              <SectionFeaturedVideo video={project.prototype} isDecriptionDisplayed="false"/>
+              
+            )}
+          />
+        }
+        {project.isInteractive && project.prototypeMobile &&
+        
+          
+            <Media query="(max-width: 568px)" render={() =>
+              
+              (
+                <SectionFeaturedVideo video={project.prototypeMobile} isDecriptionDisplayed="false"/>
+                
+              )}
+            />
         }
 
         <ProjectSingleDetails project={project}/>
