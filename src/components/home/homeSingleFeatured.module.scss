@@ -180,6 +180,10 @@
     margin: 22vw auto 0 auto;
     overflow: visible;
 
+    &:last-child{
+        margin-right: 2vw;
+    }
+
 
     .swiperSlide{
         width:80%;
@@ -187,6 +191,8 @@
         display: flex;
         flex-direction: column;
         padding-left: 2vw;
+
+
 
 
         
