@@ -45,24 +45,31 @@ const ProjectSingle = ({ project, isHome }) => {
         
         <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
 
-        { project.mobileMockups &&
-          <Media query="(max-width: 1024px)" render={() =>
-            (
-                <ProjectSingleGallery images={project.mobileMockups} galleryClassName='projectGallery'/>
-
+       
+          <Media query="(max-width: 768px)" render={() =>
+            { project.mobileMockups &&
+              (
+                
+                <div className="device-mockups-wrapper">
+                  <ProjectSingleGallery images={project.mobileMockups} galleryClassName='projectGallery'/>
+                  </div>
               
-            )}
+                
+              )}
+            }
           />
-        }
-        { project.desktopMockups &&
+        
           <Media query="(min-width: 768px)" render={() =>
-            (
-                <ProjectSingleGallery images={project.desktopMockups} galleryClassName='projectGallery'/>
-
-              
-            )}
+            { project.desktopMockups &&
+              (
+                <div className="device-mockups-wrapper">
+                  <ProjectSingleGallery images={project.desktopMockups} galleryClassName='projectGallery'/>
+                </div>
+                
+              )}
+            }
           />
-        }
+
 
         {project.nextProject.map((nextProject, index) => {
             return(

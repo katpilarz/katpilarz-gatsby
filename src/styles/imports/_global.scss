@@ -109,3 +109,10 @@
   
   
   
+.device-mockups-wrapper{
+  margin: 14vw auto 16vw auto;
+
+  @include respond (tabletHorizontal){
+    margin: 10vw auto 10vw auto;
+  }
+}

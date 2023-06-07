@@ -167,8 +167,6 @@ module.exports = {
     "path": "./src/assets/images/", 
     "name": "fonts",
     "path": `${__dirname}/static/fonts`, 
-
-    
   },
   __key: "images",
 },

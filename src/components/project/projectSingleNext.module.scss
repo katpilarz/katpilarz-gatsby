@@ -7,7 +7,7 @@
     place-content: center;
     width:90%;
     height: auto;
-    margin:14vw 0 12vw auto;
+    margin:16vw 0 12vw auto;
 
     @include respond (tabletHorizontal){
         margin:26vw 0 16vw auto;
@@ -16,12 +16,11 @@
 
     @include respond (mobile){
        width:100%;
-       margin:20vw 0 16vw auto;
+       margin:30vw 0 16vw auto;
     }
 
     @include respond (mobileXS){
         width:100%;
-        margin:26vw 0 16vw auto;
      }
 
     
