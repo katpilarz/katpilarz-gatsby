@@ -58,16 +58,16 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1{
-    font-size: 25.7vw;
+    font-size: 24.7vw;
     text-align: center;
     padding: 5vw 0 0 0;
     line-height: .8;
 
     @include respond (mobile){
-        font-size: 26.17vw;
+        font-size: 24.17vw;
     }
     @include respond (mobileLandscape){
-        font-size: 21vw;
+        font-size: 19vw;
     }
 }
   
