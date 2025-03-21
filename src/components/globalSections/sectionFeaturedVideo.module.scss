@@ -10,7 +10,7 @@
     display: flex;
     place-items: center;
     place-content: center;
-    margin-bottom: 65vw;
+    margin-bottom: 45vw;
 
     @include respond (desktopL){
         //max-height: 60rem;
@@ -65,7 +65,7 @@
 
 
     .featuredVideo{
-        width: 80%;
+        width: 67%;
         position: absolute;
         top:10.7%;
         z-index: 2;
