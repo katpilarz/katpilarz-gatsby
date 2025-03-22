@@ -37,8 +37,8 @@ module.exports = {
   {
     resolve: `gatsby-plugin-manifest`,
     options: {
-      name: 'Katarzyna Gołek',
-      short_name: 'katgolek',
+      name: 'Katarzyna Pilarz',
+      short_name: 'paisak4u',
       start_url: '/',
       background_color: '#F8F8F8',
       theme_color: '#1E6DB6',
@@ -71,8 +71,8 @@ module.exports = {
 {
   resolve: "gatsby-plugin-robots-txt",
   options: {
-    host: "https://www.katgolek.eu",
-    sitemap: "https://www.katgolek.eu/sitemap-index.xml",
+    host: "//https://www.katarzynapilarz.eu/",
+    sitemap: "https://www.katarzynapilarz.eu/sitemap-index.xml",
     policy: [{ userAgent: "*", allow: "/" }],
   },
 },
