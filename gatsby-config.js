@@ -71,7 +71,7 @@ module.exports = {
 {
   resolve: "gatsby-plugin-robots-txt",
   options: {
-    host: "//https://www.katarzynapilarz.eu/",
+    host: "https://www.katarzynapilarz.eu/",
     sitemap: "https://www.katarzynapilarz.eu/sitemap-index.xml",
     policy: [{ userAgent: "*", allow: "/" }],
   },
