@@ -10,7 +10,8 @@
     display: flex;
     place-items: center;
     place-content: center;
-    margin-bottom: 52vw;
+    margin-bottom: 49vw;
+    margin-top:10vw;
 
     @include respond (desktopL){
         //max-height: 60rem;
