@@ -56,7 +56,7 @@ useEffect(() => {
                   ease: "sine.out",
                   css: {
                     clipPath: 'circle(70.7% at 50% 50%)',
-                    scale:1.6,
+                    scale:1.8,
                   }
               })   
   
