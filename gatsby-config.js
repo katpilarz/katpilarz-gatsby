@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
 
-const siteUrl = process.env.URL || `https://www.katgolek.eu`
+const siteUrl = process.env.URL || `https://www.katarzynapilarz.eu/`
 
 const clientConfig = require('./client-config')
 
@@ -15,7 +15,7 @@ const previewEnabled = (process.env.GATSBY_IS_PREVIEW || "false").toLowerCase() 
 
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://www.katgolek.eu`,
+    siteUrl:`https://www.katarzynapilarz.eu/`,
   },
   plugins: [{
     resolve: 'gatsby-source-sanity',
