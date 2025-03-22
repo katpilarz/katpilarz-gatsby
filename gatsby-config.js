@@ -90,21 +90,23 @@ module.exports = {
   `,
     resolveSiteUrl: () => siteUrl,
     resolvePages: ({
-      allSitePage: { nodes: allPages },
-    }) => {
-
-      return allPages.map(page => {
-        return { ...page}
-      })
-    },
-    serialize: ({ path}) => {
-      return {
-        url: path,
-        changefreq: `weekly`,
-        priority: 0.5,
-      }
-    },
-  },
+  allSitePage: { nodes: allPages },
+}) => {
+  return allPages.map(page => ({
+    path: page.path,
+  }));
+},serialize: ({ path }) => {
+  let priority = 0.5;
+  if (path === "/") priority = 1.0;
+  else if (path.startsWith("/services") || path.startsWith("/projects")) priority = 0.8;
+  
+  return {
+    url: path,
+    changefreq: `weekly`,
+    priority: priority,
+  };
+},
+    
 },
 /* THIS SHOULD BE UPDATED IN THE FUTURE => CHECK DOCS */ 
 /*
