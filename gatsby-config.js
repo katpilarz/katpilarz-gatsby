@@ -2,7 +2,7 @@ require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`
 })
 
-const siteUrl = process.env.URL || `https://www.katarzynapilarz.eu`
+const siteUrl = process.env.URL || `https://www.katarzynapilarz.com.pl`
 
 const clientConfig = require('./client-config')
 
@@ -71,8 +71,8 @@ module.exports = {
 {
   resolve: "gatsby-plugin-robots-txt",
   options: {
-    host: "https://www.katarzynapilarz.eu",
-    sitemap: "https://www.katarzynapilarz.eu/sitemap-index.xml",
+    host: "https://www.katarzynapilarz.com.pl",
+    sitemap: "https://www.katarzynapilarz.com.pl/sitemap-index.xml",
     policy: [{ userAgent: "*", allow: "/" }],
   },
 },
