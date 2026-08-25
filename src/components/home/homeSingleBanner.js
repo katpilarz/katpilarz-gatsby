@@ -3,7 +3,7 @@ import * as styles from "./homeSingleBanner.module.scss";
 import { useRef } from 'react';
 import Btn from "../globalComponents/btn";
 import Branding from "../globalComponents/branding";
-import Media from "../globalComponents/media";
+import {useMediaQuery} from "../../hooks/useMediaQuery";
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
@@ -34,6 +34,19 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
     // Retired work has no page of its own; those tiles go to the work index
     // rather than nowhere, which also keeps every tile the same element.
     .map((slide) => ({...slide, url: slide.url || '/projects'}))
+
+  /* The collage is height-gated, and that gate is why its animation was dead.
+   *
+   * useMediaQuery answers `false` on the server and on the hydrating render, so
+   * the images mount one render later. The GSAP setup below ran on the first
+   * commit with an empty dependency array — at which point `revealRefs` held
+   * nothing, so the per-image tween was never created and the five tiles just
+   * sat there at full opacity while the rest of the pinned timeline played.
+   *
+   * Reading the query here instead of through <Media> gives the effect a
+   * dependency to re-run on, so the tween is built the moment the tiles exist.
+   */
+  const showGallery = useMediaQuery("(min-height: 512px)")
 
   const introRef = useRef(null);
   const introContentRef = useRef(null);
@@ -151,38 +164,39 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
               });
 
 
-              revealRefs.current.forEach((el, index) => {
-        
-                gsap.fromTo(el, {
-                    yPercent:20,
-                    xPercent:20,
-                    opacity:0,
-                    autoAlpha:0,
-                    scale:.6,
-                }, {
-                    duration: 2,
-                    xPercent:0,
-                    yPercent:0,
-                    opacity:1,
-                    autoAlpha:1,
-                    scale:1.1,
-                    ease: "power4.out",
-                    scrollTrigger: {
-                        id: `section-${index+1}`,
-                        trigger: el,
-                        start: 'top top',
-                        //end:'top 30%',
-                       
-                        toggleActions: 'restart pause resume none',
-                        refreshPriority: 1,
-                        pin: false,
-                        pinSpacing: false,
-                        scrub:4,
-                    }
-                },"+=7");
-        
-            });
-      
+              /* The tiles' entrance, played on load rather than on scroll.
+               *
+               * It was wired to a ScrollTrigger of its own — `trigger: el,
+               * start: 'top top'`, scrubbed — which meant the collage was
+               * invisible until the reader scrolled, so the hero loaded as a
+               * wordmark on an empty page. The tiles sit inside the pinned
+               * intro, so they never move relative to the viewport and the
+               * trigger had nothing meaningful to track anyway.
+               *
+               * The scroll choreography is tl2 above: the collage scales to
+               * 6.2x and leaves as the hero is scrolled past. That is the
+               * animation on scroll; this is the arrival. The mobile branch
+               * below already treats it this way — same values, played on a
+               * delay — so the two now behave alike.
+               */
+              gsap.fromTo(revealRefs.current, {
+                  yPercent:20,
+                  xPercent:20,
+                  opacity:0,
+                  autoAlpha:0,
+                  scale:.6,
+              }, {
+                  delay:.5,
+                  duration: 2,
+                  xPercent:0,
+                  yPercent:0,
+                  opacity:1,
+                  autoAlpha:1,
+                  scale:1.1,
+                  ease: "power4.out",
+                  stagger: .12,
+              });
+
           })
 
           /************************************************************************/
@@ -268,7 +282,10 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     
-  }, [sectionRef]);
+    // `showGallery`, not `sectionRef`: a ref object's identity never changes, so
+    // depending on it meant the effect ran exactly once — on the render before
+    // the collage existed. This re-runs it when the tiles mount.
+  }, [showGallery]);
 
   
   return (
@@ -297,8 +314,7 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
             <Btn btnClassName='introBtn'/>
           </div>
         </div>
-        <Media query="(min-height: 512px)" render={() =>
-          (
+        {showGallery && (
             <div ref={sectionRef} className={styles.bannerGallery}>
               {slides.map((slide, index) => {
                   const image = (
@@ -317,8 +333,7 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                   )
               })}
             </div>
-          )}
-        />
+        )}
       </div>
       </div>
       <div ref={brandingRef}>
