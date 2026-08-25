@@ -167,7 +167,13 @@ const ServiceTemplate = props => {
   const faqs  = data && data.faqs.edges
 
   const [isHome] = useState(false)
-  useEffect(() => window.scrollTo(0, 0), []) 
+  useEffect(() => {
+    // Braces matter: an arrow without them implicitly returns whatever
+    // scrollTo gives back, and React treats an effect's return value as the
+    // cleanup. It only checks `!== undefined`, so any non-function value is
+    // called on unmount and throws "destroy is not a function".
+    window.scrollTo(0, 0)
+  }, []) 
 
   if (errors) {
     return (
