@@ -69,9 +69,6 @@ const Projects = props => {
   const projectsPage = (data || {}).projectsPage.edges[0];
 
 
-  const keywords = projects.map((project, index) => {
-    return project.node.title;
-  });
 
 
   const [isHome] = useState(false)

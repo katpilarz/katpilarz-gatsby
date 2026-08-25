@@ -79,3 +79,27 @@ exports.createPages = async ({graphql, actions}) => {
   await createProjectPages(graphql, actions)
   await createServicePages(graphql, actions)
 }
+
+/**
+ * CSS Modules compile to scoped, hashed class names, so the order in which
+ * two module stylesheets land in a chunk cannot change the cascade.
+ * mini-css-extract-plugin warns about it anyway; `ignoreOrder` is the
+ * supported way to turn that off.
+ *
+ * The genuinely order-sensitive files — layout.scss and the Outfit stylesheet
+ * — are global CSS and are imported from gatsby-browser.js, which pins them
+ * ahead of every module stylesheet.
+ */
+exports.onCreateWebpackConfig = ({stage, actions, getConfig}) => {
+  if (stage !== 'develop' && stage !== 'build-javascript') return
+
+  const config = getConfig()
+  const miniCssExtract = config.plugins.find(
+    (plugin) => plugin.constructor.name === 'MiniCssExtractPlugin'
+  )
+
+  if (miniCssExtract) {
+    miniCssExtract.options.ignoreOrder = true
+    actions.replaceWebpackConfig(config)
+  }
+}

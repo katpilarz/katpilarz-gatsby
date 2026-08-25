@@ -1,14 +1,9 @@
-@import 'imports/variables';
-@import 'imports/mixins';
-@import 'imports/mode';
-@import 'imports/typography';
-@import 'imports/mode';
-@import 'imports/global';
-@import 'imports/media';
-
-
-
-
-
-
-  
+// Global stylesheet. Imported once, from gatsby-browser.js.
+//
+// Order matters: `mode` and `typography` both style `body`, `.intro span` and
+// `.menu-link`, and `global` also styles `body` and `nav`. This ordering
+// reproduces the cascade the old duplicated @import chain produced —
+// global > mode > typography — without emitting `mode` twice.
+@use 'imports/typography';
+@use 'imports/mode';
+@use 'imports/global';

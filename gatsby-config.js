@@ -1,5 +1,7 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV || 'development'}`,
+  // dotenv v17 prints a promotional tip line on every load without this.
+  quiet: true,
 })
 
 const clientConfig = require('./client-config')
@@ -11,6 +13,10 @@ const siteUrl = process.env.URL || 'https://katarzynapilarz.com.pl'
 
 const isProd = process.env.NODE_ENV === 'production'
 
+// Optional. Only a token lets the source plugin read drafts, so overlaying
+// them without one just warns and does nothing.
+const token = process.env.SANITY_READ_TOKEN
+
 module.exports = {
   siteMetadata: {
     siteUrl,
@@ -20,8 +26,9 @@ module.exports = {
       resolve: 'gatsby-source-sanity',
       options: {
         ...clientConfig.sanity,
+        token,
         watchMode: !isProd,
-        overlayDrafts: !isProd,
+        overlayDrafts: !isProd && Boolean(token),
       },
     },
     {
@@ -96,7 +103,19 @@ module.exports = {
       },
       __key: 'fonts',
     },
-    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        sassOptions: {
+          // gatsby-plugin-sass pins sass-loader at v10, which still calls Dart
+          // Sass's legacy JS API. That call is upstream and not something this
+          // project can change, so silence just that one deprecation rather
+          // than let it bury real warnings. Our own stylesheets use
+          // @use/@forward, so no other deprecations are suppressed.
+          silenceDeprecations: ['legacy-js-api'],
+        },
+      },
+    },
     'gatsby-plugin-image',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

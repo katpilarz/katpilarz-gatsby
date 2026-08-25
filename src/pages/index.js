@@ -303,7 +303,6 @@ const IndexPage = props => {
 
   useEffect(() => window.scrollTo(0, 0), []) 
 
-  const siteTitle = site.author + ': ' + site.title
   
   if (errors) {
     return (

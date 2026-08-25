@@ -1,8 +1,4 @@
-@import './media';
-
-
-
-
+@use 'media' as *;
 
 *, *:after, *:before{
     margin: 0;

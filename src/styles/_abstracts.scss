@@ -1,0 +1,5 @@
+// Declarations only — variables, mixins and the responsive helper.
+// Emits no CSS, so every .module.scss can @use it without duplicating rules.
+@forward 'imports/variables';
+@forward 'imports/media';
+@forward 'imports/mixins';

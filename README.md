@@ -85,15 +85,50 @@ Also fixed in the same pass:
   (`sort: {publishedAt: DESC}`).
 - Stale contact address in the header updated to `kat.pilarz@proton.me`.
 
+### Styling architecture
+
+`src/styles/` is split by whether a file emits CSS:
+
+- `_abstracts.scss` forwards `variables`, `media` and `mixins` — **declarations
+  only, emits nothing**. Every `*.module.scss` starts with
+  `@use 'src/styles/abstracts' as *;`.
+- `layout.scss` pulls in `typography`, `mode` and `global`, which **do** emit
+  rules. It is imported exactly once, from `gatsby-browser.js`.
+
+Keep that separation. Previously every one of the 31 CSS modules did
+`@import 'src/styles/layout'`, which re-emitted all the global rules inside
+each module — and CSS Modules hashed those global class names, so selectors
+like `.text-color` compiled to `.footer-module--text-color--ab123` and matched
+nothing. Moving to `@use` removed that dead weight: **297 KB of CSS became
+94 KB** with byte-identical computed styles, verified by diffing the
+declarations reaching every element class-set in the rendered HTML.
+
+Two elements did rely on those leaked globals and now carry the bare global
+class alongside the module class, which is the convention already used
+elsewhere in the codebase:
+
+```jsx
+<div className={`${styles.intro} intro`}>
+<button className={`${styles.question} question`}>
+```
+
+The order inside `layout.scss` is deliberate. `mode` and `typography` both
+style `body`, `.intro span` and `.menu-link`; the old chain imported `mode`
+twice, so `mode` effectively won those ties. Loading `typography` before
+`mode` reproduces that cascade without the duplicate.
+
 ### Known follow-ups
 
-- **Sass `@import` is deprecated** and will be removed in Dart Sass 3. There
-  are 41 `@import` statements across 35 files to migrate to `@use`/`@forward`.
-  Non-breaking today, but it is a real refactor with visual-regression risk,
-  so it was left out of this pass.
-- `gatsby-plugin-sass` still calls the legacy Dart Sass JS API, which is
-  scheduled for removal in Dart Sass 2. That one is upstream, not ours.
-- The build logs `warn [sanity] Document "708acabe-…" has type gallery`. It is
-  an orphaned `gallery` document titled "Foodlace" left over from an abandoned
-  approach; the type is not in the schema. Deleting the document in the Studio
-  clears the warning.
+- `gatsby-plugin-sass` pins `sass-loader` at v10, which still calls Dart Sass's
+  legacy JS API. That deprecation is upstream and cannot be fixed from here, so
+  it is silenced narrowly via `sassOptions.silenceDeprecations:
+  ['legacy-js-api']` in `gatsby-config.js`. Our own stylesheets use
+  `@use`/`@forward`, so nothing else is suppressed. Revisit if the plugin ever
+  ships a newer sass-loader.
+- The dev server logs `warn [sanity] Document "708acabe-…" has type gallery`.
+  It is an orphaned `gallery` document titled "Foodlace", left over from an
+  abandoned approach; the type is not in the schema. Deleting it in the Studio
+  clears the warning — it is data, not code.
+- `overlayDrafts` is only enabled when `SANITY_READ_TOKEN` is set. Without a
+  token the source plugin cannot read drafts, so enabling it unconditionally
+  just warned and did nothing.

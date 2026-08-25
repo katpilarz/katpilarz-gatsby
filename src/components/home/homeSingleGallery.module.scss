@@ -1,5 +1,5 @@
 
-@import 'src/styles/layout';
+@use 'src/styles/abstracts' as *;
 
 .sectionGallery{
     display: flex;

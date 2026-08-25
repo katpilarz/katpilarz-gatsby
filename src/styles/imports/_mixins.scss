@@ -1,6 +1,5 @@
-@import './media';
-
-
+@use 'variables' as *;
+@use 'media' as *;
 
 @mixin border-top {
     border-top: $border;

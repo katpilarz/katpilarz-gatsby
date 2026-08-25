@@ -1,4 +1,4 @@
-@import 'src/styles/layout';
+@use 'src/styles/abstracts' as *;
 
 .gallerySwiper{
     @include fullWidth;

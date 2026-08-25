@@ -86,9 +86,6 @@ const Services = props => {
   const servicePage = (data || {}).servicePage.edges[0];
 
 
-  const keywords = services.map((service, index) => {
-    return service.node.title;
-  });
 
   const [isHome] = useState(false)
 

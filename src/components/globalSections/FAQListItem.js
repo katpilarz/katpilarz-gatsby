@@ -138,7 +138,7 @@ const FAQListItem = ({ item }) => {
   return (
 
     <article className={styles.faqItem} ref={addToRefs}>
-        <button className={styles.question} onClick={toggleQuestion} aria-label={`Open FAQ: ${item.question}`}>
+        <button className={`${styles.question} question`} onClick={toggleQuestion} aria-label={`Open FAQ: ${item.question}`}>
             <h5 className="question">{item.question}</h5>
             <div ref={iconRef}>
                 <ArrowIcon arrowIconClass="pageIcon"/>
