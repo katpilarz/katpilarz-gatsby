@@ -5,7 +5,7 @@ import PagePreloader from "../components/globalSections/pagePreloader"
 import Header from "../components/globalSections/header";
 import ServiceSingle from "../components/service/serviceSingle";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import Media from 'react-media';
+import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -17,7 +17,7 @@ export const query = graphql`
 query ServiceTemplateQuery($id: String!){
   faqs: allSanityFaq(
     filter: {isFeaturedInService: {eq: true}}
-    sort: {order: DESC, fields: publishedAt})  {
+    sort: {publishedAt: DESC})  {
     edges {
       node {
         isFeaturedInService
@@ -177,7 +177,6 @@ const ServiceTemplate = props => {
 
   return (
       <main>
-        <Seo title={service.title} description={service.sectionDetails.header} overview={service.sectionDetails.header}/>
         <PagePreloader/>
         <Media query="(min-width: 569px)" render={() =>
           (
@@ -192,3 +191,15 @@ const ServiceTemplate = props => {
 };
 
 export default ServiceTemplate;
+
+export const Head = ({data, location}) => {
+  const service = data.singleService
+  return (
+    <Seo
+      title={service.title}
+      description={service.sectionDetails.header}
+      overview={service.sectionDetails.header}
+      pathname={location.pathname}
+    />
+  )
+}

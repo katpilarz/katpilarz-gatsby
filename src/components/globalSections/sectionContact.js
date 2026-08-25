@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./sectionContact.module.scss";
-import ReactTypingEffect from 'react-typing-effect';
+import TypingEffect from "../globalComponents/typingEffect";
 import { Link } from "gatsby"
 import ArrowIcon from "../globalComponents/arrow";
 import ScrippedText from "../globalComponents/scrippedText";
@@ -129,7 +129,7 @@ const SectionContact = ({section }) => {
                 </div>
                 
                 <div className={styles.headerTwo}>
-                    <ReactTypingEffect
+                    <TypingEffect
                         text={section.projectFeatures}
                         speed={100}
                         eraseDelay={270}

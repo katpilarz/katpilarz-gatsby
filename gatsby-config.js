@@ -1,175 +1,104 @@
 require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV || 'development'}`
+  path: `.env.${process.env.NODE_ENV || 'development'}`,
 })
-
-const siteUrl = process.env.URL || `https://www.katarzynapilarz.com.pl`
 
 const clientConfig = require('./client-config')
 
-//const token = process.env.SANITY_READ_TOKEN
+// Single source of truth for the canonical origin. `www` redirects to the
+// apex, so the apex is what we advertise everywhere: siteMetadata, sitemap,
+// robots.txt and the canonical link tag.
+const siteUrl = process.env.URL || 'https://katarzynapilarz.com.pl'
 
 const isProd = process.env.NODE_ENV === 'production'
-const previewEnabled = (process.env.GATSBY_IS_PREVIEW || "false").toLowerCase() === "true"
-
-
 
 module.exports = {
   siteMetadata: {
-    siteUrl:`https://www.katarzynapilarz.eu`,
+    siteUrl,
   },
-  plugins: [{
-    resolve: 'gatsby-source-sanity',
-    options: {
-      ...clientConfig.sanity,
-      /*token*/
-      watchMode: !isProd,
-      overlayDrafts: !isProd /*&& token*/
-    }
-  },
-  {
-    resolve: "gatsby-plugin-web-font-loader",
-    options: {
-      google: {
-        families: ["Outfit"],
+  plugins: [
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        ...clientConfig.sanity,
+        watchMode: !isProd,
+        overlayDrafts: !isProd,
       },
     },
-  },
-  {
-    resolve: `gatsby-plugin-manifest`,
-    options: {
-      name: 'Katarzyna Pilarz',
-      short_name: 'kpilarz',
-      start_url: '/',
-      background_color: '#F8F8F8',
-      theme_color: '#1E6DB6',
-      display: 'standalone',
-      icon: 'src/assets/images/favicon.png',
-      cache_busting_mode: 'none',
-      icons: [
-        {
-          src: "src/assets/images/maskable_icon_x512.png",
-          sizes: "512x512",
-          type: "image/png",
-          purpose: "any maskable"
-        },
-        {
-          src: "src/assets/images/maskable_icon_x192.png",
-          sizes: "192x192",
-          type: "image/png",
-          purpose: "any maskable"
-        }
-      ],
-    },
-  },
-  {
-    resolve: 'gatsby-plugin-offline',
-    options: {
-       precachePages: [`/services/*`, `/projects/*`, `/faqs/`],
-    }
- },
- 
-{
-  resolve: "gatsby-plugin-robots-txt",
-  options: {
-    host: "https://www.katarzynapilarz.com.pl",
-    sitemap: "https://www.katarzynapilarz.com.pl/sitemap-index.xml",
-    policy: [{ userAgent: "*", allow: "/" }],
-  },
-},
-{
-  resolve: "gatsby-plugin-sitemap",
-  options: {
-    query: `
     {
-      allSitePage {
-        nodes {
-          path
-        }
-      }
-    }
-  `,
-    resolveSiteUrl: () => siteUrl,
-    resolvePages: ({
-      allSitePage: { nodes: allPages },
-    }) => {
-
-      return allPages.map(page => {
-        return { ...page}
-      })
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: 'Katarzyna Pilarz',
+        short_name: 'kpilarz',
+        start_url: '/',
+        background_color: '#F8F8F8',
+        theme_color: '#1E6DB6',
+        display: 'standalone',
+        icon: 'src/assets/images/favicon.png',
+        cache_busting_mode: 'none',
+        icons: [
+          {
+            src: 'src/assets/images/maskable_icon_x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+          {
+            src: 'src/assets/images/maskable_icon_x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
     },
-    serialize: ({ path}) => {
-      return {
-        url: path,
-        changefreq: `weekly`,
-        priority: 0.5,
-      }
-    },
-  },
-},
-/* THIS SHOULD BE UPDATED IN THE FUTURE => CHECK DOCS */ 
-/*
-  {
-  resolve: "gatsby-plugin-sitemap",
-  options: {
-    query: `
     {
-      allSitePage {
-        nodes {
-          path
-        }
-      }
-      allSanityProject{
-          nodes {
-              slug {
-                current
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: siteUrl,
+        sitemap: `${siteUrl}/sitemap-index.xml`,
+        policy: [{userAgent: '*', allow: '/'}],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-sitemap',
+      options: {
+        query: `
+          {
+            allSitePage {
+              nodes {
+                path
+              }
             }
           }
-        }
-    }
-  `,
-    resolveSiteUrl: () => siteUrl,
-    resolvePages: ({
-      allSitePage: { nodes: allPages },
-      allSanityProject: { nodes: allSanityProjectNodes },
-    }) => {
-      const allSanityProjectNodesMap = allSanityProjectNodes.reduce((acc, node) => {
-        const { slug } = node.slug.current
-        acc[slug] = node.slug.current
-
-        return acc
-      }, {})
-
-      return allPages.map(page => {
-        return { ...page, ...allSanityProjectNodesMap[page.path] }
-      })
+        `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({allSitePage: {nodes}}) => nodes,
+        serialize: ({path}) => ({
+          url: path,
+          changefreq: 'weekly',
+          priority: path === '/' ? 1.0 : 0.7,
+        }),
+      },
     },
-    serialize: ({ path}) => {
-      return {
-        url:path,
-        changefreq: `weekly`,
-        priority: 0.7,
-      }
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: `${__dirname}/src/assets/images`,
+      },
+      __key: 'images',
     },
-  },
-},*/
-  `gatsby-plugin-transition-link`,
-  "gatsby-plugin-dark-mode",
-  "gatsby-plugin-sass",
-  "gatsby-plugin-image",
-  "gatsby-plugin-react-helmet",
-  "gatsby-plugin-sitemap",
-  "gatsby-plugin-sharp",
-  "gatsby-transformer-sharp",
-{
-  resolve: 'gatsby-source-filesystem',
-  options: {
-    "name": "images",
-    "path": "./src/assets/images/", 
-    "name": "fonts",
-    "path": `${__dirname}/static/fonts`, 
-  },
-  __key: "images",
-},
-  
-]
-};
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'fonts',
+        path: `${__dirname}/static/fonts`,
+      },
+      __key: 'fonts',
+    },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-image',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+  ],
+}

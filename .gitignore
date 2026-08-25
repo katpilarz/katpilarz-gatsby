@@ -1,9 +1,15 @@
 node_modules/
 .cache/
-public
+public/
 
-.env.development
-.env.production
+.env
+.env.*
+!.env.example
+
+# lockfile policy: npm only
+yarn.lock
+pnpm-lock.yaml
+*.log
 
 src/components/deprecated
 src/assets/svg

@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import * as styles from "./FAQList.module.scss";
 import ArrowIcon from "../globalComponents/arrow";
-import PortableText from "react-portable-text"
+import PortableText from "../globalComponents/portableText"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -149,8 +149,6 @@ const FAQListItem = ({ item }) => {
                 <div ref={answer} className={styles.answer}>
                     <PortableText
                         content={item._rawAnswer}
-                        projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                        dataset={process.env.GATSBY_SANITY_DATASET}
                     />
                 </div>
             </div>

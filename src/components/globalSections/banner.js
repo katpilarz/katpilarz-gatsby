@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import AnimatedImage from "../globalComponents/animatedImage";
 import Video from "../globalComponents/video";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 
 
 

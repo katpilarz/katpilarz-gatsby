@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import * as styles from "./header.module.scss";
-import { ThemeToggler } from 'gatsby-plugin-dark-mode'
+import useTheme from "../../hooks/useTheme"
 import { Link } from "gatsby"
 import HeaderMenu from "./headerMenu"
 import { useStaticQuery, graphql } from "gatsby"
@@ -9,6 +9,8 @@ import Branding from "../globalComponents/branding";
 
 
 export default function Header({isHome}) {
+  const {theme, toggleTheme} = useTheme()
+
   const data = useStaticQuery(graphql`
   {
     sanityGlobal {
@@ -74,20 +76,16 @@ const backgroundImageData = data.sanityGlobal.image
     <>
       <nav className={styles.navbar}>
         <div className={styles.buttonsWrapper}>
-            <ThemeToggler>
-                {({ theme, toggleTheme }) => (
-                  <button className={styles.themeToggler}>
-                    <label>
-                      <input hidden
-                        type="checkbox"
-                        onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                        checked={theme === 'dark'}
-                      />{' '}
-                      Mode
-                    </label>
-                  </button>
-                )}
-            </ThemeToggler>
+            <button className={styles.themeToggler}>
+              <label>
+                <input hidden
+                  type="checkbox"
+                  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                  checked={theme === 'dark'}
+                />{' '}
+                Mode
+              </label>
+            </button>
             <Link to='/projects'> Work </Link>
         </div>
        
@@ -96,7 +94,7 @@ const backgroundImageData = data.sanityGlobal.image
         }
         <div className={styles.buttonsWrapper}>
           <Link to='#' onClick={(e) => {
-              window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
+              window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
               e.preventDefault();
               }}>
               Contact

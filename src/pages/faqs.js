@@ -5,7 +5,7 @@ import PagePreloader from "../components/globalSections/pagePreloader"
 import Header from "../components/globalSections/header";
 import Seo from "../components/globalComponents/seo";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import Media from 'react-media';
+import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -34,7 +34,7 @@ export const query = graphql`
         }
       }
     }
-    faqs:allSanityFaq(sort: {order: DESC, fields: publishedAt}) {
+    faqs:allSanityFaq(sort: {publishedAt: DESC}) {
       edges {
         node {
           isFeaturedInService
@@ -75,7 +75,6 @@ const FrequentQuestions = props => {
 
   return (
     <main>
-      <Seo title={faqsPage.node.title} description={faqsPage.node.overview} overview={faqsPage.node.overview} keywords={keywords}  />
       <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>
@@ -89,3 +88,17 @@ const FrequentQuestions = props => {
 }
 
 export default FrequentQuestions
+
+export const Head = ({data, location}) => {
+  const page = data.faqsPage.edges[0].node
+  const keywords = data.faqs.edges.map(({node}) => node.question)
+  return (
+    <Seo
+      title={page.title}
+      description={page.overview}
+      keywords={keywords}
+      overview={page.overview}
+      pathname={location.pathname}
+    />
+  )
+}

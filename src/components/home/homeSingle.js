@@ -8,7 +8,7 @@ import HomeSingleServices from "./homeSingleServices";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionContact from "../globalSections/sectionContact";
 import HomeSingleGallery from "./homeSingleGallery";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 
 
 

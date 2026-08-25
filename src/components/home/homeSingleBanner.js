@@ -3,7 +3,7 @@ import * as styles from "./homeSingleBanner.module.scss";
 import { useEffect, useRef } from 'react';
 import Btn from "../globalComponents/btn";
 import Branding from "../globalComponents/branding";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"

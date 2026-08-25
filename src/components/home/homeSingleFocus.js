@@ -3,7 +3,7 @@ import * as styles from "./homeSingleFocus.module.scss";
 import SectionIntro from "../globalSections/sectionIntro";
 import Video from "../globalComponents/video";
 import AnimatedImage from "../globalComponents/animatedImage";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import { useEffect, useRef } from 'react';

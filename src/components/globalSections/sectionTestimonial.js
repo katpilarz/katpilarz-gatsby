@@ -2,7 +2,7 @@ import React from "react"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as styles from "./sectionTestimonial.module.scss";
 import SectionIntro from "./sectionIntro";
-import PortableText from "react-portable-text"
+import PortableText from "../globalComponents/portableText"
 import { Link } from "gatsby"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
@@ -70,8 +70,6 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                     </svg>
                          <PortableText className={`${styles.testimonialTextPortable} testimonial`}
                             content={testimonial}
-                            projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                            dataset={process.env.GATSBY_SANITY_DATASET}
                         />
                     { isHome &&
                         <svg className={`${styles.quoteIcon} ${styles.quoteIconRight}`} width="179" height="175" viewBox="0 0 179 175" fill="none" xmlns="http://www.w3.org/2000/svg">

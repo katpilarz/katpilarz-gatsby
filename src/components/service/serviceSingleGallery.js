@@ -4,10 +4,10 @@ import AnimatedHeading from "../globalComponents/animatedHeading";
 import { Link } from 'gatsby';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
+import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/scss';
+import "swiper/css";
 
 
 /*import { useEffect, useRef } from 'react';

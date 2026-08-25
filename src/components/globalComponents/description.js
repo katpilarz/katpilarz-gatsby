@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./description.module.scss";
-import PortableText from "react-portable-text"
+import PortableText from "./portableText"
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
@@ -90,8 +90,6 @@ const Description = ({ description, descriptionCustomClass  }) => {
         <div ref={descriptionRef} className={`${styles.description} ${styles[descriptionCustomClass]}`}>
             <PortableText 
                 content={description}
-                projectId={process.env.GATSBY_SANITY_PROJECT_ID}
-                dataset={process.env.GATSBY_SANITY_DATASET}
             />
         </div>
   )

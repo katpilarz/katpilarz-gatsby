@@ -5,7 +5,7 @@ import HomeSingle from "../components/home/homeSingle";
 import PagePreloader from "../components/globalSections/pagePreloader";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Header from "../components/globalSections/header";
-import Media from 'react-media';
+import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -161,7 +161,7 @@ query HomePageQuery{
     }
     galleryMockups:allSanityProject(
       filter: {isGalleryMockup: {eq: true}}
-      sort: {order: DESC, fields: publishedAt}
+      sort: {publishedAt: DESC}
       ){
         edges {
           node {
@@ -178,7 +178,7 @@ query HomePageQuery{
         }
       }
     projects: allSanityProject(
-      sort: {order: DESC, fields: publishedAt}
+      sort: {publishedAt: DESC}
       filter: {isFeatured: {eq: true}}
     ) {
       edges {
@@ -245,7 +245,7 @@ query HomePageQuery{
         }
       }
     }
-    services: allSanityService(sort: {fields: _id, order: DESC}) {
+    services: allSanityService(sort: {_id: DESC}) {
       edges {
         node {
           title
@@ -314,7 +314,6 @@ const IndexPage = props => {
 
   return (
     <main>
-      <Seo title={siteTitle} description={site.description} keywords={site.keywords} overview={home.sectionAbout.header} />
       <Header isHome={isHome}/>
       <PagePreloader/>
       <Media query="(min-width: 569px)" render={() =>
@@ -329,3 +328,16 @@ const IndexPage = props => {
 }
 
 export default IndexPage
+
+export const Head = ({data, location}) => {
+  const site = data.site
+  return (
+    <Seo
+      title={`${site.author}: ${site.title}`}
+      description={site.description}
+      keywords={site.keywords}
+      overview={data.home.sectionAbout.header}
+      pathname={location.pathname}
+    />
+  )
+}

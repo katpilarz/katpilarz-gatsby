@@ -1,14 +1,14 @@
 import React from "react"
 import BackgroundImage from "./globalComponents/backgroundImage"
 import Footer from "./globalComponents/footer"
-import Helmet from "react-helmet";
-import PagePreloader from "../components/globalSections/pagePreloader";
+import PagePreloader from "../components/globalSections/pagePreloader"
 import { useStaticQuery, graphql } from "gatsby"
 
-
+// Outfit is self-hosted now — no render-blocking request to fonts.googleapis.com.
+// The local Scholastyca face is declared in styles/imports/_typography.scss and
+// preloaded from gatsby-ssr.js.
+import "@fontsource-variable/outfit"
 import "../styles/layout.scss"
-
-
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`
@@ -25,10 +25,10 @@ export default function Layout({ children }) {
         }
         alt
       }
-      
+
     }
    }
-  
+
 `)
 
 const backgroundImageData = data.sanityGlobal.image
@@ -36,15 +36,6 @@ const backgroundImageData = data.sanityGlobal.image
 
   return (
     <>
-      <Helmet>
-        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.woff2" type="font/woff2"/>
-        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.woff" type="font/woff" />
-        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.ttf" type="font/truetype"/>
-        <link rel="preconnect" href="/fonts/ScholastycaTypeface-Regular.svg" type="font/svg"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap" rel="stylesheet"/>
-      </Helmet>
       <PagePreloader/>
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}
@@ -52,4 +43,3 @@ const backgroundImageData = data.sanityGlobal.image
     </>
   )
 }
-

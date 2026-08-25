@@ -1,15 +1,12 @@
+const {isFuture, parseISO} = require('date-fns')
 
-const {isFuture,parseISO} = require('date-fns')
 /**
  * Implement Gatsby's Node APIs in this file.
  *
- * See: https://www.gatsbyjs.org/docs/node-apis/
+ * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/
  */
 
-
-
-
-async function createProjectPages (graphql, actions) {
+async function createProjectPages(graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
@@ -32,22 +29,20 @@ async function createProjectPages (graphql, actions) {
   const projectEdges = (result.data.allSanityProject || {}).edges || []
 
   projectEdges
-    .filter(edge => !isFuture(parseISO(edge.node.publishedAt)))
-    .forEach(edge => {
+    .filter((edge) => !isFuture(parseISO(edge.node.publishedAt)))
+    .forEach((edge) => {
       const id = edge.node.id
       const slug = edge.node.slug.current
-      const path = `/projects/${slug}/`
 
       createPage({
-        path,
+        path: `/projects/${slug}/`,
         component: require.resolve('./src/templates/project.js'),
-        context: {id}
+        context: {id},
       })
     })
 }
 
-
-async function createServicePages (graphql, actions) {
+async function createServicePages(graphql, actions) {
   const {createPage} = actions
   const result = await graphql(`
     {
@@ -68,36 +63,19 @@ async function createServicePages (graphql, actions) {
 
   const serviceEdges = (result.data.allSanityService || {}).edges || []
 
-  serviceEdges
-    .forEach(edge => {
-      const id = edge.node.id
-      const slug = edge.node.slug.current
-      const path = `/services/${slug}/`
+  serviceEdges.forEach((edge) => {
+    const id = edge.node.id
+    const slug = edge.node.slug.current
 
-      createPage({
-        path,
-        component: require.resolve('./src/templates/service.js'),
-        context: {id}
-      })
+    createPage({
+      path: `/services/${slug}/`,
+      component: require.resolve('./src/templates/service.js'),
+      context: {id},
     })
+  })
 }
-
 
 exports.createPages = async ({graphql, actions}) => {
   await createProjectPages(graphql, actions)
   await createServicePages(graphql, actions)
 }
-
-
-const FilterWarningsPlugin = require("webpack-filter-warnings-plugin");
-
-exports.onCreateWebpackConfig = ({ actions }) => {
-  actions.setWebpackConfig({
-    plugins: [
-      new FilterWarningsPlugin({
-        exclude:
-          /mini-css-extract-plugin[^]*Conflicting order. Following module has been added:/,
-      }),
-    ],
-  });
-};

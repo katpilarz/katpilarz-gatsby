@@ -3,14 +3,14 @@ import * as styles from "./homeSingleFeatured.module.scss";
 import { Link } from "gatsby"
 import AnimatedHeading from "../globalComponents/animatedHeading";
 import AnimatedImage from "../globalComponents/animatedImage";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper";
+import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, FreeMode, Keyboard, Zoom} from "swiper/modules";
 
 // Import Swiper styles
-import 'swiper/scss';
+import "swiper/css";
 
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';

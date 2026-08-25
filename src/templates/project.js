@@ -5,7 +5,7 @@ import ProjectSingle from "../components/project/projectSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Header from "../components/globalSections/header";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import Media from 'react-media';
+import Media from "../components/globalComponents/media";
 import { useEffect, useState} from 'react';
 import { navigate } from 'gatsby';
 
@@ -163,7 +163,6 @@ const ProjectTemplate = props => {
 
       <main>
         <PagePreloader/>
-        <Seo title={project.title} description={project.description} overview={project.header} />
         <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>
@@ -177,3 +176,16 @@ const ProjectTemplate = props => {
 };
 
 export default ProjectTemplate;
+
+export const Head = ({data, location}) => {
+  const project = data.singleProject
+  return (
+    <Seo
+      title={project.title}
+      description={project.overview}
+      keywords={project.tools}
+      overview={project.header}
+      pathname={location.pathname}
+    />
+  )
+}

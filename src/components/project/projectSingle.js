@@ -5,7 +5,7 @@ import ProjectSingleGallery from "./projectSingleGallery";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
-import Media from 'react-media';
+import Media from "../globalComponents/media";
 
 
 

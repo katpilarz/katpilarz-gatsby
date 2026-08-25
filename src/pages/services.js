@@ -5,7 +5,7 @@ import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
 import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Header from "../components/globalSections/header";
-import Media from 'react-media';
+import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -16,7 +16,7 @@ import { navigate } from 'gatsby';
 
 export const query = graphql`
   query Services{
-    services: allSanityService(sort: {fields: _id, order: DESC}) {
+    services: allSanityService(sort: {_id: DESC}) {
       edges {
         node {
           title
@@ -104,7 +104,6 @@ const Services = props => {
 
   return (
     <main>
-      <Seo title={servicePage.node.title} description={servicePage.node.overview} keywords={keywords} overview='Helping Brands to create outstanding Experience' />
       <Media query="(min-width: 569px)" render={() =>
           (
             <AnimatedBtn isHome={isHome}/>
@@ -118,3 +117,17 @@ const Services = props => {
 }
 
 export default Services
+
+export const Head = ({data, location}) => {
+  const page = data.servicePage.edges[0].node
+  const keywords = data.services.edges.map(({node}) => node.title)
+  return (
+    <Seo
+      title={page.title}
+      description={page.overview}
+      keywords={keywords}
+      overview={page.overview}
+      pathname={location.pathname}
+    />
+  )
+}
