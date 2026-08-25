@@ -1,33 +1,27 @@
 import React from "react"
 import * as styles from "./sectionFeaturedVideo.module.scss";
 import Video from "../globalComponents/video";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
 
 
-
-
 const SectionFeaturedVideo = ({ video, isDecriptionDisplayed }) => {
-
 
  const sectionRef = useRef(null)
  const videoRef = useRef(null)
 
 
-
-useEffect(() => {
+useIsomorphicLayoutEffect(() => {
 
   let ctx = gsap.context(() => {
     // create as many GSAP animations and/or ScrollTriggers here as you want...
 
 
-
-
       const animation = gsap.matchMedia()
       animation.add()
-
       
       /************************************************************************/
       // DESKTOP & TABLET ANIMATION
@@ -60,13 +54,11 @@ useEffect(() => {
                   }
               })   
   
-  
       })
 
       /************************************************************************/
       // MOBILE ANIMATION
       /***********************************************************************/
-      
 
       animation.add("(max-width: 568px)", () => {
         const tl = gsap.timeline({
@@ -93,11 +85,9 @@ useEffect(() => {
                     scale:1,
                   }
               })   
-  
        
   
       })
-
  
 
   }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -109,8 +99,6 @@ useEffect(() => {
 
 }, []);
 
-
- 
 
    
   return (

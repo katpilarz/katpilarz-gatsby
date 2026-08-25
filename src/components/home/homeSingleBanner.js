@@ -1,6 +1,6 @@
 import React from "react";
 import * as styles from "./homeSingleBanner.module.scss";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import Btn from "../globalComponents/btn";
 import Branding from "../globalComponents/branding";
 import Media from "../globalComponents/media";
@@ -9,9 +9,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { Link } from "gatsby"
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 const HomeSingleBanner = ({ name, title, images, author }) => {
@@ -26,24 +25,19 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
 
   const revealRefs = useRef([]);
   revealRefs.current = [];
-  
 
   const addToRefs = el => {
       if (!revealRefs.current.includes(el)) {
           revealRefs.current.push(el);
       }
-
   
   };
 
 
-
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
 
       let ctx = gsap.context(() => {
         // create as many GSAP animations and/or ScrollTriggers here as you want...
-
   
   
          //this is component scroll triggered timeline  
@@ -60,10 +54,8 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
              }
            });
 
-
           const bannerAnimation = gsap.matchMedia()
           bannerAnimation.add()
-
           
           /************************************************************************/
           // DESKTOP ANIMATION
@@ -138,8 +130,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
               });
 
 
-
-
               revealRefs.current.forEach((el, index) => {
         
                 gsap.fromTo(el, {
@@ -171,14 +161,12 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
                 },"+=7");
         
             });
-    
       
           })
 
           /************************************************************************/
           // TABLET & MOBILE ANIMATION
           /***********************************************************************/
-          
 
           bannerAnimation.add("(max-width: 1024px)", () => {
 
@@ -250,7 +238,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
               });
       
           })
-
      
    
       }, introRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -261,7 +248,6 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     
   }, [sectionRef]);
-
 
   
   return (

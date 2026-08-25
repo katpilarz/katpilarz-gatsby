@@ -1,27 +1,23 @@
 import React from "react";
 import * as styles from "./banner.module.scss";
 //import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import AnimatedImage from "../globalComponents/animatedImage";
 import Video from "../globalComponents/video";
 import Media from "../globalComponents/media";
-
-
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 
 
 const Banner = ({ title, image, video, services, overview, publishedAt }) => {
 
-
     const pageSingleRef = useRef(null);
 
 
-
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
-        
 
 
             let ctx = gsap.context(() => {
@@ -40,9 +36,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
               
               return () => ctx.revert(); // cleanup! 
         
-        
       }, []);
-    
 
   return (
     <header ref={pageSingleRef} className={`${styles.projectBanner} container`}>
@@ -83,7 +77,6 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
                 <Video videoWebm={video.webm} videoFallback={video.fallback}  videoAlt={video.alt} videoCloudinary={video.cloudinaryVideo} videoCustomClass='serviceMedia' isDecriptionDisplayed='false'/> 
             </div>
         }
-
 
     </header>
   )

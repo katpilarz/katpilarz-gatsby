@@ -1,19 +1,18 @@
 import React from "react";
 import * as styles from "./pagePreloader.module.scss";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
-
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 
 const PagePreloader = ({ transitionStatus }) => {
 
     const preloaderRef = useRef();
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
-
 
             const tl = gsap.timeline();
             tl.to(preloaderRef.current, {
@@ -29,12 +28,9 @@ const PagePreloader = ({ transitionStatus }) => {
         
         return () => ctx.revert(); // cleanup! 
       }, []);
-    
   
-    
 
   return (
-
 
     <div ref={preloaderRef} className={`${styles.pagePreloader} overlay`}>
         

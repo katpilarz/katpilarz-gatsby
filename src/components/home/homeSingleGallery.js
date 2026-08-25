@@ -3,18 +3,16 @@ import * as styles from "./homeSingleGallery.module.scss";
 import Video from "../globalComponents/video";
 //import AnimatedImage from "../globalComponents/animatedImage";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 const HomeSingleGallery = ({ gallery }) => {
 
  const galleryItems = gallery
-
 
  const sectionRef = useRef(null);
   const revealRefs = useRef([]);
@@ -26,24 +24,21 @@ const HomeSingleGallery = ({ gallery }) => {
       }
   };
 
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
 
 
-
         const animation = gsap.matchMedia()
           animation.add()
-
           
           /************************************************************************/
           // DESKTOP ANIMATION
           /***********************************************************************/
           
           animation.add("(min-width: 569px)", () => {
-
 
               revealRefs.current.forEach((el, index) => {
 
@@ -72,13 +67,11 @@ const HomeSingleGallery = ({ gallery }) => {
                 },'+=10');
          
             });
-
     
       
           })
 
           animation.add("(max-width: 568px)", () => {
-
 
             revealRefs.current.forEach((el, index) => {
 
@@ -107,20 +100,16 @@ const HomeSingleGallery = ({ gallery }) => {
               },'+=10');
        
           });
-
   
     
         })
 
-
-            
 
   
     }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
-
  
   // NO STYLING FOR VIDEO - MORE LIKELY SHOULD NOT BE CONSIDERED FOR THIS SECTION DUE TO BANDWIDTH
    

@@ -4,14 +4,11 @@ import * as styles from "./sectionTestimonial.module.scss";
 import SectionIntro from "./sectionIntro";
 import PortableText from "../globalComponents/portableText"
 import { Link } from "gatsby"
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 
 
 
@@ -22,8 +19,7 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
     const testimonialRef = useRef(null);
 
 
-
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
      
       // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
       // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -51,13 +47,11 @@ const SectionTestimonial = ({ testimonial, pageName, name, image, services, slug
                 yPercent:'27',
                 marginTop:'10vw'
             }})
-      
     
       }, testimonialRef); // <- scopes all selector text inside the context to this component (optional, default is document)
       
       return () => ctx.revert(); // cleanup! 
     }, []);
-  
   
   return (
         <section className={isHome ?  `${styles.sectionTestimonial} container`  : `${styles.sectionTestimonialProject} container`}>

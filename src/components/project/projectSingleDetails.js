@@ -1,17 +1,15 @@
 import React from "react";
 import * as styles from "./projectSingleDetails.module.scss";
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import Description from "../globalComponents/description";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 
 gsap.registerPlugin(ScrollTrigger);
 
 
-
-
 const ProjectSingleDetails = ({ project }) => {
-
 
 
   const projectDetailsRef = useRef(null);
@@ -23,9 +21,7 @@ const ProjectSingleDetails = ({ project }) => {
   const headerRef = useRef(null);
 
 
-
-  useEffect(() => {
-
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -80,7 +76,6 @@ const ProjectSingleDetails = ({ project }) => {
             }})
         }
 
-
         // SECOND TIMELINE
 
         const tl2 = gsap.timeline({
@@ -110,13 +105,11 @@ const ProjectSingleDetails = ({ project }) => {
                 opacity:0,
                 yPercent:'30',
             }},'-=1')
-
   
     }, projectDetailsRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, [project.isDevelopment]); // sorting out missing dependancy
-
 
 
   return (
@@ -162,9 +155,7 @@ const ProjectSingleDetails = ({ project }) => {
                 }
             </div>
             
-            
         </div>
-        
 
     </section>
   )

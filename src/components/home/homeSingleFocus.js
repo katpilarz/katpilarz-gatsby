@@ -6,10 +6,9 @@ import AnimatedImage from "../globalComponents/animatedImage";
 import Media from "../globalComponents/media";
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
 
 
 
@@ -27,14 +26,12 @@ const HomeSingleFocus = ({ section}) => {
             revealRefs.current.push(el);
         }
     };
-   
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
         let ctx = gsap.context(() => {
-
 
                 const tl = gsap.timeline({
                     scrollTrigger: {
@@ -53,7 +50,6 @@ const HomeSingleFocus = ({ section}) => {
                         autoAlpha: 0,
                         yPercent:'30',
                     }})
-
 
 
                 revealRefs.current.forEach((el, index) => {
@@ -79,14 +75,12 @@ const HomeSingleFocus = ({ section}) => {
                     });
              
                 });
-    
   
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
       }, []);
-
 
 
   return (

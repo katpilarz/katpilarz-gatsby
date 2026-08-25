@@ -2,14 +2,12 @@ import React from "react";
 import * as styles from "./projectSingleNext.module.scss";
 import AnimatedImage from "../globalComponents/animatedImage";
 import { navigate } from 'gatsby';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ArrowIcon from "../globalComponents/arrow";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
-
 
 
 
@@ -19,8 +17,7 @@ const ProjectSingleNext = ({ nextProject }) => {
   const headerRef = useRef(null);
   const subheaderRef = useRef(null);
 
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -29,7 +26,6 @@ const ProjectSingleNext = ({ nextProject }) => {
 
       const animation = gsap.matchMedia()
       animation.add()
-
 
       
       animation.add("(min-width:  1025px)", () => {
@@ -61,9 +57,7 @@ const ProjectSingleNext = ({ nextProject }) => {
               yPercent:'-30',
         }},'-=1')
 
-
       })
-
 
       animation.add("(max-width: 1024px)", () => {
 
@@ -94,16 +88,13 @@ const ProjectSingleNext = ({ nextProject }) => {
               yPercent:'-30',
         }},'-=1')
 
-
       })
-
       
   
     }, nextProjectHeaderRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
-
 
 
   return (

@@ -9,14 +9,11 @@ import { EffectFade, Navigation, Pagination, Scrollbar, Mousewheel, Autoplay, Fr
 // Import Swiper styles
 import "swiper/css";
 
-
-/*import { useEffect, useRef } from 'react';
+/*import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);*/
-
-
-
 
 
 
@@ -24,8 +21,7 @@ const ServiceSingleGallery = ({ projects }) => {
 
   /*const swiperContainer = useRef(null);
 
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -53,7 +49,6 @@ const ServiceSingleGallery = ({ projects }) => {
     
     return () => ctx.revert(); // cleanup! 
   }, []);*/
-
   
   return (
 

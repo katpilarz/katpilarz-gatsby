@@ -23,3 +23,12 @@
   left: 0;
   right: 0;
 }
+
+/* The word and the caret are rendered as two separate headings. Left as
+   blocks they stack, putting the caret on its own line under the word and
+   reserving two line boxes of height. Flowing them inline sits the caret
+   directly after the last character and keeps long words wrapping normally. */
+.sizer > *,
+.live > * {
+  display: inline;
+}

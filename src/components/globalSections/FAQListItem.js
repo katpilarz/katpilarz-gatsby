@@ -2,14 +2,11 @@ import React, { useState } from "react"
 import * as styles from "./FAQList.module.scss";
 import ArrowIcon from "../globalComponents/arrow";
 import PortableText from "../globalComponents/portableText"
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
-
-
-
-
 
 
 
@@ -22,7 +19,6 @@ const FAQListItem = ({ item }) => {
     const answer = useRef(null);
     const iconRef = useRef(null);
     const tl = useRef();
-    
     
 
     const revealRefs = useRef([]);
@@ -40,9 +36,7 @@ const FAQListItem = ({ item }) => {
    }
 
 
-
-
-   useEffect(() => {
+   useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -83,7 +77,6 @@ const FAQListItem = ({ item }) => {
                 }})
                 
           }
-
            
     }, toggle); // <- scopes all selector text inside the context to this component (optional, default is document)
     
@@ -91,9 +84,7 @@ const FAQListItem = ({ item }) => {
   }, [isOpen]);
 
 
-
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -125,15 +116,12 @@ const FAQListItem = ({ item }) => {
      
         });
 
-
           
     }, revealRefs); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
   }, []);
 
-
-   
    
   return (
 

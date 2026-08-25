@@ -1,31 +1,26 @@
 import React from "react";
 import * as styles from "./description.module.scss";
 import PortableText from "./portableText"
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import gsap from 'gsap/dist/gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 
 gsap.registerPlugin(ScrollTrigger);
 
 
-
-
 const Description = ({ description, descriptionCustomClass  }) => {
-
 
   const descriptionRef = useRef(null);
 
-
-  useEffect(() => {
+  useIsomorphicLayoutEffect(() => {
    
     // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
     // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
     let ctx = gsap.context(() => {
 
-
       const animation = gsap.matchMedia()
           animation.add()
-
 
           
           animation.add("(min-width:  569px)", () => {
@@ -52,7 +47,6 @@ const Description = ({ description, descriptionCustomClass  }) => {
     
           })
 
-
           animation.add("(max-width: 568px)", () => {
 
             const tl = gsap.timeline({
@@ -77,8 +71,6 @@ const Description = ({ description, descriptionCustomClass  }) => {
     
           })
 
-
-        
             
   
     }, descriptionRef); // <- scopes all selector text inside the context to this component (optional, default is document)

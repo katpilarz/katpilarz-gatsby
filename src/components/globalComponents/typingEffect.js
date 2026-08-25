@@ -7,9 +7,9 @@ import useTypingEffect from "../../hooks/useTypingEffect"
  * site uses: text, speed, eraseSpeed, eraseDelay, cursorRenderer and
  * displayTextRenderer.
  *
- * The renderers here return block-level headings, so the box would otherwise
- * grow and shrink as characters are typed and erased. A hidden sizer holding
- * the longest state keeps the height fixed — see typingEffect.module.scss.
+ * The renderers here return headings, so the box would otherwise grow and
+ * shrink as characters are typed and erased. A hidden sizer holding the
+ * longest state keeps the height fixed — see typingEffect.module.scss.
  */
 const TypingEffect = ({
   text,
@@ -24,12 +24,21 @@ const TypingEffect = ({
   const list = Array.isArray(text) ? text.filter(Boolean) : text ? [text] : []
   const longest = list.reduce((a, b) => (b.length > a.length ? b : a), "")
 
-  const render = (v, c) => (
-    <>
-      {displayTextRenderer ? displayTextRenderer(v, 0) : v}
-      {cursorRenderer ? cursorRenderer(c) : c}
-    </>
-  )
+  const render = (v, c) => {
+    const caret = cursorRenderer ? cursorRenderer(c) : c
+
+    return (
+      <>
+        {displayTextRenderer ? displayTextRenderer(v, 0) : v}
+        {/* The caret is decoration. Hide it from assistive tech in place,
+            rather than in a wrapper, so it stays a direct child and the
+            inline-flow rule in the stylesheet still applies to it. */}
+        {React.isValidElement(caret)
+          ? React.cloneElement(caret, {"aria-hidden": "true"})
+          : caret}
+      </>
+    )
+  }
 
   return (
     <div className={styles.reserve}>
