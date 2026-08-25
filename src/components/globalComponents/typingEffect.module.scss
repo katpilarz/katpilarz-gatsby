@@ -1,0 +1,25 @@
+/* The typed string changes several times a second. Left to itself the
+   surrounding box grows and shrinks with it, and because this component sits
+   in the last section of the home page that resizes the whole document —
+   which makes the browser re-clamp the scroll position and the page jumps.
+
+   The sizer renders the longest state the animation can reach and reserves
+   its box permanently; the live text is laid over the top. The container's
+   height is therefore fixed no matter what is being typed, and no matter how
+   many lines the longest word wraps to at the current viewport. */
+
+.reserve {
+  position: relative;
+}
+
+.sizer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.live {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}

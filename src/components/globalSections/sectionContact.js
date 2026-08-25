@@ -167,7 +167,7 @@ const SectionContact = ({section }) => {
                         <ArrowIcon arrowIconClass="linkIcon"/>
                     </a>
                     <Link className={`${styles.contactLink} text-uppercase`} ref={linksRefTwo} to='#'onClick={(e) => {
-                        window.location.href = 'mailto:katgolek@pm.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
+                        window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
                         e.preventDefault();
                         }}>
                         Free Consulting

@@ -1,6 +1,11 @@
 import {useEffect, useMemo, useRef, useState} from "react"
 import {useMediaQuery} from "./useMediaQuery"
 
+// A block element whose text is empty (or only a collapsible space) has no
+// line box and therefore zero height. Returning a non-breaking space instead
+// keeps every frame of the animation exactly one line tall.
+const NBSP = "\u00A0"
+
 /**
  * Replaces the abandoned `react-typing-effect`. Cycles through a list of
  * strings, typing and erasing each one.
@@ -71,8 +76,11 @@ export default function useTypingEffect(
   }, [reduceMotion])
 
   if (reduceMotion) {
-    return {value: list[0] || "", cursor: ""}
+    return {value: list[0] || NBSP, cursor: NBSP}
   }
 
-  return {value: current.slice(0, charCount), cursor: cursorOn ? "|" : " "}
+  return {
+    value: current.slice(0, charCount) || NBSP,
+    cursor: cursorOn ? "|" : NBSP,
+  }
 }

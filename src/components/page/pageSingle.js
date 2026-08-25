@@ -59,7 +59,7 @@ const PageSingle = ({ pageTitle, itemList, pageImage, pageName, pageDescription,
                     <ArrowIcon arrowIconClass="linkIcon"/>
                 </Link>
                 <Link className={`${styles.contactLink} text-uppercase`} to='#'onClick={(e) => {
-                    window.location.href = 'mailto:katgolek@pm.me?subject=Reporting Error&body=Hello Kate, Pls note I have encountered the following error on your page:';
+                    window.location.href = 'mailto:kat.pilarz@proton.me?subject=Reporting Error&body=Hello Kate, Pls note I have encountered the following error on your page:';
                     e.preventDefault();
                     }}>
                     Contact Me
