@@ -17,5 +17,10 @@ require("./src/styles/layout.scss")
 
 const React = require("react")
 const Layout = require("./src/components/layout").default
+const ErrorBoundary = require("./src/components/globalComponents/errorBoundary").default
 
 exports.wrapPageElement = ({element, props}) => <Layout {...props}>{element}</Layout>
+
+// Above the page tree, so it also catches errors thrown while the previous
+// page is being unmounted during a client-side navigation.
+exports.wrapRootElement = ({element}) => <ErrorBoundary>{element}</ErrorBoundary>
