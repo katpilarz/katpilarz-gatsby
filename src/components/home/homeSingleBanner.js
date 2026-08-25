@@ -13,7 +13,28 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
 
 
-const HomeSingleBanner = ({ name, title, images, author }) => {
+/**
+ * The hero collage. Five images in five fixed grid positions, so the order is
+ * the composition — see `:nth-child(1)`…`(5)` in the stylesheet.
+ *
+ * `bannerGallery` on the home document is the arrangement, set by hand. It
+ * replaces the old query for projects flagged `isGalleryMockup` ordered by
+ * date, under which retiring a project both dropped a slot and shuffled
+ * everything else into the wrong ones. `images` is still accepted as a
+ * fallback, so the section keeps working if the field is ever emptied.
+ */
+const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
+
+  const slides = (bannerGallery?.length
+    ? bannerGallery
+    : (images || []).map(({node}) => ({
+        image: node.socialMediaImage,
+        url: `/projects/${node.slug.current}`,
+      })))
+    // Retired work has no page of its own; those tiles go to the work index
+    // rather than nowhere, which also keeps every tile the same element.
+    .map((slide) => ({...slide, url: slide.url || '/projects'}))
+
   const introRef = useRef(null);
   const introContentRef = useRef(null);
   const headerRef = useRef(null);
@@ -252,6 +273,22 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
   
   return (
     <>
+      {/* This wrapper exists for ScrollTrigger, not for layout.
+        *
+        * The timeline below pins `introRef`. Pinning moves that element inside
+        * a generated `pin-spacer`, which then stands where the element used to
+        * stand among its siblings. React still believes the intro div is that
+        * child, so the next update touching a sibling — Branding, just below —
+        * throws "insertBefore: the node before which the new node is to be
+        * inserted is not a child of this node", and the error boundary blanks
+        * the whole page.
+        *
+        * With a wrapper of its own, the pin-spacer is created inside this div
+        * instead of beside Branding, and the sibling list React tracks never
+        * changes. The wrapper has no styles: it must not introduce a transform
+        * or a new containing block, or it would break the pin it exists to
+        * protect. */}
+      <div>
       <div ref={introRef} className={`${styles.intro} intro`}>
         <div ref={introContentRef} className={styles.introContent}>
           <h1 className="text-color" ref={headerRef}>{name}</h1>
@@ -263,23 +300,26 @@ const HomeSingleBanner = ({ name, title, images, author }) => {
         <Media query="(min-height: 512px)" render={() =>
           (
             <div ref={sectionRef} className={styles.bannerGallery}>
-              {images.map((item, index) => {
+              {slides.map((slide, index) => {
+                  const image = (
+                      <GatsbyImage className={styles.galleryImage}
+                          image={getImage(slide.image.asset.gatsbyImageData)}
+                          alt={`${slide.image.alt}`}
+                      />
+                  )
+
                   return (
-                  
+
                   <div key={index} className={styles.bannerGalleryWrapper} ref={addToRefs}>
-                      <Link to={`projects/${item.node.slug.current}`} className={styles.bannerGalleryItem}>
-                          <GatsbyImage className={styles.galleryImage}
-                              image={getImage(item.node.socialMediaImage.asset.gatsbyImageData)}
-                              alt={`${item.node.socialMediaImage.alt}`}
-                          />
-                      </Link>
+                      <Link to={slide.url} className={styles.bannerGalleryItem}>{image}</Link>
                   </div>
-                  
+
                   )
               })}
             </div>
           )}
         />
+      </div>
       </div>
       <div ref={brandingRef}>
         <Branding author={author}/>

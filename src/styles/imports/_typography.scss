@@ -186,8 +186,7 @@ h4{
 
 
 
-.detailsTextPortable h4,
-.testimonial{
+.detailsTextPortable h4{
     font-size: calc(1rem + 3vw);
 
     @include respond (tabletHorizontal){
@@ -200,6 +199,28 @@ h4{
 
     @include respond (mobileLandscape){
         font-size: calc(1rem + 2.67vw);
+    }
+
+
+}
+
+
+// Split off from the heading step above and taken down about a tenth, so a
+// testimonial of the length actually written sets in four lines rather than
+// spilling to five.
+.testimonial{
+    font-size: calc(.85rem + 2.62vw);
+
+    @include respond (tabletHorizontal){
+        font-size: calc( .5rem + 3.7vw);
+    }
+
+    @include respond (mobile){
+        font-size: calc( .3rem + 5.05vw);
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(.85rem + 2.35vw);
     }
 
 

@@ -21,7 +21,7 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
 
   return (
     <>
-      <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups} author={site.author}/>
+      <HomeSingleBanner name={site.name} title={site.title} images={galleryMockups} bannerGallery={home.bannerGallery} author={site.author}/>
       <HomeSingleFocus section={home.sectionFocus}/>
       <HomeSingleFeatured featuredProjects={featuredProjects} />
       <Media query="(min-width: 569px)" render={() =>

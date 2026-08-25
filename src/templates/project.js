@@ -43,6 +43,15 @@ query ProjectTemplateQuery($id: String!){
       header
       isDevelopment
       isInteractive
+      isConfidential
+      category
+      producedBy
+      role
+      year
+      impact {
+        value
+        label
+      }
       overview
       publishedAt(formatString: "YYYY")
       scope

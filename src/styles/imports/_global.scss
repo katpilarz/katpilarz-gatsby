@@ -34,8 +34,22 @@
     min-height: auto;
     height: auto;
     width:100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
+
+    /* `clip`, not `hidden`.
+     *
+     * These two lines were `overflow-y: hidden; overflow-x: hidden`, which
+     * makes <main> a scroll container — and a scroll container is the element a
+     * descendant's `position: sticky` sticks inside. Since <main> is taller than
+     * the viewport and never scrolls itself, anything sticky in the page simply
+     * scrolled away with the content; the home gallery held its 820vh runway
+     * open and showed a screen and a half of nothing below the frame.
+     *
+     * `overflow-x: clip` clips the same overflow without creating a scroll
+     * container, and unlike `hidden` it lets the other axis stay `visible`
+     * rather than being coerced to `auto`. So the horizontal clipping this rule
+     * was here for is kept, and sticky works. */
+    overflow-x: clip;
+    overflow-y: visible;
     position: relative;
     z-index: 1;
   

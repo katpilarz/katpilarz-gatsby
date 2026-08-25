@@ -13,10 +13,9 @@ const ProjectSingleDetails = ({ project }) => {
 
 
   const projectDetailsRef = useRef(null);
-  const detailOneRef = useRef(null);
-  const detailTwoRef = useRef(null);
-  const detailThreeRef = useRef(null);
-  const detailFourRef = useRef(null);
+  // One ref for the card column rather than one per card: the set is now
+  // variable — role, year and produced-by only appear when they are filled in.
+  const overviewRef = useRef(null);
   const subheaderRef = useRef(null);
   const headerRef = useRef(null);
 
@@ -29,9 +28,11 @@ const ProjectSingleDetails = ({ project }) => {
       // create as many GSAP animations and/or ScrollTriggers here as you want...
       
       // FIRST TIMELINE
+      // Each card slides in behind the one before it. Reading the cards off the
+      // container keeps the stagger identical however many are rendered.
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: detailOneRef.current,
+          trigger: overviewRef.current,
           start: "top 67%",
           end: "top 27%",
           scrub:2, 
@@ -39,42 +40,17 @@ const ProjectSingleDetails = ({ project }) => {
           toggleActions: "restart pause resume none",
         }
       });
-        tl.from(detailOneRef.current, {
-            duration: 1,
-            ease: "power2.out",
-            css: {
-            autoAlpha: 0,
-            opacity:0,
-            xPercent:'30',
-        }})
-        tl.from(detailTwoRef.current, {
-            duration: 1,
-            ease: "power2.out",
-            css: {
-              autoAlpha: 0,
-              opacity:0,
-              xPercent:'30',
-        }})
-        tl.from(detailThreeRef.current, {
-            duration: 1,
-            ease: "power2.out",
-            css: {
-              autoAlpha: 0,
-              opacity:0,
-              xPercent:'30',
-        }})
 
-            // eslint-disable-next-line react-hooks/exhaustive-deps
-        if(project.isDevelopment){
-            tl.from(detailFourRef.current, {
+        gsap.utils.toArray(overviewRef.current.children).forEach((card) => {
+            tl.from(card, {
                 duration: 1,
                 ease: "power2.out",
                 css: {
-                  autoAlpha: 0,
-                  opacity:0,
-                  xPercent:'30',
+                autoAlpha: 0,
+                opacity:0,
+                xPercent:'30',
             }})
-        }
+        })
 
         // SECOND TIMELINE
 
@@ -109,7 +85,7 @@ const ProjectSingleDetails = ({ project }) => {
     }, projectDetailsRef); // <- scopes all selector text inside the context to this component (optional, default is document)
     
     return () => ctx.revert(); // cleanup! 
-  }, [project.isDevelopment]); // sorting out missing dependancy
+  }, []);
 
 
   return (
@@ -119,21 +95,52 @@ const ProjectSingleDetails = ({ project }) => {
                 <p className="text-uppercase" ref={subheaderRef}>Project Details</p>
                 <h3 ref={headerRef}>{project.header}</h3>
            </div>
+
+           {/* The outcomes sit directly under the headline rather than after
+               the prose: they are the summary, and on a long case study the
+               foot of the article is not where a summary belongs. */}
+           {project.impact?.length > 0 &&
+                <div className={styles.impactList}>
+                    {project.impact.map((item, index) => {
+                        return(
+                        <div className={styles.impactSingle} key={index}>
+                            <p className={`${styles.impactValue} text-color`}>{item.value}</p>
+                            <span>{item.label}</span>
+                        </div>
+                        )
+                    })}
+                </div>
+           }
            <Description description={project._rawDetails} descriptionCustomClass="projectDescription"/>
-           
+
+
         </div>
         <div className={styles.projectDetailsRight}>
            
-           <div className={styles.projectDetailsOverview}>
-                <div ref={detailOneRef}  className={styles.projectOverviewCard}>
-                    <p className={`${styles.overviewName} text-uppercase`}>Client</p>
-                    <span>{project.title}</span>
+           <div ref={overviewRef} className={styles.projectDetailsOverview}>
+                <div className={styles.projectOverviewCard}>
+                    <p className={`${styles.overviewName} text-uppercase`}>
+                        {project.producedBy ? 'Produced by' : 'Client'}
+                    </p>
+                    <span>{project.producedBy || project.title}</span>
                 </div>
-                <div ref={detailTwoRef} className={styles.projectOverviewCard}>
+                {project.role &&
+                    <div className={styles.projectOverviewCard}>
+                        <p className={`${styles.overviewName} text-uppercase`}>Role</p>
+                        <span>{project.role}</span>
+                    </div>
+                }
+                <div className={styles.projectOverviewCard}>
                     <p className={`${styles.overviewName} text-uppercase`}>Scope</p>
                     <span>{project.scope}</span>
                 </div>
-                <div ref={detailThreeRef}  className={styles.projectOverviewCard}>
+                {project.year &&
+                    <div className={styles.projectOverviewCard}>
+                        <p className={`${styles.overviewName} text-uppercase`}>Year</p>
+                        <span>{project.year}</span>
+                    </div>
+                }
+                <div className={styles.projectOverviewCard}>
                     <p className={`${styles.overviewName} text-uppercase`}>Tools</p>
                     <div className={styles.toolsList}>
                         {project.tools.map((tool, index) => {
@@ -145,8 +152,8 @@ const ProjectSingleDetails = ({ project }) => {
                         })}
                     </div> 
                 </div>
-                {project.isDevelopment &&
-                    <div ref={detailFourRef}  className={styles.projectOverviewCard}>
+                {project.isDevelopment && project.url &&
+                    <div className={styles.projectOverviewCard}>
                         <p className='text-uppercase'>Website</p>
                         <a href={project.url} aria-label={`${project.title} development link view`} rel="noopener noreferrer" target="_blank">
                             View Live Page

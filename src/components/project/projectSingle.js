@@ -42,33 +42,38 @@ const ProjectSingle = ({ project, isHome }) => {
 
         <ProjectSingleDetails project={project}/>
 
-        
-        <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
+        {/* NDA work carries no galleries. The details section above already
+            renders the prose, role, impact and stack, which is the whole story
+            for a project that cannot be shown. */}
+        {!project.isConfidential &&
+          <>
+            <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
 
-       
-          <Media query="(max-width: 768px)" render={() =>
-            { project.mobileMockups &&
-              (
-                
-                <div className="device-mockups-wrapper">
-                  <ProjectSingleGallery images={project.mobileMockups} galleryClassName='projectGallery'/>
+            <Media query="(max-width: 768px)" render={() =>
+              { project.mobileMockups &&
+                (
+
+                  <div className="device-mockups-wrapper">
+                    <ProjectSingleGallery images={project.mobileMockups} galleryClassName='projectGallery'/>
+                    </div>
+
+
+                )}
+              }
+            />
+
+            <Media query="(min-width: 768px)" render={() =>
+              { project.desktopMockups &&
+                (
+                  <div className="device-mockups-wrapper">
+                    <ProjectSingleGallery images={project.desktopMockups} galleryClassName='projectGallery'/>
                   </div>
-              
-                
-              )}
-            }
-          />
-        
-          <Media query="(min-width: 768px)" render={() =>
-            { project.desktopMockups &&
-              (
-                <div className="device-mockups-wrapper">
-                  <ProjectSingleGallery images={project.desktopMockups} galleryClassName='projectGallery'/>
-                </div>
-                
-              )}
-            }
-          />
+
+                )}
+              }
+            />
+          </>
+        }
 
 
         {project.nextProject.map((nextProject, index) => {

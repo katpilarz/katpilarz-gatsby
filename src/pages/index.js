@@ -25,6 +25,15 @@ query HomePageQuery{
       name
     }
     home:sanityHome {
+      bannerGallery {
+        url
+        image {
+          alt
+          asset {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED, formats: WEBP)
+          }
+        }
+      }
       sectionFocus {
         header
         subheader

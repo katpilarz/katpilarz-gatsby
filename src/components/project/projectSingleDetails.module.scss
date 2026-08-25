@@ -31,6 +31,26 @@
     flex-direction: column;
     place-content: space-between;
 
+    /* The rail stays with the reader.
+     *
+     * A case study can run for tens of screens while the meta is a dozen lines,
+     * so the right column used to end near the top and leave most of the page
+     * with an empty half. Sticky keeps Role, Scope, Year and the stack beside
+     * whatever paragraph is being read.
+     *
+     * `align-self` matters: a flex item stretches to the row height by default,
+     * and an item as tall as its container has no room to move, so sticky would
+     * do nothing. This only applies where the two columns sit side by side —
+     * below desktopXS the layout stacks and the rail is just a block.
+     */
+    position: sticky;
+    top: 12vh;
+    align-self: flex-start;
+
+    @include respond (desktopXS){
+        position: static;
+    }
+
     @include respond (desktop){
         flex-basis: 39%;
     }
@@ -93,35 +113,35 @@
     .projectOverviewCard{
         width:100%;
         @include border-top; 
-        padding: 2vw 3vw 2vw 0;
+        padding: 1.4vw 0;
         display: flex;
-        place-items: center;
+        // Label over value rather than beside it: "Role" can be a single word
+        // or a full sentence, and a fixed side-by-side split gave the long ones
+        // a column barely wide enough for two words.
+        flex-direction: column;
+        place-items: flex-start;
         height: auto;
 
         @include respond (tabletHorizontal){
-            padding: 4vw 3vw 4vw 0;
-            width:77%;
+            padding: 3vw 0;
+            width:100%;
         }
 
         @include respond (mobile){
-            padding: 6vw 3vw 6vw 0;
+            padding: 5vw 0;
         }
 
 
 
         .overviewName{
-            padding-right: 5vw;
+            // Quieter than the value it labels.
+            font-size: calc(.4rem + .4vw);
+            opacity: .6;
+            margin-bottom: .5vw;
 
-            @include respond (desktopXS){
-                padding-right: 8vw;
-            }
-        }
-
-        p{
-            padding-right: 4vw;
-
-            @include respond (desktopXS){
-                padding-right: 6vw;
+            @include respond (mobile){
+                font-size: calc(.5rem + 1.4vw);
+                margin-bottom: 2vw;
             }
         }
         
@@ -140,9 +160,68 @@
             .toolSingle{
                 display: flex;
                 width: auto;
-                margin-right: 1vw;
+                margin: 0 .4vw .4vw 0;
+                padding: .2vw .7vw;
+                border: $border;
+                border-radius: 2vw;
+                font-size: calc(.4rem + .4vw);
+                white-space: nowrap;
 
+                @include respond (mobile){
+                    margin: 0 2vw 2vw 0;
+                    padding: 1vw 3vw;
+                    border: $borderMobile;
+                    border-radius: 6vw;
+                    font-size: calc(.5rem + 1.4vw);
+                }
             }
+        }
+    }
+}
+
+/* Headline outcomes, directly under the project headline. A row of figures
+   reads as a standfirst — the shape of the project before the prose starts. */
+.impactList{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2.5vw 0 0 0;
+    width: 100%;
+    @include border-top;
+    padding-top: 2vw;
+
+    @include respond (mobile){
+        margin-top: 8vw;
+        padding-top: 6vw;
+    }
+}
+
+.impactSingle{
+    flex-basis: 47%;
+    margin-bottom: 1.6vw;
+    padding-right: 2vw;
+
+    @include respond (mobile){
+        flex-basis: 100%;
+        margin-bottom: 6vw;
+        padding-right: 0;
+    }
+
+    .impactValue{
+        font: 100% $font-headers;
+        font-size: calc(.6rem + 1.5vw);
+        line-height: 1.1;
+
+        @include respond (mobile){
+            font-size: calc(1rem + 5vw);
+        }
+    }
+
+    span{
+        display: block;
+        margin-top: .4vw;
+
+        @include respond (mobile){
+            margin-top: 2vw;
         }
     }
 }
