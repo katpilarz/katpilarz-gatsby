@@ -75,30 +75,23 @@ const backgroundImageData = data.sanityGlobal.image
   return (
     <>
       <nav className={styles.navbar}>
+        {/* Left: the two places to go. Right: the two things to operate.
+            Mode used to lead the bar, which put a display preference ahead of
+            the work itself. */}
         <div className={styles.buttonsWrapper}>
-            <button className={styles.themeToggler}>
-              <label>
-                <input hidden
-                  type="checkbox"
-                  onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
-                  checked={theme === 'dark'}
-                />{' '}
-                Mode
-              </label>
-            </button>
             <Link to='/projects'> Work </Link>
+            <Link to='#' onClick={(e) => {
+                window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
+                e.preventDefault();
+                }}>
+                Contact
+            </Link>
         </div>
        
         {!isHome && 
           <Branding author={author}/>
         }
         <div className={styles.buttonsWrapper}>
-          <Link to='#' onClick={(e) => {
-              window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
-              e.preventDefault();
-              }}>
-              Contact
-          </Link>
           {!isOpen &&
             <button type="button" onClick={toggleSidebar}>
                 Menu
@@ -109,6 +102,16 @@ const backgroundImageData = data.sanityGlobal.image
                 Close
             </button>
           }
+          <button className={styles.themeToggler}>
+            <label>
+              <input hidden
+                type="checkbox"
+                onChange={e => toggleTheme(e.target.checked ? 'dark' : 'light')}
+                checked={theme === 'dark'}
+              />{' '}
+              Mode
+            </label>
+          </button>
         </div>
       </nav>
       <HeaderMenu menuData={menuData} isOpen={isOpen} toggleSidebar={toggleSidebar} backgroundImageData={backgroundImageData}/>
