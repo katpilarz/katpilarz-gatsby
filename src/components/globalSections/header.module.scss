@@ -39,14 +39,27 @@
 
 .buttonsWrapper{
     display: flex;
+    align-items: center;
 
+    /* Spacing belongs to the group, not to one kind of child.
+     *
+     * This used to be `margin: auto 2vw` on `a` alone, with nothing on
+     * `button`. That happened to look right while each group held one of each —
+     * Mode/Work and Contact/Menu — but the moment the bar was reordered into
+     * Work/Contact and Menu/Mode it fell apart: two links meant 2vw + 2vw of
+     * abutting margins and a doubled gap on the left, while two buttons meant
+     * no margins at all and the right pair touched.
+     *
+     * `gap` spaces whatever the group contains, so the bar can be reordered
+     * without the spacing depending on which element type ended up where. The
+     * navbar's own 4vw padding sets the outer edges. */
+    gap: 2vw;
 
-    a{
-        margin:auto 2vw auto 2vw;
+    a,
+    button{
         display: flex;
         place-self: center;
         cursor: pointer;
-    
     }
 
     .themeToggler{
