@@ -12,6 +12,21 @@ import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
 
+/**
+ * How large the hero collage sits before the reader scrolls.
+ *
+ * The tiles overlap the wordmark and the specialisation line under it. Fading
+ * them back cleared the text but looked washed out, so they hold their colour
+ * and are simply smaller at rest — which opens gaps around the type instead of
+ * greying the pictures. The scroll timeline grows them to full size.
+ *
+ * Lower it and the text reads more easily; raise it and the collage does.
+ */
+const RESTING_SCALE = 0.68
+
+/** What the tiles grow to once the reader scrolls into the hero. */
+const FULL_SCALE = 1.1
+
 
 /**
  * The hero collage. Five images in five fixed grid positions, so the order is
@@ -109,6 +124,21 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                 refreshPriority: 1,
               }
             });
+              /* Grown to full size as the reader scrolls into the hero.
+               *
+               * Placed at position 0 so it runs at the head of the timeline,
+               * before the collage begins scaling away — the images come up to
+               * size first, then leave. `overwrite` keeps it from fighting the
+               * arrival tween if someone scrolls during the first two seconds.
+               */
+              tl2.to(revealRefs.current, {
+                duration: 2,
+                ease: "none",
+                overwrite: "auto",
+                css: {
+                  scale: FULL_SCALE,
+              }}, 0)
+
               tl2.to(homeBtnRef.current, {
                 duration: 8,
                 ease: "power2.out",
@@ -190,9 +220,13 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                   duration: 2,
                   xPercent:0,
                   yPercent:0,
-                  opacity:1,
-                  autoAlpha:1,
-                  scale:1.1,
+                  // Arrive small. The wordmark and the specialisation line sit
+                  // over this collage; at full size the tiles swallowed some of
+                  // those letters. Full colour, less room — scrolling grows
+                  // them the rest of the way.
+                  opacity: 1,
+                  autoAlpha: 1,
+                  scale: RESTING_SCALE,
                   ease: "power4.out",
                   stagger: .12,
               });
