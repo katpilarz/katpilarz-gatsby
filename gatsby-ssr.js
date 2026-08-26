@@ -41,6 +41,14 @@ exports.wrapPageElement = ({element, props}) => <Layout {...props}>{element}</La
 
 exports.onRenderBody = ({setPreBodyComponents, setHeadComponents}) => {
   setHeadComponents([
+    /* The PAISAK4U mark, so the practice and the portfolio share a favicon.
+     * gatsby-plugin-manifest injects its own icon links from the PWA icon set;
+     * these are more specific, so browsers prefer them for the tab. The files
+     * are copied verbatim from paisak4u/public into static/. */
+    <link key="favicon-ico" rel="icon" href="/favicon.ico" sizes="any" />,
+    <link key="favicon-32" rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />,
+    <link key="favicon-16" rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />,
+    <link key="apple-touch-icon" rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />,
     <link
       key="preload-scholastyca"
       rel="preload"
