@@ -15,14 +15,18 @@ gsap.registerPlugin(ScrollTrigger);
 /**
  * How large the hero collage sits before the reader scrolls.
  *
- * The tiles overlap the wordmark and the specialisation line under it. Fading
- * them back cleared the text but looked washed out, so they hold their colour
- * and are simply smaller at rest — which opens gaps around the type instead of
- * greying the pictures. The scroll timeline grows them to full size.
+ * The tiles keep their original scattered placement across the middle of the
+ * hero, behind the wordmark — moving them out of the way entirely killed the
+ * composition. Instead they sit small at rest, which opens enough ground
+ * around the type to read it, and the scroll timeline grows them back to full
+ * size before the whole collage scales out.
+ *
+ * Fading them back was tried first and looked washed out rather than
+ * deliberately held; scale keeps their colour.
  *
  * Lower it and the text reads more easily; raise it and the collage does.
  */
-const RESTING_SCALE = 0.68
+const RESTING_SCALE = 0.52
 
 /** What the tiles grow to once the reader scrolls into the hero. */
 const FULL_SCALE = 1.1
