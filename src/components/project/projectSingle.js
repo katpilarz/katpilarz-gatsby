@@ -15,7 +15,12 @@ const ProjectSingle = ({ project, isHome }) => {
   return (
 
       <>
-        <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.publishedAt}/>
+        {/* `year` is the field meant to be read — the schema calls it the
+            display year, and lets it be a range like "2024—2026". publishedAt
+            is the sort key, so a project can be reordered on the work page
+            without its banner suddenly claiming the wrong year. Falls back to
+            publishedAt for anything that has no year set. */}
+        <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.year || project.publishedAt}/>
         {project.isTestimonial &&
           <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
         }
