@@ -88,6 +88,10 @@ const ProjectSingleDetails = ({ project }) => {
   }, []);
 
 
+  // A link into paisak4u's /work/ is the full case study for this project;
+  // anything else is the product or site itself.
+  const isCaseStudy = /paisak4u\.com\/work\//.test(project.url || '')
+
   return (
     <section ref={projectDetailsRef} className={`${styles.projectDetails} container`}>
         <div className={styles.projectDetailsLeft}>
@@ -154,9 +158,23 @@ const ProjectSingleDetails = ({ project }) => {
                 </div>
                 {project.isDevelopment && project.url &&
                     <div className={styles.projectOverviewCard}>
-                        <p className='text-uppercase'>Website</p>
-                        <a href={project.url} aria-label={`${project.title} development link view`} rel="noopener noreferrer" target="_blank">
-                            View Live Page
+                        {/* Where the link goes decides what it is called. A
+                            project whose link points at a paisak4u case study
+                            is not a "live page" to go and use — it is the long
+                            version of this write-up, hosted where it was
+                            written. Anything else is the site itself. */}
+                        <p className={`${styles.overviewName} text-uppercase`}>
+                            {isCaseStudy ? 'Case study' : 'Website'}
+                        </p>
+                        <a
+                            href={project.url}
+                            aria-label={isCaseStudy
+                                ? `Read the full ${project.title} case study`
+                                : `${project.title} development link view`}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            {isCaseStudy ? 'View case study in detail' : 'View Live Page'}
                         </a>
                     </div>
                 }
