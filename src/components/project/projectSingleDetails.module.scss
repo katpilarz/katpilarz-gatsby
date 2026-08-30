@@ -182,29 +182,30 @@
 /* Headline outcomes, directly under the project headline. A row of figures
    reads as a standfirst — the shape of the project before the prose starts. */
 .impactList{
-    display: flex;
-    flex-wrap: wrap;
+    /* A two-column grid rather than 47%-basis flex items.
+     *
+     * Two items at 47% plus a right padding left the last 6% of the row empty,
+     * so the block stopped short of the column and its right edge did not line
+     * up with the headline and prose above it. `1fr 1fr` with a real gap spans
+     * the full width and puts both edges where the text's are. */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2vw;
+    row-gap: 1.6vw;
     margin: 2.5vw 0 0 0;
     width: 100%;
     @include border-top;
     padding-top: 2vw;
 
     @include respond (mobile){
+        grid-template-columns: 1fr;
+        row-gap: 6vw;
         margin-top: 8vw;
         padding-top: 6vw;
     }
 }
 
 .impactSingle{
-    flex-basis: 47%;
-    margin-bottom: 1.6vw;
-    padding-right: 2vw;
-
-    @include respond (mobile){
-        flex-basis: 100%;
-        margin-bottom: 6vw;
-        padding-right: 0;
-    }
 
     .impactValue{
         font: 100% $font-headers;
