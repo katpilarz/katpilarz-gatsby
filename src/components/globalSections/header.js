@@ -74,11 +74,11 @@ const backgroundImageData = data.sanityGlobal.image
 
   return (
     <>
-      <nav className={styles.navbar}>
+      <nav className={styles.topBar}>
         {/* Left: the two places to go. Right: the two things to operate.
             Mode used to lead the bar, which put a display preference ahead of
             the work itself. */}
-        <div className={styles.buttonsWrapper}>
+        <div className={styles.navGroup}>
             <Link to='/projects'> Work </Link>
             <Link to='#' onClick={(e) => {
                 window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
@@ -91,7 +91,7 @@ const backgroundImageData = data.sanityGlobal.image
         {!isHome && 
           <Branding author={author}/>
         }
-        <div className={styles.buttonsWrapper}>
+        <div className={styles.navGroup}>
           {!isOpen &&
             <button type="button" onClick={toggleSidebar}>
                 Menu
@@ -102,7 +102,7 @@ const backgroundImageData = data.sanityGlobal.image
                 Close
             </button>
           }
-          <button className={styles.themeToggler}>
+          <button className={styles.modeToggle}>
             <label>
               <input hidden
                 type="checkbox"

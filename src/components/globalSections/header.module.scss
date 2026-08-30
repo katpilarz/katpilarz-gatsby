@@ -1,6 +1,6 @@
 @use 'src/styles/abstracts' as *;
 
-.navbar{
+.topBar{
     width:100%;
     margin: auto;
     display: flex;
@@ -37,7 +37,7 @@
 }
 
 
-.buttonsWrapper{
+.navGroup{
     display: flex;
     align-items: center;
 
@@ -52,7 +52,7 @@
      *
      * `gap` spaces whatever the group contains, so the bar can be reordered
      * without the spacing depending on which element type ended up where. The
-     * navbar's own 4vw padding sets the outer edges. */
+     * top bar's own 4vw padding sets the outer edges. */
     gap: 2vw;
 
     a,
@@ -62,7 +62,7 @@
         cursor: pointer;
     }
 
-    .themeToggler{
+    .modeToggle{
         position: relative;
         z-index: 999;
        

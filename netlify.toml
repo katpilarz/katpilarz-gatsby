@@ -1,0 +1,25 @@
+# Netlify build configuration.
+#
+# Previously this lived only in the Netlify dashboard, which meant nothing in
+# the repository described how the site is actually built — and no way to tell,
+# from here, why a deploy had shipped something other than what is on main.
+# Settings in this file take precedence over the dashboard.
+
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  # Matches .nvmrc and the `engines` field in package.json. Netlify reads
+  # .nvmrc on its own, but stating it here keeps the two from drifting.
+  NODE_VERSION = "20"
+
+  # The Sanity project the site pulls content from. These are public
+  # identifiers — the same pair is committed in .env.example, and the dataset
+  # is readable without credentials — so keeping them here makes the build
+  # self-contained rather than dependent on dashboard state.
+  #
+  # A SANITY_READ_TOKEN, if one is ever needed to build unpublished drafts,
+  # is a secret and must stay in the dashboard. Do not add it to this file.
+  GATSBY_SANITY_PROJECT_ID = "hhd2cuzh"
+  GATSBY_SANITY_DATASET = "production"
