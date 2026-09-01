@@ -63,7 +63,9 @@ const ServiceSingleGallery = ({ projects }) => {
             direction={"horizontal"}
             spaceBetween={0}
             grabCursor={true}
-            mousewheel={true}
+            // forceToAxis: vertical wheel/trackpad input must keep scrolling
+            // the page — only horizontal gestures drive the carousel.
+            mousewheel={{ forceToAxis: true, releaseOnEdges: true }}
             keyboard={{
                 enabled: true,
             }}

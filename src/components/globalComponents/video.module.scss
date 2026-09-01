@@ -48,7 +48,18 @@
     height: auto;
     place-self: flex-end;
     margin: auto 0 0 0;
-  
+
+}
+
+// Service banner video: fill the banner container like the banner images do.
+// (The `article .serviceMedia` rule further down is a different context — the
+// small hover preview in service lists — and wins there on specificity.)
+.serviceMedia{
+    width: 100%;
+
+    .video{
+        width: 100%;
+    }
 }
 
 

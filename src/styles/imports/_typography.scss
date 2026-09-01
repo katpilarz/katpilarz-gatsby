@@ -91,21 +91,25 @@ h2{
 }
 
 .header-features{
-    font-size: calc(1rem + 7vw);
+    // The typed phrases are two words ("Accessible experiences"), so the line
+    // must never wrap: sized to keep the longest phrase on one line within the
+    // container, and nowrap so a miss overflows instead of breaking mid-word.
+    font-size: calc(0.5rem + 6vw);
     line-height: 1;
     padding-top: 0;
     text-transform: uppercase;
+    white-space: nowrap;
 
     @include respond (tabletHorizontal){
-        font-size: 12.7vw;
+        font-size: 7.5vw;
     }
 
     @include respond (mobile){
-        font-size: 14.7vw;
+        font-size: 8.5vw;
     }
 
     @include respond (mobileLandscape){
-        font-size: calc(1rem + 7vw);
+        font-size: calc(0.5rem + 6vw);
     }
 
 
