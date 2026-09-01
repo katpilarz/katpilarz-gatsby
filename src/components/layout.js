@@ -1,5 +1,6 @@
 import React from "react"
 import BackgroundImage from "./globalComponents/backgroundImage"
+import CookieConsent from "./globalComponents/cookieConsent"
 import Footer from "./globalComponents/footer"
 import PagePreloader from "../components/globalSections/pagePreloader"
 import { useStaticQuery, graphql } from "gatsby"
@@ -34,6 +35,7 @@ const backgroundImageData = data.sanityGlobal.image
       <BackgroundImage backgroundImageData={backgroundImageData}/>
       {children}
       <Footer/>
+      <CookieConsent/>
     </>
   )
 }

@@ -1,0 +1,107 @@
+@use 'src/styles/abstracts' as *;
+
+.consent{
+    position: fixed;
+    bottom: 1.4rem;
+    left: 1.4rem;
+    z-index: 999999;
+    width: 21rem;
+    max-width: calc(100vw - 2.8rem);
+    padding: 1.4rem 1.5rem 1.5rem;
+    background-color: $white;
+    border: $border;
+    color: $grey-dark;
+
+    @include respond (mobile){
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+        border-left: none;
+        border-right: none;
+        border-bottom: none;
+    }
+}
+
+.consentLabel{
+    font-size: .68rem;
+    letter-spacing: .22em;
+    color: $color;
+    margin-bottom: .7rem;
+}
+
+.consentText{
+    font-size: .82rem;
+    font-weight: 300;
+    line-height: 1.55;
+    margin-bottom: 1.1rem;
+}
+
+.consentActions{
+    display: flex;
+    gap: .7rem;
+
+    button{
+        font-size: .72rem;
+        letter-spacing: .16em;
+        padding: .62rem 1.15rem;
+        transition: all .4s ease-out;
+        place-self: unset;
+    }
+}
+
+.accept{
+    background-color: $grey-dark;
+    color: $white;
+    border: solid .07rem $grey-dark;
+
+    &:hover,
+    &:focus-visible{
+        background-color: $color;
+        border-color: $color;
+    }
+}
+
+.decline{
+    border: $border;
+    color: $grey-dark;
+
+    &:hover,
+    &:focus-visible{
+        color: $color;
+    }
+}
+
+/* The site toggles dark mode with a class on body. */
+:global(body.dark){
+    .consent{
+        background-color: $bg-dark;
+        color: $white-dark;
+    }
+
+    .consentLabel{
+        color: $color-lighter;
+    }
+
+    .accept{
+        background-color: $white-dark;
+        color: $black;
+        border-color: $white-dark;
+
+        &:hover,
+        &:focus-visible{
+            background-color: $color-lighter;
+            border-color: $color-lighter;
+            color: $white;
+        }
+    }
+
+    .decline{
+        color: $white-dark;
+
+        &:hover,
+        &:focus-visible{
+            color: $color-lighter;
+        }
+    }
+}
