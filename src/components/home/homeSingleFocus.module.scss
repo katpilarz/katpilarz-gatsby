@@ -96,15 +96,16 @@
             }
         }
 
-        &:nth-child(odd){
+        // Set in homeSingleFocus.js: every other line with media puts it first.
+        &.mediaFirst{
 
             h4{
                order:2;
-               
+
             }
-    
-    
-    
+
+
+
             .focusAreaMedia{
                 order:1;
             }

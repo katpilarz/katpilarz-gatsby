@@ -75,6 +75,53 @@ async function createServicePages(graphql, actions) {
   })
 }
 
+/**
+ * gatsby-source-sanity builds its types from the *deployed* GraphQL API, not
+ * from the Studio schema, so a field added in the Studio does not exist here
+ * until someone runs `sanity graphql deploy` — and a query that asks for it
+ * fails the build. The plugin keeps every raw document field on the node,
+ * though, so declaring the field is all it takes to read it. Declaring it here
+ * means the build no longer depends on remembering that deploy, and it merges
+ * cleanly with the deployed type once that does happen.
+ *
+ * The case study sections reuse the plugin's own SanityFigure, so a section's
+ * images resolve and get gatsbyImageData exactly like a banner image does. The
+ * body is plain portable text, read as JSON — the shape `_raw` fields give.
+ *
+ * The home page testimonial is plain text: a quote, who said it, and a link to
+ * where it can be read in full.
+ */
+exports.createSchemaCustomization = ({actions}) => {
+  actions.createTypes(`
+    type SanityProject implements Node {
+      figmaUrl: String
+      summary: String
+      caseStudy: [SanityCaseSection]
+    }
+
+    type SanityHome implements Node {
+      testimonial: SanityHomeTestimonial
+    }
+
+    type SanityHomeTestimonial {
+      quote: String
+      name: String
+      role: String
+      link: String
+      linkText: String
+    }
+
+    type SanityCaseSection {
+      _key: String
+      heading: String
+      lead: String
+      body: JSON
+      figures: [SanityFigure]
+      figureLayout: String
+    }
+  `)
+}
+
 exports.createPages = async ({graphql, actions}) => {
   await createProjectPages(graphql, actions)
   await createServicePages(graphql, actions)

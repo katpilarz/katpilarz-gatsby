@@ -58,26 +58,6 @@
   }
   
   
-  .page-btn{
-    position: fixed!important;
-    right:4vw;
-    top:4.7vw;
-    z-index: 9999;
-
-    @include respond (desktop){
-        top:6vw;
-    }
-
-    @include respond (desktopXS){
-        top:7vw;
-        right:5vw;
-    }
-
-    @include respond (tabletMediumHorizontal){
-      top:11vw;
-  }
-  }
-
     .animated-btn{
       display: flex;
       width:8.7vw;

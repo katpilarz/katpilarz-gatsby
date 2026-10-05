@@ -4,8 +4,6 @@ import Seo from "../components/globalComponents/seo";
 import ProjectSingle from "../components/project/projectSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Header from "../components/globalSections/header";
-import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import Media from "../components/globalComponents/media";
 import { useEffect, useState} from 'react';
 import { navigate } from 'gatsby';
 
@@ -48,6 +46,21 @@ query ProjectTemplateQuery($id: String!){
       producedBy
       role
       year
+      summary
+      caseStudy {
+        _key
+        heading
+        lead
+        body
+        figureLayout
+        figures {
+          alt
+          caption
+          asset {
+            gatsbyImageData(formats: WEBP, layout: FULL_WIDTH, placeholder: BLURRED)
+          }
+        }
+      }
       impact {
         value
         label
@@ -60,6 +73,7 @@ query ProjectTemplateQuery($id: String!){
       }
       title
       url
+      figmaUrl
       prototype {
         fallback {
           asset {
@@ -178,11 +192,6 @@ const ProjectTemplate = props => {
 
       <main>
         <PagePreloader/>
-        <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn isHome={isHome}/>
-          )}
-        />
         <Header isHome={isHome}/>
         <ProjectSingle project={project} isHome={isHome}/>
       </main>

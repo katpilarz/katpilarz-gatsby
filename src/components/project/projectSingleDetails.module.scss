@@ -1,228 +1,95 @@
 @use 'src/styles/abstracts' as *;
 
-.projectDetails{
-    display: flex;
-    place-items: space-between;
-    place-content: space-between;
+/* The facts, as one full-width list straight after the banner. Laid out like
+ * the ledger that opens a paisak4u case study, in this site's own type and
+ * rules. */
+
+.projectIntro{
     width:100%;
     height: auto;
-    margin:14vw auto 14vw auto;
+    // The same 10vw that follows the list before the case study, so the
+    // facts sit evenly between the banner and the story.
+    margin:10vw auto 0 auto;
 
-    @include respond (desktopXS){
-        flex-direction: column;
+    @include respond (mobile){
+        margin:18vw auto 0 auto;
+    }
+}
+
+/* The facts. Label and value side by side on a row each, the label in the
+   same quiet uppercase as every other label on the page. On a phone the label
+   goes above, where a long role still has the full width to wrap in. */
+.ledger{
+    margin: 0;
+}
+
+.ledgerRow{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    column-gap: 2vw;
+    align-items: baseline;
+    padding: 1.4vw 0;
+    @include border-top($line-neutral);
+
+    &:last-child{
+        @include border-bottom($line-neutral);
     }
 
     @include respond (tabletHorizontal){
-        margin:16vw auto 18vw auto;
+        padding: 3vw 0;
     }
-
-    @include respond (mobile){
-        margin:18vw auto 30vw auto;
-    }
-
-
-}
-
-.projectDetailsRight{
-    flex-basis: 42%;
-    width:100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    place-content: space-between;
-
-    /* The rail stays with the reader.
-     *
-     * A case study can run for tens of screens while the meta is a dozen lines,
-     * so the right column used to end near the top and leave most of the page
-     * with an empty half. Sticky keeps Role, Scope, Year and the stack beside
-     * whatever paragraph is being read.
-     *
-     * `align-self` matters: a flex item stretches to the row height by default,
-     * and an item as tall as its container has no room to move, so sticky would
-     * do nothing. This only applies where the two columns sit side by side —
-     * below desktopXS the layout stacks and the rail is just a block.
-     */
-    position: sticky;
-    top: 12vh;
-    align-self: flex-start;
-
-    @include respond (desktopXS){
-        position: static;
-    }
-
-    @include respond (desktop){
-        flex-basis: 39%;
-    }
-
-    @include respond (desktopXS){
-        flex-basis: 100%;
-        width:100%;
-        order:2;
-    }
-
-    
-}
-
-.projectDetailsLeft{
-    flex-basis: 47%;
-    height: 100%;
-    place-self: flex-end;
-
-    @include respond (desktop){
-        flex-basis: 52%;
-    }
-
-    @include respond (desktopXS){
-        flex-basis: 100%;
-        width:100%;
-        place-self: flex-start;
-        order:1;
-        margin-top:4vw;
-    }
-
-
-    .projectDetailsHeader{
-        display: flex;
-        flex-direction: column;
-
-        @include respond (desktopXS){
-            width:70%;
-        }
-
-        @include respond (mobile){
-            width:90%;
-        }
-    }
-
-    
-
-    
-}
-
-
-
-.projectDetailsOverview{
-    width:100%;
-    margin:4vw 0 0 0;
-
-    
-
-
-
-    .projectOverviewCard{
-        width:100%;
-        @include border-top; 
-        padding: 1.4vw 0;
-        display: flex;
-        // Label over value rather than beside it: "Role" can be a single word
-        // or a full sentence, and a fixed side-by-side split gave the long ones
-        // a column barely wide enough for two words.
-        flex-direction: column;
-        place-items: flex-start;
-        height: auto;
-
-        @include respond (tabletHorizontal){
-            padding: 3vw 0;
-            width:100%;
-        }
-
-        @include respond (mobile){
-            padding: 5vw 0;
-        }
-
-
-
-        .overviewName{
-            // Quieter than the value it labels.
-            font-size: calc(.4rem + .4vw);
-            opacity: .6;
-            margin-bottom: .5vw;
-
-            @include respond (mobile){
-                font-size: calc(.5rem + 1.4vw);
-                margin-bottom: 2vw;
-            }
-        }
-        
-
-        
-
-        &:last-child{
-            @include border-bottom; 
-        }
-
-        .toolsList{
-            display: flex;
-            flex-wrap: wrap;
-            width:100%;
-        
-            .toolSingle{
-                display: flex;
-                width: auto;
-                margin: 0 .4vw .4vw 0;
-                padding: .2vw .7vw;
-                border: $border;
-                border-radius: 2vw;
-                font-size: calc(.4rem + .4vw);
-                white-space: nowrap;
-
-                @include respond (mobile){
-                    margin: 0 2vw 2vw 0;
-                    padding: 1vw 3vw;
-                    border: $borderMobile;
-                    border-radius: 6vw;
-                    font-size: calc(.5rem + 1.4vw);
-                }
-            }
-        }
-    }
-}
-
-/* Headline outcomes, directly under the project headline. A row of figures
-   reads as a standfirst — the shape of the project before the prose starts. */
-.impactList{
-    /* A two-column grid rather than 47%-basis flex items.
-     *
-     * Two items at 47% plus a right padding left the last 6% of the row empty,
-     * so the block stopped short of the column and its right edge did not line
-     * up with the headline and prose above it. `1fr 1fr` with a real gap spans
-     * the full width and puts both edges where the text's are. */
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 2vw;
-    row-gap: 1.6vw;
-    margin: 2.5vw 0 0 0;
-    width: 100%;
-    @include border-top;
-    padding-top: 2vw;
 
     @include respond (mobile){
         grid-template-columns: 1fr;
-        row-gap: 6vw;
-        margin-top: 8vw;
-        padding-top: 6vw;
+        row-gap: 2vw;
+        padding: 5vw 0;
     }
-}
 
-.impactSingle{
-
-    .impactValue{
-        font: 100% $font-headers;
-        font-size: calc(.6rem + 1.5vw);
-        line-height: 1.1;
+    dt{
+        font-size: calc(.4rem + .4vw);
+        opacity: .6;
 
         @include respond (mobile){
-            font-size: calc(1rem + 5vw);
+            font-size: calc(.5rem + 1.4vw);
         }
     }
 
-    span{
-        display: block;
-        margin-top: .4vw;
+    dd{
+        margin: 0;
+    }
+
+    // The global `a { display: flex; place-content: center }` would centre a
+    // link across the whole column; here it is a link in a line of text.
+    a{
+        display: inline;
+        text-decoration: underline;
+        text-underline-offset: .2em;
+    }
+}
+
+.toolsList{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+
+    .toolSingle{
+        display: flex;
+        width: auto;
+        margin: 0 .4vw .4vw 0;
+        padding: .2vw .7vw;
+        border: $border;
+        border-color: $line-neutral;
+        border-radius: 2vw;
+        font-size: calc(.4rem + .4vw);
+        white-space: nowrap;
 
         @include respond (mobile){
-            margin-top: 2vw;
+            margin: 0 2vw 2vw 0;
+            padding: 1vw 3vw;
+            border: $borderMobile;
+            border-color: $line-neutral;
+            border-radius: 6vw;
+            font-size: calc(.5rem + 1.4vw);
         }
     }
 }

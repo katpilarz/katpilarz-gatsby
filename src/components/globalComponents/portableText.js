@@ -40,10 +40,13 @@ const components = {
   },
 }
 
-const PortableText = ({content, className}) => {
+// `extra` adds or overrides renderers for one call site without touching the
+// defaults every other caller relies on.
+const PortableText = ({content, className, components: extra}) => {
   if (!content) return null
 
-  const body = <BasePortableText value={content} components={components} />
+  const merged = extra ? {...components, ...extra, types: {...components.types, ...extra.types}, marks: {...components.marks, ...extra.marks}} : components
+  const body = <BasePortableText value={content} components={merged} />
 
   return className ? <div className={className}>{body}</div> : body
 }

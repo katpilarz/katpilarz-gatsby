@@ -53,6 +53,13 @@ export default function Header({isHome}) {
       author
       contact
     }
+    sanityCv(_id: {eq: "cv"}) {
+      pdf {
+        asset {
+          url
+        }
+      }
+    }
    }
   
 `)
@@ -67,7 +74,21 @@ const toggleSidebar = () => {
 }
 
 const author = data.sanitySeo.author
-const menuData = data.sanityGlobal.menu
+// The CV is a PDF on the CV document, and the "Download CV" link should
+// always point at the current one. The link's own URL is whatever was typed
+// into the menu when it was made, so any link to a Sanity-hosted PDF is taken
+// to be that link and given the file's current URL — uploading a new CV in the
+// Studio is then the whole update.
+const cvUrl = data.sanityCv?.pdf?.asset?.url
+const isSanityPdf = (url) => /^https:\/\/cdn\.sanity\.io\/files\/.+\.pdf$/.test(url || '')
+const menuData = cvUrl
+  ? {
+      ...data.sanityGlobal.menu,
+      socialLinks: data.sanityGlobal.menu.socialLinks.map((link) =>
+        isSanityPdf(link.url) ? {...link, url: cvUrl} : link
+      ),
+    }
+  : data.sanityGlobal.menu
 const backgroundImageData = data.sanityGlobal.image
 
 

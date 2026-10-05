@@ -3,9 +3,7 @@ import { graphql } from "gatsby";
 import PageSingle from "../components/page/pageSingle";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Seo from "../components/globalComponents/seo";
-import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Header from "../components/globalSections/header";
-import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -107,11 +105,6 @@ const Services = props => {
 
   return (
     <main>
-      <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn isHome={isHome}/>
-          )}
-        />
       <PagePreloader/>
       <Header isHome={isHome}/>
       <PageSingle pageName={servicePage.node.name} pageTitle={servicePage.node.title} itemList={services} pageImage={servicePage.node.image} pageDescription={servicePage.node.overview}/>

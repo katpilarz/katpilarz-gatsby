@@ -134,7 +134,9 @@
                     opacity: 0;
                     z-index: 2;
                     transition: all .6s ease;
-                    scale: 1;
+                    // Starts slightly enlarged and settles to its true size
+                    // as it fades in, so the hover reads as a zoom out.
+                    scale: 1.07;
                 }
 
 
@@ -142,7 +144,7 @@
 
                    .projectCardImageHover{
                         opacity: 1;
-                        scale: 1.07;
+                        scale: 1;
                     }
 
                 }

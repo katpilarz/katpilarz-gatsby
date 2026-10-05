@@ -3,9 +3,7 @@ import { graphql } from "gatsby";
 import Seo from "../components/globalComponents/seo";
 import HomeSingle from "../components/home/homeSingle";
 import PagePreloader from "../components/globalSections/pagePreloader";
-import AnimatedBtn from "../components/globalComponents/animatedBtn";
 import Header from "../components/globalSections/header";
-import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -147,6 +145,13 @@ query HomePageQuery{
           alt
         }
       }
+      testimonial {
+        quote
+        name
+        role
+        link
+        linkText
+      }
       sectionContact {
         projectFeatures
         subheader
@@ -233,27 +238,6 @@ query HomePageQuery{
         }
       }
     }
-    testimonialProject: allSanityProject(filter: {isFeaturedTestimonial: {eq: true}}) {
-      edges {
-        node {
-          id
-          _rawTestimonial
-          title
-          thumbnailSocialMedia {
-            alt
-            asset {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH, formats: WEBP)
-            }
-          }
-          services {
-            title
-          }
-          slug {
-            current
-          }
-        }
-      }
-    }
     services: allSanityService(sort: {_id: DESC}) {
       edges {
         node {
@@ -305,7 +289,6 @@ const IndexPage = props => {
   const featuredProjects = (data || {}).projects.edges;
   const home = (data || {}).home;
   const services = (data || {}).services.edges;
-  const testimonialProject =  (data || {}).testimonialProject.edges[0];
   const galleryMockups =  (data || {}).galleryMockups.edges;
 
   const [isHome] = useState(true)
@@ -330,12 +313,7 @@ const IndexPage = props => {
     <main>
       <Header isHome={isHome}/>
       <PagePreloader/>
-      <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn isHome={isHome}/>
-          )}
-        />
-      <HomeSingle isHome={isHome} galleryMockups={galleryMockups} home={home} site={site} services={services} testimonialProject={testimonialProject}
+      <HomeSingle isHome={isHome} galleryMockups={galleryMockups} home={home} site={site} services={services}
       featuredProjects={featuredProjects}/>
     </main>
   )

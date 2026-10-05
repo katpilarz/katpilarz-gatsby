@@ -107,6 +107,18 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
              }
            });
 
+          /* The "Don't be shy, scroll down" badge is only a prompt to scroll,
+           * so it goes as soon as the reader starts: a quarter turn and a fade
+           * over the first 120px, on every screen size. Scrolling back to the
+           * top brings it back. It used to spin on through the whole pinned
+           * hero and only fade at the end. */
+          gsap.to(homeBtnRef.current, {
+            rotation: 90,
+            autoAlpha: 0,
+            ease: "none",
+            scrollTrigger: { start: 0, end: 120, scrub: true },
+          })
+
           const bannerAnimation = gsap.matchMedia()
           bannerAnimation.add()
           
@@ -143,18 +155,6 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                   scale: FULL_SCALE,
               }}, 0)
 
-              tl2.to(homeBtnRef.current, {
-                duration: 8,
-                ease: "power2.out",
-                css: {
-                  rotation: 360*2,
-              }},'-=4')
-              tl2.to(homeBtnRef.current, {
-                  duration: 1,
-                  ease: "power2.out",
-                  css: {
-                    autoAlpha: 0,
-              }})
               tl2.to(jobRef.current, {
                 duration:1, 
                 ease: "power2.out",
@@ -274,13 +274,6 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                 refreshPriority: 1,
               }
             });
-              tl2.to(homeBtnRef.current, {
-                duration: 8,
-                ease: "power2.out",
-                css: {
-                  rotation: 360*2,
-              }},'-=4')
-
               // ANIMATION WILL BE TRIGGERED IF SECTION IS AVAIABLE
               if(sectionRef.current){
                   tl2.to(sectionRef.current, {
@@ -295,12 +288,6 @@ const HomeSingleBanner = ({ name, title, images, bannerGallery, author }) => {
                   },'-=6');
               }
 
-              tl2.to(homeBtnRef.current, {
-                duration: 1,
-                ease: "power2.out",
-                css: {
-                  autoAlpha: 0,
-            }},'-=1.7')
               tl2.from(brandingRef.current, {
                 duration:1, 
                 ease: "power2.out",

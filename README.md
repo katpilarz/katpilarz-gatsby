@@ -1,134 +1,135 @@
-# katpilarz-portfolio
+<p align="center">
+  <a href="https://katarzynapilarz.com.pl">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset=".github/assets/hero-dark.webp">
+      <img src=".github/assets/hero-light.webp" width="100%" alt="Homepage of katarzynapilarz.com.pl: the name Kasia Pilarz in large blue serif type, with project thumbnails floating over it and the tagline beneath">
+    </picture>
+  </a>
+</p>
 
-Frontend for **katarzynapilarz.com.pl** — Gatsby 5 + Sanity.
+# Kasia Pilarz — portfolio
 
-Content comes from the Sanity dataset managed in the `katpilarz-sanity` repo
-(project `hhd2cuzh`, dataset `production`).
+Source for [katarzynapilarz.com.pl](https://katarzynapilarz.com.pl), a portfolio
+site built with **Gatsby 5** and **React 18**. Content is managed in **Sanity**
+(headless CMS) and pulled in at build time through Gatsby's GraphQL data layer.
+The site is hosted on **Netlify**.
+
+## Tech stack
+
+| Area | Tools |
+| --- | --- |
+| Framework | Gatsby 5, React 18 |
+| Content | Sanity via `gatsby-source-sanity`, Portable Text via `@portabletext/react` |
+| Styling | Sass, CSS Modules |
+| Motion | GSAP, Swiper |
+| Images | `gatsby-plugin-image`, Sanity image CDN |
+| Hosting | Netlify |
 
 ## Requirements
 
-- Node **>= 20** (see `.nvmrc`)
-- **npm** — a `preinstall` guard rejects yarn/pnpm, so there is exactly one
-  lockfile
+- **Node 20** or newer (pinned in `.nvmrc`)
+- **npm**. A `preinstall` guard rejects yarn and pnpm, so there is only ever
+  one lockfile.
+- A **Sanity project** whose schema matches the GraphQL queries in this repo.
+  The Studio (schema and content) is kept in a separate, private repository.
 
 ## Getting started
 
 ```bash
-cp .env.example .env.development
+git clone https://github.com/katpilarz/katpilarz-gatsby.git
+cd katpilarz-gatsby
+nvm use                            # or install Node 20+ another way
 npm install
-npm run develop      # http://localhost:8000
+cp .env.example .env.development   # then fill in the values (see below)
+npm run develop                    # http://localhost:8000
 ```
 
-Other commands:
+While the dev server is running, GraphiQL is available at
+`http://localhost:8000/___graphql` for exploring the data layer.
 
-```bash
-npm run build   # production build into public/
-npm run serve   # serve the production build
-npm run clean   # clear .cache and public
-```
+## Environment variables
 
-## Environment
+Gatsby reads `.env.development` for `develop` and `.env.production` for `build`
+and `serve`. Both are gitignored; only `.env.example`, with empty values, is
+committed. **Never commit real values.**
 
-Both variables are required; without them `gatsby-source-sanity` has no
-project to pull from.
+| Variable | Required | Purpose |
+| --- | --- | --- |
+| `GATSBY_SANITY_PROJECT_ID` | yes | Sanity project to source content from (found at sanity.io/manage) |
+| `GATSBY_SANITY_DATASET` | yes | Dataset within that project |
+| `SANITY_READ_TOKEN` | no | Viewer token that lets `develop` show unpublished drafts. Keep it secret. |
 
-```
-GATSBY_SANITY_PROJECT_ID=hhd2cuzh
-GATSBY_SANITY_DATASET=production
-```
+Without the two required variables `gatsby-source-sanity` has no project to
+pull from and the build fails.
 
-## Layout
+Anything prefixed `GATSBY_` can be read by browser code and ends up in the
+client bundle, so never put a secret behind that prefix.
 
-```
-gatsby-config.js   plugins, canonical siteUrl, sitemap and robots
-gatsby-node.js     builds /projects/:slug and /services/:slug pages
-gatsby-ssr.js      pre-body theme script, font preload, Layout wrapper
-src/hooks/         useMediaQuery, useTheme, useTypingEffect
-src/components/    globalComponents, globalSections, home, project, service
-src/pages/         index, projects, services, faqs, 404
-src/templates/     project, service
-src/styles/        layout.scss + imports/ partials
-```
+## Scripts
 
-## Notes on the Gatsby 4 → 5 upgrade
-
-Several unmaintained packages were replaced with small local equivalents
-rather than carried forward:
-
-| Removed | Replaced by |
+| Command | What it does |
 | --- | --- |
-| `react-media` (abandoned 2022) | `src/hooks/useMediaQuery.js` + `components/globalComponents/media.js` |
-| `gatsby-plugin-dark-mode` (abandoned, peer-locked to React 16) | `src/hooks/useTheme.js` + the pre-body script in `gatsby-ssr.js` |
-| `react-typing-effect` (abandoned 2022) | `src/hooks/useTypingEffect.js` + `components/globalComponents/typingEffect.js` |
-| `react-portable-text` | `@portabletext/react` via `components/globalComponents/portableText.js` |
-| `react-helmet` + `gatsby-plugin-react-helmet` | Gatsby Head API (`export const Head`) |
-| `gatsby-plugin-web-font-loader` | `@fontsource-variable/outfit`, self-hosted |
-| `gatsby-plugin-transition-link`, `@cyriacbr/react-split-text` | unused — deleted |
-| `webpack-filter-warnings-plugin` (abandoned 2019) | no longer needed |
-| `gatsby-plugin-offline` | removed; the service worker served stale content |
+| `npm run develop` | Dev server with hot reload on port 8000; also watches Sanity for content changes (`npm start` is an alias) |
+| `npm run build` | Production build into `public/` |
+| `npm run serve` | Serves the production build on port 9000 |
+| `npm run clean` | Deletes `.cache/` and `public/`. Try this first when the dev server misbehaves. |
 
-Also fixed in the same pass:
+## Project structure
 
-- **Canonical domain.** `siteMetadata`, robots.txt, the sitemap and the new
-  `<link rel="canonical">` now all use `https://katarzynapilarz.com.pl`. They
-  previously disagreed (`.eu` vs `.com.pl`).
-- **Social share images.** The meta tags were named `og-image` and
-  `twitter-image`, which no crawler reads. They are now `og:image` and
-  `twitter:image`, with `og:image:alt` and `summary_large_image`.
-- **Duplicate plugin registration.** `gatsby-plugin-sitemap` was listed twice.
-- **`gatsby-source-filesystem`** had `name` and `path` set twice in a single
-  options object, so the `images` source was silently overwritten by `fonts`.
-  They are now two separate entries.
-- **Undeclared dependencies.** `date-fns` and `dotenv` were used but not in
-  `package.json`, resolving only transitively through Gatsby.
-- **GraphQL sort syntax** migrated to the Gatsby 5 form
-  (`sort: {publishedAt: DESC}`).
-- Stale contact address in the header updated to `kat.pilarz@proton.me`.
-
-### Styling architecture
-
-`src/styles/` is split by whether a file emits CSS:
-
-- `_abstracts.scss` forwards `variables`, `media` and `mixins` — **declarations
-  only, emits nothing**. Every `*.module.scss` starts with
-  `@use 'src/styles/abstracts' as *;`.
-- `layout.scss` pulls in `typography`, `mode` and `global`, which **do** emit
-  rules. It is imported exactly once, from `gatsby-browser.js`.
-
-Keep that separation. Previously every one of the 31 CSS modules did
-`@import 'src/styles/layout'`, which re-emitted all the global rules inside
-each module — and CSS Modules hashed those global class names, so selectors
-like `.text-color` compiled to `.footer-module--text-color--ab123` and matched
-nothing. Moving to `@use` removed that dead weight: **297 KB of CSS became
-94 KB** with byte-identical computed styles, verified by diffing the
-declarations reaching every element class-set in the rendered HTML.
-
-Two elements did rely on those leaked globals and now carry the bare global
-class alongside the module class, which is the convention already used
-elsewhere in the codebase:
-
-```jsx
-<div className={`${styles.intro} intro`}>
-<button className={`${styles.question} question`}>
+```
+├── gatsby-config.js    plugins, site URL, sitemap, robots.txt
+├── gatsby-node.js      creates /projects/:slug/ and /services/:slug/ pages
+├── gatsby-browser.js   global styles, layout and error-boundary wrappers
+├── gatsby-ssr.js       pre-paint theme script, font preload, layout wrapper
+├── client-config.js    Sanity settings, read from the environment
+├── netlify.toml        Netlify build settings
+├── static/             copied as-is into public/ (favicons, fonts)
+└── src/
+    ├── assets/images/  favicon and web-manifest icons
+    ├── components/     globalComponents, globalSections, home, page, project, service
+    ├── hooks/          useMediaQuery, useTheme, useTypingEffect
+    ├── pages/          index, projects, services, faqs, 404
+    ├── templates/      project and service detail pages
+    └── styles/         _abstracts.scss, layout.scss and imports/ partials
 ```
 
-The order inside `layout.scss` is deliberate. `mode` and `typography` both
-style `body`, `.intro span` and `.menu-link`; the old chain imported `mode`
-twice, so `mode` effectively won those ties. Loading `typography` before
-`mode` reproduces that cascade without the duplicate.
+## Content
 
-### Known follow-ups
+Pages are generated from Sanity documents at build time:
 
-- `gatsby-plugin-sass` pins `sass-loader` at v10, which still calls Dart Sass's
-  legacy JS API. That deprecation is upstream and cannot be fixed from here, so
-  it is silenced narrowly via `sassOptions.silenceDeprecations:
-  ['legacy-js-api']` in `gatsby-config.js`. Our own stylesheets use
-  `@use`/`@forward`, so nothing else is suppressed. Revisit if the plugin ever
-  ships a newer sass-loader.
-- The dev server logs `warn [sanity] Document "708acabe-…" has type gallery`.
-  It is an orphaned `gallery` document titled "Foodlace", left over from an
-  abandoned approach; the type is not in the schema. Deleting it in the Studio
-  clears the warning — it is data, not code.
-- `overlayDrafts` is only enabled when `SANITY_READ_TOKEN` is set. Without a
-  token the source plugin cannot read drafts, so enabling it unconditionally
-  just warned and did nothing.
+- **Projects** get a page at `/projects/<slug>/` once they have a slug and a
+  `publishedAt` date. A project dated in the future stays hidden until a build
+  runs after that date.
+- **Services** get a page at `/services/<slug>/` once they have a slug.
+
+Content is fetched at build time, so publishing a change in Sanity does not
+update the live site until the next deploy.
+
+## Styling conventions
+
+Component styles are CSS Modules (`*.module.scss`) kept next to their
+component. `src/styles/` is split by whether a file emits CSS:
+
+- `_abstracts.scss` forwards variables, media-query helpers and mixins, and
+  emits nothing. Every module starts with:
+
+  ```scss
+  @use 'src/styles/abstracts' as *;
+  ```
+
+- `layout.scss` holds the global rules (typography, light and dark mode,
+  globals) and is imported exactly once, from `gatsby-browser.js`.
+
+Don't import `layout.scss` into a module. It would copy every global rule into
+that module, under hashed class names that match nothing.
+
+## Deployment
+
+Netlify builds and deploys the site from this repository. `netlify.toml` sets
+the build command (`npm run build`), the publish directory (`public`) and the
+Node version. Settings in that file take precedence over the Netlify dashboard.
+
+The Sanity variables are not stored in the repository. Set
+`GATSBY_SANITY_PROJECT_ID` and `GATSBY_SANITY_DATASET` (plus
+`SANITY_READ_TOKEN`, if you use it) in the Netlify dashboard under
+**Site configuration → Environment variables**.

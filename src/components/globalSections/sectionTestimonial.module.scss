@@ -144,22 +144,18 @@
         place-items: center;
         place-content: center;
 
-        .testimonialServicesList{
-            display: flex;
+        text-align: center;
 
-            .serviceSingle{
+        .clientsRole{
+            font-style: italic;
+        }
 
-                display: flex;
-                padding-left: 2rem;
-                font-style: italic;
-
-                @include respond (mobile){
-                    padding-left: 1rem;
-                }
-
-
-                
-            }
+        // Underlined, unlike other links, because it's how a reader checks
+        // the quote.
+        .clientsLink{
+            margin-top: 1rem;
+            text-decoration: underline;
+            text-underline-offset: .2em;
         }
     }
 }

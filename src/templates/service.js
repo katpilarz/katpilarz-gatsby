@@ -4,8 +4,6 @@ import Seo from "../components/globalComponents/seo";
 import PagePreloader from "../components/globalSections/pagePreloader"
 import Header from "../components/globalSections/header";
 import ServiceSingle from "../components/service/serviceSingle";
-import AnimatedBtn from "../components/globalComponents/animatedBtn";
-import Media from "../components/globalComponents/media";
 import { useEffect, useState } from 'react';
 import { navigate } from 'gatsby';
 
@@ -184,11 +182,6 @@ const ServiceTemplate = props => {
   return (
       <main>
         <PagePreloader/>
-        <Media query="(min-width: 569px)" render={() =>
-          (
-            <AnimatedBtn isHome={isHome}/>
-          )}
-        />
         <Header isHome={isHome}/>
         <ServiceSingle isHome={isHome} service={service} contact={contact} faqs={faqs}/>
       </main>

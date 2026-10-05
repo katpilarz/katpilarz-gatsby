@@ -1,0 +1,195 @@
+@use 'src/styles/abstracts' as *;
+
+/* The case study. Every section opens with its headline on the left, the label
+   just above it, beside the description on the right, then its images across
+   the full width. */
+
+.caseStudy{
+    width: 100%;
+    margin: 10vw 0 14vw 0;
+
+    @include respond (mobile){
+        margin: 18vw 0 26vw 0;
+    }
+}
+
+.section{
+    & + &,
+    .interlude + &{
+        margin-top: 9vw;
+
+        @include respond (mobile){
+            margin-top: 16vw;
+        }
+    }
+}
+
+// The testimonial between Context and the next section, with the same space
+// above and below it as between two sections. Its own top margin is made for
+// the end of the page, so it is dropped here.
+.interlude{
+    margin-top: 9vw;
+
+    @include respond (mobile){
+        margin-top: 16vw;
+    }
+
+    > section{
+        margin-top: 0;
+    }
+}
+
+// The section's label, just above the headline.
+.sectionHead{
+    margin-bottom: .9vw;
+
+    @include respond (tabletHorizontal){
+        margin-bottom: 1.3vw;
+    }
+
+    @include respond (mobile){
+        margin-bottom: 2.8vw;
+    }
+
+    // The colour and uppercase of every other label on the site ("Continue to
+    // next project"), a size smaller so the headline leads. Set solid: the
+    // body's 1.7 leading would add its own gap under the label.
+    p{
+        margin: 0;
+        line-height: 1;
+        font-size: 1.0625rem; // 17px
+
+        @include respond (mobile){
+            font-size: .875rem; // 14px
+        }
+    }
+}
+
+.text{
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    column-gap: 6vw;
+    align-items: start;
+
+    @include respond (desktopXS){
+        grid-template-columns: 1fr;
+        row-gap: 4vw;
+    }
+
+    @include respond (mobile){
+        row-gap: 6vw;
+    }
+}
+
+// The label and the headline, together in the left column. They scroll with
+// the page like everything else; nothing is pinned.
+.headline{
+    min-width: 0;
+}
+
+// The section's one sentence — an h3 for the outline, under the banner's h2,
+// sized here rather than by the global h3 scale.
+.lead{
+    font-size: calc(1rem + 2.6vw);
+    line-height: 1.05;
+
+    @include respond (desktopXS){
+        max-width: 22ch;
+    }
+
+    @include respond (tabletHorizontal){
+        font-size: calc(1rem + 3.6vw);
+    }
+
+    @include respond (mobile){
+        font-size: calc(.8rem + 5.6vw);
+        max-width: none;
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 2.6vw);
+    }
+}
+
+.body{
+    max-width: 42em;
+    justify-self: end;
+
+    @include respond (desktopXS){
+        justify-self: start;
+    }
+
+    p + p{
+        margin-top: 1.2em;
+    }
+
+    // A paragraph's own label, lifted onto its own line.
+    .runIn{
+        display: block;
+        margin-bottom: .4em;
+        font-size: calc(.4rem + .4vw);
+        opacity: .6;
+
+        @include respond (mobile){
+            font-size: calc(.5rem + 1.4vw);
+        }
+    }
+
+    // Inline, against the global `a { display: flex }`, so a link sits in its sentence.
+    a{
+        display: inline;
+        text-decoration: underline;
+        text-underline-offset: .2em;
+    }
+}
+
+// One per row at full width by default. Side by side shares a row between up
+// to four images — phone screens, mostly — and stacks again on a phone.
+.figures{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 6vw;
+    margin-top: 6vw;
+
+    &.sideBySide{
+        grid-template-columns: repeat(var(--columns, 2), minmax(0, 1fr));
+        column-gap: 2vw;
+        align-items: start;
+
+        @include respond (mobile){
+            grid-template-columns: minmax(0, 1fr);
+        }
+    }
+
+    @include respond (mobile){
+        row-gap: 10vw;
+        margin-top: 10vw;
+    }
+
+    figure{
+        margin: 0;
+    }
+
+    // The frame is what the reveal uncovers; the picture moves inside it, so
+    // nothing spills past the edge while it settles.
+    .frame{
+        overflow: hidden;
+    }
+
+    .picture{
+        display: block;
+        width: 100%;
+        will-change: transform;
+    }
+
+    figcaption{
+        margin-top: .8vw;
+        font-size: calc(.4rem + .4vw);
+        opacity: .6;
+
+        @include respond (mobile){
+            margin-top: 2.4vw;
+            font-size: calc(.5rem + 1.4vw);
+        }
+    }
+}

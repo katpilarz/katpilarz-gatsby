@@ -89,8 +89,13 @@ const HomeSingleFocus = ({ section}) => {
             <SectionIntro subheader={section.subheader}/>
             <div ref={sectionRef} className={styles.focusAreasWrapper}>
                 {section.focusAreas.map( (area, index) => {
+                    // Media alternates sides among the lines that have any,
+                    // starting at the end of the line, so moving an image to
+                    // another line in Sanity never stacks two on one side.
+                    const mediaIndex = section.focusAreas.slice(0, index).filter(a => a.image || a.video).length
+                    const mediaFirst = (area.image || area.video) && mediaIndex % 2 === 1
                     return (
-                    <div className={styles.focusArea} key={index} ref={addToRefs}>
+                    <div className={`${styles.focusArea} ${mediaFirst ? styles.mediaFirst : ''}`} key={index} ref={addToRefs}>
                         <h4 className="text-color">{area.text}</h4>
                         {area.image && area.video === null &&
                             <div className={styles.focusAreaMedia} key={index}>

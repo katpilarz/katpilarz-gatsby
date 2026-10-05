@@ -5,11 +5,21 @@ import ProjectSingleGallery from "./projectSingleGallery";
 import SectionTestimonial from "../globalSections/sectionTestimonial";
 import SectionFeaturedVideo from "../globalSections/sectionFeaturedVideo";
 import ProjectSingleNext from "./projectSingleNext";
+import ProjectSingleCaseStudy from "./projectSingleCaseStudy";
 import Media from "../globalComponents/media";
 
 
 
 const ProjectSingle = ({ project, isHome }) => {
+
+  // A project with case study sections carries its images in them; the
+  // galleries below are for projects that have none yet.
+  const hasCaseStudy = project.caseStudy?.length > 0
+
+  // The client's word, early: straight after the case study's Context, or
+  // after the facts for a project that has no case study.
+  const testimonial = project.isTestimonial &&
+    <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
 
 
   return (
@@ -21,9 +31,6 @@ const ProjectSingle = ({ project, isHome }) => {
             without its banner suddenly claiming the wrong year. Falls back to
             publishedAt for anything that has no year set. */}
         <Banner title={project.title} image={project.bannerImage} services={project.services} overview={project.overview} publishedAt={project.year || project.publishedAt}/>
-        {project.isTestimonial &&
-          <SectionTestimonial testimonial={project._rawTestimonial} pageName='project' name={project.title} isHome={isHome}/>
-        }
         {project.isInteractive && project.prototype &&
          
           <Media query="(min-width: 569px)" render={() =>
@@ -47,10 +54,16 @@ const ProjectSingle = ({ project, isHome }) => {
 
         <ProjectSingleDetails project={project}/>
 
-        {/* NDA work carries no galleries. The details section above already
-            renders the prose, role, impact and stack, which is the whole story
-            for a project that cannot be shown. */}
-        {!project.isConfidential &&
+        {!hasCaseStudy && testimonial}
+
+        {hasCaseStudy &&
+          <ProjectSingleCaseStudy sections={project.caseStudy} showImages={!project.isConfidential} afterContext={testimonial}/>
+        }
+
+        {/* NDA work carries no galleries. The intro above already renders the
+            prose, role, impact and stack, which is the whole story for a
+            project that cannot be shown. */}
+        {!hasCaseStudy && !project.isConfidential &&
           <>
             <ProjectSingleGallery images={project.mockups} galleryClassName='projectGallery'/>
 
@@ -80,8 +93,9 @@ const ProjectSingle = ({ project, isHome }) => {
           </>
         }
 
-
-        {project.nextProject.map((nextProject, index) => {
+        {/* A reference to a project that is not published yet resolves to
+            null, and one of those should not take the whole page down. */}
+        {(project.nextProject || []).filter(Boolean).map((nextProject, index) => {
             return(
               <ProjectSingleNext nextProject={nextProject} key={index}/>
             )

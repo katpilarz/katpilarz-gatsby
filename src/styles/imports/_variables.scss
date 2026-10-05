@@ -11,6 +11,9 @@ $white:#F8F8F8;
 $white-dark:#CCD7DE;
 $border: solid .07rem rgba($color, .187);
 $borderMobile: solid .03rem rgba($color, .187);
+// A rule in the text colour instead of the accent, so it reads as a neutral
+// grey on either theme. Used on the project page.
+$line-neutral: color-mix(in srgb, currentColor 16%, transparent);
 $bg-light: #E3F1F8;
 $bg-dark:#24292D;
 

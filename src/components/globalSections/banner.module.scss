@@ -53,16 +53,22 @@
 
     }
 
+    // The title keeps its one-line width and the details take what is left,
+    // so a short title like "Dom-Meszna" stays on one line. Only a title
+    // too long to leave the details their 30vw wraps.
+    h2{
+      flex: 0 1 auto;
+    }
 
 
-    
   }
-  
-  
+
+
   .projectBannerDetails{
     width:auto;
     height: auto;
     display: flex;
+    flex: 1 0 30vw;
     flex-direction: column;
     place-self: center;
     place-items: flex-start;
@@ -70,6 +76,7 @@
     justify-items: space-between;
 
     @include respond (desktopXS){
+      flex: 0 0 auto;
       width:100%;
       margin:2vw 0 0 0;
     }
@@ -102,6 +109,7 @@
 
   .servicesList{
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
 
     .serviceSingle{

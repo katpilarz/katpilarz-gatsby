@@ -1,20 +1,26 @@
 @use 'variables' as *;
 @use 'media' as *;
 
-@mixin border-top {
+// Both take an optional colour, e.g. $line-neutral, set again inside the
+// mobile query because the shorthand there would reset it to the accent.
+@mixin border-top($tint: null) {
     border-top: $border;
+    @if $tint { border-top-color: $tint; }
 
     @include respond (mobile){
         border-top: $borderMobile;
+        @if $tint { border-top-color: $tint; }
     }
 
 }
 
-@mixin border-bottom {
+@mixin border-bottom($tint: null) {
     border-bottom: $border;
+    @if $tint { border-bottom-color: $tint; }
 
     @include respond (mobile){
         border-bottom: $borderMobile;
+        @if $tint { border-bottom-color: $tint; }
     }
 
 }

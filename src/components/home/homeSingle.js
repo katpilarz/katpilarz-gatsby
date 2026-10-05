@@ -15,7 +15,7 @@ import Media from "../globalComponents/media";
 
 
 // markup
-const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects, galleryMockups, isHome  }) => {
+const HomeSingle = ({ home, site, services, featuredProjects, galleryMockups, isHome  }) => {
 
    
 
@@ -39,9 +39,10 @@ const HomeSingle = ({ home, site, services, testimonialProject, featuredProjects
       <HomeSingleServices services={services}/>
       
 
-      <SectionTestimonial testimonial={testimonialProject.node._rawTestimonial} pageName='home' name={testimonialProject.node.title}
-       image={testimonialProject.node.thumbnailSocialMedia} services={testimonialProject.node.services}
-       slug={testimonialProject.node.slug.current} isHome={isHome}/>
+      { home.testimonial &&
+        <SectionTestimonial quote={home.testimonial.quote} pageName='home' name={home.testimonial.name}
+         role={home.testimonial.role} link={home.testimonial.link} linkText={home.testimonial.linkText} isHome={isHome}/>
+      }
 
       <HomeSingleGallery gallery={home.gallery}/>
 
