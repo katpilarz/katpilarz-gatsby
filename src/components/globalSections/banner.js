@@ -43,6 +43,9 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
         <div className={styles.projectBannerHeader}>
             <h2 className="text-color">{title}</h2>
 
+            {/* Service pages pass no date or tags. Without this check the empty
+                column still takes 30vw and pushes the title onto two lines. */}
+            { (publishedAt || services) &&
             <div className={styles.projectBannerDetails}>
                 <p>{publishedAt}</p>
                 { services &&
@@ -65,6 +68,7 @@ const Banner = ({ title, image, video, services, overview, publishedAt }) => {
                     />
                 }
             </div>
+            }
         </div>
         { image &&
             <div className={styles.projectImageContainer}>

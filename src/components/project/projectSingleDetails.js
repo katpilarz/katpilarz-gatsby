@@ -79,13 +79,15 @@ const ProjectSingleDetails = ({ project }) => {
       value: (
         <a
           href={project.url}
-          aria-label={isCaseStudy
-              ? `Read the full ${project.title} case study`
-              : `Visit the ${project.title} website`}
+          aria-label={project.urlLabel
+              ? `${project.urlLabel}: ${project.title}`
+              : isCaseStudy
+                ? `Read the full ${project.title} case study`
+                : `Visit the ${project.title} website`}
           rel="noopener noreferrer"
           target="_blank"
         >
-          {isCaseStudy ? 'View case study in detail' : 'View Live Page'}
+          {project.urlLabel || (isCaseStudy ? 'View case study in detail' : 'View Live Page')}
         </a>
       ),
     },

@@ -16,7 +16,6 @@ const ServiceSingleMarque = () => {
     const marqueRefOne = useRef(null);
     const marqueRefTwo = useRef(null);
     const marqueRefThree = useRef(null);
-    const marqueRefFour = useRef(null);
  
 
     useIsomorphicLayoutEffect(() => {
@@ -78,23 +77,6 @@ const ServiceSingleMarque = () => {
                             scrub:2,
                         }
                     },'+=2');
-                    gsap.fromTo(marqueRefFour.current, {
-                        xPercent:'-1',
-                        autoAlpha:0,
-                    }, {
-                        duration: 4,
-                        autoAlpha:1,
-                        xPercent:'-20',
-                        ease: "power4.out",
-                        scrollTrigger: {
-                            id: marqueRefFour.current,
-                            trigger: marqueRefFour.current,
-                            start: 'top 77%',
-                            toggleActions: "restart pause resume none",
-                            refreshPriority: 1,
-                            scrub:2,
-                        }
-                    },'+=2');
 
       
         }, sectionRef); // <- scopes all selector text inside the context to this component (optional, default is document)
@@ -128,14 +110,6 @@ const ServiceSingleMarque = () => {
                         <MarqueText title="Outstanding Experience"/>
                         <MarqueText title="Helping Brands"/>
                         <MarqueText title="Create"/>
-                    </div>
-                </article>
-                <article className={styles.serviceMarqueeCard} >
-                    <div className={styles.serviceSingleWrapper} ref={marqueRefFour}>
-                        <MarqueText title="Helping Brands"/>
-                        <MarqueText title="Achieve More"/>
-                        <MarqueText title="Helping Brands"/>
-                        <MarqueText title="Achieve More"/>
                     </div>
                 </article>
                 

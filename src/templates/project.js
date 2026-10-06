@@ -73,6 +73,7 @@ query ProjectTemplateQuery($id: String!){
       }
       title
       url
+      urlLabel
       figmaUrl
       prototype {
         fallback {

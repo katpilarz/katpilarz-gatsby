@@ -95,6 +95,7 @@ exports.createSchemaCustomization = ({actions}) => {
   actions.createTypes(`
     type SanityProject implements Node {
       figmaUrl: String
+      urlLabel: String
       summary: String
       caseStudy: [SanityCaseSection]
     }
