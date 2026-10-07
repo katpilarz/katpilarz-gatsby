@@ -92,9 +92,17 @@ const HeaderMenu = ({ isOpen,toggleSidebar, menuData, backgroundImageData}) => {
                 {menuData.socialLinks.map( (link, index) => {
                     return (
                     <div className={`${styles.socialMediaLink} social`} key={index}>
+                        {/* A page on this site, like the brief, opens in place
+                            and closes the menu; the rest open in a new tab. */}
+                        {link.url.startsWith('/') ? (
+                        <Link to={link.url} onClick={toggleSidebar}>
+                        {link.text}
+                        </Link>
+                        ) : (
                         <a href={link.url} aria-label={link.text} rel="noopener noreferrer" target="_blank">
                         {link.text}
                         </a>
+                        )}
                     </div>
                     )
                 })}

@@ -7,7 +7,9 @@ import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect"
 gsap.registerPlugin(ScrollTrigger);
 
 
-const ScrippedText = ({ scrippedTextClass, sectionName }) => {
+// `scrollReveal` off leaves the reveal to the page using it: the brief page
+// doesn't scroll, so a reveal tied to scrolling would never finish there.
+const ScrippedText = ({ scrippedTextClass, sectionName, scrollReveal = true }) => {
 
  
     
@@ -55,6 +57,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
 
 
       useIsomorphicLayoutEffect(() => {
+        if (!scrollReveal) return
    
         // create a context for all the GSAP animations and ScrollTriggers so we can revert() them in one fell swoop.
         // A context also lets us scope all the selector text to the component (like feeding selector text through component.querySelectorAll(...)) 
@@ -114,7 +117,7 @@ const ScrippedText = ({ scrippedTextClass, sectionName }) => {
         }, scrippedTextRef); // <- scopes all selector text inside the context to this component (optional, default is document)
         
         return () => ctx.revert(); // cleanup! 
-      }, []);
+      }, [scrollReveal]);
     
 
 

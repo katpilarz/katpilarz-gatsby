@@ -7,13 +7,9 @@
 .projectIntro{
     width:100%;
     height: auto;
-    // The same 10vw that follows the list before the case study, so the
+    // The same gap that follows the list before the case study, so the
     // facts sit evenly between the banner and the story.
-    margin:10vw auto 0 auto;
-
-    @include respond (mobile){
-        margin:18vw auto 0 auto;
-    }
+    margin: $project-section-gap auto 0 auto;
 }
 
 /* The facts. Label and value side by side on a row each, the label in the
@@ -46,7 +42,7 @@
     }
 
     dt{
-        font-size: calc(.4rem + .4vw);
+        font-size: $project-label-size;
         opacity: .6;
 
         @include respond (mobile){
@@ -80,7 +76,7 @@
         border: $border;
         border-color: $line-neutral;
         border-radius: 2vw;
-        font-size: calc(.4rem + .4vw);
+        font-size: $project-label-size;
         white-space: nowrap;
 
         @include respond (mobile){

@@ -14,6 +14,22 @@ $borderMobile: solid .03rem rgba($color, .187);
 // A rule in the text colour instead of the accent, so it reads as a neutral
 // grey on either theme. Used on the project page.
 $line-neutral: color-mix(in srgb, currentColor 16%, transparent);
+
+// The project page's vertical rhythm.
+// They were plain vw, so the space kept growing with the screen: 130px
+// between case-study sections at 1440, 230px at 2560, and 144px around the
+// facts. Fluid between a phone and a laptop, then they stop.
+$project-section-gap: clamp(4rem, 7vw, 7.5rem); // around the case study, 64–120px
+$project-between-sections: clamp(4.75rem, 8.5vw, 9rem); // one case-study section to the next, 76–144px
+$project-figure-gap: clamp(2.5rem, 4vw, 4.5rem); // text to images, image to image, 40–72px
+// The quiet uppercase labels: the facts, run-ins, captions. calc(.4rem + .4vw)
+// alone fell to 9px on a tablet, where no smaller-screen size took over.
+$project-label-size: max(.75rem, calc(.4rem + .4vw));
+
+// Where the brief page is exactly one screen tall: wider than the tablet
+// breakpoint, and tall enough for a question, its answer and the photo. Below
+// either, it is an ordinary page that scrolls.
+$brief-one-screen: 'only screen and (min-width: 64.0625em) and (min-height: 37.5em)';
 $bg-light: #E3F1F8;
 $bg-dark:#24292D;
 

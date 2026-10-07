@@ -102,18 +102,17 @@ const HomeSingleFocus = ({ section}) => {
                                 <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/>   
                             </div>
                         }
+                        {/* Up to 1024px wide the media is hidden (see the
+                            stylesheet), so the video only mounts above that:
+                            it autoplays, and would download behind
+                            `display: none`. The query is the inverse of the
+                            `tabletHorizontal` breakpoint the stylesheet uses. */}
                         {area.video &&
                             <div className={styles.focusAreaMedia} key={index}>
-                                <Media query="(min-width: 768px)" render={() =>
+                                <Media query="(min-width: 64.0625em), (min-height: 85.4375em)" render={() =>
                                     (
-                                        <Video videoWebm={area.video.webm} videoFallback={area.video.fallback}  videoCloudinary={area.video.cloudinaryVideo} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>  
+                                        <Video videoWebm={area.video.webm} videoFallback={area.video.fallback}  videoCloudinary={area.video.cloudinaryVideo} videoAlt={area.video.alt} videoCustomClass='focusAreaMedia' isDecriptionDisplayed='false'/>
 
-                                    )}
-                                />
-                                
-                                <Media query="(max-width: 767px)" render={() =>
-                                    (
-                                        <AnimatedImage imagePath={area.image.asset.gatsbyImageData} imageAlt={area.image.alt}/> 
                                     )}
                                 />
                             </div>

@@ -1,0 +1,210 @@
+@use 'src/styles/abstracts' as *;
+
+/* Split in two from 1025px wide: the form on the left and the project photo
+ * on the right, under the header, out to the window's right edge. The page is
+ * exactly one screen there and doesn't scroll (there's no footer either, see
+ * layout.js). Spacing and type follow the window's height so the longest
+ * question fits a 1280x720 laptop; on a shorter window still, only the form's
+ * own column scrolls. Narrower than 1025px, the photo is a band under the
+ * header with the form after it, as an ordinary page.
+ *
+ * `--header-height` is measured from the fixed header (briefSingle.js); the
+ * fallback is close to its height on a laptop. */
+
+$split: 'only screen and (min-width: 64.0625em)';
+$stacked: 'only screen and (max-width: 64em)';
+
+.brief{
+    --header-height: 4.25rem;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding-top: var(--header-height);
+
+    @media #{$split}{
+        display: grid;
+        grid-template-columns: minmax(0, 56fr) minmax(0, 44fr);
+        height: 100vh;
+        height: 100svh;
+        overflow: hidden;
+    }
+
+    // The script's width, and how far it hangs below the photo band: 23% of
+    // its width is 78% of its height (the drawing is 483 by 143).
+    @media #{$stacked}{
+        --script-width: min(70vw, 26rem);
+        --script-hang: calc(var(--script-width) * .231);
+
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.main{
+    min-width: 0;
+
+    // The left edge lines up with "Work" in the header. The wide right
+    // padding is the gutter the script crosses, so it never runs into the
+    // form.
+    @media #{$split}{
+        height: calc(100vh - var(--header-height));
+        height: calc(100svh - var(--header-height));
+        overflow-y: auto;
+        overscroll-behavior: contain;
+        scrollbar-width: thin;
+        padding: clamp(1rem, 4.5vh, 4rem) 9vw 1.25rem 4vw;
+    }
+
+    @media #{$split} and (max-width: 79.9375em){
+        padding-left: 5vw;
+    }
+
+    @media #{$stacked}{
+        order: 2;
+        // Room above the title for the script hanging off the photo.
+        padding: calc(var(--script-hang) + 1.5rem) 5vw 18vw;
+    }
+}
+
+// The h1, set as the small label over the form. The question is what leads.
+.title{
+    margin: 0;
+    padding: 0;
+    font: 100% $font-body;
+    font-size: 1.0625rem; // 17px
+    line-height: 1;
+    text-align: left;
+    opacity: .75;
+
+    @include respond (mobile){
+        font-size: .875rem; // 14px
+    }
+}
+
+.panel{
+    position: relative;
+    margin: 0;
+
+    @media #{$split}{
+        height: calc(100vh - var(--header-height));
+        height: calc(100svh - var(--header-height));
+    }
+
+    @media #{$stacked}{
+        order: 1;
+        height: clamp(11rem, 32vh, 20rem);
+    }
+}
+
+// Clips the photo while it settles; the script is outside it, free to cross
+// onto the page. The fade over the lower half is what the caption and the
+// script sit on: gold straight on the mustard chair disappears.
+.frame{
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+
+    &::after{
+        content: "";
+        position: absolute;
+        inset: 42% 0 0 0;
+        background: linear-gradient(to top, rgba(#000, .74), rgba(#000, .58) 38%, rgba(#000, .26) 72%, rgba(#000, 0));
+        pointer-events: none;
+    }
+}
+
+.pictureWrapper{
+    position: absolute;
+    inset: 0;
+    will-change: transform;
+}
+
+.picture{
+    width: 100%;
+    height: 100%;
+}
+
+// The gold "Connect", across the photo's left edge on a wide screen and over
+// its bottom edge on a narrow one. Sized here rather than by the script's own
+// widths, which are made for the contact section.
+.script{
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+
+    > div{
+        width: 100%;
+        margin: 0;
+    }
+
+    // Low enough to sit on the fade, clear of the caption under it. Its
+    // part on the page stays inside the gutter beside the form.
+    @media #{$split}{
+        left: -5.5vw;
+        bottom: 7.75rem;
+        width: min(36vw, 40rem);
+    }
+
+    // Most of it below the band, on the page, so it stays clear of the
+    // caption above.
+    @media #{$stacked}{
+        right: 5vw;
+        bottom: calc(var(--script-hang) * -1);
+        width: var(--script-width);
+    }
+}
+
+// The caption on the fade at the foot of the photo, in white on either
+// theme.
+.caption{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .9rem;
+    padding: 0 2.4rem 2.2rem;
+    color: $white;
+
+    @media #{$stacked}{
+        padding: 0 5vw 1.4rem;
+        // Clear of the script, which sits over the right of the band.
+        padding-right: 52vw;
+    }
+
+    span{
+        max-width: 26em;
+        font-size: .8125rem; // 13px
+        line-height: 1.6;
+        text-transform: uppercase;
+
+        @include respond (mobile){
+            font-size: .75rem;
+        }
+    }
+}
+
+.captionLink{
+    display: flex;
+    align-items: center;
+    place-content: flex-start;
+    font-size: .8125rem;
+
+    @include respond (mobile){
+        font-size: .75rem;
+    }
+
+    // White on the photo, whatever the theme draws arrows in.
+    :global(svg) path{
+        fill: $white !important;
+    }
+
+    &:focus-visible{
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
+    }
+}

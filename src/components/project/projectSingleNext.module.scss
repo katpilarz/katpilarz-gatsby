@@ -7,16 +7,16 @@
     place-content: center;
     width:90%;
     height: auto;
-    margin:16vw 0 12vw auto;
+    // A step more than between two sections: this is the end of the story.
+    margin: calc(#{$project-section-gap} * 1.4) 0 12vw auto;
 
     @include respond (tabletHorizontal){
-        margin:26vw 0 16vw auto;
+        margin-bottom: 16vw;
      }
  
 
     @include respond (mobile){
        width:100%;
-       margin:30vw 0 16vw auto;
     }
 
     @include respond (mobileXS){

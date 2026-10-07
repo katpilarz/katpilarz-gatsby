@@ -157,13 +157,6 @@ query HomePageQuery{
         subheader
         headerOne
         headerTwo
-        brief {
-          asset {
-            _type
-            url
-          }
-          text
-        }
         image {
           alt
           asset {

@@ -151,10 +151,10 @@ const SectionContact = ({section }) => {
             </div> 
             <ScrippedText scrippedTextClass="scrippedTextContact" sectionName="contact"/>
             <div className={styles.linksWrapper} ref={linksWrapperRef}>
-                    <a ref={linksRefOne} className={`${styles.contactLink} text-uppercase`} href={section.brief.asset.url} aria-label={section.brief.text} rel="noopener noreferrer" target="_blank">
-                        {section.brief.text}
+                    <Link ref={linksRefOne} className={`${styles.contactLink} text-uppercase`} to="/brief/">
+                        Send me a brief
                         <ArrowIcon arrowIconClass="linkIcon"/>
-                    </a>
+                    </Link>
                     <Link className={`${styles.contactLink} text-uppercase`} ref={linksRefTwo} to='#'onClick={(e) => {
                         window.location.href = 'mailto:kat.pilarz@proton.me?subject=Project Inquiry&body=Hello Kate, Pls see below my project details:';
                         e.preventDefault();

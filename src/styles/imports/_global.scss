@@ -7,17 +7,25 @@
   }
   
   
+  // Gatsby focuses this wrapper after every navigation, for screen readers.
+  // Without its own formatting context the first section's top margin
+  // collapsed through it, so its box started that far down the page and the
+  // focus scrolled the page there — a project page opened 173px down.
+  #gatsby-focus-wrapper {
+    display: flow-root;
+  }
+
   body {
-    transition: all .47s linear;
+    // The colours only, for the theme switch. `all` also animated the 100vw
+    // width whenever the window was resized or a phone turned, so
+    // ScrollTrigger re-measured a page that was still changing size: the
+    // reveals near the end got start points they could never reach, and
+    // those case-study sections stayed hidden.
+    transition: color .47s linear, background-color .47s linear;
     position: relative!important;
     z-index: 1;
     width:100vw;
     overflow-x: hidden;
-    -webkit-transition:background-image all .47s linear;     
-   -moz-transition:background-image all .47s linear;
-     -o-transition:background-image all .47s linear;
-
-
   }
 
   nav{

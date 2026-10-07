@@ -61,8 +61,18 @@
     width:100%;
     overflow-x: visible;
 
+    // Up to 1024px the lines are a plain centred list: the type jumps a size
+    // here (see h4 in _typography), so a line and its picture no longer fit
+    // side by side. The longest line wrapped under its picture, the wrapped
+    // lines fell back to the left while the short ones stayed centred, and
+    // each picture floated at its own offset. The gap keeps a two-line
+    // statement reading as one.
+    @include respond (tabletHorizontal){
+        row-gap: 3vw;
+    }
 
-    
+
+
     .focusArea{
         display: flex;
         place-items: center;
@@ -70,14 +80,23 @@
         place-self: center;
         width:auto;
 
+        @include respond (tabletHorizontal){
+            width:100%;
+        }
+
 
         h4{
             flex-basis: auto;
             width:auto;
             line-height: 1;
             display: flex;
-            
-            
+
+            @include respond (tabletHorizontal){
+                display: block;
+                width:100%;
+                text-align: center;
+                text-wrap: balance;
+            }
         }
 
 
@@ -92,7 +111,7 @@
             }
 
             @include respond (tabletHorizontal){
-                width:16vw;
+                display: none;
             }
         }
 

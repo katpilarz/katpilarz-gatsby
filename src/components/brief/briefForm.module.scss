@@ -1,0 +1,569 @@
+@use 'src/styles/abstracts' as *;
+
+/* The brief, one question at a time. Each step opens with its number in
+ * blue, then the question as the page's headline, the guidance under it in
+ * a quieter size, and the answer in a box: one line for a name or an email,
+ * four to start with for everything else. Next is a solid button right under
+ * the answer. */
+
+// The accent on each theme, as `.text-color` has it.
+@mixin accent($property) {
+    #{$property}: $color;
+
+    :global(body.dark) & {
+        #{$property}: $color-lighter;
+    }
+}
+
+$error-light: #B3261E;
+$error-dark: #FF8A80;
+
+.form{
+    width: 100%;
+}
+
+.srOnly{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+// The case study's label size, a touch stronger than the .6 of captions.
+.label{
+    margin: 0;
+    line-height: 1;
+    font-size: 1.0625rem; // 17px
+    opacity: .75;
+
+    @include respond (mobile){
+        font-size: .875rem; // 14px
+    }
+}
+
+.progress{
+    margin: 1.1rem 0 clamp(1rem, 4vh, 3.5rem);
+
+    @include respond (mobile){
+        margin-bottom: 2.25rem;
+    }
+}
+
+.progressTrack{
+    height: 2px;
+    background-color: $line-neutral;
+    overflow: hidden;
+}
+
+.progressFill{
+    height: 100%;
+    transform-origin: left center;
+    transition: transform .5s ease;
+    @include accent(background-color);
+
+    @media (prefers-reduced-motion: reduce){
+        transition: none;
+    }
+}
+
+.step{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    // `display` above would otherwise outrank the attribute.
+    &[hidden]{
+        display: none;
+    }
+}
+
+// "04 / 13": the number in the headline face, the total as a label.
+.count{
+    display: flex;
+    align-items: baseline;
+    gap: .6rem;
+    margin: 0 0 clamp(.6rem, 1.6vh, 1.1rem);
+    line-height: 1;
+}
+
+.countNumber{
+    font-family: $font-headers;
+    font-size: calc(1rem + 1.5vw);
+
+    @include respond (mobile){
+        font-size: calc(1rem + 4vw);
+    }
+}
+
+.countTotal{
+    font-size: 1.0625rem;
+    opacity: .75;
+
+    @include respond (mobile){
+        font-size: .875rem;
+    }
+}
+
+// The last step has a label where the number goes, at the number's height.
+.countDone{
+    min-height: calc(1rem + 1.5vw);
+    align-items: flex-end;
+
+    @include respond (mobile){
+        min-height: calc(1rem + 4vw);
+    }
+}
+
+// A question's label, and the headings of the last step and the thank-you.
+// Held to the window's height too, so a wide, short window keeps the answer
+// box in view.
+.question{
+    max-width: 20ch;
+    // Even lines, so a two-line question never leaves one word on the
+    // second ("Which email should I reply / to?").
+    text-wrap: balance;
+    font: 100% $font-headers;
+    font-size: min(calc(1rem + 3.7vw), 7.5vh);
+    line-height: 1.02;
+    text-align: left;
+    outline: none;
+
+    @include respond (tabletHorizontal){
+        font-size: calc(1rem + 4.4vw);
+    }
+
+    @include respond (mobile){
+        max-width: none;
+        font-size: calc(.9rem + 6vw);
+    }
+
+    @include respond (mobileLandscape){
+        font-size: calc(1rem + 3.2vw);
+    }
+}
+
+// Guidance, a step below body text so the question and the answer lead.
+.hint{
+    max-width: 38em;
+    margin-top: clamp(.75rem, 2vh, 1.4rem);
+    font-size: .9em;
+    line-height: 1.65;
+    opacity: .8;
+}
+
+.field{
+    display: block;
+    width: 100%;
+    margin-top: clamp(1rem, 3vh, 2rem);
+    padding: .75em 1em;
+    border: 1px solid $line-neutral;
+    border-radius: 0;
+    background: color-mix(in srgb, currentColor 3%, transparent);
+    color: inherit;
+    font-family: $font-body;
+    font-size: calc(.9rem + .45vw);
+    font-weight: 300;
+    line-height: 1.5;
+    resize: none;
+    overflow: hidden;
+    outline: none;
+    transition: border-color .3s ease, box-shadow .3s ease, background-color .3s ease;
+
+    @include respond (mobile){
+        font-size: 1.0625rem;
+    }
+
+    &::placeholder{
+        color: inherit;
+        opacity: .55;
+    }
+
+    // The box goes blue and a ring thickens it, so focus shows without the
+    // browser's outline.
+    &:focus{
+        background: transparent;
+        @include accent(border-color);
+        box-shadow: 0 0 0 1px $color;
+
+        :global(body.dark) &{
+            box-shadow: 0 0 0 1px $color-lighter;
+        }
+    }
+
+    &[aria-invalid="true"]{
+        border-color: $error-light;
+        box-shadow: 0 0 0 1px $error-light;
+
+        :global(body.dark) &{
+            border-color: $error-dark;
+            box-shadow: 0 0 0 1px $error-dark;
+        }
+    }
+}
+
+// Four lines to start with, so a long question looks like it wants a long
+// answer, a little less on a short window. It grows with what's written
+// (autoGrow in briefForm.js).
+textarea.field{
+    min-height: clamp(5em, 15vh, 7.5em);
+}
+
+.error{
+    margin-top: .9rem;
+    color: $error-light;
+
+    :global(body.dark) &{
+        color: $error-dark;
+    }
+
+    a{
+        display: inline;
+        text-decoration: underline;
+        text-underline-offset: .2em;
+    }
+}
+
+.sendError{
+    margin-top: 2vw;
+
+    @include respond (mobile){
+        margin-top: 6vw;
+    }
+}
+
+// Back on the left, the button on the right, straight under the answer.
+.actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-top: clamp(1rem, 2.6vh, 1.6rem);
+}
+
+// Back, and the links after sending: the site's text links.
+.action{
+    display: flex;
+    align-items: center;
+    place-self: auto;
+    padding: .4em 0;
+    transition: opacity .3s ease;
+
+    &:hover{
+        opacity: .7;
+    }
+
+    &:focus-visible{
+        outline: 2px solid currentColor;
+        outline-offset: 4px;
+    }
+}
+
+// The one solid button on the page: Next, then Review and send, then Send.
+// The site blue on both themes; white on it passes AA, the lighter dark-theme
+// blue doesn't. Its text and arrow are the same size as Back's: the body
+// size and the site's link arrow.
+.primary{
+    display: flex;
+    align-items: center;
+    place-self: auto;
+    padding: .7em 1.2em;
+    background-color: $color;
+    color: #fff;
+    line-height: 1.2;
+    transition: background-color .3s ease;
+
+    &:hover{
+        background-color: #185896; // $color, 8% darker
+    }
+
+    &:focus-visible{
+        outline: 2px solid $color;
+        outline-offset: 3px;
+
+        :global(body.dark) &{
+            outline-color: $color-lighter;
+        }
+    }
+
+    &:disabled{
+        cursor: progress;
+        opacity: .7;
+    }
+
+    // The arrow in white, whatever colour the theme gives arrows.
+    :global(svg) path{
+        fill: currentColor !important;
+    }
+}
+
+// The site's arrow, turned round. It sits before the word, so its margin
+// moves to the other side.
+.backIcon{
+    display: flex;
+    transform: scaleX(-1);
+    margin-right: calc(.4rem + .8vw);
+
+    > span{
+        margin: auto 0 !important;
+    }
+}
+
+// Every answer on one list, in a panel that slides in from the right over the
+// photo side, the full height of the window. It keeps its heading and Send in
+// view and scrolls the answers between them. The whole width on a narrow
+// screen.
+.review{
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: min(46rem, 50vw);
+    max-width: none;
+    height: 100vh;
+    height: 100dvh;
+    max-height: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-left: 1px solid $line-neutral;
+    // The browser's own dialog colours, replaced by the page's.
+    color: inherit;
+    background-color: $white;
+
+    :global(body.dark) &{
+        background-color: $black;
+    }
+
+    &[open]{
+        display: flex;
+        animation: reviewIn .5s cubic-bezier(.2, .7, .2, 1);
+    }
+
+    &::backdrop{
+        background-color: rgba($black, .45);
+        animation: backdropIn .5s ease;
+    }
+
+    @media only screen and (max-width: 64em){
+        width: 100vw;
+        border-left: none;
+    }
+
+    @media (prefers-reduced-motion: reduce){
+        &[open],
+        &::backdrop{
+            animation: none;
+        }
+    }
+}
+
+@keyframes reviewIn{
+    from{ transform: translateX(100%); }
+    to{ transform: none; }
+}
+
+@keyframes backdropIn{
+    from{ opacity: 0; }
+    to{ opacity: 1; }
+}
+
+.reviewPanel{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-width: 0;
+    min-height: 0;
+}
+
+.reviewHead,
+.reviewFoot{
+    flex: none;
+    padding-left: clamp(1.25rem, 3vw, 3rem);
+    padding-right: clamp(1.25rem, 3vw, 3rem);
+
+    @include respond (mobile){
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+}
+
+.reviewHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    padding-top: clamp(1.5rem, 4vh, 3rem);
+    padding-bottom: 1.5rem;
+    @include border-bottom($line-neutral);
+
+    @include respond (mobile){
+        padding-top: 6vw;
+        padding-bottom: 5vw;
+    }
+
+    .question{
+        margin-top: .9rem;
+        font-size: min(calc(1rem + 2.2vw), 7vh);
+
+        @include respond (mobile){
+            font-size: calc(.9rem + 5vw);
+        }
+    }
+}
+
+.close{
+    flex: none;
+    place-self: auto;
+    padding: .4em 0;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    transition: opacity .3s ease;
+
+    &:hover{
+        opacity: .6;
+    }
+
+    &:focus-visible{
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+    }
+}
+
+.reviewBody{
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 0 clamp(1.25rem, 3vw, 3rem);
+
+    @include respond (mobile){
+        padding: 0 5vw;
+    }
+
+    // The head and foot draw the rules at either end.
+    .answerRow:first-child{
+        border-top: none;
+    }
+
+    .answerRow:last-child{
+        border-bottom: none;
+    }
+}
+
+.reviewFoot{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .75rem 2rem;
+    padding-top: 1.25rem;
+    padding-bottom: clamp(1.25rem, 3vh, 2.25rem);
+    @include border-top($line-neutral);
+
+    @include respond (mobile){
+        padding-top: 4vw;
+        padding-bottom: 6vw;
+    }
+
+    .sendError{
+        flex: 1 1 20rem;
+        margin: 0;
+    }
+}
+
+// Every answer, the question above it, like the ledger on a project page
+// turned on its side to fit the panel.
+.answers{
+    margin: 0;
+}
+
+.answerRow{
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: .5rem;
+    padding: 1.15rem 0;
+    @include border-top($line-neutral);
+
+    &:last-child{
+        @include border-bottom($line-neutral);
+    }
+
+    @include respond (mobile){
+        padding: 5vw 0;
+    }
+
+    dt{
+        font-size: .8125rem; // 13px
+        line-height: 1.5;
+        opacity: .75;
+    }
+
+    dd{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 2rem;
+        margin: 0;
+    }
+}
+
+.answer{
+    min-width: 0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.edit{
+    flex: none;
+    place-self: auto;
+    font-size: .8125rem;
+    text-decoration: underline;
+    text-underline-offset: .25em;
+    transition: opacity .3s ease;
+
+    &:hover{
+        opacity: .6;
+    }
+
+    &:focus-visible{
+        outline: 2px solid currentColor;
+        outline-offset: 3px;
+    }
+}
+
+// Netlify drops any submission that fills this in. Off screen rather than
+// display: none, which some bots read as a sign to leave it alone.
+.honeypot{
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.sent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(1rem, 2.6vh, 1.6rem);
+    margin-top: clamp(2rem, 6vh, 3.75rem);
+}
+
+.sentText{
+    max-width: 34em;
+
+    strong{
+        font-weight: 500;
+        overflow-wrap: anywhere;
+    }
+}
+
+.sentLinks{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3vw;
+    margin-top: .5rem;
+}

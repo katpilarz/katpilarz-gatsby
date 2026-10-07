@@ -153,6 +153,11 @@ const ProjectSingleCaseStudy = ({ sections, showImages = true, afterContext }) =
         })
       })
 
+      // No `invalidateOnRefresh`: the values are fixed, and invalidating a
+      // staggered tween on ScrollTrigger's refresh after load re-rendered only
+      // the part that starts at 0. The headline stayed hidden, but the body
+      // beside it lost its start state, so it sat there in full and then
+      // blinked out and faded back in as the section arrived.
       gsap.utils.toArray(`.${styles.text}`).forEach((text) => {
         gsap.fromTo(
           text.children,
@@ -163,7 +168,7 @@ const ProjectSingleCaseStudy = ({ sections, showImages = true, afterContext }) =
             duration: 1,
             ease: "power2.out",
             stagger: 0.12,
-            scrollTrigger: { trigger: text, start: "top 85%", once: true, invalidateOnRefresh: true },
+            scrollTrigger: { trigger: text, start: "top 85%", once: true },
           }
         )
       })
